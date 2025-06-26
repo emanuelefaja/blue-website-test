@@ -35,7 +35,10 @@
 23. Pricing Page
 24. Roadmap 
 25. Review what components to "borrow" from other sites.
-26. Realtime search
+26. Realtime search ✅
+27. YouTube widget for markdown ✅
+28. Improve search
+
 
 
 
