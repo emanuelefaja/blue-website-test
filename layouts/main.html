@@ -7,11 +7,11 @@
         scrollProgress: 0
     }" 
     @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
-    class="bg-white">
+    class="bg-white overflow-x-hidden">
     {{template "topbar" .}}
     
     <!-- Main Layout -->
-    <div class="flex pt-16 min-h-screen">
+    <div class="flex pt-16 min-h-screen overflow-x-hidden">
         {{template "left-sidebar" .}}
         
         <!-- Main Content Area -->
