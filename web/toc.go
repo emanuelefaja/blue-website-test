@@ -4,9 +4,6 @@ import (
 	"regexp"
 	"strings"
 	"golang.org/x/net/html"
-	"github.com/yuin/goldmark"
-	"github.com/yuin/goldmark/ast"
-	"github.com/yuin/goldmark/text"
 )
 
 // TOCEntry represents a table of contents entry
@@ -65,46 +62,66 @@ func ExtractHTMLTOC(content string) ([]TOCEntry, error) {
 	return toc, nil
 }
 
-// ExtractMarkdownTOC extracts table of contents from markdown AST
-// Uses the goldmark parser to find heading nodes
-func ExtractMarkdownTOC(renderer goldmark.Markdown, source []byte) ([]TOCEntry, error) {
+// ExtractH2TOC extracts table of contents from HTML content with H2 elements
+// Looks for H2 elements with ID attributes (used for markdown-generated pages)
+func ExtractH2TOC(content string) ([]TOCEntry, error) {
 	var toc []TOCEntry
 	
-	// Parse markdown to AST
-	reader := text.NewReader(source)
-	doc := renderer.Parser().Parse(reader)
+	// Wrap content in a proper HTML structure for parsing
+	htmlContent := "<html><body>" + content + "</body></html>"
 	
-	// Walk AST to find heading nodes
-	ast.Walk(doc, func(n ast.Node, entering bool) (ast.WalkStatus, error) {
-		if !entering {
-			return ast.WalkContinue, nil
-		}
-		
-		// Only process H2 headings (level 2)
-		if heading, ok := n.(*ast.Heading); ok && heading.Level == 2 {
-			// Extract heading text
-			var title strings.Builder
-			for child := heading.FirstChild(); child != nil; child = child.NextSibling() {
-				if text, ok := child.(*ast.Text); ok {
-					title.Write(text.Segment.Value(source))
+	// Parse HTML
+	doc, err := html.Parse(strings.NewReader(htmlContent))
+	if err != nil {
+		return toc, err
+	}
+	
+	// Walk the HTML tree to find H2 elements with IDs
+	var walker func(*html.Node)
+	walker = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "h2" {
+			// Extract ID attribute from h2
+			var id string
+			for _, attr := range n.Attr {
+				if attr.Key == "id" {
+					id = attr.Val
+					break
 				}
 			}
 			
-			// Generate ID from title (similar to goldmark's auto-heading ID)
-			id := generateHeadingID(title.String())
-			
-			if id != "" && title.String() != "" {
-				toc = append(toc, TOCEntry{
-					ID:    id,
-					Title: formatTitle(title.String()),
-					Level: 2,
-				})
+			// If h2 has ID, extract the text content as title
+			if id != "" {
+				// Extract text content from h2 element
+				var textBuilder strings.Builder
+				var extractText func(*html.Node)
+				extractText = func(node *html.Node) {
+					if node.Type == html.TextNode {
+						textBuilder.WriteString(node.Data)
+					}
+					for child := node.FirstChild; child != nil; child = child.NextSibling {
+						extractText(child)
+					}
+				}
+				extractText(n)
+				title := strings.TrimSpace(textBuilder.String())
+				
+				if title != "" {
+					toc = append(toc, TOCEntry{
+						ID:    id,
+						Title: title,
+						Level: 2,
+					})
+				}
 			}
 		}
 		
-		return ast.WalkContinue, nil
-	})
+		// Recursively walk children
+		for child := n.FirstChild; child != nil; child = child.NextSibling {
+			walker(child)
+		}
+	}
 	
+	walker(doc)
 	return toc, nil
 }
 

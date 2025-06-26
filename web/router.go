@@ -804,11 +804,10 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 	if !r.isTOCExcluded(path) && string(content) != "" {
 		var err error
 		if isMarkdown {
-			// For markdown content, we need the original markdown source
-			// Since we already converted to HTML, we'll parse the HTML
-			toc, err = ExtractHTMLTOC(string(content))
+			// For markdown content, extract H2 elements from converted HTML
+			toc, err = ExtractH2TOC(string(content))
 		} else {
-			// For HTML pages, extract from HTML content
+			// For HTML pages, extract from section elements
 			toc, err = ExtractHTMLTOC(string(content))
 		}
 
