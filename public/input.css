@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-blue: #00a0d2;
+  --color-brand-blue-hover: #0088b8;
+  --color-brand-blue-light: #e6f7ff;
+}
+
 /* Global styles */
 html {
     scroll-behavior: smooth;
@@ -11,27 +17,8 @@ body {
 
 /* Custom styles */
 :root {
-    --blue-primary: #00a0d2;
-    --blue-primary-hover: #0088b8;
-    --blue-light: #e6f7ff;
     --gray-hover: rgba(0, 0, 0, 0.04);
     --gray-arrow: #9ca3af;
-}
-
-.brand-blue {
-    background-color: #00a0d2;
-}
-
-.btn-blue {
-    background-color: var(--blue-primary);
-}
-
-.btn-blue:hover {
-    background-color: var(--blue-primary-hover);
-}
-
-.text-blue-primary {
-    color: var(--blue-primary);
 }
 
 .hover-gray:hover {
@@ -63,14 +50,6 @@ body {
     opacity: 1;
 }
 
-.sidebar-toggle {
-    color: #6b7280;
-    transition: color 0.15s ease;
-}
-
-.sidebar-toggle:hover {
-    color: #374151;
-}
 
 .folder-icon {
     width: 16px;

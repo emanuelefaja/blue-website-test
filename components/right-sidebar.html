@@ -1,21 +1,31 @@
 {{define "right-sidebar"}}
 <!-- Right Sidebar - Table of Contents -->
 <aside :class="sidebarsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
-       class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform">
+       class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform"
+       x-data="{ 
+           tocItems: [
+               { anchor: 'overview', title: 'Overview' },
+               { anchor: 'key-features', title: 'Key Features' },
+               { anchor: 'getting-started', title: 'Getting Started' },
+               { anchor: 'examples', title: 'Examples' },
+               { anchor: 'next-steps', title: 'Next Steps' },
+               { anchor: 'why-teams-choose-blue', title: 'Why Teams Choose Blue' },
+               { anchor: 'security-privacy', title: 'Security & Privacy' },
+               { anchor: 'integrations', title: 'Integrations' },
+               { anchor: 'pricing', title: 'Pricing' },
+               { anchor: 'faq', title: 'FAQ' }
+           ]
+       }">
     <div class="p-6 overflow-y-auto flex flex-col h-full">
         <div class="flex-1">
             <h3 class="text-sm font-semibold text-gray-900 mb-4">On this page</h3>
             <nav class="space-y-1" id="toc-nav">
-                <a href="#overview" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Overview<span class="toc-arrow">↓</span></a>
-                <a href="#key-features" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Key Features<span class="toc-arrow">↓</span></a>
-                <a href="#getting-started" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Getting Started<span class="toc-arrow">↓</span></a>
-                <a href="#examples" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Examples<span class="toc-arrow">↓</span></a>
-                <a href="#next-steps" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Next Steps<span class="toc-arrow">↓</span></a>
-                <a href="#why-teams-choose-blue" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Why Teams Choose Blue<span class="toc-arrow">↓</span></a>
-                <a href="#security-privacy" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Security & Privacy<span class="toc-arrow">↓</span></a>
-                <a href="#integrations" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Integrations<span class="toc-arrow">↓</span></a>
-                <a href="#pricing" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">Pricing<span class="toc-arrow">↓</span></a>
-                <a href="#faq" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">FAQ<span class="toc-arrow">↓</span></a>
+                <template x-for="item in tocItems" :key="item.anchor">
+                    <a :href="'#' + item.anchor" class="toc-link block text-sm text-gray-600 px-2 py-1.5 rounded-md relative">
+                        <span x-text="item.title"></span>
+                        <span class="toc-arrow">↓</span>
+                    </a>
+                </template>
             </nav>
         </div>
         
