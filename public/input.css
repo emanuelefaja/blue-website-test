@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* Global styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Custom styles */
+:root {
+    --blue-primary: #00a0d2;
+    --blue-primary-hover: #0088b8;
+    --blue-light: #e6f7ff;
+    --gray-hover: rgba(0, 0, 0, 0.04);
+    --gray-arrow: #9ca3af;
+}
+
+.brand-blue {
+    background-color: #00a0d2;
+}
+
+.btn-blue {
+    background-color: var(--blue-primary);
+}
+
+.btn-blue:hover {
+    background-color: var(--blue-primary-hover);
+}
+
+.text-blue-primary {
+    color: var(--blue-primary);
+}
+
+.hover-gray:hover {
+    background-color: var(--gray-hover);
+}
+
+.nav-item {
+    position: relative;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--gray-hover);
+    color: #00a0d2;
+}
+
+.nav-arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    color: var(--gray-arrow);
+    font-size: 12px;
+}
+
+.nav-item:hover .nav-arrow {
+    opacity: 1;
+}
+
+.sidebar-toggle {
+    color: #6b7280;
+    transition: color 0.15s ease;
+}
+
+.sidebar-toggle:hover {
+    color: #374151;
+}
+
+.folder-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.15s ease;
+}
+
+.folder-icon-open {
+    transform: rotate(90deg);
+}
+
+.toc-link.active {
+    background-color: var(--gray-hover);
+    color: var(--blue-primary);
+    font-weight: 500;
+}
+
+.toc-arrow {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    color: var(--gray-arrow);
+    font-size: 12px;
+}
+
+.toc-link:hover .toc-arrow {
+    opacity: 1;
+}

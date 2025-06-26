@@ -16,7 +16,10 @@
 5. Setup main.html with left/right sidebar and navbar components ✅
 6. Add favicon.ico and logo.svg ✅
 7. Added data/nav.json for dynamic rendering of navigation acros components. ✅
-8. Made topbar buttons hotkeys work
+8. Made topbar buttons hotkeys work ✅
+9. Make left/right sidebar toggle open/close ✅
+10. Setup TailwindCSS Properly with CLI and Watcher ✅
+
 
 
 ## Tech Stack
