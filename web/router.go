@@ -32,57 +32,9 @@ type Navigation struct {
 	Legal    []NavItem `json:"legal"`
 }
 
-// PageMetadata represents metadata for a specific page
-type PageMetadata struct {
-	Title       string   `json:"title"`
-	Description string   `json:"description"`
-	Keywords    []string `json:"keywords"`
-}
-
-// SiteMetadata represents global site metadata
-type SiteMetadata struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	URL         string `json:"url"`
-	Language    string `json:"language"`
-	Author      string `json:"author"`
-}
-
-// MetadataDefaults represents default metadata values
-type MetadataDefaults struct {
-	TitleSuffix string   `json:"title_suffix"`
-	Description string   `json:"description"`
-	Keywords    []string `json:"keywords"`
-}
-
-// Metadata holds the complete metadata structure
-type Metadata struct {
-	Site     SiteMetadata                `json:"site"`
-	Pages    map[string]PageMetadata     `json:"pages"`
-	Defaults MetadataDefaults            `json:"defaults"`
-}
-
-// Frontmatter represents markdown file frontmatter
-type Frontmatter struct {
-	Title       string `yaml:"title"`
-	Description string `yaml:"description"`
-}
-
 // DirMetadata represents _dir.yml file content
 type DirMetadata struct {
 	Title string `yaml:"title"`
-}
-
-// RedirectRules represents redirect configuration rules
-type RedirectRules struct {
-	StatusCode    int    `json:"status_code"`
-	TrailingSlash string `json:"trailing_slash"`
-}
-
-// Redirects holds the complete redirect configuration
-type Redirects struct {
-	Redirects map[string]string `json:"redirects"`
-	Rules     RedirectRules     `json:"rules"`
 }
 
 // Router handles file-based routing for HTML pages
@@ -94,8 +46,7 @@ type Router struct {
 	navigation      *Navigation
 	docsNavigation  *Navigation
 	apiNavigation   *Navigation
-	metadata        *Metadata
-	redirects       *Redirects
+	seoService      *SEOService
 	markdown        goldmark.Markdown
 }
 
@@ -113,27 +64,24 @@ func NewRouter(pagesDir string) *Router {
 		),
 	)
 	
+	// Initialize SEO service
+	seoService := NewSEOService()
+	if err := seoService.LoadData(); err != nil {
+		log.Printf("Error loading SEO data: %v", err)
+	}
+	
 	router := &Router{
 		pagesDir:      pagesDir,
 		layoutsDir:    "layouts",
 		componentsDir: "components",
 		contentDir:    "content",
 		markdown:      md,
+		seoService:    seoService,
 	}
 	
 	// Load navigation data
 	if err := router.loadNavigation(); err != nil {
 		log.Printf("Error loading navigation: %v", err)
-	}
-	
-	// Load metadata
-	if err := router.loadMetadata(); err != nil {
-		log.Printf("Error loading metadata: %v", err)
-	}
-	
-	// Load redirects
-	if err := router.loadRedirects(); err != nil {
-		log.Printf("Error loading redirects: %v", err)
 	}
 	
 	// Generate dynamic navigation for docs
@@ -164,41 +112,6 @@ func (r *Router) loadNavigation() error {
 	return json.Unmarshal(data, r.navigation)
 }
 
-// loadMetadata loads metadata from JSON file
-func (r *Router) loadMetadata() error {
-	data, err := os.ReadFile("data/metadata.json")
-	if err != nil {
-		return err
-	}
-	
-	r.metadata = &Metadata{}
-	return json.Unmarshal(data, r.metadata)
-}
-
-// loadRedirects loads redirect configuration from JSON file
-func (r *Router) loadRedirects() error {
-	data, err := os.ReadFile("data/redirects.json")
-	if err != nil {
-		return err
-	}
-	
-	r.redirects = &Redirects{}
-	return json.Unmarshal(data, r.redirects)
-}
-
-// PageData holds data for template rendering
-type PageData struct {
-	Title       string
-	Content     template.HTML
-	Navigation  *Navigation
-	PageMeta    *PageMetadata
-	SiteMeta    *SiteMetadata
-	Description string
-	Keywords    []string
-	IsMarkdown  bool
-	Frontmatter *Frontmatter
-}
-
 // ServeHTTP implements the http.Handler interface
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Skip public file requests
@@ -210,15 +123,9 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	path := req.URL.Path
 	
 	// Check for redirects first
-	if r.redirects != nil {
-		if redirectTo, exists := r.redirects.Redirects[path]; exists {
-			statusCode := r.redirects.Rules.StatusCode
-			if statusCode == 0 {
-				statusCode = 301 // Default to permanent redirect
-			}
-			http.Redirect(w, req, redirectTo, statusCode)
-			return
-		}
+	if redirectTo, statusCode, shouldRedirect := r.seoService.CheckRedirect(path); shouldRedirect {
+		http.Redirect(w, req, redirectTo, statusCode)
+		return
 	}
 	
 	// Redirect .html URLs to clean URLs
@@ -279,7 +186,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		
 		// Parse frontmatter
 		var markdownContent []byte
-		frontmatter, markdownContent, err = r.parseFrontmatter(mdBytes)
+		frontmatter, markdownContent, err = r.seoService.ParseFrontmatter(mdBytes)
 		if err != nil {
 			log.Printf("Frontmatter parsing error: %v", err)
 			// Continue without frontmatter
@@ -345,7 +252,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Prepare page data
-	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter)
+	pageData := r.seoService.PreparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.getNavigationForPath(path))
 
 	// Set content type and execute main layout
 	w.Header().Set("Content-Type", "text/html")
@@ -356,115 +263,6 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-// preparePageData creates PageData with metadata for the given path
-func (r *Router) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter) PageData {
-	// Get page key for metadata lookup
-	pageKey := r.getPageKey(path)
-	
-	// Get page metadata
-	var pageMeta *PageMetadata
-	var title, description string
-	var keywords []string
-	
-	// For markdown files, prioritize frontmatter over metadata.json
-	if isMarkdown && frontmatter != nil {
-		if frontmatter.Title != "" {
-			title = frontmatter.Title
-		}
-		if frontmatter.Description != "" {
-			description = frontmatter.Description
-		}
-	}
-	
-	// If no frontmatter or missing fields, use metadata.json
-	if title == "" || description == "" {
-		if r.metadata != nil {
-			// Check if specific page metadata exists
-			if meta, exists := r.metadata.Pages[pageKey]; exists {
-				pageMeta = &meta
-				if title == "" {
-					title = meta.Title
-				}
-				if description == "" {
-					description = meta.Description
-				}
-				keywords = meta.Keywords
-			} else {
-				// Use defaults
-				if title == "" {
-					title = r.getFallbackTitle(path) + r.metadata.Defaults.TitleSuffix
-				}
-				if description == "" {
-					description = r.metadata.Defaults.Description
-				}
-				keywords = r.metadata.Defaults.Keywords
-			}
-		} else {
-			// Fallback if no metadata loaded
-			if title == "" {
-				title = r.getFallbackTitle(path)
-			}
-			if description == "" {
-				description = "Blue - Powerful platform to create, manage, and scale processes for modern teams."
-			}
-			keywords = []string{"blue", "process management", "team collaboration"}
-		}
-	}
-	
-	var siteMeta *SiteMetadata
-	if r.metadata != nil {
-		siteMeta = &r.metadata.Site
-	}
-	
-	return PageData{
-		Title:       title,
-		Content:     content,
-		Navigation:  r.getNavigationForPath(path),
-		PageMeta:    pageMeta,
-		SiteMeta:    siteMeta,
-		Description: description,
-		Keywords:    keywords,
-		IsMarkdown:  isMarkdown,
-		Frontmatter: frontmatter,
-	}
-}
-
-// getPageKey converts URL path to metadata key
-func (r *Router) getPageKey(path string) string {
-	if path == "/" {
-		return "home"
-	}
-	
-	// Remove leading/trailing slashes
-	cleanPath := strings.Trim(path, "/")
-	return cleanPath
-}
-
-// getFallbackTitle creates a fallback title from URL path
-func (r *Router) getFallbackTitle(path string) string {
-	if path == "/" {
-		return "Home"
-	}
-	
-	// Remove leading slash and convert to title case
-	cleanPath := strings.TrimPrefix(path, "/")
-	cleanPath = strings.TrimSuffix(cleanPath, "/")
-	
-	// Replace slashes with spaces and title case
-	parts := strings.Split(cleanPath, "/")
-	for i, part := range parts {
-		// Simple title case replacement for strings.Title
-		words := strings.Split(strings.ReplaceAll(part, "-", " "), " ")
-		for j, word := range words {
-			if len(word) > 0 {
-				words[j] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
-			}
-		}
-		parts[i] = strings.Join(words, " ")
-	}
-	
-	return strings.Join(parts, " - ")
-}
 
 // getNavigationForPath returns the appropriate navigation based on the URL path
 func (r *Router) getNavigationForPath(path string) *Navigation {
@@ -648,51 +446,6 @@ func (r *Router) findFileIgnoreCase(dir, pattern string, matches *[]string) erro
 	return os.ErrNotExist
 }
 
-// parseFrontmatter extracts frontmatter from markdown content
-func (r *Router) parseFrontmatter(content []byte) (*Frontmatter, []byte, error) {
-	contentStr := string(content)
-	
-	// Normalize line endings to Unix style
-	contentStr = strings.ReplaceAll(contentStr, "\r\n", "\n")
-	contentStr = strings.ReplaceAll(contentStr, "\r", "\n")
-	
-	// Check if content starts with frontmatter delimiter
-	if !strings.HasPrefix(contentStr, "---\n") {
-		return nil, content, nil
-	}
-	
-	// Find the end of frontmatter - look for closing --- on its own line
-	lines := strings.Split(contentStr, "\n")
-	var frontmatterLines []string
-	var contentStart int
-	
-	// Skip the opening ---
-	for i := 1; i < len(lines); i++ {
-		if strings.TrimSpace(lines[i]) == "---" {
-			// Found closing delimiter
-			contentStart = i + 1
-			break
-		}
-		frontmatterLines = append(frontmatterLines, lines[i])
-	}
-	
-	// If we didn't find a closing delimiter, treat as regular content
-	if contentStart == 0 {
-		return nil, content, nil
-	}
-	
-	// Parse the frontmatter YAML
-	frontmatterYAML := strings.Join(frontmatterLines, "\n")
-	var frontmatter Frontmatter
-	if err := yaml.Unmarshal([]byte(frontmatterYAML), &frontmatter); err != nil {
-		return nil, content, err
-	}
-	
-	// Return frontmatter and content without frontmatter
-	remainingLines := lines[contentStart:]
-	markdownContent := []byte(strings.Join(remainingLines, "\n"))
-	return &frontmatter, markdownContent, nil
-}
 
 // generateContentNavigation creates navigation tree from content directory
 func (r *Router) generateContentNavigation(contentDir, baseURL string) (*Navigation, error) {
