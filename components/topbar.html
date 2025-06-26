@@ -1,10 +1,18 @@
 {{define "topbar"}}
+<!-- Scroll Indicator -->
+<div class="fixed top-0 left-0 w-full h-1 z-[60]">
+    <div class="h-1 bg-gradient-to-r from-blue-100 transition-all duration-300 ease-out"
+         :style="'width: ' + scrollProgress + '%; background-image: linear-gradient(to right, #dbeafe, #00a0d2);'"></div>
+</div>
+
 <!-- Top Navigation Bar -->
 <header class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-70 fixed top-0 left-0 right-0 z-50 h-16">
     <div class="flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
         <div class="flex items-center">
-            <img src="/public/logo.svg" alt="Blue" class="h-8 w-auto ml-3">
+            <a href="/" class="flex items-center">
+                <img src="/public/logo.svg" alt="Blue" class="h-8 w-auto ml-3">
+            </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
                     class="p-2 ml-4 rounded-md hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700 cursor-pointer">
                 <svg class="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 16 24">
@@ -44,7 +52,7 @@
             </a>
             
             <!-- Sign Up -->
-            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent btn-blue text-white hover:btn-blue-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out flex items-center">
+            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out flex items-center">
                 Sign Up
                 <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold" style="color: #00a0d2; border-color: #00a0d2;">↵</span>
             </a>

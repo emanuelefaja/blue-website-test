@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 {{template "head" .}}
-<body x-data="{ sidebarsOpen: true }" class="bg-white">
+<body x-data="{ 
+        sidebarsOpen: true,
+        scrollProgress: 0
+    }" 
+    @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
+    class="bg-white">
     {{template "topbar" .}}
     
     <!-- Main Layout -->
