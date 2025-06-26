@@ -64,3 +64,4 @@ public/style.css
 *.tmp
 *.bak
 *.orig 
+public/searchIndex.json
