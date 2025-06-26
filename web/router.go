@@ -18,11 +18,12 @@ import (
 
 // NavItem represents a navigation item
 type NavItem struct {
-	ID       string    `json:"id"`
-	Name     string    `json:"name"`
-	Href     string    `json:"href,omitempty"`
-	Expanded bool      `json:"expanded,omitempty"`
-	Children []NavItem `json:"children,omitempty"`
+	ID         string    `json:"id"`
+	Name       string    `json:"name"`
+	Href       string    `json:"href,omitempty"`
+	Expanded   bool      `json:"expanded,omitempty"`
+	Children   []NavItem `json:"children,omitempty"`
+	OriginalID string    `json:"-"` // Store original directory name for sorting (not sent to JSON)
 }
 
 // Navigation holds the complete navigation structure
@@ -463,13 +464,41 @@ func (r *Router) getFallbackTitle(path string) string {
 
 // getNavigationForPath returns the appropriate navigation based on the URL path
 func (r *Router) getNavigationForPath(path string) *Navigation {
-	if strings.HasPrefix(path, "/docs") && r.docsNavigation != nil {
-		return r.docsNavigation
+	// Always start with static navigation
+	if r.navigation == nil {
+		return &Navigation{}
 	}
-	if (strings.HasPrefix(path, "/api") || strings.HasPrefix(path, "/api-docs")) && r.apiNavigation != nil {
-		return r.apiNavigation
+	
+	// Make a copy of the static navigation
+	nav := &Navigation{
+		Sections: make([]NavItem, len(r.navigation.Sections)),
+		Legal:    r.navigation.Legal,
 	}
-	return r.navigation
+	copy(nav.Sections, r.navigation.Sections)
+	
+	// Always add Documentation section if available
+	if r.docsNavigation != nil {
+		docSection := NavItem{
+			ID:       "documentation",
+			Name:     "Documentation", 
+			Expanded: strings.HasPrefix(path, "/docs"), // Only expand when on docs pages
+			Children: r.docsNavigation.Sections,
+		}
+		nav.Sections = append(nav.Sections, docSection)
+	}
+	
+	// Always add API Reference section if available
+	if r.apiNavigation != nil {
+		apiSection := NavItem{
+			ID:       "api-reference",
+			Name:     "API Reference",
+			Expanded: strings.HasPrefix(path, "/api") || strings.HasPrefix(path, "/api-docs"), // Only expand when on API pages
+			Children: r.apiNavigation.Sections,
+		}
+		nav.Sections = append(nav.Sections, apiSection)
+	}
+	
+	return nav
 }
 
 // findMarkdownFile searches for a markdown file matching the given path
@@ -477,28 +506,17 @@ func (r *Router) findMarkdownFile(path string) (string, error) {
 	// Convert URL path to potential file paths
 	cleanPath := strings.Trim(path, "/")
 	
-	// Try different markdown file patterns
+	// For content paths, we need to map clean URLs back to numbered files/directories
+	if strings.HasPrefix(cleanPath, "docs/") || strings.HasPrefix(cleanPath, "api/") || strings.HasPrefix(cleanPath, "api-docs/") {
+		return r.findNumberedMarkdownFile(cleanPath)
+	}
+	
+	// Try simple patterns for non-content paths
 	patterns := []string{
 		filepath.Join(r.contentDir, cleanPath+".md"),
 		filepath.Join(r.contentDir, cleanPath, "index.md"),
 	}
 	
-	// Also try numbered files (common pattern in your content)
-	if cleanPath != "" {
-		parts := strings.Split(cleanPath, "/")
-		if len(parts) > 0 {
-			lastPart := parts[len(parts)-1]
-			// Try with number prefix (e.g., "welcome" -> "0.welcome.md")
-			basePath := strings.Join(parts[:len(parts)-1], "/")
-			glob := filepath.Join(r.contentDir, basePath, "*"+lastPart+".md")
-			matches, err := filepath.Glob(glob)
-			if err == nil && len(matches) > 0 {
-				return matches[0], nil
-			}
-		}
-	}
-	
-	// Check each pattern
 	for _, pattern := range patterns {
 		if _, err := os.Stat(pattern); err == nil {
 			return pattern, nil
@@ -506,6 +524,124 @@ func (r *Router) findMarkdownFile(path string) (string, error) {
 	}
 	
 	return "", os.ErrNotExist
+}
+
+// findNumberedMarkdownFile handles finding files with numeric prefixes
+func (r *Router) findNumberedMarkdownFile(cleanPath string) (string, error) {
+	parts := strings.Split(cleanPath, "/")
+	if len(parts) < 2 {
+		return "", os.ErrNotExist
+	}
+	
+	// Map content type to directory
+	contentType := parts[0]
+	var contentDir string
+	switch contentType {
+	case "docs":
+		contentDir = "content/docs"
+	case "api", "api-docs":
+		contentDir = "content/api-docs"
+	default:
+		return "", os.ErrNotExist
+	}
+	
+	// Build path progressively, finding numbered directories/files
+	currentPath := contentDir
+	for i := 1; i < len(parts); i++ {
+		cleanSegment := parts[i]
+		
+		if i == len(parts)-1 {
+			// Last segment - look for numbered file in the current specific directory
+			// Try multiple patterns to handle spaces vs hyphens vs case variations
+			patterns := []string{
+				"*" + cleanSegment + ".md",                                    // e.g., *download-apps.md
+				"*" + strings.ReplaceAll(cleanSegment, "-", " ") + ".md",      // e.g., *download apps.md
+				"*" + strings.ReplaceAll(cleanSegment, "-", "_") + ".md",      // e.g., *download_apps.md
+			}
+			
+			// Try each pattern with case-insensitive matching
+			for _, pattern := range patterns {
+				glob := filepath.Join(currentPath, pattern)
+				matches, err := filepath.Glob(glob)
+				if err == nil && len(matches) > 0 {
+					return matches[0], nil
+				}
+				
+				// If no matches, try case-insensitive search by reading directory
+				if err := r.findFileIgnoreCase(currentPath, pattern, &matches); err == nil && len(matches) > 0 {
+					return matches[0], nil
+				}
+			}
+			
+			// Also try as directory with index
+			glob := filepath.Join(currentPath, "*"+cleanSegment, "index.md")
+			matches, err := filepath.Glob(glob)
+			if err == nil && len(matches) > 0 {
+				return matches[0], nil
+			}
+		} else {
+			// Intermediate segment - look for numbered directory
+			// Try multiple patterns to handle spaces vs hyphens in directory names
+			dirPatterns := []string{
+				"*" + cleanSegment,                                    // e.g., *start-guide
+				"*" + strings.ReplaceAll(cleanSegment, "-", " "),      // e.g., *start guide
+				"*" + strings.ReplaceAll(cleanSegment, "-", "_"),      // e.g., *start_guide
+			}
+			
+			found := false
+			for _, pattern := range dirPatterns {
+				glob := filepath.Join(currentPath, pattern)
+				matches, err := filepath.Glob(glob)
+				if err == nil && len(matches) > 0 {
+					currentPath = matches[0]
+					found = true
+					break
+				}
+			}
+			
+			if !found {
+				return "", os.ErrNotExist
+			}
+		}
+	}
+	
+	return "", os.ErrNotExist
+}
+
+// findFileIgnoreCase performs case-insensitive file matching
+func (r *Router) findFileIgnoreCase(dir, pattern string, matches *[]string) error {
+	// Read directory contents
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return err
+	}
+	
+	// Extract the pattern without the wildcard and directory
+	patternName := strings.TrimPrefix(pattern, "*")
+	patternLower := strings.ToLower(patternName)
+	
+	for _, entry := range entries {
+		if entry.IsDir() {
+			continue
+		}
+		
+		fileName := entry.Name()
+		
+		// Check if file matches pattern (case-insensitive)
+		if strings.HasSuffix(strings.ToLower(fileName), patternLower) {
+			// Also check if it has a numeric prefix (to match our numbered file pattern)
+			parts := strings.SplitN(fileName, ".", 2)
+			if len(parts) == 2 {
+				// Check if first part starts with a number
+				if len(parts[0]) > 0 && parts[0][0] >= '0' && parts[0][0] <= '9' {
+					*matches = append(*matches, filepath.Join(dir, fileName))
+					return nil
+				}
+			}
+		}
+	}
+	
+	return os.ErrNotExist
 }
 
 // parseFrontmatter extracts frontmatter from markdown content
@@ -577,9 +713,10 @@ func (r *Router) processDirectory(dirPath, dirName, baseURL string) (*NavItem, e
 	
 	// Create nav item
 	navItem := &NavItem{
-		ID:       r.cleanID(dirName),
-		Name:     title,
-		Expanded: false,
+		ID:         r.cleanID(dirName),
+		Name:       title,
+		Expanded:   false,
+		OriginalID: dirName,
 	}
 	
 	// Read directory contents
@@ -621,13 +758,26 @@ func (r *Router) processDirectory(dirPath, dirName, baseURL string) (*NavItem, e
 			}
 			
 			// Create relative path for href
+			// Remove both content dir and the specific content type (docs/api-docs)
 			relDir := strings.TrimPrefix(dirPath, r.contentDir+"/")
+			
+			// Remove the content type prefix (e.g., "docs/" or "api-docs/")
+			if strings.HasPrefix(relDir, "docs/") {
+				relDir = strings.TrimPrefix(relDir, "docs/")
+			} else if strings.HasPrefix(relDir, "api-docs/") {
+				relDir = strings.TrimPrefix(relDir, "api-docs/")
+			}
+			
+			// Clean numeric prefixes from directory path
+			relDir = r.cleanDirectoryPath(relDir)
+			
 			href := baseURL + "/" + relDir + "/" + r.cleanID(fileName)
 			
 			children = append(children, NavItem{
-				ID:   r.cleanID(fileName),
-				Name: fileTitle,
-				Href: href,
+				ID:         r.cleanID(fileName),
+				Name:       fileTitle,
+				Href:       href,
+				OriginalID: fileName,
 			})
 		}
 	}
@@ -681,14 +831,51 @@ func (r *Router) cleanID(name string) string {
 	return name
 }
 
+// cleanDirectoryPath removes numeric prefixes from directory paths
+func (r *Router) cleanDirectoryPath(path string) string {
+	// Split path into segments and clean each one
+	segments := strings.Split(path, "/")
+	for i, segment := range segments {
+		segments[i] = r.cleanID(segment)
+	}
+	return strings.Join(segments, "/")
+}
+
 // sortNavItems sorts navigation items by numeric prefix
 func (r *Router) sortNavItems(items []NavItem) {
-	// Simple sort by ID (which should preserve numeric order after cleaning)
+	// Sort by extracting numeric prefix from original names
 	for i := 0; i < len(items)-1; i++ {
 		for j := i + 1; j < len(items); j++ {
-			if items[i].ID > items[j].ID {
+			// Extract numeric prefixes for comparison using original IDs
+			num1 := r.extractNumericPrefix(items[i].OriginalID)
+			num2 := r.extractNumericPrefix(items[j].OriginalID)
+			
+			if num1 > num2 {
 				items[i], items[j] = items[j], items[i]
 			}
 		}
 	}
+}
+
+// extractNumericPrefix extracts the numeric prefix from a name (e.g., "1.start-guide" -> 1)
+func (r *Router) extractNumericPrefix(name string) int {
+	// Parse numeric prefix from original directory/file names
+	parts := strings.Split(name, ".")
+	if len(parts) >= 2 {
+		// Try to parse first part as number
+		num := 0
+		for _, char := range parts[0] {
+			if char >= '0' && char <= '9' {
+				num = num*10 + int(char-'0')
+			} else {
+				break
+			}
+		}
+		if num > 0 {
+			return num
+		}
+	}
+	
+	// Fallback: assign high number for non-numbered items
+	return 9999
 }
