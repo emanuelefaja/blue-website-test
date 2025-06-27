@@ -1,9 +1,11 @@
 <!-- Main content -->
 <div class="py-20">
-    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-        Platform Status
-    </h1>
-    <p class="text-xl text-gray-600">Below you can see the status of the platform over the last 90 days. </p>
+    {{template "page-heading" 
+        dict 
+            "Title" "Platform Status" 
+            "Subtitle" "Below you can see the status of the platform over the last 90 days." 
+            "MarginBottom" "mb-8"
+    }}
 
 
         <!-- 90-Day History -->

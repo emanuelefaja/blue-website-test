@@ -1,8 +1,10 @@
 <!-- Main content -->
 <div class="py-20">
-    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-        Insights
-    </h1>
+    {{template "page-heading" 
+        dict 
+            "Title" "Insights" 
+            "MarginBottom" "mb-8"
+    }}
     
     <!-- Category Navigation -->
     <div class="mb-12" x-data="{ activeCategory: 'all' }">
@@ -15,33 +17,33 @@
             <button @click="activeCategory = 'trends'" 
                     :class="activeCategory === 'trends' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
                     class="pb-1">
-                Industry Trends
+                Product Updates
             </button>
             <button @click="activeCategory = 'process'" 
                     :class="activeCategory === 'process' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
                     class="pb-1">
-                Process Management
+                Engineering
             </button>
             <button @click="activeCategory = 'productivity'" 
                     :class="activeCategory === 'productivity' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
                     class="pb-1">
-                Team Productivity
-            </button>
-            <button @click="activeCategory = 'technology'" 
-                    :class="activeCategory === 'technology' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
-                    class="pb-1">
-                Technology
-            </button>
-            <button @click="activeCategory = 'cases'" 
-                    :class="activeCategory === 'cases' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
-                    class="pb-1">
-                Case Studies
+                CEO Blog
             </button>
             <button @click="activeCategory = 'practices'" 
                     :class="activeCategory === 'practices' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
                     class="pb-1">
                 Best Practices
             </button>
+            <button @click="activeCategory = 'news'" 
+                    :class="activeCategory === 'news' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
+                    class="pb-1">
+                News
+            </button>
+            <button @click="activeCategory = 'news'" 
+            :class="activeCategory === 'news' ? 'text-gray-900 font-medium border-b-2 border-gray-900' : 'text-gray-500 hover:text-gray-900 transition-colors duration-200'"
+            class="pb-1">
+        Modern Work Practices
+    </button>
         </nav>
     </div>
 

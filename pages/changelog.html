@@ -1,9 +1,11 @@
 <!-- Changelog Page -->
 <div class="py-20" x-data="{ changelog: {{ .Changelog | toJSON }} }">
-    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-        Changelog
-    </h1>
-    <p class="text-xl text-gray-600 mb-20">Everything we've ever shipped from day one. </p>
+    {{template "page-heading" 
+        dict 
+            "Title" "Changelog" 
+            "Subtitle" "Everything we've ever shipped from day one." 
+            "MarginBottom" "mb-20"
+    }}
 
     
     <!-- Changelog Entries -->

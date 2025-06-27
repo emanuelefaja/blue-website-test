@@ -1,11 +1,10 @@
 <div class="py-20" x-data="roadmapData()">
-    <!-- Header -->
-    <div class="mb-4">
-        <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-            Product Roadmap
-        </h1>
-        <p class="text-xl text-gray-600">Track our progress and see what's coming next</p>
-    </div>
+    {{template "page-heading" 
+        dict 
+            "Title" "Product Roadmap" 
+            "Subtitle" "Track our progress and see what's coming next" 
+            "MarginBottom" "mb-4"
+    }}
     
     <div class="roadmap-header mb-8">
         <div class="flex justify-end">

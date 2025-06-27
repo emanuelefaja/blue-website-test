@@ -1,12 +1,11 @@
-<!-- Pricing Page -->
+<!-- Customers Page -->
 <div class="py-20">
-    <!-- Header -->
-    <div class="mb-16">
-        <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-            Meet our customers.
-        </h1>
-        <p class="text-xl text-gray-600">Trusted by more than {{.CustomerNumber}} forward-thinking organizations, <br>from ambitious startups to established enterprises.</p>
-    </div>
+    {{template "page-heading" 
+        dict 
+            "Title" "Meet our customers." 
+            "Subtitle" (printf "Trusted by more than %d forward-thinking organizations, <br>from ambitious startups to established enterprises." .CustomerNumber | html)
+            "MarginBottom" "mb-16"
+    }}
     <x-component 
        url="/components/client-logos"
        x-data="{
