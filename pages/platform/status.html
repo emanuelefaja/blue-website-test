@@ -1,0 +1,140 @@
+<!-- Main content -->
+<div class="py-20">
+    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
+        Platform Status
+    </h1>
+    <p class="text-xl text-gray-600">Below you can see the status of the platform over the last 90 days. </p>
+
+
+        <!-- 90-Day History -->
+        <div class="bg-white p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-900">90-Day History</h2>
+                <!-- Legend -->
+                <div class="flex items-center space-x-6 text-sm text-gray-600">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-green-500 rounded-sm mr-2"></div>
+                        <span>Operational</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-sm mr-2"></div>
+                        <span>Degraded Performance</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-red-500 rounded-sm mr-2"></div>
+                        <span>Major Outage</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-6" x-data="historyData()">
+                <template x-for="service in services" :key="service.name">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-medium text-gray-900" x-text="service.name"></h3>
+                            <span class="text-sm text-gray-500" x-text="service.uptime + '% uptime'"></span>
+                        </div>
+                        <div class="flex space-x-1">
+                            <template x-for="day in generateDays(service.uptime)" :key="day.index">
+                                <div 
+                                    x-data="{
+                                        tooltipVisible: false,
+                                        tooltipText: day.tooltip,
+                                    }"
+                                    @mouseenter="tooltipVisible = true"
+                                    @mouseleave="tooltipVisible = false"
+                                    class="relative">
+                                    
+                                    <div x-show="tooltipVisible" 
+                                         x-transition
+                                         class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
+                                        <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
+                                            <span x-text="tooltipText"></span>
+                                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
+                                                <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w-2 h-8 rounded-sm cursor-pointer hover:opacity-80" :class="day.status === 'up' ? 'bg-green-500' : day.status === 'degraded' ? 'bg-yellow-500' : 'bg-red-500'"></div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+</div>
+
+<script>
+    function statusData() {
+        return {
+            // Mock data for demo purposes
+            services: [
+                { name: 'blue.cc', status: 'operational', uptime: 99.9 },
+                { name: 'api.blue.cc', status: 'operational', uptime: 99.8 },
+                { name: 'app.blue.cc', status: 'operational', uptime: 99.7 },
+                { name: 'beta.app.blue.cc', status: 'operational', uptime: 99.5 },
+                { name: 'Background Services', status: 'operational', uptime: 99.9 },
+                { name: 'Forms', status: 'operational', uptime: 99.6 },
+                { name: 'Public File Sharing', status: 'operational', uptime: 99.4 },
+                { name: 'White Label Frontend', status: 'operational', uptime: 99.3 },
+                { name: 'White Label File Sharing', status: 'operational', uptime: 99.2 },
+                { name: 'White Label Forms', status: 'operational', uptime: 99.1 }
+            ]
+        }
+    }
+
+    function historyData() {
+        return {
+            services: [
+                { name: 'blue.cc', uptime: 99.9 },
+                { name: 'api.blue.cc', uptime: 99.8 },
+                { name: 'app.blue.cc', uptime: 99.7 },
+                { name: 'beta.app.blue.cc', uptime: 99.5 },
+                { name: 'Background Services', uptime: 99.9 },
+                { name: 'Forms', uptime: 99.6 },
+                { name: 'Public File Sharing', uptime: 99.4 },
+                { name: 'White Label Frontend', uptime: 99.3 },
+                { name: 'White Label File Sharing', uptime: 99.2 },
+                { name: 'White Label Forms', uptime: 99.1 }
+            ],
+            generateDays(uptime) {
+                const days = [];
+                const downtimePercent = (100 - uptime) / 100;
+                
+                for (let i = 0; i < 90; i++) {
+                    const date = new Date();
+                    date.setDate(date.getDate() - (89 - i));
+                    
+                    // Simulate some downtime based on uptime percentage
+                    let status = 'up';
+                    const random = Math.random();
+                    
+                    if (random < downtimePercent * 0.3) {
+                        status = 'down';
+                    } else if (random < downtimePercent * 0.7) {
+                        status = 'degraded';
+                    }
+                    
+                    const options = { 
+                        weekday: 'short', 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    };
+                    const formattedDate = date.toLocaleDateString('en-US', options);
+                    
+                    days.push({
+                        index: i,
+                        date: date.toISOString().split('T')[0],
+                        status: status,
+                        tooltip: `${formattedDate}: ${status === 'up' ? 'Operational' : status === 'degraded' ? 'Degraded Performance' : 'Major Outage'}`
+                    });
+                }
+                
+                return days;
+            }
+        }
+    }
+</script>
