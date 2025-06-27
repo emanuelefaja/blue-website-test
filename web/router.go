@@ -286,6 +286,11 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			"html": func(s string) template.HTML {
 				return template.HTML(s)
 			},
+			"parseJSON": func(s string) (interface{}, error) {
+				var data interface{}
+				err := json.Unmarshal([]byte(s), &data)
+				return data, err
+			},
 		})
 
 		// Auto-scan all component templates for page content parsing
@@ -350,6 +355,11 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		"dict": dict,
 		"html": func(s string) template.HTML {
 			return template.HTML(s)
+		},
+		"parseJSON": func(s string) (interface{}, error) {
+			var data interface{}
+			err := json.Unmarshal([]byte(s), &data)
+			return data, err
 		},
 	})
 
