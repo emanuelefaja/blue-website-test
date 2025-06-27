@@ -14,7 +14,7 @@
                 <img src="/public/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
-                    class="p-2 ml-4 rounded-md hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700 cursor-pointer">
+                    class="p-2 ml-4 rounded-md hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700 cursor-pointer focus:outline-none">
                 <svg class="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 16 24">
                     <rect x="1" y="4" width="14" height="16" stroke-width="1.5" rx="1"></rect>
                     <rect :class="sidebarsOpen ? 'fill-current' : 'fill-transparent'" 
@@ -172,24 +172,24 @@
         <!-- Right side controls -->
         <div class="flex items-center space-x-4">
             <!-- Light/Dark mode toggle -->
-            <button class="p-2 text-gray-500 hover:text-gray-700">
+            <button class="p-2 text-gray-500 hover:text-gray-700 focus:outline-none">
                 <i class="fas fa-moon text-lg"></i>
             </button>
             
             <!-- Login -->
-            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out flex items-center">
+            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
                 Log In
                 <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">L</span>
             </a>
             
             <!-- Contact Sales -->
-            <button class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out flex items-center">
+            <button class="px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out flex items-center cursor-pointer">
                 Sales
                 <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">S</span>
             </button>
             
             <!-- Sign Up -->
-            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out flex items-center">
+            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue-hover focus:outline-none transition duration-150 ease-in-out flex items-center">
                 Sign Up
                 <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold" style="color: #00a0d2; border-color: #00a0d2;">↵</span>
             </a>
