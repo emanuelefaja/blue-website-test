@@ -1,12 +1,11 @@
 <!-- Main content -->
 <div class="py-20">
-    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 mb-8">
-        Brand
-    </h1>
-    
-    <p class="text-xl text-gray-600 mb-16 max-w-3xl">
-        Our brand styles define the visual identity and typography that creates a consistent, professional experience across all Blue touchpoints.
-    </p>
+    {{template "page-heading" 
+        dict 
+            "Title" "Brand" 
+            "Subtitle" "Our brand styles define the visual identity and typography that creates a consistent, professional experience across all Blue touchpoints." 
+            "MarginBottom" "mb-16"
+    }}
 
     <!-- Typography Section -->
     <section id="typography" class="mb-16">
@@ -62,4 +61,31 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Styles Section -->
+    <section id="image-styles" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Image Styles</h2>
+        
+        <div class="space-y-12">
+            <!-- Depth Style 2px -->
+            <div>
+                <h3 class="text-xl font-medium text-gray-900 mb-4">Product Screenshots</h3>
+                <div class="mt-2 text-sm text-gray-500">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]</code>
+                </div>
+                <div class="p-8">
+                    <img 
+                        src="https://www.blue.cc/product/simple-screenshot-home.png" 
+                        alt="Depth screenshot style 2px"
+                        class="w-full max-w-4xl mx-auto border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
+                    />
+                </div>
+
+            </div>
+
+           
+        </div>
+    </section>
+
+
 </div>  
