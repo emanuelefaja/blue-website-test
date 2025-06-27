@@ -2,6 +2,7 @@ package web
 
 import (
 	"encoding/json"
+	"errors"
 	"html/template"
 	"log"
 	"net/http"
@@ -280,8 +281,28 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 				data, _ := json.Marshal(v)
 				return template.JS(data)
 			},
+			"dict": dict,
 		})
 
+		// Auto-scan all component templates for page content parsing
+		componentFiles, err := filepath.Glob(filepath.Join(r.componentsDir, "*.html"))
+		if err != nil {
+			http.Error(w, "Error loading components for page content", http.StatusInternalServerError)
+			log.Printf("Component scanning error for page content: %v", err)
+			return
+		}
+
+		// Parse component files first
+		if len(componentFiles) > 0 {
+			contentTmpl, err = contentTmpl.ParseFiles(componentFiles...)
+			if err != nil {
+				http.Error(w, "Error parsing component templates for page content", http.StatusInternalServerError)
+				log.Printf("Component template parsing error for page content: %v", err)
+				return
+			}
+		}
+
+		// Then parse the page content
 		contentTmpl, err = contentTmpl.Parse(string(contentBytes))
 		if err != nil {
 			http.Error(w, "Error parsing page template", http.StatusInternalServerError)
@@ -322,6 +343,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			data, _ := json.Marshal(v)
 			return template.JS(data)
 		},
+		"dict": dict,
 	})
 
 	// Parse all template files
@@ -833,4 +855,20 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		TOC:            toc,
 		CustomerNumber: 17000,
 	}
+}
+
+// dict creates a map from key-value pairs for use in templates
+func dict(values ...interface{}) (map[string]interface{}, error) {
+	if len(values)%2 != 0 {
+		return nil, errors.New("dict requires even number of arguments")
+	}
+	m := make(map[string]interface{})
+	for i := 0; i < len(values); i += 2 {
+		key, ok := values[i].(string)
+		if !ok {
+			return nil, errors.New("dict keys must be strings")
+		}
+		m[key] = values[i+1]
+	}
+	return m, nil
 }
