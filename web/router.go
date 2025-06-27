@@ -827,7 +827,7 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 	}
 
 	// Extract table of contents (skip if path is excluded)
-	var toc []TOCEntry
+	toc := make([]TOCEntry, 0)
 	if !r.isTOCExcluded(path) && string(content) != "" {
 		var err error
 		if isMarkdown {

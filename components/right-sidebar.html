@@ -3,10 +3,14 @@
 <aside :class="sidebarsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
        class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform"
        x-data="{ 
-           tocItems: {{toJSON .TOC}},
+           tocItems: {{toJSON .TOC}} || [],
            activeSection: '',
            currentScrollY: 0,
            init() {
+               // Ensure tocItems is always an array
+               if (!Array.isArray(this.tocItems)) {
+                   this.tocItems = [];
+               }
                // Initialize scroll position
                this.currentScrollY = window.scrollY;
                // Set up intersection observer for active section tracking
@@ -15,7 +19,7 @@
                this.setupScrollListener();
            },
            setupScrollTracking() {
-               if (this.tocItems.length === 0) return;
+               if (!this.tocItems || this.tocItems.length === 0) return;
                
                const observer = new IntersectionObserver((entries) => {
                    entries.forEach(entry => {
@@ -58,7 +62,7 @@
        }">
     <div class="pt-32 p-6 overflow-y-auto flex flex-col h-full">
         <div class="flex-1">
-            <div x-show="tocItems.length > 0">
+            <div x-show="tocItems && Array.isArray(tocItems) && tocItems.length > 0">
                 <h3 class="text-sm font-semibold text-gray-900 mb-4">On this page</h3>
                 <nav class="space-y-1" id="toc-nav">
                     <template x-for="item in tocItems" :key="item.id">
