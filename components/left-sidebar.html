@@ -71,9 +71,11 @@
                                                 <div x-show="child.expanded" x-collapse class="ml-6 space-y-0.5">
                                                     <template x-for="subchild in child.children" :key="subchild.id">
                                                         <a :href="subchild.href || '#'" 
+                                                           :target="subchild.external ? '_blank' : '_self'"
+                                                           :rel="subchild.external ? 'noopener noreferrer' : ''"
                                                            :class="isActive(subchild.href) ? 'nav-link relative block px-3 py-1 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
                                                             <span x-text="subchild.name"></span>
-                                                            <span class="nav-arrow">→</span>
+                                                            <span :class="subchild.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="subchild.external ? '↗' : '→'"></span>
                                                         </a>
                                                     </template>
                                                 </div>
@@ -82,9 +84,11 @@
                                         <!-- Child is a simple link -->
                                         <template x-if="!child.children || child.children.length === 0">
                                             <a :href="child.href || '#'" 
+                                               :target="child.external ? '_blank' : '_self'"
+                                               :rel="child.external ? 'noopener noreferrer' : ''"
                                                :class="isActive(child.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
                                                 <span x-text="child.name"></span>
-                                                <span class="nav-arrow">→</span>
+                                                <span :class="child.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="child.external ? '↗' : '→'"></span>
                                             </a>
                                         </template>
                                     </div>
@@ -95,12 +99,14 @@
                     <!-- Section is a simple link -->
                     <template x-if="!section.children || section.children.length === 0">
                         <a :href="section.href || '#'" 
+                           :target="section.external ? '_blank' : '_self'"
+                           :rel="section.external ? 'noopener noreferrer' : ''"
                            :class="isActive(section.href) ? 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg bg-gray-100 text-brand-blue font-semibold' : 'nav-link relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
                             <svg class="folder-icon mr-3 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="font-medium text-sm" x-text="section.name"></span>
-                            <span class="nav-arrow">→</span>
+                            <span :class="section.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="section.external ? '↗' : '→'"></span>
                         </a>
                     </template>
                 </div>
@@ -114,9 +120,11 @@
             <div x-show="expanded" x-collapse class="ml-7 space-y-0.5 order-first">
                 <template x-for="item in legalSection?.children || []" :key="item.id">
                     <a :href="item.href" 
+                       :target="item.external ? '_blank' : '_self'"
+                       :rel="item.external ? 'noopener noreferrer' : ''"
                        :class="isActive(item.href) ? 'nav-link relative block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'nav-link relative block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150'">
                         <span x-text="item.name"></span>
-                        <span class="nav-arrow">→</span>
+                        <span :class="item.external ? 'nav-arrow-external' : 'nav-arrow'" x-text="item.external ? '↗' : '→'"></span>
                     </a>
                 </template>
             </div>

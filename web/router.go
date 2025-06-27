@@ -22,6 +22,7 @@ type NavItem struct {
 	ID         string    `json:"id"`
 	Name       string    `json:"name"`
 	Href       string    `json:"href,omitempty"`
+	External   bool      `json:"external,omitempty"`
 	Expanded   bool      `json:"expanded,omitempty"`
 	Children   []NavItem `json:"children,omitempty"`
 	OriginalID string    `json:"-"` // Store original directory name for sorting (not sent to JSON)

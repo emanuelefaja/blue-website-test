@@ -48,6 +48,21 @@ body {
     opacity: 1;
 }
 
+.nav-arrow-external {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    color: var(--gray-arrow);
+    font-size: 12px;
+}
+
+.nav-link:hover .nav-arrow-external {
+    opacity: 1;
+}
+
 
 .folder-icon {
     width: 16px;
