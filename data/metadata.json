@@ -31,6 +31,41 @@
       "title": "Changelog",
       "description": "Stay up to date with the latest features and improvements in Blue.",
       "keywords": ["changelog", "updates", "features", "improvements", "blue"]
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions about Blue. Find answers to common questions about our platform, features, and pricing.",
+      "keywords": ["faq", "frequently asked questions", "help", "support", "blue"]
+    },
+    "platform/status": {
+      "title": "System Status",
+      "description": "Monitor Blue's platform status and service uptime in real-time. View the current operational status and 90-day uptime history for all Blue services including API, web app, and background services.",
+      "keywords": ["status", "uptime", "system health", "service monitoring", "platform status", "operational", "blue status", "downtime", "service availability"]
+    },
+    "insights": {
+      "title": "Insights",
+      "description": "Stay informed with Blue's latest insights on process management, product updates, engineering practices, and modern workplace trends. Expert perspectives on scaling teams and optimizing workflows.",
+      "keywords": ["insights", "blog", "articles", "process management", "product updates", "engineering", "best practices", "modern work", "team productivity", "workflow optimization", "industry trends", "blue"]
+    },
+    "platform/roadmap": {
+      "title": "Product Roadmap",
+      "description": "Track Blue's development progress and see what's coming next. View upcoming features, current development status, and planned improvements to the platform.",
+      "keywords": ["roadmap", "product roadmap", "features", "development", "future", "planned features", "blue platform", "updates", "progress"]
+    },
+    "customers": {
+      "title": "Our Customers",
+      "description": "Watch real customer testimonials and success stories.",
+      "keywords": ["customers", "testimonials", "case studies", "success stories", "client reviews", "enterprise customers", "customer stories", "blue"]
+    },
+    "brand": {
+      "title": "Brand Guidelines",
+      "description": "Explore Blue's brand guidelines including typography, visual identity, and brand assets. Learn how to properly use Blue's brand elements.",
+      "keywords": ["brand", "brand guidelines", "typography", "visual identity", "brand assets", "logo", "design system", "style guide"]
+    },
+    "company": {
+      "title": "Company",
+      "description": "Learn about Blue's company, our team, and our mission to revolutionize process management for modern teams.",
+      "keywords": ["company", "about us", "team", "mission", "leadership", "blue"]
     }
   },
   "defaults": {
