@@ -31,159 +31,132 @@
     
     {{template "logo-grid" $logoData}}
 
-   
+    {{$testimonialData := parseJSON `{
+        "title": "Hear from our customers",
+        "testimonials": [
+            {
+                "quote": "Blue just helps keep things completely organised — it's an absolutely wonderful tool.",
+                "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
+                "posterUrl": "/public/testimonials/davidsacks.jpeg"
+            },
+            {
+                "quote": "The automation features of Blue help us run our operations seamlessly.",
+                "videoUrl": "https://media.blue.cc/lady.mp4",
+                "posterUrl": "/public/testimonials/lady.jpg"
+            },
+            {
+                "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
+                "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
+                "posterUrl": "/public/testimonials/ricklewis.jpg"
+            },
+            {
+                "quote": "If you're wondering if you should buy Blue...the answer is YES.",
+                "videoUrl": "https://media.blue.cc/ana.mov",
+                "posterUrl": "/public/testimonials/ana-testimonial.jpg"
+            },
+            {
+                "quote": "Blue is amazing because it is fully white labelled and is really fast & reliable.",
+                "videoUrl": "https://media.blue.cc/pere.mp4",
+                "posterUrl": "/public/testimonials/pere.jpg"
+            },
+            {
+                "quote": "I have used a lot of tools over the years, but Blue just clicked for me.",
+                "videoUrl": "https://media.blue.cc/raybrown.mp4",
+                "posterUrl": "/public/testimonials/raybrown.jpg"
+            },
+            {
+                "quote": "Investing in Blue was one of the best business decisions I have ever made.",
+                "videoUrl": "https://media.blue.cc/rike-whelan.mp4",
+                "posterUrl": "/public/testimonials/rike-whelan.jpg"
+            },
+            {
+                "quote": "We are saving each sales rep in our team 9 hours a week with Blue.",
+                "videoUrl": "https://media.blue.cc/dandeigan.mp4",
+                "posterUrl": "/public/testimonials/dandeigan.jpg"
+            },
+            {
+                "quote": "It is really nice to work with a team that really care about their customers.",
+                "videoUrl": "https://media.blue.cc/barryrodrigues.mp4",
+                "posterUrl": "/public/testimonials/barryrodriguez.jpg"
+            },
+            {
+                "quote": "Blue has saved us so much time and handles all of our repetitive tasks.",
+                "videoUrl": "https://media.blue.cc/garth.mp4",
+                "posterUrl": "/public/testimonials/garth.jpg"
+            },
+            {
+                "quote": "I can highly recommend it and I love the customer service.",
+                "videoUrl": "https://media.blue.cc/afl-testimonial.mp4",
+                "posterUrl": "/public/testimonials/alf.jpeg"
+            },
+            {
+                "quote": "I have migrated all my clients to Blue and they love it, we are sold!",
+                "videoUrl": "https://media.blue.cc/nadiaschoeman.mp4",
+                "posterUrl": "/public/testimonials/nadiaschoeman.jpg"
+            },
+            {
+                "quote": "The only way to manage all the chaos is with Blue, one of my best purchases.",
+                "videoUrl": "https://media.blue.cc/akshaydatt.mp4",
+                "posterUrl": "/public/testimonials/akshaydatt.jpg"
+            },
+            {
+                "quote": "We help Blue to streamline our processes, which Blue makes it very easy to do.",
+                "videoUrl": "https://media.blue.cc/carlos.mp4",
+                "posterUrl": "/public/testimonials/carlos.jpg"
+            },
+            {
+                "quote": "We really love Blue because it's flexible and updated all the time.",
+                "videoUrl": "https://media.blue.cc/june.mp4",
+                "posterUrl": "/public/testimonials/june.jpg"
+            },
+            {
+                "quote": "Blue is really easy to use and the templates help to save a lot of time.",
+                "videoUrl": "https://media.blue.cc/dingchinghong.mp4",
+                "posterUrl": "/public/testimonials/dingchinghong.jpg"
+            },
+            {
+                "quote": "What I like about Blue is that it keeps improving and the founder is very hands on.",
+                "videoUrl": "https://media.blue.cc/garychan.mp4",
+                "posterUrl": "/public/testimonials/garychan.jpg"
+            },
+            {
+                "quote": "The UI/UX is very good, and the automation tools are really helpful.",
+                "videoUrl": "https://media.blue.cc/gopikrishna.mp4",
+                "posterUrl": "/public/testimonials/gopikrishna.jpg"
+            },
+            {
+                "quote": "Blue is an awesome productibity tool for my needs.",
+                "videoUrl": "https://media.blue.cc/grantcollins.mp4",
+                "posterUrl": "/public/testimonials/grantcollins.jpg"
+            },
+            {
+                "quote": "We use Blue and we love it. We think it's a really good tool.",
+                "videoUrl": "https://media.blue.cc/jimmybogroff.mp4",
+                "posterUrl": "/public/testimonials/jimmybogroff.jpg"
+            },
+            {
+                "quote": "Using Blue gives me the leverage to get data in easily via forms.",
+                "videoUrl": "https://media.blue.cc/johanielagcao.mp4",
+                "posterUrl": "/public/testimonials/johanielagcao.jpg"
+            },
+            {
+                "quote": "Blue has helped me consolidate all the tasks in a single platform.",
+                "videoUrl": "https://media.blue.cc/naseem.mp4",
+                "posterUrl": "/public/testimonials/naseem.jpg"
+            },
+            {
+                "quote": "Blue has helped me be twice as productive and better understand my projects.",
+                "videoUrl": "https://media.blue.cc/johnorosco.mp4",
+                "posterUrl": "/public/testimonials/johnorosco.jpg"
+            },
+            {
+                "quote": "I am surprised to see how fast the Blue team is at implementing new features.",
+                "videoUrl": "https://media.blue.cc/rajeshpabari.mp4",
+                "posterUrl": "/public/testimonials/rajeshpabari.jpg"
+            }
+        ]
+    }`}}
 
-   <x-component 
-       url="/components/testimonial-videos"
-       x-data="{
-           title: 'Hear from our customers',
-           testimonials: [
-                {
-                    quote: 'Blue just helps keep things completely organised — it\'s an absolutely wonderful tool.',
-                    videoUrl: 'https://media.blue.cc/davidzack-testimonial.mp4',
-                    posterUrl:'/public/testimonials/davidsacks.jpeg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'The automation features of Blue help us run our operations seamlessly.',
-                    videoUrl: 'https://media.blue.cc/lady.mp4',
-                    posterUrl: '/public/testimonials/lady.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'My entire life is in Blue! I love how fantasticly responsive the team is.',
-                    videoUrl: 'https://media.blue.cc/ricklews-testimonial.mov',
-                    posterUrl: '/public/testimonials/ricklewis.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'If you\'re wondering if you should buy Blue...the answer is YES.',
-                    videoUrl: 'https://media.blue.cc/ana.mov',
-                    posterUrl: '/public/testimonials/ana-testimonial.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'Blue is amazing because it is fully white labelled and is really fast & reliable.',
-                    videoUrl: 'https://media.blue.cc/pere.mp4',
-                    posterUrl: '/public/testimonials/pere.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'I have used a lot of tools over the years, but Blue just clicked for me.',
-                    videoUrl: 'https://media.blue.cc/raybrown.mp4',
-                    posterUrl: '/public/testimonials/raybrown.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'Investing in Blue was one of the best business decisions I have ever made.',
-                    videoUrl: 'https://media.blue.cc/rike-whelan.mp4',
-                    posterUrl: '/public/testimonials/rike-whelan.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'We are saving each sales rep in our team 9 hours a week with Blue.',
-                    videoUrl: 'https://media.blue.cc/dandeigan.mp4',
-                    posterUrl: '/public/testimonials/dandeigan.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'It is really nice to work with a team that really care about their customers.',
-                    videoUrl: 'https://media.blue.cc/barryrodrigues.mp4',
-                    posterUrl: '/public/testimonials/barryrodriguez.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'Blue has saved us so much time and handles all of our repetitive tasks.',
-                    videoUrl: 'https://media.blue.cc/garth.mp4',
-                    posterUrl: '/public/testimonials/garth.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'I can highly recommend it and I love the customer service.',
-                    videoUrl: 'https://media.blue.cc/afl-testimonial.mp4',
-                    posterUrl: '/public/testimonials/alf.jpeg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'I have migrated all my clients to Blue and they love it, we are sold!',
-                    videoUrl: 'https://media.blue.cc/nadiaschoeman.mp4',
-                    posterUrl: '/public/testimonials/nadiaschoeman.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'The only way to manage all the chaos is with Blue, one of my best purchases.',
-                    videoUrl: 'https://media.blue.cc/akshaydatt.mp4',
-                    posterUrl: '/public/testimonials/akshaydatt.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'We help Blue to streamline our processes, which Blue makes it very easy to do.',
-                    videoUrl: 'https://media.blue.cc/carlos.mp4',
-                    posterUrl: '/public/testimonials/carlos.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'We really love Blue because it\'s flexible and updated all the time.',
-                    videoUrl: 'https://media.blue.cc/june.mp4',
-                    posterUrl: '/public/testimonials/june.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'Blue is really easy to use and the templates help to save a lot of time.',
-                    videoUrl: 'https://media.blue.cc/dingchinghong.mp4',
-                    posterUrl: '/public/testimonials/dingchinghong.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'What I like about Blue is that it keeps improving and the founder is very hands on.',
-                    videoUrl: 'https://media.blue.cc/garychan.mp4',
-                    posterUrl: '/public/testimonials/garychan.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'The UI/UX is very good, and the automation tools are really helpful.',
-                    videoUrl: 'https://media.blue.cc/gopikrishna.mp4',
-                    posterUrl: '/public/testimonials/gopikrishna.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'Blue is an awesome productibity tool for my needs. ',
-                    videoUrl: 'https://media.blue.cc/grantcollins.mp4',
-                    posterUrl: '/public/testimonials/grantcollins.jpg',
-                    format: 'vertical'
-                },
-                {
-                    quote: 'We use Blue and we love it. We think it\'s a really good tool.',
-                    videoUrl: 'https://media.blue.cc/jimmybogroff.mp4',
-                    posterUrl: '/public/testimonials/jimmybogroff.jpg',
-                    format: 'vertical'
-                },
-               {
-                   quote: 'Using Blue gives me the leverage to get data in easily via forms.',
-                   videoUrl: 'https://media.blue.cc/johanielagcao.mp4',
-                   posterUrl: '/public/testimonials/johanielagcao.jpg',
-                   format: 'vertical'
-               },
-               {
-                   quote: 'Blue has helped me consolidate all the tasks in a single platform.',
-                   videoUrl: 'https://media.blue.cc/naseem.mp4',
-                   posterUrl: '/public/testimonials/naseem.jpg',
-                   format: 'vertical'
-               },
-               {
-                   quote: 'Blue has helped me be twice as productive and better understand my projects.',
-                   videoUrl: 'https://media.blue.cc/johnorosco.mp4',
-                   posterUrl: '/public/testimonials/johnorosco.jpg',
-                   format: 'vertical'
-               },
-               {
-                   quote: 'I am surprised to see how fast the Blue team is at implementing new features.',
-                   videoUrl: 'https://media.blue.cc/rajeshpabari.mp4',
-                   posterUrl: '/public/testimonials/rajeshpabari.jpg',
-                   format: 'vertical'
-               }
-           ]
-       }"
-   ></x-component>
+    {{template "testimonial-videos" $testimonialData}}
 
 </div>
