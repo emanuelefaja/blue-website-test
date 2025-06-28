@@ -34,6 +34,7 @@ func NewMarkdownService() *MarkdownService {
 		goldmark.WithRendererOptions(
 			html.WithHardWraps(),
 			html.WithXHTML(),
+			html.WithUnsafe(), // Allow raw HTML (including video tags)
 		),
 	)
 
