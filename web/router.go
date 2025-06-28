@@ -53,6 +53,7 @@ type Router struct {
 	navigationService *NavigationService
 	contentService    *ContentService
 	markdownService   *MarkdownService
+	htmlService       *HTMLService
 	seoService        *SEOService
 	changelogService  *ChangelogService
 	tocExcludedPaths  []string
@@ -79,6 +80,7 @@ func NewRouter(pagesDir string) *Router {
 	markdownService := NewMarkdownService()
 	contentService := NewContentService("content")
 	navigationService := NewNavigationService(seoService)
+	htmlService := NewHTMLService(pagesDir, "layouts", "components")
 
 	// Initialize changelog service
 	changelogService := NewChangelogService()
@@ -94,6 +96,7 @@ func NewRouter(pagesDir string) *Router {
 		markdownService:   markdownService,
 		contentService:    contentService,
 		navigationService: navigationService,
+		htmlService:       htmlService,
 		seoService:        seoService,
 		changelogService:  changelogService,
 		tocExcludedPaths: []string{ // These pages will not show toc
@@ -111,9 +114,17 @@ func NewRouter(pagesDir string) *Router {
 		log.Printf("Markdown cache initialized with %d files", markdownService.GetCacheSize())
 	}
 
+	// Pre-render all HTML pages at startup
+	log.Printf("Pre-rendering HTML pages...")
+	if err := htmlService.PreRenderAllHTMLPages(navigationService, seoService, changelogService); err != nil {
+		log.Printf("Warning: failed to pre-render HTML pages: %v", err)
+	} else {
+		log.Printf("HTML cache initialized with %d pages", htmlService.GetCacheSize())
+	}
+
 	// Generate search index with pre-rendered content
 	log.Printf("Generating search index with cached content...")
-	if err := GenerateSearchIndexWithCache(markdownService); err != nil {
+	if err := GenerateSearchIndexWithCaches(markdownService, htmlService); err != nil {
 		log.Printf("Warning: failed to generate search index: %v", err)
 	} else {
 		log.Printf("Search index generated successfully")
@@ -222,7 +233,16 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			log.Printf("Served on-demand markdown for path: %s", path)
 		}
 	} else {
-		// Read HTML page content
+		// HTML page exists, try cached version first
+		if cachedContent, found := r.htmlService.GetCachedContent(path); found {
+			// Found in cache - use pre-rendered content
+			http.Header.Set(w.Header(), "Content-Type", "text/html")
+			w.Write([]byte(cachedContent.HTML))
+			log.Printf("Served cached HTML page for path: %s", path)
+			return
+		}
+
+		// Not in cache, process on-demand (fallback for dynamic pages like status)
 		var err error
 		contentBytes, err = os.ReadFile(filePath)
 		if err != nil {
@@ -273,6 +293,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 
 		contentBytes = []byte(renderedContent.String())
+		log.Printf("Served on-demand HTML page for path: %s", path)
 	}
 
 	// Prepare template files - start with layout

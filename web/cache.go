@@ -20,6 +20,12 @@ type MarkdownCache struct {
 	cache map[string]*CachedContent
 }
 
+// HTMLCache provides thread-safe caching for pre-rendered HTML pages
+type HTMLCache struct {
+	mu    sync.RWMutex
+	cache map[string]*CachedContent
+}
+
 // NewMarkdownCache creates a new markdown cache
 func NewMarkdownCache() *MarkdownCache {
 	return &MarkdownCache{
@@ -108,4 +114,82 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+
+// NewHTMLCache creates a new HTML cache
+func NewHTMLCache() *HTMLCache {
+	return &HTMLCache{
+		cache: make(map[string]*CachedContent),
+	}
+}
+
+// Get retrieves cached HTML content by URL path
+func (hc *HTMLCache) Get(urlPath string) (*CachedContent, bool) {
+	hc.mu.RLock()
+	defer hc.mu.RUnlock()
+	
+	content, exists := hc.cache[urlPath]
+	return content, exists
+}
+
+// Set stores pre-rendered HTML content in cache
+func (hc *HTMLCache) Set(urlPath string, content *CachedContent) {
+	hc.mu.Lock()
+	defer hc.mu.Unlock()
+	
+	hc.cache[urlPath] = content
+}
+
+// GetAll returns all cached HTML content
+func (hc *HTMLCache) GetAll() map[string]*CachedContent {
+	hc.mu.RLock()
+	defer hc.mu.RUnlock()
+	
+	// Return a copy to avoid race conditions
+	result := make(map[string]*CachedContent)
+	for k, v := range hc.cache {
+		result[k] = v
+	}
+	return result
+}
+
+// Size returns the number of cached HTML items
+func (hc *HTMLCache) Size() int {
+	hc.mu.RLock()
+	defer hc.mu.RUnlock()
+	
+	return len(hc.cache)
+}
+
+// Clear removes all cached HTML content
+func (hc *HTMLCache) Clear() {
+	hc.mu.Lock()
+	defer hc.mu.Unlock()
+	
+	hc.cache = make(map[string]*CachedContent)
+}
+
+// Delete removes a specific HTML item from cache
+func (hc *HTMLCache) Delete(urlPath string) {
+	hc.mu.Lock()
+	defer hc.mu.Unlock()
+	
+	delete(hc.cache, urlPath)
+}
+
+// GetCacheStats returns HTML cache statistics
+func (hc *HTMLCache) GetCacheStats() map[string]interface{} {
+	hc.mu.RLock()
+	defer hc.mu.RUnlock()
+	
+	totalSize := 0
+	for _, content := range hc.cache {
+		totalSize += len(content.HTML)
+	}
+	
+	return map[string]interface{}{
+		"count":     len(hc.cache),
+		"totalSize": totalSize,
+		"avgSize":   totalSize / max(len(hc.cache), 1),
+	}
 }
