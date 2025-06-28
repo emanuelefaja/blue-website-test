@@ -1,10 +1,10 @@
 ---
 title: The Most Useful Project Management Automations
 slug: most-useful-project--management-automations
-tags: ["tips-&-tricks"]
+category: "Best Practices"
 description: Discover the most useful project management automations based on our analysis of hundreds of thousands of project across Blue.
 image: /patterns/circles4.png
-date: 09/07/2024
+date: 2024-07-09
 showdate: false
 ---
 

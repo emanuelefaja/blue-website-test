@@ -1,10 +1,10 @@
 ---
 title: Key features in real estate project management software. 
 slug: real-estate-pm-features
-tags: ["insights"]
+category: "Best Practices"
 description: Explore the top features of real estate project management software for developers and agencie to enhance efficiency and productivity.
 image: /resources/real-estate-software-background.png
-date: 31/05/2024
+date: 2024-05-31
 showdate: false
 ---
 

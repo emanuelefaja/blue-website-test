@@ -1,10 +1,10 @@
 ---
 title: How to Write an Outstanding RFP
 slug: how-to-write-an-outstanding-rfp
-tags: ["insights", "modern-work-practices"]
+category: "Best Practices"
 description: Requests for Proposals (RFPs) are key tools that businesses and organizations of all sizes use to choose the best partners for any tasks and projects.
 image: /resources/whiteboard-brainstorm.jpeg
-date: 06/07/2024
+date: 2024-07-06
 showdate: true
 ---
 

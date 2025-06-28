@@ -1,10 +1,10 @@
 ---
 title: The ROI of Good Business Processes.
 slug: the-roi-of-good-business-processes
-tags: ["insights", "modern-work-practices"]
+category: "Modern Work Practices"
 description: Better business processes lead to a better return on investment (ROI). Learn how to create improved business processes that drive profitability.
 image: /resources/roi-business-process.jpeg
-date: 06/07/2024
+date: 2024-07-06
 showdate: true
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: "The Simple Guide to WBS: Work Breakdown Structures Made Easy"
 slug: simple-work-breakdown-structure
-tags: ["insights"]
+category: "Best Practices"
 description: Simplify project management with a Work Breakdown Structure (WBS). Discover key steps, common mistakes, and practical examples for better clarity and efficiency.
 image: /resources/pm-background.png
-date: 10/08/2024
+date: 2024-08-10
 showdate: true
 ---
 

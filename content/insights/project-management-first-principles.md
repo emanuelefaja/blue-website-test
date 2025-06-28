@@ -1,10 +1,10 @@
 ---
 title: Project Management First Principles.
 slug: project-management-first-principles
-tags: ["insights", "project-management"]
+category: "Best Practices"
 description: Starting with first principles, we provide a comprehensive understanding of what is a project, and how to effectively manage projects. 
 image: /resources/project-management-first-principles.jpeg
-date: 07/07/2024
+date: 2024-07-07
 showdate: true
 ---
 

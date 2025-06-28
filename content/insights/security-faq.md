@@ -1,10 +1,10 @@
 ---
 title: FAQ on Blue Security
 slug: faq-security
-tags: ["frequently-asked-questions"]
+category: "FAQ"
 description: This is a list of the most frequently asked questions on the security protocols and practices at Blue. 
 image: /resources/security-background.png
-date: 19/07/2024
+date: 2024-07-19
 showdate: false
 ---
 

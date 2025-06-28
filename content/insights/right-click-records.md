@@ -1,10 +1,10 @@
 ---
 title: Right Click on Records
 slug: right-click-records
-tags: ["product-updates"]
+category: "Product Updates"
 description: Now you can right click on records to easily edit them at the speed of thought.
 image: /resources/square-stack-background.png
-date: 15/04/2022
+date: 2022-04-15
 showdate: true
 ---
 

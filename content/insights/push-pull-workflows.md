@@ -1,10 +1,10 @@
 ---
 title: Push vs Pull Workflows in Kanban
 slug: push-vs-pull-kanban
-tags: ["insights"]
+category: "Best Practices"
 description: Learn the difference between push workflows and pull workflows.
 image: /resources/custom-permissons-background.png
-date: 05/08/2024
+date: 2024-08-05
 showdate: true
 ---
 

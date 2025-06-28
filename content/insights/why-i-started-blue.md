@@ -1,10 +1,10 @@
 ---
 title: Why I started Blue
 slug: why-i-started-blue
-tags: ["news", "insights"]
+category: "CEO Blog"
 description: The CEO of Blue provides an in-depth first-hand account of why he started the company, the core principles of simplicity, affordability and flexibility, and his vision for the future of Blue
 image: /patterns/bluewhitecircle.png
-date: 1/04/2018
+date: 2018-04-01
 showdate: false
 ---
 

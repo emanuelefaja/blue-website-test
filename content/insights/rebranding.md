@@ -1,10 +1,10 @@
 ---
 title: Bloo rebrands to Blue
 slug: rebranding
-tags: ["news"]
+category: "News"
 description: Learn about the rebranding of Bloo to Blue and discover how the values and mission that we strive to uphold hasn't changed since the day we started.
 image: /patterns/blue.png
-date: 01/12/2023
+date: 2023-12-01
 showdate: true
 ---
 
