@@ -1,5 +1,118 @@
-<div class="company-about-section">
-    <h1>Company About</h1>
-    <p>This is the company about page content area</p>
-    <p>Deep dive into our company story and mission</p>
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "About Blue" 
+            "Subtitle" "We're an independent company with a passion for helping teams work better, together." 
+            "MarginBottom" "mb-16"
+    }}
+
+<div class="w-full mb-32">
+    <img src="/public/pictures/blueteam.jpeg" alt="Blue Team" class="w-full h-auto rounded-3xl">
+</div>
+
+<div id="mission" class="w-full mb-32 text-center">
+    <p class="text-gray-900 text-3xl">Our mission is to organize the world's work by building <br>the best process management platform on the planet.</p>
+</div>
+
+<section id="values" class="mb-32">
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Our Values</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Simplicity -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Simplicity</h3>
+            <p class="text-gray-600">Anyone can make things complex. We strive to make things as simple as they should be, but no simpler.</p>
+        </div>
+        
+        <!-- Long Term Thinking -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Long Term Thinking</h3>
+            <p class="text-gray-600">We make decisions based on the long term — even if that means hard work or difficult choices.</p>
+        </div>
+        
+        <!-- Clarity -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Clarity</h3>
+            <p class="text-gray-600">We prioritize ideas that are easy to understand and convey to anyone.</p>
+        </div>
+        
+        <!-- Attention to Detail -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Attention to Detail</h3>
+            <p class="text-gray-600">The small things are the big things. We take pride in our attention to detail.</p>
+        </div>
+        
+        <!-- Customer Obsession -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Customer Obsession</h3>
+            <p class="text-gray-600">We don't have investors, so we must have an incredible focus on our customers.</p>
+        </div>
+        
+        <!-- Deep Work -->
+        <div class="space-y-3">
+            <h3 class="text-xl font-medium text-gray-900">Deep Work</h3>
+            <p class="text-gray-600">We value collaboration, but we know that quality requires time working alone, deeply.</p>
+        </div>
+    </div>
+</section>
+
+<section id="CEO-message" class="mb-16">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm relative">
+            <!-- CEO Profile Photo -->
+            <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                <img src="/public/pictures/manny.jpeg" alt="Emanuele Faja" class="w-24 h-24 rounded-full border-4 border-white shadow-lg">
+            </div>
+            
+            <!-- Message Content -->
+            <div class="pt-16 text-center mb-8">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-2">Message from the CEO</h2>
+                <h3 class="text-xl font-medium text-brand-blue mb-6">We built this for you.</h3>
+            </div>
+            
+            <div class="prose prose-gray prose-lg max-w-none">
+                <p class="text-lg mb-6">
+                    Hey there,
+                </p>
+                
+                <p class="mb-6">
+                    I'm Manny, the founder and CEO of Blue. I created Blue to address the challenges I faced while scaling my consultancy. Turns out — many people struggle to stay organized and streamline their business processes.
+                </p>
+                
+                <p class="mb-6">
+                    The central idea is that Blue is easy to use, so your team actually use it. We have all wasted money on software platforms that promised much but failed to deliver: they are rigid, awkward, and take forever to understand.
+                </p>
+                
+                <p class="mb-6">
+                    Blue is different — It's super easy to use, incredibly flexible, and yet powerful enough for serious work. And the great thing is that you don't have to change your processes! Blue adapts to your existing processes — giving you visibility, automations, and peace of mind. You'll sleep well at night knowing that nothing slips through the cracks.
+                </p>
+                
+                <p class="mb-6">
+                    So that's why I built Blue — because there is no company with a simple solution for scaling operations, without all the fluff.
+                </p>
+                
+                <p class="mb-6">
+                    Thanks for reading, and I hope you enjoy using Blue!
+                </p>
+                
+                <p class="mb-8">
+                    I know that we enjoy building it!
+                </p>
+                
+                <p class="mb-6">
+                    Stay productive,
+                </p>
+                
+                <div class="border-t border-gray-200 pt-6">
+                    <p class="font-semibold text-gray-900 mb-1">Emanuele Faja</p>
+                    <p class="text-gray-600">Founder & CEO of Blue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="our-story" class="mb-16">
+</section>
+
 </div>
