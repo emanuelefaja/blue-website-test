@@ -1,10 +1,10 @@
 ---
 title: Group @mentions
 slug: group-mentions
-tags: ["product-updates"]
+category: "Product Updates"
 description: The @mention features get a significant upgrade — now you can @mention user groups for bulk notifications, not only individual users.
 image: /resources/mentionsbackground.png
-date: 1/04/2024
+date: 2024-04-01
 showdate: true
 ---
 

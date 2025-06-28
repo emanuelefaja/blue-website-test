@@ -4,7 +4,7 @@ slug: unlimited-file-storage-faq
 category: "FAQ"
 description: How does Blue offer unlimited file storage for project management? 
 image: /patterns/letter.png
-date: 01/08/2024
+date: 2024-08-01
 showdate: false
 ---
 

@@ -1,7 +1,7 @@
 --- 
 title: What is Great Teamwork?
 slug: great-teamwork
-tags: ["insights", "modern-work-practices"]
+category: "Modern Work Practices"
 description: 'Great teamwork is the foundation of any organization. In this comprehensive writeup, we dive into the key elements and principles that define exceptional teamwork.' 
 image: /patterns/diamonds1.png
 ---
