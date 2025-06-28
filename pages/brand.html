@@ -14,7 +14,8 @@
         <div class="space-y-12">
             <!-- Logo Variants -->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-6">Logo Variants</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-6">Logo Variants</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Blue Logo (Default) -->
@@ -57,7 +58,8 @@
             
             <!-- App Icons -->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-6">App Icons</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-6">App Icons</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- App Icon 1 PNG -->
@@ -114,6 +116,7 @@
     <!-- Typography Section -->
     <section id="typography" class="mb-16">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Typography</h2>
+        <hr class="border-gray-200 mb-8">
         
         <div class="space-y-8">
             <!-- H1 -->
@@ -169,6 +172,7 @@
     <!-- Color Palette Section -->
     <section id="color-palette" class="mb-16">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Color Palette</h2>
+        <hr class="border-gray-200 mb-8">
         
         <div class="space-y-8">
             <!-- Brand Colors -->
@@ -215,7 +219,8 @@
         <div class="space-y-12">
             <!-- Standard Card Style -->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Standard Card</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Standard Card</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 px-2 py-1 rounded text-xs">bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow</code>
                 </div>
@@ -248,7 +253,8 @@
 
             <!-- Insights Card Style -->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Insights Card</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Insights Card</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 px-2 py-1 rounded text-xs">cursor-pointer group with h-64 image, title, category and date</code>
                 </div>
@@ -301,7 +307,8 @@
 
             <!-- Large Cards Style ---->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Large Cards</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Large Cards</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 px-2 py-1 rounded text-xs">cursor-pointer group with h-80 image, larger text, 2-column grid</code>
                 </div>
@@ -346,7 +353,8 @@
         
         <!-- 2x2 Grid with Dividers -->
         <div>
-            <h3 class="text-xl font-medium text-gray-900 mb-4">2x2 Grid with Dividers</h3>
+            <hr class="border-gray-200 mb-8">
+            <h3 class="text-2xl font-medium text-gray-900 mb-4">2x2 Grid with Dividers</h3>
             <div class="mt-2 text-sm text-gray-500 mb-6">
                 <code class="bg-gray-100 px-2 py-1 rounded text-xs">grid grid-cols-1 md:grid-cols-2 gap-0 with border-b border-gray-200 md:border-r</code>
             </div>
@@ -404,6 +412,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- Client Logo Grid -->
+        <div>
+            <hr class="border-gray-200 mb-8">
+            <h3 class="text-2xl font-medium text-gray-900 mb-4">Client Logo Grid</h3>
+            <div class="mt-2 text-sm text-gray-500 mb-6">
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs">logo-grid template with JSON data for customer logos</code>
+            </div>
+            <div class="p-8">
+                {{$logoData := parseJSON `{
+                    "title": "Trusted by more than 17,000 teams",
+                    "logos": [
+                        { "name": "CBRE", "src": "/public/customers/cbre.svg" },
+                        { "name": "Cisco", "src": "/public/customers/cisco.svg" },
+                        { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
+                        { "name": "FedEx", "src": "/public/customers/fedex.svg" },
+                        { "name": "Manulife", "src": "/public/customers/manulife.svg" },
+                        { "name": "Red Hat", "src": "/public/customers/redhat.svg" },
+                        { "name": "Heineken", "src": "/public/customers/heineken.svg" },
+                        { "name": "Marriott", "src": "/public/customers/marriot.svg" },
+                        { "name": "Decathlon", "src": "/public/customers/decathlon.svg" },
+                        { "name": "TotalEnergies", "src": "/public/customers/totalenergies.svg" },
+                        { "name": "Sheraton", "src": "/public/customers/sheraton.svg" },
+                        { "name": "VMware", "src": "/public/customers/wmware.svg" },
+                        { "name": "Columbia University", "src": "/public/customers/columbia-university.png" },
+                        { "name": "Save the Children", "src": "/public/customers/savethechildren.svg" },
+                        { "name": "World Food Programme", "src": "/public/customers/wfp.svg" },
+                        { "name": "UNDP", "src": "/public/customers/undp.svg" },
+                        { "name": "ILO", "src": "/public/customers/ilo.png" },
+                        { "name": "ADB", "src": "/public/customers/adb.svg" }
+                    ]
+                }`}}
+                
+                {{template "logo-grid" $logoData}}
+            </div>
+        </div>
     </section>
 
 
@@ -412,9 +456,10 @@
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Image Styles</h2>
         
         <div class="space-y-12">
-            <!-- Depth Style 2px -->
+            <!-- Product Screenshots -->
             <div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">Product Screenshots</h3>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Screenshots</h3>
                 <div class="mt-2 text-sm text-gray-500">
                     <code class="bg-gray-100 px-2 py-1 rounded text-xs">border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]</code>
                 </div>
@@ -425,10 +470,118 @@
                         class="w-full max-w-4xl mx-auto border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
                     />
                 </div>
+            </div>
 
+            <!-- Team Photos -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Team Photos</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">rounded-3xl for warm, friendly team imagery</code>
+                </div>
+                <div class="p-8">
+                    <img 
+                        src="/public/pictures/blueteam.jpeg" 
+                        alt="Blue Team Photo"
+                        class="w-full h-auto rounded-3xl"
+                    />
+                </div>
             </div>
 
            
+        </div>
+    </section>
+
+    <!-- Video Styles Section -->
+    <section id="video-styles" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Video Styles</h2>
+        
+        <div class="space-y-12">
+            <!-- Hero Videos -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Hero Videos</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">w-screen h-auto object-cover rounded-2xl with autoplay muted loop playsinline controls</code>
+                </div>
+                <div class="p-8">
+                    <video 
+                        class="w-screen h-auto object-cover rounded-2xl" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        controls
+                    >
+                        <source src="/public/testvideo2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Product Feature Videos -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Feature Video (Right)</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Two-column grid with text left, video right. Video: autoplay muted loop playsinline (no controls)</code>
+                </div>
+                <div class="p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <!-- Text Content -->
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-medium text-gray-900">Enhanced team collaboration</h4>
+                            <p class="text-gray-600">See your work your way with multiple views, real-time updates, and seamless collaboration tools. Switch between Kanban boards, calendars, timelines, and more to match your team's workflow.</p>
+                        </div>
+                        
+                        <!-- Video -->
+                        <div>
+                            <video 
+                                class="w-full h-auto rounded-2xl" 
+                                autoplay 
+                                muted 
+                                loop 
+                                playsinline
+                            >
+                                <source src="/public/testvideo2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Feature Video (Left) -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Feature Video (Left)</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Two-column grid with video left, text right. Video: autoplay muted loop playsinline (no controls)</code>
+                </div>
+                <div class="p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <!-- Video -->
+                        <div>
+                            <video 
+                                class="w-full h-auto rounded-2xl" 
+                                autoplay 
+                                muted 
+                                loop 
+                                playsinline
+                            >
+                                <source src="/public/testvideo2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Text Content -->
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-medium text-gray-900">Powerful automation workflows</h4>
+                            <p class="text-gray-600">Create sophisticated automations without code using our visual workflow builder. Connect tools, trigger actions based on custom conditions, and save hours of manual work every week.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
