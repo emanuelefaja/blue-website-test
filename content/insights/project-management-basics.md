@@ -1,10 +1,10 @@
 --- 
 title: The Non-Project Manager's Guide to Project Management
 slug: project-management-basics-guide
-tags: ["insights", "project-management"]
+category: "Best Practices"
 description: This guide offers practical and straightforward rules to help non-project managers effectively plan, execute, and complete projects successfully.
 image: /resources/project-management-guide-background.png
-date: 27/05/2024
+date: 2024-05-27
 showdate: false
 ---
 

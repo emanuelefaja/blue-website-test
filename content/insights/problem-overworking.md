@@ -1,9 +1,10 @@
 --- 
 title: The Problem With Overworking
 slug: problem-overworking
-tags: ["insights", "modern-work-practices"]
+category: "Modern Work Practices"
 description: There is a disturbing trend lately that is fetishizing long hours to reach success. This is an issue because hard, long hours and results are not correlated.
 image: /patterns/chevron3.png
+date: 2024-01-01
 ---
 
 

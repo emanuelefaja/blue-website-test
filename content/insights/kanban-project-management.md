@@ -1,10 +1,10 @@
 ---
 title: How to use Kanban boards for project management
 slug: kanban-boards-project-management
-tags: ["insights"]
+category: "Best Practices"
 description: 
 image: /resources/kanban-background.png
-date: 10/08/2024
+date: 2024-08-10
 showdate: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title:  Scaling CSV Imports & Export to 250,000+ Records
 slug: scaling-csv-import-export
-tags: ["engineering-blog"]
+category: "Engineering"
 description: Discover how Blue scaled CSV imports and exports 10x using Rust and scalable architecture and strategic tech choices in B2B SaaS.
 image: /resources/import-export-background.png
 date: 2024-07-18

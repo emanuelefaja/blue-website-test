@@ -1,10 +1,10 @@
 ---
 title: Prioritization for Leaders
 slug: prioritization-for-leaders
-tags: ["insights", "project-management"]
+category: "Best Practices"
 description: Explore essential prioritization strategies for leaders. There's always too much to do — so having a framework to decide what to priotitize is crucial for success.
 image: /resources/prioritization-for-leaders.jpeg
-date: 07/07/2024
+date: 2024-07-07
 showdate: true
 ---
 

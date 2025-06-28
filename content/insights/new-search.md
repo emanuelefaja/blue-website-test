@@ -1,10 +1,10 @@
 ---
 title: Real-time search
 slug: new-search
-tags: ["product-updates"]
+category: "Product Updates"
 description: Blue unveils a new blazing-fast search engine that returns results across all your projects in milliseconds, empowering you to switch context in a blink of an eye. 
 image: /resources/search-background.png
-date: 1/03/2024
+date: 2024-03-01
 showdate: true
 ---
 

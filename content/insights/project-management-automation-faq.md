@@ -1,10 +1,10 @@
 ---
 title: FAQ on Project Management Automation
 slug: project-management-automation-faq
-tags: ["insights", "frequently-asked-questions"]
+category: "FAQ"
 description: This is a list of the most frequently asked questions on project management automation.
 image: /resources/real-estate-software-background.png
-date: 31/06/2024
+date: 2024-06-30
 showdate: false
 ---
 
