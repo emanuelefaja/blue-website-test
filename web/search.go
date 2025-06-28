@@ -76,6 +76,30 @@ func GenerateSearchIndexWithCache(markdownService *MarkdownService) error {
 	return writeSearchIndex(searchItems)
 }
 
+// GenerateSearchIndexWithCaches creates a JSON search index using both HTML and markdown caches
+func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService *HTMLService) error {
+	var searchItems []SearchItem
+
+	// Load metadata.json for title lookup
+	metadata, err := loadMetadata()
+	if err != nil {
+		fmt.Printf("Warning: Could not load metadata.json: %v\n", err)
+	}
+
+	// Index cached HTML pages
+	if err := indexCachedHTMLPages(&searchItems, htmlService, metadata); err != nil {
+		return fmt.Errorf("failed to index cached HTML pages: %w", err)
+	}
+
+	// Index cached markdown content
+	if err := indexCachedMarkdownContent(&searchItems, markdownService); err != nil {
+		return fmt.Errorf("failed to index cached markdown content: %w", err)
+	}
+
+	// Write search index to public directory
+	return writeSearchIndex(searchItems)
+}
+
 // loadMetadata loads the metadata.json file
 func loadMetadata() (*Metadata, error) {
 	data, err := os.ReadFile("data/metadata.json")
@@ -425,37 +449,109 @@ func generateTitleFromURL(urlPath string) string {
 	return strings.Join(words, " ")
 }
 
-// extractTextFromHTML removes HTML tags to get plain text (basic implementation)
+// indexCachedHTMLPages indexes pre-rendered HTML pages from cache
+func indexCachedHTMLPages(items *[]SearchItem, htmlService *HTMLService, metadata *Metadata) error {
+	cachedContent := htmlService.GetAllCachedContent()
+
+	for urlPath, content := range cachedContent {
+		// Extract title from rendered HTML
+		title := extractPageTitle(content.HTML, urlPath, content.FilePath, metadata)
+
+		// Extract clean text from pre-rendered HTML
+		textContent := extractTextFromHTML(content.HTML)
+
+		// Determine section/type
+		pageType := "page"
+		section := ""
+		if strings.HasPrefix(urlPath, "/platform") {
+			section = "platform"
+		} else if strings.HasPrefix(urlPath, "/company") {
+			section = "company"
+		}
+
+		*items = append(*items, SearchItem{
+			Title:   title,
+			Content: textContent,
+			URL:     urlPath,
+			Type:    pageType,
+			Section: section,
+		})
+	}
+
+	return nil
+}
+
+// extractTextFromHTML extracts clean text starting from the first H1 tag and excludes script content
 func extractTextFromHTML(html string) string {
-	// Simple tag removal - for production you might want a proper HTML parser
+	// First, completely remove all script content (including everything between <script> and </script>)
 	text := html
-
-	// Remove script and style content
 	for {
-		start := strings.Index(text, "<script")
+		start := strings.Index(strings.ToLower(text), "<script")
 		if start == -1 {
 			break
 		}
-		end := strings.Index(text[start:], "</script>")
+		end := strings.Index(strings.ToLower(text[start:]), "</script>")
 		if end == -1 {
+			// Handle unclosed script tags by removing everything after <script
+			text = text[:start]
 			break
 		}
-		text = text[:start] + text[start+end+9:]
+		text = text[:start] + " " + text[start+end+9:]
 	}
 
+	// Remove style content completely
 	for {
-		start := strings.Index(text, "<style")
+		start := strings.Index(strings.ToLower(text), "<style")
 		if start == -1 {
 			break
 		}
-		end := strings.Index(text[start:], "</style>")
+		end := strings.Index(strings.ToLower(text[start:]), "</style>")
 		if end == -1 {
+			text = text[:start]
 			break
 		}
-		text = text[:start] + text[start+end+8:]
+		text = text[:start] + " " + text[start+end+8:]
 	}
 
-	// Remove all HTML tags
+	// Find the first H1 tag and start content extraction from there
+	h1Start := strings.Index(strings.ToLower(text), "<h1")
+	if h1Start == -1 {
+		// No H1 found, return empty string as per requirement
+		return ""
+	}
+
+	// Start text extraction from the H1 tag onwards
+	text = text[h1Start:]
+
+	// Remove common problematic elements
+	problematicTags := []string{
+		"<noscript", "</noscript>",
+		"<svg", "</svg>",
+		"<path", "</path>",
+		"<head", "</head>",
+		"<meta", "</meta>",
+		"<link", "</link>",
+	}
+	
+	for i := 0; i < len(problematicTags); i += 2 {
+		openTag := problematicTags[i]
+		closeTag := problematicTags[i+1]
+		
+		for {
+			start := strings.Index(strings.ToLower(text), openTag)
+			if start == -1 {
+				break
+			}
+			end := strings.Index(strings.ToLower(text[start:]), closeTag)
+			if end == -1 {
+				text = text[:start]
+				break
+			}
+			text = text[:start] + " " + text[start+end+len(closeTag):]
+		}
+	}
+
+	// Remove all remaining HTML tags
 	for {
 		start := strings.Index(text, "<")
 		if start == -1 {
@@ -463,13 +559,63 @@ func extractTextFromHTML(html string) string {
 		}
 		end := strings.Index(text[start:], ">")
 		if end == -1 {
+			// Handle unclosed tags
+			text = text[:start]
 			break
 		}
 		text = text[:start] + " " + text[start+end+1:]
 	}
 
-	// Clean up whitespace
-	text = strings.Join(strings.Fields(text), " ")
+	// Remove AlpineJS directives and JavaScript patterns
+	jsPatterns := []string{
+		"x-data=",
+		"x-show=",
+		"x-if=",
+		"x-for=",
+		"x-on:",
+		"@click",
+		"@keydown",
+		"handleKeydown",
+		"showResults",
+		"hideResults",
+		"function(",
+		"if (",
+		"for (",
+		"while (",
+		"return ",
+		"const ",
+		"let ",
+		"var ",
+		"===",
+		"!==",
+		"&&",
+		"||",
+		"addEventListener",
+		"querySelector",
+		"getElementById",
+		"console.log",
+		"window.",
+		"document.",
+	}
 
+	for _, pattern := range jsPatterns {
+		text = strings.ReplaceAll(text, pattern, " ")
+	}
+
+	// Clean up multiple spaces and special characters
+	text = strings.ReplaceAll(text, "{", " ")
+	text = strings.ReplaceAll(text, "}", " ")
+	text = strings.ReplaceAll(text, "(", " ")
+	text = strings.ReplaceAll(text, ")", " ")
+	text = strings.ReplaceAll(text, "[", " ")
+	text = strings.ReplaceAll(text, "]", " ")
+	text = strings.ReplaceAll(text, ";", " ")
+	text = strings.ReplaceAll(text, ":", " ")
+	text = strings.ReplaceAll(text, "...", " ")
+	text = strings.ReplaceAll(text, "=>", " ")
+	text = strings.ReplaceAll(text, "=", " ")
+
+	// Clean up whitespace and return
+	text = strings.Join(strings.Fields(text), " ")
 	return strings.TrimSpace(text)
 }
