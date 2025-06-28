@@ -126,6 +126,8 @@
       "expanded": false,
       "children": [
         {"id": "about", "name": "About", "href": "/company/about"},
+        {"id": "charter", "name": "Charter", "href": "/company/charter"},
+        {"id": "mission", "name": "Mission", "href": "/company/mission"},
         {"id": "partner-program", "name": "Partner Program", "href": "/company/partners"},
         {"id": "brand", "name": "Brand", "href": "/brand"},
         {
