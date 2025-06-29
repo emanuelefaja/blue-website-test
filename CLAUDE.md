@@ -57,6 +57,7 @@
 - Consider full width blue section that break out of the main content area, but when the sidebar goes over it, it turns white text instead of dark grey. Meh?
 - Make the video in markdown pages also have the same curved corners.
 - Make testimonial components from the testimonials parts in the brand page.
+- Reconsider the /platform dropdown and what to put on there, perhaps "how it works" and key features, not all features
 
 
 
