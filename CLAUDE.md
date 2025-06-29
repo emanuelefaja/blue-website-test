@@ -1,5 +1,5 @@
 - This is a new website for Blue, a b2b saas process management system 
-- The idea is to make a site with a high degree of polish to be on a world class level like Stripe, OpenAI, and Linear. 
+- The idea is to make a site with a high degree of polish to be on a world class level like Stripe, OpenAI, and Linear. People should really be amazed by the website.
 - I am a single developer, so this has to be simple and easy maintanble. 
 
 ## Rules
@@ -10,54 +10,54 @@
 
 ## Plan
 
-1. Setup initial folder structure ✅
-2. Setup Golang ✅
-3. Install Goldmark, Air, godotev, https://github.com/go-yaml/yaml ✅
-4. Setup file based route navigation for /pages with a dedicated router inside a web package ✅
-5. Setup main.html with left/right sidebar and navbar components ✅
-6. Add favicon.ico and logo.svg ✅
-7. Added data/nav.json for dynamic rendering of navigation acros components. ✅
-8. Made topbar buttons hotkeys work ✅
-9. Make left/right sidebar toggle open/close ✅
-10. Setup TailwindCSS Properly with CLI and Watcher ✅
-11. Dynamic left sidebar ✅
-12. Metadata.json for dynmaic titles and so on ✅
-13. Markdown generation ✅
-14. Dynamic sidebar for docs and api docs ✅
-15. Centralized redirets in redirects.json ✅
-16. Prose styling
-17. Right sidebar dynamic both for html pages and markdown files with up and down arrows ✅
-18. Replace font-awesome with svgs for arrows and light/dark mode?
-19. dark mode implementation
-20. Make legal navigation dynamic and page rendering working ✅
-21. Sales modal?
-22. Changelog Implementation ✅
-23. Pricing Page
-24. Roadmap   ✅
-25. Review what components to "borrow" from other sites.
-26. Realtime search ✅
-27. YouTube widget for markdown ✅
-28. Improve search
-29. Take all old redirects from previous website ✅
-30. Align all elements in respective footers perfectly. 
-31. Customers page (testimonial videos essentially) ✅
-32. Individual insight 
-33. Brand page
-34. AlpineJS components setup ✅
-35. Home page structure / Messaging
-36. Add a global scope for customer numbers, just need to update in one place and updates everywhere. ✅ 
-37. Make the website multi linguagal?  Really like that to be honest.
-38. For api docs, put company or project id and all the mutations update in the examples. Like Stripe.
-39. Make my own status page (frontend) ✅
-40. Find all "big" brand customers via AI and add them to logos on customers page.
-41. Add SOP to website?
-42. Add Git commit history to website?
-43. Fix ana upside down video lol
-44. Fix white label add on button
-45. Status page with backend
-46. Make page titles a component ✅
-47. Customer stories (eventually)
-48. Create a api endpoint on blue to count companies, and then use that to power website customer count.
+
+- Prose styling
+- Replace font-awesome with svgs for arrows and light/dark mode?
+- dark mode implementation
+- Sales modal? ❌ (decided not to do it for now)
+- Pricing Page
+- Review what components to "borrow" from other sites.
+- Align all elements in respective footers perfectly. 
+- Individual insight 
+- Brand page
+- Home page structure / Messaging
+- Make the website multi linguagal?  Really like that to be honest.
+- For api docs, put company or project id and all the mutations update in the examples. Like Stripe.
+- Find all "big" brand customers via AI and add them to logos on customers page.
+- Add SOP to website?
+- Add Git commit history to website?
+- Fix white label add on button
+- Status page with backend
+- Customer stories (eventually)
+- Create a api endpoint on blue to count companies, and then use that to power website customer count.
+- Status page improvement, show live operational status of services with last checked time.
+- handle /docs/automations/actions/send-email in left sidebr etc
+- handle case where users go direct to docs/automations for instance
+- Improve insight SVG pattern generation (similar to openai patterns) or consider PNG generation instead because of guassian blur support?
+- Figure out insights ordering (latest first)
+- Consider centralizing markdown content like the about page.
+- Sort out card inconsistencies in brand page
+- Review buffer about page for inspiration
+- Highlighting text should be brand-blue 
+- system status does not show on search
+- insights on search I see code.
+- Confirm the paragraph text styles in the brand page.
+- cmd+C goes to contact page instead of copying.
+- Consider back to top button like old site, but may get too busy?
+- Align CTA in brand guidelines to backgroud color of FAQ backgrounds
+- Add FAQ dropdowns to Brand Guidelines
+- Figure out what I am doing with changelog router and if there is an easier way
+- Add videos to FAQ possibily? 
+- Mouse pointer when on FAQ question should be hand
+- animation for heading title
+- subtle animation for right sidebar?
+- image zoom effect found on https://linear.app/changelog
+- switch page: https://linear.app/switch
+- Blue University? Could be quite good huh? 
+- Start/Setup guide: https://ghost.org/resources/
+- Consider full width blue section that break out of the main content area, but when the sidebar goes over it, it turns white text instead of dark grey. Meh?
+- Make the video in markdown pages also have the same curved corners.
+- Make testimonial components from the testimonials parts in the brand page.
 
 
 
