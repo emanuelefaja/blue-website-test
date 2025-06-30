@@ -11,7 +11,7 @@
         {"id": "api", "name": "API", "href": "/platform/api"},
         {"id": "integrations", "name": "Integrations", "href": "/platform/integrations"},
         {"id": "roadmap", "name": "Roadmap", "href": "/platform/roadmap"},
-        {"id": "changelog", "name": "Changelog", "href": "/changelog"},
+        {"id": "changelog", "name": "Changelog", "href": "/platform/changelog"},
         {"id": "security", "name": "Security", "href": "/platform/security"}
 
       ]
