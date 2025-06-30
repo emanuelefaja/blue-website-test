@@ -6,7 +6,7 @@
             "Subtitle" "Try the entire platform free for 7 days, without a credit card." 
             "MarginBottom" "mb-16"
     }}
-    <div class="bg-white">
+    <section id="pricing" class="bg-white">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div class="p-8 sm:p-10 lg:flex-auto">
@@ -106,7 +106,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
       
       <!-- White Label Pricing Section -->
       <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
@@ -228,7 +228,7 @@
       </div>
 
       <!-- Customer Logos Section -->
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+      <section id="testimonials" class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
         {{$logoData := parseJSON `{
           "title": "Trusted by more than 17,000 teams",
           "logos": [
@@ -242,7 +242,7 @@
         }`}}
         
         {{template "logo-grid" $logoData}}
-      </div>
+      </section>
 
       <!-- Customer Testimonials Section -->
       <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
