@@ -97,7 +97,7 @@
                     </span>
                   </div> -->
                   
-                  <a href="#" class="mt-10 block w-full rounded-md bg-brand-blue px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors">
+                  <a href="https://app.blue.cc" class="mt-10 block w-full rounded-md bg-brand-blue px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors">
                     Get started
                   </a>
                   <p class="mt-6 text-xs/5 text-gray-400">No credit card required</p>
@@ -187,7 +187,7 @@
                   <span class="text-sm/6 font-semibold tracking-wide text-gray-600">/company</span>
                 </div>
                 
-                <a href="#" class="mt-10 block w-full rounded-md border border-brand-blue bg-white px-3 py-2 text-center text-sm font-semibold text-brand-blue hover:bg-brand-blue hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors group">
+                <a href="/platform/white-label" class="mt-10 block w-full rounded-md border border-brand-blue bg-white px-3 py-2 text-center text-sm font-semibold text-brand-blue hover:bg-brand-blue hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors group">
                   Learn More
                   <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
                 </a>
@@ -196,6 +196,129 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Enterprise and Discounted Licenses Section -->
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <!-- Enterprise Licenses -->
+          <div class="p-8 space-y-4 md:border-r border-gray-200">
+            <h3 class="text-2xl font-semibold">Enterprise Licenses</h3>
+            <p class="text-gray-600">For larger organizations needing custom solutions and dedicated support.</p>
+            <a href="/enterprise" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
+              Learn More
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Discounted Licenses -->
+          <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-semibold">Discounted Licenses</h3>
+            <p class="text-gray-600">We offer 50% off for non-profits, educational institutions, students, teachers, and open-source projects.</p>
+            <a href="mailto:help@blue.cc?subject=Application for Discounted Blue License" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
+              Apply for discount
+              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Logos Section -->
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+        {{$logoData := parseJSON `{
+          "title": "Trusted by more than 17,000 teams",
+          "logos": [
+            { "name": "CBRE", "src": "/public/customers/cbre.svg" },
+            { "name": "Cisco", "src": "/public/customers/cisco.svg" },
+            { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
+            { "name": "FedEx", "src": "/public/customers/fedex.svg" },
+            { "name": "Heineken", "src": "/public/customers/heineken.svg" },
+            { "name": "Marriott", "src": "/public/customers/marriot.svg" }
+          ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+      </div>
+
+      <!-- Customer Testimonials Section -->
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+        {{$testimonialData := parseJSON `{
+          "testimonials": [
+            {
+              "quote": "Blue just helps keep things completely organised — it's an absolutely wonderful tool.",
+              "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
+              "posterUrl": "/public/testimonials/davidsacks.jpeg"
+            },
+            {
+              "quote": "If you're wondering if you should buy Blue...the answer is YES.",
+              "videoUrl": "https://media.blue.cc/ana.mov",
+              "posterUrl": "/public/testimonials/ana-testimonial.jpg"
+            },
+            {
+              "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
+              "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
+              "posterUrl": "/public/testimonials/ricklewis.jpg"
+            },
+            {
+              "quote": "Investing in Blue was one of the best business decisions I have ever made.",
+              "videoUrl": "https://media.blue.cc/rike-whelan.mp4",
+              "posterUrl": "/public/testimonials/rike-whelan.jpg"
+            }
+          ]
+        }`}}
+        
+        {{template "testimonial-videos" $testimonialData}}
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16">
+        {{$faqData := parseJSON `{
+          "categories": [
+            {
+              "id": "FAQ",
+              "name": "Frequently Asked Questions",
+              "questions": [
+                {
+                  "question": "Why should I use Blue?",
+                  "answer": "If you're looking for a platform that's easy to use yet powerful, with a team that is hyper-focussed on customers instead of investors, you're in the right place."
+                },
+                {
+                  "question": "Does Blue have a free trial?",
+                  "answer": "Yes there is! You can use Blue free for 7 days without any limitations. After the 7 days are up, you'll need to add a valid credit/debit card and start paying to continue using Blue."
+                },
+                {
+                  "question": "Do you have monthly and yearly plans?",
+                  "answer": "Yes, you can pay yearly and you'll get two month's off."
+                },
+                {
+                  "question": "What payment methods do you support?",
+                  "answer": "We take payments exclusively via debit/credit card. All billing is handled by Stripe, our payment processing partner. We never directly handle your sensitive payment data."
+                },
+                {
+                  "question": "What is your refund policy?",
+                  "answer": "We offer a 30-day refund policy for the first payment. Simply email us at help@blue.cc and we'll issue you a refund."
+                },
+                {
+                  "question": "Who owns the data uploaded to Blue?",
+                  "answer": "The account owner retains full ownership of all data associated with their account. At Blue, we respect your privacy and do not claim any ownership over the data you add."
+                },
+                {
+                  "question": "Where is Blue based?",
+                  "answer": "We're registered in Delaware, USA as \"Bloo, Inc.\" and we have team members distributed around the world."
+                },
+                {
+                  "question": "What are you building next?",
+                  "answer": "Head over to our Roadmap page to find out what new features are coming, and feel free to join our Community Forum if you'd like to suggest new features."
+                }
+              ]
+            }
+          ]
+        }`}}
+        {{template "faq-sections" $faqData}}
       </div>
       
 </div>
