@@ -463,6 +463,53 @@
             </div>
         </div>
 
+        <!-- Product Grid ---->
+        <div>
+            <hr class="border-gray-200 mb-8">
+            <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Grid</h3>
+            <div class="mt-2 text-sm text-gray-500 mb-6">
+                <code class="bg-gray-100 px-2 py-1 rounded text-xs">Full width 2x2 grid with dividers separating product features</code>
+            </div>
+            
+            <!-- Example Product Grid ---->
+            <div>
+                {{$productGridData := parseJSON `{
+                    "Products": [
+                        {
+                            "Title": "Project Management",
+                            "Description": "Organize your team's tasks and track project progress from start to finish.",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
+                            "BorderBottom": true,
+                            "BorderRight": true
+                        },
+                        {
+                            "Title": "Team Collaboration",
+                            "Description": "Enable seamless communication and real-time collaboration across your entire team.",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
+                            "BorderBottom": true,
+                            "BorderRight": false
+                        },
+                        {
+                            "Title": "Workflow Automation",
+                            "Description": "Automate repetitive tasks and streamline your processes to save time and reduce errors.",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
+                            "BorderBottom": false,
+                            "BorderRight": true
+                        },
+                        {
+                            "Title": "Analytics & Reports",
+                            "Description": "Get detailed insights and comprehensive reports to make data-driven decisions.",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
+                            "BorderBottom": false,
+                            "BorderRight": false
+                        }
+                    ]
+                }`}}
+                
+                {{template "product-grid" $productGridData}}
+            </div>
+        </div>
+
         <!-- Client Logo Grid -->
         <div>
             <hr class="border-gray-200 mb-8">

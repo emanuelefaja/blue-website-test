@@ -177,7 +177,7 @@
 
 <!-- Features as Benefits Section -->
 <section class="max-w-7xl mx-auto py-20">
-    <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Features that deliver results</h3>
+    <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Designed to deliver results.</h3>
     
     <!-- See Everything, Miss Nothing -->
     <div class="mb-20">
@@ -228,6 +228,31 @@
             </div>
         </div>
     </div>
+
+    <section class="mb-16">
+                    
+                    {{$statsData := parseJSON `{
+                        "Title": "Crafted to operate at scale.",
+                        "Stats": [
+                            {
+                                "Number": "17K+",
+                                "Description": "teams worldwide"
+                            },
+                            {
+                                "Number": "5M+",
+                                "Description": "processes automated"
+                            },
+                            {
+                                "Number": "500M+",
+                                "Description": "records managed"
+                            }
+                        ]
+                    }`}}
+                    
+                    {{template "stats-section" $statsData}}
+    </section>
+       
+
 
     <!-- Your Data, Your Way -->
     <div class="mb-20">
