@@ -65,237 +65,232 @@
     
     {{template "logo-grid" $logoData}}
 
-    <!-- Key Features Section -->
-    <section id="key-features" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Key Features</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Custom Fields</h3>
-                <p class="text-gray-600">Create any field type you need - from simple text to complex formulas. Build the exact system your team requires.</p>
+<!-- Value Propositions Section -->
+<section class="max-w-7xl mx-auto py-20">
+    <!-- Title and Description Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div>
+            <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900">Explicitly designed for <br>forward-thinking organizations</h3>
+        </div>
+        <div>
+            <p class="text-gray-600">Progressive companies choose Blue because we've reimagined how business process management should work. Built without the constraints of legacy thinking, Blue empowers teams to move faster, think bigger, and achieve more than they thought possible.</p>
+        </div>
+    </div>
+
+    <!-- Value Props Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Purpose-built for real work -->
+        <div class="space-y-3">
+            <h4 class="text-xl font-medium text-gray-900">Purpose-built for real work</h4>
+            <p class="text-gray-600">Blue adapts to your processes, not the other way around</p>
+        </div>
+
+        <!-- Built for customers, not investors -->
+        <div class="space-y-3">
+            <h4 class="text-xl font-medium text-gray-900">Built for customers, not investors</h4>
+            <p class="text-gray-600">Bootstrapped company with your success as our only metric</p>
+        </div>
+
+        <!-- Enterprise power, startup price -->
+        <div class="space-y-3">
+            <h4 class="text-xl font-medium text-gray-900">Enterprise power, startup price</h4>
+            <p class="text-gray-600">$7/user/month with everything included saves tens of thousands annually</p>
+        </div>
+    </div>
+</section>
+
+    <div 
+    x-data="{
+        text: '',
+        textArray : ['process', 'projects', 'customers', 'leads', 'records', 'purchase orders', 'tasks', 'teams', 'workflows', 'operations', 'logistics', 'marketing', 'milestones', 'deliverables', 'expectations', 'deadlines', 'work'],
+        textIndex: 0,
+        charIndex: 0,
+        typeSpeed: 110,
+        cursorSpeed: 550,
+        pauseEnd: 1500,
+        pauseStart: 20,
+        direction: 'forward',
+    }" 
+    x-init="$nextTick(() => {
+        let typingInterval = setInterval(startTyping, $data.typeSpeed);
+    
+        function startTyping(){
+            let current = $data.textArray[ $data.textIndex ];
+            
+            // check to see if we hit the end of the string
+            if($data.charIndex > current.length){
+                    $data.direction = 'backward';
+                    clearInterval(typingInterval);
+                    
+                    setTimeout(function(){
+                        typingInterval = setInterval(startTyping, $data.typeSpeed);
+                    }, $data.pauseEnd);
+            }   
+                
+            $data.text = current.substring(0, $data.charIndex);
+            
+            if($data.direction == 'forward')
+            {
+                $data.charIndex += 1;
+            } 
+            else 
+            {
+                if($data.charIndex == 0)
+                {
+                    $data.direction = 'forward';
+                    clearInterval(typingInterval);
+                    setTimeout(function(){
+                        $data.textIndex += 1;
+                        if($data.textIndex >= $data.textArray.length)
+                        {
+                            $data.textIndex = 0;
+                        }
+                        typingInterval = setInterval(startTyping, $data.typeSpeed);
+                    }, $data.pauseStart);
+                }
+                $data.charIndex -= 1;
+            }
+        }
+                    
+        setInterval(function(){
+            if($refs.cursor.classList.contains('hidden'))
+            {
+                $refs.cursor.classList.remove('hidden');
+            } 
+            else 
+            {
+                $refs.cursor.classList.add('hidden');
+            }
+        }, $data.cursorSpeed);
+
+    })"
+    class="max-w-7xl mx-auto py-20">
+    <div class="text-left">
+        <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900">The modern way<br>to manage
+            <span class="relative inline-block">
+                <span class="text-blue-600" x-text="text"></span>
+                <span class="absolute right-1 top-0 h-full w-2 -mr-3 bg-brand-blue" x-ref="cursor"></span>
+            </span>
+        </h3>
+    </div>
+</div>
+
+<!-- Features as Benefits Section -->
+<section class="max-w-7xl mx-auto py-20">
+    <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Features that deliver results</h3>
+    
+    <!-- See Everything, Miss Nothing -->
+    <div class="mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Text Content -->
+            <div class="space-y-4">
+                <h4 class="text-xl font-medium text-gray-900">See Everything, Miss Nothing</h4>
+                <p class="text-gray-600">Get a complete view of your entire operation from a single dashboard. No more switching between multiple tools or losing track of important tasks. Blue brings all your processes, projects, and team activities into one unified view so you can spot bottlenecks, track progress, and make informed decisions instantly.</p>
             </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Powerful Automations</h3>
-                <p class="text-gray-600">Automate repetitive tasks with our visual workflow builder. Connect tools, trigger actions, and save hours every week.</p>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Multiple Views</h3>
-                <p class="text-gray-600">See your work your way - Kanban boards, calendars, timelines, maps, and more. Switch views instantly.</p>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Real-time Collaboration</h3>
-                <p class="text-gray-600">Work together seamlessly with live updates, commenting, and built-in chat. Stay in sync across time zones.</p>
+            
+            <!-- Video -->
+            <div>
+                <video 
+                    class="w-full h-auto rounded-2xl" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="/public/testvideo2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Getting Started Section -->
-    <section id="getting-started" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Getting Started</h2>
-        <ol class="list-decimal list-inside space-y-4 text-lg text-gray-600">
-            <li class="leading-relaxed">
-                <span class="font-semibold">Create your workspace</span> - Set up your team's digital headquarters in seconds
-            </li>
-            <li class="leading-relaxed">
-                <span class="font-semibold">Invite your team</span> - Add colleagues and set permissions with granular control
-            </li>
-            <li class="leading-relaxed">
-                <span class="font-semibold">Build your first project</span> - Use templates or start from scratch
-            </li>
-            <li class="leading-relaxed">
-                <span class="font-semibold">Customize your workflow</span> - Add custom fields, create views, and set up automations
-            </li>
-            <li class="leading-relaxed">
-                <span class="font-semibold">Connect your tools</span> - Integrate with Slack, Google Drive, GitHub, and hundreds more
-            </li>
-        </ol>
-    </section>
-
-    <!-- Examples Section -->
-    <section id="examples" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Examples</h2>
-        <div class="space-y-8">
-            <div class="border-l-4 border-blue-500 pl-6">
-                <h3 class="text-xl font-semibold mb-2">Marketing Campaign Management</h3>
-                <p class="text-gray-600 mb-4">Track campaigns from ideation to analysis. Manage content calendars, asset libraries, and performance metrics in one place.</p>
-                <code class="bg-gray-100 px-3 py-1 rounded text-sm">Template: Marketing Hub</code>
+    <!-- Automate the Repetitive -->
+    <div class="mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Video -->
+            <div>
+                <video 
+                    class="w-full h-auto rounded-2xl" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="/public/testvideo2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            <div class="border-l-4 border-green-500 pl-6">
-                <h3 class="text-xl font-semibold mb-2">Software Development Sprints</h3>
-                <p class="text-gray-600 mb-4">Plan sprints, track bugs, and manage releases. Connect with GitHub for automatic updates and deploy tracking.</p>
-                <code class="bg-gray-100 px-3 py-1 rounded text-sm">Template: Dev Team Central</code>
-            </div>
-            <div class="border-l-4 border-purple-500 pl-6">
-                <h3 class="text-xl font-semibold mb-2">Client Project Tracking</h3>
-                <p class="text-gray-600 mb-4">Manage multiple client projects with custom portals. Track time, budgets, and deliverables with automated reporting.</p>
-                <code class="bg-gray-100 px-3 py-1 rounded text-sm">Template: Agency Toolkit</code>
+            
+            <!-- Text Content -->
+            <div class="space-y-4">
+                <h4 class="text-xl font-medium text-gray-900">Automate the Repetitive</h4>
+                <p class="text-gray-600">Say goodbye to manual, repetitive tasks that drain your team's energy and time. Blue's powerful automation engine handles everything from status updates and notifications to complex multi-step workflows. Set up unlimited automations that trigger based on your custom conditions and watch your team focus on what truly matters.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Next Steps Section -->
-    <section id="next-steps" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Next Steps</h2>
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-xl">
-            <h3 class="text-2xl font-semibold mb-4">Ready to transform how your team works?</h3>
-            <p class="text-lg text-gray-700 mb-6">Join thousands of teams already using Blue to achieve more.</p>
-            <div class="flex gap-4">
-                <button class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-                    Start Free Trial
-                </button>
-                <button class="px-6 py-3 bg-white text-gray-700 rounded-lg font-semibold border border-gray-300 hover:bg-gray-50 transition">
-                    Schedule Demo
-                </button>
+    <!-- Your Data, Your Way -->
+    <div class="mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Text Content -->
+            <div class="space-y-4">
+                <h4 class="text-xl font-medium text-gray-900">Your Data, Your Way</h4>
+                <p class="text-gray-600">Every business is unique, and your data structure should reflect that. Create custom fields, design your own record types, and build the perfect database that fits your exact workflow. Whether you're tracking sales leads, managing projects, or organizing inventory, Blue adapts to your business model instead of forcing you to adapt to rigid templates.</p>
+            </div>
+            
+            <!-- Video -->
+            <div>
+                <video 
+                    class="w-full h-auto rounded-2xl" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="/public/testvideo2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Why Teams Choose Blue Section -->
-    <section id="why-teams-choose-blue" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Why Teams Choose Blue</h2>
-        <div class="prose prose-lg max-w-none text-gray-600">
-            <p class="mb-4">In today's fast-paced business environment, teams need more than just task management. They need a platform that grows with them, adapts to their unique workflows, and provides the insights necessary to make data-driven decisions.</p>
-            <p class="mb-4">Blue was built from the ground up with flexibility at its core. Unlike rigid, one-size-fits-all solutions, our platform molds to your team's specific needs. Whether you're in marketing, development, operations, or any other field, Blue provides the tools you need to succeed.</p>
-            <p class="mb-4">Our commitment to continuous improvement means you'll always have access to the latest features and integrations. With Blue, you're not just getting a tool – you're joining a community of forward-thinking teams who are redefining what's possible in collaborative work.</p>
-        </div>
-    </section>
-
-    <!-- Security & Privacy Section -->
-    <section id="security-privacy" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Security & Privacy</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Enterprise-Grade Security</h3>
-                <p class="text-gray-600">Your data is protected with bank-level security including end-to-end encryption, SOC 2 compliance, and regular security audits.</p>
+    <!-- Insights That Drive Action -->
+    <div class="mb-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Video -->
+            <div>
+                <video 
+                    class="w-full h-auto rounded-2xl" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="/public/testvideo2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            <div class="bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Privacy First</h3>
-                <p class="text-gray-600">We never sell your data. You own your information, and you control who has access to it with granular permission settings.</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">GDPR & HIPAA Compliant</h3>
-                <p class="text-gray-600">Built to meet international privacy standards and healthcare regulations, ensuring your organization stays compliant.</p>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3">Backup & Recovery</h3>
-                <p class="text-gray-600">Automated daily backups with point-in-time recovery options ensure your data is never lost.</p>
+            
+            <!-- Text Content -->
+            <div class="space-y-4">
+                <h4 class="text-xl font-medium text-gray-900">Insights That Drive Action</h4>
+                <p class="text-gray-600">Transform your data into actionable insights with real-time analytics and customizable dashboards. Track key performance indicators, identify trends, and spot opportunities before your competitors do. Blue's intelligent reporting helps you understand what's working, what isn't, and exactly where to focus your efforts for maximum impact.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Integrations Section -->
-    <section id="integrations" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Powerful Integrations</h2>
-        <p class="text-lg text-gray-600 mb-8">Connect Blue with the tools your team already uses. Our extensive integration library ensures seamless workflow continuity.</p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">📧</div>
-                <h4 class="font-semibold">Email</h4>
-                <p class="text-sm text-gray-600">Gmail, Outlook</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">💬</div>
-                <h4 class="font-semibold">Chat</h4>
-                <p class="text-sm text-gray-600">Slack, Teams</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">☁️</div>
-                <h4 class="font-semibold">Cloud Storage</h4>
-                <p class="text-sm text-gray-600">Google Drive, Dropbox</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">🔧</div>
-                <h4 class="font-semibold">Development</h4>
-                <p class="text-sm text-gray-600">GitHub, GitLab</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">📊</div>
-                <h4 class="font-semibold">Analytics</h4>
-                <p class="text-sm text-gray-600">Google Analytics</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">💳</div>
-                <h4 class="font-semibold">Payment</h4>
-                <p class="text-sm text-gray-600">Stripe, PayPal</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">📅</div>
-                <h4 class="font-semibold">Calendar</h4>
-                <p class="text-sm text-gray-600">Google Cal, Outlook</p>
-            </div>
-            <div class="text-center p-4 border rounded-lg hover:shadow-md transition">
-                <div class="text-2xl mb-2">🔗</div>
-                <h4 class="font-semibold">Automation</h4>
-                <p class="text-sm text-gray-600">Zapier, Make</p>
-            </div>
-        </div>
-    </section>
+<!-- Call to Action -->
+{{$ctaData := parseJSON `{
+    "Title": "Ready to get started?",
+    "SecondaryText": "Request a demo",
+    "SecondaryUrl": "/contact",
+    "PrimaryText": "Get started",
+    "PrimaryUrl": "https://app.blue.cc"
+}`}}
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Simple, Transparent Pricing</h2>
-        <p class="text-lg text-gray-600 mb-8 text-center">Choose the plan that fits your team's needs. No hidden fees, cancel anytime.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="border rounded-lg p-6 text-center">
-                <h3 class="text-xl font-semibold mb-2">Starter</h3>
-                <div class="text-3xl font-bold mb-4">$5<span class="text-lg text-gray-600">/user/month</span></div>
-                <ul class="text-left space-y-2 mb-6">
-                    <li>✓ Unlimited projects</li>
-                    <li>✓ Basic automations</li>
-                    <li>✓ Standard support</li>
-                    <li>✓ 5GB storage</li>
-                </ul>
-                <button class="w-full px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">Get Started</button>
-            </div>
-            <div class="border-2 border-blue-500 rounded-lg p-6 text-center relative">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Most Popular</div>
-                <h3 class="text-xl font-semibold mb-2">Professional</h3>
-                <div class="text-3xl font-bold mb-4">$12<span class="text-lg text-gray-600">/user/month</span></div>
-                <ul class="text-left space-y-2 mb-6">
-                    <li>✓ Everything in Starter</li>
-                    <li>✓ Advanced automations</li>
-                    <li>✓ Priority support</li>
-                    <li>✓ 50GB storage</li>
-                    <li>✓ Custom fields</li>
-                </ul>
-                <button class="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Start Free Trial</button>
-            </div>
-            <div class="border rounded-lg p-6 text-center">
-                <h3 class="text-xl font-semibold mb-2">Enterprise</h3>
-                <div class="text-3xl font-bold mb-4">Custom</div>
-                <ul class="text-left space-y-2 mb-6">
-                    <li>✓ Everything in Professional</li>
-                    <li>✓ SSO & advanced security</li>
-                    <li>✓ Dedicated support</li>
-                    <li>✓ Unlimited storage</li>
-                    <li>✓ Custom integrations</li>
-                </ul>
-                <button class="w-full px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">Contact Sales</button>
-            </div>
-        </div>
-    </section>
+{{template "dual-button-cta" $ctaData}}
 
-    <!-- FAQ Section -->
-    <section id="FAQ" class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
-        <div class="space-y-6">
-            <div class="border-b pb-4">
-                <h3 class="text-lg font-semibold mb-2">How quickly can we get started?</h3>
-                <p class="text-gray-600">You can be up and running in minutes. Simply sign up, invite your team, and start building your first project. Our onboarding guide will walk you through the basics.</p>
-            </div>
-            <div class="border-b pb-4">
-                <h3 class="text-lg font-semibold mb-2">Can we migrate data from other tools?</h3>
-                <p class="text-gray-600">Yes! We provide migration tools and support for popular platforms like Asana, Trello, Monday.com, and more. Our team can help with large-scale migrations.</p>
-            </div>
-            <div class="border-b pb-4">
-                <h3 class="text-lg font-semibold mb-2">Is there a free trial?</h3>
-                <p class="text-gray-600">Absolutely! We offer a 14-day free trial with full access to all Professional features. No credit card required to start.</p>
-            </div>
-            <div class="border-b pb-4">
-                <h3 class="text-lg font-semibold mb-2">How secure is our data?</h3>
-                <p class="text-gray-600">Security is our top priority. We use enterprise-grade encryption, regular security audits, and comply with SOC 2, GDPR, and HIPAA standards.</p>
-            </div>
-        </div>
-    </section>
 </div>
 
 <script>

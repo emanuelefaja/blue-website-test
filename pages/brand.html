@@ -574,30 +574,37 @@
                 <hr class="border-gray-200 mb-8">
                 <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Feature Video (Right)</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
-                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Two-column grid with text left, video right. Video: autoplay muted loop playsinline (no controls)</code>
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">feature-video component with text left, video right, optional "See also" section</code>
                 </div>
                 <div class="p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <!-- Text Content -->
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-medium text-gray-900">Enhanced team collaboration</h4>
-                            <p class="text-gray-600">See your work your way with multiple views, real-time updates, and seamless collaboration tools. Switch between Kanban boards, calendars, timelines, and more to match your team's workflow.</p>
-                        </div>
-                        
-                        <!-- Video -->
-                        <div>
-                            <video 
-                                class="w-full h-auto rounded-2xl" 
-                                autoplay 
-                                muted 
-                                loop 
-                                playsinline
-                            >
-                                <source src="/public/testvideo2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
+                    {{$featureVideoData := parseJSON `{
+                        "Title": "Enhanced team collaboration",
+                        "Description": "See your work your way with multiple views, real-time updates, and seamless collaboration tools. Switch between Kanban boards, calendars, timelines, and more to match your team's workflow.",
+                        "VideoUrl": "/public/testvideo2.mp4",
+                        "VideoPosition": "right",
+                        "SeeAlso": {
+                            "Heading": "See also",
+                            "Links": [
+                                {
+                                    "Text": "Project management views",
+                                    "Url": "/docs/views",
+                                    "Description": "Learn about different ways to visualize your work"
+                                },
+                                {
+                                    "Text": "Real-time collaboration",
+                                    "Url": "/docs/collaboration", 
+                                    "Description": "How teams work together in Blue"
+                                },
+                                {
+                                    "Text": "Custom workflows",
+                                    "Url": "/docs/workflows",
+                                    "Description": "Create custom workflows for your team"
+                                }
+                            ]
+                        }
+                    }`}}
+                    
+                    {{template "feature-video" $featureVideoData}}
                 </div>
             </div>
 
@@ -606,30 +613,17 @@
                 <hr class="border-gray-200 mb-8">
                 <h3 class="text-2xl font-medium text-gray-900 mb-4">Product Feature Video (Left)</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
-                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Two-column grid with video left, text right. Video: autoplay muted loop playsinline (no controls)</code>
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">feature-video component with video left, text right, without "See also" section</code>
                 </div>
                 <div class="p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        <!-- Video -->
-                        <div>
-                            <video 
-                                class="w-full h-auto rounded-2xl" 
-                                autoplay 
-                                muted 
-                                loop 
-                                playsinline
-                            >
-                                <source src="/public/testvideo2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        
-                        <!-- Text Content -->
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-medium text-gray-900">Powerful automation workflows</h4>
-                            <p class="text-gray-600">Create sophisticated automations without code using our visual workflow builder. Connect tools, trigger actions based on custom conditions, and save hours of manual work every week.</p>
-                        </div>
-                    </div>
+                    {{$featureVideoDataLeft := parseJSON `{
+                        "Title": "Powerful automation workflows",
+                        "Description": "Create sophisticated automations without code using our visual workflow builder. Connect tools, trigger actions based on custom conditions, and save hours of manual work every week.",
+                        "VideoUrl": "/public/testvideo2.mp4",
+                        "VideoPosition": "left"
+                    }`}}
+                    
+                    {{template "feature-video" $featureVideoDataLeft}}
                 </div>
             </div>
         </div>
@@ -774,11 +768,150 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section id="stats" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Stats</h2>
+        
+        <div class="space-y-12">
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Stats Section Component</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">stats-section component with title and stats array</code>
+                </div>
+                
+                {{$statsData := parseJSON `{
+                    "Title": "Leading companies trust Blue to streamline their operations",
+                    "Stats": [
+                        {
+                            "Number": "17K+",
+                            "Description": "teams worldwide"
+                        },
+                        {
+                            "Number": "5M+",
+                            "Description": "processes automated"
+                        },
+                        {
+                            "Number": "50M+",
+                            "Description": "records managed"
+                        }
+                    ]
+                }`}}
+                
+                {{template "stats-section" $statsData}}
+            </div>
+        </div>
+    </section>
+
+    <!-- Buttons Section -->
+    <section id="buttons" class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Buttons</h2>
+        
+        <div class="space-y-12">
+            <!-- Primary Buttons ---->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Primary Buttons</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90</code>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center">
+                        Primary Button
+                    </a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center">
+                        Sign Up
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold" style="color: #00a0d2; border-color: #00a0d2;">↵</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Secondary Buttons ---->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Secondary Buttons</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50</code>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
+                        Secondary Button
+                    </a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
+                        Log In
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">L</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact/Accent Buttons ---->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Accent Buttons</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100</code>
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out flex items-center cursor-pointer">
+                        Accent Button
+                    </a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out flex items-center cursor-pointer">
+                        Contact
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">C</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Button Sizes ---->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Button Sizes</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">Various padding combinations for different button sizes</code>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#" class="px-3 py-1 text-xs font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                        Small
+                    </a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                        Medium
+                    </a>
+                    <a href="#" class="px-6 py-3 text-base font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                        Large
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Actions Section -->
     <section id="Call to Actions" class="mb-16">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-8">Call to Actions</h2>
         
         <div class="space-y-12">
+            <!-- Dual Button CTA -->
+            <div>
+                <hr class="border-gray-200 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Dual Button CTA</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 px-2 py-1 rounded text-xs">dual-button-cta component with title and two action buttons</code>
+                </div>
+                
+                {{$ctaData := parseJSON `{
+                    "Title": "Ready to get started?",
+                    "SecondaryText": "Request a demo",
+                    "SecondaryUrl": "/contact",
+                    "PrimaryText": "Get started",
+                    "PrimaryUrl": "https://app.blue.cc"
+                }`}}
+                
+                {{template "dual-button-cta" $ctaData}}
+            </div>
+            
             <!-- Career CTA -->
             <div>
                 <hr class="border-gray-200 mb-8">

@@ -1,0 +1,88 @@
+{{define "feature-video"}}
+<!-- Feature Video Component -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    {{if eq .VideoPosition "left"}}
+        <!-- Video (Left) -->
+        <div>
+            <video 
+                class="w-full h-auto rounded-2xl" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+            >
+                <source src="{{.VideoUrl}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Text Content (Right) -->
+        <div class="space-y-4">
+            <h4 class="text-xl font-medium text-gray-900">{{.Title}}</h4>
+            <p class="text-gray-600">{{.Description}}</p>
+            
+            {{if .SeeAlso}}
+            <!-- See Also Section -->
+            <div class="pt-4">
+                <h5 class="text-sm font-medium text-gray-900 mb-3">
+                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+                </h5>
+                <ul class="space-y-2">
+                    {{range .SeeAlso.Links}}
+                    <li>
+                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                            {{.Text}}
+                        </a>
+                        {{if .Description}}
+                        <span class="text-sm text-gray-500"> {{.Description}}</span>
+                        {{end}}
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+    {{else}}
+        <!-- Text Content (Left) -->
+        <div class="space-y-4">
+            <h4 class="text-xl font-medium text-gray-900">{{.Title}}</h4>
+            <p class="text-gray-600">{{.Description}}</p>
+            
+            {{if .SeeAlso}}
+            <!-- See Also Section -->
+            <div class="pt-4">
+                <h5 class="text-sm font-medium text-gray-900 mb-3">
+                    {{if .SeeAlso.Heading}}{{.SeeAlso.Heading}}{{else}}See also{{end}}
+                </h5>
+                <ul class="space-y-2">
+                    {{range .SeeAlso.Links}}
+                    <li>
+                        <a href="{{.Url}}" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                            {{.Text}}
+                        </a>
+                        {{if .Description}}
+                        <span class="text-sm text-gray-500"> {{.Description}}</span>
+                        {{end}}
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Video (Right) -->
+        <div>
+            <video 
+                class="w-full h-auto rounded-2xl" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+            >
+                <source src="{{.VideoUrl}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    {{end}}
+</div>
+{{end}}
