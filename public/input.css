@@ -155,6 +155,19 @@ body {
     color: var(--color-brand-blue-hover) !important;
     text-decoration: underline;
   }
+  
+  /* Center images in markdown prose content */
+  .prose img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  
+  .prose-lg img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
 }
 
 /* YouTube Embed Styling */
