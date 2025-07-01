@@ -3,8 +3,80 @@
     {{template "page-heading" 
         dict 
             "Title" "Security" 
-            "Subtitle" "Blue is built with security in mind. We take security seriously and are committed to protecting your data." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Blue is designed from the ground up for security and scale." 
+            "MarginBottom" "mb-16"
     }}
+
+
+    <!-- Security Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto mb-20">
+        <!-- Enterprise-Level Encryption -->
+        <div class="p-8 space-y-4 border-b border-gray-200 md:border-r">
+            <h3 class="text-2xl font-semibold text-gray-900">Enterprise-Level Encryption</h3>
+            <p class="text-gray-600">Blue utilizes AWS enterprise-level encryption to protect your sensitive data both at rest and in transit.</p>
+        </div>
+        
+        <!-- Advanced Monitoring -->
+        <div class="p-8 space-y-4 border-b border-gray-200">
+            <h3 class="text-2xl font-semibold text-gray-900">Advanced Monitoring and Redundancy</h3>
+            <p class="text-gray-600">Our advanced monitoring and alert systems, combined with multiple redundant systems, ensure high availability and minimize downtime.</p>
+        </div>
+        
+        <!-- Secure Backend -->
+        <div class="p-8 space-y-4 border-b border-gray-200 md:border-r">
+            <h3 class="text-2xl font-semibold text-gray-900">Secure Backend Systems</h3>
+            <p class="text-gray-600">All backend systems are secured by multi-factor authentication (MFA) to prevent unauthorized access to customer data.</p>
+        </div>
+        
+        <!-- Security Audits -->
+        <div class="p-8 space-y-4 border-b border-gray-200">
+            <h3 class="text-2xl font-semibold text-gray-900">Regular Security Audits</h3>
+            <p class="text-gray-600">Blue undergoes regular security audits by third parties to identify and address any potential vulnerabilities.</p>
+        </div>
+        
+        <!-- Daily Data Backups -->
+        <div class="p-8 space-y-4 md:border-r border-gray-200">
+            <h3 class="text-2xl font-semibold text-gray-900">Daily Data Backups</h3>
+            <p class="text-gray-600">Your data is backed up daily to ensure data integrity and enable quick disaster recovery if needed.</p>
+        </div>
+        
+        <!-- External Security Researchers -->
+        <div class="p-8 space-y-4">
+            <h3 class="text-2xl font-semibold text-gray-900">External Security Researchers</h3>
+            <p class="text-gray-600">Blue works with external security researchers to identify and resolve any vulnerabilities proactively.</p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    {{$statsData := parseJSON `{
+        "Title": "Trusted by organizations worldwide for security and reliability",
+        "Stats": [
+            {
+                "Number": "17K+",
+                "Description": "teams trust Blue"
+            },
+            {
+                "Number": "120+",
+                "Description": "countries served"
+            },
+            {
+                "Number": "99.9%",
+                "Description": "uptime guarantee"
+            }
+        ]
+    }`}}
+    
+    {{template "stats-section" $statsData}}
+
+    <!-- Call to Action -->
+    {{$ctaData := parseJSON `{
+        "Title": "Ready to secure your operations?",
+        "SecondaryText": "Contact sales",
+        "SecondaryUrl": "/contact",
+        "PrimaryText": "Start free trial",
+        "PrimaryUrl": "https://app.blue.cc"
+    }`}}
+    
+    {{template "dual-button-cta" $ctaData}}
 
 </div>
