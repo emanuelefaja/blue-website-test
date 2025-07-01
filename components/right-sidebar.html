@@ -1,7 +1,7 @@
 {{define "right-sidebar"}}
 <!-- Right Sidebar - Table of Contents -->
 <aside :class="sidebarsOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'"
-       class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform"
+       class="hidden xl:block sticky top-16 h-[calc(100vh-4rem)] overflow-hidden transition-all duration-300 w-64 transform"
        x-data="{ 
            tocItems: {{toJSON .TOC}} || [],
            activeSection: '',
