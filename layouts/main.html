@@ -154,6 +154,11 @@
             
             // Handle browser back/forward
             window.addEventListener('popstate', () => {
+                // Update sidebar active state for browser navigation
+                const sidebar = document.querySelector('nav[x-data*="currentPath"]');
+                if (sidebar && sidebar._x_dataStack && sidebar._x_dataStack[0].updateCurrentPath) {
+                    sidebar._x_dataStack[0].updateCurrentPath(window.location.pathname);
+                }
                 window.location.reload();
             });
             
