@@ -362,11 +362,11 @@ func (h *HealthChecker) hasRecentCheck() bool {
 // CheckAllServicesIfNeeded performs health checks only if none have been done in the last 5 minutes
 func (h *HealthChecker) CheckAllServicesIfNeeded() {
 	if h.hasRecentCheck() {
-		log.Println("Recent health checks found (within last 5 minutes), skipping new checks")
+		log.Println("⏭️  Recent health checks found (within last 5 minutes), skipping new checks")
 		return
 	}
 	
-	log.Println("No recent health checks found, performing health checks on all services")
+	log.Println("🏥 No recent health checks found, performing health checks on all services")
 	h.CheckAllServices()
 }
 
