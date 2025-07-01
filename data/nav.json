@@ -5,7 +5,7 @@
       "name": "Platform",
       "expanded": false,
       "children": [
-        {"id": "overview", "name": "Overview", "href": "/platform/overview"},
+        {"id": "overview", "name": "Overview", "href": "/platform/"},
         {"id": "all-features", "name": "All Features", "href": "/platform/all-features"},
         {"id": "white-label", "name": "White Label", "href": "/platform/white-label"},
         {"id": "api", "name": "API", "href": "/platform/api"},
