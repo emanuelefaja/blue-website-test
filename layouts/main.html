@@ -49,77 +49,117 @@
     
 
     <script>       
-        // Add hover prefetching for navigation links
+        // Client-side routing for smooth navigation
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize Highlight.js
             hljs.highlightAll();
             
-            const navLinks = document.querySelectorAll('a[href^="/"]');
-            navLinks.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    const prefetchLink = document.createElement('link');
-                    prefetchLink.rel = 'prefetch';
-                    prefetchLink.href = link.href;
-                    document.head.appendChild(prefetchLink);
+            function addCopyButtons() {
+                const codeBlocks = document.querySelectorAll('.prose pre:not([data-copy-added])');
+                codeBlocks.forEach(pre => {
+                    pre.setAttribute('data-copy-added', 'true');
+                    
+                    const copyBtn = document.createElement('button');
+                    copyBtn.className = 'code-copy-btn';
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                    copyBtn.title = 'Copy code';
+                    
+                    copyBtn.addEventListener('click', async () => {
+                        const code = pre.querySelector('code');
+                        const text = code ? code.textContent : pre.textContent;
+                        
+                        try {
+                            await navigator.clipboard.writeText(text);
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                            copyBtn.classList.add('copied');
+                            copyBtn.title = 'Copied!';
+                            
+                            setTimeout(() => {
+                                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                                copyBtn.classList.remove('copied');
+                                copyBtn.title = 'Copy code';
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                        }
+                    });
+                    
+                    pre.appendChild(copyBtn);
                 });
+            }
+            
+            function setupClientRouting() {
+                const navLinks = document.querySelectorAll('a[href^="/"]');
+                navLinks.forEach(link => {
+                    // Skip external links and special links
+                    if (link.target === '_blank' || link.href.includes('#')) return;
+                    
+                    // Prefetch on hover
+                    link.addEventListener('mouseenter', () => {
+                        const prefetchLink = document.createElement('link');
+                        prefetchLink.rel = 'prefetch';
+                        prefetchLink.href = link.href;
+                        document.head.appendChild(prefetchLink);
+                    });
+                    
+                    // Handle click
+                    link.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        
+                        try {
+                            const response = await fetch(link.href);
+                            if (!response.ok) throw new Error('Network response was not ok');
+                            
+                            const html = await response.text();
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            
+                            const newMain = doc.querySelector('main');
+                            const currentMain = document.querySelector('main');
+                            
+                            if (newMain && currentMain) {
+                                // Update content
+                                currentMain.innerHTML = newMain.innerHTML;
+                                
+                                // Update title
+                                const newTitle = doc.querySelector('title');
+                                if (newTitle) document.title = newTitle.textContent;
+                                
+                                // Update URL
+                                window.history.pushState(null, '', link.href);
+                                
+                                // Update sidebar active state
+                                const sidebar = document.querySelector('nav[x-data*="currentPath"]');
+                                if (sidebar && sidebar._x_dataStack && sidebar._x_dataStack[0].updateCurrentPath) {
+                                    sidebar._x_dataStack[0].updateCurrentPath(new URL(link.href).pathname);
+                                }
+                                
+                                // Re-initialize content
+                                hljs.highlightAll();
+                                addCopyButtons();
+                                
+                                // Scroll to top
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                
+                            } else {
+                                window.location.href = link.href;
+                            }
+                        } catch (error) {
+                            console.error('Client routing failed:', error);
+                            window.location.href = link.href;
+                        }
+                    });
+                });
+            }
+            
+            // Handle browser back/forward
+            window.addEventListener('popstate', () => {
+                window.location.reload();
             });
             
-            // Add copy buttons to code blocks
-            const codeBlocks = document.querySelectorAll('.prose pre');
-            codeBlocks.forEach(pre => {
-                // Create copy button
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'code-copy-btn';
-                copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                copyBtn.title = 'Copy code';
-                
-                // Add click handler
-                copyBtn.addEventListener('click', async () => {
-                    const code = pre.querySelector('code');
-                    const text = code ? code.textContent : pre.textContent;
-                    
-                    try {
-                        await navigator.clipboard.writeText(text);
-                        
-                        // Show success state
-                        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                        copyBtn.classList.add('copied');
-                        copyBtn.title = 'Copied!';
-                        
-                        // Reset after 2 seconds
-                        setTimeout(() => {
-                            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                            copyBtn.classList.remove('copied');
-                            copyBtn.title = 'Copy code';
-                        }, 2000);
-                        
-                    } catch (err) {
-                        console.error('Failed to copy code:', err);
-                        
-                        // Fallback for older browsers
-                        const textArea = document.createElement('textarea');
-                        textArea.value = text;
-                        document.body.appendChild(textArea);
-                        textArea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(textArea);
-                        
-                        // Show success state
-                        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                        copyBtn.classList.add('copied');
-                        copyBtn.title = 'Copied!';
-                        
-                        setTimeout(() => {
-                            copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
-                            copyBtn.classList.remove('copied');
-                            copyBtn.title = 'Copy code';
-                        }, 2000);
-                    }
-                });
-                
-                // Add button to code block
-                pre.appendChild(copyBtn);
-            });
+            // Initialize
+            addCopyButtons();
+            setupClientRouting();
         });
     </script>
 </body>
