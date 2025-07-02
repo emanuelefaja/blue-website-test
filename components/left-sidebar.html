@@ -48,7 +48,7 @@
                     <!-- Section has children -->
                     <template x-if="section.children && section.children.length > 0">
                         <div>
-                            <button @click="section.expanded = !section.expanded" 
+                            <button @click="sections.forEach(s => { if(s.id !== section.id) s.expanded = false; }); section.expanded = !section.expanded" 
                                     class="relative flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-900 cursor-pointer hover:bg-gray-100 hover:text-brand-blue transition-colors duration-150">
                                 <svg :class="section.expanded ? 'rotate-90' : 'rotate-0'" 
                                      class="folder-icon mr-3 text-gray-400 transition-transform duration-200" 
