@@ -25,10 +25,41 @@
             "Title": "Reminder yourself what to do and when to do it.",
             "Description": "Never let a task slip through the cracks. Blue helps you remember when you need to get things done.",
             "VideoUrl": "/public/product/reminders.mp4",
-            "VideoPosition": "left"
+            "VideoPosition": "left",
+            "SeeAlso": {
+                "Heading": "Learn more:",
+                "Links": [
+                    {
+                        "Text": "Reminders",
+                        "Url": "/docs/records/reminders",
+                        "Description": "can trigger email and mobile notifications"
+                    },
+                    {
+                        "Text": "Repeating records", 
+                        "Url": "/docs/records/repeat",
+                        "Description": "can be used to automate recurring tasks"
+                    }
+                ]
+            }
         }`}}
         
         {{template "feature-video" $remindersData}}
+    </div>
+
+    <!-- Automations Feature -->
+    <div class="mb-16">
+        {{$automationsData := parseJSON `{
+            "Title": "Automations ensure you focus on what matters.",
+            "Description": "Time is money, especially as a Solopreneur. Blue helps you save time, so you can focus on making money — even while you sleep.",
+            "VideoUrl": "/public/product/automation.mp4",
+            "VideoPosition": "right",
+            "Button": {
+                "Text": "Learn about automations",
+                "Url": "/docs/automations"
+            }
+        }`}}
+        
+        {{template "feature-video" $automationsData}}
     </div>
 
     <!-- FAQ Section -->
