@@ -1,0 +1,47 @@
+<!-- 404 Page -->
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "404 — Page not found" 
+            "Subtitle" "Seems that page has gone on vacation. Here are some helpful links instead." 
+            "MarginBottom" "mb-16"
+    }}
+    
+    <div class="max-w-4xl mx-auto px-6">
+        
+        
+        <!-- Popular Pages -->
+        <div class="bg-gray-50 rounded-xl p-8">
+            <h3 class="text-xl font-semibold mb-6 text-center">Popular Pages</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="/" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Home</span>
+                </a>
+                <a href="/contact" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Contact</span>
+                </a>
+                <a href="/platform" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Platform</span>
+                </a>
+                <a href="/pricing" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Pricing</span>
+                </a>
+                <a href="/solutions" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Solutions</span>
+                </a>
+                <a href="/customers" class="text-center py-3 px-4 bg-white rounded-lg hover:shadow-sm transition-shadow">
+                    <span class="text-sm font-medium text-gray-700 hover:text-brand-blue">Customers</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Search Suggestion -->
+        <div class="text-center mt-12">
+            <p class="text-gray-600 mb-4">Can't find what you're looking for?</p>
+            <div class="text-sm text-gray-500">
+                Try using the search bar at the top of the page (⌘K) or 
+                <a href="/contact" class="text-brand-blue hover:text-brand-blue/80 font-medium">contact our team</a>
+            </div>
+        </div>
+    </div>
+</div>
