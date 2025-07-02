@@ -22,7 +22,7 @@ A checkbox that automatically notifies one or more key stakeholders, giving them
 
 This will look something like this once you’re done:
 
-![](/resources/checkbox-email-automation.png)
+![](/public/resources/checkbox-email-automation.png)
 
 And just by checking this checkbox, you will be able to trigger a project management automation to send a custom notification email to stakeholders. 
 
@@ -50,7 +50,7 @@ You can learn more in our [detailed documentation guide on how to setup email au
 
 Your final result should look something like this:
 
-![](/resources/email-automation-example.png)
+![](/public/resources/email-automation-example.png)
 
 ## 4. Bonus: Restrict access to the checkbox.
 

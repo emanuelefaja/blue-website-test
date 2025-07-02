@@ -73,13 +73,13 @@ Trello grew quickly, and raised $10.3 million in a Series A funding round led by
 
 Trello is now firmly part of the Atlassian suite of products:
 
-![](/resources/jira-trello-product-upsell.png)
+![](/public/resources/jira-trello-product-upsell.png)
 
 This can be an upside, especially if you *already* use other Atlassian products such as Jira and Confluences. 
 
 But it can also be a downside — as you'll often have to switch across to an Atlassian account that you do not really want/need to edit settings:
 
-![](/resources/trello-atlassian-settings.png)
+![](/public/resources/trello-atlassian-settings.png)
 
 There may also be a tendency for Atlassian to try and upsell you their products as you're working on your projects — more on that later.
 
@@ -206,7 +206,7 @@ However, Trello does have some tricks up its sleeve that Blue does not yet have:
 
 Blue does has the [powerful email automation feature](/resources/email-automations) which is not available in Trello, which allows you to send custom email notifications to any email address, leveraging the data in your [custom fields](https://www.blue.cc/platform/custom-fields) using dynamic tags. This is great for workflows such as [managing service tickets](/solutions/service-tickets). 
 
-![](/resources/email-automations-image.webp)
+![](/public/resources/email-automations-image.webp)
 
 ## Scalability
 
@@ -368,7 +368,7 @@ We find Trello's UI somewhat old-fashioned. The one column layout for their indi
 
 Check it out yourself. You can click on the image to zoom in.
 
-![](/resources/trello-card.png)
+![](/public/resources/trello-card.png)
 
 Blue is based on a customized style of [Google Material Design](https://m3.material.io/). We use a great open-source front-end library called [Vuetify](https://vuetifyjs.com/) for this. This was an intentional choice, because Google Material Design is used in many products around the world, Blue will feel familiar to users right away. We're not trying to reinvent the wheel, but rather hook into existing patterns.
 
@@ -376,7 +376,7 @@ The result? Compared to Trello, Blue gives you a much nice structure for viewing
 
 We fully utilize your screen's real-estate.
 
-![](/resources/blue-card.png)
+![](/public/resources/blue-card.png)
 
 This is an *unsolicited* quote from an [AppSumo](https://appsumo.com) customer, The Writer, that has used both Trello and Blue:
 

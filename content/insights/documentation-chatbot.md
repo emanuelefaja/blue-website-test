@@ -18,7 +18,7 @@ The answer was quite clear: **We needed an AI chatbot trained on our documentati
 
 Let's face it: *every* organization should probably have a chatbot. They are great ways for customers to get instant answers to typical questions, without having to dig through pages of dense documentation or your website. The importance of chatbots in modern marketing websites cannot be overstated. 
 
-![](/resources/ai-chatbot-regular.png)
+![](/public/resources/ai-chatbot-regular.png)
 
 For software companies specifically, one should not consider the marketing website as a separate "thing" — it *is* part of your product. This is because it fits in the typical customer life:
 
@@ -98,7 +98,7 @@ Then, there was the front-end and user experience. As discussed earlier, this wa
 In designing our chatbot, we paid meticulous attention to user experience, ensuring that every interaction is smooth, intuitive, and reflective of Blue's commitment to quality. The chatbot interface begins with a simple, elegant Blue circle,, using [HeroIcons for our icons](https://heroicons.com/) (which we use throughout the Blue website) to act as our chatbot opening widget.  This design choice ensures visual consistency and immediate brand recognition.
 
 
-![](/resources/ai-chatbot-circle.png)
+![](/public/resources/ai-chatbot-circle.png)
 
 We understand that sometimes users might need additional support or more in-depth information. That's why we've included convenient links within the chatbot interface. An email link for support is readily available, allowing users to reach out to our team directly if they need more personalized assistance. Additionally, we've incorporated a documentation link, providing easy access to more comprehensive resources for those who want to dive deeper into Blue's offerings.
 
@@ -137,7 +137,7 @@ Lastly, we're working on allowing you to upload screenshots directly to the chat
 
 We hope this deep dive into our AI chatbot development process has provided some valuable insights into our product development thinking at Blue. Our journey from identifying the need for a chatbot to building our own solution showcases how we approach decision-making and innovation.
 
-![](/resources/ai-chatbot-modal.png)
+![](/public/resources/ai-chatbot-modal.png)
 
 At Blue, we carefully weigh the options of building versus buying, always with an eye on what will best serve our users and align with our long-term goals. In this case, we identified a significant gap in the market for a cost-effective yet visually appealing chatbot that could meet our specific needs. While we generally advocate for leveraging existing solutions rather than reinventing the wheel, sometimes the best path forward is to create something tailored to your unique requirements.
 

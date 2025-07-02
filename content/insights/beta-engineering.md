@@ -34,7 +34,7 @@ The Technology Adoption Lifecycle is typically divided into five main segments:
 4. Late Majority
 5. Laggards
 
-![](/resources/technology-adoption-lifecycle-graph.png)
+![](/public/resources/technology-adoption-lifecycle-graph.png)
 
 
 However, eventually the product has to mature, and customers expect a stable, working product. They don’t want access to a “beta” environment where things break.

@@ -12,14 +12,14 @@ Picture this: It's the late 1940s in post-war Japan. Toyota is looking for a way
 
 Their solution? Kanban - a visual system that would revolutionize workflow management.
 
-![](/resources/japan-kanban-boards.jpg)
+![](/public/resources/japan-kanban-boards.jpg)
 
 Fast forward to today. 
 
 Kanban has evolved from factory floors to [digital platforms](/platform), helping teams across industries tame their to-do lists. 
 
 
-![](/product/board-bulk-select.png)
+![](/public/product/board-bulk-select.png)
 
 
 Curious about its journey?
@@ -100,7 +100,7 @@ When you're just starting out with kanban, resist the temptation to create a com
 
 As your team grows more comfortable with kanban principles and starts to identify areas for improvement, gradually introduce more complexity. 
 
-![](/product/board-drag-drop.png)
+![](/public/product/board-drag-drop.png)
 
 This evolution ensures that your board remains a helpful tool rather than a confusing obstacle. Remember, your kanban board should grow and change along with your team's needs and processes.
 
@@ -141,7 +141,7 @@ Modern kanban software offers a range of features to make columns more flexible 
 
 Within columns, sorting capabilities allow you to organize tasks by creation date, last update, or other criteria, giving you flexibility in how you view and manage your work. Bulk actions enable efficient task management, allowing you to complete or uncomplete multiple items, apply tags, assign tasks, or move them between columns in one go. 
 
-![](/resources/right-click-record.png)
+![](/public/resources/right-click-record.png)
 
 For added control, you can lock columns to prevent unintended additions or removals. Color coding provides visual organization, allowing for quick status identification at a glance.
 
@@ -181,7 +181,7 @@ Kanban software typically offers two primary ways to interact with cards:
 - **Board View**: This provides a quick overview of essential information for each card. From the board, you can usually see key details like the card title, assignee, due date, and any vital tags or indicators. This view is crucial for understanding the overall state of your workflow at a glance.
 - **Single Card View**: Clicking on a card usually opens a more detailed view. Here, you can see and edit all information related to the card, including descriptions, comments, attachments, and more. This view is essential for in-depth work on individual tasks.
 
-![](/resources/blue-card.png)
+![](/public/resources/blue-card.png)
 
 The ability to switch between these views allows team members to balance between high-level project management and detailed task work effortlessly.
 

@@ -12,7 +12,7 @@ Today's release brings a small but thoughtful improvement to our [project manage
 
 You can now right-click on any record to open a context menu, allowing you to make quick edits without needing to fully open the record. This feature is perfect for making swift changes such as updating tags, assigning tasks, or modifying other record details in a matter of seconds.
 
-![](/resources/right-click-record.png)
+![](/public/resources/right-click-record.png)
 
 ## List of Options 
 

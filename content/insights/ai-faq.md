@@ -32,7 +32,7 @@ This is due to the rapid advancements in AI technology and the commoditization o
 
 To illustrate the dramatic price drops in AI processing, consider the difference between GPT-4 and GPT-4-turbo. GPT-4 costs $30.00 per 1 million tokens, while GPT-4-turbo costs just $0.15 per 1 million tokens—a 99.5% reduction in price over just 15 months. This translates to a monthly price reduction of approximately 32.7%, meaning each month, the price reduces to about 67.3% of the previous month's price.
 
-![](/resources/openaihistoricalprices.png)
+![](/public/resources/openaihistoricalprices.png)
 
 
 Extrapolating this trend to 2030, we can predict that AI processing costs will continue to plummet. This rapid decrease in costs allows us to confidently offer unlimited AI access to our customers without compromising our business model or the quality of our service. As AI technology becomes more efficient and widespread, we anticipate being able to offer even more advanced AI features to our users at no additional cost.

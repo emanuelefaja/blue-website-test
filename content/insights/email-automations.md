@@ -25,7 +25,7 @@ Next, configure the email details, including:
 - To address (can be static or dynamically pulled from an email custom field)
 - CC or BCC addresses (optional)
 
-![](/resources/email-automations-image.webp)
+![](/public/resources/email-automations-image.webp)
 
 One of the key benefits of email automations in Blue is the ability to personalize the content using merge tags. When customizing the email subject and body, you can insert merge tags that reference specific record data, such as the record name or custom field values. Simply use the {curly bracket} syntax to insert merge tags.
 

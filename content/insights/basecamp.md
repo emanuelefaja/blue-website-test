@@ -27,7 +27,7 @@ The platform started life as an internal project management tool created by the 
 
 David is also the creator of the [open source web framework Ruby on Rails](https://rubyonrails.org/) that is used by companies such as [GitHub](https://github.com/), [Shopify](https://www.shopify.com/), [Airbnb](https://www.airbnb.com/), [Square](https://squareup.com/), [Coinbase](https://www.coinbase.com/), and [Zendesk](https://www.zendesk.com/).
 
-![](/resources/basecamp-home.png)
+![](/public/resources/basecamp-home.png)
 <p class="text-sm text-gray-500 text-center -mt-8">Image description goes here</p>
 
 
@@ -141,7 +141,7 @@ View                     | Basecamp                            | Blue |
 
 > It's like Kanban, only better.
 
-![](/resources/basecamp-kanban.png)
+![](/public/resources/basecamp-kanban.png)
 
 Well, we *actually* tried it out and did a head to head comparison with the Blue Kanban board — the feature that we are *most* proud of in Blue. 
 

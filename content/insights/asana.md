@@ -69,7 +69,7 @@ The table below gives an overview of the [different roles](https://www.blue.cc/p
 
 Once you are a Blue customer, there are *no upsells within the platform.* So you will never see this while you are trying to do your work:
 
-![](/resources/asana-upsell.png)
+![](/public/resources/asana-upsell.png)
 
 We have zero incentives to try and disturb you while you are working to try and get you to upgrade your account to a more expensive plan or to cross-sell you another product.
 

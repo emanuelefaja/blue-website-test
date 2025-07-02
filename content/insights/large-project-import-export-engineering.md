@@ -80,7 +80,7 @@ The learning curve for Rust was steep but manageable. Our team dedicated about t
 
 The improvements were impressive:
 
-![](/resources/import-export.png)
+![](/public/resources/import-export.png)
 
 
 Our new system can process the same amount of records that our old system could process in 15 minutes in around 30 seconds. 

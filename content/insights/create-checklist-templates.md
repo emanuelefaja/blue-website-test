@@ -23,7 +23,7 @@ Let's start with the action first, then discuss the possible triggers that you c
 
 You can create a new automation, and you can setup one or more checklists to be created, as per the example below:
 
-![](/resources/checklist-automation.png)
+![](/public/resources/checklist-automation.png)
 
 These would be the checklist(s) that you want to be created each time you take the action.
 

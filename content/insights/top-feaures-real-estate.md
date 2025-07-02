@@ -16,7 +16,7 @@ Leveraging the right software can provide a [significant competitive advantage.]
 
 Both developers and agencies have significant project and process management needs. However, their needs differ for various reasons. Developers focus on managing construction projects, timelines, resources, and budgets. Agencies concentrate on facilitating property sales, rentals, and client interactions.
 
-![](/resources/houses.jpeg)
+![](/public/resources/houses.jpeg)
 
 
 Key features in [real estate project management](/solutions/real-estate-project-management-software) software can drastically reduce staff time on certain functions. This efficiency can eliminate purely administrative roles, resulting in cost savings. It also allows staff to be repurposed towards more interesting and impactful work, enhancing job satisfaction and productivity.
@@ -33,7 +33,7 @@ Understanding these features will help you choose the right software to meet you
 
 ### 1. Ease of use
 
-![](/resources/real-estate-agent.jpeg)
+![](/public/resources/real-estate-agent.jpeg)
 It may seem strange to include "ease of use" as a feature — but it is also easy to forget that a platform is only useful if its going to be used. 
 
 One of the most crucial aspects of any software, including real estate project management tools, is its ease of use and adoption. If a software is too complex or difficult to navigate, it can lead to low adoption rates and ultimately hinder productivity instead of enhancing it.
@@ -50,7 +50,7 @@ By prioritizing ease of use and adoption, [real estate project management softwa
 
 ### 2. Flexibility to adapt to your process
 
-![](/resources/house-keys.jpeg)
+![](/public/resources/house-keys.jpeg)
 
 An organization's unique processes are its competitive advantages, allowing for differentiation from competitors and providing superior staff and customer experiences. When it comes to real estate project management software, flexibility is key to supporting and enhancing these unique processes. In fact, most software implementations fail because the software is too rigid and cannot adapt to the organization's specific needs. A flexible software solution, on the other hand, can mold itself to your existing workflows, making the transition seamless and ensuring high adoption rates.
 
@@ -79,7 +79,7 @@ Real-time synchronization across devices is a game-changer for collaboration and
 Real estate project management software that is available on-the-go through native mobile apps, PWAs, offline capabilities, and real-time synchronization across devices empowers professionals to work efficiently and collaboratively from anywhere. This flexibility and reliability are essential for keeping projects on track and ensuring the success of real estate operations in today's mobile-driven world.
 
 ### 4. Dashboard for data-driven decisions
-![](/resources/warmhome.jpeg)
+![](/public/resources/warmhome.jpeg)
 In the dynamic world of real estate, making informed decisions is crucial for project success. Dashboards that provide real-time data and insights are essential tools for real estate project management software. By centralizing key information and presenting it in a visually accessible format, dashboards empower professionals to make data-driven decisions that optimize performance and drive better outcomes.
 
 Real-time dashboards with customizable widgets allow users to tailor the information they see to their specific needs. Some examples of widgets that are particularly useful for real estate project management include:
@@ -148,7 +148,7 @@ Contextual collaboration is a game-changer for real estate project management. B
 
 ### 8. Intelligent and fast search
 
-![](/resources/filing-cabinet.jpeg)
+![](/public/resources/filing-cabinet.jpeg)
 
  Real estate professionals need to be able to find the information they need quickly and easily, without wasting valuable time searching through countless documents, emails, and conversations. This is where intelligent search comes in – a powerful feature of real estate project management software that enables users to locate the exact information they need, exactly when they need it.
 

@@ -69,7 +69,7 @@ The table below gives an overview of the [different roles](https://www.blue.cc/p
 
 Once you are a Blue customer, there are *no upsells within the platform.*  So you will never see this while you are trying to do your work:
 
-![](/resources/clickup-upsell.png)
+![](/public/resources/clickup-upsell.png)
 
 
 We have zero incentives to try and disturb you while you are working to try and get you to upgrade your account to a more expensive plan or to cross-sell you another product.
@@ -198,7 +198,7 @@ The user interface is a significant pain point for many ClickUp users. Poor UX d
 
 There's a lot going here with the user interface:
 
-![](/resources/clickup-home.png)
+![](/public/resources/clickup-home.png)
 
 ClickUp's pricing structure and billing practices have been a source of frustration for many users. There are reports of unexpected charges and automatic upgrades to more expensive plans without clear consent. This lack of transparency in billing practices has led to frustration and distrust among users. The pricing structure can be a point of contention, with advanced features locked behind higher-priced tiers, posing a potential drawback for growing teams. 
 
