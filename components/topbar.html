@@ -285,6 +285,17 @@
          x-data="{ 
              sections: {{.Navigation.Sections | toJSON}},
              currentPath: window.location.pathname,
+             init() {
+                 // Ensure all sections start collapsed
+                 this.sections.forEach(section => {
+                     section.expanded = false;
+                     if (section.children) {
+                         section.children.forEach(child => {
+                             child.expanded = false;
+                         });
+                     }
+                 });
+             },
              isActive(href) {
                  return this.currentPath === href || this.currentPath === href + '/' || this.currentPath + '/' === href;
              }
@@ -297,7 +308,7 @@
                         <!-- Section has children -->
                         <template x-if="section.children && section.children.length > 0">
                             <div>
-                                <button @click="section.expanded = !section.expanded" 
+                                <button @click="sections.forEach(s => { if(s.id !== section.id) s.expanded = false; }); section.expanded = !section.expanded" 
                                         class="flex items-center justify-between w-full text-left px-3 py-2 rounded-lg text-gray-900 hover:bg-gray-100 transition-colors">
                                     <span class="font-medium text-sm" x-text="section.name"></span>
                                     <svg :class="section.expanded ? 'rotate-90' : 'rotate-0'" 
