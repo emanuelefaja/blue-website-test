@@ -214,6 +214,63 @@
                     
                     {{template "stats-section" $statsData}}
     </section>
+
+    <!-- Features Grid Section -->
+    {{$featuresData := parseJSON `{
+        "Title": "Everything you need to succeed",
+        "Features": [
+            {
+                "Icon": "fas fa-shield-alt",
+                "Title": "Security",
+                "Description": "Enterprise-grade security with end-to-end encryption and compliance certifications.",
+                "Url": "/platform/security"
+            },
+            {
+                "Icon": "fas fa-bolt",
+                "Title": "Performance",
+                "Description": "Lightning-fast response times and 99.9% uptime guarantee for mission-critical work.",
+                "Url": "/platform/performance"
+            },
+            {
+                "Icon": "fas fa-chart-bar",
+                "Title": "Analytics",
+                "Description": "Real-time insights and customizable dashboards to track what matters most."
+            },
+            {
+                "Icon": "fas fa-plug",
+                "Title": "Integration",
+                "Description": "Connect with 1,000+ tools including Slack, Gmail, Zapier, and custom APIs.",
+                "Url": "/platform/integrations"
+            },
+            {
+                "Icon": "fas fa-magic",
+                "Title": "Automation",
+                "Description": "Streamline workflows with intelligent automation that learns from your processes."
+            },
+            {
+                "Icon": "fas fa-mobile-alt",
+                "Title": "Mobile",
+                "Description": "Full-featured mobile apps for iOS and Android with offline sync capabilities."
+            },
+            {
+                "Icon": "fas fa-users",
+                "Title": "Collaboration",
+                "Description": "Real-time collaboration tools with comments, mentions, and team workspaces."
+            },
+            {
+                "Icon": "fas fa-cogs",
+                "Title": "Customization",
+                "Description": "Fully customizable interface, fields, and workflows to match your business needs."
+            },
+            {
+                "Icon": "fas fa-headset",
+                "Title": "Support",
+                "Description": "24/7 expert support with live chat, phone, and dedicated success managers."
+            }
+        ]
+    }`}}
+    
+    {{template "features-grid-simple" $featuresData}}
        
 
 
