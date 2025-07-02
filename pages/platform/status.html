@@ -40,7 +40,7 @@
                                 </span>
                                 <h3 class="text-lg font-medium text-gray-900 dark:text-white" x-text="service.name"></h3>
                             </div>
-                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="service.uptime.toFixed(1) + '% uptime'"></span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" x-text="service.uptime.toFixed(2) + '% uptime'"></span>
                         </div>
                         <div class="flex space-x-1">
                             <template x-for="day in service.days" :key="day.date">
