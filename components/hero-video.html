@@ -1,0 +1,63 @@
+{{define "hero-video"}}
+<!-- Hero Video Component -->
+<section class="w-full mb-16 relative">
+    <video 
+        id="heroVideo{{if .Id}}_{{.Id}}{{end}}"
+        class="w-full h-auto object-cover rounded-2xl border border-gray-200" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        controls
+    >
+        <source src="{{.VideoUrl}}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    {{if .ShowUnmuteButton}}
+    <!-- Custom Unmute Button -->
+    <button 
+        id="unmuteBtn{{if .Id}}_{{.Id}}{{end}}"
+        class="absolute top-4 right-4 bg-green-500 bg-opacity-80 hover:bg-opacity-90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-200 z-10"
+        onclick="toggleMute('{{if .Id}}{{.Id}}{{end}}')"
+    >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <!-- Muted icon -->
+            <path id="mutedIcon{{if .Id}}_{{.Id}}{{end}}" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"/>
+            <!-- Unmuted icon (hidden by default) -->
+            <path id="unmutedIcon{{if .Id}}_{{.Id}}{{end}}" class="hidden" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.73 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.73l3.653-3.82a1 1 0 011.617.82zM12.146 5.146a1 1 0 011.414 0c2.39 2.391 2.39 6.268 0 8.658a1 1 0 01-1.414-1.414c1.598-1.598 1.598-4.232 0-5.83a1 1 0 010-1.414z"/>
+        </svg>
+        <span id="unmuteText{{if .Id}}_{{.Id}}{{end}}">Unmute</span>
+    </button>
+    {{end}}
+</section>
+
+{{if .ShowUnmuteButton}}
+<script>
+function toggleMute(id) {
+    const suffix = id ? '_' + id : '';
+    const video = document.getElementById('heroVideo' + suffix);
+    const button = document.getElementById('unmuteBtn' + suffix);
+    const text = document.getElementById('unmuteText' + suffix);
+    const mutedIcon = document.getElementById('mutedIcon' + suffix);
+    const unmutedIcon = document.getElementById('unmutedIcon' + suffix);
+    
+    if (video.muted) {
+        video.muted = false;
+        text.textContent = 'Mute';
+        mutedIcon.classList.add('hidden');
+        unmutedIcon.classList.remove('hidden');
+        button.classList.add('bg-black', 'bg-opacity-50');
+        button.classList.remove('bg-green-500', 'bg-opacity-80');
+    } else {
+        video.muted = true;
+        text.textContent = 'Unmute';
+        mutedIcon.classList.remove('hidden');
+        unmutedIcon.classList.add('hidden');
+        button.classList.remove('bg-black', 'bg-opacity-50');
+        button.classList.add('bg-green-500', 'bg-opacity-80');
+    }
+}
+</script>
+{{end}}
+{{end}}
