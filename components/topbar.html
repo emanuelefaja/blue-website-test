@@ -308,14 +308,45 @@
                                 </button>
                                 <div x-show="section.expanded" x-collapse class="ml-4 mt-1 space-y-1">
                                     <template x-for="child in section.children" :key="child.id">
-                                        <a :href="child.href || '#'" 
-                                           :target="child.external ? '_blank' : '_self'"
-                                           :rel="child.external ? 'noopener noreferrer' : ''"
-                                           :class="isActive(child.href) ? 'block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors'"
-                                           @click="mobileMenuOpen = false">
-                                            <span x-text="child.name"></span>
-                                            <span x-show="child.external" class="ml-1">↗</span>
-                                        </a>
+                                        <div>
+                                            <!-- Child has sub-children (3rd level) -->
+                                            <template x-if="child.children && child.children.length > 0">
+                                                <div>
+                                                    <button @click="child.expanded = !child.expanded" 
+                                                            class="flex items-center justify-between w-full text-left px-3 py-1.5 rounded-md text-gray-700 hover:bg-gray-100 transition-colors">
+                                                        <span class="text-sm" x-text="child.name"></span>
+                                                        <svg :class="child.expanded ? 'rotate-90' : 'rotate-0'" 
+                                                             class="w-3 h-3 text-gray-400 transition-transform duration-200" 
+                                                             fill="currentColor" viewBox="0 0 20 20">
+                                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <div x-show="child.expanded" x-collapse class="ml-4 mt-1 space-y-0.5">
+                                                        <template x-for="subchild in child.children" :key="subchild.id">
+                                                            <a :href="subchild.href || '#'" 
+                                                               :target="subchild.external ? '_blank' : '_self'"
+                                                               :rel="subchild.external ? 'noopener noreferrer' : ''"
+                                                               :class="isActive(subchild.href) ? 'block px-3 py-1 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'block px-3 py-1 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors'"
+                                                               @click="mobileMenuOpen = false">
+                                                                <span x-text="subchild.name"></span>
+                                                                <span x-show="subchild.external" class="ml-1">↗</span>
+                                                            </a>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                            <!-- Child is a simple link (2nd level) -->
+                                            <template x-if="!child.children || child.children.length === 0">
+                                                <a :href="child.href || '#'" 
+                                                   :target="child.external ? '_blank' : '_self'"
+                                                   :rel="child.external ? 'noopener noreferrer' : ''"
+                                                   :class="isActive(child.href) ? 'block px-3 py-1.5 text-sm rounded-md bg-gray-100 text-brand-blue font-medium' : 'block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-100 hover:text-brand-blue transition-colors'"
+                                                   @click="mobileMenuOpen = false">
+                                                    <span x-text="child.name"></span>
+                                                    <span x-show="child.external" class="ml-1">↗</span>
+                                                </a>
+                                            </template>
+                                        </div>
                                     </template>
                                 </div>
                             </div>
