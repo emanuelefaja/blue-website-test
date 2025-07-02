@@ -2,9 +2,262 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Sales CRM" 
-            "Subtitle" "Manage leads, track opportunities, and close more deals with Blue's flexible CRM solution." 
-            "MarginBottom" "mb-8"
+            "Title" "Close more deals, faster." 
+            "Subtitle" "Create simple, clear processes for your sales team with real-time visibility into your pipeline and automations." 
+            "MarginBottom" "mb-16"
     }}
 
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/public/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "crm"
+    }}
+
+    <!-- Customer Logos -->
+    <section class="mb-16">
+        {{$logoData := parseJSON `{
+            "title": "$1B+ in opportunities are tracked in Blue.",
+            "subtitle": "Businesses all over the world use Blue to track their sales opportunities. They report better pipeline visibility, more collaboration, faster deal times, and higher close rates.",
+            "logos": [
+                { "name": "Heineken", "src": "/public/customers/heineken.svg" },
+                { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
+                { "name": "Save the Children", "src": "/public/customers/savethechildren.svg" },
+                { "name": "FedEx", "src": "/public/customers/fedex.svg" },
+                { "name": "ILO", "src": "/public/customers/ilo.png" }
+            ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+    </section>
+
+    <!-- Customer Testimonial Section -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" "I really really love Blue…It’s a very flexible sales CRM system."
+                "VideoUrl" "https://media.blue.cc/june.mp4"
+                "PosterUrl" "/public/testimonials/june.jpg"
+                "Name" "June"
+                "Title" "Legal Tech Sales"
+        }}
+    </section>
+
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- Automations Feature Video -->
+        <div class="mb-16">
+            {{$automationsData := parseJSON `{
+                "Title": "Automations keep the admin work away",
+                "Description": "Nobody likes to do work for work's sake. Blue's powerful automations means that your team can stay focused on selling instead of low-value administration work. Spend more time with leads and less time on admin tasks. Move deals through your pipeline faster with automated stage transitions and get notified any time something important happens with customized alerts that keep your team informed without overwhelming them.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn more",
+                    "Url": "/docs/automations/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "See also",
+                    "Links": [
+                        {
+                            "Text": "Automation triggers",
+                            "Url": "/docs/automations/triggers",
+                            "Description": "— Set up conditions that trigger your automations"
+                        },
+                        {
+                            "Text": "Email automations",
+                            "Url": "/docs/automations/actions/email-automations",
+                            "Description": "— Automatically send emails based on sales activities"
+                        },
+                        {
+                            "Text": "User notifications",
+                            "Url": "/docs/user-management/notifications",
+                            "Description": "— Configure how your team gets notified"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $automationsData}}
+        </div>
+        
+        <!-- Dashboards Feature Video -->
+        <div class="mb-16">
+            {{$dashboardsData := parseJSON `{
+                "Title": "Dashboards give you full visibility into your pipeline",
+                "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates. Save costs by eliminating the need for additional business intelligence software. Create super customizable dashboards that adapt to your unique sales data needs and reporting requirements.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Learn more",
+                    "Url": "/docs/dashboards/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "See also",
+                    "Links": [
+                        {
+                            "Text": "Stat cards",
+                            "Url": "/docs/dashboards/stat-cards",
+                            "Description": "— Display key metrics at a glance"
+                        },
+                        {
+                            "Text": "Bar graphs",
+                            "Url": "/docs/dashboards/bar-graphs", 
+                            "Description": "— Visualize sales data with charts"
+                        },
+                        {
+                            "Text": "Pie charts",
+                            "Url": "/docs/dashboards/pie-charts",
+                            "Description": "— Show data distribution and proportions"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $dashboardsData}}
+        </div>
+        
+        <!-- Custom Fields Feature Video -->
+        <div class="mb-16">
+            {{$customFieldsData := parseJSON `{
+                "Title": "Custom Fields that adapt to your unique data structure",
+                "Description": "Blue's custom fields allow you to capture the precise data points needed to manage your sales process effectively. Blue adapts to your data structure, not the other way around. Create your dream sales database by visually designing the fields you need. Combine custom fields for advanced use cases such as cross-references and automatic calculations. Set permissions on a per-field basis to only show your team what you want them to see.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn more",
+                    "Url": "/docs/custom-fields/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "See also",
+                    "Links": [
+                        {
+                            "Text": "Formula fields",
+                            "Url": "/docs/custom-fields/formula",
+                            "Description": "— Automate calculations and data transformations"
+                        },
+                        {
+                            "Text": "Reference fields",
+                            "Url": "/docs/custom-fields/reference",
+                            "Description": "— Link records across different projects"
+                        },
+                        {
+                            "Text": "Currency fields",
+                            "Url": "/docs/custom-fields/currency",
+                            "Description": "— Track deal values and revenue"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $customFieldsData}}
+        </div>
+        
+        <!-- Notifications Feature Video -->
+        <div>
+            {{$notificationsData := parseJSON `{
+                "Title": "Know what's going on with smart notifications",
+                "Description": "Blue keeps you informed of important matters without overloading your inbox and phone. You have the flexibility to adjust your settings and stay in control. Switch to Deep Work Mode when you need to focus without distractions. Get granular control over how and when you're notified for each type of activity. Create custom email notifications tailored to your team's specific workflow needs.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Learn more",
+                    "Url": "/docs/user-management/notifications"
+                },
+                "SeeAlso": {
+                    "Heading": "See also",
+                    "Links": [
+                        {
+                            "Text": "Profile settings",
+                            "Url": "/docs/user-management/profile-settings",
+                            "Description": "— Customize your personal preferences"
+                        },
+                        {
+                            "Text": "Mentions",
+                            "Url": "/docs/user-management/mentions",
+                            "Description": "— Get notified when someone mentions you"
+                        },
+                        {
+                            "Text": "Magic links",
+                            "Url": "/docs/user-management/magic-links",
+                            "Description": "— Quick access to important records"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $notificationsData}}
+        </div>
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Close more deals, faster.",
+            "Subtitle": "Blue organizes work, ensuring teams know what to do, how to do it — and why it matters.",
+            "SecondaryText": "Request a demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Get started",
+            "PrimaryUrl": "https://app.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "What makes Blue different from other sales CRM solutions?",
+                            "answer": "Blue combines the power of a CRM with project management capabilities, giving you a complete view of your sales process from lead to delivery. Our flexible custom fields and automation features adapt to your unique sales workflow."
+                        },
+                        {
+                            "question": "Can I integrate Blue with my existing tools and software?",
+                            "answer": "Yes, Blue offers extensive integrations with popular tools like Slack, Gmail, Zapier, and many more. Our API also allows for custom integrations to fit your specific needs."
+                        },
+                        {
+                            "question": "How does Blue help me track my sales pipeline?",
+                            "answer": "Blue provides multiple views of your sales pipeline including Kanban boards, lists, calendars, and custom dashboards. You can track deal progress, forecast revenue, and identify bottlenecks in real-time."
+                        },
+                        {
+                            "question": "Is Blue suitable for small businesses and startups?",
+                            "answer": "Absolutely! Blue is designed to scale with your business. Our flexible pricing and easy-to-use interface make it perfect for small teams, while our advanced features support enterprise-level operations."
+                        },
+                        {
+                            "question": "How does Blue's automation feature work?",
+                            "answer": "Blue's automation engine allows you to create rules that trigger actions based on specific conditions. For example, automatically move deals to the next stage when certain criteria are met, or send follow-up emails when a deal hasn't been updated in a while."
+                        },
+                        {
+                            "question": "Can I customize Blue to fit my specific sales process?",
+                            "answer": "Yes, Blue is highly customizable. You can create custom fields, design your own workflows, set up automated processes, and configure dashboards to match your exact sales methodology and reporting needs."
+                        },
+                        {
+                            "question": "How secure is my data in Blue?",
+                            "answer": "Blue takes security seriously with enterprise-grade encryption, regular security audits, and compliance with industry standards. Your data is protected both in transit and at rest, with granular permission controls."
+                        },
+                        {
+                            "question": "Does Blue offer mobile access?",
+                            "answer": "Yes, Blue works seamlessly on mobile devices through our responsive web app and dedicated mobile applications for iOS and Android, ensuring you can manage your sales pipeline from anywhere."
+                        },
+                        {
+                            "question": "How does pricing work for Blue?",
+                            "answer": "Blue offers flexible pricing plans based on your team size and feature needs. We have options for individuals, small teams, and enterprises, with transparent pricing and no hidden fees."
+                        },
+                        {
+                            "question": "Can Blue help with sales forecasting?",
+                            "answer": "Yes, Blue's reporting and dashboard features provide powerful sales forecasting capabilities. You can track conversion rates, analyze deal velocity, and predict future revenue based on your pipeline data."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 </div>
