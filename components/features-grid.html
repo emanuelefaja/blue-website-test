@@ -1,18 +1,18 @@
 {{define "features-grid"}}
 <div class="max-w-7xl mx-auto">
     {{range .sections}}
-    <div class="border-t border-gray-200 pt-6 mb-12">
+    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mb-12">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <div class="col-span-1">
-                <h2 class="text-lg font-semibold text-gray-900">{{.title}}</h2>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{{.title}}</h2>
             </div>
             <div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {{range .columns}}
                 <div>
                     {{range .items}}
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
                         {{if .link}}
-                        <a href="{{.link}}" class="hover:text-brand-blue hover:underline">{{.label}}</a>
+                        <a href="{{.link}}" class="hover:text-brand-blue hover:underline transition-colors duration-200">{{.label}}</a>
                         {{else}}
                         {{.label}}
                         {{end}}
