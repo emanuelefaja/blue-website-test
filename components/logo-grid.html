@@ -1,4 +1,17 @@
 {{define "logo-grid"}}
+<style>
+    .logo-grid-item {
+        background: white;
+        border-color: #e5e7eb;
+    }
+    .dark .logo-grid-item {
+        background: #1f2937; /* gray-800 */
+        border-color: #374151; /* gray-700 */
+    }
+    .dark .logo-grid-item img {
+        filter: brightness(0) invert(1);
+    }
+</style>
 <div style="width: 100%; padding: 2rem 0;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
         {{if .title}}
@@ -6,7 +19,7 @@
         {{end}}
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; align-items: center;">
             {{range .logos}}
-            <div style="display: flex; align-items: center; justify-content: center; padding: 1rem; height: 80px; border: 1px solid #e5e7eb; border-radius: 8px; background: white;">
+            <div class="logo-grid-item" style="display: flex; align-items: center; justify-content: center; padding: 1rem; height: 80px; border: 1px solid; border-radius: 8px;">
                 <img src="{{.src}}" 
                      alt="{{.name}} logo" 
                      width="120"
