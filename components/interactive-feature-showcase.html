@@ -2,7 +2,7 @@
 <!-- Interactive Feature Showcase Component -->
 <section class="max-w-7xl mx-auto py-20">
     {{if .Title}}
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 text-center mb-16">{{.Title}}</h2>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 text-center mb-16">{{.Title}}</h2>
     {{end}}
     
     <div 
@@ -41,8 +41,8 @@
                         'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
                     }"
                 >
-                    <h3 class="text-lg font-medium text-gray-900 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
+                    <hr class="border-gray-200 dark:border-gray-700">
                 </div>
             </div>
             {{end}}
@@ -58,7 +58,7 @@
                 {{if .VideoUrl}}
                 <!-- Video Preview -->
                 <video 
-                    class="w-full h-auto rounded-lg border-2 border-gray-200 shadow-sm" 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
                     autoplay 
                     muted 
                     loop 
@@ -72,13 +72,13 @@
                 <img 
                     src="{{.ImageUrl}}" 
                     alt="{{.Title}} feature preview" 
-                    class="w-full h-auto rounded-lg border-2 border-gray-200 shadow-sm"
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm"
                     loading="lazy"
                 >
                 {{else}}
                 <!-- Placeholder -->
-                <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <span class="text-gray-500">{{.Title}} Preview</span>
+                <div class="w-full h-64 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-500 dark:text-gray-400">{{.Title}} Preview</span>
                 </div>
                 {{end}}
             </div>
