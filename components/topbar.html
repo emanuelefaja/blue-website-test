@@ -40,7 +40,8 @@
                 <img src="/public/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3" width="120" height="32">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
-                    class="hidden md:block p-2 ml-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none">
+                    class="hidden md:block p-2 ml-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none"
+                    aria-label="Toggle sidebar">
                 <svg class="w-4 h-6" fill="none" stroke="currentColor" viewBox="0 0 16 24">
                     <rect x="1" y="4" width="14" height="16" stroke-width="1.5" rx="1"></rect>
                     <rect :class="sidebarsOpen ? 'fill-current' : 'fill-transparent'" 
@@ -199,7 +200,8 @@
         <div class="hidden md:flex items-center space-x-4">
             <!-- Light/Dark mode toggle -->
             <button @click="toggleDarkMode()" 
-                    class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200">
+                    class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200 cursor-pointer"
+                    :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'">
                 <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'" class="text-lg transition-transform duration-200"></i>
             </button>
             
@@ -224,7 +226,8 @@
         
         <!-- Mobile Menu Button -->
         <button @click="mobileMenuOpen = !mobileMenuOpen" 
-                class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none">
+                class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none"
+                :aria-label="mobileMenuOpen ? 'Close mobile menu' : 'Open mobile menu'">
             <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
