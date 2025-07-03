@@ -525,7 +525,13 @@ func extractTextFromHTML(html string) string {
 			text = text[:start]
 			break
 		}
-		text = text[:start] + " " + text[start+end+9:]
+		// Calculate the actual end position and ensure it doesn't go out of bounds
+		actualEnd := start + end + 9
+		if actualEnd > len(text) {
+			text = text[:start]
+		} else {
+			text = text[:start] + " " + text[actualEnd:]
+		}
 	}
 
 	// Remove style content completely
@@ -539,7 +545,13 @@ func extractTextFromHTML(html string) string {
 			text = text[:start]
 			break
 		}
-		text = text[:start] + " " + text[start+end+8:]
+		// Calculate the actual end position and ensure it doesn't go out of bounds
+		actualEnd := start + end + 8
+		if actualEnd > len(text) {
+			text = text[:start]
+		} else {
+			text = text[:start] + " " + text[actualEnd:]
+		}
 	}
 
 	// Find the first H1 tag and start content extraction from there
