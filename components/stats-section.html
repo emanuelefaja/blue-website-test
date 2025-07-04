@@ -6,15 +6,74 @@
         <h2 class="text-3xl text-gray-900 dark:text-gray-100 mb-16">{{.Title}}</h2>
         
         <!-- Stats Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {{range .Stats}}
-            <div class="text-center">
-                <!-- Large Number -->
-                <div class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{.Number}}</div>
-                <!-- Description -->
-                <div class="text-lg text-gray-600 dark:text-gray-400">{{.Description}}</div>
-            </div>
-            {{end}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+             x-data="{
+                intersecting: false,
+                progress: 0,
+                stats: [
+                    {{range .Stats}}
+                    { 
+                        originalText: '{{.Number}}', 
+                        current: 0, 
+                        description: '{{.Description}}',
+                        target: 0,
+                        suffix: ''
+                    },
+                    {{end}}
+                ],
+                init() {
+                    this.stats.forEach(stat => {
+                        const text = stat.originalText;
+                        // Extract number and suffix
+                        const match = text.match(/^(\d+(?:\.\d+)?)\s*([KMB+]*)/i);
+                        if (match) {
+                            let num = parseFloat(match[1]);
+                            const suffix = match[2] || '';
+                            
+                            // Convert K, M, B to actual numbers
+                            if (suffix.includes('K')) num *= 1000;
+                            else if (suffix.includes('M')) num *= 1000000;
+                            else if (suffix.includes('B')) num *= 1000000000;
+                            
+                            stat.target = num;
+                            stat.suffix = suffix;
+                        } else {
+                            // Fallback for plain numbers
+                            stat.target = parseInt(text) || 0;
+                            stat.suffix = '';
+                        }
+                    });
+                },
+                updateProgress() {
+                    this.progress = Math.max(0, Math.min((window.innerHeight - $el.getBoundingClientRect().top) / (window.innerHeight * 0.5), 1));
+                    this.updateNumbers();
+                },
+                updateNumbers() {
+                    this.stats.forEach(stat => {
+                        // Easing function (ease-out)
+                        const easedProgress = 1 - Math.pow(1 - this.progress, 3);
+                        stat.current = Math.floor(stat.target * easedProgress);
+                    });
+                },
+                formatNumber(num, suffix) {
+                    if (suffix.includes('K')) return Math.floor(num / 1000) + 'K+';
+                    if (suffix.includes('M')) return Math.floor(num / 1000000) + 'M+';
+                    if (suffix.includes('B')) return Math.floor(num / 1000000000) + 'B+';
+                    return num.toLocaleString() + (suffix.includes('+') ? '+' : '');
+                }
+             }"
+             x-init="init(); updateProgress()"
+             x-intersect="intersecting = true"
+             x-intersect:leave="intersecting = false"
+             x-on:scroll.window="if (intersecting) { updateProgress() }">
+            <template x-for="(stat, index) in stats" :key="index">
+                <div class="text-center">
+                    <!-- Large Number -->
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4" x-text="formatNumber(stat.current, stat.suffix)"></div>
+                    <!-- Description -->
+                    <div class="text-lg text-gray-600 dark:text-gray-400" x-text="stat.description"></div>
+                </div>
+            </template>
         </div>
     </div>
 </section>
