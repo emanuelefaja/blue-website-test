@@ -21,7 +21,7 @@
 
     <!-- Featured Experts Section -->
     <section class="mb-16">        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Ana Avendaño - Featured Expert -->
             <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow cursor-pointer" 
                  @click="openModal({
@@ -44,21 +44,21 @@
                     },
                     price: '$20/hour'
                  })">
-                <div class="flex flex-col sm:flex-row items-start gap-6">
-                    <img src="/public/experts/ana.jpeg" alt="Ana Avendaño" class="w-16 h-16 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0">
+                <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    <img src="/public/experts/ana.jpeg" alt="Ana Avendaño" class="w-20 h-20 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0">
                     <div class="flex-1 text-center sm:text-left">
-                        <div class="flex flex-col sm:flex-row items-center gap-3 mb-2">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
                             <div class="flex items-center gap-2">
                                 <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Ana Avendaño</h3>
                                 <span class="text-2xl">🇵🇦</span>
                             </div>
-                            <span class="text-sm px-2 py-1 bg-blue-50 text-brand-blue rounded-full font-medium">Featured Expert</span>
+                            <span class="text-sm px-2 py-1 bg-blue-50 text-brand-blue rounded-full font-medium whitespace-nowrap">Featured Expert</span>
                         </div>
                         <div class="flex items-center justify-center sm:justify-start gap-2 mb-3">
                             <span class="text-sm text-gray-600 dark:text-gray-400">Europe</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-4">Industrial engineer with productivity and HR workflow experience.</p>
-                        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-sm text-gray-500 dark:text-gray-400">
                             <span>English, Spanish</span>
                             <span class="hidden sm:inline">•</span>
                             <span>1-2 years</span>
@@ -87,21 +87,21 @@
                     badge: 'Blue Staff',
                     price: '$20/hour'
                  })">
-                <div class="flex flex-col sm:flex-row items-start gap-6">
-                    <img src="/public/experts/jakemarkperez.jpg" alt="Jake Mark Perez" class="w-16 h-16 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0">
+                <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                    <img src="/public/experts/jakemarkperez.jpg" alt="Jake Mark Perez" class="w-20 h-20 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0">
                     <div class="flex-1 text-center sm:text-left">
-                        <div class="flex flex-col sm:flex-row items-center gap-3 mb-2">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
                             <div class="flex items-center gap-2">
                                 <h3 class="text-xl font-medium text-gray-900 dark:text-gray-100">Jake Mark Perez</h3>
                                 <span class="text-2xl">🇵🇭</span>
                             </div>
-                            <span class="text-sm px-2 py-1 bg-brand-blue text-white rounded-full font-medium">Blue Staff</span>
+                            <span class="text-sm px-2 py-1 bg-brand-blue text-white rounded-full font-medium whitespace-nowrap">Blue Staff</span>
                         </div>
                         <div class="flex items-center justify-center sm:justify-start gap-2 mb-3">
                             <span class="text-sm text-gray-600 dark:text-gray-400">Asia</span>
                         </div>
                         <p class="text-gray-600 dark:text-gray-400 mb-4">Customer Solutions Engineer at Blue. Jake can help with integrations, APIs, and more.</p>
-                        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-sm text-gray-500 dark:text-gray-400">
                             <span>English, Tagalog</span>
                             <span class="hidden sm:inline">•</span>
                             <span>1-2 years</span>
@@ -141,11 +141,11 @@
                     </div>
                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Blue consultant specializing in enhancing workflows for creative agencies.</p>
-                    <div class="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <span>English</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>4+ years</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
                 </div>
@@ -174,11 +174,11 @@
                     </div>
                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">North America</div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Early Blue adopter with 30+ years of experience in project management.</p>
-                    <div class="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <span>English</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>4+ years</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
                 </div>
@@ -208,11 +208,11 @@
                     </div>
                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Europe</div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Project manager and trainer in project management for businesses.</p>
-                    <div class="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <span>French, English</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>2-4 years</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$50/hour</span>
                     </div>
                 </div>
@@ -241,11 +241,11 @@
                     </div>
                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Specialist in implementing Blue for web-based projects.</p>
-                    <div class="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <span>Khmer, English</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>4+ years</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$20/hour</span>
                     </div>
                 </div>
@@ -274,11 +274,11 @@
                     </div>
                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">Asia</div>
                     <p class="text-gray-600 dark:text-gray-400 mb-4">Blue consultant specializing in the solopreneurs sector and VA workflows.</p>
-                    <div class="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <span>English</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span>4+ years</span>
-                        <span>•</span>
+                        <span class="hidden sm:inline">•</span>
                         <span class="text-brand-blue font-medium">$25/hour</span>
                     </div>
                 </div>
@@ -357,9 +357,9 @@
                             <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Experience & Languages</h3>
                             <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                                 <span x-text="activeExpert?.experience + ' experience'"></span>
-                                <span>•</span>
+                                <span class="hidden sm:inline">•</span>
                                 <span x-text="activeExpert?.languages?.join(', ')"></span>
-                                <span>•</span>
+                                <span class="hidden sm:inline">•</span>
                                 <span class="text-brand-blue font-medium" x-text="activeExpert?.price"></span>
                             </div>
                         </div>
