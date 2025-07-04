@@ -134,7 +134,7 @@ func (lc *LinkChecker) extractLinksFromHTML(htmlContent string) []string {
 				}
 			case "img":
 				for _, attr := range n.Attr {
-					if attr.Key == "src" {
+					if attr.Key == "src" && !strings.HasPrefix(attr.Val, "data:") {
 						links = append(links, attr.Val)
 					}
 				}
