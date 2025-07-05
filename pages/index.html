@@ -74,7 +74,9 @@
 
     
 
-<!-- Interactive Feature Showcase Section -->
+<!-- Interactive Feature Showcase Section 
+
+I wonder if process management is really needed, is that a "use case"? -->
 <section class="mb-8">
         
         {{$showcaseData := parseJSON `{
@@ -82,7 +84,7 @@
             "Features": [
                 {
                     "Id": "process-management",
-                    "Title": "Process Management",
+                    "Title": "Process Management", 
                     "VideoUrl": "/public/testvideo2.mp4"
                 },
                 {
@@ -186,8 +188,8 @@
     <!-- Your Data, Your Way -->
     <div class="mb-20">
         {{$yourDataData := parseJSON `{
-            "Title": "Your Data, Your Way",
-            "Description": "Every business is unique, and your data structure should reflect that. Create custom fields, design your own record types, and build the perfect database that fits your exact workflow. Whether you're tracking sales leads, managing projects, or organizing inventory, Blue adapts to your business model instead of forcing you to adapt to rigid templates.",
+            "Title": "Your perfect data structure.",
+            "Description": "Create custom fields, design your own record types, and build the perfect database that fits your exact workflow.",
             "VideoUrl": "/public/testvideo2.mp4",
             "VideoPosition": "right"
         }`}}
@@ -197,14 +199,16 @@
     <!-- Insights That Drive Action -->
     <div class="mb-20">
         {{$insightsData := parseJSON `{
-            "Title": "Insights That Drive Action",
-            "Description": "Transform your data into actionable insights with real-time analytics and customizable dashboards. Track key performance indicators, identify trends, and spot opportunities before your competitors do. Blue's intelligent reporting helps you understand what's working, what isn't, and exactly where to focus your efforts for maximum impact.",
+            "Title": "Real-time management dashboards.",
+            "Description": "Easily build dashboards that automatically update as your data changes.",
             "VideoUrl": "/public/testvideo2.mp4",
             "VideoPosition": "left"
         }`}}
         {{template "feature-video" $insightsData}}
     </div>
 </section>
+
+<!-- Likely need a unique integrations area here with various logos.-->
 
     <!-- Features Grid Section -->
     {{$featuresData := parseJSON `{
