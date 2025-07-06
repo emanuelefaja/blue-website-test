@@ -208,8 +208,8 @@ func (ns *NavigationService) processDirectory(dirPath, dirName, baseURL, rootCon
 			// Remove the content type prefix
 			if strings.HasPrefix(relDir, contentTypeName+"/") {
 				relDir = strings.TrimPrefix(relDir, contentTypeName+"/")
-			} else if contentTypeName == "api-docs" && strings.HasPrefix(relDir, "api-docs/") {
-				relDir = strings.TrimPrefix(relDir, "api-docs/")
+			} else if contentTypeName == "api" && strings.HasPrefix(relDir, "api/") {
+				relDir = strings.TrimPrefix(relDir, "api/")
 			} else if contentTypeName == "legal" && strings.HasPrefix(relDir, "legal/") {
 				relDir = strings.TrimPrefix(relDir, "legal/")
 			}
@@ -283,7 +283,7 @@ func (ns *NavigationService) GetNavigationForPath(path string) *Navigation {
 		apiSection := NavItem{
 			ID:       "api-reference",
 			Name:     "API Reference",
-			Expanded: strings.HasPrefix(path, "/api") || strings.HasPrefix(path, "/api-docs"), // Only expand when on API pages
+			Expanded: strings.HasPrefix(path, "/api"), // Only expand when on API pages
 			Children: ns.apiNavigation.Sections,
 		}
 		nav.Sections = append(nav.Sections, apiSection)

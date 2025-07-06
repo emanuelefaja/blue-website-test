@@ -19,8 +19,8 @@ var ContentTypes = map[string]ContentType{
 		URLPrefix: "/docs",
 	},
 	"api": {
-		Name:      "api-docs",
-		BaseDir:   "content/api-docs",
+		Name:      "api",
+		BaseDir:   "content/api",
 		URLPrefix: "/api",
 	},
 	"legal": {
@@ -130,7 +130,7 @@ func GetContentTypeFromPath(path string) (ContentType, bool) {
 	switch parts[0] {
 	case "docs":
 		return ContentTypes["docs"], true
-	case "api", "api-docs":
+	case "api":
 		return ContentTypes["api"], true
 	case "legal":
 		return ContentTypes["legal"], true

@@ -290,6 +290,13 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Get the requested path
 	path := req.URL.Path
 
+	// Handle api-docs to api redirects
+	if strings.HasPrefix(path, "/api-docs/") {
+		newPath := strings.Replace(path, "/api-docs/", "/api/", 1)
+		http.Redirect(w, req, newPath, http.StatusMovedPermanently)
+		return
+	}
+
 	// Check for redirects first
 	if redirectTo, statusCode, shouldRedirect := r.seoService.CheckRedirect(path); shouldRedirect {
 		http.Redirect(w, req, redirectTo, statusCode)
