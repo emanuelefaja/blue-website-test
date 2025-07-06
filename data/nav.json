@@ -93,7 +93,7 @@
       "expanded": false,
       "children": [
         {"id": "about", "name": "About", "href": "/company/about"},
-        {"id": "mission", "name": "Mission", "href": "/company/mission"},
+        {"id": "charter", "name": "Charter", "href": "/company/charter"},
         {"id": "values", "name": "Values", "href": "/company/values"},
         {"id": "partner-program", "name": "Partner with us", "href": "/company/partners"},
         {"id": "careers", "name": "Careers", "href": "/company/careers"},
