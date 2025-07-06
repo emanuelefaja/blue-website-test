@@ -2,85 +2,264 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Service Tickets" 
-            "Subtitle" "Provide exceptional customer support with efficient ticket management and resolution tracking." 
-            "MarginBottom" "mb-8"
+            "Title" "Service tickets that actually get resolved." 
+            "Subtitle" "Transform your support operations with flexible ticket management, intelligent routing, and real-time SLA tracking." 
+            "MarginBottom" "mb-16"
     }}
 
-{{template "hero-video" 
-    dict 
-        "VideoUrl" "/public/testvideo2.mp4"
-        "ShowUnmuteButton" true
-        "Id" "crm"
-}}
-
- <!-- Features Grid Section -->
- {{$featuresData := parseJSON `{
-    "Title": "Everything you need to succeed",
-    "Features": [
-        {
-            "Icon": "shield",
-            "Title": "Security",
-            "Description": "Enterprise-grade security with end-to-end encryption and compliance certifications.",
-            "Url": "/platform/security"
-        },
-        {
-            "Icon": "bolt",
-            "Title": "Performance",
-            "Description": "Lightning-fast response times and 99.9% uptime guarantee for mission-critical work.",
-            "Url": "/platform/performance"
-        },
-        {
-            "Icon": "chart",
-            "Title": "Analytics",
-            "Description": "Real-time insights and customizable dashboards to track what matters most."
-        },
-        {
-            "Icon": "plug",
-            "Title": "Integration",
-            "Description": "Connect with 1,000+ tools including Slack, Gmail, Zapier, and custom APIs.",
-            "Url": "/platform/integrations"
-        },
-        {
-            "Icon": "magic",
-            "Title": "Automation",
-            "Description": "Streamline workflows with intelligent automation that learns from your processes."
-        },
-        {
-            "Icon": "mobile",
-            "Title": "Mobile",
-            "Description": "Full-featured mobile apps for iOS and Android with offline sync capabilities."
-        },
-        {
-            "Icon": "users",
-            "Title": "Collaboration",
-            "Description": "Real-time collaboration tools with comments, mentions, and team workspaces."
-        },
-        {
-            "Icon": "cogs",
-            "Title": "Customization",
-            "Description": "Fully customizable interface, fields, and workflows to match your business needs."
-        },
-        {
-            "Icon": "headset",
-            "Title": "Support",
-            "Description": "24/7 expert support with live chat, phone, and dedicated success managers."
-        }
-    ]
-}`}}
-
-{{template "features-grid-simple" $featuresData}}
-
-  <!-- TODO: Update to a more relevant testimonial -->
-  <section class="mb-16">        
-    {{template "testimonial-single" 
+    {{template "hero-video" 
         dict 
-            "Quote" "I really really love Blue…It’s a very flexible sales CRM system."
-            "VideoUrl" "https://media.blue.cc/june.mp4"
-            "PosterUrl" "/public/testimonials/june.jpg"
-            "Name" "June"
-            "Title" "Legal Tech Sales"
+            "VideoUrl" "/public/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "service-tickets"
     }}
-</section>
 
+    <!-- Customer Logos -->
+    <section class="mb-16">
+        {{$logoData := parseJSON `{
+            "title": "Teams resolve 3M+ tickets annually in Blue",
+            "logos": [
+                { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
+                { "name": "FedEx", "src": "/public/customers/fedex.svg" },
+                { "name": "Cisco", "src": "/public/customers/cisco.svg" },
+                { "name": "Red Hat", "src": "/public/customers/redhat.svg" },
+                { "name": "Manulife", "src": "/public/customers/manulife.svg" }
+            ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+    </section>
+
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- Smart Ticket Creation & Routing -->
+        <div class="mb-16">
+            {{$ticketCreationData := parseJSON `{
+                "Title": "Tickets from anywhere, routed instantly.",
+                "Description": "Create tickets via forms, email, API, or QR codes on equipment. Intelligent automations ensure every ticket reaches the right team member based on type, priority, or custom rules.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about forms",
+                    "Url": "/docs/forms/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "See also",
+                    "Links": [
+                        {
+                            "Text": "QR code generation",
+                            "Url": "/docs/forms/qr-codes",
+                            "Description": "for equipment and location-based tickets"
+                        },
+                        {
+                            "Text": "Email integrations",
+                            "Url": "/docs/integrations/email",
+                            "Description": "to create tickets from customer emails"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $ticketCreationData}}
+        </div>
+        
+        <!-- SLA Tracking -->
+        <div class="mb-16">
+            {{$slaData := parseJSON `{
+                "Title": "Never miss an SLA again.",
+                "Description": "Track time in each stage, monitor response times, and visualize performance with real-time dashboards. Know exactly where bottlenecks occur and optimize your workflow.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Heading": "Key features",
+                    "Links": [
+                        {
+                            "Text": "Time in list tracking",
+                            "Url": "/docs/custom-fields/time-in-list",
+                            "Description": "shows duration in each status"
+                        },
+                        {
+                            "Text": "Duration fields",
+                            "Url": "/docs/custom-fields/duration",
+                            "Description": "measure time between any two events"
+                        },
+                        {
+                            "Text": "Real-time dashboards",
+                            "Url": "/docs/dashboards/introduction",
+                            "Description": "for SLA monitoring"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $slaData}}
+        </div>
+        
+        <!-- Complete Customization -->
+        <div class="mb-16">
+            {{$customizationData := parseJSON `{
+                "Title": "Your support process, your way.",
+                "Description": "Design your perfect ticket structure with custom fields, statuses, and workflows. No rigid templates—build exactly what your team needs. Color-code priorities, add tags for escalation, and create the ideal ticket lifecycle.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Explore custom fields",
+                    "Url": "/docs/custom-fields/introduction"
+                }
+            }`}}
+            
+            {{template "feature-video" $customizationData}}
+        </div>
+        
+        <!-- Customer Communication -->
+        <div>
+            {{$communicationData := parseJSON `{
+                "Title": "Keep everyone in the loop, automatically.",
+                "Description": "Automated email updates notify customers at each stage. Reduce follow-up inquiries and improve satisfaction with proactive communication. Set up custom email templates for different ticket types and statuses.",
+                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Heading": "Communication features",
+                    "Links": [
+                        {
+                            "Text": "Email automations",
+                            "Url": "/docs/automations/actions/send-email",
+                            "Description": "for status updates"
+                        },
+                        {
+                            "Text": "Customer portal access",
+                            "Url": "/docs/user-management/roles",
+                            "Description": "with custom permissions"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $communicationData}}
+        </div>
+    </section>
+
+    <!-- Use Case Grid -->
+    <section class="mb-16">
+        {{$useCasesData := parseJSON `{
+            "Title": "Built for every support scenario",
+            "Features": [
+                {
+                    "Icon": "desktop",
+                    "Title": "IT Help Desk",
+                    "Description": "Track hardware issues, software requests, and system access tickets with full audit trails."
+                },
+                {
+                    "Icon": "building",
+                    "Title": "Property Management",
+                    "Description": "Handle maintenance requests, tenant issues, and facility problems across multiple locations."
+                },
+                {
+                    "Icon": "globe",
+                    "Title": "Multi-location Operations",
+                    "Description": "Centralize support for distributed teams with location-based routing and reporting."
+                },
+                {
+                    "Icon": "wrench",
+                    "Title": "Equipment Maintenance",
+                    "Description": "QR codes on equipment enable instant ticket creation with automatic asset linking."
+                },
+                {
+                    "Icon": "users",
+                    "Title": "Customer Support",
+                    "Description": "Manage external customer inquiries with SLA tracking and automated responses."
+                },
+                {
+                    "Icon": "briefcase",
+                    "Title": "Business Services",
+                    "Description": "Coordinate service requests across departments with clear ownership and timelines."
+                }
+            ]
+        }`}}
+
+        {{template "features-grid-simple" $useCasesData}}
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" "Blue transformed our support operations. We reduced ticket resolution time by 40% and our customers love the automatic updates."
+                "VideoUrl" "/public/testvideo2.mp4"
+                "PosterUrl" "/public/testimonials/june.jpg"
+                "Name" "Sarah Chen"
+                "Title" "IT Service Manager"
+        }}
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Start resolving tickets faster.",
+            "Subtitle": "Join thousands of teams delivering exceptional support experiences with Blue.",
+            "SecondaryText": "See a demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Start free trial",
+            "PrimaryUrl": "https://app.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How quickly can I set up Blue for service tickets?",
+                            "answer": "Most teams are operational within 30 minutes. Blue comes with flexible templates you can customize, or build your ticket workflow from scratch. Our visual workflow designer makes it easy to match your existing processes."
+                        },
+                        {
+                            "question": "Can I import existing tickets from other systems?",
+                            "answer": "Yes, Blue supports data import via CSV files or our API. You can bring over your ticket history, customer information, and maintain continuity in your support operations."
+                        },
+                        {
+                            "question": "How does the QR code ticket creation work?",
+                            "answer": "Blue's forms feature generates QR codes that link directly to ticket submission forms. Place these codes on equipment, in facilities, or anywhere customers need support. Scanning opens a mobile-friendly form to submit tickets instantly."
+                        },
+                        {
+                            "question": "Can customers access their tickets?",
+                            "answer": "You can add customers to your Blue portal with custom permissions to view only their tickets. They'll receive automatic email updates at each stage, keeping them informed without constant follow-ups."
+                        },
+                        {
+                            "question": "What metrics can I track for support performance?",
+                            "answer": "Track resolution times, first response times, agent performance, tickets by category, SLA compliance, and more. Blue's real-time dashboards update automatically, and you can export data for compliance and deeper analysis."
+                        },
+                        {
+                            "question": "How does ticket assignment and routing work?",
+                            "answer": "Create automation rules to route tickets based on type, priority, customer tier, or any custom field. Tickets can be auto-assigned to specific agents or teams, with escalation paths for high-priority issues."
+                        },
+                        {
+                            "question": "Is there a limit to how many tickets I can manage?",
+                            "answer": "No, Blue handles virtually unlimited tickets without performance degradation. Our infrastructure scales with your needs, whether you're managing hundreds or millions of tickets annually."
+                        },
+                        {
+                            "question": "How do I handle related or duplicate tickets?",
+                            "answer": "Use reference fields to link related tickets together, creating a complete view of interconnected issues. File attachments and comments keep all relevant information in one place."
+                        },
+                        {
+                            "question": "Does Blue integrate with email and other communication channels?",
+                            "answer": "Yes, integrate with email through Make or Zapier to create tickets from incoming emails. Send automated email updates to customers and use our API to connect with chat systems, phone platforms, and other channels."
+                        },
+                        {
+                            "question": "What's the pricing for external customer access?",
+                            "answer": "There's no additional cost for external customers submitting tickets or accessing their ticket status through your portal. You only pay for internal team members who manage and resolve tickets."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 </div>
