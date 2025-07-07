@@ -257,14 +257,14 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	// Handle status API routes
+	// Handle status API routes with security middleware
 	if r.statusChecker != nil {
 		switch req.URL.Path {
 		case "/api/status/current":
-			CurrentStatusAPIHandler(r.statusChecker)(w, req)
+			SecurityHeadersMiddleware(RateLimitMiddleware(LoggingMiddleware(CurrentStatusAPIHandler(r.statusChecker))))(w, req)
 			return
 		case "/api/status/history":
-			HistoricalDataAPIHandler(r.statusChecker)(w, req)
+			SecurityHeadersMiddleware(RateLimitMiddleware(LoggingMiddleware(HistoricalDataAPIHandler(r.statusChecker))))(w, req)
 			return
 		}
 	}
