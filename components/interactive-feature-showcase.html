@@ -1,12 +1,14 @@
 {{define "interactive-feature-showcase"}}
 <!-- Interactive Feature Showcase Component -->
+{{$position := "left"}}
+{{if .Position}}{{$position = .Position}}{{end}}
 <section class="max-w-7xl mx-auto py-20">
     {{if .Title}}
     <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 text-center mb-16">{{.Title}}</h2>
     {{end}}
     
     <div 
-        class="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        class="{{if or (eq $position "top") (eq $position "bottom")}}space-y-8{{else}}grid grid-cols-1 lg:grid-cols-2 gap-8{{end}}"
         x-data="{
             selectedFeature: '{{(index .Features 0).Id}}',
             hoveredFeature: null,
@@ -15,40 +17,8 @@
             }
         }"
     >
-        <!-- Left Panel: Feature Menu -->
-        <div class="space-y-2">
-            {{range .Features}}
-            <div 
-                class="relative cursor-pointer group"
-                @click="selectFeature('{{.Id}}')"
-                @mouseenter="hoveredFeature = '{{.Id}}'"
-                @mouseleave="hoveredFeature = null"
-            >
-                <!-- Blue Circle (animated) -->
-                <div 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
-                    :class="{
-                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                ></div>
-                
-                <!-- Feature Text -->
-                <div 
-                    class="py-3 px-4 transition-all duration-300 ease-out"
-                    :class="{
-                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                >
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200 dark:border-gray-700">
-                </div>
-            </div>
-            {{end}}
-        </div>
-        
-        <!-- Right Panel: Feature Preview -->
+        {{if eq $position "top"}}
+        <!-- Top Layout: Feature Preview First -->
         <div class="relative min-h-[400px] flex items-center justify-center">
             {{range .Features}}
             <div 
@@ -84,6 +54,253 @@
             </div>
             {{end}}
         </div>
+        
+        <!-- Feature Menu Below -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            {{range .Features}}
+            <div 
+                class="relative cursor-pointer group"
+                @click="selectFeature('{{.Id}}')"
+                @mouseenter="hoveredFeature = '{{.Id}}'"
+                @mouseleave="hoveredFeature = null"
+            >
+                <!-- Blue Circle (animated) -->
+                <div 
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
+                    :class="{
+                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                ></div>
+                
+                <!-- Feature Text -->
+                <div 
+                    class="py-3 px-4 transition-all duration-300 ease-out"
+                    :class="{
+                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                >
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                </div>
+            </div>
+            {{end}}
+        </div>
+        
+        {{else if eq $position "bottom"}}
+        <!-- Bottom Layout: Feature Menu First -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            {{range .Features}}
+            <div 
+                class="relative cursor-pointer group"
+                @click="selectFeature('{{.Id}}')"
+                @mouseenter="hoveredFeature = '{{.Id}}'"
+                @mouseleave="hoveredFeature = null"
+            >
+                <!-- Blue Circle (animated) -->
+                <div 
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
+                    :class="{
+                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                ></div>
+                
+                <!-- Feature Text -->
+                <div 
+                    class="py-3 px-4 transition-all duration-300 ease-out"
+                    :class="{
+                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                >
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                </div>
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Feature Preview Below -->
+        <div class="relative min-h-[400px] flex items-center justify-center">
+            {{range .Features}}
+            <div 
+                x-show="selectedFeature === '{{.Id}}'"
+                class="w-full"
+            >
+                {{if .VideoUrl}}
+                <!-- Video Preview -->
+                <video 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="{{.VideoUrl}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {{else if .ImageUrl}}
+                <!-- Image Preview -->
+                <img 
+                    src="{{.ImageUrl}}" 
+                    alt="{{.Title}} feature preview" 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm"
+                    loading="lazy"
+                >
+                {{else}}
+                <!-- Placeholder -->
+                <div class="w-full h-64 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-500 dark:text-gray-400">{{.Title}} Preview</span>
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+        </div>
+        
+        {{else if eq $position "right"}}
+        <!-- Right Layout: Feature Preview First, Menu Second -->
+        <div class="relative min-h-[400px] flex items-center justify-center lg:order-2">
+            {{range .Features}}
+            <div 
+                x-show="selectedFeature === '{{.Id}}'"
+                class="w-full"
+            >
+                {{if .VideoUrl}}
+                <!-- Video Preview -->
+                <video 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="{{.VideoUrl}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {{else if .ImageUrl}}
+                <!-- Image Preview -->
+                <img 
+                    src="{{.ImageUrl}}" 
+                    alt="{{.Title}} feature preview" 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm"
+                    loading="lazy"
+                >
+                {{else}}
+                <!-- Placeholder -->
+                <div class="w-full h-64 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-500 dark:text-gray-400">{{.Title}} Preview</span>
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Feature Menu on Left -->
+        <div class="space-y-2 lg:order-1">
+            {{range .Features}}
+            <div 
+                class="relative cursor-pointer group"
+                @click="selectFeature('{{.Id}}')"
+                @mouseenter="hoveredFeature = '{{.Id}}'"
+                @mouseleave="hoveredFeature = null"
+            >
+                <!-- Blue Circle (animated) - positioned on right for right layout -->
+                <div 
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
+                    :class="{
+                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'opacity-0 translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                ></div>
+                
+                <!-- Feature Text -->
+                <div 
+                    class="py-3 px-4 transition-all duration-300 ease-out text-right"
+                    :class="{
+                        'pr-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'pr-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                >
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                </div>
+            </div>
+            {{end}}
+        </div>
+        
+        {{else}}
+        <!-- Left Layout (Default): Feature Menu First -->
+        <div class="space-y-2">
+            {{range .Features}}
+            <div 
+                class="relative cursor-pointer group"
+                @click="selectFeature('{{.Id}}')"
+                @mouseenter="hoveredFeature = '{{.Id}}'"
+                @mouseleave="hoveredFeature = null"
+            >
+                <!-- Blue Circle (animated) -->
+                <div 
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
+                    :class="{
+                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                ></div>
+                
+                <!-- Feature Text -->
+                <div 
+                    class="py-3 px-4 transition-all duration-300 ease-out"
+                    :class="{
+                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
+                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
+                    }"
+                >
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
+                    <hr class="border-gray-200 dark:border-gray-700">
+                </div>
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Feature Preview on Right -->
+        <div class="relative min-h-[400px] flex items-center justify-center">
+            {{range .Features}}
+            <div 
+                x-show="selectedFeature === '{{.Id}}'"
+                class="w-full"
+            >
+                {{if .VideoUrl}}
+                <!-- Video Preview -->
+                <video 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="{{.VideoUrl}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {{else if .ImageUrl}}
+                <!-- Image Preview -->
+                <img 
+                    src="{{.ImageUrl}}" 
+                    alt="{{.Title}} feature preview" 
+                    class="w-full h-auto rounded-lg border-2 border-gray-200 dark:border-gray-700 shadow-sm"
+                    loading="lazy"
+                >
+                {{else}}
+                <!-- Placeholder -->
+                <div class="w-full h-64 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                    <span class="text-gray-500 dark:text-gray-400">{{.Title}} Preview</span>
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+        </div>
+        {{end}}
     </div>
 </section>
 {{end}}

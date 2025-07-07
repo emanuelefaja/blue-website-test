@@ -1072,60 +1072,173 @@
     <section id="interactive-feature-showcase" class="mb-16">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Interactive Feature Showcase</h2>
         
-        <div>
-            <hr class="border-gray-200 dark:border-gray-700 mb-8">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Interactive Feature Showcase Component</h3>
-            <div class="mt-2 text-sm text-gray-500 mb-6">
-                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">interactive-feature-showcase component with animated blue circle, sliding text, and support for both images and MP4 videos</code>
+        <div class="space-y-12">
+            <!-- Left Position (Default) -->
+            <div>
+                <hr class="border-gray-200 dark:border-gray-700 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Left Position (Default)</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "left" - Menu on left, preview on right</code>
+                </div>
+                
+                {{$showcaseDataLeft := parseJSON `{
+                    "Title": "Explore platform capabilities (Left)",
+                    "Position": "left",
+                    "Features": [
+                        {
+                            "Id": "project-kickoff-left",
+                            "Title": "Project kickoff",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "flow-chart-left",
+                            "Title": "Flow chart",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "weekly-team-meeting-left",
+                            "Title": "Weekly team meeting",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "customer-journey-map-left",
+                            "Title": "Customer journey map",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        }
+                    ]
+                }`}}
+                
+                {{template "interactive-feature-showcase" $showcaseDataLeft}}
             </div>
             
-            {{$showcaseData := parseJSON `{
-                "Title": "Explore platform capabilities",
-                "Features": [
-                    {
-                        "Id": "project-kickoff",
-                        "Title": "Project kickoff",
-                        "VideoUrl": "/public/testvideo2.mp4"
-                    },
-                    {
-                        "Id": "flow-chart",
-                        "Title": "Flow chart",
-                        "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                    },
-                    {
-                        "Id": "weekly-team-meeting",
-                        "Title": "Weekly team meeting",
-                        "VideoUrl": "/public/testvideo2.mp4"
-                    },
-                    {
-                        "Id": "customer-journey-map",
-                        "Title": "Customer journey map",
-                        "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                    },
-                    {
-                        "Id": "standup",
-                        "Title": "Standup",
-                        "VideoUrl": "/public/testvideo2.mp4"
-                    },
-                    {
-                        "Id": "retrospective",
-                        "Title": "Retrospective",
-                        "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                    },
-                    {
-                        "Id": "roadmap-review",
-                        "Title": "Roadmap review",
-                        "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                    },
-                    {
-                        "Id": "project-timeline",
-                        "Title": "Project timeline",
-                        "VideoUrl": "/public/testvideo2.mp4"
-                    }
-                ]
-            }`}}
+            <!-- Right Position -->
+            <div>
+                <hr class="border-gray-200 dark:border-gray-700 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Right Position</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "right" - Menu on left with right-aligned text, preview on right</code>
+                </div>
+                
+                {{$showcaseDataRight := parseJSON `{
+                    "Title": "Team collaboration features (Right)",
+                    "Position": "right",
+                    "Features": [
+                        {
+                            "Id": "standup-right",
+                            "Title": "Daily standup",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "retrospective-right",
+                            "Title": "Sprint retrospective",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "roadmap-review-right",
+                            "Title": "Roadmap planning",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "project-timeline-right",
+                            "Title": "Timeline tracking",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        }
+                    ]
+                }`}}
+                
+                {{template "interactive-feature-showcase" $showcaseDataRight}}
+            </div>
             
-            {{template "interactive-feature-showcase" $showcaseData}}
+            <!-- Top Position -->
+            <div>
+                <hr class="border-gray-200 dark:border-gray-700 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Top Position</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "top" - Preview on top, menu grid below (responsive: 1 col mobile, 2 tablet, 3 desktop)</code>
+                </div>
+                
+                {{$showcaseDataTop := parseJSON `{
+                    "Title": "Workflow automation (Top)",
+                    "Position": "top",
+                    "Features": [
+                        {
+                            "Id": "automation-setup-top",
+                            "Title": "Automation setup",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "trigger-conditions-top",
+                            "Title": "Trigger conditions",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "workflow-actions-top",
+                            "Title": "Workflow actions",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "automation-testing-top",
+                            "Title": "Testing & deployment",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "performance-monitoring-top",
+                            "Title": "Performance monitoring",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "integration-management-top",
+                            "Title": "Integration management",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        }
+                    ]
+                }`}}
+                
+                {{template "interactive-feature-showcase" $showcaseDataTop}}
+            </div>
+            
+            <!-- Bottom Position -->
+            <div>
+                <hr class="border-gray-200 dark:border-gray-700 mb-8">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Bottom Position</h3>
+                <div class="mt-2 text-sm text-gray-500 mb-6">
+                    <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "bottom" - Menu grid on top, preview below (responsive: 1 col mobile, 2 tablet, 3 desktop)</code>
+                </div>
+                
+                {{$showcaseDataBottom := parseJSON `{
+                    "Title": "Analytics dashboard (Bottom)",
+                    "Position": "bottom",
+                    "Features": [
+                        {
+                            "Id": "dashboard-overview-bottom",
+                            "Title": "Dashboard overview",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "performance-metrics-bottom",
+                            "Title": "Performance metrics",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "custom-reports-bottom",
+                            "Title": "Custom reports",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        },
+                        {
+                            "Id": "data-visualization-bottom",
+                            "Title": "Data visualization",
+                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                        },
+                        {
+                            "Id": "team-productivity-bottom",
+                            "Title": "Team productivity",
+                            "VideoUrl": "/public/testvideo2.mp4"
+                        }
+                    ]
+                }`}}
+                
+                {{template "interactive-feature-showcase" $showcaseDataBottom}}
+            </div>
         </div>
     </section>
 
