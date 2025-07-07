@@ -197,6 +197,23 @@ body {
     display: block !important;
   }
   
+  /* Center and style videos in markdown prose content with same curves as hero videos */
+  .prose video {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    border-radius: var(--radius-2xl) !important;
+    border: 1px solid rgba(229, 231, 235, 1) !important; /* border-gray-200 */
+  }
+  
+  .prose-lg video {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    border-radius: var(--radius-2xl) !important;
+    border: 1px solid rgba(229, 231, 235, 1) !important; /* border-gray-200 */
+  }
+  
   /* Code Block Styling - Work with Highlight.js */
   .prose pre {
     border-radius: 8px !important;
