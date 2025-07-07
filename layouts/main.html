@@ -165,8 +165,9 @@
                                     addCopyButtons();
                                     setupClientRouting();
                                     
-                                    // For pages with Alpine.js content (like insights), re-setup after Alpine renders
-                                    if (new URL(link.href).pathname === '/insights') {
+                                    // For pages with Alpine.js content, re-setup after Alpine renders
+                                    const pathname = new URL(link.href).pathname;
+                                    if (pathname === '/insights' || pathname === '/platform/integrations') {
                                         setTimeout(() => {
                                             setupClientRouting();
                                         }, 100);
