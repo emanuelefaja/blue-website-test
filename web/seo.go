@@ -423,6 +423,9 @@ func (s *SEOService) filePathToURL(filePath, baseDir string) string {
 	if strings.Contains(filePath, "copy.html") {
 		return "" // Skip backup files
 	}
+	if strings.Contains(filePath, "404.html") {
+		return "" // Skip 404 page from sitemap
+	}
 	
 	// Convert index.html to directory URLs
 	if strings.HasSuffix(urlPath, "/index.html") {
