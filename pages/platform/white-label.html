@@ -3,8 +3,230 @@
     {{template "page-heading" 
         dict 
             "Title" "Make Blue your own" 
-            "Subtitle" "White label Blue to fit your brand and workflow." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Transform Blue into your own branded platform. Remove all Blue branding and create a seamless experience for your customers." 
+            "MarginBottom" "mb-16"
     }}
+
+    <!-- Value Proposition Section -->
+    <section class="mb-20">
+        {{$whitelabelValueProps := parseJSON `{
+            "Title": "Our technology.<br>Your brand.",
+            "Description": "Leverage Blue's powerful platform without worrying about infrastructure, maintenance, or uptime. Focus on your customers while we handle the technology.",
+            "Animation": false,
+            "ValueProps": [
+                {
+                    "Title": "Complete brand control",
+                    "Description": "Custom logos, colors, domains, and email templates make Blue invisible to your users."
+                },
+                {
+                    "Title": "Enterprise infrastructure included",
+                    "Description": "99.9% uptime, automatic updates, and security patches without any technical overhead."
+                },
+                {
+                    "Title": "Seamless user experience",
+                    "Description": "From login to notifications, every touchpoint reflects your brand identity."
+                }
+            ]
+        }`}}
+        {{template "value-propositions" $whitelabelValueProps}}
+    </section>
+
+    <!-- Custom Branding Section -->
+    <section class="mb-20">
+        {{$brandingData := parseJSON `{
+            "Title": "Your logo & colors everywhere",
+            "Description": "Upload your logo and set your brand colors once. They'll automatically appear across web, desktop, and mobile apps, creating a cohesive experience for your users.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "right"
+        }`}}
+        {{template "feature-video" $brandingData}}
+    </section>
+
+    <!-- Custom Domain Section -->
+    <section class="mb-20">
+        {{$domainData := parseJSON `{
+            "Title": "Your own custom domain",
+            "Description": "Run Blue on your own domain like app.yourcompany.com. Custom domains work for the main application, public forms, and file sharing links.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "left"
+        }`}}
+        {{template "feature-video" $domainData}}
+    </section>
+
+    <!-- Email Customization Section -->
+    <section class="mb-20">
+        {{$emailData := parseJSON `{
+            "Title": "Email notifications from your domain",
+            "Description": "Configure your own SMTP server to send all system emails from your domain. Customize email templates, sender names, and content to match your brand voice.",
+            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoPosition": "right"
+        }`}}
+        {{template "feature-video" $emailData}}
+    </section>
+
+
+    <!-- White Label Pricing Section -->
+    <section class="mb-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl rounded-3xl ring-1 ring-gray-200 lg:mx-0 lg:flex lg:max-w-none">
+                <div class="p-8 sm:p-10 lg:flex-auto">
+                    <div class="flex items-center gap-3 mb-4">
+                        <h3 class="text-3xl font-semibold tracking-tight text-gray-900">White-Label Add-On</h3>
+                    </div>
+                    <p class="mt-6 text-base/7 text-gray-600">Transform Blue into your own branded platform. Remove all Blue branding and create a seamless experience for your customers.</p>
+                    <div class="mt-10 flex items-center gap-x-4">
+                        <h4 class="flex-none text-sm/6 font-semibold text-brand-blue">What's included</h4>
+                        <div class="h-px flex-auto bg-gray-100"></div>
+                    </div>
+                    <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-600 sm:grid-cols-2 sm:gap-6">
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            Remove Blue Branding
+                        </li>
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            Custom Onboarding Emails
+                        </li>
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            Branded Desktop App
+                        </li>
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            Custom Logo & Colors
+                        </li>
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            Emails from your domain
+                        </li>
+                        <li class="flex gap-x-3">
+                            <svg class="h-6 w-5 flex-none text-brand-blue" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                            </svg>
+                            White Label Documentation
+                        </li>
+                    </ul>
+                </div>
+                <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:shrink-0"
+                     x-data="{ isYearly: true }">
+                    <div class="rounded-2xl bg-gray-50 text-center ring-1 ring-gray-900/5 ring-inset flex flex-col justify-center min-h-full py-8 lg:py-12">
+                        <div class="mx-auto max-w-xs px-8">
+                            <!-- Monthly/Yearly Toggle -->
+                            <div class="flex items-center justify-center mb-6">
+                                <span class="text-sm font-medium text-gray-600 mr-3" :class="{ 'text-gray-900': !isYearly }">Monthly</span>
+                                <button @click="isYearly = !isYearly"
+                                        class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none"
+                                        :class="isYearly ? 'bg-brand-blue' : 'bg-gray-200'">
+                                    <span class="sr-only">Toggle billing period</span>
+                                    <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform"
+                                          :class="isYearly ? 'translate-x-6' : 'translate-x-1'"></span>
+                                </button>
+                                <span class="text-sm font-medium text-gray-600 ml-3" :class="{ 'text-gray-900': isYearly }">Yearly</span>
+                            </div>
+                            
+                            <!-- Price Display -->
+                            <div x-show="!isYearly" class="flex items-baseline justify-center gap-x-2">
+                                <span class="text-6xl font-semibold tracking-tight text-gray-900">$20</span>
+                                <span class="text-sm/6 font-semibold tracking-wide text-gray-600">/company</span>
+                            </div>
+                            
+                            <div x-show="isYearly" class="flex items-baseline justify-center gap-x-2">
+                                <span class="text-6xl font-semibold tracking-tight text-gray-900">$200</span>
+                                <span class="text-sm/6 font-semibold tracking-wide text-gray-600">/company</span>
+                            </div>
+                            
+                            <a href="https://app.blue.cc" class="mt-10 block w-full rounded-md bg-brand-blue px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue transition-colors">
+                                Get started with white label
+                            </a>
+                            <p class="mt-6 text-xs/5 text-gray-400">Add-on to Core Subscription</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">White Label FAQ</h2>
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "General Questions",
+                    "questions": [
+                        {
+                            "question": "What is White Label and who is it for?",
+                            "answer": "White Label allows you to completely rebrand Blue as your own platform. It's perfect for agencies, consultants, and SaaS companies who want to offer project management to their clients under their own brand."
+                        },
+                        {
+                            "question": "How long does setup take?",
+                            "answer": "Basic white label setup takes about 30 minutes. This includes uploading your logo, setting brand colors, and configuring your custom domain. Email configuration may take additional time depending on your SMTP provider."
+                        },
+                        {
+                            "question": "Can I white label multiple companies?",
+                            "answer": "Yes! Each company in Blue can have its own white label configuration. This is ideal for agencies managing multiple client brands or companies with multiple subsidiaries."
+                        }
+                    ]
+                },
+                {
+                    "name": "Technical Questions",
+                    "questions": [
+                        {
+                            "question": "Do I need technical knowledge to set up white label?",
+                            "answer": "Basic setup requires no technical knowledge - just upload your logo and set colors. Custom domain setup requires adding a CNAME record to your DNS (we provide step-by-step instructions). Email configuration requires SMTP credentials from your email provider."
+                        },
+                        {
+                            "question": "What can and cannot be customized?",
+                            "answer": "You can customize: logos, colors, domains, email templates, favicons, and all visible Blue branding. The core functionality and user interface layout remain the same to ensure a consistent, high-quality experience."
+                        },
+                        {
+                            "question": "Will my custom domain work everywhere?",
+                            "answer": "Your custom domain works for the main application, public forms, and file sharing links. API endpoints and some system URLs will continue to use Blue's infrastructure for security and performance."
+                        }
+                    ]
+                },
+                {
+                    "name": "Business Questions",
+                    "questions": [
+                        {
+                            "question": "Can I resell Blue under my own brand?",
+                            "answer": "Yes! White label is designed for reselling. You can set your own pricing, bundle it with other services, and build your own customer relationships. Blue remains invisible to your end users."
+                        },
+                        {
+                            "question": "Is white label included in the regular subscription?",
+                            "answer": "White label is an optional add-on priced at $200/year per company. This is in addition to your regular Blue subscription. The add-on covers unlimited users within that company."
+                        },
+                        {
+                            "question": "What support do my customers receive?",
+                            "answer": "With white label, you become the first point of contact for your customers. Blue provides you with priority support to help resolve any technical issues. We also offer co-branded support options for enterprise customers."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
+
+    <!-- Call to Action -->
+    {{$ctaData := parseJSON `{
+        "Title": "Ready to make Blue your own?",
+        "SecondaryText": "Contact sales",
+        "SecondaryUrl": "/contact",
+        "PrimaryText": "Get started with white label",
+        "PrimaryUrl": "https://app.blue.cc"
+    }`}}
+    {{template "dual-button-cta" $ctaData}}
 
 </div>

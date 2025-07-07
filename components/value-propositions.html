@@ -5,6 +5,7 @@
         <!-- Left Side: Title and Description -->
         <div class="space-y-6 p-8 md:pr-12 md:border-r border-gray-200 dark:border-gray-700">
             <!-- Animated Process Dots -->
+            {{if ne .Animation false}}
             <div class="flex items-center justify-start mb-8" 
                  x-data="{ 
                     intersecting: false, 
@@ -54,6 +55,7 @@
                 <div class="w-3 h-3 rounded-full transition-all duration-300"
                      :class="progress >= 1.0 ? 'bg-brand-blue' : 'bg-gray-300 dark:bg-gray-600'"></div>
             </div>
+            {{end}}
             
             <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">{{html .Title}}</h3>
             <p class="text-gray-600 dark:text-gray-400 text-lg">{{.Description}}</p>
