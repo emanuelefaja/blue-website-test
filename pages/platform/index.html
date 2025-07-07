@@ -67,6 +67,29 @@
         </div>
     </section>
 
+    <!-- Platform Value Propositions -->
+    <section class="mb-20">
+        {{$platformValueProps := parseJSON `{
+            "Title": "Why Blue's platform approach<br>works better.",
+            "Description": "Unlike rigid tools that force your processes into their structure, Blue adapts to how you actually work.",
+            "ValueProps": [
+                {
+                    "Title": "Flexible by design, not by accident",
+                    "Description": "24 custom field types, unlimited automation rules, and 6 different views mean you build your perfect workflow, not compromise with ours."
+                },
+                {
+                    "Title": "API-first architecture from day one",
+                    "Description": "100% feature coverage through GraphQL gives you complete programmatic control—no feature gatekeeping or integration limitations."
+                },
+                {
+                    "Title": "Enterprise-ready without the complexity",
+                    "Description": "Advanced permissions, audit trails, and white-label capabilities that scale from 5 to 5,000 users without architectural changes."
+                }
+            ]
+        }`}}
+        {{template "value-propositions" $platformValueProps}}
+    </section>
+
     <!-- Core Features Showcase Section -->
     <section id="core-features" class="mb-20">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Core Platform Features</h2>
@@ -224,7 +247,7 @@
         <!-- Features Grid Section -->
         <div class="mb-20">
             {{$featuresGridData := parseJSON `{
-                "Title": "Dive Deeper into Specific Features",
+                "Title": "& there's more...",
                 "Features": [
                     {
                         "Icon": "eye",
@@ -326,7 +349,7 @@
         <!-- Integration Partners -->
         <div class="mb-16">
             {{$integrationData := parseJSON `{
-                "title": "Connect with 1,000+ tools through our integration partners",
+                "title": "Connect with 5,000+ tools through our integration partners",
                 "logos": [
                     { "name": "Zapier", "src": "/public/images/zapier.svg" },
                     { "name": "Make.com", "src": "/public/images/make.svg" },
