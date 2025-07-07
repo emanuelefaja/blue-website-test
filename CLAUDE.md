@@ -40,6 +40,7 @@
 
 - Home page
 - Compare Platforms
+- All Feature pages
 - platform/white-label
 - platform/api
 - platform/overview
@@ -62,7 +63,6 @@
 - solutions/use-case/personal-productivity
 
 ## To Go Live
-- Add reeating records to feature index
 - Also images/videos on documentation page require completely redoing, they are quite amatuer. 
 - I need some more components for features I think
 - Consider alignign titles tot he stat card components for other components, looks very elegant.
@@ -71,7 +71,7 @@
 - handle /docs/automations/actions/send-email in left sidebr etc
 - Sort out card inconsistencies in brand page
 - Align CTA in brand guidelines to backgroud color of FAQ backgrounds
-- Preview image for all pages of the website
+- Preview image for all pages of the website (similar to linear)
 - Make the video in markdown pages also have the same curved corners.
 - Make testimonial components from the testimonials parts in the brand page.
 - Check if these is a more specific javascript focus for the layout switch I am doing on main.
