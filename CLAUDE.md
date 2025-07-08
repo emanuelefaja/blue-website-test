@@ -36,55 +36,34 @@
 - When making components/sections, provide an ASCII mockup if appropriate before designing.
 
 
-## Pages to work on
-
-- Home page
-- Compare Platforms
-- All Feature pages
-- platform/white-label
-- platform/api
-- platform/overview
-- solutions/industry/government
-- solutions/industry/non-profits
-- solutions/industry/education
-- solutions/industry/logistics
-- solutions/industry/real-estate
-- solutions/industry/professional-services
-- solutions/industry/production
-- solutions/industry/agencies
-- solutions/industry/solopreneurs
-- solutions/use-case/process-management
-- solutions/use-case/project-management  
-- solutions/use-case/sales-crm
-- solutions/use-case/service-tickets
-- solutions/use-case/it
-- solutions/use-case/asset-management
-- solutions/use-case/content-calendar
-- solutions/use-case/personal-productivity
-
 ## To Go Live
+- Remove interacgive tutorials from documentation and unsubscribe (forget the name of the saas) and make my own videos instead.
+- Take old website sitemap and essure that every page is redirected or correctly linked in the new one. 
 - Also images/videos on documentation page require completely redoing, they are quite amatuer. 
-- I need some more components for features I think
+- Add Cloudflare CDN in front of renfer on go live: https://www.perplexity.ai/search/add-cloudflare-cdn-render-Cq45vu6BQx6if11ULK9Q0w
 - Consider alignign titles tot he stat card components for other components, looks very elegant.
 - Make all components mobile responive
-- Clear all 404 issues.
+- Clear all 404 issues. (104 left)
 - handle /docs/automations/actions/send-email in left sidebr etc
 - Sort out card inconsistencies in brand page
 - Align CTA in brand guidelines to backgroud color of FAQ backgrounds
 - Preview image for all pages of the website (similar to linear)
-- Make the video in markdown pages also have the same curved corners.
 - Make testimonial components from the testimonials parts in the brand page.
-- Check if these is a more specific javascript focus for the layout switch I am doing on main.
-- Consider thin grey line (like in hero video) for FAQ and CTAs that are light grey?
 
 
 
 ##  Main Plan
 
 - **Refactor web/router.go** - Extract template functions, page data logic, and service orchestration into separate services (currently 586 lines doing too much)
+- Add console message
+- Add somethig funny to head?
+- Remove all slugs from insights (some regex pattern)
+- PWA at some point?
+- Bundle all JS files into one? Just create an AlpineJS bundle
+- check how linar highlights features in the side of the blog: https://linear.app/blog/planning-for-unplanned-work
 - Add 404 component to brand guidelines, looks quite ncie actually! 
 - Improve experts page (later on)
-- redirect bug: /docs redirects but /docs/ does not, this should work seamlessly
+- Add major integrator partners in integrations page.
 - lazy load components on scroll (or at least logo images) because excessive DOM size
 - Polyfills and transforms enable legacy browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support legacy browser (related to fusejs)
 - Check on curve of videos corners overlapping the border
@@ -92,11 +71,10 @@
 - Consider adding https://billing.blue.cc/p/login/14k7w17SddUW0yk288  link to the sidebar somewhere? 
 - Switch logo grid to use tailwind styles later on
 - Figure out a scalable way to handle the copy button for code blocks
-- On dark mode, system status page load flashes light mode
 - Make an awards component with crozdesk awards.
 - Figure out a scalable way to hande the mute button on the hero video
 - for /features ensure that there is no extra spacing on mobile for the column
-- I saw that for the dynamic api claude recommende **File:** `/public/js/api-credentials.js` (new file), I wonder if I should centralize some other JS logic as well?
+- I saw that for the dynamic api in documentation claude recommende **File:** `/public/js/api-credentials.js` (new file), I wonder if I should centralize some other JS logic as well?
 - Review what components to "borrow" from other sites.
 - Add savings calculator to blue page (or not mentioned competitors at all?)
 - Make the website multi linguagal?  Really like that to be honest.
@@ -104,7 +82,6 @@
 - Find all "big" brand customers via AI and add them to logos on customers page.
 - Add SOP to website?
 - status page link causes flash on sidebar (how to make part of SPA)
-- Cehck security of APIs for status uptime, and perhaps expose them later on?
 - Add terms about bypassing community etc. (David ho)
 - Add Git commit history to website?
 - Evetnaulyl split out professional services into multiple sub ones (law firms, accountants, doctors, etc)
@@ -112,6 +89,7 @@
 - Remove unused images across various folders.
 - Fix white label add on button on pricing page
 - Customer stories (eventually)
+- /api does not redirect properly
 - Changelog page from roadmap flahses the sidebar.
 - Pull some latest reviews from Appsumo?
 - Add GDOR and HIPPA complaince logos to the security page
@@ -130,7 +108,7 @@
 - switch page: https://linear.app/switch eventually here we should have details about buying out the entire contract.
 - Blue University? Could be quite good huh? 
 - Start/Setup guide: https://ghost.org/resources/
-- Consider full width blue section that break out of the main content area, but when the sidebar goes over it, it turns white text instead of dark grey. Meh?
+
 - Anthropic footer — looks great, perhaps in blue or dark blue?
 - countdown to next update on status page?
 
@@ -195,7 +173,13 @@
 │   ├── company/             # About, values, charter
 │   └── ...                  # Other static pages
 ├── public/                   # Static assets served directly
-│   ├── style.css            # Compiled Tailwind CSS
+│   ├── css/                # Stylesheets and CSS files
+│   │   ├── style.css       # Compiled Tailwind CSS
+│   │   ├── input.css       # Tailwind input file
+│   │   └── highlight-tomorrow-night.min.css # Syntax highlighting theme
+│   ├── js/                 # JavaScript files
+│   │   ├── vendor/         # Third-party JavaScript libraries
+│   │   └── ...             # Custom JavaScript files
 │   ├── og.png              # Open Graph social media image
 │   ├── sitemap.xml         # Generated sitemap
 │   ├── robots.txt          # Search engine directives
@@ -238,7 +222,7 @@ air
 go run main.go
 
 # Tailwind Watch
-./tailwindcss -i public/input.css -o public/style.css --watch --minify
+./tailwindcss -i public/css/input.css -o public/css/style.css --watch --minify
 
 # Build for production
 go build -o blue-website
