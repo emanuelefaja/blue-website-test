@@ -52,39 +52,6 @@
             // Initialize Highlight.js
             hljs.highlightAll();
             
-            function addCopyButtons() {
-                const codeBlocks = document.querySelectorAll('.prose pre:not([data-copy-added])');
-                codeBlocks.forEach(pre => {
-                    pre.setAttribute('data-copy-added', 'true');
-                    
-                    const copyBtn = document.createElement('button');
-                    copyBtn.className = 'code-copy-btn';
-                    copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
-                    copyBtn.title = 'Copy code';
-                    
-                    copyBtn.addEventListener('click', async () => {
-                        const code = pre.querySelector('code');
-                        const text = code ? code.textContent : pre.textContent;
-                        
-                        try {
-                            await navigator.clipboard.writeText(text);
-                            copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#check"></use></svg>';
-                            copyBtn.classList.add('copied');
-                            copyBtn.title = 'Copied!';
-                            
-                            setTimeout(() => {
-                                copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
-                                copyBtn.classList.remove('copied');
-                                copyBtn.title = 'Copy code';
-                            }, 2000);
-                        } catch (err) {
-                            console.error('Failed to copy:', err);
-                        }
-                    });
-                    
-                    pre.appendChild(copyBtn);
-                });
-            }
             
             function setupClientRouting() {
                 const navLinks = document.querySelectorAll('a[href^="/"]:not([data-spa-handled])');
@@ -162,7 +129,7 @@
                                     
                                     // Re-initialize content
                                     hljs.highlightAll();
-                                    addCopyButtons();
+                                    CopyCodeUtils.init();
                                     setupClientRouting();
                                     
                                     // For pages with Alpine.js content, re-setup after Alpine renders
@@ -199,7 +166,7 @@
             });
             
             // Initialize
-            addCopyButtons();
+            CopyCodeUtils.init();
             setupClientRouting();
             
             // Re-setup routing after Alpine.js renders (for dynamically shown/hidden content)
@@ -208,6 +175,7 @@
             }, 100);
         });
     </script>
+    <script src="/public/js/copy-code.js"></script>
     <script src="/public/js/status.js"></script>
 </body>
 </html>
