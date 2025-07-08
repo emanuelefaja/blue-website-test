@@ -1,4 +1,4 @@
-<!-- Customers Page -->
+<!-- Download Page -->
 <div class="py-20">
     {{template "page-heading" 
         dict 
@@ -7,4 +7,80 @@
             "MarginBottom" "mb-16"
     }}
 
+    <!-- Download Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Desktop Card -->
+        <div class="cursor-pointer group">
+            <!-- Desktop Image -->
+            <div class="h-80 rounded-lg mb-6 overflow-hidden bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 3H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h7v2H8v2h8v-2h-3v-2h7c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 14V5h16l.002 9H4z"/>
+                </svg>
+            </div>
+            
+            <!-- Desktop Content -->
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Desktop</h3>
+            
+            <div class="flex items-center gap-4 text-sm">
+                <span class="font-medium text-gray-600 dark:text-gray-400">MacOS & Windows</span>
+                <span class="text-gray-400 dark:text-gray-500">v3.2.1</span>
+            </div>
+        </div>
+        
+        <!-- iPhone Card -->
+        <div class="cursor-pointer group">
+            <!-- iPhone Image -->
+            <div class="h-80 rounded-lg mb-6 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                <svg class="w-24 h-32 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17 2H7c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM7 16.999V5h10l.002 11.999H7z"/>
+                    <circle cx="12" cy="19" r="1"/>
+                </svg>
+            </div>
+            
+            <!-- iPhone Content -->
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">iPhone</h3>
+            
+            <div class="flex items-center gap-4 text-sm">
+                <span class="font-medium text-gray-600 dark:text-gray-400">iOS 14+</span>
+                <span class="text-gray-400 dark:text-gray-500">v3.2.1</span>
+            </div>
+        </div>
+        
+        <!-- Android Card -->
+        <div class="cursor-pointer group">
+            <!-- Android Image -->
+            <div class="h-80 rounded-lg mb-6 overflow-hidden bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                <svg class="w-28 h-28 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.463 11.463 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/>
+                </svg>
+            </div>
+            
+            <!-- Android Content -->
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Android</h3>
+            
+            <div class="flex items-center gap-4 text-sm">
+                <span class="font-medium text-gray-600 dark:text-gray-400">Android 8+</span>
+                <span class="text-gray-400 dark:text-gray-500">v3.2.1</span>
+            </div>
+        </div>
+        
+        <!-- iPad Card -->
+        <div class="cursor-pointer group">
+            <!-- iPad Image -->
+            <div class="h-80 rounded-lg mb-6 overflow-hidden bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                <svg class="w-32 h-28 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 2H5c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM5 18V6h14l.002 12H5z"/>
+                    <circle cx="12" cy="20" r=".5"/>
+                </svg>
+            </div>
+            
+            <!-- iPad Content -->
+            <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">iPad</h3>
+            
+            <div class="flex items-center gap-4 text-sm">
+                <span class="font-medium text-gray-600 dark:text-gray-400">iPadOS 14+</span>
+                <span class="text-gray-400 dark:text-gray-500">v3.2.1</span>
+            </div>
+        </div>
+    </div>
 </div>
