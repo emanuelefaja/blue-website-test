@@ -10,7 +10,7 @@ showdate: true
 
 At Blue, it's no secret that we love [Kanban boards for project management.](/solutions/use-case/project-management). 
 
-We think that [Kanban boards](/platform/features/views/board) are a fantastic way to manage the workflow of any project, and they help keep project managers and team members alike sane! 
+We think that [Kanban boards](/platform/features/kanban-board) are a fantastic way to manage the workflow of any project, and they help keep project managers and team members alike sane! 
 
 For too long, we've all been using excel spreadsheets and todo lists to manage work. 
 
@@ -329,7 +329,7 @@ Finding a balance between power and user-friendliness has been an ongoing challe
 
 This is where Blue enters the picture. 
 
-Born out of a real need for a [Kanban tool that's both powerful and accessible](/platform/features/views/board), Blue was created to address the shortcomings of other project management systems and helps teams ensure that the [first principles of project management](/insights/project-management-first-principles) are in place. 
+Born out of a real need for a [Kanban tool that's both powerful and accessible](/platform/features/kanban-board), Blue was created to address the shortcomings of other project management systems and helps teams ensure that the [first principles of project management](/insights/project-management-first-principles) are in place. 
 
 Our design philosophy is simple yet ambitious: to provide a platform that offers robust capabilities *without* sacrificing ease of use.
 

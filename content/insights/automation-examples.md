@@ -102,7 +102,7 @@ Status update automation can be tailored to fit your specific workflow:
 
 ### The Bigger Picture
 
-In the grand scheme of project management, status update automation is about more than just [moving cards on a board](/platform/features/views/board). It's about creating a system where information flows freely, where team members can focus on their core work, and where project managers have their finger on the pulse of progress at all times.
+In the grand scheme of project management, status update automation is about more than just [moving cards on a board](/platform/features/kanban-board). It's about creating a system where information flows freely, where team members can focus on their core work, and where project managers have their finger on the pulse of progress at all times.
 
 ## 3. Client Communication Automation
 

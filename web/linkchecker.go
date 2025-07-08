@@ -1,6 +1,8 @@
 package web
 
 import (
+	"encoding/csv"
+	"fmt"
 	"log"
 	"net/url"
 	"os"
@@ -278,7 +280,7 @@ func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 	lc.brokenLinks[link] = append(lc.brokenLinks[link], brokenLink)
 }
 
-// printResults prints the link checking results
+// printResults prints the link checking results and generates CSV
 func (lc *LinkChecker) printResults() {
 	brokenCount := lc.totalLinks - lc.validLinks
 	
@@ -286,33 +288,63 @@ func (lc *LinkChecker) printResults() {
 		log.Printf("✅ %d/%d links valid", lc.validLinks, lc.totalLinks)
 	} else {
 		log.Printf("🔗 %d/%d links valid", lc.validLinks, lc.totalLinks)
-		log.Printf("❌ %d broken links found:\n", brokenCount)
+		log.Printf("❌ %d broken links found", brokenCount)
 		
-		// Sort broken links by URL for consistent output
-		var brokenURLs []string
-		for url := range lc.brokenLinks {
-			brokenURLs = append(brokenURLs, url)
+		// Generate CSV file
+		lc.generateCSV()
+	}
+}
+
+// generateCSV creates a CSV file with broken links and their sources
+func (lc *LinkChecker) generateCSV() {
+	file, err := os.Create("404.csv")
+	if err != nil {
+		log.Printf("Failed to create 404.csv: %v", err)
+		return
+	}
+	defer file.Close()
+
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
+
+	// Write header
+	header := []string{"Broken URL", "Source Page", "References"}
+	if err := writer.Write(header); err != nil {
+		log.Printf("Failed to write CSV header: %v", err)
+		return
+	}
+
+	// Sort broken links by URL for consistent output
+	var brokenURLs []string
+	for url := range lc.brokenLinks {
+		brokenURLs = append(brokenURLs, url)
+	}
+	sort.Strings(brokenURLs)
+
+	// Write each broken link with its sources
+	for _, url := range brokenURLs {
+		sources := lc.brokenLinks[url]
+		
+		// Group sources and count references
+		sourceCount := make(map[string]int)
+		for _, source := range sources {
+			sourceCount[source.SourcePath]++
 		}
-		sort.Strings(brokenURLs)
 		
-		// Print broken links grouped by URL
-		for _, url := range brokenURLs {
-			sources := lc.brokenLinks[url]
-			log.Printf("\n  %s (%d references)", url, len(sources))
-			
-			// Show up to 3 source pages
-			shown := 0
-			for _, source := range sources {
-				if shown < 3 {
-					log.Printf("    → %s", source.SourcePath)
-					shown++
-				}
+		// Write one row per unique source page
+		for sourcePage, count := range sourceCount {
+			record := []string{
+				url,
+				sourcePage,
+				fmt.Sprintf("%d", count),
 			}
-			if len(sources) > 3 {
-				log.Printf("    → ... and %d more", len(sources)-3)
+			if err := writer.Write(record); err != nil {
+				log.Printf("Failed to write CSV record: %v", err)
 			}
 		}
 	}
+	
+	log.Printf("📝 Broken links exported to 404.csv")
 }
 
 // RunLinkChecker runs the link checker with the provided services

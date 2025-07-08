@@ -121,7 +121,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://blue.cc/platform/features/kanban-board</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/platform/features/records</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/platform/features/timeline-gantt-charts</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/platform/features/workspaces</loc>
     <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

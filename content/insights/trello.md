@@ -221,7 +221,7 @@ So this makes Blue a great Trello alternative if you're looking to handle large 
 
 Trello and Blue have many different ways to see the same dataset. 
 
-In Blue, all customers can use all the views, while in Trello, the free and standard plans only have [Kanban Board view](/platform/features/views/board), and the other views are only available in their more expensive Premium ($12.50/user/month) and Enterprise ($17.50/user/month) plans. 
+In Blue, all customers can use all the views, while in Trello, the free and standard plans only have [Kanban Board view](/platform/features/kanban-board), and the other views are only available in their more expensive Premium ($12.50/user/month) and Enterprise ($17.50/user/month) plans. 
 
 This is why in the pricing comparison section compared Blue as an alternative to Trello Premium & Enterprise — as that is the only true comparison based on the feature set and capabilities.
 

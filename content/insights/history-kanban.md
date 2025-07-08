@@ -7,7 +7,7 @@ image: /insights/japan-kanban-boards.jpg
 date: 2024-07-23
 showdate: true
 ---
-At Blue, we love [Kanban boards](/platform/features/views/board). 
+At Blue, we love [Kanban boards](/platform/features/kanban-board). 
 
 They are our primary way of managing our work, whether that's building our platform, managing our marketing strategy, and even our hiring pipeline! We believe that almost any process can be turned into an easy-to-use Kanban board that provides a clear visualization of the current state of work.
 
@@ -44,7 +44,7 @@ The significance of Kanban in modern project management cannot be overstated. It
 
 Kanban transforms project management from what could seem like a massive, overwhelming to-do list into a dynamic, prioritized activity. This visual approach allows small teams to accomplish great things by forcing prioritization and providing instant clarity on work status.
 
-Despite its widespread adoption, Kanban is not without its misconceptions. Some erroneously believe it's difficult to set up or not powerful enough for *"serious work"* that always requires long written plans and [Gantt Charts](/platform/timeline-gantt-charts). In reality, Kanban's simplicity *is* one of its greatest strengths, making it adaptable to various scales and complexities of work.
+Despite its widespread adoption, Kanban is not without its misconceptions. Some erroneously believe it's difficult to set up or not powerful enough for *"serious work"* that always requires long written plans and [Gantt Charts](/platform/features/timeline-gantt-charts). In reality, Kanban's simplicity *is* one of its greatest strengths, making it adaptable to various scales and complexities of work.
 
 For many leaders, Kanban brings a sense of calm and control. One CEO that uses Blue reported:
 
@@ -258,7 +258,7 @@ While the core principles remained the same, Software Kanban had to be adapted t
 ## Kanban in Project Management
 
 
-A significant milestone in the spread of Kanban in software development and beyond was the launch of [Trello](/insights/trello) in 2011. Trello, a [web-based project management platform](/solutions/use-case/project-management), popularized the concept of [digital Kanban boards](/platform/features/views/board) for a wide audience.
+A significant milestone in the spread of Kanban in software development and beyond was the launch of [Trello](/insights/trello) in 2011. Trello, a [web-based project management platform](/solutions/use-case/project-management), popularized the concept of [digital Kanban boards](/platform/features/kanban-board) for a wide audience.
 
 Trello's simple interface made Kanban accessible to non-technical users. It allowed anyone to create boards with columns representing workflow stages, and cards representing tasks that could be moved between these columns. This intuitive representation of Kanban principles helped spread the methodology beyond software development into general project management, marketing, education, and personal productivity.
 

@@ -28,7 +28,7 @@ It is vital to have a technique for managing projects that is consistent across 
 
 While there are many different ways of managing work, I’ve found one method, via trial and error, that consistently provides the best results and is clear and easy to understand for team members and clients alike.
 
-This method is called [Kanban](/platform/features/views/board), which is a Japanese manufacturing system originally created by Toyota, where the supply of the various components and parts required to build an automobile is monitored via having an instruction card that is sent along the production line.
+This method is called [Kanban](/platform/features/kanban-board), which is a Japanese manufacturing system originally created by Toyota, where the supply of the various components and parts required to build an automobile is monitored via having an instruction card that is sent along the production line.
 
 The idea behind Kanban is very simple: you need to create a clear process to enable you to complete whatever the work is at hand.
 

@@ -28,7 +28,7 @@ Curious about its journey?
 
 So why has this 70-year-old concept stood the test of time?
 
-As more teams discover Kanban's power, the demand for [digital kanban boards](/platform/features/views/board) has skyrocketed. But with countless options available, how do you choose the right one?
+As more teams discover Kanban's power, the demand for [digital kanban boards](/platform/features/kanban-board) has skyrocketed. But with countless options available, how do you choose the right one?
 
 The key is understanding the core components. Whether you're selecting new software or maximizing your current tool, knowing these essentials is crucial.
 
@@ -94,7 +94,7 @@ By leveraging these advanced features, you can transform your kanban board from 
 
 ### Best practices in setting up a kanban board
 
-Setting up an [effective kanban board](/platform/features/views/board) is both an art and a science. Here are some key best practices to keep in mind:
+Setting up an [effective kanban board](/platform/features/kanban-board) is both an art and a science. Here are some key best practices to keep in mind:
 
 When you're just starting out with kanban, resist the temptation to create a complex board right away. Begin with a simple setup that reflects your basic workflow - perhaps just "To Do," "In Progress," and "Done" columns. 
 
@@ -120,7 +120,7 @@ In fact, trying to turn every aspect of your process into a column can lead to a
 
 Instead, consider whether certain stages or categories might be better represented as tags, labels, or custom fields. 
 
-In some [advanced Kanban software platform](/platform/features/views/board), you can even use AI to auto-tag your cards!
+In some [advanced Kanban software platform](/platform/features/kanban-board), you can even use AI to auto-tag your cards!
 
 <video autoplay loop muted playsinline>
   <source src="/public/videos/ai-tagging.mp4" type="video/mp4">
