@@ -46,22 +46,41 @@
     </div>
     
 
-    <script>       
-        // Initialize all utilities when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Highlight.js
-            hljs.highlightAll();
-            
-            // Initialize copy buttons
-            CopyCodeUtils.init();
-            
-            // Initialize SPA routing
-            SPAUtils.init();
-        });
-    </script>
+    <!-- Load utility scripts first -->
     <script src="/public/js/copy-code.js"></script>
     <script src="/public/js/spa.js"></script>
     <script src="/public/js/status.js"></script>
+    
+    <!-- Then initialize with error handling -->
+    <script>       
+        // Initialize all utilities when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Highlight.js with async loading handling
+            function initializeHighlightJS() {
+                if (typeof hljs !== 'undefined') {
+                    hljs.highlightAll();
+                } else {
+                    // Retry if hljs is still loading
+                    setTimeout(initializeHighlightJS, 100);
+                }
+            }
+            initializeHighlightJS();
+            
+            // Initialize copy buttons with error handling
+            if (typeof CopyCodeUtils !== 'undefined') {
+                CopyCodeUtils.init();
+            } else {
+                console.warn('CopyCodeUtils not loaded - copy buttons will not work');
+            }
+            
+            // Initialize SPA routing with error handling
+            if (typeof SPAUtils !== 'undefined') {
+                SPAUtils.init();
+            } else {
+                console.warn('SPAUtils not loaded - SPA navigation will not work');
+            }
+        });
+    </script>
 </body>
 </html>
 {{end}}
