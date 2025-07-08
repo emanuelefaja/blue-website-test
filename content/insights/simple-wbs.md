@@ -22,7 +22,7 @@ However, [modern tools](/platform) transform WBS into a dynamic, interactive sys
 
 ![](/public/product/project-management-full-interface.png)
 
-With Blue, creating a WBS is straightforward. Our user-friendly interface and features, [such as a comprehensive audit trail](/platform/activity-audit-trails), ensure that all changes are tracked, unlike traditional methods where modifications overwrite previous entries. This transparency and ease of use encourage project managers to break down project scopes before initiating any non-trivial endeavors.
+With Blue, creating a WBS is straightforward. Our user-friendly interface and features, [such as a comprehensive audit trail](/platform/features/audit-trails), ensure that all changes are tracked, unlike traditional methods where modifications overwrite previous entries. This transparency and ease of use encourage project managers to break down project scopes before initiating any non-trivial endeavors.
 
 In this article, we'll explore how to demystify WBS, making them an accessible and valuable tool for every project manager.
 
@@ -211,7 +211,7 @@ To keep the WBS useful and relevant throughout the project lifecycle, it must be
 
 A significant misconception is treating the WBS as a one-time task rather than an ongoing process. Effective project management involves continually refining and updating the WBS as the project progresses. This iterative approach ensures that the WBS remains a living document that adapts to the project's needs.
 
-Blue helps mitigate these common mistakes by providing full visibility into the WBS and tracking every item through different views such as [Kanban boards](/platform/kanban-boards), [database views](/platform/database) (Excel-like views), and [Gantt charts](/platform/timeline-gantt-charts). 
+Blue helps mitigate these common mistakes by providing full visibility into the WBS and tracking every item through different views such as [Kanban boards](/platform/kanban-boards), [database views](/platform/features/database) (Excel-like views), and [Gantt charts](/platform/timeline-gantt-charts). 
 
 This flexibility ensures that the WBS is not only easily accessible but also remains a dynamic tool that supports project management effectively.
 

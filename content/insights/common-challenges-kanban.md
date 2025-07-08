@@ -53,7 +53,7 @@ Once a month or quarter, take some time to remove duplicates and outdated items.
 
 This keeps your board relevant and manageable. Whenever we do this internally, we always breathe a sigh of relief afterwards! 
 
-Next up, keep your board structure as simple as it needs to be, but no simpler. You don't need branching patterns or multiple review stages, tasks are happy to bounch up and down between stages if required! In Blue, [we log all card movements in our audit trail](/platform/activity-audit-trails), so you will always have the full history of any card movements. 
+Next up, keep your board structure as simple as it needs to be, but no simpler. You don't need branching patterns or multiple review stages, tasks are happy to bounch up and down between stages if required! In Blue, [we log all card movements in our audit trail](/platform/features/audit-trails), so you will always have the full history of any card movements. 
 
 Aim for a streamlined board that accurately reflects your core process.
 

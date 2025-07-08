@@ -123,7 +123,7 @@ Then, the next thing that you need to consider is the meta-data that you need to
 
 These will be your "fields".
 
-In [Blue], we split out fields into defaults fields and [custom fields](/platform/custom-fields). 
+In [Blue], we split out fields into defaults fields and [custom fields](/platform/features/custom-fields). 
 
 Our default fields are:
 

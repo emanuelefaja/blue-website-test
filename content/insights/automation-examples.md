@@ -262,7 +262,7 @@ Bug tracking automation can be tailored to fit various project needs and workflo
 
 - **Custom Triggers**: Define specific conditions that initiate the bug tracking process, such as the type of bug or the severity level.
 - **Flexible Actions**: Customize actions based on the bug report details, such as assigning different team members or sending additional follow-up emails.
-- **Stakeholder Dashboards**: Create [dashboards for stakeholders](/platform/dashboards) to monitor the overall status of bugs across the platform, including metrics like the number of bugs, percentage fixed, and average time to fix.
+- **Stakeholder Dashboards**: Create [dashboards for stakeholders](/platform/features/dashboard) to monitor the overall status of bugs across the platform, including metrics like the number of bugs, percentage fixed, and average time to fix.
 
 ### Implementation Example
 

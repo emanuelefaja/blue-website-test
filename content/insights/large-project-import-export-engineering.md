@@ -61,7 +61,7 @@ This means that during peak times, when multiple large imports or exports are be
 This scalable background service architecture has benefitted Blue not only for CSV imports & exports. Over time, we've moved a substantial number of features into background services to take load off our main servers:
 
 - **[Formula Calculations](https://documentation.blue.cc/custom-fields/formula)**: Offloads complex mathematical operations to ensure rapid updates of derived fields without impacting main server performance.
-- **[Dashboard/Charts](/platform/dashboards)**: Processes large datasets in the background to generate up-to-date visualizations without slowing down the user interface.
+- **[Dashboard/Charts](/platform/features/dashboard)**: Processes large datasets in the background to generate up-to-date visualizations without slowing down the user interface.
 - **[Search Index](https://documentation.blue.cc/projects/search)**: Continuously updates the search index in the background, ensuring fast and accurate search results without impacting system performance.
 - **[Copying Projects](https://documentation.blue.cc/projects/copying-projects)**: Handles the replication of large, complex projects in the background, allowing users to continue working while the copy is being created.
 - **[Project Management Automations](/platform/project-management-automation)**: Executes user-defined automated workflows in the background, ensuring timely actions without blocking other operations.

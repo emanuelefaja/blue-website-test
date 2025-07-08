@@ -104,7 +104,7 @@ The key point to drive home here is that an organisation should not have to chan
 
 After all, if they are just following *"best practices"* like everyone else, how can they serve their customers any better than their competition?
 
-Blue provides a flexible toolset that does not create a straight-jacket for an organisation. Teams can add [custom fields](/platform/custom-fields) and define their process steps and [project management automations](/platform/project-management-automation) to achieve their business objectives precisely. 
+Blue provides a flexible toolset that does not create a straight-jacket for an organisation. Teams can add [custom fields](/platform/features/custom-fields) and define their process steps and [project management automations](/platform/project-management-automation) to achieve their business objectives precisely. 
 
 From a customer's perspective, this means:
 

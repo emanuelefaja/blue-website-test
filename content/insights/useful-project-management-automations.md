@@ -55,7 +55,7 @@ Automation details:
 - **Trigger:** Due Date has Expired
 - **Action:** Send Email
 
-We recommend you check out of guide on [how to set up custom email automations](/insights/email-automations), where you will learn how you can leverage any of the data in the [various custom fields](/platform/custom-fields) that you setup in your project. 
+We recommend you check out of guide on [how to set up custom email automations](/insights/email-automations), where you will learn how you can leverage any of the data in the [various custom fields](/platform/features/custom-fields) that you setup in your project. 
 
 ## Automatic SOPs Project Management Automation
 

@@ -183,7 +183,7 @@ These are the custom fields comparison list. Custom fields are important because
 | Automatic Progress    |   ❌    |    ✅    |
 | Manual Progress       |   ✅     |    ✅    |
 
-Based on the comparison between Blue and ClickUp in terms of [custom fields](/platform/custom-fields), both platforms offer a comprehensive suite of custom fields. 
+Based on the comparison between Blue and ClickUp in terms of [custom fields](/platform/features/custom-fields), both platforms offer a comprehensive suite of custom fields. 
 
 
 ## Main Criticisms of ClickUp

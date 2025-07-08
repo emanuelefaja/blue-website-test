@@ -62,7 +62,7 @@ As your task list grows, being able to focus on what matters becomes crucial.
 Look for a system that offers:
 
 - Basic filters for date, category, and assignee
-- [Custom field](/platform/custom-fields) filtering for granular control
+- [Custom field](/platform/features/custom-fields) filtering for granular control
 - Stackable filters to drill down to exactly what you need
 
 With these tools, you can cut through the noise and zero in on your priorities, no matter how complex your project becomes.
@@ -79,7 +79,7 @@ They not only save time when initiating new projects but also promote consistenc
 
 This feature allows you to set custom user permissions, restricting access to specific cards or columns. It's particularly useful when [working with external stakeholders](/insights/project-management-automations-checkbox-email), managing sensitive information, or when you need to limit certain team members' view of the overall project for focus or security reasons.
 
-Board-level metrics unlock valuable insights into your team's performance. By creating [standalone dashboards based on your kanban board data](/platform/dashboards), you can easily identify bottlenecks, track velocity, and gauge your team's workload. These metrics help you make data-driven decisions to optimize your workflow and improve overall productivity.
+Board-level metrics unlock valuable insights into your team's performance. By creating [standalone dashboards based on your kanban board data](/platform/features/dashboard), you can easily identify bottlenecks, track velocity, and gauge your team's workload. These metrics help you make data-driven decisions to optimize your workflow and improve overall productivity.
 
 The ability to link related boards is crucial for managing complex projects. 
 
@@ -204,7 +204,7 @@ Having comments integrated directly within the card offers significant benefits.
 
 ### Advanced Component of a Kanban Card
 
-[Custom fields allow you to add specific information](/platform/custom-fields) relevant to your unique workflow. Whether it's a customer ID for a sales process, a skill level for a recruitment pipeline, or a budget code for project management, custom fields let you tailor cards to your exact needs. 
+[Custom fields allow you to add specific information](/platform/features/custom-fields) relevant to your unique workflow. Whether it's a customer ID for a sales process, a skill level for a recruitment pipeline, or a budget code for project management, custom fields let you tailor cards to your exact needs. 
 
 This flexibility ensures that all crucial information is captured and easily accessible within each card.
 

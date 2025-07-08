@@ -70,11 +70,11 @@ Honestly, that was a fantastic decision. In many companies, the API feels like a
 
 **What are the biggest changes you’ve seen in Blue?**
 
-Blue has evolved into a single source of truth and a system of record. It can adapt quickly to business changes, making it a pillar for business growth. The enhancements in automations, [custom field customization](/platform/custom-fields), and [integrations](/platform/integrations) have been significant. In the last four years, it has morphed it into a completely different product. In fact, I’d say it has gone from a product into a platform.  
+Blue has evolved into a single source of truth and a system of record. It can adapt quickly to business changes, making it a pillar for business growth. The enhancements in automations, [custom field customization](/platform/features/custom-fields), and [integrations](/platform/integrations) have been significant. In the last four years, it has morphed it into a completely different product. In fact, I’d say it has gone from a product into a platform.  
 
 **What’s your favorite feature in Blue and why?**
 
-[Automations.](/platform/automations) They allow me to streamline processes and reduce management time for routine tasks, focusing more on strategy and valuable activities.
+[Automations.](/platform/features/automations) They allow me to streamline processes and reduce management time for routine tasks, focusing more on strategy and valuable activities.
 
 **What would be your dream new features for Blue?**
 

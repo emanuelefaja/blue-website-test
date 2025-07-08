@@ -144,7 +144,7 @@ For each record, we compile the following information:
 
 - **List Name**: Provides context about the broader category or phase of the project.
 - **Record Title**: Often contains key information about the record's purpose or content.
-- **Custom Fields**: We include text and number-based [custom fields](/platform/custom-fields), which often contain crucial project-specific information.
+- **Custom Fields**: We include text and number-based [custom fields](/platform/features/custom-fields), which often contain crucial project-specific information.
 - **Description**: Typically contains the most detailed information about the record.
 - **Comments**: Can provide additional context or updates that might be relevant for tagging.
 - **Due Date**: Temporal information that might influence tag selection.

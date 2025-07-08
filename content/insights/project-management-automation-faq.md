@@ -115,7 +115,7 @@ This would of course be the next natural question. Everyone wants to “improve 
 
 1. Task Assignment and Scheduling: Automatically assign tasks based on team members’ availability and skill sets, and create schedules that optimize resource use.
 2. Progress Tracking: Use tools to monitor task completion, track milestones, and identify potential bottlenecks.
-3. Reporting: Generate regular status reports, performance metrics, and [dashboards](/platform/dashboards) without manual data compilation.
+3. Reporting: Generate regular status reports, performance metrics, and [dashboards](/platform/features/dashboard) without manual data compilation.
 4. Resource Management: Automate the allocation and tracking of resources such as personnel, equipment, and budgets.
 5. Communication: Set up automated notifications, [reminders](https://documentation.blue.cc/records/reminders), and updates to keep stakeholders informed.
 6. Risk Management: Identify potential risks through automated analysis and trigger alerts for preventive actions.

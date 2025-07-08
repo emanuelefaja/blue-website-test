@@ -174,7 +174,7 @@ These are the custom fields comparison list. Custom fields are important because
 | Roll up               |   ❌    |         ❌         |
 
 
-Based on the comparison between Blue and Asana in terms of [custom fields](/platform/custom-fields), it's clear that Blue offers a more comprehensive and versatile set of options for structured data management.
+Based on the comparison between Blue and Asana in terms of [custom fields](/platform/features/custom-fields), it's clear that Blue offers a more comprehensive and versatile set of options for structured data management.
 
 While both platforms provide basic field types such as single-line text, multiple-line text, date, number, and percent, Blue extends its capabilities with specialized fields like URL/Link, Country, Formula, File, Location/Map, Phone Number, Email, Star Rating, Unique ID, Reference, Lookup, and Duration. 
 
