@@ -3,8 +3,167 @@
     {{template "page-heading" 
         dict 
             "Title" "Non-Profit Solutions" 
-            "Subtitle" "Maximize your impact with efficient processes and donor management tailored for non-profit organizations." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Maximize mission impact with streamlined grant management, volunteer coordination, and donor tracking." 
+            "MarginBottom" "mb-16"
     }}
+
+    <!-- Customer Logos Section -->
+    <div class="mb-20">
+        {{$nonprofitLogos := parseJSON `{
+            "title": "Helping those who help the world",
+            "logos": [
+                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                { "name": "International Labour Organization", "src": "/customers/ilo.webp" },
+                { "name": "CARE", "src": "/customers/care.svg" },
+                { "name": "Doctors Without Borders", "src": "/customers/msf.svg" }
+            ]
+        }`}}
+        {{template "logo-grid" $nonprofitLogos}}
+    </div>
+
+    <!-- Key Reasons Section -->
+    <div class="mb-20">
+        {{$nonprofitFeatures := parseJSON `{
+            "Title": "Why non-profits choose Blue",
+            "Features": [
+                {
+                    "Title": "50% discount on list prices",
+                    "Description": "Special non-profit pricing lets you focus your budget on your mission, not software costs."
+                },
+                {
+                    "Title": "Blue is simple to use",
+                    "Description": "Get teams up and running in hours, not weeks. Higher adoption means more time for mission-critical work."
+                },
+                {
+                    "Title": "Blue is flexible",
+                    "Description": "Adapts to your unique processes. Stay compliant, start quickly, and expand as you grow."
+                }
+            ]
+        }`}}
+        {{template "features-grid-simple" $nonprofitFeatures}}
+    </div>
+
+     <!-- Testimonial Section -->
+     <div class="mb-20 px-6 lg:px-8">
+        {{template "testimonial-single" 
+            dict 
+                "ImageUrl" "/testimonials/kyriacos.jpeg"
+                "Quote" "Blue has massively helped us manage our data work, ensuring that our teams are clear on what they need to do, and why. It's a great tool for us."
+                "Name" "Kyriacos Koupparis, PhD"
+                "Title" "Head of Unit, Early Warning and Forecasting, World Food Programme."
+        }}
+    </div>
+
+    <!-- Non-profit Use Cases Section Header -->
+    <div class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Non-profit use cases</h2>
+    </div>
+
+    <!-- Grant Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$grantManagementData := parseJSON `{
+            "VideoPosition": "left",
+            "VideoUrl": "/product/automation.mp4",
+            "Title": "Grant Application Process",
+            "Description": "Track application stages, automate deadline reminders, and manage documents. Never miss a critical grant deadline again.",
+            "Button": {
+                "Text": "Learn about Grant Management",
+                "Url": "/platform/features/automations"
+            },
+            "SeeAlso": {
+                "Heading": "See also",
+                "Links": [
+                    { "Text": "Custom Fields", "Description": "track donor information and grant amounts precisely", "Url": "/platform/features/custom-fields" },
+                    { "Text": "Automated Reminders", "Description": "ensure you never miss application deadlines", "Url": "/platform/features/automations" },
+                    { "Text": "Document Management", "Description": "organizes all your grant paperwork securely", "Url": "/platform/features/files" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $grantManagementData}}
+    </div>
+
+    <!-- Project Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$projectManagementData := parseJSON `{
+            "VideoPosition": "right",
+            "VideoUrl": "/product/project-settings.mp4",
+            "Title": "Project and Program Management",
+            "Description": "Deliver projects on time and within budget. Monitor progress, allocate resources, and maintain transparency for stakeholders and funders.",
+            "Button": {
+                "Text": "Explore Project Management",
+                "Url": "/solutions/use-case/project-management"
+            },
+            "SeeAlso": {
+                "Heading": "See also",
+                "Links": [
+                    { "Text": "Views", "Description": "provide kanban boards and timelines for project tracking", "Url": "/platform/features/views" },
+                    { "Text": "User Permissions", "Description": "control access to sensitive program data", "Url": "/platform/features/user-permissions" },
+                    { "Text": "Records", "Description": "organize all your project information in one place", "Url": "/platform/features/records" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $projectManagementData}}
+    </div>
+
+    <!-- Volunteer Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$volunteerManagementData := parseJSON `{
+            "VideoPosition": "left",
+            "VideoUrl": "/product/user-roles.mp4",
+            "Title": "Volunteer Management",
+            "Description": "Create custom roles, manage permissions, and coordinate volunteer activities. Maximize every volunteer's contribution to your mission.",
+            "Button": {
+                "Text": "Learn about User Management",
+                "Url": "/platform/features/user-permissions"
+            },
+            "SeeAlso": {
+                "Heading": "See also",
+                "Links": [
+                    { "Text": "User Permissions", "Description": "create custom roles for different volunteer levels", "Url": "/platform/features/user-permissions" },
+                    { "Text": "Forms", "Description": "collect volunteer applications and availability schedules", "Url": "/platform/features/forms" },
+                    { "Text": "Chat", "Description": "enables real-time coordination between volunteers and staff", "Url": "/platform/features/chat" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $volunteerManagementData}}
+    </div>
+
+    <!-- Event Planning Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$eventPlanningData := parseJSON `{
+            "VideoPosition": "right",
+            "VideoUrl": "/product/reminders.mp4",
+            "Title": "Event Planning and Management",
+            "Description": "Plan and execute impactful events with ease. Track RSVPs, manage logistics, and coordinate volunteers and vendors in one place.",
+            "Button": {
+                "Text": "See Event Management",
+                "Url": "/solutions/use-case/project-management"
+            },
+            "SeeAlso": {
+                "Heading": "See also",
+                "Links": [
+                    { "Text": "Views", "Description": "provide calendar and timeline views for event scheduling", "Url": "/platform/features/views" },
+                    { "Text": "Automations", "Description": "send event reminders to attendees and volunteers", "Url": "/platform/features/automations" },
+                    { "Text": "Records", "Description": "manage vendor contacts and event logistics details", "Url": "/platform/features/records" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $eventPlanningData}}
+    </div>
+
+   
+
+    <!-- Final CTA -->
+    <div class="px-6 lg:px-8">
+        {{template "dual-button-cta" 
+            dict 
+                "Title" "Ready to maximize your non-profit's impact?"
+                "SecondaryText" "Schedule a Demo"
+                "SecondaryUrl" "/contact"
+                "PrimaryText" "Start Free Trial"
+                "PrimaryUrl" "/signup"
+        }}
+    </div>
 
 </div>
