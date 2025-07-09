@@ -6,30 +6,6 @@
             "Subtitle" (printf "Trusted by more than %d forward-thinking organizations, <br>from ambitious startups to established enterprises." .CustomerNumber | html)
             "MarginBottom" "mb-16"
     }}
-    {{$logoData := parseJSON `{
-        "logos": [
-            { "name": "CBRE", "src": "/customers/cbre.svg" },
-            { "name": "Cisco", "src": "/customers/cisco.svg" },
-            { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-            { "name": "FedEx", "src": "/customers/fedex.svg" },
-            { "name": "Manulife", "src": "/customers/manulife.svg" },
-            { "name": "Red Hat", "src": "/customers/redhat.svg" },
-            { "name": "Heineken", "src": "/customers/heineken.svg" },
-            { "name": "Marriott", "src": "/customers/marriot.svg" },
-            { "name": "Decathlon", "src": "/customers/decathlon.svg" },
-            { "name": "TotalEnergies", "src": "/customers/totalenergies.svg" },
-            { "name": "Sheraton", "src": "/customers/sheraton.svg" },
-            { "name": "VMware", "src": "/customers/wmware.svg" },
-            { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
-            { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
-            { "name": "World Food Programme", "src": "/customers/wfp.svg" },
-            { "name": "UNDP", "src": "/customers/undp.svg" },
-            { "name": "ILO", "src": "/customers/ilo.webp" },
-            { "name": "ADB", "src": "/customers/adb.svg" }
-        ]
-    }`}}
-    
-    {{template "logo-grid" $logoData}}
 
     {{$testimonialData := parseJSON `{
         "title": "Hear from our customers",

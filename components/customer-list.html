@@ -1,0 +1,33 @@
+{{define "customer-list"}}
+<div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div x-data="{ 
+        showAll: false,
+        visibleCount: 20
+    }">
+        <!-- Customer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8">
+            {{range $index, $customer := .customers}}
+            <div x-show="showAll || {{$index}} < visibleCount" x-cloak class="mb-6">
+                <a href="{{$customer.url}}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="text-gray-700 dark:text-gray-300 hover:text-brand-blue dark:hover:text-blue-400 hover:underline transition-colors duration-200">
+                    {{$customer.name}}
+                </a>
+            </div>
+            {{end}}
+        </div>
+        
+        <!-- Load All Button -->
+        {{$totalCustomers := len .customers}}
+        {{if gt $totalCustomers 20}}
+        <div x-show="!showAll" class="mt-12 text-center">
+            <button @click="showAll = true" 
+                    class="text-gray-600 dark:text-gray-400 hover:text-brand-blue dark:hover:text-blue-400 hover:underline transition-colors duration-200 text-sm font-medium">
+                Load all
+            </button>
+        </div>
+        {{end}}
+    </div>
+</div>
+{{end}}
