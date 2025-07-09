@@ -64,7 +64,7 @@ Our criteria included:
 - Ability to adhere to specific output formats
 - Data privacy guarantees
 
-After thorough testing, we chose OpenAI's [GPT-3.5 Turbo](https://platform.openai.com/public/docs/models/gpt-3-5-turbo). While [GPT-4](https://softgist.com/the-ultimate-guide-to-prompt-engineering) might offer marginal improvements in accuracy, our tests showed that GPT-3.5's performance was more than adequate for our auto-tagging needs. The balance of cost-effectiveness and strong categorization capabilities made GPT-3.5 the ideal choice for this feature.
+After thorough testing, we chose OpenAI's [GPT-3.5 Turbo](https://platform.openai.com/docs/models/gpt-3-5-turbo). While [GPT-4](https://softgist.com/the-ultimate-guide-to-prompt-engineering) might offer marginal improvements in accuracy, our tests showed that GPT-3.5's performance was more than adequate for our auto-tagging needs. The balance of cost-effectiveness and strong categorization capabilities made GPT-3.5 the ideal choice for this feature.
 
 
 The higher cost of GPT-4 would have forced us to offer the feature as a paid add-on, conflicting with our goal of **bundling AI within our main product at no additional cost to end users.** 

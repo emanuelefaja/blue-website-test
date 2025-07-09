@@ -15,7 +15,7 @@ showdate: true
  See it in action below.
 
  <video autoplay loop muted playsinline>
-  <source src="/public/videos/groupmentions.mp4" type="video/mp4">
+  <source src="/videos/groupmentions.mp4" type="video/mp4">
 </video>
 
 Group @Mentions are designed to save you time and ensure everyone stays informed. You just type `@` followed by the group name, and our system will instantly suggest the right group thanks to preloaded data. This makes communication smoother and faster. The notification system works the same way as individual mentions, so if you tag a group, all members will be notified just as they would if tagged individually.

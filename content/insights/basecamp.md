@@ -27,7 +27,7 @@ The platform started life as an internal project management tool created by the 
 
 David is also the creator of the [open source web framework Ruby on Rails](https://rubyonrails.org/) that is used by companies such as [GitHub](https://github.com/), [Shopify](https://www.shopify.com/), [Airbnb](https://www.airbnb.com/), [Square](https://squareup.com/), [Coinbase](https://www.coinbase.com/), and [Zendesk](https://www.zendesk.com/).
 
-![](/public/insights/basecamp-home.png)
+![](/insights/basecamp-home.png)
 <p class="text-sm text-gray-500 text-center -mt-8">Image description goes here</p>
 
 
@@ -141,14 +141,14 @@ View                     | Basecamp                            | Blue |
 
 > It's like Kanban, only better.
 
-![](/public/insights/basecamp-kanban.png)
+![](/insights/basecamp-kanban.png)
 
 Well, we *actually* tried it out and did a head to head comparison with the Blue Kanban board — the feature that we are *most* proud of in Blue. 
 
 Here is our CEO comparing the two: 
 
 <video controls>
-  <source src="/public/videos/bluebasecamp-kanban-boards.mp4" type="video/mp4">
+  <source src="/videos/bluebasecamp-kanban-boards.mp4" type="video/mp4">
 </video>
 
 And they also miss a lot of other features:
@@ -218,7 +218,7 @@ One of the most significant differences in user experience between Basecamp and 
 In Basecamp, switching between projects often requires several clicks. 
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/basecamp-project-navigation.mp4" type="video/mp4">
+  <source src="/videos/basecamp-project-navigation.mp4" type="video/mp4">
 </video>
 
 
@@ -227,7 +227,7 @@ You need to navigate back to the central dashboard before you can access a diffe
 Blue, on the other hand, has been designed with modern workflows in mind. Its interface is sleek and intuitive, with a focus on efficiency. One of Blue's standout features is its quick project switching capability. Users can easily move between projects with minimal clicks, directly from their current view. 
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/blue-project-navigation.mp4" type="video/mp4">
+  <source src="/videos/blue-project-navigation.mp4" type="video/mp4">
 </video>
 
 This streamlined navigation can be a significant time-saver for teams managing multiple projects simultaneously.

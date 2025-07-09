@@ -143,15 +143,15 @@ The key is to maintain flexibility and a willingness to adapt the stand-up conce
 Here's a list of papers for further reading if you're interested: 
 
 
-- [Are Daily Stand-up Meetings Valuable? A Survey of Developers in Software Teams](https://www.researchgate.net/publication/316114233_Are_Daily_Stand-up_Meetings_Valuable_A_Survey_of_Developers_in_Software_Teams) by Stray, Sjøberg, and Dybå (2017)[1]
+- [Are Daily Stand-up Meetings Valuable? A Survey of Developers in Software Teams](https://www.researchgate.netation/316114233_Are_Daily_Stand-up_Meetings_Valuable_A_Survey_of_Developers_in_Software_Teams) by Stray, Sjøberg, and Dybå (2017)[1]
 
 - [The Daily Stand-up Meeting: A Grounded Theory Study](https://www.sciencedirect.com/science/article/abs/pii/S0164121216000066) by Stray, Sjøberg, and Dybå (2016)[2]
 
-- [An Empirical Investigation of the Daily Stand-Up Meeting in Agile Software Development Projects](https://www.researchgate.net/publication/266850154_An_Empirical_Investigation_of_the_Daily_Stand-Up_Meeting_in_Agile_Software_Development_Projects) by Stray (2014)[4]
+- [An Empirical Investigation of the Daily Stand-Up Meeting in Agile Software Development Projects](https://www.researchgate.netation/266850154_An_Empirical_Investigation_of_the_Daily_Stand-Up_Meeting_in_Agile_Software_Development_Projects) by Stray (2014)[4]
 
 - [The Influence of Agile Practices on Performance in Software Engineering Teams: A Subgroup Perspective](https://dl.acm.org/doi/10.1145/3209626.3209703) by Przybilla, Wiesche, and Krcmar (2018)[3]
 
-- [Daily Stand-Up Meetings: Start Breaking the Rules](https://www.researchgate.net/publication/328443060_Daily_Stand-Up_Meetings_Start_Breaking_the_Rules) by Lacey (2016)[7]
+- [Daily Stand-Up Meetings: Start Breaking the Rules](https://www.researchgate.netation/328443060_Daily_Stand-Up_Meetings_Start_Breaking_the_Rules) by Lacey (2016)[7]
 
 - [The daily stand-up meeting: A grounded theory study](https://www.sciencedirect.com/science/article/pii/S0164121216000066) by Stray, Sjøberg, and Dybå (2016)[2]
 

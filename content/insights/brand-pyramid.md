@@ -29,13 +29,13 @@ The primary function of a brand pyramid is to give the brand direction, allowing
 - **Rational Benefits**: The benefits that distinguish the brand from its competitors
 - **Functional Attributes**: The features, services, or goods that the brand provide
 
-![](/public/insights/brand-pyramid-structure.png)
+![](/insights/brand-pyramid-structure.png)
 
 ## The Blue Approach
 
 When we consider brand pyramids, we take a slightly different approach with our brand. Due to similarities and overlaps of the rational and functional benefits, we have streamlined them into a single tier. This has helped us avoid confusion and focus on what really matters - HOW our brand is different to that of our competitors. To achieve this, it is important that at least one of the functional benefits stipulates the brand's differentiating feature.
 
-![](/public/insights/blue-brand-pyramid.png)
+![](/insights/blue-brand-pyramid.png)
 
 ## Brand Essence
 
@@ -73,7 +73,7 @@ The second section of the brand pyramid is the brand's personality. This is the 
 
 Examples of popular brand personality traits:
 
-![](/public/insights/personality-traits.png)
+![](/insights/personality-traits.png)
 
 Think about it like this: 
 

@@ -88,10 +88,10 @@ func (lc *LinkChecker) buildValidRoutes() {
 			lc.validRoutes[path+"/"] = true
 		}
 	}
-	
+
 	// Explicitly add common routes that might be handled specially by router
 	lc.validRoutes["/"] = true
-	
+
 	// Add common API and special routes
 	lc.validRoutes["/health"] = true
 	lc.validRoutes["/api/status/current"] = true
@@ -108,20 +108,20 @@ func (lc *LinkChecker) scanPublicFiles() {
 		if err != nil {
 			return nil // Continue on errors
 		}
-		
+
 		if !d.IsDir() {
 			// Convert file path to URL path
 			urlPath := "/" + path
 			lc.publicFiles[urlPath] = true
 		}
-		
+
 		return nil
 	})
-	
+
 	if err != nil {
 		// Fallback to common files if scanning fails
 		lc.publicFiles["/favicon.ico"] = true
-		lc.publicFiles["/public/css/style.css"] = true
+		lc.publicFiles["/css/style.css"] = true
 	}
 }
 
@@ -169,7 +169,7 @@ func (lc *LinkChecker) extractLinksFromHTML(htmlContent string) []string {
 // extractLinksFromMarkdown extracts markdown-style links
 func (lc *LinkChecker) extractLinksFromMarkdown(content string) []string {
 	var links []string
-	
+
 	// Match markdown links [text](url)
 	mdLinkRegex := regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`)
 	matches := mdLinkRegex.FindAllStringSubmatch(content, -1)
@@ -195,7 +195,7 @@ func (lc *LinkChecker) extractLinksFromMarkdown(content string) []string {
 func (lc *LinkChecker) validateLinks(sourcePath string, links []string) {
 	for _, link := range links {
 		lc.totalLinks++
-		
+
 		// Skip external links
 		if strings.HasPrefix(link, "http://") || strings.HasPrefix(link, "https://") || strings.HasPrefix(link, "//") {
 			lc.validLinks++
@@ -247,7 +247,7 @@ func (lc *LinkChecker) validateLinks(sourcePath string, links []string) {
 		}
 
 		// Check if it's a public file
-		if strings.HasPrefix(checkPath, "/public/") || lc.publicFiles[checkPath] {
+		if strings.HasPrefix(checkPath, "/") || lc.publicFiles[checkPath] {
 			lc.validLinks++
 			continue
 		}
@@ -273,7 +273,7 @@ func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 		SourcePath:  sourcePath,
 		LineContext: context,
 	}
-	
+
 	if _, exists := lc.brokenLinks[link]; !exists {
 		lc.brokenLinks[link] = []BrokenLink{}
 	}
@@ -283,13 +283,13 @@ func (lc *LinkChecker) addBrokenLink(sourcePath, link, context string) {
 // printResults prints the link checking results and generates CSV
 func (lc *LinkChecker) printResults() {
 	brokenCount := lc.totalLinks - lc.validLinks
-	
+
 	if brokenCount == 0 {
 		log.Printf("✅ %d/%d links valid", lc.validLinks, lc.totalLinks)
 	} else {
 		log.Printf("🔗 %d/%d links valid", lc.validLinks, lc.totalLinks)
 		log.Printf("❌ %d broken links found", brokenCount)
-		
+
 		// Generate CSV file
 		lc.generateCSV()
 	}
@@ -324,13 +324,13 @@ func (lc *LinkChecker) generateCSV() {
 	// Write each broken link with its sources
 	for _, url := range brokenURLs {
 		sources := lc.brokenLinks[url]
-		
+
 		// Group sources and count references
 		sourceCount := make(map[string]int)
 		for _, source := range sources {
 			sourceCount[source.SourcePath]++
 		}
-		
+
 		// Write one row per unique source page
 		for sourcePage, count := range sourceCount {
 			record := []string{
@@ -343,14 +343,14 @@ func (lc *LinkChecker) generateCSV() {
 			}
 		}
 	}
-	
+
 	log.Printf("📝 Broken links exported to 404.csv")
 }
 
 // RunLinkChecker runs the link checker with the provided services
 func RunLinkChecker(markdownService *MarkdownService, htmlService *HTMLService, seoService *SEOService) error {
 	log.Printf("🔗 Checking internal links...")
-	
+
 	checker := NewLinkChecker(markdownService, htmlService, seoService)
 	return checker.CheckAllLinks()
 }

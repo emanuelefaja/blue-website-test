@@ -43,7 +43,7 @@ Blue is integral to all these lines of business and so much more. I like to say 
 Focus on products or technologies that are configurable, extendable, and scalable. The last thing you want is to outgrow your systems quickly, which can lead to costly and disruptive transitions. When choosing a solution, you need to think long-term and ensure that the technology can grow with your business.
 For instance, imagine launching a CRM system designed to manage 5,000 customers. In the early stages, this system might work perfectly, but as your business grows and your customer base expands to 50,000, you don't want to find yourself constrained by a system that can't handle the increased load. This would force you to switch systems, a process that can be time-consuming, expensive, and fraught with challenges.
 
-![](/public/customer-photos/lorenzohickey3.jpeg)
+![](/customer-photos/lorenzohickey3.jpeg)
 
 Choosing scalable solutions means that your technology infrastructure can seamlessly support your growth. This is where Blue excels. Blue’s scalability ensures that as your business evolves, you won't be held back by your software. It’s built to expand and adapt to your needs, whether you're managing 5,000 customers or 50,000.
 

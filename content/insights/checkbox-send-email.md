@@ -22,7 +22,7 @@ A checkbox that automatically notifies one or more key stakeholders, giving them
 
 This will look something like this once you’re done:
 
-![](/public/insights/checkbox-email-automation.png)
+![](/insights/checkbox-email-automation.png)
 
 And just by checking this checkbox, you will be able to trigger a project management automation to send a custom notification email to stakeholders. 
 
@@ -39,7 +39,7 @@ Make sure that you name this field something obvious that you’ll remember such
 On the records view in your project, click on the small robot on the top right to open the automation settings:
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/notify-stakeholders-automation-setup.mp4" type="video/mp4">
+  <source src="/videos/notify-stakeholders-automation-setup.mp4" type="video/mp4">
 </video>
 
 ## 3. Create your project management automation action.
@@ -50,7 +50,7 @@ You can learn more in our [detailed documentation guide on how to setup email au
 
 Your final result should look something like this:
 
-![](/public/insights/email-automation-example.png)
+![](/insights/email-automation-example.png)
 
 ## 4. Bonus: Restrict access to the checkbox.
 

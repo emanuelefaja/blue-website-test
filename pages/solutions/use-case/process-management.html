@@ -9,7 +9,7 @@
 
     {{template "hero-video" 
         dict 
-            "VideoUrl" "/public/testvideo2.mp4"
+            "VideoUrl" "/testvideo2.mp4"
             "ShowUnmuteButton" true
             "Id" "process-management"
     }}
@@ -19,12 +19,12 @@
         {{$logoData := parseJSON `{
             "title": "500M+ processes automated in Blue",
             "logos": [
-                { "name": "Heineken", "src": "/public/customers/heineken.svg" },
-                { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
-                { "name": "Save the Children", "src": "/public/customers/savethechildren.svg" },
-                { "name": "FedEx", "src": "/public/customers/fedex.svg" },
-                { "name": "World Food Programme", "src": "/public/customers/wfp.svg" },
-                { "name": "ILO", "src": "/public/customers/ilo.webp" }
+                { "name": "Heineken", "src": "/customers/heineken.svg" },
+                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                { "name": "FedEx", "src": "/customers/fedex.svg" },
+                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                { "name": "ILO", "src": "/customers/ilo.webp" }
             ]
         }`}}
         
@@ -38,7 +38,7 @@
             {{$processDesignData := parseJSON `{
                 "Title": "Design processes that actually work.",
                 "Description": "Create custom lists for each process step, add the exact fields you need, and organize everything in folders. No templates to fight against—build processes that match how your team actually works.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "right",
                 "Button": {
                     "Text": "Learn about custom fields",
@@ -69,7 +69,7 @@
             {{$automationData := parseJSON `{
                 "Title": "Processes that run themselves.",
                 "Description": "Stack and layer automations to keep work moving forward. Create checklists, set due dates, assign tasks, and automatically move records to the next step when conditions are met. Your processes never get stuck.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "left",
                 "Button": {
                     "Text": "Explore automations",
@@ -105,7 +105,7 @@
             {{$visibilityData := parseJSON `{
                 "Title": "See exactly where processes get stuck.",
                 "Description": "Real-time dashboards show completion rates, bottlenecks, and performance metrics. Track time in each stage, identify where processes slow down, and optimize your workflows based on actual data.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "right",
                 "SeeAlso": {
                     "Heading": "Tracking features",
@@ -137,7 +137,7 @@
             {{$complianceData := parseJSON `{
                 "Title": "Enterprise-grade security and compliance.",
                 "Description": "Complete audit trails log every change, field-level permissions control access to sensitive data, and multi-workspace collaboration keeps teams organized. Perfect for healthcare, finance, and regulated industries.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "left",
                 "SeeAlso": {
                     "Heading": "Security features",
@@ -173,7 +173,7 @@
                 {
                     "Id": "onboarding",
                     "Title": "Employee Onboarding",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "compliance",
@@ -183,7 +183,7 @@
                 {
                     "Id": "approvals",
                     "Title": "Approval Processes",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "manufacturing",
@@ -193,7 +193,7 @@
                 {
                     "Id": "quality-control",
                     "Title": "Quality Control",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "client-delivery",
@@ -211,8 +211,8 @@
         {{template "testimonial-single" 
             dict 
                 "Quote" "Blue transformed how we manage our compliance processes. What used to take weeks now happens automatically, and we never miss a deadline."
-                "VideoUrl" "/public/testvideo2.mp4"
-                "PosterUrl" "/public/testimonials/june.jpg"
+                "VideoUrl" "/testvideo2.mp4"
+                "PosterUrl" "/testimonials/june.jpg"
                 "Name" "Michael Rodriguez"
                 "Title" "Operations Director"
         }}

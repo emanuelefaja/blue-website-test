@@ -9,7 +9,7 @@
 
     {{template "hero-video" 
         dict 
-            "VideoUrl" "/public/testvideo2.mp4"
+            "VideoUrl" "/testvideo2.mp4"
             "ShowUnmuteButton" true
             "Id" "service-tickets"
     }}
@@ -19,12 +19,12 @@
         {{$logoData := parseJSON `{
             "title": "Teams resolve 3M+ tickets annually in Blue",
             "logos": [
-                { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
-                { "name": "FedEx", "src": "/public/customers/fedex.svg" },
-                { "name": "Cisco", "src": "/public/customers/cisco.svg" },
-                { "name": "Red Hat", "src": "/public/customers/redhat.svg" },
-                { "name": "Manulife", "src": "/public/customers/manulife.svg" },
-                { "name": "CBRE", "src": "/public/customers/cbre.svg" }
+                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                { "name": "FedEx", "src": "/customers/fedex.svg" },
+                { "name": "Cisco", "src": "/customers/cisco.svg" },
+                { "name": "Red Hat", "src": "/customers/redhat.svg" },
+                { "name": "Manulife", "src": "/customers/manulife.svg" },
+                { "name": "CBRE", "src": "/customers/cbre.svg" }
             ]
         }`}}
         
@@ -38,7 +38,7 @@
             {{$ticketCreationData := parseJSON `{
                 "Title": "Tickets from anywhere, routed instantly.",
                 "Description": "Create tickets via forms, email, API, or QR codes on equipment. Intelligent automations ensure every ticket reaches the right team member based on type, priority, or custom rules.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "right",
                 "Button": {
                     "Text": "Learn about forms",
@@ -69,7 +69,7 @@
             {{$slaData := parseJSON `{
                 "Title": "Never miss an SLA again.",
                 "Description": "Track time in each stage, monitor response times, and visualize performance with real-time dashboards. Know exactly where bottlenecks occur and optimize your workflow.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "left",
                 "SeeAlso": {
                     "Heading": "Key features",
@@ -101,7 +101,7 @@
             {{$customizationData := parseJSON `{
                 "Title": "Your support process, your way.",
                 "Description": "Design your perfect ticket structure with custom fields, statuses, and workflows. No rigid templates—build exactly what your team needs. Color-code priorities, add tags for escalation, and create the ideal ticket lifecycle.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "right",
                 "Button": {
                     "Text": "Explore custom fields",
@@ -117,7 +117,7 @@
             {{$communicationData := parseJSON `{
                 "Title": "Keep everyone in the loop, automatically.",
                 "Description": "Automated email updates notify customers at each stage. Reduce follow-up inquiries and improve satisfaction with proactive communication. Set up custom email templates for different ticket types and statuses.",
-                "VideoUrl": "/public/testvideo2.mp4",
+                "VideoUrl": "/testvideo2.mp4",
                 "VideoPosition": "left",
                 "SeeAlso": {
                     "Heading": "Communication features",
@@ -148,7 +148,7 @@
                 {
                     "Id": "it-helpdesk",
                     "Title": "IT Help Desk",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "property-management",
@@ -158,7 +158,7 @@
                 {
                     "Id": "equipment-maintenance",
                     "Title": "Equipment Maintenance",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "customer-support",
@@ -168,7 +168,7 @@
                 {
                     "Id": "multi-location",
                     "Title": "Multi-location Operations",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "business-services",
@@ -186,8 +186,8 @@
         {{template "testimonial-single" 
             dict 
                 "Quote" "Blue transformed our support operations. We reduced ticket resolution time by 40% and our customers love the automatic updates."
-                "VideoUrl" "/public/testvideo2.mp4"
-                "PosterUrl" "/public/testimonials/june.jpg"
+                "VideoUrl" "/testvideo2.mp4"
+                "PosterUrl" "/testimonials/june.jpg"
                 "Name" "Sarah Chen"
                 "Title" "IT Service Manager"
         }}

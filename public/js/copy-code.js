@@ -20,7 +20,7 @@ window.CopyCodeUtils = {
             
             const copyBtn = document.createElement('button');
             copyBtn.className = 'code-copy-btn';
-            copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
+            copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/icons/sprite.svg#copy"></use></svg>';
             copyBtn.title = 'Copy code';
             
             copyBtn.addEventListener('click', async () => {
@@ -29,12 +29,12 @@ window.CopyCodeUtils = {
                 
                 try {
                     await navigator.clipboard.writeText(text);
-                    copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#check"></use></svg>';
+                    copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/icons/sprite.svg#check"></use></svg>';
                     copyBtn.classList.add('copied');
                     copyBtn.title = 'Copied!';
                     
                     setTimeout(() => {
-                        copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/public/icons/sprite.svg#copy"></use></svg>';
+                        copyBtn.innerHTML = '<svg class="w-4 h-4" fill="currentColor"><use href="/icons/sprite.svg#copy"></use></svg>';
                         copyBtn.classList.remove('copied');
                         copyBtn.title = 'Copy code';
                     }, 2000);

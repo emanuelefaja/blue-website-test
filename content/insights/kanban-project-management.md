@@ -18,7 +18,7 @@ For too long, we've all been using excel spreadsheets and todo lists to manage w
 
 [Kanban boards have an interesting history](/insights/kanban-board-history). They originated in Japan on the factory floor, but now have become an indispensible tool that should be in every project manager's back pocket. 
 
-![The original Japanese Kanban Boards](/public/insights/japan-kanban-boards.jpg)
+![The original Japanese Kanban Boards](/insights/japan-kanban-boards.jpg)
 
 [Trello](/insights/trello) was the software that first popularized kanban boards for project management. 
 

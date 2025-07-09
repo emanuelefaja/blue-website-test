@@ -94,7 +94,7 @@ When you request to log in to your Blue account, a unique login URL is sent to y
 
 At Blue, we are committed to maintaining a high level of reliability and transparency for our users. To provide visibility into our platform's performance, we offer a [dedicated system status page](https://status.blue.cc) which is also linked from our footer on every page of our website. 
 
-![](/public/insights/status-page.png)
+![](/insights/status-page.png)
 
 This page displays our historical uptime data, allowing you to see how consistently our services have been available over time. Additionally, the status page includes detailed incident reports, providing transparency about any past issues, their impact, and the steps we have taken to resolve them and prevent future occurrences.
 

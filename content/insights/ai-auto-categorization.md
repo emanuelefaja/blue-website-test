@@ -15,7 +15,7 @@ In future updates, AI Auto Categorization will be integrated with our automation
 Users can access this feature through the tag dropdown menu in any Blue view, including Kanban boards, dashboards, lists, and Gantt charts, as well as within individual records. This seamless integration ensures that AI Auto Categorization fits naturally into your existing workflows, enhancing usability and efficiency. Future developments will further integrate this feature into our automation suite, streamlining your processes even more.
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/ai-tagging.mp4" type="video/mp4">
+  <source src="/videos/ai-tagging.mp4" type="video/mp4">
 </video>
 
 Feedback from our beta testers has been overwhelmingly positive, with many praising the feature's efficiency and ease of use. Some users expressed concerns about data privacy, but they were reassured by our stringent agreements with AI providers, ensuring no data is stored on third-party servers. This commitment to privacy and security is a cornerstone of our service.

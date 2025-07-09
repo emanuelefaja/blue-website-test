@@ -45,7 +45,7 @@ But on average, most files are just a few MB.
 This graph shows our total storage growth over the years:
 
 
-![](/public/insights/totalfilestorageyearly.png)
+![](/insights/totalfilestorageyearly.png)
 
 ## Data Storage is actually quite cheap
 
@@ -113,7 +113,7 @@ Interestingly, transferring 1GB out (i.e. when a customer of Blue downloads a fi
 
 Most of our cost is from data transfers, *not* data hosting. 
 
-![](/public/insights/datahostingvstransfer.png)
+![](/insights/datahostingvstransfer.png)
 
 We have been customers of [Cloudflare](https://cloudflare.com) for quite a while, and our marketing website runs on [CloudFlare Pages](https://pages.cloudflard.com), and our DNS is managed via Cloudflare. 
 
@@ -146,7 +146,7 @@ Our analysis of file usage across projects has revealed an interesting pattern:
 - **Rapid Decline:** After this initial period of high activity, which typically lasts a few days, there's often a sharp drop-off in access frequency.
 - **Long-Term Low Access:** Many files then enter a phase where they're accessed only occasionally, if at all. They remain important for reference or documentation purposes but aren't part of the day-to-day project work.
 
-![](/public/insights/fileaccesspattern.png)
+![](/insights/fileaccesspattern.png)
 
 This pattern aligns perfectly with the concept of intelligent tiering. 
 

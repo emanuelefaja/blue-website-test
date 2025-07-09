@@ -14,13 +14,13 @@ Essentially, step-by-step instructions of the project.
 
 That's it. 
 
-![](/public/insights/minimalist-steps.jpg)
+![](/insights/minimalist-steps.jpg)
 
 Many new project managers find WBS intimidating because they typically resemble massive, clunky Excel sheets. 
 
 However, [modern tools](/platform) transform WBS into a dynamic, interactive system. A simplified WBS not only enhances project success but also reveals areas that require further clarity and research.
 
-![](/public/product/project-management-full-interface.png)
+![](/product/project-management-full-interface.png)
 
 With Blue, creating a WBS is straightforward. Our user-friendly interface and features, [such as a comprehensive audit trail](/platform/features/audit-trails), ensure that all changes are tracked, unlike traditional methods where modifications overwrite previous entries. This transparency and ease of use encourage project managers to break down project scopes before initiating any non-trivial endeavors.
 
@@ -30,7 +30,7 @@ In this article, we'll explore how to demystify WBS, making them an accessible a
 
 Simplicity in project management cannot be overstated. Blue's motto is "Teamwork, Made Simple" for a reason. 
 
-![Minimalist Working Chair](/public/insights/minimalist-chair.jpg)
+![Minimalist Working Chair](/insights/minimalist-chair.jpg)
 
 We believe that complexity is the enemy of done. 
 
@@ -42,7 +42,7 @@ This clarity reduces the likelihood of misunderstandings and errors. With clear 
 
 This shared understanding facilitates smoother coordination and [more effective teamwork.](/insights/great-teamwork)
 
-![](/public/insights/happy-project-manager.jpg)
+![](/insights/happy-project-manager.jpg)
 
 A simplified WBS directly impacts project efficiency and success. By clearly defining tasks and timelines, project managers can more easily identify bottlenecks and allocate resources effectively. 
 
@@ -84,7 +84,7 @@ Creating a simplified Work Breakdown Structure (WBS) can be straightforward if y
 8. **Review and Refine**: Regularly update the WBS as the project progresses to keep it relevant and useful.
 9. **Validate with Stakeholders**: Ensure that the project team and stakeholders understand and agree with the breakdown to foster shared understanding and commitment.
 
-![](/public/product/dark-cta-screenshot.png)
+![](/product/dark-cta-screenshot.png)
 
 
 By following these steps, you can create a simplified WBS that enhances project clarity, accountability, and efficiency, ultimately leading to more successful project outcomes.
@@ -93,7 +93,7 @@ By following these steps, you can create a simplified WBS that enhances project 
 
 Let's work through a practical example — opening a coffee shop.
 
-![](/public/insights/coffee-shop.jpg)
+![](/insights/coffee-shop.jpg)
 
 What's the primary objective? Well, to establish a fully operational coffee shop that attracts customers and generates revenue. 
 

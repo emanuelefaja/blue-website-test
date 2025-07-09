@@ -62,7 +62,7 @@ Don't create a crazy amount of [tags](https://documentation.blue.cc/records/tags
 At Blue, [we've also implemented an AI tagging system for this very reason](/insights/ai-auto-categorization-engineering). It can go through all your cards and automatically tag them based on the contents. 
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/ai-tagging.mp4" type="video/mp4">
+  <source src="/videos/ai-tagging.mp4" type="video/mp4">
 </video>
 
 This is even more important in large projects where, by their very nature, there are a lot of tasks. You may see that some individuals *always* have filters on to reduce the cognitive overload. 

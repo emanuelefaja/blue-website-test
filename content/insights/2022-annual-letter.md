@@ -31,7 +31,7 @@ Major feature release. Next week, you will see half a dozen major new features. 
 
 Blue is getting a new look. Last year, we rebranded from Bloo to Blue, and this year, we’re announcing a brand new visual identity that matches our progress over the last six years. You'll see this across all of our applications in the next few days. 
 
-![](/public/logo.svg)
+![](/logo.svg)
 
 ## 2023 Product Overview
 

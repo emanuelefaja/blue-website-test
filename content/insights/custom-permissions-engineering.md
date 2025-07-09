@@ -17,7 +17,7 @@ This means that our platform must adapt to the unique needs of each team. Today,
 Project management tools are the backbone of modern workflows, housing sensitive data, crucial communications, and strategic plans. As such, the ability to finely control access to this information isn't just a luxury—it's a necessity. 
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/user-roles.mp4" type="video/mp4">
+  <source src="/videos/user-roles.mp4" type="video/mp4">
 </video>
 
 
@@ -158,7 +158,7 @@ Next up, we moved onto creating list-based permissions, where proejct administra
 This is the end result:
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/custom-user-roles.mp4" type="video/mp4">
+  <source src="/videos/custom-user-roles.mp4" type="video/mp4">
 </video>
 
 ## Technical Considerations

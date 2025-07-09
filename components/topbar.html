@@ -37,7 +37,7 @@
         <!-- Logo and Toggle -->
         <div class="flex items-center">
             <a href="/" class="flex items-center">
-                <img src="/public/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3" width="120" height="32">
+                <img src="/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3" width="120" height="32">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
                     class="hidden md:block p-2 ml-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 cursor-pointer focus:outline-none"
@@ -62,7 +62,7 @@
                  loading: false,
                  async init() {
                      try {
-                         const response = await fetch('/public/searchIndex.json');
+                         const response = await fetch('/searchIndex.json');
                          const data = await response.json();
                          this.fuse = new Fuse(data, {
                              keys: [
@@ -133,7 +133,7 @@
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg class="w-4 h-4 text-gray-400" fill="currentColor">
-                        <use href="/public/icons/sprite.svg#search"></use>
+                        <use href="/icons/sprite.svg#search"></use>
                     </svg>
                 </div>
                 <input 
@@ -169,7 +169,7 @@
                     <template x-if="loading">
                         <div class="p-4 text-center text-gray-500 text-sm">
                             <svg class="w-4 h-4 text-gray-400 animate-spin mr-2 inline-block" fill="currentColor">
-                                <use href="/public/icons/sprite.svg#spinner"></use>
+                                <use href="/icons/sprite.svg#spinner"></use>
                             </svg>Searching...
                         </div>
                     </template>
@@ -207,10 +207,10 @@
                     class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200 cursor-pointer"
                     :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'">
                 <svg x-show="darkMode" x-cloak class="w-5 h-5 transition-transform duration-200" fill="currentColor">
-                    <use href="/public/icons/sprite.svg#sun"></use>
+                    <use href="/icons/sprite.svg#sun"></use>
                 </svg>
                 <svg x-show="!darkMode" x-cloak class="w-5 h-5 transition-transform duration-200" fill="currentColor">
-                    <use href="/public/icons/sprite.svg#moon"></use>
+                    <use href="/icons/sprite.svg#moon"></use>
                 </svg>
             </button>
             

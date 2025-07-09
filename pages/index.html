@@ -9,7 +9,7 @@
 
     {{template "hero-video" 
         dict 
-            "VideoUrl" "/public/testvideo2.mp4"
+            "VideoUrl" "/testvideo2.mp4"
             "ShowUnmuteButton" true
             "Id" "homepage"
     }}
@@ -28,18 +28,18 @@
     {{$logoData := parseJSON `{
         "title": "Trusted by more than 17,000 teams",
         "logos": [
-            { "name": "CBRE", "src": "/public/customers/cbre.svg" },
-            { "name": "Cisco", "src": "/public/customers/cisco.svg" },
-            { "name": "Deloitte", "src": "/public/customers/deloitte.svg" },
-            { "name": "FedEx", "src": "/public/customers/fedex.svg" },
-            { "name": "Manulife", "src": "/public/customers/manulife.svg" },
-            { "name": "Red Hat", "src": "/public/customers/redhat.svg" },
-            { "name": "Heineken", "src": "/public/customers/heineken.svg" },
-            { "name": "Sheraton", "src": "/public/customers/sheraton.svg" },
-            { "name": "Columbia University", "src": "/public/customers/columbia-university.webp" },
-            { "name": "Save the Children", "src": "/public/customers/savethechildren.svg" },
-            { "name": "World Food Programme", "src": "/public/customers/wfp.svg" },
-            { "name": "ILO", "src": "/public/customers/ilo.webp" }
+            { "name": "CBRE", "src": "/customers/cbre.svg" },
+            { "name": "Cisco", "src": "/customers/cisco.svg" },
+            { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+            { "name": "FedEx", "src": "/customers/fedex.svg" },
+            { "name": "Manulife", "src": "/customers/manulife.svg" },
+            { "name": "Red Hat", "src": "/customers/redhat.svg" },
+            { "name": "Heineken", "src": "/customers/heineken.svg" },
+            { "name": "Sheraton", "src": "/customers/sheraton.svg" },
+            { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
+            { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+            { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+            { "name": "ILO", "src": "/customers/ilo.webp" }
         ]
     }`}}
     
@@ -79,7 +79,7 @@ I wonder if process management is really needed, is that a "use case"? -->
                 {
                     "Id": "process-management",
                     "Title": "Process Management", 
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "project-management",
@@ -89,7 +89,7 @@ I wonder if process management is really needed, is that a "use case"? -->
                 {
                     "Id": "sales-crm",
                     "Title": "Sales CRM",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "service-tickets",
@@ -99,7 +99,7 @@ I wonder if process management is really needed, is that a "use case"? -->
                 {
                     "Id": "asset-management",
                     "Title": "Asset Management",
-                    "VideoUrl": "/public/testvideo2.mp4"
+                    "VideoUrl": "/testvideo2.mp4"
                 },
                 {
                     "Id": "content-calendar",
@@ -121,7 +121,7 @@ I wonder if process management is really needed, is that a "use case"? -->
         {{$automateData := parseJSON `{
             "Title": "One source of truth.",
             "Description": "Create records for all your business data, so you finally have one place to keep everything.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "left"
         }`}}
         {{template "feature-video" $automateData}}
@@ -132,7 +132,7 @@ I wonder if process management is really needed, is that a "use case"? -->
         {{$seeEverythingData := parseJSON `{
             "Title": "Everything is a process.",
             "Description": "Blue helps you create clear, repeatable processes for everything you do.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "right"
         }`}}
         {{template "feature-video" $seeEverythingData}}
@@ -143,7 +143,7 @@ I wonder if process management is really needed, is that a "use case"? -->
         {{$automateData := parseJSON `{
             "Title": "Automations help you scale.",
             "Description": "Blue's powerful automation engine handles everything from status updates and notifications to complex multi-step workflows.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "left"
         }`}}
         {{template "feature-video" $automateData}}
@@ -184,7 +184,7 @@ I wonder if process management is really needed, is that a "use case"? -->
         {{$yourDataData := parseJSON `{
             "Title": "Your perfect data structure.",
             "Description": "Create custom fields, design your own record types, and build the perfect database that fits your exact workflow.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "right"
         }`}}
         {{template "feature-video" $yourDataData}}
@@ -195,7 +195,7 @@ I wonder if process management is really needed, is that a "use case"? -->
         {{$insightsData := parseJSON `{
             "Title": "Real-time management dashboards.",
             "Description": "Easily build dashboards that automatically update as your data changes.",
-            "VideoUrl": "/public/testvideo2.mp4",
+            "VideoUrl": "/testvideo2.mp4",
             "VideoPosition": "left"
         }`}}
         {{template "feature-video" $insightsData}}

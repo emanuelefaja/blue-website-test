@@ -11,7 +11,7 @@ At Blue, we love [Kanban boards](/platform/features/kanban-board).
 
 They are our primary way of managing our work, whether that's building our platform, managing our marketing strategy, and even our hiring pipeline! We believe that almost any process can be turned into an easy-to-use Kanban board that provides a clear visualization of the current state of work.
 
-![](/public/product/dark-cta-screenshot.png)
+![](/product/dark-cta-screenshot.png)
 
 But let's take a step back — what exactly *is* a Kanban board? 
 
@@ -58,7 +58,7 @@ As we delve into the rich history of Kanban, we'll explore its journey from Toyo
 
 The story of Kanban begins in the bustling factories of post-World War II Japan, specifically at Toyota Motor Corporation. In the late 1940s, a young industrial engineer named [Taiichi Ohno](https://en.wikipedia.org/wiki/Taiichi_Ohno) was tasked with improving Toyota's manufacturing efficiency. 
 
-![](/public/insights/taiichi-ohno.jpg)
+![](/insights/taiichi-ohno.jpg)
 
 Ohno identified seven sources of waste in production, which are now recognized as crucial in [lean manufacturing](https://en.wikipedia.org/wiki/Lean_manufacturing):
 
@@ -73,7 +73,7 @@ Ohno identified seven sources of waste in production, which are now recognized a
 We've found an interesting 5-minute interview that's worth watching:
 
 <video controls>
-  <source src="/public/videos/taiichi-ohno-video-interview.mp4" type="video/mp4">
+  <source src="/videos/taiichi-ohno-video-interview.mp4" type="video/mp4">
 </video>
 
 
@@ -93,7 +93,7 @@ Ohno is also known for his "Ten Precepts" to think and act to win:
 
 Little did he know that his innovations would not only revolutionize Toyota but also transform production systems worldwide.
 
-![](/public/insights/japan-kanban-boards.jpg)
+![](/insights/japan-kanban-boards.jpg)
 
 Ohno's inspiration came from an unlikely source: **American supermarkets.**
 
@@ -262,11 +262,11 @@ A significant milestone in the spread of Kanban in software development and beyo
 
 Trello's simple interface made Kanban accessible to non-technical users. It allowed anyone to create boards with columns representing workflow stages, and cards representing tasks that could be moved between these columns. This intuitive representation of Kanban principles helped spread the methodology beyond software development into general project management, marketing, education, and personal productivity.
 
-![](/public/insights/trello-card.png)
+![](/insights/trello-card.png)
 
 The success of Trello sparked a wave of similar tools, such as [Blue](/),  and soon, Kanban board features became a standard offering in many [project management software solutions](/solutions/use-case/project-management):
 
-![](/public/insights/blue-card.png)
+![](/insights/blue-card.png)
 
 This digital adaptation made it easier than ever for teams of all sizes and industries to implement Kanban principles in their work.
 

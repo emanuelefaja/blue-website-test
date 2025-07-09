@@ -42,7 +42,7 @@ func NewPNGGenerator() *PNGGenerator {
 		width:      width,
 		height:     height,
 		outputDir:  "public/insights",
-		publicPath: "/public/insights",
+		publicPath: "/insights",
 	}
 }
 

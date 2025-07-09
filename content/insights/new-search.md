@@ -19,7 +19,7 @@ To achieve our goal of lightning-fast search, we leveraged the latest open-sourc
 The new search bar is conveniently located on the navigation bar, allowing you to start searching right away. For a more detailed search experience, simply press the Tab key while searching to access the full search page. Additionally, you can quickly activate the search function from anywhere using the CMD/Ctrl+K shortcut, making it even easier to find what you need.
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/search-demo.mp4" type="video/mp4">
+  <source src="/videos/search-demo.mp4" type="video/mp4">
 </video>
 
 

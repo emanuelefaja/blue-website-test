@@ -3,6 +3,7 @@ package web
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -269,8 +270,8 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 
-	// Skip public file requests
-	if strings.HasPrefix(req.URL.Path, "/public/") {
+	// Skip favicon requests early
+	if req.URL.Path == "/favicon.ico" {
 		return
 	}
 

@@ -18,7 +18,7 @@ This post takes you behind the scenes of how we tackled this challenge, the tech
 The most interesting thing here is that we had to step outside of our typical [technology stack](https://sop.blue.cc/product/technology-stack) to achieve the results that we wanted. This is decision that has to be made thoughtfully, because the long-term repercussion can be severe in terms of technology debt and long-term maintenance overhead. 
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/import-export-video.mp4" type="video/mp4">
+  <source src="/videos/import-export-video.mp4" type="video/mp4">
 </video>
 
 ## Scaling for Enterprise Needs
@@ -80,7 +80,7 @@ The learning curve for Rust was steep but manageable. Our team dedicated about t
 
 The improvements were impressive:
 
-![](/public/insights/import-export.png)
+![](/insights/import-export.png)
 
 
 Our new system can process the same amount of records that our old system could process in 15 minutes in around 30 seconds. 

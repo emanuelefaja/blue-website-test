@@ -61,7 +61,7 @@ Trello was developed to provide a simple and visual way to manage projects and o
 
 At the time of its launch in 2011, web technology was not what it is today. Many of the technologies and techniques that we take for granted today had yet to be invented. 
 
-JavaScript frameworks like [React](https://reactjs.org/), [Angular](https://angular.io/), and [Vue.js](https://vuejs.org/) (which Blue uses), which revolutionized front-end development, had not been introduced, and developers relied on older tools like [Backbone.js](https://backbonejs.org/) or [jQuery](https://jquery.com/). [WebAssembly (Wasm)](https://webassembly.org/), enabling near-native performance for web applications, was still years away. [Service Workers](https://developer.mozilla.org/en-US/public/docs/Web/API/Service_Worker_API) and [Progressive Web Apps (PWAs)](https://web.dev/progressive-web-apps/), which provide offline capabilities and background sync, were not available, as they were introduced in 2014. [CSS Grid Layout](https://developer.mozilla.org/en-US/public/docs/Web/CSS/CSS_Grid_Layout) and [Flexbox](https://developer.mozilla.org/en-US/public/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), which offer advanced layout options, were either unsupported or not fully adopted. [Web Components](https://developer.mozilla.org/en-US/public/docs/Web/Web_Components), allowing for reusable custom elements, were not widely supported. [GraphQL](https://graphql.org/), providing a flexible alternative to REST APIs, and modern build tools like [Webpack](https://webpack.js.org/) and package managers like [Yarn](https://yarnpkg.com/), had not yet emerged. [HTTP/2](https://http2.github.io/), which significantly enhances web performance, was only standardized in 2015.
+JavaScript frameworks like [React](https://reactjs.org/), [Angular](https://angular.io/), and [Vue.js](https://vuejs.org/) (which Blue uses), which revolutionized front-end development, had not been introduced, and developers relied on older tools like [Backbone.js](https://backbonejs.org/) or [jQuery](https://jquery.com/). [WebAssembly (Wasm)](https://webassembly.org/), enabling near-native performance for web applications, was still years away. [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and [Progressive Web Apps (PWAs)](https://web.dev/progressive-web-apps/), which provide offline capabilities and background sync, were not available, as they were introduced in 2014. [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) and [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox), which offer advanced layout options, were either unsupported or not fully adopted. [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components), allowing for reusable custom elements, were not widely supported. [GraphQL](https://graphql.org/), providing a flexible alternative to REST APIs, and modern build tools like [Webpack](https://webpack.js.org/) and package managers like [Yarn](https://yarnpkg.com/), had not yet emerged. [HTTP/2](https://http2.github.io/), which significantly enhances web performance, was only standardized in 2015.
 
 Trello's development had to overcome these technological constraints.
 
@@ -73,13 +73,13 @@ Trello grew quickly, and raised $10.3 million in a Series A funding round led by
 
 Trello is now firmly part of the Atlassian suite of products:
 
-![](/public/insights/jira-trello-product-upsell.png)
+![](/insights/jira-trello-product-upsell.png)
 
 This can be an upside, especially if you *already* use other Atlassian products such as Jira and Confluences. 
 
 But it can also be a downside — as you'll often have to switch across to an Atlassian account that you do not really want/need to edit settings:
 
-![](/public/insights/trello-atlassian-settings.png)
+![](/insights/trello-atlassian-settings.png)
 
 There may also be a tendency for Atlassian to try and upsell you their products as you're working on your projects — more on that later.
 
@@ -182,7 +182,7 @@ Let's start with [Automations](/platform/features/automations).
 
 Both Blue and Trello have sophisticated automation engines. [Trello brands their automation engine](https://trello.com/butler-automation) as "Butler", which we think is a pretty cool name.
 
-However, [Trello does enforce quotas based on your plan and number of users](https://support.atlassian.com/trello/public/docs/butler-quotas-and-limits/):
+However, [Trello does enforce quotas based on your plan and number of users](https://support.atlassian.com/trello/docs/butler-quotas-and-limits/):
 
 
 | Feature                     |        Free        |      Standard      |          Premium          |        Enterprise        |
@@ -206,7 +206,7 @@ However, Trello does have some tricks up its sleeve that Blue does not yet have:
 
 Blue does has the [powerful email automation feature](/insights/email-automations) which is not available in Trello, which allows you to send custom email notifications to any email address, leveraging the data in your [custom fields](https://www.blue.cc/platform/features/custom-fields) using dynamic tags. This is great for workflows such as [managing service tickets](/solutions/use-case/service-tickets). 
 
-![](/public/insights/email-automations-image.webp)
+![](/insights/email-automations-image.webp)
 
 ## Scalability
 
@@ -264,7 +264,7 @@ Let's look into Trello's user roles:
 * **Workspace Member**: Can view boards that are Workspace visible if they are a member of that Workspace.
 * **Guest**: A normal member of the board but not a member of the Workspace it belongs to.
 
-Trello users have reported that it is annoying that the "Observer" role is only available on the Premium and Enterprise plans. Additionally, [Observer roles are only free if they are invited to one board](https://support.atlassian.com/trello/public/docs/adding-observers-to-boards/), if you invite them to multiple boards, you have to pay the per-user fee like a regular team member. 
+Trello users have reported that it is annoying that the "Observer" role is only available on the Premium and Enterprise plans. Additionally, [Observer roles are only free if they are invited to one board](https://support.atlassian.com/trello/docs/adding-observers-to-boards/), if you invite them to multiple boards, you have to pay the per-user fee like a regular team member. 
 
 On Blue, you can have an unlimited amount of "Comment-only" and "View-Only" users free of charge, which are the same as the "Observer" role in Trello.
 
@@ -368,7 +368,7 @@ We find Trello's UI somewhat old-fashioned. The one column layout for their indi
 
 Check it out yourself. You can click on the image to zoom in.
 
-![](/public/insights/trello-card.png)
+![](/insights/trello-card.png)
 
 Blue is based on a customized style of [Google Material Design](https://m3.material.io/). We use a great open-source front-end library called [Vuetify](https://vuetifyjs.com/) for this. This was an intentional choice, because Google Material Design is used in many products around the world, Blue will feel familiar to users right away. We're not trying to reinvent the wheel, but rather hook into existing patterns.
 
@@ -376,7 +376,7 @@ The result? Compared to Trello, Blue gives you a much nice structure for viewing
 
 We fully utilize your screen's real-estate.
 
-![](/public/insights/blue-card.png)
+![](/insights/blue-card.png)
 
 This is an *unsolicited* quote from an [AppSumo](https://appsumo.com) customer, The Writer, that has used both Trello and Blue:
 
@@ -397,7 +397,7 @@ Or, you may get annoying upsells to Jira right within your Trello Premium accoun
 See below:
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/trello-jira-upsells.mp4" type="video/mp4">
+  <source src="/videos/trello-jira-upsells.mp4" type="video/mp4">
 </video>
 
 Atlassian is mostly focused on catering to large enterprises, which might mean that some of their features and pricing don’t really fit the needs of small and medium-sized businesses (SMEs). With such a massive user base across various products, it can be tough for them to offer personalized support or truly grasp the unique needs of smaller companies.

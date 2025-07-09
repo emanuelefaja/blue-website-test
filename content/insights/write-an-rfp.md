@@ -82,7 +82,7 @@ Ideally, it should be whoever will be managing the relationship with the chosen 
 
 Again, this depends on the industry you're in and the complexity of the proposed project. Generally speaking, you should set a final response timeline of 2 to 4 weeks from the day the proposal is sent.
 
-![](/public/insights/rfp-timelines.png)
+![](/insights/rfp-timelines.png)
 
 **Should you accept draft proposals for feedback?**
 
@@ -100,9 +100,9 @@ This is a divisive topic, with several good arguments on either side. Including 
 
 This depends on what you value most from an ideal vendor. If the project is in a rush, then give more weight to the timelines and the availability for the vendor to start immediately. If it's a more long-term strategic project, then you should value prior experience, team CVs, and case studies more strongly. You can see two examples below that have different criteria and weights:
 
-![](/public/insights/rfp-criteria1.png)
+![](/insights/rfp-criteria1.png)
 
-![](/public/insights/rfp-criteria2.png)
+![](/insights/rfp-criteria2.png)
 
 **Who should be involved in the scoring process?**
 

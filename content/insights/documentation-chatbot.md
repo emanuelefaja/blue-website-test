@@ -18,7 +18,7 @@ The answer was quite clear: **We needed an AI chatbot trained on our documentati
 
 Let's face it: *every* organization should probably have a chatbot. They are great ways for customers to get instant answers to typical questions, without having to dig through pages of dense documentation or your website. The importance of chatbots in modern marketing websites cannot be overstated. 
 
-![](/public/insights/ai-chatbot-regular.png)
+![](/insights/ai-chatbot-regular.png)
 
 For software companies specifically, one should not consider the marketing website as a separate "thing" — it *is* part of your product. This is because it fits in the typical customer life:
 
@@ -40,7 +40,7 @@ Our requirements were straightforward, but non-negotiable:
 - **Unbranded Experience**: This chatbot isn't just a nice-to-have widget; it's going on our marketing website and eventually in our product. We're not keen on advertising someone else's brand in our own digital real estate.
 - **Great UX**: For many potential customers, this chatbot might be their first point of contact with Blue. It sets the tone for their perception of our company. Let's face it: if we can't nail a proper chatbot on our website, how can we expect customers to trust us with their mission-critical projects and processes?
 - **Reasonable Cost**: With a large user base and plans to integrate the chatbot into our core product, we needed a solution that wouldn't break the bank as usage scales up. Ideally, we wanted a **BYOK (Bring Your Own Key) option**. This would allow us to use our own OpenAI or other AI service key, paying for direct variable costs instead of a markup to a third-party vendor that doesn't actually run the models.
-- **OpenAI Assistants API Compatible**: If we were going to go with an open-source software, we did not want to have the hassle of having to manage a pipeline for document ingestion, indexing, vector databases, and all of that. We wanted to use the [OpenAI Assistants API](https://platform.openai.com/public/docs/assistants/overview) that would abstract away all the complexity behind an API. Honestly — this is really well done. 
+- **OpenAI Assistants API Compatible**: If we were going to go with an open-source software, we did not want to have the hassle of having to manage a pipeline for document ingestion, indexing, vector databases, and all of that. We wanted to use the [OpenAI Assistants API](https://platform.openai.com/docs/assistants/overview) that would abstract away all the complexity behind an API. Honestly — this is really well done. 
 - **Scalability**: We want to have this chatbot in multiple places, with potentially tens of thousands of users a year. We expect significant usage, and we don't want to be locked into a solution that can't scale with our needs.
 
 ## Commercial AI Chatbots
@@ -98,14 +98,14 @@ Then, there was the front-end and user experience. As discussed earlier, this wa
 In designing our chatbot, we paid meticulous attention to user experience, ensuring that every interaction is smooth, intuitive, and reflective of Blue's commitment to quality. The chatbot interface begins with a simple, elegant Blue circle,, using [HeroIcons for our icons](https://heroicons.com/) (which we use throughout the Blue website) to act as our chatbot opening widget.  This design choice ensures visual consistency and immediate brand recognition.
 
 
-![](/public/insights/ai-chatbot-circle.png)
+![](/insights/ai-chatbot-circle.png)
 
 We understand that sometimes users might need additional support or more in-depth information. That's why we've included convenient links within the chatbot interface. An email link for support is readily available, allowing users to reach out to our team directly if they need more personalized assistance. Additionally, we've incorporated a documentation link, providing easy access to more comprehensive resources for those who want to dive deeper into Blue's offerings.
 
 The user experience is further enhanced by tasteful fade-in and fade-up animations when opening the chatbot window. These subtle animations add a touch of sophistication to the interface, making the interaction feel more dynamic and engaging. We've also implemented a typing indicator, a small but crucial feature that lets users know the chatbot is processing their query and crafting a response. This visual cue helps manage user expectations and maintains a sense of active communication.
 
 <video autoplay loop muted playsinline>
-  <source src="/public/videos/ai-chatbot-animation.mp4" type="video/mp4">
+  <source src="/videos/ai-chatbot-animation.mp4" type="video/mp4">
 </video>
 
 
@@ -137,7 +137,7 @@ Lastly, we're working on allowing you to upload screenshots directly to the chat
 
 We hope this deep dive into our AI chatbot development process has provided some valuable insights into our product development thinking at Blue. Our journey from identifying the need for a chatbot to building our own solution showcases how we approach decision-making and innovation.
 
-![](/public/insights/ai-chatbot-modal.png)
+![](/insights/ai-chatbot-modal.png)
 
 At Blue, we carefully weigh the options of building versus buying, always with an eye on what will best serve our users and align with our long-term goals. In this case, we identified a significant gap in the market for a cost-effective yet visually appealing chatbot that could meet our specific needs. While we generally advocate for leveraging existing solutions rather than reinventing the wheel, sometimes the best path forward is to create something tailored to your unique requirements.
 

@@ -12,7 +12,7 @@ The future of work just got smarter with Blue's latest AI-powered capability - C
 
 We're excited to announce that all Blue users can now automatically generate concise summaries and action item lists for any record, powered by cutting-edge language AI.
 
-![](/public/insights/ai-summaries.png)
+![](/insights/ai-summaries.png)
 
 Staying on top of important details and next steps across all your projects can be a real challenge, especially when conversations and comments get lengthy. Blue's new AI Summaries solve this by intelligently surfacing the key takeaways from even the most thread-heavy records.
 
@@ -39,6 +39,6 @@ While Content Summaries are an exciting first step, they're just the beginning o
 
 The new AI Summaries feature is available today for all Blue customers and workspaces at no additional cost. 
 
-![](/public/insights/bolt-record-button.png)
+![](/insights/bolt-record-button.png)
 
 To try it out, simply click the Lightning Bolt ⚡️ icon in any record. As always, we welcome any feedback or ideas for how else to bring AI's capabilities into Blue's workflows.

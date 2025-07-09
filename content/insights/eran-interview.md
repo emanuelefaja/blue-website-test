@@ -19,7 +19,7 @@ For beginners, it’s especially challenging because they often lack the knowled
 
 That's why I named my site DotComTruths—to provide a more transparent and realistic perspective on what it takes to succeed online.
 
-![](/public/insights/dotcomtruths.png)
+![](/insights/dotcomtruths.png)
 
 **You position yourself as the opposite of Dan Lok, the King of High Ticket Sales. Can you elaborate on that?**
 
@@ -129,7 +129,7 @@ The Blue team’s email wasn’t just another generic pitch; it was tailored and
 
 A few years later, I actually met the CEO of Blue in Bulgaria—we had great fun playing lots of chess matches and speaking business.
 
-![](/public/insights/eranmanny.jpeg)
+![](/insights/eranmanny.jpeg)
 
 **Who won the chess game?**
 
