@@ -36,6 +36,17 @@
                  }
              });
          }
+     }"
+     @collapse-sidebar-menus.window="() => {
+         // Collapse all main sections
+         sections.forEach(section => {
+             section.expanded = false;
+             if (section.children) {
+                 section.children.forEach(child => {
+                     child.expanded = false;
+                 });
+             }
+         });
      }" 
      :class="sidebarsOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'"
      class="hidden md:flex w-80 bg-white dark:bg-gray-900 overflow-y-auto transition-all duration-300 sticky top-16 h-[calc(100vh-4rem)] flex-col transform custom-scrollbar">

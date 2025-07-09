@@ -239,6 +239,12 @@ func (r *Router) serve404(w http.ResponseWriter, req *http.Request) {
 		// Set 404 status and execute main layout template
 		w.WriteHeader(http.StatusNotFound)
 		if err := tmpl.ExecuteTemplate(w, "main.html", pageData); err != nil {
+			// Check if the error is due to client disconnect (broken pipe)
+			if strings.Contains(err.Error(), "broken pipe") || strings.Contains(err.Error(), "connection reset by peer") {
+				// Client disconnected, this is expected during rapid navigation
+				// Silently return without logging
+				return
+			}
 			// Headers already written, just log the error
 			log.Printf("Error executing 404 template: %v", err)
 			return

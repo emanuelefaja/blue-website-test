@@ -2,15 +2,15 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Professional Services Solutions" 
-            "Subtitle" "Built by a professional services agency, for professional services agencies. Manage clients, projects, and processes in one unified platform." 
+            "Title" "Professional Services & Agency Solutions" 
+            "Subtitle" "Built by a professional services agency, for agencies and service firms. Manage clients, projects, and processes in one unified platform." 
             "MarginBottom" "mb-16"
     }}
 
     <!-- Customer Logos Section -->
     <div class="mb-20">
         {{$professionalServicesLogos := parseJSON `{
-            "title": "Trusted by professional services firms worldwide",
+            "title": "Trusted by agencies and professional services firms worldwide",
             "logos": [
                 { "name": "Consulting Partners", "src": "/customers/consulting-partners.svg" },
                 { "name": "Legal Associates", "src": "/customers/legal-associates.svg" },
@@ -25,7 +25,7 @@
     <!-- Problem Agitation Section -->
     <div class="mb-20">
         {{$professionalServicesProblems := parseJSON `{
-            "Title": "Professional services firms deserve<br>better management tools.",
+            "Title": "Agencies and professional services firms deserve<br>better management tools.",
             "Description": "Traditional project management tools weren't built for the unique needs of service-based businesses.",
             "ValueProps": [
                 {
@@ -48,7 +48,7 @@
     <!-- Key Reasons Section -->
     <div class="mb-20">
         {{$professionalServicesFeatures := parseJSON `{
-            "Title": "Why professional services firms choose Blue",
+            "Title": "Why agencies and professional services firms choose Blue",
             "Features": [
                 {
                     "Title": "Built by a professional services agency",
@@ -72,10 +72,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-6">
-                    We literally wrote the book on professional services.
+                    We literally wrote the book on agency success.
                 </h2>
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    We've been in your shoes, and we know what it takes to grow your practice. We've distilled a decade of agency leadership experience to help you grow your agency. Learn to master cash-flow, project management, client relationships, proposal writing — and more.
+                    We've been in your shoes, and we know what it takes to grow your agency or practice. We've distilled a decade of agency leadership experience to help you scale. Learn to master cash-flow, project management, client relationships, proposal writing — and more.
                 </p>
                 <div>
                     <a href="/resources/TheAgencySuccessPlaybook.pdf" 
@@ -110,7 +110,7 @@
 
     <!-- Professional Services Use Cases Section Header -->
     <div class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Professional services use cases</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Agency and professional services use cases</h2>
     </div>
 
     <!-- Sales CRM Feature -->
@@ -248,7 +248,7 @@
     <!-- Professional Services Stats Section -->
     <div class="mb-20">
         {{$professionalServicesStatsData := parseJSON `{
-            "Title": "Professional services firms trust Blue to scale their operations",
+            "Title": "Agencies and professional services firms trust Blue to scale their operations",
             "Stats": [
                 {
                     "Number": "50+",
@@ -269,7 +269,7 @@
 
     <!-- FAQ Section -->
     <div class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Common questions from professional services firms</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Common questions from agencies and professional services firms</h2>
         
         {{$professionalServicesFaqData := parseJSON `{
             "categories": [
@@ -333,7 +333,7 @@
     <!-- Final CTA -->
     <div class="px-6 lg:px-8">
         {{$ctaData := parseJSON `{
-            "Title": "Ready to transform your professional services firm?",
+            "Title": "Ready to transform your agency or professional services firm?",
             "SecondaryText": "Watch Demo",
             "SecondaryUrl": "/request-demo",
             "PrimaryText": "Start Free Trial",

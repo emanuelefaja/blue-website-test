@@ -34,7 +34,6 @@
             {"id": "real-estate", "name": "Real Estate", "href": "/solutions/industry/real-estate"},
             {"id": "professional-services", "name": "Professional Services", "href": "/solutions/industry/professional-services"},
             {"id": "production", "name": "Production", "href": "/solutions/industry/production"},
-            {"id": "agencies", "name": "Agencies", "href": "/solutions/industry/agencies"},
             {"id": "solopreneurs", "name": "Solopreneurs", "href": "/solutions/industry/solopreneurs"}
           ]
         },
