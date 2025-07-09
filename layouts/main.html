@@ -45,11 +45,61 @@
         </main>
     </div>
     
+    <!-- Image Lightbox -->
+    <div x-data="{ 
+        isOpen: false, 
+        imgSrc: '', 
+        imgAlt: '',
+        open(src, alt) {
+            this.imgSrc = src;
+            this.imgAlt = alt;
+            this.isOpen = true;
+            document.body.style.overflow = 'hidden';
+        },
+        close() {
+            this.isOpen = false;
+            document.body.style.overflow = '';
+        }
+    }" 
+    @image-zoom.window="open($event.detail.src, $event.detail.alt)"
+    @keydown.escape.window="close()"
+    class="image-lightbox">
+        <!-- Dark overlay -->
+        <div x-show="isOpen" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             @click="close()"
+             class="fixed inset-0 bg-black/80 z-50"
+             style="display: none;">
+        </div>
+        
+        <!-- Zoomed image -->
+        <div x-show="isOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95"
+             x-transition:enter-end="opacity-100 scale-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100"
+             x-transition:leave-end="opacity-0 scale-95"
+             class="fixed inset-0 z-50 flex items-center justify-center p-8 pointer-events-none"
+             style="display: none;">
+            <img :src="imgSrc" 
+                 :alt="imgAlt"
+                 @click.stop="close()"
+                 class="max-w-full max-h-full rounded-2xl shadow-2xl pointer-events-auto cursor-zoom-out"
+                 x-show="isOpen">
+        </div>
+    </div>
 
     <!-- Load utility scripts first -->
     <script src="/public/js/copy-code.js"></script>
     <script src="/public/js/spa.js"></script>
     <script src="/public/js/status.js"></script>
+    <script src="/public/js/image-zoom.js"></script>
     
     <!-- Then initialize with error handling -->
     <script>       
@@ -90,6 +140,13 @@
                 SPAUtils.init();
             } else {
                 console.warn('SPAUtils not loaded - SPA navigation will not work');
+            }
+            
+            // Initialize image zoom with error handling
+            if (typeof ImageZoomUtils !== 'undefined') {
+                ImageZoomUtils.init();
+            } else {
+                console.warn('ImageZoomUtils not loaded - image zoom will not work');
             }
         });
     </script>

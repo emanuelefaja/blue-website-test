@@ -338,3 +338,25 @@ body {
   height: 100%;
   border: none;
 }
+
+/* Image zoom cursors */
+@layer utilities {
+  .cursor-zoom-in {
+    cursor: zoom-in;
+  }
+  
+  .cursor-zoom-out {
+    cursor: zoom-out;
+  }
+}
+
+/* Apply zoom cursor to prose images on desktop */
+@media (min-width: 768px) {
+  .prose img:not(a img) {
+    cursor: zoom-in;
+  }
+  
+  .prose-lg img:not(a img) {
+    cursor: zoom-in;
+  }
+}
