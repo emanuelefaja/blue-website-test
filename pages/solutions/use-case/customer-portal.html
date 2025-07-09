@@ -2,8 +2,8 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Create a customer portal that is easy to use and looks great." 
-            "Subtitle" "Blue's customer portal makes it easy for your customers to manage their accounts, track their orders, and get support." 
+            "Title" "Your brand. Your portal. Total control." 
+            "Subtitle" "Give customers secure access to their data with a fully white-labeled portal. Control exactly what they see, ensure complete data isolation, and deliver a professional experience under your own brand." 
             "MarginBottom" "mb-16"
     }}
 
@@ -11,19 +11,19 @@
         dict 
             "VideoUrl" "/testvideo2.mp4"
             "ShowUnmuteButton" true
-            "Id" "crm"
+            "Id" "customer-portal"
     }}
 
     <!-- Customer Logos -->
     <section class="mb-16">
         {{$logoData := parseJSON `{
-            "title": "$1B+ in opportunities are tracked in Blue.",
-            "subtitle": "Businesses all over the world use Blue to track their sales opportunities. They report better pipeline visibility, more collaboration, faster deal times, and higher close rates.",
+            "title": "Trusted by 70,000+ companies to securely share data with their customers",
             "logos": [
                 { "name": "Heineken", "src": "/customers/heineken.svg" },
                 { "name": "Deloitte", "src": "/customers/deloitte.svg" },
                 { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
                 { "name": "FedEx", "src": "/customers/fedex.svg" },
+                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
                 { "name": "ILO", "src": "/customers/ilo.webp" }
             ]
         }`}}
@@ -31,138 +31,238 @@
         {{template "logo-grid" $logoData}}
     </section>
 
-    <!-- Customer Testimonial Section -->
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- White Label Feature -->
+        <div class="mb-16">
+            {{$whiteLabelData := parseJSON `{
+                "Title": "100% your brand. Zero trace of Blue.",
+                "Description": "Transform Blue into your own product with complete white labeling. Add your logo, colors, custom domain, and even send emails from your address. Your customers will never know you're using Blue—they'll only see your professional brand.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about white label",
+                    "Url": "/docs/start-guide/white label"
+                },
+                "SeeAlso": {
+                    "Heading": "White label features",
+                    "Links": [
+                        {
+                            "Text": "Custom domains",
+                            "Url": "/docs/start-guide/white label#custom-domains",
+                            "Description": "run on app.yourcompany.com"
+                        },
+                        {
+                            "Text": "Full branding control",
+                            "Url": "/docs/start-guide/white label#branding",
+                            "Description": "logo, colors, favicon, app name"
+                        },
+                        {
+                            "Text": "Email from your domain",
+                            "Url": "/docs/start-guide/white label#email-notifications",
+                            "Description": "using your SMTP server"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $whiteLabelData}}
+        </div>
+        
+        <!-- Data Isolation Feature -->
+        <div class="mb-16">
+            {{$dataIsolationData := parseJSON `{
+                "Title": "Complete data isolation between customers.",
+                "Description": "Each customer only sees their own data—period. Blue's architecture ensures customers cannot see each other's information, even if they share the same portal. Perfect for agencies, consultants, and service providers managing multiple client accounts.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Explore security features",
+                    "Url": "/security"
+                },
+                "SeeAlso": {
+                    "Heading": "Security & isolation",
+                    "Links": [
+                        {
+                            "Text": "Role-based access",
+                            "Url": "/docs/user-management/roles",
+                            "Description": "control portal permissions"
+                        },
+                        {
+                            "Text": "Data segregation",
+                            "Url": "/security",
+                            "Description": "enforced at database level"
+                        },
+                        {
+                            "Text": "Audit trails",
+                            "Url": "/docs/projects/activity",
+                            "Description": "track all customer actions"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $dataIsolationData}}
+        </div>
+        
+        <!-- Granular Control Feature -->
+        <div class="mb-16">
+            {{$granularControlData := parseJSON `{
+                "Title": "Control exactly what customers can see and do.",
+                "Description": "Set field-level permissions to show or hide specific data. Enable features selectively—let customers view their projects, submit forms, track progress, or collaborate with your team. You decide what level of access makes sense for each customer type.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about permissions",
+                    "Url": "/docs/user-management/roles/custom-user-roles"
+                },
+                "SeeAlso": {
+                    "Heading": "Permission controls",
+                    "Links": [
+                        {
+                            "Text": "Field-level permissions",
+                            "Url": "/docs/user-management/roles/custom-user-roles",
+                            "Description": "hide sensitive fields"
+                        },
+                        {
+                            "Text": "Feature toggles",
+                            "Url": "/docs/user-management/roles",
+                            "Description": "enable/disable functionality"
+                        },
+                        {
+                            "Text": "Custom user roles",
+                            "Url": "/docs/user-management/roles/custom-user-roles",
+                            "Description": "create customer-specific roles"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $granularControlData}}
+        </div>
+        
+        <!-- Customer Experience Feature -->
+        <div>
+            {{$customerExperienceData := parseJSON `{
+                "Title": "A portal experience your customers will love.",
+                "Description": "Give customers a clean, intuitive interface to access their information. They can view project status, download files, submit requests through forms, and communicate with your team—all in one secure, branded environment.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "See portal features",
+                    "Url": "/docs/projects/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Portal capabilities",
+                    "Links": [
+                        {
+                            "Text": "Real-time dashboards",
+                            "Url": "/docs/dashboards/introduction",
+                            "Description": "share progress transparently"
+                        },
+                        {
+                            "Text": "File sharing",
+                            "Url": "/docs/projects/attachments",
+                            "Description": "secure document exchange"
+                        },
+                        {
+                            "Text": "Form submissions",
+                            "Url": "/docs/forms/introduction",
+                            "Description": "collect customer input easily"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $customerExperienceData}}
+        </div>
+    </section>
+
+    <!-- Interactive Feature Showcase -->
+    <section class="mb-16">
+        {{$showcaseData := parseJSON `{
+            "Title": "Perfect for every customer-facing business",
+            "Features": [
+                {
+                    "Id": "agencies",
+                    "Title": "Marketing Agencies",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "consultants",
+                    "Title": "Consultants",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "logistics",
+                    "Title": "Logistics Providers",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "professional",
+                    "Title": "Professional Services",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "manufacturers",
+                    "Title": "Manufacturers",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "saas",
+                    "Title": "SaaS Companies",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                }
+            ]
+        }`}}
+        
+        {{template "interactive-feature-showcase" $showcaseData}}
+    </section>
+
+    <!-- Testimonial -->
     <section class="mb-16">        
         {{template "testimonial-single" 
             dict 
-                "Quote" "I really really love Blue…It’s a very flexible sales CRM system."
-                "VideoUrl" "https://media.blue.cc/june.mp4"
+                "Quote" "Blue's white label portal transformed our client relationships. We went from endless email chains to a professional portal where clients can track their projects in real-time. It looks 100% like our brand."
+                "VideoUrl" "/testvideo2.mp4"
                 "PosterUrl" "/testimonials/june.jpg"
-                "Name" "June"
-                "Title" "Legal Tech Sales"
+                "Name" "Alex Thompson"
+                "Title" "Agency Director"
         }}
     </section>
 
-    <!-- Feature Videos Section -->
+    <!-- Value Proposition Section -->
     <section class="mb-16">
-        <!-- Automations Feature Video -->
-        <div class="mb-16">
-            {{$automationsData := parseJSON `{
-                "Title": "Save hours per week.",
-                "Description": "Powerful automations means that your team can stay focused on selling instead of low-value administration work. Spend more time with leads and less time on admin tasks.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "right",
-                "Button": {
-                    "Text": "Learn more",
-                    "Url": "/docs/automations/introduction"
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why businesses choose Blue for customer portals",
+            "Description": "Unlike generic portal solutions, Blue gives you complete control over branding, permissions, and customer experience.",
+            "ValueProps": [
+                {
+                    "Title": "Your brand, not ours",
+                    "Description": "Complete white labeling with your domain, logo, and colors. Customers only see your brand."
                 },
-                "SeeAlso": {
-                    "Heading": "See also",
-                    "Links": [
-                        {
-                            "Text": "Automation triggers",
-                            "Url": "/docs/automations/triggers",
-                            "Description": "based on any changes in your CRM."
-                        },
-                        {
-                            "Text": "Email automations",
-                            "Url": "/docs/automations/actions/email-automations",
-                            "Description": "can send customizable emails."
-                        }
-                    ]
+                {
+                    "Title": "Bulletproof data isolation",
+                    "Description": "Each customer's data is completely separated. They can never see another customer's information."
+                },
+                {
+                    "Title": "Granular control",
+                    "Description": "Decide exactly which features and fields each customer type can access. Full flexibility."
                 }
-            }`}}
-            
-            {{template "feature-video" $automationsData}}
-        </div>
+            ]
+        }`}}
         
-        <!-- Dashboards Feature Video -->
-        <div class="mb-16">
-            {{$dashboardsData := parseJSON `{
-                "Title": "Simple, real-time sales dashboards.",
-                "Description": "What gets measured gets improved. Blue gives you real-time dashboards for all your critical sales metrics. Get instant insights into your sales pipeline performance with live data updates.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "Button": {
-                    "Text": "Learn more",
-                    "Url": "/docs/dashboards/introduction"
-                }
-            }`}}
-            
-            {{template "feature-video" $dashboardsData}}
-        </div>
-        
-        <!-- Custom Fields Feature Video -->
-        <div class="mb-16">
-            {{$customFieldsData := parseJSON `{
-                "Title": "Your dream sales database.",
-                "Description": "Blue adapts to your data structure, not the other way around. Visually design the fields you need. Combine custom fields for advanced use cases such as cross-references and automatic calculations. Set permissions on a per-field basis to only show your team what you want them to see.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "right",
-                "SeeAlso": {
-                    "Heading": "Learn more",
-                    "Links": [
-                        {
-                            "Text": "Formula fields",
-                            "Url": "/docs/custom-fields/formula",
-                            "Description": "to automatically calculate margins and P/L"
-                        },
-                        {
-                            "Text": "Reference fields",
-                            "Url": "/docs/custom-fields/reference",
-                            "Description": "to link contact, customers, and opportunities."
-                        },
-                        {
-                            "Text": "Currency fields",
-                            "Url": "/docs/custom-fields/currency",
-                            "Description": "easily support multiple currencies."
-                        }
-                    ]
-                }
-            }`}}
-            
-            {{template "feature-video" $customFieldsData}}
-        </div>
-        
-        <!-- Notifications Feature Video -->
-        <div>
-            {{$notificationsData := parseJSON `{
-                "Title": "Know what's going on with smart notifications",
-                "Description": "Switch to Deep Work Mode when you need to focus without distractions. Get granular control over how and when you're notified for each type of activity.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Heading": "See also",
-                    "Links": [
-                        {
-                            "Text": "Profile settings",
-                            "Url": "/docs/user-management/profile-settings",
-                            "Description": "— Customize your personal preferences"
-                        },
-                        {
-                            "Text": "Mention",
-                            "Url": "/docs/user-management/mentions",
-                            "Description": "team members to notify them instantly."
-                        }
-                    ]
-                }
-            }`}}
-            
-            {{template "feature-video" $notificationsData}}
-        </div>
+        {{template "value-propositions" $valuePropsData}}
     </section>
-
-
-       <!-- TODO: Add Integrations area. -->
 
     <!-- First CTA -->
     <section class="mb-16">
         {{$firstCTA := parseJSON `{
-            "Title": "Close more deals, faster.",
-            "Subtitle": "Blue organizes work, ensuring teams know what to do, how to do it — and why it matters.",
-            "SecondaryText": "Request a demo",
+            "Title": "Create a customer portal that strengthens your brand.",
+            "Subtitle": "Give your customers secure, professional access to their data while maintaining complete control.",
+            "SecondaryText": "See a demo",
             "SecondaryUrl": "/contact",
-            "PrimaryText": "Get started",
+            "PrimaryText": "Start free trial",
             "PrimaryUrl": "https://app.blue.cc"
         }`}}
         
@@ -179,44 +279,44 @@
                     "name": "Frequently asked questions",
                     "questions": [
                         {
-                            "question": "What makes Blue different from other sales CRM solutions?",
-                            "answer": "Blue combines the power of a CRM with project management capabilities, giving you a complete view of your sales process from lead to delivery. Our flexible custom fields and automation features adapt to your unique sales workflow."
+                            "question": "How does white labeling work for customer portals?",
+                            "answer": "Blue's white label feature lets you completely customize the portal with your brand. Add your logo, colors, custom domain (like portal.yourcompany.com), and even send emails from your own address. Your customers will only see your brand, never Blue's."
                         },
                         {
-                            "question": "Can I integrate Blue with my existing tools and software?",
-                            "answer": "Yes, Blue offers extensive integrations with popular tools like Slack, Gmail, Zapier, and many more. Our API also allows for custom integrations to fit your specific needs."
+                            "question": "Can customers see each other's data?",
+                            "answer": "No, absolutely not. Blue enforces complete data isolation between customers at the database level. Each customer can only see their own projects, files, and information. This separation is built into Blue's architecture and cannot be bypassed."
                         },
                         {
-                            "question": "How does Blue help me track my sales pipeline?",
-                            "answer": "Blue provides multiple views of your sales pipeline including Kanban boards, lists, calendars, and custom dashboards. You can track deal progress, forecast revenue, and identify bottlenecks in real-time."
+                            "question": "What can I control about what customers see?",
+                            "answer": "You have granular control over customer access. Set field-level permissions to hide sensitive data like internal costs or profit margins. Enable or disable features like file uploads, form submissions, or project editing. Create custom roles for different customer types with specific permissions."
                         },
                         {
-                            "question": "Is Blue suitable for small businesses and startups?",
-                            "answer": "Absolutely! Blue is designed to scale with your business. Our flexible pricing and easy-to-use interface make it perfect for small teams, while our advanced features support enterprise-level operations."
+                            "question": "How much does the white label add-on cost?",
+                            "answer": "White labeling costs $20/month per company or $200/year per company, in addition to your core Blue subscription. This includes custom domains, full branding customization, and the ability to send emails from your domain."
                         },
                         {
-                            "question": "How does Blue's automation feature work?",
-                            "answer": "Blue's automation engine allows you to create rules that trigger actions based on specific conditions. For example, automatically move deals to the next stage when certain criteria are met, or send follow-up emails when a deal hasn't been updated in a while."
+                            "question": "What features can customers access in the portal?",
+                            "answer": "Customers can view their projects, track progress through dashboards, download files, submit forms, communicate through comments, and see real-time updates. You control which of these features are available to each customer or customer type."
                         },
                         {
-                            "question": "Can I customize Blue to fit my specific sales process?",
-                            "answer": "Yes, Blue is highly customizable. You can create custom fields, design your own workflows, set up automated processes, and configure dashboards to match your exact sales methodology and reporting needs."
+                            "question": "Is the customer portal mobile-friendly?",
+                            "answer": "Yes, the customer portal is fully responsive and works perfectly on all devices. Customers can access their information from desktop, tablet, or mobile phone with the same great experience."
                         },
                         {
-                            "question": "How secure is my data in Blue?",
-                            "answer": "Blue takes security seriously with enterprise-grade encryption, regular security audits, and compliance with industry standards. Your data is protected both in transit and at rest, with granular permission controls."
+                            "question": "How do I set up different access levels for different customer types?",
+                            "answer": "Use Blue's custom user roles to create different permission sets. For example, create a 'Basic Customer' role with view-only access and a 'Premium Customer' role with additional features. Assign customers to the appropriate role when you invite them."
                         },
                         {
-                            "question": "Does Blue offer mobile access?",
-                            "answer": "Yes, Blue works seamlessly on mobile devices through our responsive web app and dedicated mobile applications for iOS and Android, ensuring you can manage your sales pipeline from anywhere."
+                            "question": "Can I customize the portal interface for different clients?",
+                            "answer": "While the overall branding remains consistent across your portal, you can control what each client sees through permissions and custom fields. Show different dashboards, hide specific sections, or display client-specific information."
                         },
                         {
-                            "question": "How does pricing work for Blue?",
-                            "answer": "Blue offers flexible pricing plans based on your team size and feature needs. We have options for individuals, small teams, and enterprises, with transparent pricing and no hidden fees."
+                            "question": "How secure is the customer portal?",
+                            "answer": "Blue uses enterprise-grade security including encryption in transit and at rest, secure authentication, audit trails for all actions, and regular security audits. Combined with data isolation and granular permissions, your customer data is completely secure."
                         },
                         {
-                            "question": "Can Blue help with sales forecasting?",
-                            "answer": "Yes, Blue's reporting and dashboard features provide powerful sales forecasting capabilities. You can track conversion rates, analyze deal velocity, and predict future revenue based on your pipeline data."
+                            "question": "Can customers collaborate with my team through the portal?",
+                            "answer": "Yes, you can enable collaboration features like comments, file sharing, and form submissions. Customers can communicate with your team directly within the portal, eliminating the need for endless email chains while keeping everything organized in one place."
                         }
                     ]
                 }

@@ -1,0 +1,332 @@
+<!-- Main content -->
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "Earn up to 42% lifetime revenue share." 
+            "Subtitle" "Join the Blue Partner Program and earn recurring income by sharing the best project management platform with your audience. No caps, no limits, just lifetime commissions." 
+            "MarginBottom" "mb-16"
+    }}
+
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "partners"
+    }}
+
+    <!-- Stats Section -->
+    <section class="mb-16">
+        {{$statsData := parseJSON `{
+            "stats": [
+                {
+                    "label": "Lifetime revenue share",
+                    "value": "Up to 42%",
+                    "description": "Earn progressively more as you grow"
+                },
+                {
+                    "label": "Cookie attribution",
+                    "value": "180 days",
+                    "description": "Industry-leading attribution window"
+                },
+                {
+                    "label": "Minimum payout",
+                    "value": "$200",
+                    "description": "Monthly payments when you hit threshold"
+                },
+                {
+                    "label": "Time to approval",
+                    "value": "Instant",
+                    "description": "Start earning immediately"
+                }
+            ]
+        }`}}
+        
+        {{template "stats-section" $statsData}}
+    </section>
+
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- Analytics Dashboard Feature -->
+        <div class="mb-16">
+            {{$analyticsData := parseJSON `{
+                "Title": "Real-time analytics at your fingertips.",
+                "Description": "Track your performance with a comprehensive dashboard. See clicks, sign-ups, conversions, and earnings in real-time. Export data, create custom reports, and optimize your campaigns based on what's working.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Join the program",
+                    "Url": "https://partners.blue.cc"
+                },
+                "SeeAlso": {
+                    "Heading": "Partner tools",
+                    "Links": [
+                        {
+                            "Text": "Multiple tracking links",
+                            "Url": "#",
+                            "Description": "for different campaigns"
+                        },
+                        {
+                            "Text": "Conversion tracking",
+                            "Url": "#",
+                            "Description": "see what's working"
+                        },
+                        {
+                            "Text": "Monthly reports",
+                            "Url": "#",
+                            "Description": "detailed performance data"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $analyticsData}}
+        </div>
+        
+        <!-- Progressive Commission Feature -->
+        <div class="mb-16">
+            {{$commissionData := parseJSON `{
+                "Title": "Grow your earnings as you grow.",
+                "Description": "Start earning immediately and increase your commission rate as you bring more customers. The more successful referrals you make, the higher your percentage grows - up to 42% lifetime revenue share. Your rate increases automatically, no negotiation needed.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "SeeAlso": {
+                    "Heading": "Commission structure",
+                    "Links": [
+                        {
+                            "Text": "Progressive rates",
+                            "Url": "#",
+                            "Description": "earn more as you grow"
+                        },
+                        {
+                            "Text": "Lifetime commissions",
+                            "Url": "#",
+                            "Description": "as long as customer stays"
+                        },
+                        {
+                            "Text": "No earning caps",
+                            "Url": "#",
+                            "Description": "unlimited potential"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $commissionData}}
+        </div>
+        
+        <!-- Marketing Support Feature -->
+        <div>
+            {{$supportData := parseJSON `{
+                "Title": "We help you succeed.",
+                "Description": "Get access to marketing materials, co-branded content, and dedicated support. High-performing partners receive custom landing pages on blue.cc to maximize conversions. Our team is here to help you create content that converts.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "SeeAlso": {
+                    "Heading": "Partner benefits",
+                    "Links": [
+                        {
+                            "Text": "Marketing assets",
+                            "Url": "#",
+                            "Description": "banners, templates, copy"
+                        },
+                        {
+                            "Text": "Custom landing pages",
+                            "Url": "#",
+                            "Description": "for top performers"
+                        },
+                        {
+                            "Text": "Dedicated support",
+                            "Url": "#",
+                            "Description": "partner success team"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $supportData}}
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="mb-16">
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why partners love Blue",
+            "Description": "Join thousands of agencies, consultants, and influencers earning recurring income with Blue.",
+            "ValueProps": [
+                {
+                    "Title": "True lifetime commissions",
+                    "Description": "Earn recurring revenue for the entire customer lifetime, not just the first year."
+                },
+                {
+                    "Title": "180-day cookie window",
+                    "Description": "Industry-leading attribution period gives your referrals time to convert."
+                },
+                {
+                    "Title": "Instant approval",
+                    "Description": "No waiting, no applications. Sign up and start earning immediately."
+                }
+            ]
+        }`}}
+        
+        {{template "value-propositions" $valuePropsData}}
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="mb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-medium text-gray-900 mb-12 text-center">How it works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl font-semibold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Sign up instantly</h3>
+                    <p class="text-gray-600">Create your partner account and get your unique tracking links immediately. No approval process needed.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl font-semibold text-blue-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Share with your audience</h3>
+                    <p class="text-gray-600">Recommend Blue through your content, consultations, or client work using your tracking links.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl font-semibold text-blue-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-2">Earn lifetime commissions</h3>
+                    <p class="text-gray-600">Get paid monthly as your referrals use Blue. Your commission rate grows automatically up to 42%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Feature Showcase -->
+    <section class="mb-16">
+        {{$showcaseData := parseJSON `{
+            "Title": "Perfect for every type of partner",
+            "Features": [
+                {
+                    "Id": "agencies",
+                    "Title": "Agencies",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "consultants",
+                    "Title": "Consultants",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "influencers",
+                    "Title": "Content Creators",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "coaches",
+                    "Title": "Business Coaches",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "educators",
+                    "Title": "Educators",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "software",
+                    "Title": "Software Companies",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                }
+            ]
+        }`}}
+        
+        {{template "interactive-feature-showcase" $showcaseData}}
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" "The Blue partner program has been a game-changer for my consultancy. The lifetime commissions mean I earn recurring revenue from every client I introduce to Blue. It's become a significant part of my business model."
+                "VideoUrl" "/testvideo2.mp4"
+                "PosterUrl" "/testimonials/june.jpg"
+                "Name" "Maria Rodriguez"
+                "Title" "Business Consultant"
+        }}
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Start earning today.",
+            "Subtitle": "Join thousands of partners earning recurring income with the Blue Partner Program.",
+            "SecondaryText": "Learn more",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Join now",
+            "PrimaryUrl": "https://partners.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How does the progressive commission structure work?",
+                            "answer": "You start earning commissions immediately, and your rate increases automatically based on the number of successful referrals. The more customers you bring, the higher your percentage grows, up to 42% lifetime revenue share. There's no need to negotiate—your rate increases automatically."
+                        },
+                        {
+                            "question": "What does lifetime commission mean?",
+                            "answer": "You earn recurring commissions for as long as your referred customer remains a paying Blue subscriber. If they upgrade their plan, your commissions increase. You continue earning month after month, year after year, with no expiration date."
+                        },
+                        {
+                            "question": "How long is the attribution window?",
+                            "answer": "Blue offers an industry-leading 180-day cookie attribution window. This means if someone clicks your link and signs up anytime within the next 180 days, you get credit for the referral and earn commissions."
+                        },
+                        {
+                            "question": "When and how do I get paid?",
+                            "answer": "Payments are made monthly via bank transfer or PayPal. You need to reach a minimum threshold of $200 to receive payment. If you don't reach the threshold in a given month, your earnings roll over to the next month."
+                        },
+                        {
+                            "question": "Do I need to apply or get approved?",
+                            "answer": "No application or approval process is required. Simply sign up for the partner program and you can start earning immediately. We believe in making it easy for partners to get started."
+                        },
+                        {
+                            "question": "Can I create multiple tracking links?",
+                            "answer": "Yes, you can create unlimited tracking links to monitor different campaigns, content pieces, or traffic sources. This helps you understand what's working and optimize your promotional efforts."
+                        },
+                        {
+                            "question": "What marketing support is available?",
+                            "answer": "All partners get access to marketing materials including banners, email templates, and content ideas. High-performing partners receive additional benefits like custom landing pages on blue.cc and dedicated support from our partner success team."
+                        },
+                        {
+                            "question": "Are there any restrictions on how I can promote Blue?",
+                            "answer": "We encourage ethical promotion that accurately represents Blue's features and benefits. We don't allow misleading claims, spam, or paid search ads on Blue's branded keywords. Beyond that, you're free to promote Blue in ways that work for your audience."
+                        },
+                        {
+                            "question": "Can I refer my own company?",
+                            "answer": "No, self-referrals are not eligible for commissions. The partner program is designed to reward you for bringing new customers to Blue, not for your own usage."
+                        },
+                        {
+                            "question": "What happens if a customer churns?",
+                            "answer": "If a referred customer cancels their subscription, you stop earning commissions from that customer. However, if they resubscribe within 180 days, your commissions automatically resume."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
+</div>
