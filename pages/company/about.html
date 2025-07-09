@@ -1,7 +1,7 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "About Blue" 
+            "Title" "Blue is bringing delight to process management." 
             "Subtitle" "We're an independent company with a passion for helping teams work better, together." 
             "MarginBottom" "mb-16"
     }}
@@ -15,6 +15,26 @@
         "Text" "Our mission is to organize the world's work by building the best process management platform on the planet." 
         "MarginBottom" "mb-32"
 }}
+
+{{$statsData := parseJSON `{
+    "Title": "Blue by the numbers",
+    "Stats": [
+        {
+            "Number": "17K+",
+            "Description": "Happy customers"
+        },
+        {
+            "Number": "120+",
+            "Description": "Countries served"
+        },
+        {
+            "Number": "9",
+            "Description": "Team members"
+        }
+    ]
+}`}}
+
+{{template "stats-section" $statsData}}
 
 
 
