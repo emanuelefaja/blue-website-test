@@ -1,0 +1,111 @@
+<!-- Sales Contact Page -->
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "Talk to our sales team" 
+            "Subtitle" "Discover how Blue can transform your business operations. Schedule a personalized demo or discuss enterprise solutions tailored to your needs." 
+            "MarginBottom" "mb-16"
+    }}
+    
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Contact Form Section -->
+        <div class="max-w-2xl mx-auto mb-20">
+            <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                <h3 class="text-2xl font-semibold mb-6">Get in touch</h3>
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <p class="text-gray-600">Our sales team is available Monday through Friday, 9am-6pm EST. We typically respond within one business day.</p>
+                    </div>
+                    
+                    <div class="pt-4 space-y-4">
+                        <h4 class="text-lg font-medium">What to expect:</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>30-minute discovery call to understand your needs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Personalized demo showcasing relevant features</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Custom pricing based on your team size and requirements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Implementation roadmap and onboarding support</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:sales@blue.cc" class="inline-flex items-center justify-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+                            Email Sales Team
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://calendly.com/blue-demo/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-blue border border-brand-blue font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                            Schedule Demo
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        {{$statsData := parseJSON `{
+            "stats": [
+                {"Number": "50000", "Suffix": "+", "Description": "Companies trust Blue"},
+                {"Number": "5", "Suffix": "M+", "Description": "Tasks completed monthly"},
+                {"Number": "99.9", "Suffix": "%", "Description": "Uptime SLA"},
+                {"Number": "24", "Suffix": "h", "Description": "Average onboarding time"}
+            ]
+        }`}}
+        {{template "stats-section" $statsData}}
+        
+        <!-- Logo Grid -->
+        <div class="mt-20">
+            {{$logoData := parseJSON `{
+                "title": "Trusted by more than 17,000 teams",
+                "logos": [
+                    { "name": "CBRE", "src": "/customers/cbre.svg" },
+                    { "name": "Cisco", "src": "/customers/cisco.svg" },
+                    { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                    { "name": "FedEx", "src": "/customers/fedex.svg" },
+                    { "name": "Manulife", "src": "/customers/manulife.svg" },
+                    { "name": "Red Hat", "src": "/customers/redhat.svg" },
+                    { "name": "Heineken", "src": "/customers/heineken.svg" },
+                    { "name": "Sheraton", "src": "/customers/sheraton.svg" },
+                    { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
+                    { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                    { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                    { "name": "ILO", "src": "/customers/ilo.webp" }
+                ]
+            }`}}
+            {{template "logo-grid" $logoData}}
+        </div>
+    </div>
+    
+    <!-- Final CTA -->
+    {{template "dual-button-cta" 
+        dict
+            "Title" "Ready to streamline your operations?"
+            "PrimaryText" "Start free trial"
+            "PrimaryUrl" "https://app.blue.cc/auth/signup"
+            "SecondaryText" "View pricing"
+            "SecondaryUrl" "/pricing"
+    }}
+</div>

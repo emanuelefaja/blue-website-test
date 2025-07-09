@@ -1,0 +1,170 @@
+<!-- Support Contact Page -->
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "How can we help?" 
+            "Subtitle" "Our support team is here to ensure you get the most out of Blue. Find answers, report issues, or get personalized assistance." 
+            "MarginBottom" "mb-16"
+    }}
+    
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Support Options Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Email Support -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-4 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Email Support</h3>
+                <p class="text-gray-600">Get help via email. We typically respond within 24 hours during business days.</p>
+                <a href="mailto:support@blue.cc" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
+                    support@blue.cc
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Documentation -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-4 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Documentation</h3>
+                <p class="text-gray-600">Browse our comprehensive guides, tutorials, and API documentation.</p>
+                <a href="/docs/start-guide/introduction" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
+                    View docs
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Community -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-4 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Community Forum</h3>
+                <p class="text-gray-600">Connect with other Blue users, share tips, and get community support.</p>
+                <a href="https://ask.blue.cc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
+                    Join community
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Common Topics -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-semibold mb-8">Common support topics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/docs/start-guide/getting-started" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold mb-2">Getting Started</h3>
+                    <p class="text-gray-600 text-sm">New to Blue? Learn how to set up your account, create your first workflow, and invite team members.</p>
+                </a>
+                <a href="/docs/integrations/overview" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold mb-2">Integrations</h3>
+                    <p class="text-gray-600 text-sm">Connect Blue with your favorite tools including Slack, Gmail, Zapier, and more.</p>
+                </a>
+                <a href="/docs/features/automations" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold mb-2">Automations</h3>
+                    <p class="text-gray-600 text-sm">Learn how to create powerful automations to streamline repetitive tasks.</p>
+                </a>
+                <a href="/api" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold mb-2">API & Developers</h3>
+                    <p class="text-gray-600 text-sm">Build custom integrations with our GraphQL API and Python SDK.</p>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Support Form -->
+        <div class="max-w-2xl mx-auto mb-16">
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-8">
+                <h3 class="text-2xl font-semibold mb-6">Contact support</h3>
+                <div class="space-y-6">
+                    <p class="text-gray-600">
+                        Before reaching out, please check our <a href="/docs/start-guide/introduction" class="text-brand-blue hover:underline">documentation</a> 
+                        and <a href="https://ask.blue.cc" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:underline">community forum</a> 
+                        as your question may already be answered.
+                    </p>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                        <h4 class="font-medium">When contacting support, please include:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-brand-blue mr-2">•</span>
+                                Your company name and account email
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-blue mr-2">•</span>
+                                Detailed description of the issue or question
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-blue mr-2">•</span>
+                                Steps to reproduce (for bug reports)
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-blue mr-2">•</span>
+                                Screenshots or screen recordings if applicable
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-brand-blue mr-2">•</span>
+                                Browser and operating system information
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:support@blue.cc" class="inline-flex items-center justify-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+                            Email Support
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </a>
+                        <a href="/platform/status" class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-blue border border-brand-blue font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                            Check System Status
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        {{$faqData := parseJSON `{
+            "sections": [
+                {
+                    "question": "What are your support hours?",
+                    "answer": "Our support team is available Monday through Friday, 9am-6pm EST. We respond to all inquiries within one business day. For critical issues affecting your business operations, please mark your email as urgent."
+                },
+                {
+                    "question": "Do you offer phone support?",
+                    "answer": "Phone support is available for Enterprise customers. All other plans include email support and access to our community forum. We find that email support allows us to provide more thorough, documented responses."
+                },
+                {
+                    "question": "How quickly will I get a response?",
+                    "answer": "We aim to respond to all support inquiries within 24 hours during business days. Priority support customers typically receive responses within 4 hours. Critical issues are escalated immediately."
+                },
+                {
+                    "question": "Can I request a feature?",
+                    "answer": "Absolutely! We love hearing from our users. Please send feature requests to support@blue.cc with 'Feature Request' in the subject line. You can also vote on features in our community forum."
+                },
+                {
+                    "question": "What if I need help outside business hours?",
+                    "answer": "Our documentation is available 24/7, and our community forum is active with helpful users around the globe. For urgent issues, Enterprise customers have access to emergency support."
+                }
+            ]
+        }`}}
+        {{template "faq-sections" $faqData}}
+    </div>
+</div>
