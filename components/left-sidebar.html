@@ -131,7 +131,9 @@
     
     <!-- Legal Section at Bottom - Dynamically Generated -->
     <div x-show="legalSection" class="p-4 mt-auto">
-        <div x-data="{ expanded: legalSection?.expanded || false }" class="folder-group">
+        <div x-data="{ expanded: legalSection?.expanded || false }" 
+             @collapse-sidebar-menus.window="expanded = false"
+             class="folder-group">
             <div x-show="expanded" x-collapse class="ml-7 space-y-0.5 order-first">
                 <template x-for="item in legalSection?.children || []" :key="item.id">
                     <a :href="item.href" 

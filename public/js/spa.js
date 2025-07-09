@@ -107,6 +107,11 @@ window.SPAUtils = {
             // Update sidebar active state
             this.updateSidebarState(new URL(link.href).pathname);
             
+            // Collapse sidebar menus when navigating to home
+            if (new URL(link.href).pathname === '/') {
+                window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'));
+            }
+            
             // Re-initialize content
             this.reinitializeContent();
             

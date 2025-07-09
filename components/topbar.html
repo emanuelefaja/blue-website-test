@@ -36,7 +36,8 @@
     <div class="relative flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
         <div class="flex items-center">
-            <a href="/" class="flex items-center">
+            <a href="/" class="flex items-center" 
+               @click="window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'))">
                 <img src="/logo/logo.svg" alt="Blue" class="h-8 w-auto ml-3" width="120" height="32">
             </a>
             <button @click="sidebarsOpen = !sidebarsOpen" 
