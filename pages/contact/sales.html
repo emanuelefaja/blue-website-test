@@ -8,6 +8,28 @@
     }}
     
     <div class="max-w-7xl mx-auto px-6">
+        <!-- Logo Grid -->
+        <div class="mb-20">
+            {{$logoData := parseJSON `{
+                "title": "Trusted by more than 17,000 teams",
+                "logos": [
+                    { "name": "CBRE", "src": "/customers/cbre.svg" },
+                    { "name": "Cisco", "src": "/customers/cisco.svg" },
+                    { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                    { "name": "FedEx", "src": "/customers/fedex.svg" },
+                    { "name": "Manulife", "src": "/customers/manulife.svg" },
+                    { "name": "Red Hat", "src": "/customers/redhat.svg" },
+                    { "name": "Heineken", "src": "/customers/heineken.svg" },
+                    { "name": "Sheraton", "src": "/customers/sheraton.svg" },
+                    { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
+                    { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                    { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                    { "name": "ILO", "src": "/customers/ilo.webp" }
+                ]
+            }`}}
+            {{template "logo-grid" $logoData}}
+        </div>
+        
         <!-- Contact Form Section -->
         <div class="max-w-2xl mx-auto mb-20">
             <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
@@ -54,7 +76,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </a>
-                        <a href="https://calendly.com/blue-demo/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-blue border border-brand-blue font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                        <a href="https://calendar.app.google/vov9NVePmqG4UVwP7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-white text-brand-blue border border-brand-blue font-medium rounded-lg hover:bg-blue-50 transition-colors">
                             Schedule Demo
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -76,27 +98,6 @@
         }`}}
         {{template "stats-section" $statsData}}
         
-        <!-- Logo Grid -->
-        <div class="mt-20">
-            {{$logoData := parseJSON `{
-                "title": "Trusted by more than 17,000 teams",
-                "logos": [
-                    { "name": "CBRE", "src": "/customers/cbre.svg" },
-                    { "name": "Cisco", "src": "/customers/cisco.svg" },
-                    { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-                    { "name": "FedEx", "src": "/customers/fedex.svg" },
-                    { "name": "Manulife", "src": "/customers/manulife.svg" },
-                    { "name": "Red Hat", "src": "/customers/redhat.svg" },
-                    { "name": "Heineken", "src": "/customers/heineken.svg" },
-                    { "name": "Sheraton", "src": "/customers/sheraton.svg" },
-                    { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
-                    { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
-                    { "name": "World Food Programme", "src": "/customers/wfp.svg" },
-                    { "name": "ILO", "src": "/customers/ilo.webp" }
-                ]
-            }`}}
-            {{template "logo-grid" $logoData}}
-        </div>
     </div>
     
     <!-- Final CTA -->
