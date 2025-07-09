@@ -32,7 +32,7 @@
       "description": "Stay up to date with the latest features and improvements in Blue.",
       "keywords": ["changelog", "updates", "features", "improvements", "blue"]
     },
-    "faq": {
+    "resources/faq": {
       "title": "FAQ",
       "description": "Frequently asked questions about Blue. Find answers to common questions about our platform, features, and pricing.",
       "keywords": ["faq", "frequently asked questions", "help", "support", "blue"]

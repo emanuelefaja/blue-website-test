@@ -49,12 +49,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blue.cc/faq</loc>
-    <lastmod>2025-07-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://blue.cc/</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -224,6 +218,12 @@
   </url>
   <url>
     <loc>https://blue.cc/resources/experts</loc>
+    <lastmod>2025-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blue.cc/resources/faq</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
