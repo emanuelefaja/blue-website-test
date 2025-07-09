@@ -7,28 +7,43 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Value Proposition Section -->
+    <!-- Custom Value Proposition Section with Animated Blob -->
     <section class="mb-20">
-        {{$whitelabelValueProps := parseJSON `{
-            "Title": "Our technology.<br>Your brand.",
-            "Description": "Leverage Blue's powerful platform without worrying about infrastructure, maintenance, or uptime. Focus on your customers while we handle the technology.",
-            "Animation": false,
-            "ValueProps": [
-                {
-                    "Title": "Complete brand control",
-                    "Description": "Custom logos, colors, domains, and email templates make Blue invisible to your users."
-                },
-                {
-                    "Title": "Enterprise infrastructure included",
-                    "Description": "99.9% uptime, automatic updates, and security patches without any technical overhead."
-                },
-                {
-                    "Title": "Seamless user experience",
-                    "Description": "From login to notifications, every touchpoint reflects your brand identity."
-                }
-            ]
-        }`}}
-        {{template "value-propositions" $whitelabelValueProps}}
+        <div class="max-w-7xl mx-auto py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <!-- Left Side: Title and Description with Animated Blob -->
+                <div class="space-y-6 p-8 md:pr-12 md:border-r border-gray-200 dark:border-gray-700 relative">
+                    <!-- Animated blob background positioned behind title -->
+                    <div class="animated-blob" style="top: 50%; transform: translate(-50%, -50%) scale(0.7);"></div>
+                    
+                    <!-- Content with higher z-index -->
+                    <div class="relative z-10">
+                        <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">
+                            Our technology.<br>Your brand.
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg mt-6">
+                            Leverage Blue's powerful platform without worrying about infrastructure, maintenance, or uptime. Focus on your customers while we handle the technology.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Value Props Stacked -->
+                <div class="space-y-8 p-8 md:pl-12">
+                    <div class="space-y-3">
+                        <h4 class="text-xl font-medium text-gray-900 dark:text-gray-100">Complete brand control</h4>
+                        <p class="text-gray-600 dark:text-gray-400">Custom logos, colors, domains, and email templates make Blue invisible to your users.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="text-xl font-medium text-gray-900 dark:text-gray-100">Enterprise infrastructure included</h4>
+                        <p class="text-gray-600 dark:text-gray-400">99.9% uptime, automatic updates, and security patches without any technical overhead.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="text-xl font-medium text-gray-900 dark:text-gray-100">Seamless user experience</h4>
+                        <p class="text-gray-600 dark:text-gray-400">From login to notifications, every touchpoint reflects your brand identity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Custom Branding Section -->
