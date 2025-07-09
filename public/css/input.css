@@ -350,3 +350,87 @@ body {
   will-change: transform;
   transform-origin: top left;
 }
+
+/* Animated Gradient Blob */
+.animated-blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    45deg,
+    #00a0d2,
+    #667eea,
+    #f093fb,
+    #f5576c
+  );
+  background-size: 300% 300%;
+  animation: blob-morph 20s ease-in-out infinite, gradient-shift 15s ease infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(40px);
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keyframes for blob morphing */
+@keyframes blob-morph {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    transform: translate(-50%, -50%) rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 70% 30% 30% 70%;
+    transform: translate(-50%, -50%) rotate(180deg) scale(0.95);
+  }
+  75% {
+    border-radius: 70% 30% 30% 70% / 30% 70% 70% 30%;
+    transform: translate(-50%, -50%) rotate(270deg) scale(1.05);
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}
+
+/* Keyframes for gradient color shifting */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dark mode adjustments for blob */
+.dark .animated-blob {
+  opacity: 0.5;
+  filter: blur(60px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-blob {
+    width: 300px;
+    height: 300px;
+    filter: blur(50px);
+  }
+}
+
+@media (max-width: 640px) {
+  .animated-blob {
+    width: 250px;
+    height: 250px;
+    filter: blur(60px);
+  }
+}

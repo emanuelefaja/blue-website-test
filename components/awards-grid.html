@@ -1,0 +1,28 @@
+{{- /* Awards Grid Component 
+    Displays a grid of award badges/logos
+    
+    Usage: {{template "awards-grid" .}}
+    
+    Data structure:
+    {
+        "awards": [
+            {
+                "name": "Award Name",
+                "src": "/path/to/image.png"
+            }
+        ]
+    }
+*/ -}}
+{{define "awards-grid"}}
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+    {{range .awards}}
+    <img 
+        src="{{.src}}" 
+        alt="{{.name}}" 
+        class="max-w-full h-auto max-h-24 object-contain"
+        loading="lazy"
+    >
+    {{end}}
+</div>
+{{end}}

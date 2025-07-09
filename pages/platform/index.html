@@ -7,6 +7,35 @@
             "MarginBottom" "mb-16"
     }}
 
+    <!-- Awards Grid -->
+    <div class="mb-16">
+        {{$awardsData := parseJSON `{
+            "awards": [
+                {
+                    "name": "High Performer G2 Winter 2025",
+                    "src": "/awards/high-performer-g2-winter-2025.png"
+                },
+                {
+                    "name": "Momentum Leader G2 Winter 2025",
+                    "src": "/awards/momentum-leader-g2-winter-2025.png"
+                },
+                {
+                    "name": "Crozdesk Happiest Users",
+                    "src": "/awards/crozdesk-happiest-users-badge.webp"
+                },
+                {
+                    "name": "Crozdesk Quality Choice",
+                    "src": "/awards/crozdesk-quality-choice-badge.webp"
+                },
+                {
+                    "name": "Crozdesk Trusted Vendor",
+                    "src": "/awards/crozdesk-trusted-vendor-badge.webp"
+                }
+            ]
+        }`}}
+        {{template "awards-grid" $awardsData}}
+    </div>
+
     <!-- White Label News Bar -->
     <div class="mb-16">
         {{$newsBarData := parseJSON `{
