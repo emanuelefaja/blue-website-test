@@ -1,19 +1,29 @@
 {{define "feature-video"}}
 <!-- Feature Video Component -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+     x-data="{ 
+         loaded: false
+     }"
+     x-intersect.once="loaded = true">
     {{if eq .VideoPosition "left"}}
         <!-- Video (Left) -->
         <div>
-            <video 
-                class="w-full h-auto rounded-2xl border border-gray-200" 
-                autoplay 
-                muted 
-                loop 
-                playsinline
-            >
-                <source src="{{.VideoUrl}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <template x-if="loaded">
+                <video 
+                    class="w-full h-auto rounded-2xl border border-gray-200" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="{{.VideoUrl}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </template>
+            <div 
+                x-show="!loaded" 
+                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
+            ></div>
         </div>
         
         <!-- Text Content (Right) -->
@@ -96,16 +106,22 @@
         
         <!-- Video (Right) -->
         <div>
-            <video 
-                class="w-full h-auto rounded-2xl border border-gray-200" 
-                autoplay 
-                muted 
-                loop 
-                playsinline
-            >
-                <source src="{{.VideoUrl}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <template x-if="loaded">
+                <video 
+                    class="w-full h-auto rounded-2xl border border-gray-200" 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src="{{.VideoUrl}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </template>
+            <div 
+                x-show="!loaded" 
+                class="w-full aspect-video rounded-2xl border border-gray-200 bg-gray-100"
+            ></div>
         </div>
     {{end}}
 </div>

@@ -186,6 +186,14 @@ window.SPAUtils = {
             console.warn('ImageZoomUtils not available during navigation - image zoom may not work');
         }
         
+        // Re-initialize lazy loaded videos
+        const lazyVideos = document.querySelectorAll('[x-data*="loaded"]');
+        lazyVideos.forEach(el => {
+            if (el._x_dataStack) {
+                el._x_dataStack[0].loaded = false;
+            }
+        });
+        
         // Re-setup client routing
         this.setupClientRouting();
     },
