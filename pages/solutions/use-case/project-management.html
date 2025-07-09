@@ -2,9 +2,327 @@
 <div class="py-20">
     {{template "page-heading" 
         dict 
-            "Title" "Project Management" 
-            "Subtitle" "Plan, execute, and deliver projects on time with powerful project management and collaboration features." 
-            "MarginBottom" "mb-8"
+            "Title" "Complete project visibility. Total peace of mind." 
+            "Subtitle" "See everything happening across your projects in real-time. Blue brings calm to chaos with clear timelines, automated updates, and a single source of truth for your entire team." 
+            "MarginBottom" "mb-16"
     }}
 
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "project-management"
+    }}
+
+    <!-- Customer Logos -->
+    <section class="mb-16">
+        {{$logoData := parseJSON `{
+            "title": "Trusted by 70,000+ customers",
+            "logos": [
+                { "name": "Heineken", "src": "/customers/heineken.svg" },
+                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                { "name": "FedEx", "src": "/customers/fedex.svg" },
+                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                { "name": "ILO", "src": "/customers/ilo.webp" }
+            ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+    </section>
+
+    <!-- Feature Videos Section -->
+    <section class="mb-16">
+        <!-- Kanban Board Feature -->
+        <div class="mb-16">
+            {{$kanbanData := parseJSON `{
+                "Title": "Visualize work the way your brain thinks.",
+                "Description": "Drag and drop tasks across boards, see bottlenecks instantly, and give everyone clarity on what's happening. Multiple views mean each team member can work how they prefer—Kanban, list, calendar, or timeline.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Explore project views",
+                    "Url": "/docs/projects/view-types"
+                },
+                "SeeAlso": {
+                    "Heading": "Visual project management",
+                    "Links": [
+                        {
+                            "Text": "Kanban boards",
+                            "Url": "/docs/projects/view-types",
+                            "Description": "for visual workflow management"
+                        },
+                        {
+                            "Text": "Timeline view",
+                            "Url": "/docs/projects/view-types",
+                            "Description": "for Gantt-style planning"
+                        },
+                        {
+                            "Text": "Calendar view",
+                            "Url": "/docs/projects/view-types",
+                            "Description": "for deadline management"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $kanbanData}}
+        </div>
+        
+        <!-- Dependencies Feature -->
+        <div class="mb-16">
+            {{$dependenciesData := parseJSON `{
+                "Title": "Dependencies that prevent disaster.",
+                "Description": "Link related tasks so nothing falls through the cracks. When timelines shift, Blue automatically adjusts dependent tasks and notifies affected team members. No more manually updating project plans or surprise delays.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Learn about dependencies",
+                    "Url": "/docs/custom-fields/reference"
+                },
+                "SeeAlso": {
+                    "Heading": "Smart scheduling",
+                    "Links": [
+                        {
+                            "Text": "Task dependencies",
+                            "Url": "/docs/custom-fields/reference",
+                            "Description": "to link related work"
+                        },
+                        {
+                            "Text": "Milestone tracking",
+                            "Url": "/docs/projects/lists",
+                            "Description": "for key deliverables"
+                        },
+                        {
+                            "Text": "Critical path analysis",
+                            "Url": "/docs/dashboards/introduction",
+                            "Description": "to identify blockers"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $dependenciesData}}
+        </div>
+        
+        <!-- Custom Fields & Automations -->
+        <div class="mb-16">
+            {{$customFieldsData := parseJSON `{
+                "Title": "Automate the boring stuff.",
+                "Description": "Create custom fields for budgets, resources, or project phases. Then layer automations to assign tasks, send updates, and move work forward automatically. Your project management runs itself while you focus on delivery.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Explore automations",
+                    "Url": "/docs/automations/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Project automation",
+                    "Links": [
+                        {
+                            "Text": "Custom fields",
+                            "Url": "/docs/custom-fields/introduction",
+                            "Description": "for project-specific data"
+                        },
+                        {
+                            "Text": "Workflow automations",
+                            "Url": "/docs/automations/introduction",
+                            "Description": "to eliminate manual work"
+                        },
+                        {
+                            "Text": "Assignment rules",
+                            "Url": "/docs/automations/actions",
+                            "Description": "for automatic task distribution"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $customFieldsData}}
+        </div>
+        
+        <!-- Dashboards Feature -->
+        <div>
+            {{$dashboardsData := parseJSON `{
+                "Title": "Real-time insights that drive decisions.",
+                "Description": "Custom dashboards show project health, team capacity, and progress at a glance. Track budgets, timelines, and deliverables in real-time. Share read-only dashboards with stakeholders for complete transparency.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Discover dashboards",
+                    "Url": "/docs/dashboards/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Project analytics",
+                    "Links": [
+                        {
+                            "Text": "Progress tracking",
+                            "Url": "/docs/dashboards/charts",
+                            "Description": "with burndown charts"
+                        },
+                        {
+                            "Text": "Resource management",
+                            "Url": "/docs/dashboards/introduction",
+                            "Description": "to balance workloads"
+                        },
+                        {
+                            "Text": "Budget monitoring",
+                            "Url": "/docs/custom-fields/currency",
+                            "Description": "with real-time calculations"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $dashboardsData}}
+        </div>
+    </section>
+
+    <!-- Interactive Feature Showcase -->
+    <section class="mb-16">
+        {{$showcaseData := parseJSON `{
+            "Title": "Built for every type of project",
+            "Features": [
+                {
+                    "Id": "software",
+                    "Title": "Software Development",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "marketing",
+                    "Title": "Marketing Campaigns",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "construction",
+                    "Title": "Construction Projects",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "product",
+                    "Title": "Product Launches",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                },
+                {
+                    "Id": "events",
+                    "Title": "Event Planning",
+                    "VideoUrl": "/testvideo2.mp4"
+                },
+                {
+                    "Id": "consulting",
+                    "Title": "Consulting Engagements",
+                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
+                }
+            ]
+        }`}}
+        
+        {{template "interactive-feature-showcase" $showcaseData}}
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" "Blue transformed how we manage projects. We went from constant fire-fighting to calm, predictable delivery. Our on-time completion rate improved by 40% in the first quarter."
+                "VideoUrl" "/testvideo2.mp4"
+                "PosterUrl" "/testimonials/june.jpg"
+                "Name" "Sarah Chen"
+                "Title" "VP of Engineering"
+        }}
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="mb-16">
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why teams choose Blue for project management",
+            "Description": "Unlike complex project tools that require extensive training, Blue gives you powerful features that feel simple.",
+            "ValueProps": [
+                {
+                    "Title": "See everything at once",
+                    "Description": "Real-time visibility into all projects, tasks, and team capacity in one place."
+                },
+                {
+                    "Title": "Work flows automatically",
+                    "Description": "Automations handle task assignments, status updates, and notifications without manual effort."
+                },
+                {
+                    "Title": "Scales with your team",
+                    "Description": "From simple task lists to complex multi-team projects with dependencies and resource planning."
+                }
+            ]
+        }`}}
+        
+        {{template "value-propositions" $valuePropsData}}
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Bring calm to your project chaos.",
+            "Subtitle": "Join thousands of teams delivering projects on time, every time with Blue.",
+            "SecondaryText": "See a demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Start free trial",
+            "PrimaryUrl": "https://app.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "id": "FAQ",
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How is Blue different from traditional project management tools?",
+                            "answer": "Blue combines visual simplicity with powerful features. Unlike tools that overwhelm with complexity, Blue gives you just what you need: clear visibility, smart automations, and flexible views that adapt to how your team works."
+                        },
+                        {
+                            "question": "Can Blue handle complex projects with dependencies?",
+                            "answer": "Absolutely. Link tasks together to create dependencies, and Blue automatically adjusts timelines when dates change. You can see the critical path, identify bottlenecks, and ensure nothing blocks your project delivery."
+                        },
+                        {
+                            "question": "How do team members stay updated on project changes?",
+                            "answer": "Blue's smart notifications keep everyone informed without overwhelming them. Team members get notified about tasks assigned to them, deadline changes, and project updates. You can customize notification preferences to reduce noise."
+                        },
+                        {
+                            "question": "Can I track project budgets and resources in Blue?",
+                            "answer": "Yes, use custom fields to track budgets, costs, and resource allocation. Formula fields automatically calculate totals, and dashboards give you real-time visibility into project finances and team capacity."
+                        },
+                        {
+                            "question": "Does Blue support agile and scrum methodologies?",
+                            "answer": "Blue is methodology-agnostic and flexible enough for any approach. Use Kanban boards for agile workflows, create sprints with our list system, and track velocity with custom dashboards. Many software teams use Blue for scrum, kanban, and hybrid approaches."
+                        },
+                        {
+                            "question": "How do I report project status to stakeholders?",
+                            "answer": "Create custom dashboards showing exactly what stakeholders need to see. Share read-only links for real-time project updates, export reports as PDFs, or use our presentation mode for status meetings."
+                        },
+                        {
+                            "question": "Can multiple teams collaborate on the same project?",
+                            "answer": "Yes, Blue's workspace system allows cross-team collaboration while maintaining clear boundaries. Use multi-workspace features to share projects across departments while keeping team-specific work separate."
+                        },
+                        {
+                            "question": "What project templates does Blue offer?",
+                            "answer": "While Blue doesn't force you into rigid templates, you can create your own project templates. Save any project structure as a template and reuse it for similar projects, complete with tasks, custom fields, and automations."
+                        },
+                        {
+                            "question": "How does Blue handle project documentation?",
+                            "answer": "Attach files directly to tasks and projects, add rich descriptions with formatting, and use comments for discussions. Everything stays connected to your project work, creating a complete project history."
+                        },
+                        {
+                            "question": "Can I integrate Blue with my existing tools?",
+                            "answer": "Yes, Blue integrates with popular tools like Slack, Google Drive, GitHub, and hundreds more through Zapier. Use our API to build custom integrations that fit your specific workflow."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 </div>
