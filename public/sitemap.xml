@@ -169,6 +169,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://blue.cc/platform/features/views</loc>
+    <lastmod>2025-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blue.cc/platform/features/workspaces</loc>
     <lastmod>2025-07-09</lastmod>
     <changefreq>weekly</changefreq>
