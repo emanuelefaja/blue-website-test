@@ -3,8 +3,159 @@
     {{template "page-heading" 
         dict 
             "Title" "Education Solutions" 
-            "Subtitle" "Enhance educational operations with streamlined processes for students, faculty, and administration." 
-            "MarginBottom" "mb-8"
+            "Subtitle" "Streamline student records, faculty coordination, and administrative workflows with purpose-built education tools." 
+            "MarginBottom" "mb-16"
     }}
+
+    <!-- Customer Logos Section -->
+    <div class="mb-20">
+        {{$educationLogos := parseJSON `{
+            "title": "Trusted by educational institutions worldwide",
+            "logos": [
+                { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
+                { "name": "Stanford University", "src": "/customers/stanford-university.svg" },
+                { "name": "Harvard School", "src": "/customers/harvard-school.svg" },
+                { "name": "MIT Education", "src": "/customers/mit-education.svg" },
+                { "name": "Oxford College", "src": "/customers/oxford-college.svg" }
+            ]
+        }`}}
+        {{template "logo-grid" $educationLogos}}
+    </div>
+
+    <!-- Key Reasons Section -->
+    <div class="mb-20">
+        {{$educationFeatures := parseJSON `{
+            "Title": "Why educational institutions choose Blue",
+            "Features": [
+                {
+                    "Icon": "users",
+                    "Title": "Streamlined Student Records",
+                    "Description": "Centralize student information from application to graduation. Track enrollment, grades, and attendance with custom fields."
+                },
+                {
+                    "Icon": "calendar",
+                    "Title": "Faculty & Resource Coordination",
+                    "Description": "Schedule classes, manage faculty workloads, and allocate resources across departments with automated workflows."
+                },
+                {
+                    "Icon": "shield-check",
+                    "Title": "Compliance & Reporting",
+                    "Description": "Generate required state reports and maintain detailed audit trails. Never miss accreditation deadlines."
+                }
+            ]
+        }`}}
+        {{template "features-grid-simple" $educationFeatures}}
+    </div>
+
+    <!-- Student Records Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$studentRecordsData := parseJSON `{
+            "VideoPosition": "left",
+            "VideoUrl": "/product/custom-fields.mp4",
+            "Title": "Student Records & Enrollment Management",
+            "Description": "Centralize student information from application to graduation. Track enrollment status, academic progress, and attendance with custom fields tailored to your needs.",
+            "Button": {
+                "Text": "Learn about Student Management",
+                "Url": "/docs/use-cases/student-management"
+            },
+            "SeeAlso": {
+                "Links": [
+                    { "Text": "Custom Fields", "Description": "track student information and academic progress precisely", "Url": "/platform/features/custom-fields" },
+                    { "Text": "Automations", "Description": "ensure enrollment deadlines are never missed", "Url": "/platform/features/automations" },
+                    { "Text": "Forms", "Description": "handle online applications and student requests", "Url": "/platform/features/forms" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $studentRecordsData}}
+    </div>
+
+    <!-- Course & Faculty Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$courseManagementData := parseJSON `{
+            "VideoPosition": "right",
+            "VideoUrl": "/product/kanban-board.mp4",
+            "Title": "Course Management & Faculty Scheduling",
+            "Description": "Coordinate course offerings, manage faculty assignments, and track classroom resources. Automatically detect schedule conflicts across departments.",
+            "Button": {
+                "Text": "Explore Course Management",
+                "Url": "/solutions/use-case/resource-management"
+            },
+            "SeeAlso": {
+                "Links": [
+                    { "Text": "Views", "Description": "display schedules in calendar, kanban, and timeline formats", "Url": "/docs/views" },
+                    { "Text": "User Permissions", "Description": "control faculty and staff access levels precisely", "Url": "/platform/features/user-permissions" },
+                    { "Text": "Records", "Description": "organize all academic data in structured databases", "Url": "/platform/features/records" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $courseManagementData}}
+    </div>
+
+    <!-- Academic Compliance Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$complianceData := parseJSON `{
+            "VideoPosition": "left",
+            "VideoUrl": "/product/reporting.mp4",
+            "Title": "Academic Compliance & Reporting",
+            "Description": "Generate required state reports and track graduation requirements. Automated reporting ensures you never miss critical accreditation deadlines.",
+            "Button": {
+                "Text": "See Compliance Features",
+                "Url": "/docs/reporting"
+            },
+            "SeeAlso": {
+                "Links": [
+                    { "Text": "Automations", "Description": "generate required state reports automatically", "Url": "/platform/features/automations" },
+                    { "Text": "Records", "Description": "export data for accreditation and state requirements", "Url": "/platform/features/records" },
+                    { "Text": "Activity Log", "Description": "maintains detailed audit trails for compliance", "Url": "/docs/activity-log" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $complianceData}}
+    </div>
+
+    <!-- Student Services Management Feature -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{$studentServicesData := parseJSON `{
+            "VideoPosition": "right",
+            "VideoUrl": "/product/forms.mp4",
+            "Title": "Student Services & Administrative Requests",
+            "Description": "Streamline student service requests including transcripts, room assignments, and academic appeals. Track request status and automate approvals.",
+            "Button": {
+                "Text": "Learn about Student Services",
+                "Url": "/docs/forms"
+            },
+            "SeeAlso": {
+                "Links": [
+                    { "Text": "Forms", "Description": "capture student requests and administrative applications", "Url": "/platform/features/forms" },
+                    { "Text": "Automations", "Description": "route approvals and send status notifications", "Url": "/platform/features/automations" },
+                    { "Text": "Chat", "Description": "enables real-time communication with students and staff", "Url": "/platform/features/chat" }
+                ]
+            }
+        }`}}
+        {{template "feature-video" $studentServicesData}}
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="mb-20 px-6 lg:px-8">
+        {{template "testimonial-single" 
+            dict 
+                "ImageUrl" "/testimonials/education-administrator.png"
+                "Quote" "Blue has revolutionized our student records management and faculty coordination. What used to take hours of manual work now happens automatically, and our compliance reporting is effortless."
+                "Name" "Dr. Jennifer Wilson"
+                "Title" "Registrar, Metro Community College"
+        }}
+    </div>
+
+    <!-- Final CTA -->
+    <div class="px-6 lg:px-8">
+        {{$ctaData := parseJSON `{
+            "Title": "Ready to streamline your educational administration?",
+            "SecondaryText": "Schedule a Demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Start Free Trial",
+            "PrimaryUrl": "/signup"
+        }`}}
+        {{template "dual-button-cta" $ctaData}}
+    </div>
 
 </div>
