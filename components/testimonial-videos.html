@@ -1,3 +1,91 @@
+{{- /* 
+================================================================================
+TESTIMONIAL VIDEOS COMPONENT
+================================================================================
+Displays a grid of video testimonials with inline styles for maximum compatibility.
+
+USAGE:
+{{template "testimonial-videos" $testimonialData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$testimonialData := parseJSON `{
+    "title": "What our customers are saying",
+    "testimonials": [
+        {
+            "videoUrl": "/testimonials/customer1.mp4",
+            "posterUrl": "/testimonials/customer1-poster.jpg",
+            "quote": "Blue has completely transformed how we manage our projects. The automation features alone save us 20+ hours every week."
+        },
+        {
+            "videoUrl": "/testimonials/customer2.mp4",
+            "posterUrl": "/testimonials/customer2-poster.jpg",
+            "quote": "The best investment we've made in our business. Blue streamlines everything from task management to reporting."
+        }
+    ]
+}`}}
+{{template "testimonial-videos" $testimonialData}}
+
+Note: Common usage shows additional fields like author, company, title,
+but component only uses videoUrl, posterUrl, and quote.
+
+DATA STRUCTURE:
+{
+    "title": "Optional section title",    // Section heading (optional)
+    "testimonials": [                     // Array of testimonials (required)
+        {
+            "videoUrl": "/video.mp4",      // Video file path (required)
+            "posterUrl": "/poster.jpg",    // Video poster image (required)
+            "quote": "Customer quote"      // Testimonial text (required)
+        }
+    ]
+}
+
+FEATURES:
+- Responsive video grid
+- Lazy video preloading on hover
+- Native video controls
+- Inline styles for compatibility
+- Custom CSS for responsive grid
+- Hidden video loading spinners
+- Poster frames for fast loading
+
+LAYOUT:
+- Container: max-width 1200px
+- Grid: 1 column mobile, 2 tablet, 4 desktop
+- Gap: 2rem between videos
+- Video height: Fixed 35rem
+- Section padding: 2rem vertical
+
+STYLING (INLINE):
+- All styles use inline CSS
+- Media queries via <style> tag
+- Title: 2rem font, centered
+- Quote: Small italic text, gray-400
+- Video: Rounded corners, shadow
+- Object-fit: cover for videos
+
+VIDEO OPTIMIZATION:
+- Preload="none" by default
+- Changes to "metadata" on hover
+- Reduces initial page load
+- Native controls for accessibility
+- Custom CSS hides loading indicators
+
+RESPONSIVE BREAKPOINTS:
+- Mobile: 1 column (default)
+- Tablet (768px): 2 columns
+- Desktop (1024px): 4 columns
+
+USE CASES:
+- Customer testimonial pages
+- Video review sections
+- Success story showcases
+- Social proof displays
+- Case study highlights
+
+NOTE: Uses inline styles instead of Tailwind
+for maximum compatibility and isolation.
+*/ -}}
 {{define "testimonial-videos"}}
 <div style="width: 100%; padding: 2rem 0;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">

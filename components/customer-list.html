@@ -1,3 +1,61 @@
+{{- /* 
+================================================================================
+CUSTOMER LIST COMPONENT
+================================================================================
+Displays a list of customer names with links, with progressive disclosure for long lists.
+
+USAGE:
+{{template "customer-list" $educationCustomers}}
+
+EXAMPLE IMPLEMENTATION:
+{{$educationCustomers := parseJSON `{
+    "customers": [
+        {"name": "University of California, Berkeley", "url": "https://berkeley.edu"},
+        {"name": "MIT", "url": "https://mit.edu"},
+        {"name": "Stanford University", "url": "https://stanford.edu"},
+        {"name": "Worcester Polytechnic Institute", "url": "https://wpi.edu"},
+        {"name": "Washington State University", "url": "https://wsu.edu"},
+        {"name": "Western Washington University", "url": "https://wwu.edu"}
+    ]
+}`}}
+{{template "customer-list" $educationCustomers}}
+
+DATA STRUCTURE:
+{
+    "customers": [                      // Array of customer objects (required)
+        {
+            "name": "Customer Name",    // Display name of customer (required)
+            "url": "https://example.com" // Link to customer website (required)
+        }
+    ]
+}
+
+FEATURES:
+- Progressive disclosure: Shows first 20 customers, with "Load all" for more
+- Responsive grid: 1 column on mobile, 2 on tablet, 4 on desktop
+- External link handling with security attributes
+- Smooth hover transitions
+- Dark mode support
+- AlpineJS integration for show/hide functionality
+
+LAYOUT:
+- Maximum width: 7xl (80rem)
+- Column gap: 8 units (2rem)
+- Row spacing: 6 units (1.5rem) between items
+- Load button margin: 12 units (3rem) from list
+
+STYLING:
+- Link color: Gray-700 (dark: gray-300)
+- Hover color: Brand blue (dark: blue-400)
+- Hover effect: Underline with color transition
+- Transition duration: 200ms
+
+USE CASES:
+- Industry-specific customer showcases
+- Partner listings
+- Client portfolios
+- Reference pages
+*/ -}}
 {{define "customer-list"}}
 <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div x-data="{ 

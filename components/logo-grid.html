@@ -1,3 +1,74 @@
+{{- /* 
+================================================================================
+LOGO GRID COMPONENT
+================================================================================
+Displays a compact grid of customer/partner logos with optional title.
+
+USAGE:
+{{template "logo-grid" $logoData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$logoData := parseJSON `{
+    "title": "Trusted by more than 17,000 teams",
+    "logos": [
+        { "name": "CBRE", "src": "/customers/cbre.svg" },
+        { "name": "Cisco", "src": "/customers/cisco.svg" },
+        { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+        { "name": "Intel", "src": "/customers/intel.svg" },
+        { "name": "Microsoft", "src": "/customers/microsoft.svg" },
+        { "name": "Toyota", "src": "/customers/toyota.svg" }
+    ]
+}`}}
+{{template "logo-grid" $logoData}}
+
+DATA STRUCTURE:
+{
+    "title": "Optional section title",     // Section heading (optional)
+    "logos": [                            // Array of logo objects (required)
+        {
+            "name": "Company Name",        // Alt text for logo (required)
+            "src": "/path/to/logo.svg"     // Logo image path (required)
+        }
+    ]
+}
+
+FEATURES:
+- Compact bordered cards for logos
+- Highly responsive grid (2-6 columns)
+- Dark mode logo inversion
+- Consistent logo sizing
+- Optional section title
+- Lazy loading images
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Grid columns: 2 (mobile) → 3 (sm) → 4 (md) → 5 (lg) → 6 (xl)
+- Gap: 6 units (1.5rem) between cards
+- Card padding: 4 units (1rem)
+- Card height: Fixed 20 units (5rem)
+- Title margin: 8 units (2rem) bottom
+
+STYLING:
+- Card background: White (dark: gray-800)
+- Card border: Gray-200 (dark: gray-700)
+- Border radius: lg (0.5rem)
+- Title: 2xl font size, semibold, centered
+- Logo max-height: 10 units (2.5rem)
+- Dark mode: brightness(0) + invert filter on logos
+
+DIFFERENCES FROM logo-grid-large:
+- Smaller, more compact cards
+- More columns (up to 6 vs 4)
+- Less padding and smaller logos
+- Better for displaying many logos
+
+USE CASES:
+- Customer logo walls
+- Partner ecosystems
+- Client showcases
+- Trust indicators
+- Industry presence displays
+*/ -}}
 {{define "logo-grid"}}
 <div class="w-full py-8">
     <div class="max-w-7xl mx-auto px-4">

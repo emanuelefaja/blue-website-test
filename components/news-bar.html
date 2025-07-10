@@ -1,3 +1,63 @@
+{{- /* 
+================================================================================
+NEWS BAR COMPONENT
+================================================================================
+Displays an announcement bar with text and action button.
+
+USAGE:
+{{template "news-bar" $newsBarData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$newsBarData := parseJSON `{
+    "MainText": "Blue becomes AppSumo's fastest product to reach $1M in sales!",
+    "ButtonText": "Read more",
+    "ButtonUrl": "/insights/appsumo-fastest-one-million"
+}`}}
+{{template "news-bar" $newsBarData}}
+
+DATA STRUCTURE:
+{
+    "MainText": "Announcement text",      // Main announcement message (required)
+    "ButtonText": "CTA text",            // Button label (required)
+    "ButtonUrl": "/button-link"          // Button destination URL (required)
+}
+
+FEATURES:
+- Full-width announcement bar
+- Responsive layout with text truncation
+- Action button with hover states
+- Dark mode support
+- Clean, minimal design
+- Text overflow handling
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Background: Gray-100 (dark: gray-800)
+- Border radius: xl (0.75rem)
+- Padding: 3 units (0.75rem) vertical
+- Button margin: 4 units (1rem) left
+
+STYLING:
+- Main text: Base size, gray-600 (dark: gray-300)
+- Text overflow: Truncate with ellipsis
+- Button: White background (dark: gray-700)
+- Button border: Gray-200 (dark: gray-600)
+- Button text: Small font, medium weight
+- Hover transitions: 150ms color changes
+
+BUTTON DESIGN:
+- Padding: 3 units horizontal, 1.5 vertical
+- Border radius: md (0.375rem)
+- Hover: Gray-50 background (dark: gray-800)
+
+USE CASES:
+- Product announcements
+- Feature launches
+- Company news
+- Event promotions
+- Special offers
+- Important updates
+*/ -}}
 {{define "news-bar"}}
 <!-- News Bar Component -->
 <div class="w-full">

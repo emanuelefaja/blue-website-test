@@ -1,3 +1,103 @@
+{{- /* 
+================================================================================
+TECHNICAL CAPABILITY CARD COMPONENT
+================================================================================
+Displays a technical feature card with code examples and action button.
+
+USAGE:
+{{template "technical-capability-card" $techData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$codeExamplesData := parseJSON `{
+    "Title": "Ready to start building?",
+    "Description": "Access comprehensive documentation, code examples, and SDKs to integrate Blue into your workflow.",
+    "Examples": [
+        {
+            "Type": "graphql",
+            "Label": "GraphQL",
+            "Language": "graphql",
+            "Code": "mutation CreateProject {\n  createProject(input: {\n    title: \"Q4 Marketing Campaign\"\n    type: PROJECT\n  }) {\n    id\n    title\n    createdAt\n  }\n}"
+        },
+        {
+            "Type": "python",
+            "Label": "Python SDK",
+            "Language": "python",
+            "Code": "from blue_sdk import BlueClient\n\nclient = BlueClient(api_key='your_api_key')\n\n# Create a new project\nproject = client.projects.create(\n    title='Q4 Marketing Campaign',\n    type='PROJECT'\n)\n\nprint(f'Created project: {project.id}')"
+        }
+    ],
+    "Link": {
+        "Text": "View API Docs",
+        "Url": "/api"
+    }
+}`}}
+{{template "technical-capability-card" $codeExamplesData}}
+
+Note: Common usage includes Features array and button fields,
+but component expects Examples array and Link object.
+
+DATA STRUCTURE:
+{
+    "Title": "Card title",               // Main heading (required)
+    "Description": "Card description",   // Description text (required)
+    "Examples": [                        // Code examples array (optional)
+        {
+            "Type": "unique-id",         // Unique tab identifier (required)
+            "Label": "Tab Label",        // Display label for tab (required)
+            "Language": "language",      // Syntax highlighting language (required)
+            "Code": "code example"       // Code content (required)
+        }
+    ],
+    "Link": {                            // Action button (optional)
+        "Text": "Button text",
+        "Url": "/button-link"
+    }
+}
+
+FEATURES:
+- Tabbed code examples interface
+- Syntax highlighting support
+- Active tab state management
+- Responsive design
+- Action button with arrow icon
+- Dark mode support
+- AlpineJS tab switching
+
+LAYOUT:
+- Card padding: 8 units (2rem)
+- Border radius: xl (0.75rem)
+- Section spacing: 6 units (1.5rem)
+- Button section: Top border separator
+
+STYLING:
+- Background: White (dark: gray-800)
+- Border: Gray-200 (dark: gray-700)
+- Title: 2xl font size, medium weight
+- Description: Gray-600 text
+- Active tab: Brand blue background, white text
+- Inactive tab: Gray-100 background
+- Code blocks: Prose styling
+
+TAB SYSTEM:
+- First tab active by default
+- Smooth color transitions
+- Click to switch tabs
+- Each tab shows different code example
+- Language-specific syntax highlighting
+
+BUTTON DESIGN:
+- Centered in bordered section
+- Brand blue background
+- White text with arrow icon
+- Hover state: 90% opacity
+- Padding: 6x3 units
+
+USE CASES:
+- API documentation
+- SDK showcases
+- Integration guides
+- Code example displays
+- Developer resources
+*/ -}}
 {{define "technical-capability-card"}}
 <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-8 space-y-6">
     <!-- Header -->

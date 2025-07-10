@@ -1,3 +1,84 @@
+{{- /* 
+================================================================================
+LOGO GRID LARGE COMPONENT
+================================================================================
+Displays a grid of customer/partner logos in bordered cards with optional title.
+
+USAGE:
+{{template "logo-grid-large" $logoData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$logoData := parseJSON `{
+    "title": "Trusted by 300+ government agencies and departments", 
+    "logos": [
+        { 
+            "name": "State of California", 
+            "src": "/customers/state_of_california.png" 
+        },
+        { 
+            "name": "Department of Education", 
+            "src": "/customers/department_of_education.png" 
+        },
+        { 
+            "name": "City of New York", 
+            "src": "/customers/city_of_new_york.png" 
+        },
+        { 
+            "name": "US Department of Defense", 
+            "src": "/customers/us_dod.png" 
+        }
+    ]
+}`}}
+{{template "logo-grid-large" $logoData}}
+
+DATA STRUCTURE:
+{
+    "title": "Optional section title",     // Section heading (optional)
+    "logos": [                            // Array of logo objects (required)
+        {
+            "name": "Organization Name",   // Alt text for logo (required)
+            "src": "/path/to/logo.png"     // Logo image path (required)
+        }
+    ]
+}
+
+FEATURES:
+- Large bordered cards for each logo
+- Responsive grid layout
+- Consistent logo sizing with aspect ratio preservation
+- Optional section title
+- Dark mode support
+- Lazy loading images
+- Fixed height containers
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Grid: 1 column mobile, 2 tablet, 4 desktop
+- Gap: 8 units (2rem) between cards
+- Card padding: 8 units (2rem)
+- Card height: Fixed 32 units (8rem)
+- Title margin: 8 units (2rem) bottom
+
+STYLING:
+- Card background: White (dark: gray-600)
+- Card border: Gray-200 (dark: gray-700)
+- Border radius: lg (0.5rem)
+- Title: 2xl font size, semibold, centered
+- Logo sizing: max-height/width 100%, object-contain
+
+DIFFERENCES FROM logo-grid:
+- Larger cards with borders and backgrounds
+- More padding and fixed heights
+- Better for fewer, more prominent logos
+- Ideal for key partners or major clients
+
+USE CASES:
+- Major client showcases
+- Key partner displays
+- Government/enterprise customers
+- Strategic alliance presentations
+- Testimonial sections
+*/ -}}
 {{define "logo-grid-large"}}
 <div class="w-full py-8">
     <div class="max-w-7xl mx-auto px-4">

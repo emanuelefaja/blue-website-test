@@ -1,3 +1,85 @@
+{{- /* 
+================================================================================
+FEATURES GRID SIMPLE COMPONENT
+================================================================================
+Displays a clean grid of features with optional icons, titles, and descriptions.
+
+USAGE:
+{{template "features-grid-simple" $featuresData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$featuresData := parseJSON `{
+    "Title": "Everything your team needs, nothing they don't.",
+    "Features": [
+        {
+            "Title": "Time tracking",
+            "Description": "Track time across any record. Run reports to see where time is being spent.",
+            "Icon": "clock",  // Optional: References sprite icon
+            "Url": "/features/time-tracking"  // Optional: Makes title clickable
+        },
+        {
+            "Title": "Custom fields",
+            "Description": "23 different field types to capture any type of business data you need."
+        },
+        {
+            "Title": "Integrations",
+            "Description": "Connect with 30+ tools including Slack, Teams, Google Workspace, and more.",
+            "Url": "/integrations"
+        }
+    ]
+}`}}
+{{template "features-grid-simple" $featuresData}}
+
+Note: Component uses .Features (capitalized) not .features
+
+DATA STRUCTURE:
+{
+    "Title": "Section title",            // Optional section heading
+    "Features": [                        // Array of feature objects (required)
+        {
+            "Title": "Feature name",      // Feature title (required)
+            "Description": "Description",  // Feature description (required)
+            "Icon": "icon-name",          // Optional sprite icon reference
+            "Url": "/optional-link"       // Optional link URL for title
+        }
+    ]
+}
+
+FEATURES:
+- Responsive 3-column grid layout
+- Optional section title
+- Optional icons from sprite sheet
+- Clickable feature titles (when URL provided)
+- Clean, minimal design
+- Consistent spacing and typography
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Grid: 1 column mobile, 2 columns tablet, 3 columns desktop
+- Gap: 8 units (2rem) between items
+- Section padding: 20 units (5rem) vertical
+- Title margin: 16 units (4rem) bottom
+
+STYLING:
+- Section title: 3xl-4xl font size, medium weight
+- Feature title: lg font size, semibold, gray-900
+- Description: sm font size, gray-600, relaxed leading
+- Icon container: 12x12 units, white bg, gray border
+- Icon size: 6x6 units, gray-600
+- Hover: Brand blue color and underline on linked titles
+
+ICON SYSTEM:
+- Uses SVG sprite sheet at /icons/sprite.svg
+- Icon names reference sprite IDs
+- Icons are optional per feature
+
+USE CASES:
+- Product feature lists
+- Service offerings
+- Capability overviews
+- Benefits sections
+- Tool comparisons
+*/ -}}
 {{define "features-grid-simple"}}
 <!-- Features Grid Component -->
 <section class="max-w-7xl mx-auto py-20">

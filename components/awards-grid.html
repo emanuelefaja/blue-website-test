@@ -1,17 +1,51 @@
-{{- /* Awards Grid Component 
-    Displays a grid of award badges/logos
-    
-    Usage: {{template "awards-grid" .}}
-    
-    Data structure:
-    {
-        "awards": [
-            {
-                "name": "Award Name",
-                "src": "/path/to/image.png"
-            }
-        ]
-    }
+{{- /* 
+================================================================================
+AWARDS GRID COMPONENT
+================================================================================
+Displays a responsive grid of award badges/logos with automatic spacing and sizing.
+
+USAGE:
+{{template "awards-grid" $awardsData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$awardsData := parseJSON `{
+    "awards": [
+        {
+            "name": "Crozdesk Happiest Users",
+            "src": "/awards/crozdesk-happiest-users-badge.webp"
+        },
+        {
+            "name": "Crozdesk Quality Choice", 
+            "src": "/awards/crozdesk-quality-choice-badge.webp"
+        },
+        {
+            "name": "Crozdesk Trusted Vendor",
+            "src": "/awards/crozdesk-trusted-vendor-badge.webp"
+        }
+    ]
+}`}}
+{{template "awards-grid" $awardsData}}
+
+DATA STRUCTURE:
+{
+    "awards": [                          // Array of award objects (required)
+        {
+            "name": "Award Name",        // Alt text for the award image (required)
+            "src": "/path/to/image.png"  // Path to award image file (required)
+        }
+    ]
+}
+
+FEATURES:
+- Responsive grid: 2 columns on mobile, 3 on tablet, 5 on desktop
+- Automatic image sizing with max-height constraint
+- Lazy loading for performance
+- Center alignment for all award badges
+
+STYLING:
+- Gap: 8 units (2rem) between awards
+- Max height: 24 units (6rem) per award
+- Object-fit: contain (maintains aspect ratio)
 */ -}}
 {{define "awards-grid"}}
 

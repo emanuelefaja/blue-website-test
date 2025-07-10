@@ -1,3 +1,54 @@
+{{- /* 
+================================================================================
+CALL-OUT TEXT COMPONENT
+================================================================================
+Displays a centered, large text statement for emphasis or key messaging.
+
+USAGE:
+{{template "call-out-text" dict "Text" "Your message here" "MarginBottom" "mb-16"}}
+
+EXAMPLE IMPLEMENTATIONS:
+
+1. Basic usage:
+{{template "call-out-text" 
+    dict 
+        "Text" "Our mission is to organize the world's work by building the best process management platform on the planet." 
+        "MarginBottom" ""
+}}
+
+2. With custom margin:
+{{template "call-out-text" 
+    dict 
+        "Text" "Blue is trusted by over 17,000 teams worldwide." 
+        "MarginBottom" "mb-20"
+}}
+
+DATA STRUCTURE:
+{
+    "Text": "Your call-out message",     // The text to display (required)
+    "MarginBottom": "mb-16"              // Tailwind margin class (optional, default: "")
+}
+
+FEATURES:
+- Centered text alignment
+- Maximum width constraint (4xl = 56rem)
+- Large text size (3xl = 1.875rem)
+- Dark mode support
+- Flexible bottom margin
+
+STYLING:
+- Text color: Gray-900 (dark mode: white)
+- Font size: 3xl (1.875rem / 30px)
+- Max width: 4xl (56rem / 896px)
+- Alignment: Center
+
+USE CASES:
+- Mission statements
+- Key value propositions
+- Important announcements
+- Memorable quotes
+- Section introductions
+*/ -}}
 {{define "call-out-text"}}
 <div class="text-center max-w-4xl mx-auto {{.MarginBottom}}">
     <p class="text-gray-900 dark:text-white text-3xl">{{.Text}}</p>

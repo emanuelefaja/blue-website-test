@@ -1,3 +1,83 @@
+{{- /* 
+================================================================================
+PAGE HEADING COMPONENT
+================================================================================
+Displays an animated page title with optional subtitle.
+
+USAGE:
+{{template "page-heading" dict "Title" "Your Title" "Subtitle" "Optional subtitle" "MarginBottom" "mb-16"}}
+
+EXAMPLE IMPLEMENTATIONS:
+
+1. Basic heading:
+{{template "page-heading" 
+    dict 
+        "Title" "Welcome to Blue"
+}}
+
+2. With subtitle:
+{{template "page-heading" 
+    dict 
+        "Title" "The complete process management platform" 
+        "Subtitle" "Organize work, automate processes, and grow your business with confidence."
+}}
+
+3. Custom margin:
+{{template "page-heading" 
+    dict 
+        "Title" "Our Features" 
+        "Subtitle" "Everything you need to succeed" 
+        "MarginBottom" "mb-8"
+}}
+
+DATA STRUCTURE:
+{
+    "Title": "Page title text",          // Main heading text (required)
+    "Subtitle": "Optional subtitle",     // Subtitle text (optional)
+    "MarginBottom": "mb-16"             // Custom margin class (optional, default: "mb-16")
+}
+
+FEATURES:
+- Word-by-word fade-in animation
+- Staggered animation timing (80ms per word)
+- Subtitle appears after title animation
+- Responsive text sizing
+- Dark mode support
+- AlpineJS-powered animations
+
+ANIMATION DETAILS:
+- Title words fade in sequentially
+- Each word: opacity 0→100, translateY 2→0
+- Word delay: 80ms between each
+- Subtitle delay: 100ms after start
+- Smooth transitions: 300ms for title, 800ms for subtitle
+
+LAYOUT:
+- Default bottom margin: 16 units (4rem)
+- Title margin: 3 units (0.75rem) below
+- Responsive sizing maintained
+
+STYLING:
+- Title size: 4xl (mobile) → 6xl (desktop)
+- Title weight: Medium
+- Title tracking: Tight
+- Title color: Gray-900 (dark: gray-100)
+- Subtitle size: xl (1.25rem)
+- Subtitle color: Gray-600 (dark: gray-400)
+
+TECHNICAL NOTES:
+- Uses AlpineJS x-data for state management
+- Splits title into words for animation
+- Each word wrapped in span with transition classes
+- Subtitle animation independent of title
+
+USE CASES:
+- Page headers
+- Section titles
+- Hero headings
+- Feature introductions
+- Landing page titles
+*/ -}}
 {{define "page-heading"}}
 <div class="{{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}" x-data="{ words: '{{.Title}}'.split(' '), animatedWords: [], showSubtitle: false }" x-init="words.forEach((word, i) => setTimeout(() => animatedWords.push(i), i * 80)); setTimeout(() => showSubtitle = true, 100)">
     <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-3">

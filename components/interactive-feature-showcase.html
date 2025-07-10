@@ -1,3 +1,106 @@
+{{- /* 
+================================================================================
+INTERACTIVE FEATURE SHOWCASE COMPONENT
+================================================================================
+Displays an interactive feature selector with media preview and animated navigation.
+
+USAGE:
+{{template "interactive-feature-showcase" $showcaseData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$showcaseData := parseJSON `{
+    "id": "manage-everything",
+    "Title": "Manage everything with workspaces.",
+    "Description": "Create workspaces for anything - projects, departments, clients, or processes. Each with its own workflows, permissions, and data.",
+    "Position": "right",  // "left", "right", "top", or "bottom" (default: "left")
+    "Features": [
+        {
+            "Id": "projects",
+            "Title": "Projects",
+            "VideoUrl": "/product/workspaces/projects-demo.mp4"
+        },
+        {
+            "Id": "departments", 
+            "Title": "Departments",
+            "ImageUrl": "/product/workspaces/departments.png"
+        },
+        {
+            "Id": "clients",
+            "Title": "Clients"  // Will show placeholder if no media
+        }
+    ]
+}`}}
+{{template "interactive-feature-showcase" $showcaseData}}
+
+Note: Common usage includes tabs, content, stats, and imageSrc fields,
+but component expects Features array with Id, Title, VideoUrl/ImageUrl.
+
+DATA STRUCTURE:
+{
+    "id": "unique-id",                    // Component ID (optional)
+    "Title": "Section title",             // Main heading (optional)
+    "Description": "Section description",  // Subtitle text (optional)
+    "Position": "right",                  // Layout position (optional, default: "left")
+    "Features": [                         // Array of features (required)
+        {
+            "Id": "feature-id",           // Unique feature ID (required)
+            "Title": "Feature name",      // Feature title (required)
+            "VideoUrl": "/video.mp4",     // Video path (optional)
+            "ImageUrl": "/image.png"      // Image path (optional)
+        }
+    ]
+}
+
+LAYOUT OPTIONS:
+- "left": Menu left, preview right (default)
+- "right": Preview left, menu right
+- "top": Preview top, menu grid below
+- "bottom": Menu grid top, preview below
+
+FEATURES:
+- Interactive feature selection with hover/click
+- Animated blue circle indicator
+- Smooth content transitions
+- Video autoplay support
+- Image and video previews
+- Placeholder for missing media
+- AlpineJS state management
+- Dark mode support
+
+ANIMATIONS:
+- Blue circle slides in/out on hover
+- Text padding animates with circle
+- 300ms smooth transitions
+- Hover and selection states
+
+LAYOUT DETAILS:
+- Container: max-width 7xl (80rem)
+- Section padding: 20 units (5rem) vertical
+- Title margin: 6 units (1.5rem) bottom
+- Description margin: 16 units (4rem) bottom
+- Grid gap: 8 units (2rem)
+- Preview min-height: 400px
+
+STYLING:
+- Title: 3xl-4xl font size, medium weight
+- Description: lg text size, gray-600
+- Feature title: lg font size, medium weight
+- Borders: Gray-200 (dark: gray-700)
+- Blue indicator: Brand blue color
+- Preview border: 2px, rounded-lg
+
+MEDIA HANDLING:
+- Videos: Autoplay, muted, loop, inline
+- Images: Cover fit, lazy loading
+- Placeholder: Gray background with text
+
+USE CASES:
+- Product feature showcases
+- Multi-tab demonstrations
+- Interactive tutorials
+- Feature comparisons
+- Visual feature tours
+*/ -}}
 {{define "interactive-feature-showcase"}}
 <!-- Interactive Feature Showcase Component -->
 {{$position := "left"}}

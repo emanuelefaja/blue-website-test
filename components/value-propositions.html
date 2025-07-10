@@ -1,3 +1,99 @@
+{{- /* 
+================================================================================
+VALUE PROPOSITIONS COMPONENT
+================================================================================
+Displays a two-column layout with title/description and value proposition list.
+
+USAGE:
+{{template "value-propositions" $valuePropsData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$valuePropsData := parseJSON `{
+    "Title": "One platform.<br>Endless possibilities.",
+    "Description": "Blue adapts to how you work, not the other way around. Build the perfect system for your team.",
+    "Animation": true,  // Optional, default: true
+    "ValueProps": [
+        {
+            "Title": "Infinitely customizable",
+            "Description": "23 field types, custom workflows, and flexible permissions. Make Blue work exactly how you need it to."
+        },
+        {
+            "Title": "Powerful automations",
+            "Description": "Build multi-step workflows with conditions, approvals, and integrations. No code required."
+        },
+        {
+            "Title": "Real-time insights",
+            "Description": "Dashboards that update instantly. See what's happening across your entire organization."
+        }
+    ]
+}`}}
+{{template "value-propositions" $valuePropsData}}
+
+DATA STRUCTURE:
+{
+    "Title": "Section title with <br> support",  // Main heading, supports HTML (required)
+    "Description": "Section description",        // Subtitle text (required)
+    "Animation": true,                           // Show animated dots (optional, default: true)
+    "ValueProps": [                              // Array of value propositions (required)
+        {
+            "Title": "Value prop title",          // Proposition headline (required)
+            "Description": "Description text"     // Proposition description (required)
+        }
+    ]
+}
+
+FEATURES:
+- Two-column split layout
+- Animated progress dots (optional)
+- HTML support in title (for line breaks)
+- Responsive design
+- Dark mode support
+- Scroll-triggered animation
+
+ANIMATED DOTS:
+- 5 dots connected by lines
+- Fill progressively on scroll
+- Triggered by intersection observer
+- Progress based on viewport position
+- Can be disabled with Animation: false
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Section padding: 20 units (5rem) vertical
+- Grid: 2 equal columns (stacks on mobile)
+- Left column: Title, description, optional dots
+- Right column: Value propositions list
+- Border: Right border on left column (desktop)
+
+STYLING:
+- Title: 3xl-4xl font size, medium weight
+- Title color: Gray-900 (dark: gray-100)
+- Description: lg text size, gray-600
+- Value prop title: xl font size, medium
+- Value prop spacing: 8 units between items
+- Dot animation: 300ms transitions
+
+ANIMATION PROGRESS:
+- Calculates based on element position
+- 75% viewport threshold
+- Each dot/line has specific progress point:
+  - Dot 1: 10%
+  - Line 1: 30%
+  - Dot 2: 40%
+  - Line 2: 60%
+  - Dot 3: 70%
+  - Line 3: 80%
+  - Dot 4: 90%
+  - Line 4: 95%
+  - Dot 5: 100%
+
+USE CASES:
+- Product value propositions
+- Feature benefits
+- Service advantages
+- Company differentiators
+- Platform capabilities
+*/ -}}
 {{define "value-propositions"}}
 <!-- Value Propositions Component -->
 <section class="max-w-7xl mx-auto py-20">

@@ -1,3 +1,60 @@
+{{- /* 
+================================================================================
+CHANGELOG MONTH COMPONENT
+================================================================================
+Displays a month's worth of changelog entries with a sticky month/year label.
+
+USAGE:
+{{template "changelog-month" .}}
+
+TYPICAL IMPLEMENTATION:
+Used within a range loop to display multiple months of changelog entries:
+
+{{range $changelog}}
+    {{template "changelog-month" .}}
+{{end}}
+
+EXAMPLE DATA STRUCTURE:
+{
+    "month": "December",              // Month name (required)
+    "year": "2024",                  // Year (required)
+    "changes": [                      // Array of changes (required)
+        {
+            "title": "New Feature: AI-Powered Workflows",          // Change title (required)
+            "description": "Automatically generate workflow templates based on your process descriptions using advanced AI."  // Change description (required)
+        },
+        {
+            "title": "Improved: Dashboard Performance",
+            "description": "Dashboard loading times reduced by 50% through optimized data queries and caching."
+        }
+    ]
+}
+
+FEATURES:
+- Responsive layout: Stacked on mobile, side-by-side on desktop
+- Fixed-width month label on desktop (12rem)
+- Consistent spacing between entries
+- Dark mode support
+- Clean typography with proper line heights
+
+LAYOUT:
+- Mobile: Month/year stacked above changes
+- Desktop: Month/year in left column (fixed width), changes in right column
+- Gap between columns: 32 units (8rem)
+- Bottom margin: 20 units (5rem) between months
+
+STYLING:
+- Month/Year: 2xl font size, bold, tight tracking
+- Change titles: xl font size, semibold
+- Descriptions: Regular text with relaxed leading
+- Spacing between changes: 10 units (2.5rem)
+
+USE CASES:
+- Product changelog pages
+- Release notes
+- Version history
+- Update announcements
+*/ -}}
 {{define "changelog-month"}}
 <div class="mb-20">
     <div class="flex flex-col md:flex-row md:gap-32">

@@ -1,3 +1,104 @@
+{{- /* 
+================================================================================
+FEATURES GRID COMPONENT
+================================================================================
+Displays a structured grid of features organized by sections with categories.
+
+USAGE:
+{{template "features-grid" $featuresData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$featuresData := parseJSON `{
+    "sections": [
+        {
+            "title": "Product",
+            "columns": [
+                {
+                    "items": [
+                        { "label": "Organizations", "link": "/platform/features/records" }, 
+                        { "label": "Workspaces", "link": "/platform/features/workspaces" },
+                        { "label": "Records", "link": "/platform/features/records" }
+                    ]
+                },
+                {
+                    "items": [
+                        { "label": "Custom Fields", "link": "/platform/features/custom-fields" },
+                        { "label": "Automations", "link": "/platform/features/automations" }
+                    ]
+                },
+                {
+                    "items": [
+                        { "label": "Dashboards", "link": "/platform/features/dashboards" },
+                        { "label": "Time Tracking" }  // No link = plain text
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Platform",
+            "columns": [
+                {
+                    "items": [
+                        { "label": "API", "link": "/platform/api" },
+                        { "label": "Integrations", "link": "/platform/integrations" }
+                    ]
+                }
+            ]
+        }
+    ]
+}`}}
+{{template "features-grid" $featuresData}}
+
+DATA STRUCTURE:
+{
+    "sections": [                        // Array of feature sections (required)
+        {
+            "title": "Section Title",     // Section heading (required)
+            "columns": [                   // Array of columns within section (required)
+                {
+                    "items": [             // Array of items in column (required)
+                        {
+                            "label": "Feature Name",  // Display text (required)
+                            "link": "/optional-url"   // Optional link URL
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+FEATURES:
+- Multi-section organization with category headers
+- Responsive 4-column layout (1 for title, 3 for content)
+- Optional links with hover effects
+- Flexible column distribution
+- Top border separators between sections
+- Dark mode support
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Grid: 4 columns total on desktop
+  - Column 1: Section title (fixed)
+  - Columns 2-4: Feature items (3 sub-columns)
+- Mobile: Stacked single column
+- Section spacing: 12 units (3rem) bottom margin
+- Item spacing: 6 units (1.5rem) between items
+
+STYLING:
+- Section title: lg font size, semibold
+- Feature items: Regular text, gray-600
+- Links: Hover to brand blue with underline
+- Border: Gray-200 top border per section
+- Padding top: 6 units (1.5rem) after border
+
+USE CASES:
+- Feature comparison pages
+- Product capability matrices
+- Service listings by category
+- Documentation indexes
+- Sitemap-style navigation
+*/ -}}
 {{define "features-grid"}}
 <div class="max-w-7xl mx-auto">
     {{range .sections}}

@@ -1,3 +1,72 @@
+{{- /* 
+================================================================================
+HERO VIDEO COMPONENT
+================================================================================
+Displays a full-width hero video with controls and optional mute/unmute button.
+
+USAGE:
+{{template "hero-video" dict "VideoUrl" "/path/to/video.mp4" "ShowUnmuteButton" true}}
+
+EXAMPLE IMPLEMENTATIONS:
+
+1. Basic video (no custom mute button):
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/product/hero/blue-hero-video-fast.mp4"
+}}
+
+2. With custom mute/unmute button:
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/product/demo-video.mp4" 
+        "ShowUnmuteButton" true
+}}
+
+Note: Typical usage includes VideoPoster parameter but component doesn't support it.
+The component shows browser controls regardless.
+
+DATA STRUCTURE:
+{
+    "VideoUrl": "/path/to/video.mp4",     // Video file path (required)
+    "ShowUnmuteButton": true              // Show custom mute button (optional)
+}
+
+FEATURES:
+- Full-width responsive video player
+- Autoplay with muted audio by default
+- Continuous loop playback
+- Browser native controls always visible
+- Optional custom mute/unmute button overlay
+- AlpineJS-powered mute toggle
+- Rounded corners with border
+
+LAYOUT:
+- Width: Full container width
+- Bottom margin: 16 units (4rem)
+- Border radius: 2xl (1rem)
+- Border: Gray-200
+
+CUSTOM MUTE BUTTON:
+- Position: Top-right corner (4 units from edges)
+- Background: Green when muted, black when unmuted
+- Icons: Speaker with X (muted), speaker with waves (unmuted)
+- Text label changes: "Unmute" / "Mute"
+- Smooth transitions and hover effects
+
+VIDEO ATTRIBUTES:
+- autoplay: Starts playing immediately
+- muted: Required for autoplay to work
+- loop: Continuous playback
+- playsinline: Prevents fullscreen on mobile
+- controls: Shows browser playback controls
+
+USE CASES:
+- Homepage hero sections
+- Product demonstrations
+- Background videos
+- Feature showcases
+- Landing page headers
+*/ -}}
 {{define "hero-video"}}
 <!-- Hero Video Component -->
 <section class="w-full mb-16 relative" 

@@ -1,3 +1,94 @@
+{{- /* 
+================================================================================
+TESTIMONIAL SINGLE COMPONENT
+================================================================================
+Displays a single testimonial with media (image/video) and quote side-by-side.
+
+USAGE:
+{{template "testimonial-single" dict "Quote" "..." "Name" "..." "Title" "..."}}
+
+EXAMPLE IMPLEMENTATIONS:
+
+1. With image:
+{{template "testimonial-single" 
+    dict 
+        "Quote" "Blue transformed how we manage our global operations. We've reduced project delays by 40% and improved team collaboration across 12 time zones." 
+        "Name" "Sarah Chen" 
+        "Title" "VP of Operations, Fortune 500 Tech Company" 
+        "ImageUrl" "/testimonials/sarah-chen.jpg"
+}}
+
+2. With video:
+{{template "testimonial-single" 
+    dict 
+        "Quote" "The automation features in Blue save our team 20+ hours every week. It's been a game-changer for our productivity." 
+        "Name" "Michael Rodriguez" 
+        "Title" "Director of Engineering, Startup" 
+        "VideoUrl" "/testimonials/michael-video.mp4"
+        "PosterUrl" "/testimonials/michael-poster.jpg"
+}}
+
+Note: Common usage includes LogoSrc parameter but component doesn't use it.
+Also uses Name/Title instead of Author.
+
+DATA STRUCTURE:
+{
+    "Quote": "Testimonial text",         // Customer quote (required)
+    "Name": "Person's name",            // Customer name (required)
+    "Title": "Job title, Company",      // Customer title/company (required)
+    "ImageUrl": "/path/to/image.jpg",   // Customer photo (required if no video)
+    "VideoUrl": "/path/to/video.mp4",   // Testimonial video (optional)
+    "PosterUrl": "/path/to/poster.jpg"  // Video poster frame (optional)
+}
+
+FEATURES:
+- Side-by-side layout on desktop
+- Square aspect ratio media
+- Video with mute/unmute button
+- Autoplay muted video
+- Browser video controls
+- Responsive grid layout
+- Dark mode support
+
+LAYOUT:
+- Container: Gray-50 background, rounded-2xl
+- Padding: 8 units mobile, 12 desktop
+- Grid: 12 columns total
+  - Media: 4 columns
+  - Content: 8 columns
+- Gap: 8 units mobile, 12 desktop
+- Stacks vertically on mobile
+
+MEDIA HANDLING:
+- Aspect ratio: Square (1:1)
+- Border radius: 2xl (1rem)
+- Video: Autoplay, loop, muted
+- Custom mute button overlay
+- Video controls always visible
+- Image: Cover fit, lazy loading
+
+VIDEO CONTROLS:
+- Mute button: Top-right corner
+- Green when muted, black when unmuted
+- Icon changes based on state
+- AlpineJS-powered toggle
+- Browser controls below
+
+STYLING:
+- Background: Gray-50 (dark: gray-800)
+- Quote: 2xl-4xl font size, medium weight
+- Quote color: Gray-900 (dark: gray-100)
+- Name: lg font size, semibold
+- Title: Regular text, gray-600
+- Content spacing: 6 units between elements
+
+USE CASES:
+- Customer testimonials
+- Case study highlights
+- Video testimonials
+- Success stories
+- Partner quotes
+*/ -}}
 {{define "testimonial-single"}}
 <!-- Single Testimonial Component with Image/Video Left, Content Right -->
 <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 lg:p-12">

@@ -1,3 +1,100 @@
+{{- /* 
+================================================================================
+ROADMAP BOARD COMPONENT
+================================================================================
+Displays a kanban-style roadmap board with multiple status columns.
+
+USAGE:
+{{template "roadmap-board" $roadmapData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$roadmapData := parseJSON `{
+    "ideas": [
+        {
+            "title": "Voice Assistant Integration",
+            "description": "Add voice commands for hands-free task management"
+        }
+    ],
+    "planned": [
+        {
+            "title": "AI Suggested Workflows",
+            "description": "Let AI analyze your processes and suggest automation workflows"
+        },
+        {
+            "title": "Mobile App Redesign",
+            "description": "Complete overhaul of mobile experience with new features"
+        }
+    ],
+    "inProgress": [
+        {
+            "title": "Advanced Reporting",
+            "description": "Export reports to PDF and Excel with custom branding"
+        }
+    ],
+    "testing": [
+        {
+            "title": "Two-Factor Authentication",
+            "description": "Enhanced security with TOTP-based 2FA support"
+        }
+    ]
+}`}}
+{{template "roadmap-board" $roadmapData}}
+
+Note: Component expects data in lowercase (ideas, planned, inProgress, testing)
+but common usage shows in_progress and completed. Use camelCase as shown.
+
+DATA STRUCTURE:
+{
+    "ideas": [                           // Ideas being considered (optional)
+        {
+            "title": "Feature Title",     // Feature name (required)
+            "description": "Description"  // Feature description (required)
+        }
+    ],
+    "planned": [...],                    // Features planned for development
+    "inProgress": [...],                 // Features currently in development
+    "testing": [...]                     // Features in testing phase
+}
+
+FEATURES:
+- 4-column kanban board layout
+- Responsive grid (stacks on mobile)
+- Fixed "Check out our changelog" link in Testing column
+- Minimum height columns for consistency
+- Dark mode support
+- Clean card design
+
+LAYOUT:
+- Grid: 1 column mobile, 2 tablet, 4 desktop
+- Gap: 6 units (1.5rem) between columns
+- Column min-height: 400px
+- Card spacing: 3 units (0.75rem) between cards
+- Column padding: 4 units (1rem)
+
+STYLING:
+- Column headers: lg font size, semibold, gray-700
+- Column borders: Gray-300, rounded-lg
+- Card background: Gray-50 (dark: gray-700)
+- Card border: Gray-200 (dark: gray-600)
+- Card padding: 4 units (1rem)
+- Title: Medium font weight
+- Description: Small text, gray-600
+
+SPECIAL FEATURES:
+- Changelog link card:
+  - Always visible in Testing column
+  - Blue-50 background (stays light in dark mode)
+  - Brand blue border (2px)
+  - Links to /platform/changelog
+  - Appears before other testing items
+
+USE CASES:
+- Product roadmap displays
+- Feature planning visualization
+- Development progress tracking
+- Public roadmap pages
+- Project status boards
+*/ -}}
 {{define "roadmap-board"}}
 <div class="kanban-board grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Ideas Column -->

@@ -1,3 +1,74 @@
+{{- /* 
+================================================================================
+FEATURE BENEFITS GRID COMPONENT
+================================================================================
+Displays a grid of benefit cards highlighting key advantages or features.
+
+USAGE:
+{{template "feature-benefits-grid" $benefitsData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$statCardsBenefits := parseJSON `{
+    "Benefits": [
+        {
+            "Title": "Instant Visual Clarity",
+            "Description": "Big, bold numbers with clean design. Understand your metrics at a glance."
+        },
+        {
+            "Title": "Real-Time Updates",
+            "Description": "Monitor changes as they occur. Always be informed with the latest data."
+        },
+        {
+            "Title": "Visually Engaging",
+            "Description": "Bold and clear design. Stat cards highlight critical numbers for quick assessment.",
+            "Url": "/learn-more"  // Optional: Makes the card clickable
+        }
+    ],
+    "MarginBottom": "mb-20"  // Optional: Custom bottom margin
+}`}}
+{{template "feature-benefits-grid" $statCardsBenefits}}
+
+DATA STRUCTURE:
+{
+    "Benefits": [                        // Array of benefit objects (required)
+        {
+            "Title": "Benefit Title",      // Benefit headline (required)
+            "Description": "Description",  // Benefit description (required)
+            "Url": "/optional-link"        // Optional link URL
+        }
+    ],
+    "MarginBottom": "mb-20"             // Custom margin class (optional, default: "mb-20")
+}
+
+FEATURES:
+- Responsive 3-column grid (stacks on mobile)
+- Cards with borders and padding
+- Optional clickable cards (when Url provided)
+- Hover effect on clickable cards
+- Dark mode support
+- Consistent spacing and typography
+
+LAYOUT:
+- Grid: 1 column mobile, 3 columns desktop
+- Gap: 8 units (2rem) between cards
+- Card padding: 6 units (1.5rem)
+- Default bottom margin: 20 units (5rem)
+
+STYLING:
+- Background: White (dark: gray-800)
+- Border: Gray-200 (dark: gray-700)
+- Hover border: Brand blue (for clickable cards)
+- Title: lg font size, semibold
+- Description: Regular text, gray-600
+- Border radius: lg (0.5rem)
+
+USE CASES:
+- Feature highlights
+- Product benefits
+- Value propositions
+- Service advantages
+- Key differentiators
+*/ -}}
 {{define "feature-benefits-grid"}}
 <!-- Feature Benefits Grid Component -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-20{{end}}">

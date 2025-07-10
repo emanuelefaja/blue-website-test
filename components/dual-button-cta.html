@@ -1,3 +1,61 @@
+{{- /* 
+================================================================================
+DUAL BUTTON CTA COMPONENT
+================================================================================
+A prominent call-to-action section with title and two buttons (primary and secondary).
+
+USAGE:
+{{template "dual-button-cta" $ctaData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$ctaData := parseJSON `{
+    "Title": "Ready to see why 17,000 teams switched to Blue?",
+    "PrimaryText": "Get started",
+    "PrimaryUrl": "/contact/sales",
+    "SecondaryText": "Take product tour",
+    "SecondaryUrl": "/product-tour"
+}`}}
+{{template "dual-button-cta" $ctaData}}
+
+Note: The component incorrectly uses .PrimaryText/.SecondaryText in template
+but expects .PrimaryButtonText/.SecondaryButtonText in data. Use the shorter form:
+
+DATA STRUCTURE:
+{
+    "Title": "Your CTA headline",          // Main headline text (required)
+    "PrimaryText": "Primary action",       // Primary button text (optional)
+    "PrimaryUrl": "/primary-link",         // Primary button URL (required if PrimaryText)
+    "SecondaryText": "Secondary action",   // Secondary button text (optional)
+    "SecondaryUrl": "/secondary-link"      // Secondary button URL (required if SecondaryText)
+}
+
+FEATURES:
+- Responsive layout: Stacked on mobile, side-by-side on desktop
+- Blue background with rounded corners
+- Primary button with arrow icon
+- Secondary button with outline style
+- Both buttons are optional
+- Dark mode support
+
+LAYOUT:
+- Background: Blue-50 (dark: blue-950/30)
+- Border radius: 3xl (1.5rem)
+- Padding: 6 units mobile, 12 units tablet, 32 units desktop
+- Button gap: 4 units (1rem)
+
+STYLING:
+- Title: 2xl-3xl font size, medium weight
+- Primary button: Brand blue background, white text, arrow icon
+- Secondary button: Blue outline, transparent background
+- Hover states for both buttons
+- Smooth transitions (150ms)
+
+USE CASES:
+- End of page CTAs
+- Feature section CTAs
+- Conversion prompts
+- Demo/trial signups
+*/ -}}
 {{define "dual-button-cta"}}
 <!-- Dual Button CTA Component -->
 <section class="bg-blue-50 dark:bg-blue-950/30 rounded-3xl p-6 md:p-12 lg:p-32">

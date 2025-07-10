@@ -1,3 +1,98 @@
+{{- /* 
+================================================================================
+FAQ SECTIONS COMPONENT
+================================================================================
+Displays categorized FAQ items with expandable/collapsible answers using AlpineJS.
+
+USAGE:
+{{template "faq-sections" $faqData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$faqData := parseJSON `{
+    "categories": [
+        {
+            "id": "general",
+            "name": "General Questions",
+            "questions": [
+                {
+                    "question": "What is Blue?",
+                    "answer": "Blue is a process management platform that helps teams organize work, automate processes, and track everything in one place. It combines task management, workflow automation, and business intelligence into a single, unified system."
+                },
+                {
+                    "question": "How much does Blue cost?",
+                    "answer": "Blue offers flexible pricing starting at $15/user/month. We have plans for teams of all sizes, from small startups to large enterprises. All plans include unlimited workspaces, records, and automations."
+                }
+            ]
+        },
+        {
+            "id": "technical",
+            "name": "Technical Questions",
+            "questions": [
+                {
+                    "question": "What integrations does Blue support?",
+                    "answer": "Blue integrates with 30+ popular tools including Slack, Microsoft Teams, Google Workspace, Zapier, and more. You can also use our GraphQL API to build custom integrations."
+                }
+            ]
+        }
+    ]
+}`}}
+{{template "faq-sections" $faqData}}
+
+DATA STRUCTURE:
+{
+    "categories": [                         // Array of FAQ categories (required)
+        {
+            "id": "category-id",           // HTML anchor ID for navigation (required)
+            "name": "Category Name",       // Display name of category (required)
+            "questions": [                  // Array of Q&A pairs (required)
+                {
+                    "question": "Question text",  // The question (required)
+                    "answer": "Answer text"       // The answer, supports line breaks (required)
+                }
+            ]
+        }
+    ]
+}
+
+Note: The implementation expects .categories but example shows .sections. Use .categories.
+
+FEATURES:
+- Categorized FAQ sections with visual separation
+- Expandable/collapsible answers with smooth animations
+- Rotating chevron icon indicates open/closed state
+- ARIA attributes for accessibility
+- Preserves line breaks in answers
+- Dark mode support
+- Each category has unique anchor ID for deep linking
+
+LAYOUT:
+- Section background: Gray-50 (dark: gray-800)
+- Question background: White (dark: gray-700)
+- Border radius: lg (0.5rem)
+- Section padding: 6 units (1.5rem)
+- Question padding: 6 units (1.5rem)
+- Space between categories: 8 units (2rem)
+- Space between questions: 4 units (1rem)
+
+STYLING:
+- Category title: 2xl font size, semibold
+- Question text: lg font size, medium weight
+- Answer text: Prose styling with dark mode support
+- Chevron icon: Rotates 180° when expanded
+- Smooth transitions for expand/collapse
+
+INTERACTIVITY:
+- Click anywhere on question bar to toggle
+- AlpineJS handles state management
+- Transition animations on enter/leave
+- Maintains whitespace formatting in answers
+
+USE CASES:
+- Help centers
+- Product documentation
+- Support pages
+- Onboarding guides
+*/ -}}
 {{define "faq-sections"}}
 <div class="space-y-8">
     {{range .categories}}

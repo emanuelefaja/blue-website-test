@@ -1,3 +1,97 @@
+{{- /* 
+================================================================================
+PRODUCT GRID COMPONENT
+================================================================================
+Displays a grid of product screenshots or features with borders.
+
+USAGE:
+{{template "product-grid" $productGridData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$productGridData := parseJSON `{
+    "Products": [
+        {
+            "ImageUrl": "/product/workspaces/workspaces-board.jpg",
+            "Title": "Workspaces Board View",
+            "Description": "Kanban-style boards for visual project management",
+            "BorderRight": true,
+            "BorderBottom": true
+        },
+        {
+            "ImageUrl": "/product/dashboards/pie-chart.png",
+            "Title": "Dashboard Pie Chart",
+            "Description": "Visualize data with interactive charts",
+            "BorderRight": false,
+            "BorderBottom": true
+        },
+        {
+            "ImageUrl": "/product/automations/workflow-builder.png",
+            "Title": "Workflow Builder",
+            "Description": "Drag-and-drop automation creation",
+            "BorderRight": true,
+            "BorderBottom": false
+        },
+        {
+            "ImageUrl": "/product/records/custom-fields.png",
+            "Title": "Custom Fields",
+            "Description": "23 field types for any data need",
+            "BorderRight": false,
+            "BorderBottom": false
+        }
+    ]
+}`}}
+{{template "product-grid" $productGridData}}
+
+Note: Component expects .Products but common usage shows .items. Use .Products.
+
+DATA STRUCTURE:
+{
+    "Products": [                         // Array of product items (required)
+        {
+            "Title": "Product Title",      // Product name (required)
+            "Description": "Description",  // Product description (required)
+            "ImageUrl": "/path/to/image",  // Screenshot path (required)
+            "BorderBottom": true,          // Show bottom border (required)
+            "BorderRight": true            // Show right border on desktop (required)
+        }
+    ]
+}
+
+FEATURES:
+- 2x2 grid layout on desktop
+- Conditional borders for grid effect
+- Image containers with consistent sizing
+- Title and description for each item
+- Responsive stacking on mobile
+- Dark mode support
+
+LAYOUT:
+- Grid: 1 column mobile, 2 columns desktop
+- Gap: 0 (borders create visual separation)
+- Item padding: 8 units (2rem)
+- Image container height: 48 units (12rem)
+
+STYLING:
+- Title: lg font size, bold, gray-900
+- Description: sm font size, gray-600
+- Description margin: 6 units (1.5rem) bottom
+- Image container: Gray-100 background
+- Border color: Gray-200 (dark: gray-700)
+- Image border radius: lg (0.5rem)
+
+BORDER LOGIC:
+- BorderBottom: Adds bottom border
+- BorderRight: Adds right border (desktop only)
+- Typically: Top-left (true, true), Top-right (false, true),
+  Bottom-left (true, false), Bottom-right (false, false)
+
+USE CASES:
+- Product feature showcases
+- Screenshot grids
+- Feature comparisons
+- Visual documentation
+- Portfolio displays
+*/ -}}
 {{define "product-grid"}}
 <!-- Product Grid Component -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">

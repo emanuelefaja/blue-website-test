@@ -1,3 +1,103 @@
+{{- /* 
+================================================================================
+FEATURE VIDEO COMPONENT
+================================================================================
+Displays a feature showcase with video and text content side-by-side.
+
+USAGE:
+{{template "feature-video" $featureData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$automateData := parseJSON `{
+    "id": "automation-saves-time",
+    "Title": "Automate everything.",
+    "Description": "Set up custom workflows that save 10+ hours per week. From simple reminders to complex multi-step processes.",
+    "VideoUrl": "/product/automations/automations-hero.mp4",
+    "VideoPosition": "right",  // "left" or "right" (default: "right")
+    "Button": {
+        "Text": "Learn more",
+        "Url": "/platform/features/automations"
+    },
+    "SeeAlso": {
+        "Heading": "Related features",  // Optional custom heading
+        "Links": [
+            {
+                "Text": "Workflow Templates",
+                "Url": "/templates",
+                "Description": "- Pre-built automation templates"
+            },
+            {
+                "Text": "API Documentation",
+                "Url": "/api"
+            }
+        ]
+    }
+}`}}
+{{template "feature-video" $automateData}}
+
+Note: The implementation uses different field names than typical usage:
+- Use .VideoUrl instead of .videoSrc
+- Use .VideoPosition instead of .alignment
+- Component doesn't support .videoPoster (poster frames)
+
+DATA STRUCTURE:
+{
+    "id": "unique-id",                    // Unique identifier (optional)
+    "Title": "Feature Title",             // Main headline (required)
+    "Description": "Feature description",  // Description text (required)
+    "VideoUrl": "/path/to/video.mp4",     // Video file path (required)
+    "VideoPosition": "right",             // "left" or "right" (optional, default: "right")
+    "Button": {                           // Optional CTA button
+        "Text": "Button text",
+        "Url": "/button-link"
+    },
+    "SeeAlso": {                          // Optional related links section
+        "Heading": "Custom heading",       // Optional heading (default: "See also")
+        "Links": [
+            {
+                "Text": "Link text",
+                "Url": "/link-url",
+                "Description": "Optional description"
+            }
+        ]
+    }
+}
+
+FEATURES:
+- Responsive layout with video/text side-by-side
+- Lazy loading video with intersection observer
+- Autoplay, muted, looping video
+- Optional CTA button with arrow icon
+- Optional "See also" links section
+- Configurable video position (left/right)
+- Placeholder shown while video loads
+- Dark mode support
+
+LAYOUT:
+- Grid: 2 columns on desktop, stacked on mobile
+- Gap: 8 units (2rem) between columns
+- Video border radius: 2xl (1rem)
+- Vertical spacing in text: 4 units (1rem)
+
+STYLING:
+- Title: 2xl font size, medium weight
+- Description: Regular text, gray-600
+- Button: Brand blue with arrow icon
+- See also links: Brand blue, hover effect
+- Video placeholder: Gray-100 background
+
+INTERACTIVITY:
+- Video loads when scrolled into view
+- Autoplay with muted audio
+- Continuous loop playback
+- Hover states on interactive elements
+
+USE CASES:
+- Feature demonstrations
+- Product showcases
+- How-it-works sections
+- Visual feature explanations
+*/ -}}
 {{define "feature-video"}}
 <!-- Feature Video Component -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"

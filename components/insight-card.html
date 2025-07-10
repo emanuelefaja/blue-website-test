@@ -1,3 +1,68 @@
+{{- /* 
+================================================================================
+INSIGHT CARD COMPONENT
+================================================================================
+Displays an article/blog post card with image, title, category, and date.
+
+USAGE:
+{{template "insight-card" .}}
+
+TYPICAL IMPLEMENTATION:
+Used within a range loop to display multiple insight articles:
+
+{{range .Insights}}
+    {{template "insight-card" .}}
+{{end}}
+
+EXAMPLE DATA STRUCTURE:
+{
+    "URL": "/insights/automating-project-management",     // Article URL (required)
+    "Title": "How to Automate Your Project Management",   // Article title (required)
+    "Category": "Productivity",                          // Article category (required)
+    "PNGPath": "/insights/images/automation-hero.png",   // Cover image path (required)
+    "Date": "2024-12-15T00:00:00Z"                      // Publication date (optional)
+}
+
+FEATURES:
+- Image with hover zoom effect
+- Category-based filtering support
+- Date formatting with custom filter
+- Responsive card layout
+- Dark mode support
+- Smooth hover transitions
+- Lazy loading images
+
+LAYOUT:
+- Image container: Fixed height 64 units (16rem)
+- Image border radius: lg (0.5rem)
+- Content spacing: 6 units (1.5rem) below image
+- Title margin: 3 units (0.75rem) bottom
+
+STYLING:
+- Image: Full cover with scale transform on hover
+- Title: Medium font weight, hover to brand blue
+- Category: Small text, medium weight, gray-600
+- Date: Small text, gray-400
+- Transitions: 300ms for hover effects
+
+INTERACTIVITY:
+- Entire card is clickable link
+- Image scales 110% on hover
+- Title color changes to brand blue on hover
+- Works with AlpineJS filtering (activeCategory)
+
+FILTERING:
+- Uses x-show with category filtering
+- Supports 'all' category or specific category
+- Requires filterCategory function in parent scope
+
+USE CASES:
+- Blog post listings
+- Article grids
+- Resource libraries
+- News sections
+- Content hubs
+*/ -}}
 {{define "insight-card"}}
 <a href="{{.URL}}" 
    class="cursor-pointer group block"

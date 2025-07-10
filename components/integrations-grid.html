@@ -1,3 +1,97 @@
+{{- /* 
+================================================================================
+INTEGRATIONS GRID COMPONENT
+================================================================================
+Displays a searchable grid of integration partners with logos and names.
+
+USAGE:
+{{template "integrations-grid" $integrationData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$integrationData := parseJSON `{
+    "integrations": [
+        {
+            "name": "Slack",
+            "src": "/integrations/slack.svg"
+        },
+        {
+            "name": "Microsoft Teams",
+            "src": "/integrations/microsoft-teams.svg"
+        },
+        {
+            "name": "Google Workspace",
+            "src": "/integrations/google-workspace.svg"
+        },
+        {
+            "name": "Zapier",
+            "src": "/integrations/zapier.svg"
+        },
+        {
+            "name": "Salesforce",
+            "src": "/integrations/salesforce.svg"
+        },
+        {
+            "name": "HubSpot",
+            "src": "/integrations/hubspot.svg"
+        }
+    ]
+}`}}
+{{template "integrations-grid" $integrationData}}
+
+DATA STRUCTURE:
+{
+    "integrations": [                    // Array of integration objects (required)
+        {
+            "name": "Integration Name",   // Display name and search term (required)
+            "src": "/path/to/logo.svg"    // Logo image path (required)
+        }
+    ]
+}
+
+FEATURES:
+- Real-time search filtering with AlpineJS
+- Responsive grid layout (2-6 columns)
+- Smooth enter/leave transitions
+- Centered logo display with consistent sizing
+- Dark mode support
+- Case-insensitive search
+- Lazy loading logos
+
+SEARCH FUNCTIONALITY:
+- Search icon from sprite sheet
+- Filters integrations by name
+- Shows all when search is empty
+- Smooth transitions when filtering
+
+LAYOUT:
+- Container: max-width 7xl (80rem)
+- Search bar: max-width md (28rem), centered
+- Grid: 2 columns mobile, 4 tablet, 6 desktop
+- Gap: 6 units (1.5rem) between cards
+- Card padding: 6 units (1.5rem)
+- Logo height: Fixed 12 units (3rem)
+
+STYLING:
+- Card background: White (dark: gray-800)
+- Card border: Gray-200 (dark: gray-700)
+- Hover: Shadow effect
+- Search input: Gray-100 background (dark: gray-800)
+- Focus states: White background, gray border
+- Border radius: lg (0.5rem)
+
+TRANSITIONS:
+- Card appear: Scale from 95% to 100%, fade in
+- Card disappear: Scale from 100% to 95%, fade out
+- Duration: 200ms enter, 150ms leave
+- Shadow transition: 200ms
+
+USE CASES:
+- Integration marketplaces
+- Partner showcases
+- App directories
+- Technology stacks
+- Ecosystem displays
+*/ -}}
 {{define "integrations-grid"}}
 <!-- Integration Search and Grid -->
 <div x-data="{ 

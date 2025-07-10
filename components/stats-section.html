@@ -1,3 +1,91 @@
+{{- /* 
+================================================================================
+STATS SECTION COMPONENT
+================================================================================
+Displays animated statistics that count up when scrolled into view.
+
+USAGE:
+{{template "stats-section" $statsData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$statsData := parseJSON `{
+    "Title": "Blue is mission-critical infrastructure for thousands of teams.",
+    "Stats": [
+        { "Number": "17K+", "Description": "Teams trust Blue" },
+        { "Number": "2M+", "Description": "Records created" },
+        { "Number": "99.9%", "Description": "Uptime SLA" }
+    ],
+    "MarginBottom": "mb-20"  // Optional
+}`}}
+{{template "stats-section" $statsData}}
+
+Note: Component expects .Stats and .Title (capitalized), not .stats/.title
+
+DATA STRUCTURE:
+{
+    "Title": "Section title",            // Section heading (required)
+    "Stats": [                          // Array of stat objects (required)
+        {
+            "Number": "17K+",            // Display number with suffix (required)
+            "Description": "Description"  // Stat description (required)
+        }
+    ],
+    "MarginBottom": "mb-20"             // Custom margin class (optional)
+}
+
+SUPPORTED NUMBER FORMATS:
+- Plain numbers: "1000" → counts to 1,000
+- With K suffix: "17K+" → counts to 17K+
+- With M suffix: "2M+" → counts to 2M+
+- With B suffix: "1B+" → counts to 1B+
+- Percentages: "99.9%" → counts to 99.9%
+- Decimals preserved for percentages
+
+FEATURES:
+- Animated count-up effect on scroll
+- Smart number parsing and formatting
+- Easing function for smooth animation
+- Intersection observer for trigger
+- Supports K/M/B suffixes
+- Percentage handling with decimals
+- AlpineJS-powered animation
+- Dark mode support
+
+ANIMATION DETAILS:
+- Triggers when 50% visible in viewport
+- Ease-out cubic easing function
+- Updates on scroll while in view
+- Preserves original number format
+- Smooth progression from 0 to target
+
+LAYOUT:
+- Container: max-width 6xl (72rem)
+- Section padding: 16 units (4rem) vertical
+- Title margin: 16 units (4rem) bottom
+- Grid: 1 column mobile, 3 desktop
+- Gap: 8 units mobile, 12 desktop
+
+STYLING:
+- Title: 3xl font size, centered
+- Numbers: 4xl-6xl font size, medium weight
+- Number color: Gray-900 (dark: gray-100)
+- Description: lg font size, gray-600
+- Tight tracking on numbers
+
+TECHNICAL IMPLEMENTATION:
+- Uses x-intersect for viewport detection
+- Progress calculated based on scroll position
+- Numbers update via requestAnimationFrame
+- Handles number parsing and formatting
+- Maintains original suffix formatting
+
+USE CASES:
+- Company statistics
+- Performance metrics
+- Achievement showcases
+- Growth indicators
+- Trust signals
+*/ -}}
 {{define "stats-section"}}
 <!-- Stats Section Component -->
 <section class="py-16{{if .MarginBottom}} {{.MarginBottom}}{{end}}">
