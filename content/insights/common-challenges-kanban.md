@@ -14,7 +14,7 @@ We think that [Kanban boards](/platform/features/kanban-board) are a fantastic w
 
 For too long, we've all been using excel spreadsheets and todo lists to manage work. 
 
-Kanban came into play in post-war Japan in the 1940s, and [we wrote a comprehensive writeup on the history if you're interested.](kanban-board-history)
+Kanban came into play in post-war Japan in the 1940s, and [we wrote a comprehensive writeup on the history if you're interested.](/insights/kanban-board-history)
 
 However, while many organizations *want* to implement Kanban, not that many do. The benefits of Kanban are well established, but many organizations face common challenges, and today we will cover some of the most common. 
 
