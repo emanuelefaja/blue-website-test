@@ -1,0 +1,18 @@
+{{define "feature-benefits-grid"}}
+<!-- Feature Benefits Grid Component -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-20{{end}}">
+    {{range .Benefits}}
+    {{if .Url}}
+    <a href="{{.Url}}" class="block bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors cursor-pointer">
+        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{{.Title}}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{.Description}}</p>
+    </a>
+    {{else}}
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6">
+        <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{{.Title}}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{.Description}}</p>
+    </div>
+    {{end}}
+    {{end}}
+</div>
+{{end}}
