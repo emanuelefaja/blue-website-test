@@ -65,15 +65,15 @@
 </div>
 
 <!-- Scroll Indicator -->
-<div class="fixed top-0 left-0 w-full h-1 z-[60]"
-     :class="newsBarDismissed ? '' : 'md:top-10'">
+<div class="fixed top-0 left-0 w-full h-1 z-[60] md:top-10"
+     :class="newsBarDismissed ? 'md:!top-0' : ''">
     <div class="h-1 bg-gradient-to-r from-blue-100 transition-all duration-300 ease-out"
          :style="'width: ' + scrollProgress + '%; background-image: linear-gradient(to right, #dbeafe, #00a0d2);'"></div>
 </div>
 
 <!-- Top Navigation Bar -->
-<header class="bg-white dark:bg-gray-900 backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-70 fixed left-0 right-0 z-50 h-16 transition-all duration-300"
-        :class="newsBarDismissed ? 'top-0' : 'top-0 md:top-10'"
+<header class="bg-white dark:bg-gray-900 backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-70 fixed left-0 right-0 z-50 h-16 transition-all duration-300 top-0 md:top-10"
+        :class="newsBarDismissed ? 'md:!top-0' : ''"
         @keydown.escape="mobileMenuOpen = false">
     <div class="relative flex items-center justify-between px-4 h-full">
         <!-- Logo and Toggle -->
