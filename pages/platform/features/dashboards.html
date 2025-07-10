@@ -1,0 +1,223 @@
+<div class="py-20">
+    {{template "page-heading" 
+        dict 
+            "Title" "Get realtime dashboards for all your metrics" 
+            "Subtitle" "Collaborate effortlessly, edit records instantly, and manage millions of rows with our intuitive spreadsheet-style interface." 
+            "MarginBottom" "mb-16"
+    }}
+
+    <!-- Hero Video -->
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "dashboards-hero"
+    }}
+
+    <!-- Stats Section -->
+    {{$statsData := parseJSON `{
+        "Title": "Make data-driven decisions faster",
+        "Description": "Transform complex data into actionable insights with powerful visualization tools.",
+        "Stats": [
+            {
+                "Number": "50+",
+                "Label": "Chart types",
+                "Description": "Visualize data your way"
+            },
+            {
+                "Number": "Real-time",
+                "Label": "Updates",
+                "Description": "Always see the latest data"
+            },
+            {
+                "Number": "Unlimited",
+                "Label": "Dashboards",
+                "Description": "Create as many as you need"
+            }
+        ]
+    }`}}
+    {{template "stats-section" $statsData}}
+
+    <!-- Stat Cards Feature -->
+    {{$statCardsFeature := parseJSON `{
+        "Title": "Stat Cards turn your data into one clear metric",
+        "Description": "Distill your complex data into one simple, digestible metric that is easy to understand at a glance.",
+        "VideoUrl": "/testvideo2.mp4",
+        "VideoPosition": "right"
+    }`}}
+    {{template "feature-video" $statCardsFeature}}
+
+    <!-- Stat Cards Benefits Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{$statCardsBenefits := parseJSON `{
+            "Benefits": [
+                {
+                    "Title": "Instant Overview",
+                    "Description": "View key metrics quickly. Data is summarized to sharpen focus and track progress."
+                },
+                {
+                    "Title": "Real-Time Updates",
+                    "Description": "Monitor changes as they occur. Always be informed with the latest data."
+                },
+                {
+                    "Title": "Visually Engaging",
+                    "Description": "Bold and clear design. Stat cards highlight critical numbers for quick assessment."
+                }
+            ],
+            "MarginBottom": "mb-20"
+        }`}}
+        {{template "feature-benefits-grid" $statCardsBenefits}}
+    </div>
+
+    <!-- Pie Charts Feature -->
+    {{$pieChartsFeature := parseJSON `{
+        "Title": "Pie Charts help you spot where to focus",
+        "Description": "Visualize data proportions instantly to prioritize efforts and resources efficiently.",
+        "VideoUrl": "/testvideo2.mp4",
+        "VideoPosition": "left"
+    }`}}
+    {{template "feature-video" $pieChartsFeature}}
+
+    <!-- Pie Charts Benefits Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20"> 
+        {{$pieChartsBenefits := parseJSON `{ 
+            "Benefits": [ 
+                { 
+                    "Title": "Visual Breakdown", 
+                    "Description": "View percentages and amounts together. Each slice shows size and value." 
+                }, 
+                { 
+                    "Title": "Flexible Totals", 
+                    "Description": "Customize how you total—average, count, max, min, or sum." 
+                }, 
+                { 
+                    "Title": "Color Insights", 
+                    "Description": "Color segments for quick trend spotting. Clear, distinct, informative." 
+                } 
+            ], 
+            "MarginBottom": "mb-20" 
+        }`}} 
+        {{template "feature-benefits-grid" $pieChartsBenefits}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Visual Breakdown</h3>
+                <p class="text-gray-600 dark:text-gray-400">View percentages and amounts together. Each slice shows size and value.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Flexible Totals</h3>
+                <p class="text-gray-600 dark:text-gray-400">Customize how you totalaverage, count, max, min, or sum.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Color Insights</h3>
+                <p class="text-gray-600 dark:text-gray-400">Color segments for quick trend spotting. Clear, distinct, informative.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bar Charts Feature -->
+    {{$barChartsFeature := parseJSON `{
+        "Title": "Bar Charts allow you to spot trends over time",
+        "Description": "Track trends over time with precision. Blue's bar charts are updated automatically, giving you the insight to make data-driven decisions.",
+        "VideoUrl": "/testvideo2.mp4",
+        "VideoPosition": "right"
+    }`}}
+    {{template "feature-video" $barChartsFeature}}
+
+    <!-- Bar Charts Benefits Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Visual Breakdown</h3>
+                <p class="text-gray-600 dark:text-gray-400">View percentages and amounts together. Each slice shows size and value.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Flexible Totals</h3>
+                <p class="text-gray-600 dark:text-gray-400">Customize how you totalaverage, count, max, min, or sum.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Color Insights</h3>
+                <p class="text-gray-600 dark:text-gray-400">Color segments for quick trend spotting. Clear, distinct, informative.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    {{$ctaData := parseJSON `{
+        "Title": "Have clear insights with your data",
+        "Description": "Centralize your data for accurate, up-to-date information and streamlined workflows.",
+        "PrimaryButtonText": "Try it Free",
+        "PrimaryButtonUrl": "/signup",
+        "SecondaryButtonText": "Book a Demo",
+        "SecondaryButtonUrl": "/demo"
+    }`}}
+    {{template "dual-button-cta" $ctaData}}
+
+    <!-- FAQ Section -->
+    {{$faqData := parseJSON `{
+        "Categories": [
+            {
+                "Title": "Dashboard Features",
+                "Questions": [
+                    {
+                        "Question": "What types of charts are available in Blue's dashboards?",
+                        "Answer": "Blue offers a comprehensive suite of visualization options including stat cards, pie charts, bar charts, line graphs, area charts, scatter plots, and more. Each chart type is designed to present your data in the most meaningful way possible."
+                    },
+                    {
+                        "Question": "Can I combine data from multiple projects in a single dashboard?",
+                        "Answer": "Yes! Blue allows you to create cross-project dashboards that aggregate data from multiple sources. This gives you a complete view of your organization's performance in one centralized location."
+                    },
+                    {
+                        "Question": "How can I share dashboards with my team members?",
+                        "Answer": "Dashboards can be shared with specific team members or groups through Blue's permission system. You can control who can view, edit, or manage each dashboard, ensuring the right people have access to the right information."
+                    }
+                ]
+            },
+            {
+                "Title": "Sharing & Customization",
+                "Questions": [
+                    {
+                        "Question": "Can I share dashboards with people outside my organization?",
+                        "Answer": "Yes, Blue allows you to create public dashboard links that can be shared with external stakeholders, clients, or partners. You can control which data is visible and set expiration dates for added security."
+                    },
+                    {
+                        "Question": "What filtering options are available for dashboards?",
+                        "Answer": "Blue provides powerful filtering capabilities including date ranges, custom fields, tags, status, assignees, and more. You can save filter presets and apply them across multiple charts for consistent data views."
+                    },
+                    {
+                        "Question": "Can I customize the layout of my dashboard?",
+                        "Answer": "Absolutely! Blue's dashboards feature a drag-and-drop interface that lets you arrange charts, resize widgets, and create the perfect layout for your needs. You can also save multiple layout configurations."
+                    }
+                ]
+            },
+            {
+                "Title": "Support",
+                "Questions": [
+                    {
+                        "Question": "How can I provide feedback or suggestions for the dashboard feature?",
+                        "Answer": "We love hearing from our users! You can submit feedback through the in-app feedback button, join our community forum, or reach out to our support team directly. Your input helps us continuously improve Blue's dashboard capabilities."
+                    }
+                ]
+            }
+        ]
+    }`}}
+    {{template "faq-sections" $faqData}}
+
+    <!-- Resources Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">Learn More About Dashboards</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a href="/docs/dashboards/getting-started" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Getting Started Guide</h3>
+                <p class="text-gray-600 dark:text-gray-400">Learn how to create your first dashboard and explore basic features.</p>
+            </a>
+            <a href="/insights/data-visualization-best-practices" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Data Visualization Best Practices</h3>
+                <p class="text-gray-600 dark:text-gray-400">Tips for creating effective and insightful data visualizations.</p>
+            </a>
+            <a href="/insights/dashboard-performance-optimization" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Performance Optimization</h3>
+                <p class="text-gray-600 dark:text-gray-400">Best practices for building fast-loading, efficient dashboards.</p>
+            </a>
+        </div>
+    </section>
+</div>

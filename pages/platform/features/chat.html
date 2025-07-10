@@ -1,0 +1,258 @@
+<div class="py-20">
+    {{template "page-heading" dict
+        "Title" "Boost collaboration with topic-specific chats"
+        "Subtitle" "Keep conversations focused and searchable with dedicated threads for every subject, directly integrated into your workflows."
+        "MarginBottom" "mb-16"
+    }}
+
+    {{template "hero-video" dict
+        "VideoUrl" "/product/chat-hero.mp4"
+        "ShowUnmuteButton" true
+        "Id" "chat-hero-video"
+    }}
+
+    <div class="mt-20 mb-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">
+                    Chat that is built for clarity
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Drop the all day meeting, keep topics on chat and focus on what matters.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features Grid -->
+    <div class="max-w-7xl mx-auto">
+        {{template "feature-benefits-grid" parseJSON `{
+            "Benefits": [
+                {
+                    "Title": "Topic Based",
+                    "Description": "Create multiple chats for different topics within projects."
+                },
+                {
+                    "Title": "Powerful Search",
+                    "Description": "Easily find and retrieve past conversations and shared information."
+                },
+                {
+                    "Title": "Rich Media Support",
+                    "Description": "Share images, files, and embed YouTube videos directly in chats."
+                },
+                {
+                    "Title": "Mention Notifications",
+                    "Description": "@mention team members to notify them of important messages."
+                },
+                {
+                    "Title": "Message Editing",
+                    "Description": "Edit your messages to correct mistakes or update information."
+                },
+                {
+                    "Title": "Real-Time Updates",
+                    "Description": "Experience instant message delivery and live updates for seamless collaboration."
+                }
+            ],
+            "MarginBottom": "mb-20"
+        }`}}
+    </div>
+
+    <!-- Feature Video Section - Topic-Based Chats -->
+    {{template "feature-video" dict
+        "Title" "Organize discussions by topic"
+        "Description" "Create dedicated chat threads for different subjects, keeping conversations focused and easy to follow. No more scrolling through endless messages to find what you need."
+        "VideoUrl" "/product/chat-topics.mp4"
+        "VideoPosition" "right"
+    }}
+
+    <!-- Feature Video Section - Rich Media and Collaboration -->
+    {{template "feature-video" dict
+        "Title" "Share more than just text"
+        "Description" "Enhance your conversations with rich media support. Share images, attach files, and embed YouTube videos directly in your chats. Collaborate visually and keep all context in one place."
+        "VideoUrl" "/product/chat-media.mp4"
+        "VideoPosition" "left"
+        "Features" (parseJSON `[
+            {"text": "Drag and drop file uploads"},
+            {"text": "Inline image previews"},
+            {"text": "YouTube video embedding"},
+            {"text": "Document attachments with preview"}
+        ]`)
+    }}
+
+    <!-- Feature Video Section - Search and History -->
+    {{template "feature-video" dict
+        "Title" "Never lose important conversations"
+        "Description" "Powerful search capabilities let you quickly find past discussions, shared files, and important decisions. All chat history is preserved and searchable, creating a valuable knowledge base for your team."
+        "VideoUrl" "/product/chat-search.mp4"
+        "VideoPosition" "right"
+    }}
+
+    <!-- Testimonial -->
+    <div class="max-w-7xl mx-auto mt-20 mb-20">
+        {{template "testimonial-single" dict
+            "Quote" "With Blue we are able to manage our clients' projects with ease, the tool is flexible enough to build sophisticated workflows and at the same time simple enough for our team and clients to jump right in with minimal guidance. After trying dozens of PM tools, Blue is the one I keep coming back to."
+            "Name" "Joseph Katsnelson"
+            "Title" "Founder of Starrd"
+            "ImageUrl" "/testimonials/joseph-katsnelson.jpg"
+        }}
+    </div>
+
+    <!-- Additional Features Section -->
+    <div class="max-w-7xl mx-auto mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 text-center mb-12">
+            Everything you need for team communication
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Notification Management -->
+            <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Smart Notifications</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Get notified only when mentioned or when activity happens in your followed chats. Customize notification preferences per topic.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mobile Support -->
+            <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Mobile Ready</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Stay connected on the go with full chat functionality on iOS, Android, and our Progressive Web App.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Thread Management -->
+            <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Thread Replies</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Keep discussions organized with threaded replies. Branch conversations without cluttering the main chat flow.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Permissions -->
+            <div class="flex space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                    <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Privacy Controls</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Control who can see and participate in chats. Create private discussions or open channels based on your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Resources -->
+    <div class="max-w-7xl mx-auto mb-20">
+        <h2 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">Learn more about Chat</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="/docs/chat/getting-started" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="font-medium text-gray-900 dark:text-gray-100 mb-2">Getting Started with Chat</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Learn how to create your first chat and invite team members.</p>
+            </a>
+            <a href="/docs/chat/best-practices" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="font-medium text-gray-900 dark:text-gray-100 mb-2">Chat Best Practices</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Tips for organizing topics and maintaining productive discussions.</p>
+            </a>
+            <a href="/insights/remote-team-communication" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue transition-colors">
+                <h3 class="font-medium text-gray-900 dark:text-gray-100 mb-2">Remote Team Communication</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">How to use chat effectively for distributed teams.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    {{template "faq-sections" parseJSON `{
+        "categories": [
+            {
+                "name": "Chat Features",
+                "questions": [
+                    {
+                        "question": "What is the chat feature in Blue, and what is it used for?",
+                        "answer": "Blue's chat feature provides topic-based communication channels within your projects. It's designed to keep discussions organized, searchable, and directly connected to your work context. Unlike general messaging apps, each chat in Blue is tied to specific projects or topics, ensuring conversations stay relevant and easy to find."
+                    },
+                    {
+                        "question": "Who can see the chats in a project?",
+                        "answer": "Chat visibility follows your project permissions. All project members can see and participate in project chats by default. You can also create private chats with specific team members for sensitive discussions. Project admins can manage chat access and permissions."
+                    },
+                    {
+                        "question": "Is there a limit to the number of people who can participate in a chat?",
+                        "answer": "No, there's no limit to the number of participants in a chat. All project members can join and contribute to project chats. For larger teams, we recommend creating topic-specific chats to keep discussions focused and manageable."
+                    },
+                    {
+                        "question": "Can we share files in the chat?",
+                        "answer": "Yes! You can share various file types directly in chat including images, documents, PDFs, and more. Files are stored securely in Blue and can be previewed inline. There's also support for embedding YouTube videos and other rich media content."
+                    },
+                    {
+                        "question": "Is the chat feature available on mobile devices?",
+                        "answer": "Absolutely. Blue's chat feature is fully available on our iOS and Android apps, as well as our Progressive Web App (PWA). You can send messages, share files, and receive notifications on any device."
+                    }
+                ]
+            },
+            {
+                "name": "Search and Storage",
+                "questions": [
+                    {
+                        "question": "Are chats searchable within Blue?",
+                        "answer": "Yes, all chat messages are fully searchable. You can search across all your chats or within specific conversations. Search includes message content, file names, and even text within shared documents. This makes it easy to find past decisions, shared resources, or important discussions."
+                    },
+                    {
+                        "question": "How long are chat messages stored?",
+                        "answer": "Chat messages are stored indefinitely as part of your project history. This creates a valuable knowledge base for your team. You can always go back to find important conversations, decisions, or shared resources. Chat data is included in your regular Blue backups."
+                    }
+                ]
+            },
+            {
+                "name": "Notifications and Integrations",
+                "questions": [
+                    {
+                        "question": "Can I customize my chat notifications?",
+                        "answer": "Yes, Blue offers flexible notification settings. You can choose to be notified for all messages, only when mentioned (@username), or turn off notifications for specific chats. You can also set different notification preferences for desktop and mobile, and configure quiet hours."
+                    },
+                    {
+                        "question": "Does the chat feature integrate with other tools?",
+                        "answer": "Blue's chat is deeply integrated with all other Blue features. You can reference tasks, share files, link to wiki pages, and more directly in chat. For external integrations, you can use our API to send chat notifications from other tools or export chat data."
+                    },
+                    {
+                        "question": "Are there any special features in the chat?",
+                        "answer": "Yes! Beyond standard messaging, Blue chat includes: @mentions for notifications, message editing and deletion, thread replies for organized discussions, rich text formatting, code syntax highlighting, emoji reactions, read receipts, and typing indicators. You can also create chat templates for recurring discussion topics."
+                    }
+                ]
+            }
+        ]
+    }`}}
+
+    <!-- Call to Action -->
+    {{template "dual-button-cta" dict
+        "Title" "Boost your productivity. Start using Blue today."
+        "Description" "Blue organizes work, ensuring teams know what to do, how to do it  and why it matters."
+        "PrimaryText" "Get started"
+        "PrimaryUrl" "/signup"
+        "SecondaryText" "Book a demo"
+        "SecondaryUrl" "/demo"
+    }}
+</div>

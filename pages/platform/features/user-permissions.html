@@ -1,0 +1,288 @@
+{{$statsData := parseJSON `{
+  "stats": [
+    {"value": "6", "label": "Pre-defined roles"},
+    {"value": "2", "label": "Custom roles possible"},
+    {"value": "100%", "label": "Granular control"}
+  ]
+}`}}
+
+{{$faqData := parseJSON `{
+  "General": [
+    {
+      "question": "What are the different user roles in Blue?",
+      "answer": "Blue offers six pre-defined roles: Organization Administrator (full system access), Project Administrator (manages projects), Team Member (creates and edits content), Client (monitors progress), Vendor (limited creation rights), Comment-Only (can only comment), and View-Only (read-only access). You can also create unlimited custom roles."
+    },
+    {
+      "question": "What permissions does an Organization Administrator have?",
+      "answer": "Organization Administrators have complete control over the Blue workspace. They can manage billing, create and delete projects, invite users, configure integrations, access all projects and data, and modify organization-wide settings. This is the highest level of access in Blue."
+    },
+    {
+      "question": "What can a Project Administrator do?",
+      "answer": "Project Administrators have full control within their assigned projects. They can manage project settings, invite and remove team members, configure permissions, create and modify all content, set up automations, and access project analytics. They cannot access organization-level settings or billing."
+    },
+    {
+      "question": "What are the capabilities and restrictions of a Team Member?",
+      "answer": "Team Members can create, edit, and delete records within their permission scope. They can collaborate on tasks, upload files, participate in discussions, and view project progress. They cannot modify project settings, manage other users, or access administrative features."
+    },
+    {
+      "question": "What can a Client User do in Blue?",
+      "answer": "Client Users have limited but important access. They can view project progress, create new items like tasks or requests, comment on existing items, and receive notifications. They cannot delete content, modify project structure, or access internal team discussions."
+    },
+    {
+      "question": "What are the roles and limitations of a Comment-Only User?",
+      "answer": "Comment-Only Users can view all content they have access to and add comments for collaboration. They cannot create new records, edit existing content, or delete anything. This role is perfect for stakeholders who need visibility and the ability to provide feedback without making changes."
+    }
+  ],
+  "Management": [
+    {
+      "question": "How do I assign a user role in Blue?",
+      "answer": "To assign a role, go to the People tab in your project, click on a user's name, and select their role from the dropdown menu. Organization Administrators can assign any role, while Project Administrators can only assign roles within their projects. Changes take effect immediately."
+    },
+    {
+      "question": "Can user roles be changed after they are assigned?",
+      "answer": "Yes, user roles can be changed at any time by administrators. Simply navigate to the user's profile in the People tab and select a new role. The user will immediately gain or lose permissions based on their new role assignment."
+    },
+    {
+      "question": "What happens when a user is removed from a project?",
+      "answer": "When removed from a project, users immediately lose access to all project data, including records, files, and discussions. Their historical contributions (comments, created records) remain but are attributed to their name. They can be re-added at any time with the same or different permissions."
+    },
+    {
+      "question": "Can I have different roles in different projects?",
+      "answer": "Yes, Blue supports project-specific roles. You might be a Project Administrator in one project but a Team Member in another. This flexibility allows organizations to maintain proper access control across different teams and initiatives."
+    }
+  ],
+  "Custom Roles": [
+    {
+      "question": "What are custom user roles in Blue?",
+      "answer": "Custom roles allow you to create permission sets tailored to your organization's specific needs. You can define exactly what users can see and do, from list-level access to individual field permissions, creating roles that perfectly match your workflow and security requirements."
+    },
+    {
+      "question": "How do I create a custom user role?",
+      "answer": "Navigate to Settings > User Roles and click 'Create New Role'. Name your role, then configure permissions including: list access (view/edit/delete), custom field visibility, record-level restrictions, and specific feature access. Save the role to make it available for assignment."
+    },
+    {
+      "question": "What are the benefits of using custom user roles?",
+      "answer": "Custom roles provide precise access control, enhanced security for sensitive data, improved focus by showing only relevant information, compliance with data protection regulations, and the flexibility to match your exact organizational structure. They eliminate the compromise of using generic roles."
+    },
+    {
+      "question": "Can users be assigned multiple roles in the same project?",
+      "answer": "No, each user can only have one role per project in Blue. However, custom roles can combine permissions from multiple standard roles, giving you the flexibility to create hybrid roles that meet complex permission requirements."
+    }
+  ],
+  "Administration": [
+    {
+      "question": "What is the 'People' tab in Blue?",
+      "answer": "The People tab is your central hub for user management within a project. It displays all project members, their roles, last active status, and allows administrators to invite new users, modify permissions, or remove access. It's accessible from the project sidebar."
+    },
+    {
+      "question": "Who can invite new users to a project?",
+      "answer": "Organization Administrators and Project Administrators can invite new users to projects. They can send invitations via email, set initial roles, and optionally include a welcome message. Team Members and other roles cannot invite new users."
+    },
+    {
+      "question": "Who can remove users from a project?",
+      "answer": "Only Organization Administrators and Project Administrators can remove users from projects. Organization Administrators can remove anyone, while Project Administrators can only remove users from projects they manage. Users cannot remove themselves from projects."
+    }
+  ]
+}`}}
+
+<div class="py-20">
+  {{template "page-heading" dict 
+    "Title" "Advanced User Permissions" 
+    "Subtitle" "Take control of access with granular permissions decide who can see what, when, and how they can interact with your data." 
+    "MarginBottom" "mb-16"
+  }}
+
+  {{template "hero-video" dict 
+    "VideoUrl" "/product/features/user-permissions/hero.mp4" 
+    "ShowUnmuteButton" false 
+    "Id" "permissions-hero"
+  }}
+
+  {{template "stats-section" dict 
+    "Title" "" 
+    "Description" "" 
+    "Stats" $statsData.stats
+  }}
+
+  <!-- User Roles Section -->
+  <section class="mb-20">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-semibold text-gray-900 mb-4">User Roles</h2>
+      <p class="text-xl text-gray-600">Define roles, empower teams.</p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {{$rolesBenefits := parseJSON `{
+        "Benefits": [
+          {
+            "Title": "Organization Admin",
+            "Description": "Full system control including billing, user management, and all organizational settings."
+          },
+          {
+            "Title": "Project Admin",
+            "Description": "Manages all aspects of the project, including settings, permissions, and data oversight."
+          },
+          {
+            "Title": "Team Member",
+            "Description": "Can create, edit, and delete project content within assigned permissions to actively drive project progress."
+          },
+          {
+            "Title": "Client",
+            "Description": "Can create new items and monitor project progress, can't delete or modify the project's structure."
+          },
+          {
+            "Title": "Comment-Only",
+            "Description": "Can view content and add comments for collaboration, perfect for stakeholders who need visibility."
+          },
+          {
+            "Title": "View-Only",
+            "Description": "Provides access to observe project information and status updates without any editing privileges."
+          }
+        ]
+      }`}}
+      {{template "feature-benefits-grid" $rolesBenefits}}
+    </div>
+  </section>
+
+  <!-- Custom Roles Section -->
+  <section class="mb-20">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-semibold text-gray-900 mb-4">Revolutionize team collaboration with unparalleled access control.</h2>
+      <p class="text-xl text-gray-600">Blue allows you to create custom user roles to fit your precise data control and privacy needs so you know exactly who can see what.</p>
+    </div>
+
+    {{template "feature-video" dict 
+      "Title" "Custom Role Management" 
+      "Description" "Define precise access levels and permissions for your team members. Create roles that align perfectly with your organizational structure and security requirements." 
+      "VideoUrl" "/product/features/user-permissions/custom-roles.mp4" 
+      "VideoPosition" "right"
+    }}
+
+    {{template "feature-video" dict 
+      "Title" "List-Level Permissions" 
+      "Description" "Assign permissions to view, edit, or delete specific lists within projects. This level of detail allows roles to be precisely managed according to the unique needs of each project phase." 
+      "VideoUrl" "/product/features/user-permissions/list-permissions.mp4" 
+      "VideoPosition" "left"
+    }}
+
+    {{template "feature-video" dict 
+      "Title" "Custom Field Permissions" 
+      "Description" "Control access to sensitive data by managing view and edit permissions for each custom field. Perfect for protecting confidential information like financial data or personal details." 
+      "VideoUrl" "/product/features/user-permissions/field-permissions.mp4" 
+      "VideoPosition" "right"
+    }}
+
+    {{template "feature-video" dict 
+      "Title" "Record-Level Visibility" 
+      "Description" "Enhance focus and productivity by limiting users to only see records assigned to them. Perfect for sales teams managing their own leads or support staff handling their specific cases." 
+      "VideoUrl" "/product/features/user-permissions/record-visibility.mp4" 
+      "VideoPosition" "left"
+    }}
+  </section>
+
+  <!-- Additional Features -->
+  <section class="mb-20">
+    <h2 class="text-3xl font-semibold text-gray-900 text-center mb-12">Advanced Permission Features</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Time-Based Access</h3>
+        <p class="text-gray-600">Set permissions that activate or expire based on dates, perfect for contractors or temporary team members.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Bulk Permission Management</h3>
+        <p class="text-gray-600">Apply role changes to multiple users at once, saving time when reorganizing teams or projects.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Permission Inheritance</h3>
+        <p class="text-gray-600">Child projects can inherit permissions from parent projects, maintaining consistency across your organization.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Permission Templates</h3>
+        <p class="text-gray-600">Save custom role configurations as templates to quickly apply consistent permissions across projects.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Audit Trail</h3>
+        <p class="text-gray-600">Track all permission changes with detailed logs showing who made changes and when.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">API Access Control</h3>
+        <p class="text-gray-600">Manage API permissions separately from UI permissions for enhanced security and flexibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="mb-20 bg-gray-50 rounded-2xl p-12">
+    <h2 class="text-3xl font-semibold text-gray-900 text-center mb-8">Learn More About Permissions</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <a href="/docs/user-management/permissions" class="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <svg class="w-8 h-8 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Permission Guide</h3>
+        <p class="text-gray-600 text-sm">Complete guide to understanding and implementing Blue's permission system.</p>
+      </a>
+
+      <a href="/docs/api/permissions" class="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <svg class="w-8 h-8 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">API Documentation</h3>
+        <p class="text-gray-600 text-sm">Learn how to manage permissions programmatically through our API.</p>
+      </a>
+
+      <a href="/insights/best-practices/permission-strategy" class="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow">
+        <svg class="w-8 h-8 text-blue-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+        </svg>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Best Practices</h3>
+        <p class="text-gray-600 text-sm">Tips for designing an effective permission strategy for your organization.</p>
+      </a>
+    </div>
+  </section>
+
+  {{template "faq-sections" $faqData}}
+  
+  {{template "dual-button-cta" dict 
+    "Title" "Boost your productivity.<br/>Start using Blue today." 
+    "Subtitle" "Blue organizes work, ensuring teams know what to do, how to do it and why it matters."
+  }}
+</div>
