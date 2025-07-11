@@ -93,8 +93,6 @@
     "/platform/database": "/platform/features/database",
     "/platform/file-management": "/platform/features/file-management",
     "/platform/forms": "/platform/features/forms",
-    "/platform/integrations": "/platform/integrations",
-    "/platform/kanban-boards": "/platform/features/kanban-board",
     "/platform/list": "/platform/features/views",
     "/platform/map": "/platform/features/views",
     "/platform/records": "/platform/features/records",
