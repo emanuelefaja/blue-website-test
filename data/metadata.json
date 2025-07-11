@@ -27,7 +27,7 @@
       "description": "Choose the Blue plan that fits your team's needs. Simple, transparent pricing with no hidden fees. Start your free trial today.",
       "keywords": ["pricing", "plans", "free trial", "team management", "blue"]
     },
-    "changelog": {
+    "platform/changelog": {
       "title": "Changelog",
       "description": "Stay up to date with the latest features and improvements in Blue.",
       "keywords": ["changelog", "updates", "features", "improvements", "blue"]
@@ -76,6 +76,156 @@
       "title": "Project Management for Solopreneurs",
       "description": "Streamline your solo business with Blue's powerful project management platform. Manage clients, projects, tasks, and workflows in one simple solution designed for solopreneurs.",
       "keywords": ["solopreneurs", "solo entrepreneurs", "freelancers", "independent business", "project management", "client management", "workflow automation", "business productivity", "blue"]
+    },
+    "platform/api": {
+      "title": "API",
+      "description": "Access Blue's powerful API for seamless integration and automation.",
+      "keywords": ["api", "integration", "automation", "developer", "blue"]
+    },
+    "platform/download": {
+      "title": "Download",
+      "description": "Download Blue for your platform and start managing processes efficiently.",
+      "keywords": ["download", "install", "desktop", "mobile", "blue"]
+    },
+    "platform": {
+      "title": "Platform",
+      "description": "Explore Blue's comprehensive platform features and capabilities.",
+      "keywords": ["platform", "features", "capabilities", "overview", "blue"]
+    },
+    "platform/integrations": {
+      "title": "Integrations",
+      "description": "Connect Blue with your favorite tools and services for seamless workflow integration.",
+      "keywords": ["integrations", "connect", "third-party", "apps", "blue"]
+    },
+    "platform/security": {
+      "title": "Security",
+      "description": "Learn about Blue's enterprise-grade security features and compliance standards.",
+      "keywords": ["security", "compliance", "encryption", "data protection", "blue"]
+    },
+    "platform/white-label": {
+      "title": "White Label",
+      "description": "Customize Blue with your brand for a seamless white-label experience.",
+      "keywords": ["white label", "branding", "customization", "enterprise", "blue"]
+    },
+    "platform/features": {
+      "title": "Features",
+      "description": "Discover all the powerful features Blue offers for process management.",
+      "keywords": ["features", "capabilities", "tools", "functionality", "blue"]
+    },
+    "platform/features/activity": {
+      "title": "Activity",
+      "description": "Track all activities and updates across your projects and processes.",
+      "keywords": ["activity", "tracking", "updates", "monitoring", "blue"]
+    },
+    "platform/features/ai": {
+      "title": "AI",
+      "description": "Leverage AI-powered features to automate and optimize your workflows.",
+      "keywords": ["ai", "artificial intelligence", "automation", "smart features", "blue"]
+    },
+    "platform/features/audit-trails": {
+      "title": "Audit Trails",
+      "description": "Maintain complete audit trails for compliance and accountability.",
+      "keywords": ["audit trails", "compliance", "tracking", "history", "blue"]
+    },
+    "platform/features/automations": {
+      "title": "Automations",
+      "description": "Create powerful automations to streamline your workflows.",
+      "keywords": ["automations", "workflow", "efficiency", "triggers", "blue"]
+    },
+    "platform/features/calendar": {
+      "title": "Calendar",
+      "description": "Manage schedules and deadlines with integrated calendar views.",
+      "keywords": ["calendar", "scheduling", "deadlines", "timeline", "blue"]
+    },
+    "platform/features/chat": {
+      "title": "Chat",
+      "description": "Collaborate in real-time with integrated team chat.",
+      "keywords": ["chat", "messaging", "collaboration", "communication", "blue"]
+    },
+    "platform/features/custom-fields": {
+      "title": "Custom Fields",
+      "description": "Create custom fields to capture exactly the data you need.",
+      "keywords": ["custom fields", "customization", "data", "forms", "blue"]
+    },
+    "platform/features/dashboards": {
+      "title": "Dashboards",
+      "description": "Visualize your data with customizable dashboards and reports.",
+      "keywords": ["dashboards", "analytics", "visualization", "reports", "blue"]
+    },
+    "platform/features/database": {
+      "title": "Database",
+      "description": "Powerful database capabilities for managing structured data.",
+      "keywords": ["database", "data management", "records", "storage", "blue"]
+    },
+    "platform/features/docs": {
+      "title": "Docs",
+      "description": "Create and collaborate on documents within your projects.",
+      "keywords": ["docs", "documents", "collaboration", "writing", "blue"]
+    },
+    "platform/features/file-management": {
+      "title": "File Management",
+      "description": "Organize and manage files across all your projects.",
+      "keywords": ["file management", "storage", "organization", "documents", "blue"]
+    },
+    "platform/features/forms": {
+      "title": "Forms",
+      "description": "Build custom forms to collect data and automate processes.",
+      "keywords": ["forms", "data collection", "surveys", "input", "blue"]
+    },
+    "platform/features/kanban-board": {
+      "title": "Kanban Board",
+      "description": "Visualize workflows with flexible Kanban boards.",
+      "keywords": ["kanban", "board", "workflow", "visual management", "blue"]
+    },
+    "platform/features/list": {
+      "title": "List",
+      "description": "Organize tasks and items in customizable list views.",
+      "keywords": ["list", "tasks", "organization", "view", "blue"]
+    },
+    "platform/features/map": {
+      "title": "Map",
+      "description": "Visualize location-based data with integrated mapping.",
+      "keywords": ["map", "location", "geography", "visualization", "blue"]
+    },
+    "platform/features/pdf-generation": {
+      "title": "PDF Generation",
+      "description": "Generate professional PDFs from your data and documents.",
+      "keywords": ["pdf", "generation", "documents", "export", "blue"]
+    },
+    "platform/features/records": {
+      "title": "Records",
+      "description": "Manage records with powerful database capabilities.",
+      "keywords": ["records", "database", "data management", "tracking", "blue"]
+    },
+    "platform/features/templates": {
+      "title": "Templates",
+      "description": "Save time with reusable templates for common processes.",
+      "keywords": ["templates", "reusable", "efficiency", "standardization", "blue"]
+    },
+    "platform/features/timeline-gantt-charts": {
+      "title": "Timeline Gantt Charts",
+      "description": "Plan and track projects with timeline and Gantt chart views.",
+      "keywords": ["timeline", "gantt", "project planning", "scheduling", "blue"]
+    },
+    "platform/features/user-permissions": {
+      "title": "User Permissions",
+      "description": "Control access with granular user permissions and roles.",
+      "keywords": ["permissions", "access control", "security", "roles", "blue"]
+    },
+    "platform/features/views": {
+      "title": "Views",
+      "description": "Create custom views to see your data exactly how you need it.",
+      "keywords": ["views", "customization", "data visualization", "filters", "blue"]
+    },
+    "platform/features/wiki": {
+      "title": "Wiki",
+      "description": "Build a knowledge base with integrated wiki functionality.",
+      "keywords": ["wiki", "knowledge base", "documentation", "information", "blue"]
+    },
+    "platform/features/workspaces": {
+      "title": "Workspaces",
+      "description": "Organize projects and teams with dedicated workspaces.",
+      "keywords": ["workspaces", "organization", "teams", "projects", "blue"]
     }
   },
   "defaults": {
