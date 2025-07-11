@@ -2,7 +2,6 @@
 title:  Why Blue has an Open Beta
 category: "Engineering"
 description: Learn why our project management system has an ongoing open beta. 
-image: /insights/code-background.png
 date: 2024-08-03
 ---
 

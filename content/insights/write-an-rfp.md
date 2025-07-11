@@ -2,7 +2,6 @@
 title: How to Write an Outstanding RFP
 category: "Best Practices"
 description: Requests for Proposals (RFPs) are key tools that businesses and organizations of all sizes use to choose the best partners for any tasks and projects.
-image: /insights/whiteboard-brainstorm.jpeg
 date: 2024-07-06
 ---
 
