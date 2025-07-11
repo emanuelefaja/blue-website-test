@@ -632,13 +632,13 @@
   </url>
   <url>
     <loc>https://blue.cc/api/records/list-records</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blue.cc/api/records/toggle-record-status</loc>
-    <lastmod>2025-07-08</lastmod>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
