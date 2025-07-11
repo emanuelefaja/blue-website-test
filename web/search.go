@@ -20,12 +20,14 @@ type SearchItem struct {
 	URL         string `json:"url"`
 	Type        string `json:"type"` // "page", "doc", "blog", etc.
 	Section     string `json:"section,omitempty"`
+	Category    string `json:"category,omitempty"` // Display category like "Feature", "Docs", "API"
 }
 
 // SearchFrontmatter represents the YAML frontmatter in markdown files
 type SearchFrontmatter struct {
 	Title       string `yaml:"title"`
 	Description string `yaml:"description"`
+	Category    string `yaml:"category"`
 }
 
 // GenerateSearchIndex creates a JSON search index from all content
@@ -427,9 +429,21 @@ func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownSe
 		// Get title from frontmatter or generate from URL
 		title := ""
 		description := ""
+		category := ""
 		if content.Frontmatter != nil {
 			title = content.Frontmatter.Title
 			description = content.Frontmatter.Description
+		}
+
+		// Set category based on URL path
+		if strings.HasPrefix(urlPath, "/docs") {
+			category = "Docs"
+		} else if strings.HasPrefix(urlPath, "/api") {
+			category = "API"
+		} else if strings.HasPrefix(urlPath, "/legal") {
+			category = "Legal"
+		} else if strings.HasPrefix(urlPath, "/insights") {
+			category = "Insights"
 		}
 
 		if title == "" {
@@ -447,6 +461,7 @@ func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownSe
 			URL:         urlPath,
 			Type:        "content",
 			Section:     section,
+			Category:    category,
 		})
 	}
 
@@ -510,6 +525,14 @@ func indexCachedHTMLPages(items *[]SearchItem, htmlService *HTMLService, metadat
 			section = "company"
 		}
 
+		// Determine category based on URL path
+		category := ""
+		if strings.HasPrefix(urlPath, "/platform/features") {
+			category = "Feature"
+		} else if strings.HasPrefix(urlPath, "/solutions") {
+			category = "Solution"
+		}
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
@@ -517,6 +540,7 @@ func indexCachedHTMLPages(items *[]SearchItem, htmlService *HTMLService, metadat
 			URL:         urlPath,
 			Type:        pageType,
 			Section:     section,
+			Category:    category,
 		})
 	}
 

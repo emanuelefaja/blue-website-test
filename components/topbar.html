@@ -137,6 +137,27 @@
                  selectResult(result) {
                      window.location.href = result.item.url;
                  },
+                 getCategoryClass(category) {
+                     // Use brand colors from brand.html
+                     const categoryColors = {
+                         // Blue Blue (#00A0D2) for Features
+                         'Feature': 'bg-[#00A0D2]/10 text-[#00A0D2] dark:bg-[#00A0D2]/20 dark:text-[#00A0D2]',
+                         
+                         // Aquamarine (#A9F0D1) for Docs and Solutions - darker text for readability
+                         'Docs': 'bg-[#A9F0D1]/20 text-green-700 dark:bg-[#A9F0D1]/20 dark:text-[#A9F0D1]',
+                         'Solution': 'bg-[#A9F0D1]/20 text-green-700 dark:bg-[#A9F0D1]/20 dark:text-[#A9F0D1]',
+                         
+                         // Cyclamen (#F06C9B) for API
+                         'API': 'bg-[#F06C9B]/10 text-[#F06C9B] dark:bg-[#F06C9B]/20 dark:text-[#F06C9B]',
+                         
+                         // Mustard (#FED766) for Insights
+                         'Insights': 'bg-[#FED766]/10 text-[#FED766] dark:bg-[#FED766]/20 dark:text-[#FED766]',
+                         
+                         // Gray for Legal
+                         'Legal': 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
+                     };
+                     return categoryColors[category] || 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300';
+                 },
                  getSnippet(result) {
                      const content = result.item.description || result.item.content || '';
                      const queryWords = this.query.toLowerCase().split(' ');
@@ -231,7 +252,13 @@
                                      class="px-4 py-3 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0 transition-colors">
                                     <div class="flex items-start">
                                         <div class="flex-1">
-                                            <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm" x-text="result.item.title"></h4>
+                                            <div class="flex items-center gap-2 mb-1">
+                                                <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm" x-text="result.item.title"></h4>
+                                                <span class="text-xs font-medium px-2 py-0.5 rounded-full"
+                                                      :class="getCategoryClass(result.item.category)"
+                                                      x-show="result.item.category"
+                                                      x-text="result.item.category"></span>
+                                            </div>
                                             <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 line-clamp-2" x-text="getSnippet(result)"></p>
                                         </div>
                                     </div>
