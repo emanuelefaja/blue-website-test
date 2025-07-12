@@ -3,6 +3,7 @@
     mobileMenuOpen: false,
     darkMode: false,
     newsBarDismissed: false,
+    magneticButtons: {},
     init() {
         // Initialize dark mode from localStorage
         const savedTheme = localStorage.getItem('theme');
@@ -30,6 +31,25 @@
     dismissNewsBar() {
         this.newsBarDismissed = true;
         localStorage.setItem('topNewsBarDismissed', 'true');
+    },
+    handleMagnetic(event, buttonId) {
+        const element = event.currentTarget;
+        const rect = element.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        // Calculate distance from center (max 4px movement)
+        const x = Math.max(-4, Math.min(4, (event.clientX - centerX) * 0.15));
+        const y = Math.max(-4, Math.min(4, (event.clientY - centerY) * 0.15));
+        
+        this.magneticButtons[buttonId] = { x, y };
+    },
+    resetMagnetic(buttonId) {
+        this.magneticButtons[buttonId] = { x: 0, y: 0 };
+    },
+    getMagneticStyle(buttonId) {
+        const pos = this.magneticButtons[buttonId] || { x: 0, y: 0 };
+        return `transform: translate(${pos.x}px, ${pos.y}px);`;
     }
 }">
 <!-- News Bar -->
@@ -285,21 +305,38 @@
             </button>
             
             <!-- Login -->
-            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
+            <a href="https://app.blue.cc" 
+               target="_blank" 
+               @mousemove="handleMagnetic($event, 'login')"
+               @mouseleave="resetMagnetic('login')"
+               :style="getMagneticStyle('login')"
+               class="relative px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition-all duration-200 ease-out flex items-center">
                 Log In
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">L</span>
+                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
+                      :style="magneticButtons['login'] ? `transform: translateX(${magneticButtons['login'].x * 0.5}px)` : ''">L</span>
             </a>
             
             <!-- Contact -->
-            <a href="/contact" class="hidden xl:flex px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out items-center cursor-pointer">
+            <a href="/contact" 
+               @mousemove="handleMagnetic($event, 'contact')"
+               @mouseleave="resetMagnetic('contact')"
+               :style="getMagneticStyle('contact')"
+               class="hidden xl:flex relative px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition-all duration-200 ease-out items-center cursor-pointer">
                 Contact
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">C</span>
+                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
+                      :style="magneticButtons['contact'] ? `transform: translateX(${magneticButtons['contact'].x * 0.5}px)` : ''">C</span>
             </a>
             
             <!-- Sign Up -->
-            <a href="https://app.blue.cc" target="_blank" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center">
+            <a href="https://app.blue.cc" 
+               target="_blank" 
+               @mousemove="handleMagnetic($event, 'signup')"
+               @mouseleave="resetMagnetic('signup')"
+               :style="getMagneticStyle('signup')"
+               class="relative px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200 ease-out flex items-center hover:shadow-lg">
                 Sign Up
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold" style="color: #00a0d2; border-color: #00a0d2;">↵</span>
+                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold transition-transform duration-200 border" 
+                      :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['signup'] ? 'transform: translateX(' + (magneticButtons['signup'].x * 0.5) + 'px)' : ''}`">↵</span>
             </a>
         </div>
         
