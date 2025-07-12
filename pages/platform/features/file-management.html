@@ -1,0 +1,86 @@
+{{template "page-heading" dict "Title" "The modern way to manage project files" "Subtitle" "Centralize all project files in one secure source of truth—no more scattering across chats, emails, and storage."}}
+
+<!-- Hero Video -->
+{{template "hero-video" dict "VideoUrl" "/videos/search-demo.mp4" "ShowUnmuteButton" true "MarginBottom" "mb-20"}}
+
+<!-- File Privacy Benefits -->
+{{$privacyBenefits := parseJSON `{
+    "Benefits": [
+        {
+            "Title": "Private by default",
+            "Description": "Project files are private by default. Only invited members can view them. Your data stays confidential and secure.",
+            "Url": "/platform/features/user-permissions"
+        },
+        {
+            "Title": "Control",
+            "Description": "Grant or revoke file access anytime. You're in charge."
+        },
+        {
+            "Title": "Collaborate",
+            "Description": "Generate secure public links. Share files externally with ease."
+        },
+        {
+            "Title": "Protect",
+            "Description": "Default privacy safeguards data. Share selectively when needed."
+        }
+    ],
+    "MarginBottom": "mb-20"
+}`}}
+{{template "feature-benefits-grid" $privacyBenefits}}
+
+<!-- File Sharing Feature -->
+{{$fileSharingData := parseJSON `{
+    "Title": "Files Sharing Screenshot",
+    "Description": "File organization, mastered. Stay on top of your files with Blue's intuitive folder management. Create folders, subfolders, and color-code to your heart's content.",
+    "ImageUrl": "/product/files-share.png",
+    "ImagePosition": "right",
+    "SeeAlso": {
+        "Links": [
+            {
+                "Text": "Customize",
+                "Url": "/docs/projects/file-management#folders",
+                "Description": "Build a folder structure that fits your needs perfectly."
+            },
+            {
+                "Text": "Categorize", 
+                "Url": "/docs/projects/file-management#setting-folder-color",
+                "Description": "Use colors to group folders by project, client, or category."
+            },
+            {
+                "Text": "Conquer Clutter",
+                "Url": "/docs/projects/file-management#moving-files",
+                "Description": "Effortlessly organize and locate files within nested folders."
+            }
+        ]
+    },
+    "MarginBottom": "mb-20"
+}`}}
+{{template "feature-image" $fileSharingData}}
+
+<!-- File Search Feature -->
+{{$fileSearchData := parseJSON `{
+    "Title": "All your data at your fingertips in milliseconds",
+    "Description": "Finding files has never been easier. Instantly search across all projects and locate exactly where any document originated.",
+    "ImageUrl": "/product/file-search.png",
+    "ImagePosition": "left",
+    "SeeAlso": {
+        "Links": [
+            {
+                "Text": "Lightning Fast",
+                "Url": "/docs/projects/file-management#searching-for-files",
+                "Description": "Powerful search returns results in milliseconds."
+            },
+            {
+                "Text": "Complete Context",
+                "Url": "/docs/projects/file-management#locating-files",
+                "Description": "See the full path of a file - which project, record or comment it's linked to."
+            },
+            {
+                "Text": "No More Guessing",
+                "Url": "/docs/projects/file-management#files-tab",
+                "Description": "Stop wasting time. Blue surfaces what you need, when you need it."
+            }
+        ]
+    }
+}`}}
+{{template "feature-image" $fileSearchData}}
