@@ -1,0 +1,223 @@
+<!-- Main content -->
+{{template "page-heading" 
+    dict 
+        "Title" "Visualize your entire project timeline" 
+        "Subtitle" "See all your tasks, dependencies, and schedules in one powerful Gantt chart view that makes project planning effortless." 
+        "MarginBottom" "mb-16"
+}}
+
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/testvideo2.mp4"
+        "ShowUnmuteButton" true
+        "MarginBottom" "mb-16"
+}}
+
+{{template "call-out-text" 
+    dict 
+        "Text" "Stop guessing when things will be done. See your entire project timeline at a glance and make informed decisions." 
+        "MarginBottom" "mb-16"
+}}
+
+<!-- Drag & Drop Scheduling Feature -->
+{{$dragDropFeature := parseJSON `{
+    "Title": "Schedule with drag and drop simplicity.",
+    "Description": "Reschedule tasks instantly by dragging them to new dates. Adjust durations by dragging edges. Move tasks between lists or assignees with a simple drag. It's project scheduling made intuitive.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "right"
+}`}}
+{{template "feature-video" $dragDropFeature}}
+
+<!-- Drag & Drop Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$dragDropBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "Instant rescheduling",
+                "Description": "Move tasks to new dates with a simple drag, no forms or popups needed."
+            },
+            {
+                "Title": "Visual duration editing",
+                "Description": "Drag task edges to extend or shorten durations visually."
+            },
+            {
+                "Title": "Reorganize resources",
+                "Description": "Drag tasks between team members or lists to balance workloads."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $dragDropBenefits}}
+</div>
+
+<!-- Dependencies Feature -->
+{{$dependenciesFeature := parseJSON `{
+    "Title": "See how tasks connect and impact each other.",
+    "Description": "Visualize task dependencies with connecting lines that show what's blocking what. Identify critical paths and potential bottlenecks before they become problems.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "left"
+}`}}
+{{template "feature-video" $dependenciesFeature}}
+
+<!-- Dependencies Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$dependenciesBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "Clear task relationships",
+                "Description": "Visual lines show which tasks depend on others at a glance."
+            },
+            {
+                "Title": "Identify bottlenecks",
+                "Description": "Spot tasks that could delay your project before they become issues."
+            },
+            {
+                "Title": "Critical path visibility",
+                "Description": "See the sequence of tasks that determines your project timeline."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $dependenciesBenefits}}
+</div>
+
+<!-- Multiple Views Feature -->
+{{$viewsFeature := parseJSON `{
+    "Title": "Zoom from hours to years.",
+    "Description": "Switch between day, week, month, quarter, and year views instantly. Get granular for daily planning or zoom out for long-term strategy. Keyboard shortcuts make navigation lightning fast.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "right"
+}`}}
+{{template "feature-video" $viewsFeature}}
+
+<!-- Multiple Views Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$viewsBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "5 zoom levels",
+                "Description": "From hourly planning to yearly roadmaps, see the right level of detail."
+            },
+            {
+                "Title": "Keyboard shortcuts",
+                "Description": "Press D, W, M, Q, or Y to instantly switch between view modes."
+            },
+            {
+                "Title": "Infinite timeline",
+                "Description": "Scroll endlessly into the future to plan as far ahead as needed."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $viewsBenefits}}
+</div>
+
+<!-- Resource Management Feature -->
+{{$resourceFeature := parseJSON `{
+    "Title": "Group by what matters to you.",
+    "Description": "View your timeline grouped by lists for project phases, by assignees to see team workloads, or by tags to track different work streams. Switch groupings instantly to get different perspectives.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "left"
+}`}}
+{{template "feature-video" $resourceFeature}}
+
+<!-- Resource Management Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$resourceBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "Team workload view",
+                "Description": "Group by assignee to see who's overloaded and who has capacity."
+            },
+            {
+                "Title": "Project phase tracking",
+                "Description": "Group by lists to see how different project phases align."
+            },
+            {
+                "Title": "Work stream visibility",
+                "Description": "Group by tags to track multiple parallel work streams."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $resourceBenefits}}
+</div>
+
+<!-- CTA Section -->
+{{$ctaData := parseJSON `{
+    "Title": "Ready to see your projects clearly?",
+    "ButtonText": "Start planning visually",
+    "ButtonUrl": "https://app.blue.cc",
+    "MarginBottom": "mb-16"
+}`}}
+{{template "cta-single-button" $ctaData}}
+
+<!-- FAQ Section -->
+{{$faqData := parseJSON `{
+    "categories": [
+        {
+            "name": "Timeline & Gantt Features",
+            "questions": [
+                {
+                    "question": "What makes Blue's timeline view different from other Gantt charts?",
+                    "answer": "Blue's timeline is built for real-time collaboration with drag-and-drop simplicity. Unlike traditional Gantt software, you can reschedule tasks by dragging, switch between 5 zoom levels with keyboard shortcuts, and see updates from your team instantly. It's designed for modern teams who need flexibility, not rigid project plans."
+                },
+                {
+                    "question": "Can I see dependencies between tasks?",
+                    "answer": "Yes! Dependencies are shown as visual lines connecting related tasks. Set up 'blocking' relationships to show which tasks must complete before others can start. The timeline automatically displays these connections, helping you identify critical paths and potential bottlenecks in your project schedule."
+                },
+                {
+                    "question": "How do the different timeline views work?",
+                    "answer": "Blue offers 5 timeline zoom levels: Day (hourly columns), Week (daily columns), Month (daily columns), Quarter (monthly columns), and Year (monthly columns). Switch instantly using keyboard shortcuts (D, W, M, Q, Y) or navigation buttons. Each view optimizes the display for that time scale, from detailed daily planning to high-level annual roadmaps."
+                },
+                {
+                    "question": "Can I group the timeline by different criteria?",
+                    "answer": "Yes! Group your timeline by Lists (to see project phases), Assignees (to view team workloads), or Tags (to track work streams). Switch groupings anytime to get different perspectives on your project. This flexibility helps with resource planning, workload balancing, and tracking parallel initiatives."
+                }
+            ]
+        },
+        {
+            "name": "Using the Timeline",
+            "questions": [
+                {
+                    "question": "How do I reschedule tasks in the timeline?",
+                    "answer": "Simply drag any task horizontally to move it to a new date. Drag the edges of a task to extend or shorten its duration. You can also drag tasks vertically to move them between lists, assignees, or tags (depending on your grouping). All changes save automatically and update for your team in real-time."
+                },
+                {
+                    "question": "Can I filter what appears on the timeline?",
+                    "answer": "Yes! Use Blue's powerful filtering to show only relevant tasks. Filter by assignees, tags, completion status, date ranges, or any custom fields. Filters persist when you switch between timeline and other views, helping you focus on what matters most."
+                },
+                {
+                    "question": "How do I navigate to today's date quickly?",
+                    "answer": "Click the 'Today' button to instantly jump to the current date on the timeline. This is especially useful when working with long-term projects. The current day is also highlighted with an orange line that moves automatically as time progresses."
+                },
+                {
+                    "question": "Does the timeline update in real-time?",
+                    "answer": "Yes! When team members make changes - moving tasks, updating dates, or adding dependencies - you see those updates immediately on your timeline. There's no need to refresh or sync. This real-time collaboration ensures everyone always sees the current project status."
+                }
+            ]
+        },
+        {
+            "name": "Planning & Management",
+            "questions": [
+                {
+                    "question": "Can I use the timeline for resource planning?",
+                    "answer": "Absolutely! Group by assignees to see each team member's workload over time. Easily identify who's overloaded and who has capacity. Drag tasks between team members to balance workloads. The visual timeline makes resource conflicts obvious before they become problems."
+                },
+                {
+                    "question": "How far into the future can I plan?",
+                    "answer": "The timeline extends infinitely - plan as far into the future as needed. Whether you're planning next week's sprint or next year's roadmap, the timeline scales to your needs. Use the zoom controls to switch between detailed short-term and strategic long-term views."
+                },
+                {
+                    "question": "Can I track project milestones on the timeline?",
+                    "answer": "Yes! Create milestone tasks with specific dates and they'll appear as distinct markers on your timeline. Use dependencies to link tasks to milestones, showing what needs to complete for each milestone. The visual timeline makes it easy to see if you're on track to hit key dates."
+                },
+                {
+                    "question": "Does the timeline work with Blue's other views?",
+                    "answer": "Yes! Switch seamlessly between Timeline, Kanban, Calendar, Database, and other views. Your filters, task data, and organization persist across all views. Use Timeline for scheduling, then switch to Kanban for workflow management or Calendar for date-focused planning - all with the same data."
+                }
+            ]
+        }
+    ]
+}`}}
+{{template "faq-sections" $faqData}}

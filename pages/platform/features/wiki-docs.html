@@ -1,0 +1,188 @@
+<!-- Main content -->
+{{template "page-heading" 
+    dict 
+        "Title" "Leverage the power of knowledge" 
+        "Subtitle" "Create, collaborate, and store all your essential documents and knowledge in one accessible, organized place." 
+        "MarginBottom" "mb-16"
+}}
+
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/testvideo2.mp4"
+        "ShowUnmuteButton" true
+        "MarginBottom" "mb-16"
+}}
+
+{{template "call-out-text" 
+    dict 
+        "Text" "Documentation is what allows you to scale. If you need to do it more than once — write it down." 
+        "MarginBottom" "mb-16"
+}}
+
+<!-- Real-Time Collaboration Feature -->
+{{$collaborationFeature := parseJSON `{
+    "Title": "Edit together in real time.",
+    "Description": "See changes instantly as your team collaborates on documents. Multiple people can edit simultaneously, keeping everyone aligned and moving projects forward faster.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "right"
+}`}}
+{{template "feature-video" $collaborationFeature}}
+
+<!-- Real-Time Collaboration Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$collaborationBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "Multiple editors",
+                "Description": "Work together simultaneously without conflicts or version confusion."
+            },
+            {
+                "Title": "Instant visibility",
+                "Description": "See changes as they happen, keeping everyone on the same page."
+            },
+            {
+                "Title": "Work from anywhere",
+                "Description": "Collaborate seamlessly whether you're in the office or remote."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $collaborationBenefits}}
+</div>
+
+<!-- Rich Text Formatting Feature -->
+{{$formattingFeature := parseJSON `{
+    "Title": "Create documents that get read.",
+    "Description": "Use rich formatting tools to make your documents clear, engaging, and professional. Structure content with headers, lists, and tables so people actually read what you write.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "left"
+}`}}
+{{template "feature-video" $formattingFeature}}
+
+<!-- Rich Text Formatting Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$formattingBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "Professional formatting",
+                "Description": "Use headers, lists, tables, and links to structure your content clearly."
+            },
+            {
+                "Title": "Better readability",
+                "Description": "Organize information so people can scan and understand quickly."
+            },
+            {
+                "Title": "Engaging presentation",
+                "Description": "Make documents visually appealing and easier to digest."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $formattingBenefits}}
+</div>
+
+<!-- Table of Contents Feature -->
+{{$tocFeature := parseJSON `{
+    "Title": "Navigate documents effortlessly.",
+    "Description": "Automatically generate table of contents that help readers find what they need quickly. Jump to any section with a click and keep your documents organized.",
+    "VideoUrl": "/testvideo2.mp4",
+    "VideoPosition": "right"
+}`}}
+{{template "feature-video" $tocFeature}}
+
+<!-- Table of Contents Benefits Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{$tocBenefits := parseJSON `{
+        "Benefits": [
+            {
+                "Title": "One-click navigation",
+                "Description": "Jump to any section instantly without scrolling through pages."
+            },
+            {
+                "Title": "Auto-generated structure",
+                "Description": "Contents are created automatically based on your document headers."
+            },
+            {
+                "Title": "Find information fast",
+                "Description": "Locate specific content quickly, improving productivity."
+            }
+        ],
+        "MarginBottom": "mb-20"
+    }`}}
+    {{template "feature-benefits-grid" $tocBenefits}}
+</div>
+
+<!-- CTA Section -->
+{{$ctaData := parseJSON `{
+    "Title": "Ready to create better documentation?",
+    "ButtonText": "Start writing",
+    "ButtonUrl": "https://app.blue.cc",
+    "MarginBottom": "mb-16"
+}`}}
+{{template "cta-single-button" $ctaData}}
+
+<!-- FAQ Section -->
+{{$faqData := parseJSON `{
+    "categories": [
+        {
+            "name": "Documentation Features",
+            "questions": [
+                {
+                    "question": "What's the difference between Documents and Wiki?",
+                    "answer": "Documents are individual collaborative rich text files for planning, specifications, and meeting notes. Wiki is a centralized knowledge base with one main page per project for SOPs, policies, and institutional knowledge. Both support real-time editing and rich formatting."
+                },
+                {
+                    "question": "Can multiple people edit documents and wiki pages at the same time?",
+                    "answer": "Yes! Both Documents and Wiki support real-time collaborative editing. You can see other users' cursors, view who's currently editing, and all changes are automatically saved. Click on user profile icons to jump to their position in the document."
+                },
+                {
+                    "question": "How do I format text in documents and wiki pages?",
+                    "answer": "Use the rich text editor toolbar or keyboard shortcuts with slash commands like /bold, /italic, /heading. Type \"/\" to open the command menu. You can also use markdown syntax for headings (# for headers) and drag-and-drop images with the /attachment command."
+                },
+                {
+                    "question": "Can I mention team members or link to records?",
+                    "answer": "Yes! Use @mention to notify team members or jump to their cursor location. Use @@ to search and link to specific records within your project - clicking the link opens the record without leaving the document view."
+                }
+            ]
+        },
+        {
+            "name": "Navigation & Organization",
+            "questions": [
+                {
+                    "question": "How does the table of contents work?",
+                    "answer": "Wiki pages automatically generate a table of contents based on headings in your content. Headings formatted with # markdown syntax are detected and organized into a navigable outline. Click any heading to jump to that section, and the table updates dynamically as you edit."
+                },
+                {
+                    "question": "What is infinite scroll in wiki pages?",
+                    "answer": "Wiki pages use infinite scrolling instead of pagination. As you scroll down, additional content automatically loads continuously, creating an uninterrupted reading experience for long documents without manual page navigation."
+                },
+                {
+                    "question": "How many documents can I create in a project?",
+                    "answer": "You can create unlimited documents within each project. Each document is a separate file that can be used for different purposes like planning, specifications, meeting notes, or any collaborative content creation."
+                },
+                {
+                    "question": "Is there only one Wiki per project?",
+                    "answer": "Yes, there is only one Wiki available per project. This centralized approach helps maintain a single source of truth for institutional knowledge, SOPs, and team policies within each project."
+                }
+            ]
+        },
+        {
+            "name": "Access & Permissions",
+            "questions": [
+                {
+                    "question": "Who can edit documents and wiki pages?",
+                    "answer": "Team members with full access can edit both documents and wiki pages. Users with Client, Comment-only, or View-only roles have read-only access - they can view the content but cannot make edits, ensuring appropriate access control."
+                },
+                {
+                    "question": "Can I share documents with external stakeholders?",
+                    "answer": "Yes, you can share documents and wiki pages with external users through Blue's permission system. They'll have read-only access, allowing you to share information while maintaining control over the content."
+                },
+                {
+                    "question": "Are documents and wiki pages automatically saved?",
+                    "answer": "Yes, all changes are automatically saved in real-time. There's no need for manual saving - your work is continuously preserved as you type, ensuring you never lose your progress."
+                }
+            ]
+        }
+    ]
+}`}}
+{{template "faq-sections" $faqData}}

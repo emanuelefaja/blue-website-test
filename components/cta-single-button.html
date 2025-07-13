@@ -1,0 +1,64 @@
+{{- /* 
+================================================================================
+CTA SINGLE BUTTON COMPONENT
+================================================================================
+A centered call-to-action section with title and single button, using gray background styling.
+
+USAGE:
+{{template "cta-single-button" $ctaData}}
+
+EXAMPLE IMPLEMENTATION:
+{{$ctaData := parseJSON `{
+    "Title": "Join us in shaping a future of technology",
+    "ButtonText": "View careers",
+    "ButtonUrl": "/careers",
+    "MarginBottom": "mb-20"
+}`}}
+{{template "cta-single-button" $ctaData}}
+
+DATA STRUCTURE:
+{
+    "Title": "Your CTA headline",          // Main headline text (required)
+    "ButtonText": "Button text",           // Button text (required)
+    "ButtonUrl": "/button-link",           // Button URL (required)
+    "BackgroundColor": "bg-blue-50",       // Background color class (optional, default: "bg-gray-100 dark:bg-gray-800")
+    "MarginBottom": "mb-20"                // Bottom margin class (optional, default: "mb-16")
+}
+
+FEATURES:
+- Centered layout with large padding
+- Gray background with rounded corners
+- Single prominent button with brand blue styling
+- Responsive text sizing
+- Dark mode support
+- Optional custom margin
+
+LAYOUT:
+- Background: Configurable (default: Gray-100 dark: gray-800)
+- Border radius: 3xl (1.5rem)
+- Padding: 32 units (8rem) on all sides
+- Centered content alignment
+- Button with brand blue background
+
+STYLING:
+- Title: 3xl font size, medium weight
+- Button: Brand blue background, white text, medium weight
+- Hover state for button
+- Smooth transitions (150ms)
+- Responsive design
+
+USE CASES:
+- Career pages
+- Feature section CTAs
+- Single-action conversion prompts
+- Promotional announcements
+*/ -}}
+{{define "cta-single-button"}}
+<!-- CTA Single Button Component -->
+<div class="{{if .BackgroundColor}}{{.BackgroundColor}}{{else}}bg-gray-100 dark:bg-gray-800{{end}} rounded-3xl p-32 text-center {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}">
+    <h3 class="text-3xl font-medium text-gray-900 dark:text-gray-100 mb-8">{{.Title}}</h3>
+    <a href="{{.ButtonUrl}}" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+        {{.ButtonText}}
+    </a>
+</div>
+{{end}} 
