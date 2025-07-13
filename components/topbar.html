@@ -128,11 +128,11 @@
                  loading: false,
                  searchFocused: false,
                  suggestions: [
-                     { title: 'Product Overview', url: '/platform', category: 'Feature', icon: 'grid', description: 'Explore Blue\'s capabilities' },
-                     { title: 'Features', url: '/platform/features', category: 'Feature', icon: 'star', description: 'Discover all Blue features' },
-                     { title: 'Documentation', url: '/docs', category: 'Docs', icon: 'book', description: 'Learn how to use Blue effectively' },
-                     { title: 'API Reference', url: '/api', category: 'API', icon: 'code', description: 'Integrate with Blue\'s API' },
-                     { title: 'Contact Us', url: '/contact', category: 'Page', icon: 'mail', description: 'Get in touch with our team' }
+                     { title: 'Platform Overview', url: '/platform/', category: 'Feature', icon: 'grid', description: 'Explore Blue\'s capabilities' },
+                     { title: 'Features', url: '/platform/features/', category: 'Feature', icon: 'star', description: 'Discover all Blue features' },
+                     { title: 'Documentation', url: '/docs/start-guide/welcome', category: 'Docs', icon: 'book', description: 'Learn how to use Blue effectively' },
+                     { title: 'API Reference', url: '/api/start-guide/introduction', category: 'API', icon: 'code', description: 'Integrate with Blue\'s API' },
+                     { title: 'Contact Us', url: '/contact/', category: 'Page', icon: 'mail', description: 'Get in touch with our team' }
                  ],
                  showingSuggestions: false,
                  async init() {
@@ -305,6 +305,12 @@
                             </div>
                             <template x-for="(suggestion, index) in suggestions" :key="index">
                                 <div @click="selectSuggestion(suggestion)"
+                                     @mouseenter="() => {
+                                         const prefetchLink = document.createElement('link');
+                                         prefetchLink.rel = 'prefetch';
+                                         prefetchLink.href = suggestion.url;
+                                         document.head.appendChild(prefetchLink);
+                                     }"
                                      :class="selectedIndex === index ? 'bg-blue-50 dark:bg-blue-900/30' : 'hover:bg-blue-50 dark:hover:bg-blue-900/30'"
                                      class="px-4 py-3 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0 transition-colors">
                                     <div>
