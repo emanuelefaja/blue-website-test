@@ -35,7 +35,8 @@ DATA STRUCTURE:
 
 FEATURES:
 - Compact bordered cards for logos
-- Highly responsive grid (2-6 columns)
+- Smart responsive grid (2-6 columns)
+- Special handling for 5 logos (auto-fit centering)
 - Dark mode logo inversion
 - Consistent logo sizing
 - Optional section title
@@ -44,6 +45,7 @@ FEATURES:
 LAYOUT:
 - Container: max-width 7xl (80rem)
 - Grid columns: 2 (mobile) → 3 (sm) → 4 (md) → 5 (lg) → 6 (xl)
+- Special case: 5 logos use auto-fit grid with centering
 - Gap: 6 units (1.5rem) between cards
 - Card padding: 4 units (1rem)
 - Card height: Fixed 20 units (5rem)
@@ -76,9 +78,9 @@ USE CASES:
         {{if .title}}
         <h2 class="text-center text-2xl font-semibold mb-8 text-gray-900 dark:text-white">{{.title}}</h2>
         {{end}}
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 items-center">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 items-center justify-items-center" style="{{if eq (len .logos) 5}}grid-template-columns: repeat(auto-fit, minmax(160px, 200px)); justify-content: center;{{end}}">
             {{range .logos}}
-            <div class="flex items-center justify-center p-4 h-20 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800">
+            <div class="flex items-center justify-center p-4 h-20 w-full border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800">
                 <img src="{{.src}}" 
                      alt="{{.name}} logo" 
                      width="120"
