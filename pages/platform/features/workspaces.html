@@ -1,0 +1,267 @@
+{{template "page-heading" 
+    dict 
+        "Title" "Organize Everything in Workspaces" 
+        "Subtitle" "Self-contained environments for teams to collaborate on projects and processes. Keep data secure, teams focused, and work organized." 
+        "MarginBottom" "mb-16"
+}}
+
+<!-- Hero Video -->
+{{template "hero-video" 
+    dict 
+        "VideoUrl" "/product/workspaces-overview.mp4"
+        "ShowUnmuteButton" true
+        "Id" "workspaces-hero"
+}}
+
+<!-- Value Propositions Section -->
+{{$valuePropsData := parseJSON `{
+    "Title": "Complete isolation.<br>Perfect collaboration.",
+    "Description": "Every workspace is entirely self-contained. Only invited team members can access the data, ensuring security while enabling seamless collaboration.",
+    "Animation": false,
+    "ValueProps": [
+        {
+            "Title": "Data isolation",
+            "Description": "Each workspace is completely separate. Data, files, and conversations stay private to invited members only."
+        },
+        {
+            "Title": "Unlimited workspaces",
+            "Description": "Create as many workspaces as you need. No limits on projects, processes, or organizational units."
+        },
+        {
+            "Title": "Flexible purpose",
+            "Description": "Use workspaces for time-bound projects with clear goals or ongoing processes that run continuously."
+        }
+    ],
+    "MarginBottom": "mb-20"
+}`}}
+{{template "value-propositions" $valuePropsData}}
+
+<!-- Two Types Section -->
+<section class="mb-20">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4 text-center">Two approaches, endless possibilities.</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">Workspaces adapt to how you work, whether you're managing projects with deadlines or ongoing processes.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Projects -->
+            <div class="p-8 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Projects</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Time-bound initiatives with clear goals and deadlines. Perfect for product launches, campaigns, construction projects, or any work with defined objectives.</p>
+                <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Clear start and end dates</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Specific deliverables</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Archive when complete</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Processes -->
+            <div class="p-8 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div class="w-16 h-16 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Processes</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Ongoing operations without fixed end dates. Ideal for customer service, sales pipelines, HR management, or any continuous business function.</p>
+                <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Continuous workflow</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Regular management</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>Always active</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workspace Settings Feature -->
+{{$settingsFeature := parseJSON `{
+    "Title": "Complete control over every workspace.",
+    "Description": "Customize everything from branding to terminology. Set workspace colors and icons, rename 'Records' to match your workflow (Tasks, Tickets, Deals), and configure exactly which features are available.",
+    "VideoUrl": "/product/project-settings.mp4",
+    "VideoPosition": "right"
+}`}}
+{{template "feature-video" $settingsFeature}}
+
+<!-- Workspace Management Features -->
+{{$managementFeatures := parseJSON `{
+    "Title": "Powerful workspace management",
+    "Description": "Everything you need to organize, scale, and maintain your workspaces effectively.",
+    "Features": [
+        {
+            "Title": "Convert to Template",
+            "Description": "Turn successful workspaces into reusable templates to accelerate future projects with proven structures."
+        },
+        {
+            "Title": "Copy Workspaces",
+            "Description": "Duplicate entire workspaces including all settings, custom fields, and automations for similar initiatives."
+        },
+        {
+            "Title": "Archive & Preserve",
+            "Description": "Archive completed projects as read-only references while keeping your active workspace list clean."
+        },
+        {
+            "Title": "Import & Export",
+            "Description": "Move data in and out with CSV import/export. Migrate from other tools or backup your data."
+        },
+        {
+            "Title": "OAuth Connections",
+            "Description": "Connect workspaces to external services like GitHub, QuickBooks, and more for seamless integration."
+        },
+        {
+            "Title": "Feature Control",
+            "Description": "Enable or disable specific features per workspace to create focused environments for different teams."
+        }
+    ],
+    "MarginBottom": "mb-20"
+}`}}
+{{template "features-grid-simple" $managementFeatures}}
+
+<!-- Collaboration Feature -->
+{{$collaborationFeature := parseJSON `{
+    "Title": "Invite the right people to the right workspaces.",
+    "Description": "Control access with precision. Each workspace has its own member list and permission settings, ensuring data stays secure while teams collaborate effectively.",
+    "VideoUrl": "/product/workspace-permissions.mp4",
+    "VideoPosition": "left"
+}`}}
+{{template "feature-video" $collaborationFeature}}
+
+<!-- FAQ Section -->
+<section class="mb-20">
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Frequently asked questions</h2>
+    
+    {{$faqData := parseJSON `{
+        "categories": [
+            {
+                "name": "Workspace Basics",
+                "questions": [
+                    {
+                        "question": "What is a workspace in Blue?",
+                        "answer": "A workspace is a self-contained environment for organizing teams and data around a specific project or process. Each workspace has its own members, records, files, settings, and permissions - completely isolated from other workspaces for security and focus."
+                    },
+                    {
+                        "question": "How many workspaces can I create?",
+                        "answer": "You can create unlimited workspaces within your Blue account. There are no restrictions on the number of active workspaces, allowing you to organize work however makes sense for your organization."
+                    },
+                    {
+                        "question": "What's the difference between projects and processes?",
+                        "answer": "Projects are time-bound initiatives with clear goals and deadlines (like launching a product or planning an event). Processes are ongoing operations without fixed end dates (like customer support or sales tracking). Both use the same workspace features but with different organizational approaches."
+                    },
+                    {
+                        "question": "Can I rename 'Records' to something else?",
+                        "answer": "Yes! Each workspace can customize the terminology. You can rename 'Records' to Tasks, Tickets, Deals, Cases, Orders, or any term that matches your workflow. This helps teams use familiar language for their specific industry or process."
+                    }
+                ]
+            },
+            {
+                "name": "Access & Permissions",
+                "questions": [
+                    {
+                        "question": "Who can see a workspace?",
+                        "answer": "Only users who are specifically invited to a workspace can see its data. Workspaces are completely private by default - even organization administrators cannot see workspace content unless they're invited as members."
+                    },
+                    {
+                        "question": "Can users have different roles in different workspaces?",
+                        "answer": "Yes! A user might be a Workspace Administrator in one workspace but a Team Member in another. Roles are assigned per workspace, allowing flexible permission management across your organization."
+                    },
+                    {
+                        "question": "How do I invite people to a workspace?",
+                        "answer": "Workspace Administrators can invite new members through the People tab. Send invitations via email, set their initial role, and optionally include a welcome message. New members gain immediate access upon accepting."
+                    },
+                    {
+                        "question": "Can external clients access workspaces?",
+                        "answer": "Yes, you can invite external users with limited permissions like Client or View-Only roles. This allows secure collaboration with customers, vendors, or partners while maintaining control over what they can see and do."
+                    }
+                ]
+            },
+            {
+                "name": "Workspace Management",
+                "questions": [
+                    {
+                        "question": "How do I convert a workspace to a template?",
+                        "answer": "Workspace Administrators can convert any workspace to a template through workspace settings. This preserves all structures, custom fields, automations, and settings as a reusable template for future workspaces."
+                    },
+                    {
+                        "question": "What happens when I archive a workspace?",
+                        "answer": "Archived workspaces become read-only, preserving all data for future reference while removing them from active workspace lists. You can still access archived workspaces to view historical information but cannot make changes."
+                    },
+                    {
+                        "question": "Can I copy an entire workspace?",
+                        "answer": "Yes! The copy function duplicates the entire workspace structure including custom fields, views, automations, and settings. You can choose whether to include records and files, making it easy to reuse successful workspace configurations."
+                    },
+                    {
+                        "question": "Can I permanently delete a workspace?",
+                        "answer": "Yes, but be careful - deletion is permanent and cannot be undone. Only Workspace Administrators can delete workspaces. We recommend archiving instead of deleting to preserve historical data."
+                    }
+                ]
+            },
+            {
+                "name": "Features & Customization",
+                "questions": [
+                    {
+                        "question": "Can I customize which features are available in a workspace?",
+                        "answer": "Yes! Workspace settings allow you to enable or disable specific features like Chat, Wiki, Forms, or Automations. This helps create focused environments by showing only the tools each team needs."
+                    },
+                    {
+                        "question": "How do workspace colors and icons work?",
+                        "answer": "Each workspace can have a custom color and icon that appears in the sidebar for all members. This visual customization helps users quickly identify and navigate between different workspaces."
+                    },
+                    {
+                        "question": "Can I connect workspaces to external services?",
+                        "answer": "Yes, workspaces support OAuth connections to services like GitHub, QuickBooks, Google, and more. These connections are workspace-specific, maintaining security while enabling powerful integrations."
+                    },
+                    {
+                        "question": "Do all workspaces share the same custom fields?",
+                        "answer": "No, each workspace has its own set of custom fields. This allows complete customization for different types of work - a sales workspace might have different fields than a project management workspace."
+                    }
+                ]
+            }
+        ]
+    }`}}
+    
+    {{template "faq-sections" $faqData}}
+</section>
+
+<!-- Call to Action -->
+{{$ctaData := parseJSON `{
+    "Title": "Start organizing with workspaces today.",
+    "PrimaryText": "Get Started Free",
+    "PrimaryUrl": "https://app.blue.cc",
+    "SecondaryText": "View documentation",
+    "SecondaryUrl": "/docs/projects"
+}`}}
+{{template "dual-button-cta" $ctaData}}

@@ -143,14 +143,15 @@
     {{template "feature-benefits-grid" $resourceBenefits}}
 </div>
 
-<!-- CTA Section -->
+<!-- Call to Action -->
 {{$ctaData := parseJSON `{
     "Title": "Ready to see your projects clearly?",
-    "ButtonText": "Start planning visually",
-    "ButtonUrl": "https://app.blue.cc",
-    "MarginBottom": "mb-16"
+    "PrimaryText": "Get Started Free",
+    "PrimaryUrl": "https://app.blue.cc",
+    "SecondaryText": "View documentation",
+    "SecondaryUrl": "/docs/views/timeline"
 }`}}
-{{template "cta-single-button" $ctaData}}
+{{template "dual-button-cta" $ctaData}}
 
 <!-- FAQ Section -->
 {{$faqData := parseJSON `{
