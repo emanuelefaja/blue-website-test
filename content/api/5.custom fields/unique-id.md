@@ -277,7 +277,7 @@ mutation SetUniqueIdValue {
 - Consider sequence starting numbers for high-volume projects
 
 ### Migration and Updates
-- Adding auto-sequencing to existing records triggers background processing
+- Adding auto-sequencing to existing records queues background job (worker pending)
 - Changing sequence settings affects only future records
 - Existing IDs remain unchanged when configuration updates
 - Sequence counters continue from current maximum

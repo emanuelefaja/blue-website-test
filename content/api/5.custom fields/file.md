@@ -15,7 +15,6 @@ mutation CreateFileField {
   createCustomField(input: {
     name: "Attachments"
     type: FILE
-    projectId: "proj_123"
   }) {
     id
     name
@@ -33,7 +32,6 @@ mutation CreateDetailedFileField {
   createCustomField(input: {
     name: "Project Documents"
     type: FILE
-    projectId: "proj_123"
     description: "Upload project-related documents, images, and files"
   }) {
     id
@@ -53,6 +51,8 @@ mutation CreateDetailedFileField {
 | `name` | String! | ✅ Yes | Display name of the file field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `FILE` |
 | `description` | String | No | Help text shown to users |
+
+**Note**: Custom fields are automatically associated with the project based on the user's current project context. No `projectId` parameter is required.
 
 ## File Upload Process
 
@@ -302,21 +302,9 @@ mutation CreateRecordWithFiles {
 ```json
 {
   "errors": [{
-    "message": "File size exceeds maximum limit of 256MB",
+    "message": "File \"filename.pdf\": Size exceeds maximum limit of 256MB",
     "extensions": {
-      "code": "FILE_TOO_LARGE"
-    }
-  }]
-}
-```
-
-### Invalid File Type
-```json
-{
-  "errors": [{
-    "message": "File type not supported",
-    "extensions": {
-      "code": "INVALID_FILE_TYPE"
+      "code": "BAD_USER_INPUT"
     }
   }]
 }
@@ -329,6 +317,18 @@ mutation CreateRecordWithFiles {
     "message": "File not found",
     "extensions": {
       "code": "FILE_NOT_FOUND"
+    }
+  }]
+}
+```
+
+### Field Not Found
+```json
+{
+  "errors": [{
+    "message": "Custom field not found",
+    "extensions": {
+      "code": "NOT_FOUND"
     }
   }]
 }
