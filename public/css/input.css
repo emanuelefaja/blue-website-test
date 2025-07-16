@@ -485,3 +485,19 @@ body {
     filter: blur(60px);
   }
 }
+
+/* Earth emoji animation */
+.earth-emoji::before {
+  content: "🌍";
+  font-size: 1em;
+  display: inline-block;
+  animation: rotateEmoji 3s steps(3, jump-none) infinite;
+}
+
+/* Cycle between 🌍, 🌎, 🌏 */
+@keyframes rotateEmoji {
+  0%   { content: "🌍"; }
+  33%  { content: "🌎"; }
+  66%  { content: "🌏"; }
+  100% { content: "🌍"; }
+}
