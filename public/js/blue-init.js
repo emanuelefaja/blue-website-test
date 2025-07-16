@@ -55,6 +55,15 @@ window.BlueInit = {
         if (typeof SPAUtils !== 'undefined' && SPAUtils.setupClientRouting) {
             SPAUtils.setupClientRouting();
         }
+        
+        // Re-initialize Alpine.js components for dynamic content
+        if (typeof Alpine !== 'undefined') {
+            // Initialize any new Alpine components in the main content area
+            const main = document.querySelector('main');
+            if (main) {
+                Alpine.initTree(main);
+            }
+        }
     },
     
     /**
