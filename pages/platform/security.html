@@ -90,8 +90,8 @@
     <!-- Security Features Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto mb-20">
         <!-- Enterprise-Level Encryption -->
-        <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'Enterprise-Level Encryption'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
@@ -102,8 +102,8 @@
         </div>
         
         <!-- Advanced Monitoring -->
-        <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'Monitoring and Redundancy'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
@@ -114,8 +114,8 @@
         </div>
         
         <!-- Secure Backend -->
-        <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'Secure Backend Systems'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
@@ -126,8 +126,8 @@
         </div>
         
         <!-- Security Audits -->
-        <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'Regular Security Audits'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
@@ -138,8 +138,8 @@
         </div>
         
         <!-- Daily Data Backups -->
-        <div class="p-8 space-y-4 md:border-r border-gray-200 dark:border-gray-700 md:dark:border-gray-700">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 md:border-r border-gray-200 dark:border-gray-700 md:dark:border-gray-700">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'Daily Data Backups'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
@@ -150,8 +150,8 @@
         </div>
         
         <!-- External Security Researchers -->
-        <div class="p-8 space-y-4">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        <div class="p-6 sm:p-8 space-y-3 sm:space-y-4">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">
                 <template x-for="(char, index) in 'External Security Researchers'.split('')" :key="index">
                     <span @mouseenter="window.flipChar($event)" 
                           :class="char === ' ' ? '' : 'flip-char'" 
