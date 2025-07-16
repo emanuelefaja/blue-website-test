@@ -52,6 +52,7 @@ FEATURES:
 - Clickable feature titles (when URL provided)
 - Clean, minimal design
 - Consistent spacing and typography
+- Dark mode support
 
 LAYOUT:
 - Container: max-width 7xl (80rem)
@@ -62,10 +63,10 @@ LAYOUT:
 
 STYLING:
 - Section title: 3xl-4xl font size, medium weight
-- Feature title: lg font size, semibold, gray-900
-- Description: sm font size, gray-600, relaxed leading
-- Icon container: 12x12 units, white bg, gray border
-- Icon size: 6x6 units, gray-600
+- Feature title: lg font size, semibold, gray-900/white(dark)
+- Description: sm font size, gray-600/gray-400(dark), relaxed leading
+- Icon container: 12x12 units, white/gray-800(dark) bg, gray/gray-700(dark) border
+- Icon size: 6x6 units, gray-600/gray-400(dark)
 - Hover: Brand blue color and underline on linked titles
 
 ICON SYSTEM:
@@ -84,7 +85,7 @@ USE CASES:
 <!-- Features Grid Component -->
 <section class="max-w-7xl mx-auto {{if .MarginBottom}}{{.MarginBottom}}{{else}}mb-16{{end}}">
     {{if .Title}}
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">{{.Title}}</h2>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-white mb-16">{{.Title}}</h2>
     {{end}}
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,8 +93,8 @@ USE CASES:
         <div class="space-y-4">
             <!-- Icon Container (optional) -->
             {{if .Icon}}
-            <div class="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-gray-600" fill="currentColor">
+            <div class="w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="currentColor">
                     <use href="/icons/sprite.svg#{{.Icon}}"></use>
                 </svg>
             </div>
@@ -101,17 +102,17 @@ USE CASES:
             
             <!-- Title (with optional link) -->
             {{if .Url}}
-            <h3 class="text-lg font-semibold text-gray-900">
-                <a href="{{.Url}}" class="hover:text-brand-blue hover:underline transition-colors duration-200">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="{{.Url}}" class="hover:text-brand-blue dark:hover:text-brand-blue hover:underline transition-colors duration-200">
                     {{.Title}}
                 </a>
             </h3>
             {{else}}
-            <h3 class="text-lg font-semibold text-gray-900">{{.Title}}</h3>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{.Title}}</h3>
             {{end}}
             
             <!-- Description -->
-            <p class="text-gray-600 text-sm leading-relaxed">{{.Description}}</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{{.Description}}</p>
         </div>
         {{end}}
     </div>
