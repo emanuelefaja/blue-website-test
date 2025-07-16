@@ -75,8 +75,10 @@ mutation SetLocationValue {
 |-----------|------|----------|-------------|
 | `todoId` | String! | ✅ Yes | ID of the record to update |
 | `customFieldId` | String! | ✅ Yes | ID of the location custom field |
-| `latitude` | Float! | ✅ Yes | Latitude coordinate (-90 to 90) |
-| `longitude` | Float! | ✅ Yes | Longitude coordinate (-180 to 180) |
+| `latitude` | Float | No | Latitude coordinate (-90 to 90) |
+| `longitude` | Float | No | Longitude coordinate (-180 to 180) |
+
+**Note**: While both parameters are optional in the schema, both coordinates are required for a valid location. If only one is provided, the location will be invalid.
 
 ## Coordinate Validation
 
