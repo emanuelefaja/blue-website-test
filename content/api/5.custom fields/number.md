@@ -15,7 +15,6 @@ mutation CreateNumberField {
   createCustomField(input: {
     name: "Priority Score"
     type: NUMBER
-    projectId: "proj_123"
   }) {
     id
     name
@@ -33,7 +32,6 @@ mutation CreateConstrainedNumberField {
   createCustomField(input: {
     name: "Team Size"
     type: NUMBER
-    projectId: "proj_123"
     min: 1
     max: 100
     prefix: "#"
@@ -97,7 +95,7 @@ mutation SetIntegerValue {
 |-----------|------|----------|-------------|
 | `todoId` | String! | ✅ Yes | ID of the record to update |
 | `customFieldId` | String! | ✅ Yes | ID of the number custom field |
-| `number` | Float! | ✅ Yes | Numeric value to store |
+| `number` | Float | No | Numeric value to store |
 
 ## Value Validation
 
@@ -110,7 +108,6 @@ mutation CreateValidatedField {
   createCustomField(input: {
     name: "Rating"
     type: NUMBER
-    projectId: "proj_123"
     min: 1
     max: 10
     description: "Rating from 1 to 10"

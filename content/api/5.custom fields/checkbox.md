@@ -15,7 +15,6 @@ mutation CreateCheckboxField {
   createCustomField(input: {
     name: "Reviewed"
     type: CHECKBOX
-    projectId: "proj_123"
   }) {
     id
     name
@@ -33,17 +32,12 @@ mutation CreateDetailedCheckbox {
   createCustomField(input: {
     name: "Customer Approved"
     type: CHECKBOX
-    projectId: "proj_123"
     description: "Check this box when the customer has approved the work"
-    required: true
-    isActive: true
   }) {
     id
     name
     type
     description
-    required
-    isActive
   }
 }
 ```
@@ -56,10 +50,7 @@ mutation CreateDetailedCheckbox {
 |-----------|------|----------|-------------|
 | `name` | String! | ✅ Yes | Display name of the checkbox |
 | `type` | CustomFieldType! | ✅ Yes | Must be `CHECKBOX` |
-| `projectId` | String! | ✅ Yes | Project ID where the field will be created |
 | `description` | String | No | Help text shown to users |
-| `required` | Boolean | No | Whether the field must be checked (defaults to false) |
-| `isActive` | Boolean | No | Whether the field is active (defaults to true) |
 
 ## Setting Checkbox Values
 
@@ -93,7 +84,7 @@ mutation UncheckTheBox {
 |-----------|------|----------|-------------|
 | `todoId` | String! | ✅ Yes | ID of the task to update |
 | `customFieldId` | String! | ✅ Yes | ID of the checkbox custom field |
-| `checked` | Boolean! | ✅ Yes | True to check, false to uncheck |
+| `checked` | Boolean | No | True to check, false to uncheck |
 
 ## Creating Tasks with Checkbox Values
 
@@ -140,7 +131,8 @@ When creating tasks, checkbox values must be passed as strings:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Unique identifier for the field value |
+| `id` | ID! | Unique identifier for the field value |
+| `uid` | String! | Alternative unique identifier |
 | `customField` | CustomField! | The custom field definition |
 | `checked` | Boolean | The checkbox state (true/false/null) |
 | `todo` | Todo! | The task this value belongs to |

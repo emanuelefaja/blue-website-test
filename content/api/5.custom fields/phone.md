@@ -15,7 +15,6 @@ mutation CreatePhoneField {
   createCustomField(input: {
     name: "Contact Phone"
     type: PHONE
-    projectId: "proj_123"
   }) {
     id
     name
@@ -33,7 +32,6 @@ mutation CreateDetailedPhoneField {
   createCustomField(input: {
     name: "Emergency Contact"
     type: PHONE
-    projectId: "proj_123"
     description: "Emergency contact number with country code"
   }) {
     id
@@ -53,6 +51,8 @@ mutation CreateDetailedPhoneField {
 | `name` | String! | ✅ Yes | Display name of the phone field |
 | `type` | CustomFieldType! | ✅ Yes | Must be `PHONE` |
 | `description` | String | No | Help text shown to users |
+
+**Note**: Custom fields are automatically associated with the project based on the user's current project context. No `projectId` parameter is required.
 
 ## Setting Phone Values
 
@@ -74,8 +74,10 @@ mutation SetPhoneValue {
 |-----------|------|----------|-------------|
 | `todoId` | String! | ✅ Yes | ID of the record to update |
 | `customFieldId` | String! | ✅ Yes | ID of the phone custom field |
-| `text` | String! | ✅ Yes | Phone number with country code |
+| `text` | String | No | Phone number with country code |
 | `regionCode` | String | No | Country code (automatically detected) |
+
+**Note**: While `text` is optional in the schema, a phone number is required for the field to be meaningful. The `regionCode` is automatically detected from the phone number.
 
 ## Creating Records with Phone Values
 
@@ -130,14 +132,14 @@ Phone numbers must include a country code in one of these formats:
 - **International with punctuation**: `+1 (234) 567-8900`
 - **Country code with dashes**: `+1-234-567-8900`
 
-**Note**: National formats without country code (like `(234) 567-8900`) will not work.
+**Note**: National formats without country code (like `(234) 567-8900`) may not work reliably and should include country information for proper validation.
 
 ### Validation Rules
-- Must include country code (starting with `+`)
 - Uses libphonenumber-js for parsing and validation
+- Accepts various international phone number formats
 - Automatically detects country from the number
-- Formats number in international display format
-- Extracts and stores country code separately
+- Formats number in international display format (e.g., `+1 234 567 8900`)
+- Extracts and stores country code separately (e.g., `US`)
 
 ### Valid Phone Examples
 ```
@@ -168,8 +170,8 @@ When a phone number is successfully validated:
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create phone field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update phone field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create phone field | `OWNER` or `ADMIN` role at project level |
+| Update phone field | `OWNER` or `ADMIN` role at project level |
 | Set phone value | Standard record edit permissions |
 | View phone value | Standard record view permissions |
 
@@ -193,7 +195,7 @@ When a phone number is successfully validated:
   "errors": [{
     "message": "Custom field not found",
     "extensions": {
-      "code": "NOT_FOUND"
+      "code": "CUSTOM_FIELD_NOT_FOUND"
     }
   }]
 }
