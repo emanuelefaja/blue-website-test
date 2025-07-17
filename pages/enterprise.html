@@ -428,10 +428,64 @@
                              rectangleWidth: 64,
                              gap: 4,
                              verticalOffset: 40,
+                             mouseX: 0,
+                             mouseY: 0,
+                             isHovering: false,
+                             rectangles: Array(8).fill(null).map((_, i) => ({
+                                 index: i,
+                                 magnetX: 0,
+                                 magnetY: 0,
+                                 scale: 1
+                             })),
                              updateProgress() {
                                  const rect = $el.getBoundingClientRect();
                                  const viewportHeight = window.innerHeight;
-                                 this.progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.8)));
+                                 this.progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight * 0.7)));
+                             },
+                             handleMouseMove(e) {
+                                 if (!this.isHovering) return;
+                                 
+                                 const rect = $el.getBoundingClientRect();
+                                 this.mouseX = e.clientX - rect.left;
+                                 this.mouseY = e.clientY - rect.top;
+                                 
+                                 // Update magnetic effect for each rectangle
+                                 this.rectangles.forEach((rectangle, index) => {
+                                     const isMoving = this.progress > (index / this.numRectangles);
+                                     const stackY = this.verticalOffset + (this.numRectangles - index - 1) * (this.rectangleHeight + this.gap);
+                                     
+                                     // Rectangle center position
+                                     const rectCenterX = (isMoving ? 180 : 20) + this.rectangleWidth / 2;
+                                     const rectCenterY = stackY + this.rectangleHeight / 2;
+                                     
+                                     // Distance from mouse to rectangle center
+                                     const distX = this.mouseX - rectCenterX;
+                                     const distY = this.mouseY - rectCenterY;
+                                     const distance = Math.sqrt(distX * distX + distY * distY);
+                                     
+                                     // Magnetic effect radius
+                                     const magnetRadius = 80;
+                                     
+                                     if (distance < magnetRadius) {
+                                         const strength = 1 - (distance / magnetRadius);
+                                         const maxMove = 8; // Slightly more movement for larger rectangles
+                                         
+                                         rectangle.magnetX = (distX / distance) * strength * maxMove;
+                                         rectangle.magnetY = (distY / distance) * strength * maxMove;
+                                         rectangle.scale = 1 + (strength * 0.1); // Scale up to 1.1
+                                     } else {
+                                         rectangle.magnetX = 0;
+                                         rectangle.magnetY = 0;
+                                         rectangle.scale = 1;
+                                     }
+                                 });
+                             },
+                             resetMagnetic() {
+                                 this.rectangles.forEach(rectangle => {
+                                     rectangle.magnetX = 0;
+                                     rectangle.magnetY = 0;
+                                     rectangle.scale = 1;
+                                 });
                              },
                              getRectangleStyle(index) {
                                  const totalRectangles = this.numRectangles;
@@ -443,6 +497,8 @@
                                  const leftX = 20;
                                  const rightX = 180;
                                  
+                                 const rectangle = this.rectangles[index];
+                                 
                                  return {
                                      position: 'absolute',
                                      width: this.rectangleWidth + 'px',
@@ -451,14 +507,18 @@
                                      left: isMoving ? rightX + 'px' : leftX + 'px',
                                      backgroundColor: isMoving ? '#00a0d2' : '#e3211a',
                                      transition: 'all 0.6s ease-out',
-                                     borderRadius: '4px'
+                                     borderRadius: '4px',
+                                     transform: `translate(${rectangle.magnetX}px, ${rectangle.magnetY}px) scale(${rectangle.scale})`
                                  };
                              }
                          }"
                          x-init="updateProgress()"
                          x-intersect="intersecting = true"
                          x-intersect:leave="intersecting = false"
-                         x-on:scroll.window="if (intersecting) { updateProgress() }">
+                         x-on:scroll.window="if (intersecting) { updateProgress() }"
+                         @mouseenter="isHovering = true"
+                         @mouseleave="isHovering = false; resetMagnetic()"
+                         @mousemove.throttle.16ms="handleMouseMove($event)">
                         
                         <!-- Rectangles -->
                         <template x-for="i in numRectangles" :key="i">
