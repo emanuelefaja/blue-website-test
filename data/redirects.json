@@ -136,7 +136,7 @@
     "/resources/engineering-blog": "/",
     "/resources/engineering-custom-permissions-project-management": "/insights/custom-permissions-engineering",
     "/resources/eran-interview": "/insights/eran-interview",
-    "/resources/experts": "/experts",
+    "/experts": "/resources/experts",
     "/resources/faq-security": "/insights/faq-security",
     "/resources/faqs": "/contact/support",
     "/resources/final-thoughts": "/",
