@@ -9,14 +9,9 @@
     <img src="/pictures/blueteam.jpeg" alt="Blue Team" class="w-full h-auto rounded-3xl">
 </div>
 
-{{template "call-out-text" 
-    dict 
-        "Text" "Our mission is to organize the world's work." 
-        "MarginBottom" "mb-32"
-}}
 
 {{$statsData := parseJSON `{
-    "Title": "Blue by the numbers",
+    "Title": "Our mission is to organize the world's work.",
     "MarginBottom": "mb-16",
     "Stats": [
         {
@@ -36,7 +31,50 @@
 
 {{template "stats-section" $statsData}}
 
-
+<!-- Team World Map Section -->
+<section id="team-map" class="mb-32">
+    <div class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Our Global Team</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">We're a distributed team working from around the world to bring you the best process management platform.</p>
+    </div>
+    
+    <div class="relative w-full max-w-6xl mx-auto" x-data="{ 
+        locations: [
+            { country: 'Palermo, Italy', x: 50, y: 30 },
+            { country: 'New York, USA', x: 25, y: 27 },
+            { country: 'Panama City, Panama', x: 19, y: 52 },
+            { country: 'Phnom Penh, Cambodia', x: 80, y: 50 },
+            { country: 'Ho Chi Minh City, Vietnam', x: 81, y: 48 },
+            { country: 'Cebu, Philippines', x: 86, y: 49 },
+        ]
+    }">
+        <!-- World Map SVG -->
+        <div class="relative">
+            <img src="/pictures/worldmap.svg" alt="World Map" class="w-full h-auto opacity-20 dark:opacity-10">
+            
+            <!-- Location Dots -->
+            <template x-for="location in locations" :key="location.country">
+                <div :style="`left: ${location.x}%; top: ${location.y}%;`" 
+                     class="absolute transform -translate-x-1/2 -translate-y-1/2 group">
+                    <!-- Ping Animation -->
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" 
+                              style="background-color: #00a0d2;"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3" 
+                              style="background-color: #00a0d2;"></span>
+                    </span>
+                    <!-- Country Label (shown on hover) -->
+                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                        <span x-text="location.country"></span>
+                        <svg class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px" width="8" height="4" viewBox="0 0 8 4">
+                            <path fill="currentColor" d="M0 0h8L4 4z"/>
+                        </svg>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</section>
 
 <section id="CEO-message" class="mb-16">
     <div class="max-w-4xl mx-auto">
@@ -122,8 +160,8 @@
 
 <!-- Awards & Recognition Section -->
 <section id="awards" class="mb-20">
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8 text-center">Awards & Recognition</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-center mb-12">Trusted by thousands of teams worldwide and recognized by industry leaders.</p>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Awards & Recognition</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">Trusted by thousands of teams worldwide and recognized by industry leaders.</p>
     
     {{$awardsData := parseJSON `{
         "awards": [
@@ -150,6 +188,42 @@
         ]
     }`}}
     {{template "awards-grid" $awardsData}}
+</section>
+
+<!-- Funding Section -->
+<section id="funding" class="mb-20">
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Funded By</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">We're backed by the most demanding investors in the world: our customers.</p>
+    
+    <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">$0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Venture Capital Raised</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">17,000+</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Customers</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">100%</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Founder Owned</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">∞</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Growth Runway</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="prose prose-lg max-w-none">
+        <p class="text-gray-600 dark:text-gray-400">
+            While others chase venture capital, we've chosen a different path. We're proudly bootstrapped, which means we answer to our customers, not to a board room. This independence allows us to focus on building the best product possible, make decisions for the long term, and maintain the company culture that got us here.
+        </p>
+        <p class="text-gray-600 dark:text-gray-400 mt-4">
+            <strong class="text-gray-900 dark:text-gray-100">Our investors?</strong> Every customer who believes in our vision. Every team that trusts us with their workflows. Every person who chose Blue over the heavily-funded alternatives. You're not just users – you're partners in building something sustainable.
+        </p>
+    </div>
 </section>
 
 <!-- Company Timeline Section -->
@@ -244,6 +318,24 @@
     </div>
 </section>
 
+
+<!-- Learn More Section -->
+<section id="learn-more" class="mb-20">
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-8 md:p-12">
+        <div class="max-w-3xl">
+            <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Want to learn more?</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                Dive into our insights where we share our thoughts on building better processes, scaling operations, and creating a world-class product without venture capital.
+            </p>
+            <a href="/insights" class="inline-flex items-center text-brand-blue hover:text-blue-700 font-medium transition-colors duration-200">
+                Read our insights
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
 
 <!-- Call to Action -->
 {{$ctaData := parseJSON `{
