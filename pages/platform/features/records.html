@@ -244,13 +244,88 @@
             {{template "feature-video" $calendarData}}
         </div>
 
+        <!-- Timeline View -->
+        <div class="mb-20">
+            {{$timelineData := parseJSON `{
+                "Title": "Master your schedules with Timeline View.",
+                "Description": "Visualize your work chronologically with Gantt-style timelines. Track deadlines, dependencies, and progress at a glance.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Features": [
+                    {
+                        "Title": "Drag & Drop Scheduling.",
+                        "Description": "Reschedule tasks by dragging, adjust durations by resizing — planning made effortless."
+                    },
+                    {
+                        "Title": "Visual Dependencies.",
+                        "Description": "See task relationships and blocking issues to optimize your workflow sequencing."
+                    },
+                    {
+                        "Title": "Infinite Timeline.",
+                        "Description": "Zoom in for daily detail or out for quarterly planning with unlimited timeline extension."
+                    }
+                ]
+            }`}}
+            {{template "feature-video" $timelineData}}
+        </div>
+
+        <!-- Map View -->
+        <div class="mb-20">
+            {{$mapData := parseJSON `{
+                "Title": "Gain geographic insights with Map View.",
+                "Description": "Visualize your data spatially on an interactive world map. Perfect for location-based operations and geographic analysis.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Features": [
+                    {
+                        "Title": "Pin & Track Locations.",
+                        "Description": "One-click location pinning and real-time tracking via custom location fields."
+                    },
+                    {
+                        "Title": "Interactive Details.",
+                        "Description": "Click any pin to see full record details including assignees, tags, and status."
+                    },
+                    {
+                        "Title": "Google Maps Integration.",
+                        "Description": "Enhanced mapping with Google Maps for detailed street-level visualization."
+                    }
+                ]
+            }`}}
+            {{template "feature-video" $mapData}}
+        </div>
+
+        <!-- List View -->
+        <div class="mb-20">
+            {{$listData := parseJSON `{
+                "Title": "Stay focused with List View.",
+                "Description": "Simple, powerful checklist format for rapid task completion. Perfect for daily to-dos and quick record reviews.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "left",
+                "Features": [
+                    {
+                        "Title": "Checklist Simplicity.",
+                        "Description": "Clean interface with checkboxes for marking tasks complete at a glance."
+                    },
+                    {
+                        "Title": "Smart Sorting.",
+                        "Description": "Sort by priority, date, or assignee to focus on what matters most."
+                    },
+                    {
+                        "Title": "Infinite Scroll.",
+                        "Description": "Smoothly handle thousands of records without pagination delays."
+                    }
+                ]
+            }`}}
+            {{template "feature-video" $listData}}
+        </div>
+
         <!-- Activity & Audit Trails -->
         <div class="mb-20">
             {{$auditData := parseJSON `{
                 "Title": "Monitor everything with Activity & Audit Trails.",
                 "Description": "Blue creates transparency on what's happened. Monitor activities across workspaces and hold people responsible.",
                 "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
+                "VideoPosition": "right",
                 "Features": [
                     {
                         "Title": "Time Machine.",
