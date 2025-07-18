@@ -171,7 +171,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
                 <!-- Grid of Squares -->
                 <div class="order-1 lg:order-1 flex items-center justify-center">
-                    <div class="grid grid-cols-10 gap-2 p-4 w-max"
+                    <div class="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 gap-1 sm:gap-2 p-2 sm:p-4 max-w-full"
                          x-data="{
                              intersecting: false,
                              progress: 0,
@@ -186,6 +186,12 @@
                                  magnetY: 0,
                                  scale: 1
                              })),
+                             getVisibleSquares() {
+                                 // Show different number of squares based on screen size
+                                 const cols = window.innerWidth < 640 ? 6 : window.innerWidth < 768 ? 8 : 10;
+                                 const rows = window.innerWidth < 640 ? 6 : 6; // Keep 6 rows on all sizes
+                                 return cols * rows;
+                             },
                              updateProgress() {
                                  // Calculate progress from 0 to 1 based on scroll position
                                  const rect = $el.getBoundingClientRect();
@@ -207,13 +213,17 @@
                                  
                                  // Update magnetic effect for each square
                                  this.squares.forEach((square, index) => {
-                                     const col = index % 10;
-                                     const row = Math.floor(index / 10);
-                                     const squareSize = 32; // w-8
-                                     const gap = 8; // gap-2
+                                     // Responsive column count
+                                     const cols = window.innerWidth < 640 ? 6 : window.innerWidth < 768 ? 8 : 10;
+                                     const col = index % cols;
+                                     const row = Math.floor(index / cols);
+                                     // Responsive square size
+                                     const squareSize = window.innerWidth < 640 ? 24 : window.innerWidth < 768 ? 28 : 32;
+                                     const gap = window.innerWidth < 640 ? 4 : 8;
                                      
                                      // Calculate square center position
-                                     const squareCenterX = col * (squareSize + gap) + squareSize / 2 + 16; // +16 for p-4
+                                     const padding = window.innerWidth < 640 ? 8 : 16; // responsive padding
+                                     const squareCenterX = col * (squareSize + gap) + squareSize / 2 + padding;
                                      const squareCenterY = row * (squareSize + gap) + squareSize / 2 + 16;
                                      
                                      // Distance from mouse to square center
@@ -257,189 +267,189 @@
                          @mouseleave="isHovering = false; resetMagnetic()"
                          @mousemove.throttle.16ms="handleMouseMove($event)">
                         <!-- Row 1 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
-                             :class="squares[0].visible ? 'opacity-100' : 'opacity-0'"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                             :class="[squares[0].visible ? 'opacity-100' : 'opacity-0', 0 >= getVisibleSquares() ? 'hidden' : '']"
                              :style="`transform: translate(${squares[0].magnetX}px, ${squares[0].magnetY}px) scale(${squares[0].visible ? squares[0].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[1].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[1].magnetX}px, ${squares[1].magnetY}px) scale(${squares[1].visible ? squares[1].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[2].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[2].magnetX}px, ${squares[2].magnetY}px) scale(${squares[2].visible ? squares[2].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[3].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[3].magnetX}px, ${squares[3].magnetY}px) scale(${squares[3].visible ? squares[3].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[4].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[4].magnetX}px, ${squares[4].magnetY}px) scale(${squares[4].visible ? squares[4].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[5].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[5].magnetX}px, ${squares[5].magnetY}px) scale(${squares[5].visible ? squares[5].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[6].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[6].magnetX}px, ${squares[6].magnetY}px) scale(${squares[6].visible ? squares[6].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[7].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[7].magnetX}px, ${squares[7].magnetY}px) scale(${squares[7].visible ? squares[7].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[8].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[8].magnetX}px, ${squares[8].magnetY}px) scale(${squares[8].visible ? squares[8].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[9].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[9].magnetX}px, ${squares[9].magnetY}px) scale(${squares[9].visible ? squares[9].scale : 0.75})`"></div>
                         <!-- Row 2 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[10].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[10].magnetX}px, ${squares[10].magnetY}px) scale(${squares[10].visible ? squares[10].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[11].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[11].magnetX}px, ${squares[11].magnetY}px) scale(${squares[11].visible ? squares[11].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[12].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[12].magnetX}px, ${squares[12].magnetY}px) scale(${squares[12].visible ? squares[12].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[13].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[13].magnetX}px, ${squares[13].magnetY}px) scale(${squares[13].visible ? squares[13].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[14].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[14].magnetX}px, ${squares[14].magnetY}px) scale(${squares[14].visible ? squares[14].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[15].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[15].magnetX}px, ${squares[15].magnetY}px) scale(${squares[15].visible ? squares[15].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[16].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[16].magnetX}px, ${squares[16].magnetY}px) scale(${squares[16].visible ? squares[16].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[17].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[17].magnetX}px, ${squares[17].magnetY}px) scale(${squares[17].visible ? squares[17].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[18].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[18].magnetX}px, ${squares[18].magnetY}px) scale(${squares[18].visible ? squares[18].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[19].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[19].magnetX}px, ${squares[19].magnetY}px) scale(${squares[19].visible ? squares[19].scale : 0.75})`"></div>
                         <!-- Row 3 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[20].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[20].magnetX}px, ${squares[20].magnetY}px) scale(${squares[20].visible ? squares[20].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[21].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[21].magnetX}px, ${squares[21].magnetY}px) scale(${squares[21].visible ? squares[21].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[22].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[22].magnetX}px, ${squares[22].magnetY}px) scale(${squares[22].visible ? squares[22].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[23].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[23].magnetX}px, ${squares[23].magnetY}px) scale(${squares[23].visible ? squares[23].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[24].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[24].magnetX}px, ${squares[24].magnetY}px) scale(${squares[24].visible ? squares[24].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[25].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[25].magnetX}px, ${squares[25].magnetY}px) scale(${squares[25].visible ? squares[25].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[26].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[26].magnetX}px, ${squares[26].magnetY}px) scale(${squares[26].visible ? squares[26].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[27].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[27].magnetX}px, ${squares[27].magnetY}px) scale(${squares[27].visible ? squares[27].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[28].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[28].magnetX}px, ${squares[28].magnetY}px) scale(${squares[28].visible ? squares[28].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[29].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[29].magnetX}px, ${squares[29].magnetY}px) scale(${squares[29].visible ? squares[29].scale : 0.75})`"></div>
                         <!-- Row 4 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[30].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[30].magnetX}px, ${squares[30].magnetY}px) scale(${squares[30].visible ? squares[30].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[31].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[31].magnetX}px, ${squares[31].magnetY}px) scale(${squares[31].visible ? squares[31].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[32].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[32].magnetX}px, ${squares[32].magnetY}px) scale(${squares[32].visible ? squares[32].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[33].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[33].magnetX}px, ${squares[33].magnetY}px) scale(${squares[33].visible ? squares[33].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[34].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[34].magnetX}px, ${squares[34].magnetY}px) scale(${squares[34].visible ? squares[34].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[35].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[35].magnetX}px, ${squares[35].magnetY}px) scale(${squares[35].visible ? squares[35].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[36].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[36].magnetX}px, ${squares[36].magnetY}px) scale(${squares[36].visible ? squares[36].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[37].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[37].magnetX}px, ${squares[37].magnetY}px) scale(${squares[37].visible ? squares[37].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[38].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[38].magnetX}px, ${squares[38].magnetY}px) scale(${squares[38].visible ? squares[38].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[39].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[39].magnetX}px, ${squares[39].magnetY}px) scale(${squares[39].visible ? squares[39].scale : 0.75})`"></div>
                         <!-- Row 5 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[40].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[40].magnetX}px, ${squares[40].magnetY}px) scale(${squares[40].visible ? squares[40].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[41].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[41].magnetX}px, ${squares[41].magnetY}px) scale(${squares[41].visible ? squares[41].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[42].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[42].magnetX}px, ${squares[42].magnetY}px) scale(${squares[42].visible ? squares[42].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[43].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[43].magnetX}px, ${squares[43].magnetY}px) scale(${squares[43].visible ? squares[43].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[44].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[44].magnetX}px, ${squares[44].magnetY}px) scale(${squares[44].visible ? squares[44].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[45].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[45].magnetX}px, ${squares[45].magnetY}px) scale(${squares[45].visible ? squares[45].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[46].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[46].magnetX}px, ${squares[46].magnetY}px) scale(${squares[46].visible ? squares[46].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[47].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[47].magnetX}px, ${squares[47].magnetY}px) scale(${squares[47].visible ? squares[47].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[48].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[48].magnetX}px, ${squares[48].magnetY}px) scale(${squares[48].visible ? squares[48].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[49].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[49].magnetX}px, ${squares[49].magnetY}px) scale(${squares[49].visible ? squares[49].scale : 0.75})`"></div>
                         <!-- Row 6 -->
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[50].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[50].magnetX}px, ${squares[50].magnetY}px) scale(${squares[50].visible ? squares[50].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[51].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[51].magnetX}px, ${squares[51].magnetY}px) scale(${squares[51].visible ? squares[51].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[52].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[52].magnetX}px, ${squares[52].magnetY}px) scale(${squares[52].visible ? squares[52].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[53].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[53].magnetX}px, ${squares[53].magnetY}px) scale(${squares[53].visible ? squares[53].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[54].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[54].magnetX}px, ${squares[54].magnetY}px) scale(${squares[54].visible ? squares[54].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[55].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[55].magnetX}px, ${squares[55].magnetY}px) scale(${squares[55].visible ? squares[55].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[56].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[56].magnetX}px, ${squares[56].magnetY}px) scale(${squares[56].visible ? squares[56].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[57].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[57].magnetX}px, ${squares[57].magnetY}px) scale(${squares[57].visible ? squares[57].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[58].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[58].magnetX}px, ${squares[58].magnetY}px) scale(${squares[58].visible ? squares[58].scale : 0.75})`"></div>
-                        <div class="w-8 h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
+                        <div class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-brand-blue rounded transition-all duration-500 ease-out"
                              :class="squares[59].visible ? 'opacity-100' : 'opacity-0'"
                              :style="`transform: translate(${squares[59].magnetX}px, ${squares[59].magnetY}px) scale(${squares[59].visible ? squares[59].scale : 0.75})`"></div>
                     </div>
