@@ -46,6 +46,10 @@
             { country: 'Phnom Penh, Cambodia', x: 80, y: 50 },
             { country: 'Ho Chi Minh City, Vietnam', x: 81, y: 48 },
             { country: 'Cebu, Philippines', x: 86, y: 49 },
+        ],
+        datacenters: [
+            { name: 'Frankfurt Datacenter', x: 48, y: 22 },
+            { name: 'Singapore Datacenter', x: 79, y: 57 }
         ]
     }">
         <!-- World Map SVG -->
@@ -66,6 +70,27 @@
                     <!-- Country Label (shown on hover) -->
                     <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                         <span x-text="location.country"></span>
+                        <svg class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px" width="8" height="4" viewBox="0 0 8 4">
+                            <path fill="currentColor" d="M0 0h8L4 4z"/>
+                        </svg>
+                    </div>
+                </div>
+            </template>
+            
+            <!-- Datacenter Dots -->
+            <template x-for="datacenter in datacenters" :key="datacenter.name">
+                <div :style="`left: ${datacenter.x}%; top: ${datacenter.y}%;`" 
+                     class="absolute transform -translate-x-1/2 -translate-y-1/2 group">
+                    <!-- Square Ping Animation -->
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-sm opacity-75" 
+                              style="background-color: rgba(0, 160, 210, 0.5);"></span>
+                        <span class="relative inline-flex rounded-sm h-3 w-3" 
+                              style="background-color: rgba(0, 160, 210, 0.5);"></span>
+                    </span>
+                    <!-- Datacenter Label (shown on hover) -->
+                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                        <span x-text="datacenter.name"></span>
                         <svg class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px" width="8" height="4" viewBox="0 0 8 4">
                             <path fill="currentColor" d="M0 0h8L4 4z"/>
                         </svg>
