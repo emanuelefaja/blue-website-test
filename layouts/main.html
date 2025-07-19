@@ -9,10 +9,23 @@
     @scroll.window="scrollProgress = Math.round((window.pageYOffset / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100)"
     class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
     
+    {{$topNewsData := parseJSON `{
+        "message": "📚 New website and documentation! Everything you need to know about Blue in one place.",
+        "linkText": "Explore docs",
+        "linkUrl": "/docs"
+    }`}}
+    {{template "top-news-bar" $topNewsData}}
+    
     {{template "topbar" .}}
     
     <!-- Main Layout -->
-    <div class="flex pt-16 min-h-screen">
+    <div class="flex pt-16 lg:pt-[104px] min-h-screen" 
+         x-data="{ 
+             hasNewsBar() { 
+                 return localStorage.getItem('topNewsBarDismissed') !== 'true' 
+             } 
+         }"
+         :class="hasNewsBar() ? 'lg:pt-[104px]' : 'lg:pt-16'">
         {{template "left-sidebar" .}}
         
         <!-- Main Content Area -->
