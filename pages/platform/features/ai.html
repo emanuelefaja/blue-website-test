@@ -54,13 +54,67 @@
     </section>
 
     <!-- AI Summaries Feature -->
-    {{$aiSummariesFeature := parseJSON `{
-        "Title": "Always know the next key actions with AI-powered conversation summaries.",
-        "Description": "Our AI can summarize conversations and provide actionable insights, saving you valuable reading time.",
-        "VideoUrl": "/testvideo2.mp4",
-        "VideoPosition": "right"
-    }`}}
-    {{template "feature-video" $aiSummariesFeature}}
+    <section class="mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Text Content -->
+            <div class="order-1 lg:order-1 space-y-4">
+                <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">Turn conversations into action items instantly.</h3>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Our AI can summarize conversations and provide actionable insights, saving you valuable reading time.</p>
+            </div>
+            
+            <!-- Text Animation -->
+            <div class="order-2 lg:order-2 flex items-center justify-center">
+                <div class="relative w-full"
+                     x-data="{
+                         intersecting: false,
+                         showSummary: false,
+                         updateProgress() {
+                             const rect = $el.getBoundingClientRect();
+                             const viewportHeight = window.innerHeight;
+                             const elementCenter = rect.top + rect.height / 2;
+                             const viewportCenter = viewportHeight / 2;
+                             
+                             // Switch when element center crosses viewport center
+                             if (elementCenter <= viewportCenter && !this.showSummary) {
+                                 this.showSummary = true;
+                             } else if (elementCenter > viewportCenter && this.showSummary) {
+                                 this.showSummary = false;
+                             }
+                         }
+                     }"
+                     x-init="updateProgress()"
+                     x-intersect="intersecting = true"
+                     x-intersect:leave="intersecting = false"
+                     x-on:scroll.window="if (intersecting) { updateProgress() }">
+                    
+                    <!-- Container with fixed height -->
+                    <div class="relative bg-gray-50 dark:bg-gray-800 rounded-lg p-6" style="min-height: 320px;">
+                        <!-- Long text (fades out) -->
+                        <div class="absolute inset-0 p-6 text-sm text-gray-600 dark:text-gray-400 leading-relaxed transition-opacity duration-500 overflow-hidden"
+                             :class="showSummary ? 'opacity-0' : 'opacity-100'">
+                            <p class="mb-3">
+                                During our team meeting today, we discussed the Q4 product roadmap extensively. Sarah mentioned that the mobile app redesign is behind schedule due to unexpected technical challenges with the new authentication system. The iOS team needs an additional two weeks to implement biometric login properly. Meanwhile, the Android team is on track but waiting for the iOS implementation to maintain feature parity.
+                            </p>
+                            <p>
+                                John from marketing emphasized the importance of launching before Black Friday to capitalize on holiday shopping. He suggested we could do a soft launch with basic features and add biometric login in a subsequent update. The engineering team expressed concerns about rushing the release, citing potential security vulnerabilities. After much debate, we need to make a decision by end of week.
+                            </p>
+                        </div>
+                        
+                        <!-- Short summary (fades in) -->
+                        <div class="absolute inset-0 p-6 flex items-center text-base font-medium text-gray-900 dark:text-gray-100 transition-opacity duration-500"
+                             :class="showSummary ? 'opacity-100' : 'opacity-0'">
+                            <p class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span><strong>Key Decision Needed:</strong> Choose between delayed full-feature launch (2 weeks) or soft launch without biometric login by Black Friday. Decision required by Friday.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Auto Categorization Feature -->
     <section class="mb-16">
