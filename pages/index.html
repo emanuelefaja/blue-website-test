@@ -287,6 +287,20 @@
     
     {{template "features-grid-simple" $featuresData}}
        
+ <!-- Integration Partners -->
+ <div class="mb-16">
+    {{$integrationData := parseJSON `{
+        "title": "Connect with 7,000+ tools through our integration partners",
+        "logos": [
+            { "name": "Zapier", "src": "/images/zapier.svg" },
+            { "name": "Make.com", "src": "/images/make.svg" },
+            { "name": "Pabbly Connect", "src": "/images/pabbly-1.svg" },
+            { "name": "Albato", "src": "/images/albato.png" },
+            { "name": "Boost.space", "src": "/images/boost-space.svg" }
+        ]
+    }`}}
+    {{template "logo-grid" $integrationData}}
+</div>
 
 
 <!-- Interactive Feature Showcase Section 
