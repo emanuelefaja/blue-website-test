@@ -6,30 +6,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Hero Video -->
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "ai-hero"
-    }}
-
-    <!-- Customer Logos Section -->
-    <section class="mb-20">
-        <h2 class="text-center text-2xl font-semibold mb-8 text-gray-900 dark:text-white">Powering the world's best process managers.</h2>
-        
-        {{$logoData := parseJSON `{
-            "logos": [
-                { "name": "Heineken", "src": "/customers/heineken.svg" },
-                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-                { "name": "Save The Children", "src": "/customers/savethechildren.svg" },
-                { "name": "Fedex", "src": "/customers/fedex.svg" },
-                { "name": "International Labour Organization", "src": "/customers/ilo.webp" }
-            ]
-        }`}}
-        {{template "logo-grid" $logoData}}
-    </section>
-
     <!-- AI Included Section -->
     <section class="mb-20">
         {{$aiIncludedData := parseJSON `{
