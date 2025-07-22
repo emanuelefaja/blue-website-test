@@ -1,7 +1,7 @@
 {{template "page-heading" dict "Title" "The modern way to manage project files" "Subtitle" "Centralize all project files in one secure source of truth—no more scattering across chats, emails, and storage."}}
 
 <!-- Hero Video -->
-{{template "hero-video" dict "VideoUrl" "/videos/search-demo.mp4" "ShowUnmuteButton" true "MarginBottom" "mb-20"}}
+{{template "hero-video" dict "VideoUrl" "https://media.blue.cc/file-folders-example.mp4" "MarginBottom" "mb-20"}}
 
 <!-- File Privacy Benefits -->
 {{$privacyBenefits := parseJSON `{
@@ -18,10 +18,6 @@
         {
             "Title": "Collaborate",
             "Description": "Generate secure public links. Share files externally with ease."
-        },
-        {
-            "Title": "Protect",
-            "Description": "Default privacy safeguards data. Share selectively when needed."
         }
     ],
     "MarginBottom": "mb-20"
@@ -30,10 +26,10 @@
 
 <!-- File Sharing Feature -->
 {{$fileSharingData := parseJSON `{
-    "Title": "Files Sharing Screenshot",
-    "Description": "File organization, mastered. Stay on top of your files with Blue's intuitive folder management. Create folders, subfolders, and color-code to your heart's content.",
-    "ImageUrl": "/product/files-share.png",
-    "ImagePosition": "right",
+    "Title": "File organization, mastered",
+    "Description": "Stay on top of your files with Blue's intuitive folder management. Create folders, subfolders, and color-code to your heart's content.",
+    "VideoUrl": "https://media.blue.cc/file-folders-example.mp4",
+    "VideoPosition": "right",
     "SeeAlso": {
         "Links": [
             {
@@ -55,7 +51,7 @@
     },
     "MarginBottom": "mb-20"
 }`}}
-{{template "feature-image" $fileSharingData}}
+{{template "feature-video" $fileSharingData}}
 
 <!-- File Search Feature -->
 {{$fileSearchData := parseJSON `{
@@ -78,7 +74,7 @@
             {
                 "Text": "No More Guessing",
                 "Url": "/docs/projects/file-management#files-tab",
-                "Description": "Stop wasting time. Blue surfaces what you need, when you need it."
+                "Description": "Blue surfaces what you need, when you need it."
             }
         ]
     }
@@ -89,7 +85,7 @@
 {{$fileIntegrationData := parseJSON `{
     "Title": "Files that work everywhere in Blue",
     "Description": "Attach files directly to comments and records using File custom fields. Keep all related documents exactly where you need them in your workflow.",
-    "VideoUrl": "/testvideo2.mp4",
+    "VideoUrl": "https://media.blue.cc/file-custom-field-example.mp4",
     "VideoPosition": "right"
 }`}}
 {{template "feature-video" $fileIntegrationData}}
