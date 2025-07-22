@@ -1,10 +1,63 @@
 <!-- Main content -->
-{{template "page-heading" 
-        dict 
-            "Title" "Blue is a powerful platform to create, manage, and scale processes." 
-            "Subtitle" "Meet the system for modern operations — gain visibility, speed up processes, and scale your organization." 
-            "MarginBottom" "mb-16"
-    }}
+<!-- Custom personalized page heading for homepage -->
+<div class="mb-16" x-data="{ 
+    authState: null,
+    words: [],
+    animatedWords: [], 
+    showSubtitle: false,
+    init() {
+        // Check auth state
+        if (window.AuthCookie) {
+            this.authState = window.AuthCookie.read();
+        }
+        
+        // Set title based on auth state
+        const title = this.authState && this.authState.isLoggedIn && this.authState.firstName
+            ? `Welcome back, ${this.authState.firstName}. `
+            : 'Blue is a powerful platform to create, manage, and scale processes.';
+            
+        this.words = title.split(' ');
+        
+        // Animate words
+        this.words.forEach((word, i) => setTimeout(() => this.animatedWords.push(i), i * 80)); 
+        setTimeout(() => this.showSubtitle = true, 100);
+        
+        // Poll for auth state changes
+        setInterval(() => {
+            if (window.AuthCookie) {
+                const newAuthState = window.AuthCookie.read();
+                if (JSON.stringify(newAuthState) !== JSON.stringify(this.authState)) {
+                    this.authState = newAuthState;
+                    // Update title and re-animate
+                    const newTitle = this.authState && this.authState.isLoggedIn && this.authState.firstName
+                        ? `Welcome back, ${this.authState.firstName}. Blue is ready for you.`
+                        : 'Blue is a powerful platform to create, manage, and scale processes.';
+                    this.words = newTitle.split(' ');
+                    this.animatedWords = [];
+                    this.showSubtitle = false;
+                    this.words.forEach((word, i) => setTimeout(() => this.animatedWords.push(i), i * 80));
+                    setTimeout(() => this.showSubtitle = true, 100);
+                }
+            }
+        }, 1000);
+    }
+}">
+    <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-3">
+        <template x-for="(word, index) in words" :key="index">
+            <span 
+                :class="animatedWords.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'" 
+                class="inline-block mr-2 transition-all duration-300 ease-out" 
+                x-text="word">
+            </span>
+        </template>
+    </h1>
+    <p 
+        :class="showSubtitle ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'" 
+        class="text-xl text-gray-600 dark:text-gray-400 transition-all duration-800 ease-out">
+        <span x-show="authState && authState.isLoggedIn">Pick up where you left off or explore what's new in Blue.</span>
+        <span x-show="!authState || !authState.isLoggedIn">Meet the system for modern operations — gain visibility, speed up processes, and scale your organization.</span>
+    </p>
+</div>
 
     {{template "hero-video" 
         dict 
@@ -14,18 +67,33 @@
     }}
 
     <!-- Hero CTAs -->
-    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center" x-data="{ 
+        authState: null,
+        init() {
+            if (window.AuthCookie) {
+                this.authState = window.AuthCookie.read();
+            }
+            // Poll for changes
+            setInterval(() => {
+                if (window.AuthCookie) {
+                    this.authState = window.AuthCookie.read();
+                }
+            }, 1000);
+        }
+    }">
         <a href="https://app.blue.cc" 
            target="_blank"
            class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg bg-brand-blue text-white hover:bg-brand-blue/90 transition-colors duration-200 shadow-lg hover:shadow-xl group">
-            Get Started Free
+            <span x-show="authState && authState.isLoggedIn">Go to Dashboard</span>
+            <span x-show="!authState || !authState.isLoggedIn">Get Started Free</span>
             <svg class="ml-2 w-5 h-5 transition-transform duration-200 ease-out group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
         </a>
-        <a href="/platform/features" 
+        <a :href="authState && authState.isLoggedIn ? '/platform/changelog' : '/platform/features'" 
            class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg border-2 border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-            See How It Works
+            <span x-show="authState && authState.isLoggedIn">What's New</span>
+            <span x-show="!authState || !authState.isLoggedIn">See How It Works</span>
         </a>
     </div>
     

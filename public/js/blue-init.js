@@ -26,6 +26,9 @@ window.BlueInit = {
         // Initialize image zoom
         this.initImageZoom();
         
+        // Initialize auth cookie checking (for components that need it)
+        this.initAuthCookie();
+        
         console.log('✅ Blue initialization complete');
     },
     
@@ -50,6 +53,9 @@ window.BlueInit = {
         
         // Re-initialize lazy loaded videos
         this.reinitLazyVideos();
+        
+        // Re-initialize auth cookie checking
+        this.initAuthCookie();
         
         // Re-setup client routing (handled by SPA utils)
         if (typeof SPAUtils !== 'undefined' && SPAUtils.setupClientRouting) {
@@ -132,5 +138,18 @@ window.BlueInit = {
                 el._x_dataStack[0].loaded = false;
             }
         });
+    },
+    
+    /**
+     * Initialize auth cookie functionality
+     */
+    initAuthCookie() {
+        if (typeof AuthCookie !== 'undefined') {
+            // Auth cookie utility is available
+            // Components that need auth state will handle their own initialization
+            console.log('✅ Auth cookie utility available');
+        } else {
+            console.warn('AuthCookie not loaded - auth state detection will not work');
+        }
     }
 };

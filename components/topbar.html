@@ -6,6 +6,7 @@
     magneticButtons: {},
     scrolled: false,
     customLogoUrl: null,
+    authState: null,
     init() {
         // Initialize dark mode from localStorage
         const savedTheme = localStorage.getItem('theme');
@@ -45,6 +46,18 @@
         };
         window.addEventListener('scroll', this.handleScroll);
         this.handleScroll();
+        
+        // Initialize auth state from cookie
+        if (window.AuthCookie) {
+            this.authState = window.AuthCookie.read();
+        }
+        
+        // Poll for auth state changes every second
+        setInterval(() => {
+            if (window.AuthCookie) {
+                this.authState = window.AuthCookie.read();
+            }
+        }, 1000);
     },
     toggleDarkMode() {
         this.darkMode = !this.darkMode;
@@ -133,61 +146,87 @@
                 </svg>
             </button>
             
-            <!-- Login -->
-            <a href="https://app.blue.cc" 
-               target="_blank" 
-               @mousemove="handleMagnetic($event, 'login')"
-               @mouseleave="loginHovering = false; resetMagnetic('login')"
-               :style="getMagneticStyle('login')"
-               class="relative px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition-all duration-200 ease-out flex items-center overflow-hidden"
-               x-data="{ loginHovering: false }"
-               @mouseenter="loginHovering = true">
-                <span class="relative h-5 overflow-hidden inline-block">
-                    <span class="block transition-transform duration-300"
-                          :class="loginHovering ? '-translate-y-5' : 'translate-y-0'">Log In</span>
-                    <span class="block transition-transform duration-300"
-                          :class="loginHovering ? '-translate-y-5' : 'translate-y-0'">Launch</span>
-                </span>
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
-                      :style="magneticButtons['login'] ? `transform: translateX(${magneticButtons['login'].x * 0.5}px)` : ''">L</span>
-            </a>
+            <!-- When logged in: Show Go to App button -->
+            <template x-if="authState && authState.isLoggedIn">
+                <a href="https://app.blue.cc" 
+                   target="_blank" 
+                   @mousemove="handleMagnetic($event, 'goToApp')"
+                   @mouseleave="goToAppHovering = false; resetMagnetic('goToApp')"
+                   :style="getMagneticStyle('goToApp')"
+                   class="relative px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200 ease-out flex items-center hover:shadow-lg overflow-hidden"
+                   x-data="{ goToAppHovering: false }"
+                   @mouseenter="goToAppHovering = true">
+                    <span class="relative h-5 overflow-hidden inline-block">
+                        <span class="block transition-transform duration-300"
+                              :class="goToAppHovering ? '-translate-y-5' : 'translate-y-0'">Go to App</span>
+                        <span class="block transition-transform duration-300"
+                              :class="goToAppHovering ? '-translate-y-5' : 'translate-y-0'">Launch App</span>
+                    </span>
+                    <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold transition-transform duration-200 border" 
+                          :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['goToApp'] ? 'transform: translateX(' + (magneticButtons['goToApp'].x * 0.5) + 'px)' : ''}`">↵</span>
+                </a>
+            </template>
             
-            <!-- Contact -->
-            <a :href="'/contact'" 
-               @mousemove="handleMagnetic($event, 'contact')"
-               @mouseleave="contactHovering = false; resetMagnetic('contact')"
-               :style="getMagneticStyle('contact')"
-               class="hidden xl:flex relative px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition-all duration-200 ease-out items-center cursor-pointer overflow-hidden"
-               x-data="{ contactHovering: false }"
-               @mouseenter="contactHovering = true">
-                <span class="relative h-5 overflow-hidden inline-block">
-                    <span class="block transition-transform duration-300"
-                          :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">Contact</span>
-                    <span class="block transition-transform duration-300"
-                          :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">Connect</span>
-                </span>
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
-                      :style="magneticButtons['contact'] ? `transform: translateX(${magneticButtons['contact'].x * 0.5}px)` : ''">C</span>
-            </a>
-            
-            <!-- Sign Up -->
-            <a href="https://app.blue.cc" 
-               target="_blank" 
-               @mousemove="handleMagnetic($event, 'signup')"
-               @mouseleave="hovering = false; resetMagnetic('signup')"
-               :style="getMagneticStyle('signup')"
-               class="relative px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200 ease-out flex items-center hover:shadow-lg overflow-hidden"
-               x-data="{ hovering: false }"
-               @mouseenter="hovering = true">
-                <span class="relative h-5 overflow-hidden inline-block">
-                    <span class="block transition-transform duration-300"
-                          :class="hovering ? '-translate-y-5' : 'translate-y-0'">Sign Up</span>
-                    <span class="block transition-transform duration-300"
-                          :class="hovering ? '-translate-y-5' : 'translate-y-0'">Try Blue</span>
-                </span>
-                <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold transition-transform duration-200 border" 
-                      :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['signup'] ? 'transform: translateX(' + (magneticButtons['signup'].x * 0.5) + 'px)' : ''}`">↵</span>
-            </a>
+            <!-- When not logged in: Show existing buttons -->
+            <template x-if="!authState || !authState.isLoggedIn">
+                <div class="flex items-center space-x-4">
+                    <!-- Login -->
+                    <a href="https://app.blue.cc" 
+                       target="_blank" 
+                       @mousemove="handleMagnetic($event, 'login')"
+                       @mouseleave="loginHovering = false; resetMagnetic('login')"
+                       :style="getMagneticStyle('login')"
+                       class="relative px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition-all duration-200 ease-out flex items-center overflow-hidden"
+                       x-data="{ loginHovering: false }"
+                       @mouseenter="loginHovering = true">
+                        <span class="relative h-5 overflow-hidden inline-block">
+                            <span class="block transition-transform duration-300"
+                                  :class="loginHovering ? '-translate-y-5' : 'translate-y-0'">Log In</span>
+                            <span class="block transition-transform duration-300"
+                                  :class="loginHovering ? '-translate-y-5' : 'translate-y-0'">Launch</span>
+                        </span>
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
+                              :style="magneticButtons['login'] ? `transform: translateX(${magneticButtons['login'].x * 0.5}px)` : ''">L</span>
+                    </a>
+                    
+                    <!-- Contact -->
+                    <a :href="'/contact'" 
+                       @mousemove="handleMagnetic($event, 'contact')"
+                       @mouseleave="contactHovering = false; resetMagnetic('contact')"
+                       :style="getMagneticStyle('contact')"
+                       class="hidden xl:flex relative px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition-all duration-200 ease-out items-center cursor-pointer overflow-hidden"
+                       x-data="{ contactHovering: false }"
+                       @mouseenter="contactHovering = true">
+                        <span class="relative h-5 overflow-hidden inline-block">
+                            <span class="block transition-transform duration-300"
+                                  :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">Contact</span>
+                            <span class="block transition-transform duration-300"
+                                  :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">Connect</span>
+                        </span>
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
+                              :style="magneticButtons['contact'] ? `transform: translateX(${magneticButtons['contact'].x * 0.5}px)` : ''">C</span>
+                    </a>
+                    
+                    <!-- Sign Up -->
+                    <a href="https://app.blue.cc" 
+                       target="_blank" 
+                       @mousemove="handleMagnetic($event, 'signup')"
+                       @mouseleave="hovering = false; resetMagnetic('signup')"
+                       :style="getMagneticStyle('signup')"
+                       class="relative px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200 ease-out flex items-center hover:shadow-lg overflow-hidden"
+                       x-data="{ hovering: false }"
+                       @mouseenter="hovering = true">
+                        <span class="relative h-5 overflow-hidden inline-block">
+                            <span class="block transition-transform duration-300"
+                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">Sign Up</span>
+                            <span class="block transition-transform duration-300"
+                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">Try Blue</span>
+                        </span>
+                        <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold transition-transform duration-200 border" 
+                              :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['signup'] ? 'transform: translateX(' + (magneticButtons['signup'].x * 0.5) + 'px)' : ''}`">↵</span>
+                    </a>
+                </div>
+            </template>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -261,7 +300,14 @@
                         }
                     } else if (event.key === 'Enter') {
                         event.preventDefault();
-                        openSignUp();
+                        // Check if user is logged in
+                        if (window.AuthCookie && window.AuthCookie.isLoggedIn()) {
+                            // Open app for logged in users
+                            window.open('https://app.blue.cc', '_blank');
+                        } else {
+                            // Sign up for non-logged in users
+                            openSignUp();
+                        }
                     }
                 }
             }
