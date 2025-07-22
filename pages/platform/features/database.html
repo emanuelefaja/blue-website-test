@@ -6,15 +6,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Hero Video -->
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "database-hero"
-    }}
-
-
     <!-- Key Benefits Section -->
     <section class="mb-20">
         <div class="max-w-7xl mx-auto">
@@ -73,29 +64,12 @@
     }`}}
     {{template "feature-video" $filterSortFeature}}
 
-    <!-- Import Export Feature -->
-    {{$importExportFeature := parseJSON `{
-        "Title": "Seamless data import and export.",
-        "Description": "Import and export hundreds of thousands of records via CSV in a snap. Or go even further and use our next-generation API.",
-        "VideoUrl": "/testvideo2.mp4",
-        "VideoPosition": "right"
-    }`}}
-    {{template "feature-video" $importExportFeature}}
-
-    <!-- Real-time Collaboration Feature -->
-    {{$realtimeFeature := parseJSON `{
-        "Title": "Forget conflicts and work together in real-time.",
-        "Description": "Blue's advanced sync engine ensures that you always see the latest data. Any changes your team member make, you'll see in real-time, no refresh needed.",
-        "VideoUrl": "/testvideo2.mp4",
-        "VideoPosition": "left"
-    }`}}
-    {{template "feature-video" $realtimeFeature}}
 
     <!-- Connections Feature -->
     {{$connectionsFeature := parseJSON `{
         "Title": "Create connections to achieve a single source of truth.",
         "Description": "Link records and fields between databases to create a truly interconnected, company-wide data management system. Update data everywhere at once.",
-        "VideoUrl": "/testvideo2.mp4",
+        "VideoUrl": "https://media.blue.cc/reference-lookup-example.mp4",
         "VideoPosition": "right"
     }`}}
     {{template "feature-video" $connectionsFeature}}
@@ -104,7 +78,7 @@
     {{$permissionsFeature := parseJSON `{
         "Title": "Row-level permissions and granular access control with custom user roles.",
         "Description": "Set granular permission at the column level to ensure that your information is disclosed only to those who need to know.",
-        "VideoUrl": "/testvideo2.mp4",
+        "VideoUrl": "https://media.blue.cc/user-permissions-custom-fields.mp4",
         "VideoPosition": "left"
     }`}}
     {{template "feature-video" $permissionsFeature}}
