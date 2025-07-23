@@ -101,42 +101,6 @@
   {{template "feature-benefits-grid" $sharingOptions}}
 
 
-  <!-- Data Integration Feature Section -->
-  {{$dataIntegrationVideo := parseJSON `{
-    "VideoPosition": "left",
-    "Title": "Ditch data entry, forever.",
-    "Description": "Say goodbye to manual data transfers. Form entries go straight into your Blue projects automatically.",
-    "VideoUrl": "/product/forms-integration.mp4"
-  }`}}
-  {{template "feature-video" $dataIntegrationVideo}}
-
-  {{$formIntegrationBenefits := parseJSON `{
-    "Benefits": [
-      {
-          "Title": "Direct Integration",
-          "Description": "Submissions pipe seamlessly into any project list or view."
-        },
-        {
-          "Title": "Smart Mapping",
-          "Description": "Map form fields to project data fields for organized information flow."
-        },
-        {
-          "Title": "Real-Time Updates",
-          "Description": "New entries instantly appear in your project for maximum efficiency."
-        }
-    ]
-  }`}}
-  {{template "feature-benefits-grid" $formIntegrationBenefits}}
-
-  <!-- Automation Feature Section -->
-  {{$automationData := parseJSON `{
-    "Title": "Turn form submissions into instant workflows",
-    "Description": "When someone submits your form, automatically create records, send emails, assign team members, or trigger any custom workflow you design.",
-    "ImageUrl": "/product/forms-automation.png",
-    "ImagePosition": "right"
-  }`}}
-  {{template "feature-image" $automationData}}
-
   <!-- FAQ Section -->
   {{$faqData := parseJSON `{
     "categories": [
