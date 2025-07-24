@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -13,6 +14,23 @@ import (
 
 	"github.com/joho/godotenv"
 )
+
+// getLocalIP returns the local IP address of the machine
+func getLocalIP() string {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		return "localhost"
+	}
+
+	for _, addr := range addrs {
+		if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				return ipnet.IP.String()
+			}
+		}
+	}
+	return "localhost"
+}
 
 func main() {
 	startTime := time.Now()
@@ -188,7 +206,7 @@ func main() {
 		// Default to 0.0.0.0 to work with cloud providers
 		host = "0.0.0.0"
 		if os.Getenv("ENV") != "production" {
-			fmt.Printf("🌐 Development mode: Server accessible on network at http://[YOUR_IP]:%s\n", port)
+			fmt.Printf("🌐 Development mode: Server accessible on network at http://%s:%s\n", getLocalIP(), port)
 			fmt.Printf("📱 To find your IP: ifconfig | grep 'inet ' | grep -v 127.0.0.1\n")
 		}
 	}
