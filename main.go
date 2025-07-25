@@ -91,6 +91,15 @@ func main() {
 	// Wait for both tasks to complete before proceeding
 	wg.Wait()
 
+	// Initialize translations
+	translationStart := time.Now()
+	fmt.Println("🌐 Loading translations...")
+	if err := web.InitTranslations(); err != nil {
+		log.Printf("⚠️  Warning: Failed to load translations: %v", err)
+	} else {
+		fmt.Printf("✅ Translations loaded (took %v)\n", time.Since(translationStart))
+	}
+
 	// File-based routing handler
 	routerStart := time.Now()
 	fmt.Println("🛣️  Initializing router...")

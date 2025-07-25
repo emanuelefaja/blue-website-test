@@ -18,7 +18,7 @@ func (r *Router) isTOCExcluded(path string) bool {
 }
 
 // preparePageData creates PageData with metadata for the given path
-func (r *Router) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigation *Navigation) PageData {
+func (r *Router) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigation *Navigation, lang string) PageData {
 	// Get metadata from SEO service
 	title, description, keywords, pageMeta, siteMeta := r.seoService.PreparePageMetadata(path, isMarkdown, frontmatter)
 
@@ -117,5 +117,6 @@ func (r *Router) preparePageData(path string, content template.HTML, isMarkdown 
 		Insights:       insights,
 		Path:           path,
 		SchemaData:     schemaData,
+		Language:       lang,
 	}
 }

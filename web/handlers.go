@@ -11,6 +11,11 @@ import (
 
 // serve404 serves a custom 404 page or falls back to default
 func (r *Router) serve404(w http.ResponseWriter, req *http.Request) {
+	// Extract language from the request URL
+	lang, _ := extractLanguageFromPath(req.URL.Path)
+	if lang == "" {
+		lang = detectPreferredLanguage(req)
+	}
 	// Try to serve custom 404.html page
 	notFoundPath := filepath.Join(r.pagesDir, "404.html")
 	if _, err := os.Stat(notFoundPath); err == nil {
@@ -25,10 +30,10 @@ func (r *Router) serve404(w http.ResponseWriter, req *http.Request) {
 		}
 
 		// Prepare page data for 404 page (before processing templates)
-		pageData := r.preparePageData("/404", "", false, nil, r.navigationService.GetNavigationForPath("/404"))
+		pageData := r.preparePageData("/404", "", false, nil, r.navigationService.GetNavigationForPath("/404"), lang)
 
 		// Create a template for the 404 page content
-		contentTmpl := template.New("404-content").Funcs(templateFuncs)
+		contentTmpl := template.New("404-content").Funcs(getTemplateFuncs(lang))
 
 		// Auto-scan all component templates for 404 content parsing
 		componentFiles, err := r.loadComponentTemplates()
@@ -67,7 +72,7 @@ func (r *Router) serve404(w http.ResponseWriter, req *http.Request) {
 		templateFiles = append(templateFiles, componentFiles...)
 
 		// Create template with custom functions for main layout
-		tmpl := template.New("main.html").Funcs(templateFuncs)
+		tmpl := template.New("main.html").Funcs(getTemplateFuncs(lang))
 
 		// Parse all template files
 		tmpl, err = tmpl.ParseFiles(templateFiles...)

@@ -36,6 +36,11 @@ func (hs *HTMLService) SetSchemaService(schemaService *SchemaService) {
 	hs.schemaService = schemaService
 }
 
+// getCacheKey generates a language-specific cache key
+func (hs *HTMLService) getCacheKey(lang, path string) string {
+	return lang + ":" + path
+}
+
 // PreRenderAllHTMLPages pre-renders all HTML pages in the pages directory
 func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationService, seoService *SEOService) error {
 	count := 0
@@ -73,23 +78,27 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 			return nil // Continue processing other files
 		}
 
-		// Pre-render the HTML page
-		html, err := hs.renderHTMLPage(path, urlPath, navigationService, seoService)
-		if err != nil {
-			log.Printf("Warning: failed to pre-render %s: %v", path, err)
-			return nil // Continue processing other files
-		}
+		// Pre-render the HTML page for each supported language
+		for _, lang := range SupportedLanguages {
+			// Pre-render the HTML page with the specific language
+			html, err := hs.renderHTMLPageWithLang(path, urlPath, navigationService, seoService, lang)
+			if err != nil {
+				log.Printf("Warning: failed to pre-render %s for language %s: %v", path, lang, err)
+				continue // Continue with next language
+			}
 
-		// Cache the pre-rendered content
-		cachedContent := &CachedContent{
-			HTML:        html,
-			Frontmatter: nil, // HTML pages don't have frontmatter
-			ModTime:     info.ModTime(),
-			FilePath:    path,
-		}
+			// Cache the pre-rendered content with language-specific key
+			cachedContent := &CachedContent{
+				HTML:        html,
+				Frontmatter: nil, // HTML pages don't have frontmatter
+				ModTime:     info.ModTime(),
+				FilePath:    path,
+			}
 
-		hs.cache.Set(urlPath, cachedContent)
-		count++
+			cacheKey := hs.getCacheKey(lang, urlPath)
+			hs.cache.Set(cacheKey, cachedContent)
+			count++
+		}
 
 		// Progress tracking removed for cleaner output
 
@@ -104,19 +113,19 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 	return nil
 }
 
-// renderHTMLPage renders a single HTML page with templates
-func (hs *HTMLService) renderHTMLPage(filePath, urlPath string, navigationService *NavigationService, seoService *SEOService) (string, error) {
+// renderHTMLPageWithLang renders a single HTML page with templates for a specific language
+func (hs *HTMLService) renderHTMLPageWithLang(filePath, urlPath string, navigationService *NavigationService, seoService *SEOService, lang string) (string, error) {
 	// Read the HTML file
 	contentBytes, err := os.ReadFile(filePath)
 	if err != nil {
 		return "", fmt.Errorf("failed to read file %s: %w", filePath, err)
 	}
 
-	// Prepare page data
-	pageData := hs.preparePageData(urlPath, "", false, nil, navigationService, seoService)
+	// Prepare page data with the specified language
+	pageData := hs.preparePageData(urlPath, "", false, nil, navigationService, seoService, lang)
 
-	// Create template for page content
-	contentTmpl := template.New("page-content").Funcs(templateFuncs)
+	// Create template for page content with the specified language
+	contentTmpl := template.New("page-content").Funcs(getTemplateFuncs(lang))
 
 	// Load component templates
 	componentFiles, err := hs.loadComponentTemplates()
@@ -150,15 +159,15 @@ func (hs *HTMLService) renderHTMLPage(filePath, urlPath string, navigationServic
 	}
 	templateFiles = append(templateFiles, componentFiles...)
 
-	// Create main template
-	mainTmpl := template.New("main.html").Funcs(templateFuncs)
+	// Create main template with the specified language
+	mainTmpl := template.New("main.html").Funcs(getTemplateFuncs(lang))
 	mainTmpl, err = mainTmpl.ParseFiles(templateFiles...)
 	if err != nil {
 		return "", fmt.Errorf("failed to parse main template: %w", err)
 	}
 
 	// Prepare final page data with rendered content
-	finalPageData := hs.preparePageData(urlPath, template.HTML(renderedContent.String()), false, nil, navigationService, seoService)
+	finalPageData := hs.preparePageData(urlPath, template.HTML(renderedContent.String()), false, nil, navigationService, seoService, lang)
 
 	// Execute main template
 	var finalHTML strings.Builder
@@ -211,6 +220,12 @@ func (hs *HTMLService) GetCachedContent(urlPath string) (*CachedContent, bool) {
 	return hs.cache.Get(urlPath)
 }
 
+// GetCachedContentForLang retrieves pre-rendered HTML content from cache for a specific language
+func (hs *HTMLService) GetCachedContentForLang(urlPath, lang string) (*CachedContent, bool) {
+	cacheKey := hs.getCacheKey(lang, urlPath)
+	return hs.cache.Get(cacheKey)
+}
+
 // GetAllCachedContent returns all cached HTML content (for search indexing)
 func (hs *HTMLService) GetAllCachedContent() map[string]*CachedContent {
 	return hs.cache.GetAll()
@@ -223,7 +238,7 @@ func (hs *HTMLService) GetCacheSize() int {
 
 // preparePageData creates PageData with metadata for the given path
 // This is a wrapper around the shared page data preparation logic
-func (hs *HTMLService) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigationService *NavigationService, seoService *SEOService) PageData {
+func (hs *HTMLService) preparePageData(path string, content template.HTML, isMarkdown bool, frontmatter *Frontmatter, navigationService *NavigationService, seoService *SEOService, lang string) PageData {
 	// Create a temporary router instance to use its preparePageData method
 	// This avoids code duplication while maintaining the existing API
 	tempRouter := &Router{
@@ -234,5 +249,5 @@ func (hs *HTMLService) preparePageData(path string, content template.HTML, isMar
 		tocExcludedPaths: []string{"/changelog", "/roadmap", "/platform/status"},
 	}
 	
-	return tempRouter.preparePageData(path, content, isMarkdown, frontmatter, navigationService.GetNavigationForPath(path))
+	return tempRouter.preparePageData(path, content, isMarkdown, frontmatter, navigationService.GetNavigationForPath(path), lang)
 }

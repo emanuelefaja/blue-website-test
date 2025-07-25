@@ -1,41 +1,32 @@
     {{template "page-heading" 
         dict 
-            "Title" "Blue is bringing delight to process management." 
-            "Subtitle" "We're an independent company with a passion for helping teams work better, together." 
+            "Title" (t "about.page_title")
+            "Subtitle" (t "about.page_subtitle")
             "MarginBottom" "mb-16"
     }}
 
 <div class="w-full mb-32">
-    <img src="/pictures/blueteam.jpeg" alt="Blue Team" class="w-full h-auto rounded-3xl">
+    <img src="/pictures/blueteam.jpeg" alt="{{t "about.blue_team_alt"}}" class="w-full h-auto rounded-3xl">
 </div>
 
 
-{{$statsData := parseJSON `{
-    "Title": "Our mission is to organize the world's work.",
-    "MarginBottom": "mb-16",
-    "Stats": [
-        {
-            "Number": "17,000+",
-            "Description": "incredible customers"
-        },
-        {
-            "Number": "120+",
-            "Description": "Countries served"
-        },
-        {
-            "Number": "7+",
-            "Description": "Years in business"
-        }
-    ]
-}`}}
+{{$statsData := dict
+    "Title" (t "about.mission_title")
+    "MarginBottom" "mb-16"
+    "Stats" (slice
+        (dict "Number" (t "about.stats.customers_number") "Description" (t "about.stats.customers_label"))
+        (dict "Number" (t "about.stats.countries_number") "Description" (t "about.stats.countries_label"))
+        (dict "Number" (t "about.stats.years_number") "Description" (t "about.stats.years_label"))
+    )
+}}
 
 {{template "stats-section" $statsData}}
 
 <!-- Team World Map Section -->
 <section class="mb-32">
     <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Globally distributed team and infrastructure</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">This is where the work happens.</p>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{t "about.global_team.title"}}</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">{{t "about.global_team.description"}}</p>
     </div>
     
     <div class="relative w-full max-w-6xl mx-auto" x-data="{ 
@@ -111,49 +102,49 @@
             
             <!-- Message Content -->
             <div class="pt-16 text-center mb-8">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-2">Message from the CEO</h2>
-                <h3 class="text-xl font-medium text-brand-blue mb-6">We built this for you.</h3>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-2">{{t "about.ceo_message.title"}}</h2>
+                <h3 class="text-xl font-medium text-brand-blue mb-6">{{t "about.ceo_message.subtitle"}}</h3>
             </div>
             
             <div class="prose prose-gray prose-lg max-w-none">
                 <p class="text-lg mb-6">
-                    Hey there,
+                    {{t "about.ceo_message.greeting"}}
                 </p>
                 
                 <p class="mb-6">
-                    I'm Manny, the founder and CEO of Blue. I created Blue to address the challenges I faced while scaling my consultancy. Turns out — many people struggle to stay organized and streamline their business processes.
+                    {{t "about.ceo_message.paragraph_1"}}
                 </p>
                 
                 <p class="mb-6">
-                    The central idea is that Blue is easy to use, so your team actually use it. We have all wasted money on software platforms that promised much but failed to deliver: they are rigid, awkward, and take forever to understand.
+                    {{t "about.ceo_message.paragraph_2"}}
                 </p>
                 
                 <p class="mb-6">
-                    Blue is different — It's super easy to use, incredibly flexible, and yet powerful enough for serious work. And the great thing is that you don't have to change your processes! Blue adapts to your existing processes — giving you visibility, automations, and peace of mind. You'll sleep well at night knowing that nothing slips through the cracks.
+                    {{t "about.ceo_message.paragraph_3"}}
                 </p>
                 
                 <p class="mb-6">
-                    So that's why I built Blue — because there is no company with a simple solution for scaling operations, without all the fluff.
+                    {{t "about.ceo_message.paragraph_4"}}
                 </p>
                 
                 <p class="mb-6">
-                    Thanks for reading, and I hope you enjoy using Blue!
+                    {{t "about.ceo_message.paragraph_5"}}
                 </p>
                 
                 <p class="mb-8">
-                    I know that we enjoy building it!
+                    {{t "about.ceo_message.paragraph_6"}}
                 </p>
                 
                 <p class="mb-6">
-                    Stay productive,
+                    {{t "about.ceo_message.sign_off"}}
                 </p>
             </div>
             
             <!-- Signature -->
             <div class="mt-8">
                 <img src="/efsig.png" alt="Emanuele Faja Signature" class="h-12 mb-4">
-                <p class="text-lg font-semibold text-gray-900 mb-1">Emanuele Faja</p>
-                <p class="text-base text-gray-600">Founder & CEO of Blue</p>
+                <p class="text-lg font-semibold text-gray-900 mb-1">{{t "about.ceo_message.name"}}</p>
+                <p class="text-base text-gray-600">{{t "about.ceo_message.title_role"}}</p>
             </div>
         </div>
     </div>
@@ -161,32 +152,23 @@
 
 <!-- Why We're Different Section -->
 <section id="our-difference" class="mb-20">
-    {{$whyDifferentData := parseJSON `{
-        "Title": "Why Blue is different<br>from other platforms.",
-        "Description": "We've built Blue from the ground up with a different philosophy. One that puts simplicity, flexibility, and customer success at the core of everything we do.",
-        "ValueProps": [
-            {
-                "Title": "Built by operators, for operators",
-                "Description": "We've felt your pain. Blue was born from real-world experience scaling businesses, not venture capital boardrooms pushing growth at any cost."
-            },
-            {
-                "Title": "Simple enough for everyone, powerful enough for enterprises",
-                "Description": "Your team will actually use Blue because it's intuitive. Yet it scales effortlessly from 5 to 5,000 users without architectural changes."
-            },
-            {
-                "Title": "Adapts to you, not the other way around",
-                "Description": "We don't force you into rigid workflows. Blue molds to your existing processes while giving you the tools to improve them over time."
-            }
-        ],
-        "Animation": false
-    }`}}
+    {{$whyDifferentData := dict
+        "Title" (t "about.why_different.title")
+        "Description" (t "about.why_different.description")
+        "ValueProps" (slice
+            (dict "Title" (t "about.why_different.point_1_title") "Description" (t "about.why_different.point_1_desc"))
+            (dict "Title" (t "about.why_different.point_2_title") "Description" (t "about.why_different.point_2_desc"))
+            (dict "Title" (t "about.why_different.point_3_title") "Description" (t "about.why_different.point_3_desc"))
+        )
+        "Animation" false
+    }}
     {{template "value-propositions" $whyDifferentData}}
 </section>
 
 <!-- Awards & Recognition Section -->
 <section id="awards" class="mb-20">
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Awards & Recognition</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">Trusted by thousands of teams worldwide and recognized by industry leaders.</p>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{t "about.awards.title"}}</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">{{t "about.awards.description"}}</p>
     
     {{$awardsData := parseJSON `{
         "awards": [
@@ -217,43 +199,43 @@
 
 <!-- Funding Section -->
 <section id="funding" class="mb-20">
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Funding</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">We're backed by the most demanding investors in the world: our customers.</p>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{t "about.funding.title"}}</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mb-12">{{t "about.funding.description"}}</p>
     
     <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">$0</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Venture Capital Raised</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "about.funding.vc_raised"}}</div>
             </div>
             <div>
                 <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">17,000+</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Customers</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "about.funding.customers"}}</div>
             </div>
             <div>
                 <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">100%</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Founder Owned</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "about.funding.founder_owned"}}</div>
             </div>
             <div>
                 <div class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">∞</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Runway</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "about.funding.runway"}}</div>
             </div>
         </div>
     </div>
     
     <div class="prose prose-lg max-w-none">
         <p class="text-gray-600 dark:text-gray-400">
-            While others chase venture capital, we've chosen a different path. We're proudly bootstrapped, which means we answer to our customers, not to a board room. This independence allows us to focus on building the best product possible, make decisions for the long term, and maintain the company culture that got us here.
+            {{t "about.funding.paragraph_1"}}
         </p>
         <p class="text-gray-600 dark:text-gray-400 mt-4">
-            <strong class="text-gray-900 dark:text-gray-100">Our investors?</strong> Every customer who believes in our vision. Every team that trusts us with their workflows. Every person who chose Blue over the heavily-funded alternatives. You're not just users – you're partners in building something sustainable.
+            <strong class="text-gray-900 dark:text-gray-100">{{t "about.funding.our_investors"}}</strong> {{t "about.funding.paragraph_2"}}
         </p>
     </div>
 </section>
 
 <!-- Company Timeline Section -->
 <section id="timeline" class="mb-20">
-    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-12 text-center">Our Journey</h2>
+    <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-12 text-center">{{t "about.timeline.title"}}</h2>
     
     <div class="max-w-3xl mx-auto">
         <div class="relative">
@@ -268,8 +250,8 @@
                         2018
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Blue is born</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Founded in response to the challenges of scaling a consultancy. The vision: make process management delightful.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2018_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2018_desc"}}</p>
                     </div>
                 </div>
                 
@@ -279,8 +261,8 @@
                         2019
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">First paying customer</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Blue's first customer validates the vision. The journey from concept to reality begins.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2019_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2019_desc"}}</p>
                     </div>
                 </div>
                 
@@ -290,8 +272,8 @@
                         2020
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">1,000 customers milestone</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Word spreads about Blue's unique approach. Teams love the simplicity and power combination.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2020_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2020_desc"}}</p>
                     </div>
                 </div>
                 
@@ -301,8 +283,8 @@
                         2021
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">API Launch</h3>
-                        <p class="text-gray-600 dark:text-gray-400">API launches with 100% feature coverage, enabling powerful integrations and automation capabilities.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2021_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2021_desc"}}</p>
                     </div>
                 </div>
                 
@@ -312,8 +294,8 @@
                         2022
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Rebranding</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Bloo becomes Blue, marking a new chapter in our journey with a refreshed brand identity.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2022_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2022_desc"}}</p>
                     </div>
                 </div>
                 
@@ -323,8 +305,8 @@
                         2024
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">White Label launch</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Enterprise features including White Label, advanced permissions, and API v2 help Blue scale to enterprise customers.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2024_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2024_desc"}}</p>
                     </div>
                 </div>
                 
@@ -334,8 +316,8 @@
                         2025
                     </div>
                     <div class="flex-1 pt-2">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">The journey continues</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Committed to our mission: organize the world's work by building the best process management platform on the planet.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{{t "about.timeline.2025_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "about.timeline.2025_desc"}}</p>
                     </div>
                 </div>
             </div>
@@ -348,12 +330,12 @@
 <section id="learn-more" class="mb-20">
     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-8 md:p-12">
         <div class="max-w-3xl">
-            <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Want to learn more?</h2>
+            <h2 class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">{{t "about.learn_more.title"}}</h2>
             <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                Dive into our insights where we share our thoughts on building better processes, scaling operations, and creating a world-class product without venture capital.
+                {{t "about.learn_more.description"}}
             </p>
             <a href="/insights" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium group">
-                Read our insights
+                {{t "common.read_insights"}}
                 <svg class="ml-2 w-4 h-4 transition-transform duration-200 ease-out group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
@@ -363,12 +345,12 @@
 </section>
 
 <!-- Call to Action -->
-{{$ctaData := parseJSON `{
-    "Title": "Ready to see Blue in action?",
-    "SecondaryText": "Watch a demo",
-    "SecondaryUrl": "/demo",
-    "PrimaryText": "Start free trial",
-    "PrimaryUrl": "https://app.blue.cc"
-}`}}
+{{$ctaData := dict
+    "Title" (t "about.cta.title")
+    "SecondaryText" (t "common.watch_demo")
+    "SecondaryUrl" "/demo"
+    "PrimaryText" (t "common.start_free_trial")
+    "PrimaryUrl" "https://app.blue.cc"
+}}
 {{template "dual-button-cta" $ctaData}}
 

@@ -29,4 +29,5 @@ type PageData struct {
 	Insights       []InsightData
 	Path           string
 	SchemaData     template.JS
+	Language       string
 }

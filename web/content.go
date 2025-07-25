@@ -20,19 +20,25 @@ func NewContentService(contentDir string) *ContentService {
 
 // FindMarkdownFile searches for a markdown file matching the given path
 func (cs *ContentService) FindMarkdownFile(path string) (string, error) {
+	// Default to English
+	return cs.FindMarkdownFileForLang(path, DefaultLanguage)
+}
+
+// FindMarkdownFileForLang searches for a language-specific markdown file
+func (cs *ContentService) FindMarkdownFileForLang(path, lang string) (string, error) {
 	// Convert URL path to potential file paths
 	cleanPath := strings.Trim(path, "/")
 
 	// Check if this is a content type path
 	contentType, isContentPath := GetContentTypeFromPath(cleanPath)
 	if isContentPath {
-		return cs.findNumberedMarkdownFile(cleanPath, contentType)
+		return cs.findNumberedMarkdownFileForLang(cleanPath, contentType, lang)
 	}
 
-	// Try simple patterns for non-content paths
+	// Try simple patterns for non-content paths with language
 	patterns := []string{
-		filepath.Join(cs.contentDir, cleanPath+".md"),
-		filepath.Join(cs.contentDir, cleanPath, "index.md"),
+		filepath.Join(cs.contentDir, lang, cleanPath+".md"),
+		filepath.Join(cs.contentDir, lang, cleanPath, "index.md"),
 	}
 
 	for _, pattern := range patterns {
@@ -41,18 +47,29 @@ func (cs *ContentService) FindMarkdownFile(path string) (string, error) {
 		}
 	}
 
+	// If not found and not English, fall back to English
+	if lang != DefaultLanguage {
+		return cs.FindMarkdownFileForLang(path, DefaultLanguage)
+	}
+
 	return "", os.ErrNotExist
 }
 
 // findNumberedMarkdownFile handles finding files with numeric prefixes
 func (cs *ContentService) findNumberedMarkdownFile(cleanPath string, contentType ContentType) (string, error) {
+	return cs.findNumberedMarkdownFileForLang(cleanPath, contentType, DefaultLanguage)
+}
+
+// findNumberedMarkdownFileForLang handles finding language-specific files with numeric prefixes
+func (cs *ContentService) findNumberedMarkdownFileForLang(cleanPath string, contentType ContentType, lang string) (string, error) {
 	parts := strings.Split(cleanPath, "/")
 	if len(parts) < 2 {
 		return "", os.ErrNotExist
 	}
 
 	// Build path progressively, finding numbered directories/files
-	currentPath := contentType.BaseDir
+	// Update BaseDir to include language
+	currentPath := filepath.Join(cs.contentDir, lang, strings.TrimPrefix(contentType.BaseDir, "content/"))
 	for i := 1; i < len(parts); i++ {
 		cleanSegment := parts[i]
 
@@ -79,6 +96,11 @@ func (cs *ContentService) findNumberedMarkdownFile(cleanPath string, contentType
 			}
 			currentPath = dirPath
 		}
+	}
+
+	// If not found and not English, fall back to English
+	if lang != DefaultLanguage {
+		return cs.findNumberedMarkdownFileForLang(cleanPath, contentType, DefaultLanguage)
 	}
 
 	return "", os.ErrNotExist

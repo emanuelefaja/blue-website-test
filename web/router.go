@@ -84,7 +84,7 @@ func NewRouter(pagesDir string) *Router {
 	if err := htmlService.PreRenderAllHTMLPages(navigationService, seoService); err != nil {
 		log.Printf("⚠️  Warning: failed to pre-render HTML pages: %v", err)
 	} else {
-		log.Printf("✅ HTML cache initialized (%d pages)", htmlService.GetCacheSize())
+		log.Printf("✅ HTML cache initialized (%d pages across %d languages)", htmlService.GetCacheSize(), len(SupportedLanguages))
 	}
 
 	// Generate search index with pre-rendered content
@@ -131,9 +131,23 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
+	// Language detection and routing
+	lang, cleanPath := extractLanguageFromPath(req.URL.Path)
+	
+	// If no language in URL, detect and redirect
+	if lang == "" {
+		detectedLang := detectPreferredLanguage(req)
+		// Redirect to language-prefixed URL
+		http.Redirect(w, req, "/"+detectedLang+req.URL.Path, http.StatusFound)
+		return
+	}
+	
+	// Set language cookie for future visits
+	setLanguageCookie(w, lang)
+
 	// Serve component files
-	if strings.HasPrefix(req.URL.Path, "/components/") {
-		componentPath := strings.TrimPrefix(req.URL.Path, "/components/")
+	if strings.HasPrefix(cleanPath, "/components/") {
+		componentPath := strings.TrimPrefix(cleanPath, "/components/")
 		filePath := filepath.Join(r.componentsDir, componentPath)
 
 		// Add .html extension if not present
@@ -145,8 +159,8 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	// Get the requested path
-	path := req.URL.Path
+	// Use the clean path (without language prefix)
+	path := cleanPath
 
 	// Handle api-docs to api redirects
 	if strings.HasPrefix(path, "/api-docs/") {
@@ -157,6 +171,10 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	// Check for redirects first
 	if redirectTo, statusCode, shouldRedirect := r.seoService.CheckRedirect(path); shouldRedirect {
+		// Preserve language prefix in redirects
+		if lang != "" {
+			redirectTo = "/" + lang + redirectTo
+		}
 		http.Redirect(w, req, redirectTo, statusCode)
 		return
 	}
@@ -203,7 +221,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Check if HTML page file exists
 	if _, err := os.Stat(filePath); os.IsNotExist(err) {
 		// HTML page doesn't exist, try cached markdown first
-		if cachedContent, found := r.markdownService.GetCachedContent(path); found {
+		if cachedContent, found := r.markdownService.GetCachedContentForLang(path, lang); found {
 			// Found in cache - use pre-rendered content
 			contentBytes = []byte(cachedContent.HTML)
 			frontmatter = cachedContent.Frontmatter
@@ -211,7 +229,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 			// Cached markdown served
 		} else {
 			// Not in cache, try to find and process markdown file (fallback)
-			markdownPath, mdErr := r.contentService.FindMarkdownFile(path)
+			markdownPath, mdErr := r.contentService.FindMarkdownFileForLang(path, lang)
 			if mdErr != nil {
 				// Before serving 404, check if this is a directory URL that should redirect
 				if firstItemURL := r.navigationService.GetFirstItemInDirectory(path); firstItemURL != "" {
@@ -237,7 +255,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 	} else {
 		// HTML page exists, try cached version first
-		if cachedContent, found := r.htmlService.GetCachedContent(path); found {
+		if cachedContent, found := r.htmlService.GetCachedContentForLang(path, lang); found {
 			// Found in cache - use pre-rendered content
 			w.Header().Set("Content-Type", "text/html")
 			_, err := w.Write([]byte(cachedContent.HTML))
@@ -265,10 +283,10 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		isMarkdown = false
 
 		// Process all HTML pages as templates to enable template variables
-		pageData := r.preparePageData(path, "", isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path))
+		pageData := r.preparePageData(path, "", isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path), lang)
 
-		// Create a template for the page content
-		contentTmpl := template.New("page-content").Funcs(templateFuncs)
+		// Create a template for the page content with language-specific functions
+		contentTmpl := template.New("page-content").Funcs(getTemplateFuncs(lang))
 
 		// Auto-scan all component templates for page content parsing
 		componentFiles, err := r.loadComponentTemplates()
@@ -324,8 +342,8 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Add all component files
 	templateFiles = append(templateFiles, componentFiles...)
 
-	// Create template with custom functions
-	tmpl := template.New("main.html").Funcs(templateFuncs)
+	// Create template with custom functions including language-specific translation
+	tmpl := template.New("main.html").Funcs(getTemplateFuncs(lang))
 
 	// Parse all template files
 	tmpl, err = tmpl.ParseFiles(templateFiles...)
@@ -336,7 +354,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	}
 
 	// Prepare page data
-	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path))
+	pageData := r.preparePageData(path, template.HTML(contentBytes), isMarkdown, frontmatter, r.navigationService.GetNavigationForPath(path), lang)
 
 	// Set content type and execute main layout
 	w.Header().Set("Content-Type", "text/html")
