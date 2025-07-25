@@ -1,88 +1,71 @@
     {{template "page-heading" 
         dict 
-            "Title" "Blue Charter" 
-            "Subtitle" "Our Charter describes the principles we use to execute on Blue's mission to organize the world's work." 
+            "Title" (t "charter.page_title") 
+            "Subtitle" (t "charter.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
     <!-- Charter Content -->
     <section class="max-w-6xl mx-auto">
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                Since our founding in 2018, Blue has served over 17,000 organizations across 120+
-                countries. This Charter codifies the principles that have guided our journey and will
-                continue to shape our responsibility to the global workforce. As work evolves and
-                technology advances, these commitments remain our unwavering foundation.
+                {{t "charter.intro_paragraph_1"}}
                 <br><br>
-                Our mission is to organize the world's work. We will pursue this mission by
-                building the most advanced process management platform while maintaining unwavering
-                commitments to independence, universal access, and technical excellence.
-            <br><br>
-            To that end, we commit to the following principles:
+                {{t "charter.intro_paragraph_2"}}
+                <br><br>
+                {{t "charter.intro_paragraph_3"}}
             </p>
 
             <!-- Customer-First Independence -->
             <section id="absolute-independence" class="mb-12">
-                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Absolute Independence</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{{t "charter.absolute_independence_title"}}</h2>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                    We maintain absolute independence from external pressures that could compromise our primary obligation to
-                    customer success. Our self-funded structure ensures that organizational needs remain our paramount concern,
-                    free from the constraints of investor returns or market speculation.
-                <br><br>
-                Every strategic decision, from feature development to pricing architecture, is evaluated solely through the
-                lens of customer value and long-term organizational benefit. This independence is not merely philosophical but
-                structural. It is embedded in our governance and operational framework.
-            </p>
+                    {{t "charter.absolute_independence_paragraph_1"}}
+                    <br><br>
+                    {{t "charter.absolute_independence_paragraph_2"}}
+                </p>
                 <div class="border-2 border-brand-blue bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <strong>Our commitment:</strong> Maintain absolute independence, ensuring our primary obligation remains to our customers and their success.
+                    <strong>{{t "charter.absolute_independence_commitment"}}</strong> {{t "charter.absolute_independence_commitment_text"}}
                 </div>
             </section>
 
             <!-- Process Individualism -->
             <section id="process-individualism" class="mb-12">
-                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Process Individualism</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{{t "charter.process_individualism_title"}}</h2>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                    We reject the notion that all organizations should follow the same <em>"best practices."</em>  We recognize that operational excellence stems from differentiation, not standardization. While our industry
-                    promotes rigid methodologies and prescriptive workflows, we believe that each organization's unique
-                   processes constitute their competitive advantage.
-               <br><br>
-                    Blue adapts to your unique processes, not the other way around. We provide the foundation for you to build processes that reflect your organization's unique strengths, culture, and strategic advantages.
+                    {{t "charter.process_individualism_paragraph_1"}}
+                    <br><br>
+                    {{t "charter.process_individualism_paragraph_2"}}
                 </p>
                 <div class="border-2 border-brand-blue bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <strong>Our commitment:</strong>   To never impose standardized workflows that compromise your competitive differentiation.
+                    <strong>{{t "charter.process_individualism_commitment"}}</strong> {{t "charter.process_individualism_commitment_text"}}
 
                 </div>
             </section>
 
             <!-- Democratized Access -->
             <section id="democratized-access" class="mb-12">
-                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Democratized Access</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{{t "charter.democratized_access_title"}}</h2>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                    We are committed to eliminating the artificial barriers between enterprise capability and organizational
-                    scale. Advanced operational infrastructure should not be the exclusive domain of large corporations with
-                    extensive IT budgets.
-                <br><br>
-                Every organization, from emerging startups to established enterprises, requires sophisticated tools to
-                compete effectively. We architect our platform to deliver enterprise-grade reliability, security, and
-                functionality at price points that enable universal adoption.
+                    {{t "charter.democratized_access_paragraph_1"}}
+                    <br><br>
+                    {{t "charter.democratized_access_paragraph_2"}}
                 </p>
                 
                 <div class="border-2 border-brand-blue bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <strong>Our commitment:</strong> To make a thoughtful pareto-principle trade off, providing 80% of enterprise functionality at 20%
-                    of the cost.
+                    <strong>{{t "charter.democratized_access_commitment"}}</strong> {{t "charter.democratized_access_commitment_text"}}
                 </div>
             </section>
 
             <!-- Technical Leadership -->
             <section id="technical-leadership" class="mb-12">
-                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Technical Leadership</h2>
+                <h2 class="text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-6">{{t "charter.technical_leadership_title"}}</h2>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-                    We commit to maintaining technical excellence at every level of our platform. We believe that superior engineering creates superior user experiences, and that cutting-edge technology should work invisibly to empower our customers.
-                <br><br>
-                    We invest continuously in advanced technologies while ensuring they serve a clear purpose: enabling your
-                    success. Our engineering decisions are guided by principles of robustness, scalability, and security,
-                    recognizing that your business operations depend on our technical foundation.                </p>
+                    {{t "charter.technical_leadership_paragraph_1"}}
+                    <br><br>
+                    {{t "charter.technical_leadership_paragraph_2"}}
+                </p>
                 <div class="border-2 border-brand-blue bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <strong>Our commitment:</strong> Always choose the technically superior solution, even when it's harder to build.
+                    <strong>{{t "charter.technical_leadership_commitment"}}</strong> {{t "charter.technical_leadership_commitment_text"}}
                 </div>
             </section>
 
