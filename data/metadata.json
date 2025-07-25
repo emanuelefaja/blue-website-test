@@ -5,7 +5,21 @@
     "author": "Blue Team",
     "descriptions": {
       "en": "Blue is a powerful platform to create, manage, and scale processes.",
-      "es": "Blue es una poderosa plataforma para crear, gestionar y escalar procesos."
+      "es": "Blue es una poderosa plataforma para crear, gestionar y escalar procesos.",
+      "zh": "Blue 是一个强大的创建、管理和扩展流程的平台。",
+      "fr": "Blue est une plateforme puissante pour créer, gérer et faire évoluer les processus.",
+      "de": "Blue ist eine leistungsstarke Plattform zum Erstellen, Verwalten und Skalieren von Prozessen.",
+      "ja": "Blueは、プロセスを作成、管理、拡張するための強力なプラットフォームです。",
+      "pt": "Blue é uma plataforma poderosa para criar, gerenciar e escalar processos.",
+      "ru": "Blue - это мощная платформа для создания, управления и масштабирования процессов.",
+      "ko": "Blue는 프로세스를 생성, 관리 및 확장하기 위한 강력한 플랫폼입니다.",
+      "it": "Blue è una piattaforma potente per creare, gestire e scalare i processi.",
+      "id": "Blue adalah platform yang kuat untuk membuat, mengelola, dan menskalakan proses.",
+      "nl": "Blue is een krachtig platform voor het creëren, beheren en schalen van processen.",
+      "pl": "Blue to potężna platforma do tworzenia, zarządzania i skalowania procesów.",
+      "zh-TW": "Blue 是一個強大的創建、管理和擴展流程的平台。",
+      "sv": "Blue är en kraftfull plattform för att skapa, hantera och skala processer.",
+      "km": "Blue គឺជាវេទិកាដ៏មានអានុភាពសម្រាប់បង្កើត គ្រប់គ្រង និងពង្រីកដំណើរការ។"
     }
   },
   "pages": {
@@ -19,6 +33,76 @@
         "title": "Blue - Poderosa Plataforma de Gestión de Procesos",
         "description": "Blue revoluciona cómo los equipos colaboran y gestionan su trabajo. Creado para el lugar de trabajo moderno, nuestra plataforma combina potentes herramientas de gestión de proyectos con un diseño intuitivo.",
         "keywords": ["gestión de procesos", "gestión de proyectos", "colaboración de equipos", "automatización de flujos de trabajo", "blue"]
+      },
+      "zh": {
+        "title": "Blue - 强大的流程管理平台",
+        "description": "Blue 彻底改变了团队协作和管理工作的方式。我们的平台专为现代工作场所打造，将强大的项目管理工具与直观的设计相结合。",
+        "keywords": ["流程管理", "项目管理", "团队协作", "工作流自动化", "blue"]
+      },
+      "fr": {
+        "title": "Blue - Plateforme de Gestion des Processus Puissante",
+        "description": "Blue révolutionne la façon dont les équipes collaborent et gèrent leur travail. Conçue pour le lieu de travail moderne, notre plateforme combine des outils de gestion de projet puissants avec un design intuitif.",
+        "keywords": ["gestion des processus", "gestion de projet", "collaboration d'équipe", "automatisation des flux de travail", "blue"]
+      },
+      "de": {
+        "title": "Blue - Leistungsstarke Prozessmanagement-Plattform",
+        "description": "Blue revolutioniert die Art und Weise, wie Teams zusammenarbeiten und ihre Arbeit verwalten. Unsere für den modernen Arbeitsplatz entwickelte Plattform kombiniert leistungsstarke Projektmanagement-Tools mit intuitivem Design.",
+        "keywords": ["Prozessmanagement", "Projektmanagement", "Teamzusammenarbeit", "Workflow-Automatisierung", "blue"]
+      },
+      "ja": {
+        "title": "Blue - 強力なプロセス管理プラットフォーム",
+        "description": "Blueは、チームのコラボレーションと作業管理の方法を革新します。現代の職場向けに構築されたプラットフォームは、強力なプロジェクト管理ツールと直感的なデザインを組み合わせています。",
+        "keywords": ["プロセス管理", "プロジェクト管理", "チームコラボレーション", "ワークフロー自動化", "blue"]
+      },
+      "pt": {
+        "title": "Blue - Poderosa Plataforma de Gestão de Processos",
+        "description": "Blue revoluciona como as equipes colaboram e gerenciam seu trabalho. Criada para o local de trabalho moderno, nossa plataforma combina ferramentas poderosas de gestão de projetos com design intuitivo.",
+        "keywords": ["gestão de processos", "gestão de projetos", "colaboração de equipes", "automação de fluxo de trabalho", "blue"]
+      },
+      "ru": {
+        "title": "Blue - Мощная платформа управления процессами",
+        "description": "Blue революционизирует способы совместной работы и управления задачами в командах. Созданная для современного рабочего места, наша платформа сочетает мощные инструменты управления проектами с интуитивным дизайном.",
+        "keywords": ["управление процессами", "управление проектами", "командное сотрудничество", "автоматизация рабочих процессов", "blue"]
+      },
+      "ko": {
+        "title": "Blue - 강력한 프로세스 관리 플랫폼",
+        "description": "Blue는 팀이 협업하고 작업을 관리하는 방식을 혁신합니다. 현대적인 직장을 위해 구축된 플랫폼은 강력한 프로젝트 관리 도구와 직관적인 디자인을 결합합니다.",
+        "keywords": ["프로세스 관리", "프로젝트 관리", "팀 협업", "워크플로우 자동화", "blue"]
+      },
+      "it": {
+        "title": "Blue - Potente Piattaforma di Gestione dei Processi",
+        "description": "Blue rivoluziona il modo in cui i team collaborano e gestiscono il loro lavoro. Creata per il luogo di lavoro moderno, la nostra piattaforma combina potenti strumenti di gestione dei progetti con un design intuitivo.",
+        "keywords": ["gestione dei processi", "gestione dei progetti", "collaborazione di team", "automazione del flusso di lavoro", "blue"]
+      },
+      "id": {
+        "title": "Blue - Platform Manajemen Proses yang Kuat",
+        "description": "Blue merevolusi cara tim berkolaborasi dan mengelola pekerjaan mereka. Dibangun untuk tempat kerja modern, platform kami menggabungkan alat manajemen proyek yang kuat dengan desain intuitif.",
+        "keywords": ["manajemen proses", "manajemen proyek", "kolaborasi tim", "otomasi alur kerja", "blue"]
+      },
+      "nl": {
+        "title": "Blue - Krachtig Procesbeheerplatform",
+        "description": "Blue revolutioneert hoe teams samenwerken en hun werk beheren. Gebouwd voor de moderne werkplek, combineert ons platform krachtige projectmanagementtools met intuïtief ontwerp.",
+        "keywords": ["procesbeheer", "projectbeheer", "teamsamenwerking", "workflow-automatisering", "blue"]
+      },
+      "pl": {
+        "title": "Blue - Potężna Platforma Zarządzania Procesami",
+        "description": "Blue rewolucjonizuje sposób współpracy zespołów i zarządzania pracą. Stworzona dla nowoczesnego miejsca pracy, nasza platforma łączy potężne narzędzia do zarządzania projektami z intuicyjnym designem.",
+        "keywords": ["zarządzanie procesami", "zarządzanie projektami", "współpraca zespołowa", "automatyzacja przepływu pracy", "blue"]
+      },
+      "zh-TW": {
+        "title": "Blue - 強大的流程管理平台",
+        "description": "Blue 徹底改變了團隊協作和管理工作的方式。我們的平台專為現代工作場所打造，將強大的專案管理工具與直觀的設計相結合。",
+        "keywords": ["流程管理", "專案管理", "團隊協作", "工作流程自動化", "blue"]
+      },
+      "sv": {
+        "title": "Blue - Kraftfull Processhanteringsplattform",
+        "description": "Blue revolutionerar hur team samarbetar och hanterar sitt arbete. Byggd för den moderna arbetsplatsen, kombinerar vår plattform kraftfulla projekthanteringsverktyg med intuitiv design.",
+        "keywords": ["processhantering", "projekthantering", "teamsamarbete", "arbetsflödesautomatisering", "blue"]
+      },
+      "km": {
+        "title": "Blue - វេទិកាគ្រប់គ្រងដំណើរការដ៏មានអានុភាព",
+        "description": "Blue បដិវត្តន៍របៀបដែលក្រុមសហការ និងគ្រប់គ្រងការងាររបស់ពួកគេ។ បង្កើតឡើងសម្រាប់កន្លែងធ្វើការទំនើប វេទិការបស់យើងរួមបញ្ចូលឧបករណ៍គ្រប់គ្រងគម្រោងដ៏មានអានុភាពជាមួយនឹងការរចនាដែលងាយស្រួលប្រើ។",
+        "keywords": ["ការគ្រប់គ្រងដំណើរការ", "ការគ្រប់គ្រងគម្រោង", "កិច្ចសហការក្រុម", "ស្វ័យប្រវត្តិកម្មលំហូរការងារ", "blue"]
       }
     },
     "about": {
@@ -26,6 +110,81 @@
         "title": "About Blue - Modern Team Collaboration Platform",
         "description": "Learn more about Blue and how we're revolutionizing team collaboration and process management for modern workplaces.",
         "keywords": ["about blue", "company", "team collaboration", "process management"]
+      },
+      "es": {
+        "title": "Acerca de Blue - Plataforma Moderna de Colaboración en Equipo",
+        "description": "Conozca más sobre Blue y cómo estamos revolucionando la colaboración en equipo y la gestión de procesos para los lugares de trabajo modernos.",
+        "keywords": ["acerca de blue", "empresa", "colaboración en equipo", "gestión de procesos"]
+      },
+      "zh": {
+        "title": "关于 Blue - 现代团队协作平台",
+        "description": "了解更多关于 Blue 的信息，以及我们如何为现代工作场所革新团队协作和流程管理。",
+        "keywords": ["关于 blue", "公司", "团队协作", "流程管理"]
+      },
+      "fr": {
+        "title": "À propos de Blue - Plateforme de Collaboration d'Équipe Moderne",
+        "description": "En savoir plus sur Blue et comment nous révolutionnons la collaboration d'équipe et la gestion des processus pour les lieux de travail modernes.",
+        "keywords": ["à propos de blue", "entreprise", "collaboration d'équipe", "gestion des processus"]
+      },
+      "de": {
+        "title": "Über Blue - Moderne Teamkollaborationsplattform",
+        "description": "Erfahren Sie mehr über Blue und wie wir die Teamzusammenarbeit und das Prozessmanagement für moderne Arbeitsplätze revolutionieren.",
+        "keywords": ["über blue", "unternehmen", "teamzusammenarbeit", "prozessmanagement"]
+      },
+      "ja": {
+        "title": "Blueについて - 現代的なチームコラボレーションプラットフォーム",
+        "description": "Blueについて、そして現代の職場向けにチームコラボレーションとプロセス管理をどのように革新しているかをご覧ください。",
+        "keywords": ["blueについて", "会社", "チームコラボレーション", "プロセス管理"]
+      },
+      "pt": {
+        "title": "Sobre a Blue - Plataforma Moderna de Colaboração em Equipe",
+        "description": "Saiba mais sobre a Blue e como estamos revolucionando a colaboração em equipe e a gestão de processos para locais de trabalho modernos.",
+        "keywords": ["sobre a blue", "empresa", "colaboração em equipe", "gestão de processos"]
+      },
+      "ru": {
+        "title": "О Blue - Современная платформа для командной работы",
+        "description": "Узнайте больше о Blue и о том, как мы революционизируем командное сотрудничество и управление процессами для современных рабочих мест.",
+        "keywords": ["о blue", "компания", "командное сотрудничество", "управление процессами"]
+      },
+      "ko": {
+        "title": "Blue 소개 - 현대적인 팀 협업 플랫폼",
+        "description": "Blue에 대해 자세히 알아보고 현대 직장을 위한 팀 협업과 프로세스 관리를 어떻게 혁신하고 있는지 확인하세요.",
+        "keywords": ["blue 소개", "회사", "팀 협업", "프로세스 관리"]
+      },
+      "it": {
+        "title": "Chi siamo - Blue - Piattaforma Moderna di Collaborazione di Team",
+        "description": "Scopri di più su Blue e su come stiamo rivoluzionando la collaborazione di team e la gestione dei processi per i luoghi di lavoro moderni.",
+        "keywords": ["chi siamo blue", "azienda", "collaborazione di team", "gestione dei processi"]
+      },
+      "id": {
+        "title": "Tentang Blue - Platform Kolaborasi Tim Modern",
+        "description": "Pelajari lebih lanjut tentang Blue dan bagaimana kami merevolusi kolaborasi tim dan manajemen proses untuk tempat kerja modern.",
+        "keywords": ["tentang blue", "perusahaan", "kolaborasi tim", "manajemen proses"]
+      },
+      "nl": {
+        "title": "Over Blue - Modern Teamsamenwerkingsplatform",
+        "description": "Leer meer over Blue en hoe we teamsamenwerking en procesbeheer revolutioneren voor moderne werkplekken.",
+        "keywords": ["over blue", "bedrijf", "teamsamenwerking", "procesbeheer"]
+      },
+      "pl": {
+        "title": "O Blue - Nowoczesna Platforma Współpracy Zespołowej",
+        "description": "Dowiedz się więcej o Blue i jak rewolucjonizujemy współpracę zespołową i zarządzanie procesami dla nowoczesnych miejsc pracy.",
+        "keywords": ["o blue", "firma", "współpraca zespołowa", "zarządzanie procesami"]
+      },
+      "zh-TW": {
+        "title": "關於 Blue - 現代團隊協作平台",
+        "description": "了解更多關於 Blue 的資訊，以及我們如何為現代工作場所革新團隊協作和流程管理。",
+        "keywords": ["關於 blue", "公司", "團隊協作", "流程管理"]
+      },
+      "sv": {
+        "title": "Om Blue - Modern Teamsamarbetsplattform",
+        "description": "Lär dig mer om Blue och hur vi revolutionerar teamsamarbete och processhantering för moderna arbetsplatser.",
+        "keywords": ["om blue", "företag", "teamsamarbete", "processhantering"]
+      },
+      "km": {
+        "title": "អំពី Blue - វេទិកាសហការក្រុមទំនើប",
+        "description": "ស្វែងយល់បន្ថែមអំពី Blue និងរបៀបដែលយើងកំពុងបដិវត្តន៍កិច្ចសហការក្រុម និងការគ្រប់គ្រងដំណើរការសម្រាប់កន្លែងធ្វើការទំនើប។",
+        "keywords": ["អំពី blue", "ក្រុមហ៊ុន", "កិច្ចសហការក្រុម", "ការគ្រប់គ្រងដំណើរការ"]
       }
     },
     "company/about": {
@@ -38,6 +197,76 @@
         "title": "Acerca de",
         "description": "Descubre la misión de Blue de transformar cómo los equipos trabajan juntos y gestionan sus procesos con nuestra innovadora plataforma.",
         "keywords": ["acerca de", "empresa", "misión", "equipo", "blue"]
+      },
+      "zh": {
+        "title": "关于我们",
+        "description": "了解 Blue 如何通过我们的创新平台改变团队协作和管理流程的使命。",
+        "keywords": ["关于", "公司", "使命", "团队", "blue"]
+      },
+      "fr": {
+        "title": "À propos",
+        "description": "Découvrez la mission de Blue de transformer la façon dont les équipes travaillent ensemble et gèrent leurs processus avec notre plateforme innovante.",
+        "keywords": ["à propos", "entreprise", "mission", "équipe", "blue"]
+      },
+      "de": {
+        "title": "Über uns",
+        "description": "Entdecken Sie Blues Mission, mit unserer innovativen Plattform zu transformieren, wie Teams zusammenarbeiten und ihre Prozesse verwalten.",
+        "keywords": ["über uns", "unternehmen", "mission", "team", "blue"]
+      },
+      "ja": {
+        "title": "会社概要",
+        "description": "革新的なプラットフォームでチームの協働とプロセス管理を変革するBlueのミッションをご覧ください。",
+        "keywords": ["会社概要", "会社", "ミッション", "チーム", "blue"]
+      },
+      "pt": {
+        "title": "Sobre",
+        "description": "Descubra a missão da Blue de transformar como as equipes trabalham juntas e gerenciam seus processos com nossa plataforma inovadora.",
+        "keywords": ["sobre", "empresa", "missão", "equipe", "blue"]
+      },
+      "ru": {
+        "title": "О нас",
+        "description": "Узнайте о миссии Blue по трансформации совместной работы команд и управления процессами с помощью нашей инновационной платформы.",
+        "keywords": ["о нас", "компания", "миссия", "команда", "blue"]
+      },
+      "ko": {
+        "title": "소개",
+        "description": "혁신적인 플랫폼으로 팀이 함께 일하고 프로세스를 관리하는 방식을 변화시키는 Blue의 사명을 알아보세요.",
+        "keywords": ["소개", "회사", "사명", "팀", "blue"]
+      },
+      "it": {
+        "title": "Chi siamo",
+        "description": "Scopri la missione di Blue di trasformare il modo in cui i team lavorano insieme e gestiscono i loro processi con la nostra piattaforma innovativa.",
+        "keywords": ["chi siamo", "azienda", "missione", "team", "blue"]
+      },
+      "id": {
+        "title": "Tentang",
+        "description": "Temukan misi Blue untuk mengubah cara tim bekerja bersama dan mengelola proses mereka dengan platform inovatif kami.",
+        "keywords": ["tentang", "perusahaan", "misi", "tim", "blue"]
+      },
+      "nl": {
+        "title": "Over",
+        "description": "Ontdek Blue's missie om te transformeren hoe teams samenwerken en hun processen beheren met ons innovatieve platform.",
+        "keywords": ["over", "bedrijf", "missie", "team", "blue"]
+      },
+      "pl": {
+        "title": "O nas",
+        "description": "Odkryj misję Blue, aby przekształcić sposób, w jaki zespoły współpracują i zarządzają swoimi procesami dzięki naszej innowacyjnej platformie.",
+        "keywords": ["o nas", "firma", "misja", "zespół", "blue"]
+      },
+      "zh-TW": {
+        "title": "關於我們",
+        "description": "了解 Blue 如何通過我們的創新平台改變團隊協作和管理流程的使命。",
+        "keywords": ["關於", "公司", "使命", "團隊", "blue"]
+      },
+      "sv": {
+        "title": "Om",
+        "description": "Upptäck Blues uppdrag att transformera hur team arbetar tillsammans och hanterar sina processer med vår innovativa plattform.",
+        "keywords": ["om", "företag", "uppdrag", "team", "blue"]
+      },
+      "km": {
+        "title": "អំពីយើង",
+        "description": "ស្វែងយល់អំពីបេសកកម្មរបស់ Blue ក្នុងការផ្លាស់ប្តូររបៀបដែលក្រុមធ្វើការរួមគ្នា និងគ្រប់គ្រងដំណើរការរបស់ពួកគេជាមួយនឹងវេទិកាច្នៃប្រឌិតរបស់យើង។",
+        "keywords": ["អំពី", "ក្រុមហ៊ុន", "បេសកកម្ម", "ក្រុម", "blue"]
       }
     },
     "pricing": {
@@ -45,6 +274,81 @@
         "title": "Pricing",
         "description": "Choose the Blue plan that fits your team's needs. Simple, transparent pricing with no hidden fees. Start your free trial today.",
         "keywords": ["pricing", "plans", "free trial", "team management", "blue"]
+      },
+      "es": {
+        "title": "Precios",
+        "description": "Elija el plan Blue que se adapte a las necesidades de su equipo. Precios simples y transparentes sin tarifas ocultas. Comience su prueba gratuita hoy.",
+        "keywords": ["precios", "planes", "prueba gratuita", "gestión de equipos", "blue"]
+      },
+      "zh": {
+        "title": "定价",
+        "description": "选择适合您团队需求的 Blue 计划。简单透明的定价，无隐藏费用。立即开始免费试用。",
+        "keywords": ["定价", "计划", "免费试用", "团队管理", "blue"]
+      },
+      "fr": {
+        "title": "Tarifs",
+        "description": "Choisissez le plan Blue qui correspond aux besoins de votre équipe. Tarifs simples et transparents sans frais cachés. Commencez votre essai gratuit aujourd'hui.",
+        "keywords": ["tarifs", "plans", "essai gratuit", "gestion d'équipe", "blue"]
+      },
+      "de": {
+        "title": "Preise",
+        "description": "Wählen Sie den Blue-Plan, der zu den Bedürfnissen Ihres Teams passt. Einfache, transparente Preise ohne versteckte Gebühren. Starten Sie noch heute Ihre kostenlose Testversion.",
+        "keywords": ["preise", "pläne", "kostenlose testversion", "teamverwaltung", "blue"]
+      },
+      "ja": {
+        "title": "料金",
+        "description": "チームのニーズに合ったBlueプランを選択してください。隠れた料金のないシンプルで透明な価格設定。今すぐ無料トライアルを開始しましょう。",
+        "keywords": ["料金", "プラン", "無料トライアル", "チーム管理", "blue"]
+      },
+      "pt": {
+        "title": "Preços",
+        "description": "Escolha o plano Blue que atende às necessidades da sua equipe. Preços simples e transparentes sem taxas ocultas. Comece seu teste gratuito hoje.",
+        "keywords": ["preços", "planos", "teste gratuito", "gestão de equipes", "blue"]
+      },
+      "ru": {
+        "title": "Цены",
+        "description": "Выберите план Blue, который соответствует потребностям вашей команды. Простые, прозрачные цены без скрытых платежей. Начните бесплатную пробную версию сегодня.",
+        "keywords": ["цены", "планы", "бесплатная пробная версия", "управление командой", "blue"]
+      },
+      "ko": {
+        "title": "가격",
+        "description": "팀의 요구에 맞는 Blue 플랜을 선택하세요. 숨겨진 수수료가 없는 간단하고 투명한 가격. 오늘 무료 체험을 시작하세요.",
+        "keywords": ["가격", "플랜", "무료 체험", "팀 관리", "blue"]
+      },
+      "it": {
+        "title": "Prezzi",
+        "description": "Scegli il piano Blue che si adatta alle esigenze del tuo team. Prezzi semplici e trasparenti senza costi nascosti. Inizia la tua prova gratuita oggi.",
+        "keywords": ["prezzi", "piani", "prova gratuita", "gestione del team", "blue"]
+      },
+      "id": {
+        "title": "Harga",
+        "description": "Pilih paket Blue yang sesuai dengan kebutuhan tim Anda. Harga sederhana dan transparan tanpa biaya tersembunyi. Mulai uji coba gratis Anda hari ini.",
+        "keywords": ["harga", "paket", "uji coba gratis", "manajemen tim", "blue"]
+      },
+      "nl": {
+        "title": "Prijzen",
+        "description": "Kies het Blue-plan dat past bij de behoeften van uw team. Eenvoudige, transparante prijzen zonder verborgen kosten. Start vandaag uw gratis proefperiode.",
+        "keywords": ["prijzen", "plannen", "gratis proefperiode", "teambeheer", "blue"]
+      },
+      "pl": {
+        "title": "Cennik",
+        "description": "Wybierz plan Blue, który odpowiada potrzebom Twojego zespołu. Proste, przejrzyste ceny bez ukrytych opłat. Rozpocznij bezpłatny okres próbny już dziś.",
+        "keywords": ["cennik", "plany", "bezpłatny okres próbny", "zarządzanie zespołem", "blue"]
+      },
+      "zh-TW": {
+        "title": "定價",
+        "description": "選擇適合您團隊需求的 Blue 計劃。簡單透明的定價，無隱藏費用。立即開始免費試用。",
+        "keywords": ["定價", "計劃", "免費試用", "團隊管理", "blue"]
+      },
+      "sv": {
+        "title": "Priser",
+        "description": "Välj Blue-planen som passar ditt teams behov. Enkel, transparent prissättning utan dolda avgifter. Starta din kostnadsfria provperiod idag.",
+        "keywords": ["priser", "planer", "gratis provperiod", "teamhantering", "blue"]
+      },
+      "km": {
+        "title": "តម្លៃ",
+        "description": "ជ្រើសរើសគម្រោង Blue ដែលសមនឹងតម្រូវការរបស់ក្រុមអ្នក។ តម្លៃសាមញ្ញ និងតម្លាភាពដោយគ្មានថ្លៃលាក់បាំង។ ចាប់ផ្តើមសាកល្បងឥតគិតថ្លៃថ្ងៃនេះ។",
+        "keywords": ["តម្លៃ", "គម្រោង", "សាកល្បងឥតគិតថ្លៃ", "ការគ្រប់គ្រងក្រុម", "blue"]
       }
     },
     "platform/changelog": {
@@ -52,279 +356,81 @@
         "title": "Changelog",
         "description": "Stay up to date with the latest features and improvements in Blue.",
         "keywords": ["changelog", "updates", "features", "improvements", "blue"]
-      }
-    },
-    "resources/faq": {
-      "en": {
-        "title": "FAQ",
-        "description": "Frequently asked questions about Blue. Find answers to common questions about our platform, features, and pricing.",
-        "keywords": ["faq", "frequently asked questions", "help", "support", "blue"]
-      }
-    },
-    "platform/status": {
-      "en": {
-        "title": "System Status",
-        "description": "Monitor Blue's platform status and service uptime in real-time. View the current operational status and 90-day uptime history for all Blue services including API, web app, and background services.",
-        "keywords": ["status", "uptime", "system health", "service monitoring", "platform status", "operational", "blue status", "downtime", "service availability"]
-      }
-    },
-    "insights": {
-      "en": {
-        "title": "Insights",
-        "description": "Stay informed with Blue's latest insights on process management, product updates, engineering practices, and modern workplace trends. Expert perspectives on scaling teams and optimizing workflows.",
-        "keywords": ["insights", "blog", "articles", "process management", "product updates", "engineering", "best practices", "modern work", "team productivity", "workflow optimization", "industry trends", "blue"]
-      }
-    },
-    "platform/roadmap": {
-      "en": {
-        "title": "Product Roadmap",
-        "description": "Track Blue's development progress and see what's coming next. View upcoming features, current development status, and planned improvements to the platform.",
-        "keywords": ["roadmap", "product roadmap", "features", "development", "future", "planned features", "blue platform", "updates", "progress"]
-      }
-    },
-    "customers": {
-      "en": {
-        "title": "Our Customers",
-        "description": "Watch real customer testimonials and success stories.",
-        "keywords": ["customers", "testimonials", "case studies", "success stories", "client reviews", "enterprise customers", "customer stories", "blue"]
-      }
-    },
-    "enterprise": {
-      "en": {
-        "title": "Enterprise",
-        "description": "Blue is designed to scale with your business. We've built a platform that can handle the most complex workflows and processes.",
-        "keywords": ["enterprise", "scale", "workflows", "processes", "automation", "blue"]
-      }
-    },
-    "brand": {
-      "en": {
-        "title": "Brand Guidelines",
-        "description": "Explore Blue's brand guidelines including typography, visual identity, and brand assets. Learn how to properly use Blue's brand elements.",
-        "keywords": ["brand", "brand guidelines", "typography", "visual identity", "brand assets", "logo", "design system", "style guide"]
-      }
-    },
-    "company": {
-      "en": {
-        "title": "Company",
-        "description": "Learn about Blue's company, our team, and our mission to revolutionize process management for modern teams.",
-        "keywords": ["company", "about us", "team", "mission", "leadership", "blue"]
-      }
-    },
-    "solutions/industry/solopreneurs": {
-      "en": {
-        "title": "Project Management for Solopreneurs",
-        "description": "Streamline your solo business with Blue's powerful project management platform. Manage clients, projects, tasks, and workflows in one simple solution designed for solopreneurs.",
-        "keywords": ["solopreneurs", "solo entrepreneurs", "freelancers", "independent business", "project management", "client management", "workflow automation", "business productivity", "blue"]
-      }
-    },
-    "platform/api": {
-      "en": {
-        "title": "API",
-        "description": "Access Blue's powerful API for seamless integration and automation.",
-        "keywords": ["api", "integration", "automation", "developer", "blue"]
-      }
-    },
-    "platform/download": {
-      "en": {
-        "title": "Download",
-        "description": "Download Blue for your platform and start managing processes efficiently.",
-        "keywords": ["download", "install", "desktop", "mobile", "blue"]
-      }
-    },
-    "platform": {
-      "en": {
-        "title": "Platform",
-        "description": "Explore Blue's comprehensive platform features and capabilities.",
-        "keywords": ["platform", "features", "capabilities", "overview", "blue"]
-      }
-    },
-    "platform/integrations": {
-      "en": {
-        "title": "Integrations",
-        "description": "Connect Blue with your favorite tools and services for seamless workflow integration.",
-        "keywords": ["integrations", "connect", "third-party", "apps", "blue"]
-      }
-    },
-    "platform/security": {
-      "en": {
-        "title": "Security",
-        "description": "Learn about Blue's enterprise-grade security features and compliance standards.",
-        "keywords": ["security", "compliance", "encryption", "data protection", "blue"]
-      }
-    },
-    "platform/white-label": {
-      "en": {
-        "title": "White Label",
-        "description": "Customize Blue with your brand for a seamless white-label experience.",
-        "keywords": ["white label", "branding", "customization", "enterprise", "blue"]
-      }
-    },
-    "platform/features": {
-      "en": {
-        "title": "Features",
-        "description": "Discover all the powerful features Blue offers for process management.",
-        "keywords": ["features", "capabilities", "tools", "functionality", "blue"]
-      }
-    },
-    "platform/features/activity": {
-      "en": {
-        "title": "Activity",
-        "description": "Track all activities and updates across your projects and processes.",
-        "keywords": ["activity", "tracking", "updates", "monitoring", "blue"]
-      }
-    },
-    "platform/features/ai": {
-      "en": {
-        "title": "AI",
-        "description": "Leverage AI-powered features to automate and optimize your workflows.",
-        "keywords": ["ai", "artificial intelligence", "automation", "smart features", "blue"]
-      }
-    },
-    "platform/features/audit-trails": {
-      "en": {
-        "title": "Audit Trails",
-        "description": "Maintain complete audit trails for compliance and accountability.",
-        "keywords": ["audit trails", "compliance", "tracking", "history", "blue"]
-      }
-    },
-    "platform/features/automations": {
-      "en": {
-        "title": "Automations",
-        "description": "Create powerful automations to streamline your workflows.",
-        "keywords": ["automations", "workflow", "efficiency", "triggers", "blue"]
-      }
-    },
-    "platform/features/calendar": {
-      "en": {
-        "title": "Calendar",
-        "description": "Manage schedules and deadlines with integrated calendar views.",
-        "keywords": ["calendar", "scheduling", "deadlines", "timeline", "blue"]
-      }
-    },
-    "platform/features/chat": {
-      "en": {
-        "title": "Chat",
-        "description": "Collaborate in real-time with integrated team chat.",
-        "keywords": ["chat", "messaging", "collaboration", "communication", "blue"]
-      }
-    },
-    "platform/features/custom-fields": {
-      "en": {
-        "title": "Custom Fields",
-        "description": "Create custom fields to capture exactly the data you need.",
-        "keywords": ["custom fields", "customization", "data", "forms", "blue"]
-      }
-    },
-    "platform/features/dashboards": {
-      "en": {
-        "title": "Dashboards",
-        "description": "Visualize your data with customizable dashboards and reports.",
-        "keywords": ["dashboards", "analytics", "visualization", "reports", "blue"]
-      }
-    },
-    "platform/features/database": {
-      "en": {
-        "title": "Database",
-        "description": "Powerful database capabilities for managing structured data.",
-        "keywords": ["database", "data management", "records", "storage", "blue"]
-      }
-    },
-    "platform/features/docs": {
-      "en": {
-        "title": "Docs",
-        "description": "Create and collaborate on documents within your projects.",
-        "keywords": ["docs", "documents", "collaboration", "writing", "blue"]
-      }
-    },
-    "platform/features/file-management": {
-      "en": {
-        "title": "File Management",
-        "description": "Organize and manage files across all your projects.",
-        "keywords": ["file management", "storage", "organization", "documents", "blue"]
-      }
-    },
-    "platform/features/forms": {
-      "en": {
-        "title": "Forms",
-        "description": "Build custom forms to collect data and automate processes.",
-        "keywords": ["forms", "data collection", "surveys", "input", "blue"]
-      }
-    },
-    "platform/features/kanban-board": {
-      "en": {
-        "title": "Kanban Board",
-        "description": "Visualize workflows with flexible Kanban boards.",
-        "keywords": ["kanban", "board", "workflow", "visual management", "blue"]
-      }
-    },
-    "platform/features/list": {
-      "en": {
-        "title": "List",
-        "description": "Organize tasks and items in customizable list views.",
-        "keywords": ["list", "tasks", "organization", "view", "blue"]
-      }
-    },
-    "platform/features/map": {
-      "en": {
-        "title": "Map",
-        "description": "Visualize location-based data with integrated mapping.",
-        "keywords": ["map", "location", "geography", "visualization", "blue"]
-      }
-    },
-    "platform/features/pdf-generation": {
-      "en": {
-        "title": "PDF Generation",
-        "description": "Generate professional PDFs from your data and documents.",
-        "keywords": ["pdf", "generation", "documents", "export", "blue"]
-      }
-    },
-    "platform/features/records": {
-      "en": {
-        "title": "Records",
-        "description": "Manage records with powerful database capabilities.",
-        "keywords": ["records", "database", "data management", "tracking", "blue"]
-      }
-    },
-    "platform/features/templates": {
-      "en": {
-        "title": "Templates",
-        "description": "Save time with reusable templates for common processes.",
-        "keywords": ["templates", "reusable", "efficiency", "standardization", "blue"]
-      }
-    },
-    "platform/features/timeline-gantt-charts": {
-      "en": {
-        "title": "Timeline Gantt Charts",
-        "description": "Plan and track projects with timeline and Gantt chart views.",
-        "keywords": ["timeline", "gantt", "project planning", "scheduling", "blue"]
-      }
-    },
-    "platform/features/user-permissions": {
-      "en": {
-        "title": "User Permissions",
-        "description": "Control access with granular user permissions and roles.",
-        "keywords": ["permissions", "access control", "security", "roles", "blue"]
-      }
-    },
-    "platform/features/views": {
-      "en": {
-        "title": "Views",
-        "description": "Create custom views to see your data exactly how you need it.",
-        "keywords": ["views", "customization", "data visualization", "filters", "blue"]
-      }
-    },
-    "platform/features/wiki": {
-      "en": {
-        "title": "Wiki",
-        "description": "Build a knowledge base with integrated wiki functionality.",
-        "keywords": ["wiki", "knowledge base", "documentation", "information", "blue"]
-      }
-    },
-    "platform/features/workspaces": {
-      "en": {
-        "title": "Workspaces",
-        "description": "Organize projects and teams with dedicated workspaces.",
-        "keywords": ["workspaces", "organization", "teams", "projects", "blue"]
+      },
+      "es": {
+        "title": "Registro de cambios",
+        "description": "Manténgase actualizado con las últimas características y mejoras en Blue.",
+        "keywords": ["registro de cambios", "actualizaciones", "características", "mejoras", "blue"]
+      },
+      "zh": {
+        "title": "更新日志",
+        "description": "了解 Blue 的最新功能和改进。",
+        "keywords": ["更新日志", "更新", "功能", "改进", "blue"]
+      },
+      "fr": {
+        "title": "Journal des modifications",
+        "description": "Restez à jour avec les dernières fonctionnalités et améliorations de Blue.",
+        "keywords": ["journal des modifications", "mises à jour", "fonctionnalités", "améliorations", "blue"]
+      },
+      "de": {
+        "title": "Änderungsprotokoll",
+        "description": "Bleiben Sie auf dem Laufenden mit den neuesten Funktionen und Verbesserungen in Blue.",
+        "keywords": ["änderungsprotokoll", "updates", "funktionen", "verbesserungen", "blue"]
+      },
+      "ja": {
+        "title": "変更履歴",
+        "description": "Blueの最新機能と改善点をご確認ください。",
+        "keywords": ["変更履歴", "アップデート", "機能", "改善", "blue"]
+      },
+      "pt": {
+        "title": "Registro de alterações",
+        "description": "Fique atualizado com os recursos e melhorias mais recentes do Blue.",
+        "keywords": ["registro de alterações", "atualizações", "recursos", "melhorias", "blue"]
+      },
+      "ru": {
+        "title": "История изменений",
+        "description": "Будьте в курсе последних функций и улучшений в Blue.",
+        "keywords": ["история изменений", "обновления", "функции", "улучшения", "blue"]
+      },
+      "ko": {
+        "title": "변경 사항",
+        "description": "Blue의 최신 기능과 개선 사항을 확인하세요.",
+        "keywords": ["변경 사항", "업데이트", "기능", "개선 사항", "blue"]
+      },
+      "it": {
+        "title": "Registro delle modifiche",
+        "description": "Rimani aggiornato con le ultime funzionalità e miglioramenti di Blue.",
+        "keywords": ["registro delle modifiche", "aggiornamenti", "funzionalità", "miglioramenti", "blue"]
+      },
+      "id": {
+        "title": "Log Perubahan",
+        "description": "Tetap terkini dengan fitur dan perbaikan terbaru di Blue.",
+        "keywords": ["log perubahan", "pembaruan", "fitur", "perbaikan", "blue"]
+      },
+      "nl": {
+        "title": "Wijzigingslogboek",
+        "description": "Blijf op de hoogte van de nieuwste functies en verbeteringen in Blue.",
+        "keywords": ["wijzigingslogboek", "updates", "functies", "verbeteringen", "blue"]
+      },
+      "pl": {
+        "title": "Dziennik zmian",
+        "description": "Bądź na bieżąco z najnowszymi funkcjami i ulepszeniami w Blue.",
+        "keywords": ["dziennik zmian", "aktualizacje", "funkcje", "ulepszenia", "blue"]
+      },
+      "zh-TW": {
+        "title": "更新日誌",
+        "description": "了解 Blue 的最新功能和改進。",
+        "keywords": ["更新日誌", "更新", "功能", "改進", "blue"]
+      },
+      "sv": {
+        "title": "Ändringslogg",
+        "description": "Håll dig uppdaterad med de senaste funktionerna och förbättringarna i Blue.",
+        "keywords": ["ändringslogg", "uppdateringar", "funktioner", "förbättringar", "blue"]
+      },
+      "km": {
+        "title": "កំណត់ហេតុផ្លាស់ប្តូរ",
+        "description": "ទទួលបានព័ត៌មានថ្មីៗអំពីមុខងារ និងការកែលម្អចុងក្រោយនៅក្នុង Blue។",
+        "keywords": ["កំណត់ហេតុផ្លាស់ប្តូរ", "ការអាប់ដេត", "មុខងារ", "ការកែលម្អ", "blue"]
       }
     }
   },
@@ -332,11 +438,39 @@
     "title_suffix": " | Blue",
     "descriptions": {
       "en": "Blue - Powerful platform to create, manage, and scale processes for modern teams.",
-      "es": "Blue - Poderosa plataforma para crear, gestionar y escalar procesos para equipos modernos."
+      "es": "Blue - Poderosa plataforma para crear, gestionar y escalar procesos para equipos modernos.",
+      "zh": "Blue - 为现代团队创建、管理和扩展流程的强大平台。",
+      "fr": "Blue - Plateforme puissante pour créer, gérer et faire évoluer les processus pour les équipes modernes.",
+      "de": "Blue - Leistungsstarke Plattform zum Erstellen, Verwalten und Skalieren von Prozessen für moderne Teams.",
+      "ja": "Blue - 現代のチーム向けにプロセスを作成、管理、拡張するための強力なプラットフォーム。",
+      "pt": "Blue - Plataforma poderosa para criar, gerenciar e escalar processos para equipes modernas.",
+      "ru": "Blue - Мощная платформа для создания, управления и масштабирования процессов для современных команд.",
+      "ko": "Blue - 현대 팀을 위한 프로세스 생성, 관리 및 확장을 위한 강력한 플랫폼.",
+      "it": "Blue - Piattaforma potente per creare, gestire e scalare processi per team moderni.",
+      "id": "Blue - Platform yang kuat untuk membuat, mengelola, dan menskalakan proses untuk tim modern.",
+      "nl": "Blue - Krachtig platform voor het creëren, beheren en schalen van processen voor moderne teams.",
+      "pl": "Blue - Potężna platforma do tworzenia, zarządzania i skalowania procesów dla nowoczesnych zespołów.",
+      "zh-TW": "Blue - 為現代團隊創建、管理和擴展流程的強大平台。",
+      "sv": "Blue - Kraftfull plattform för att skapa, hantera och skala processer för moderna team.",
+      "km": "Blue - វេទិកាដ៏មានអានុភាពសម្រាប់បង្កើត គ្រប់គ្រង និងពង្រីកដំណើរការសម្រាប់ក្រុមទំនើប។"
     },
     "keywords": {
       "en": ["blue", "process management", "team collaboration", "workflow"],
-      "es": ["blue", "gestión de procesos", "colaboración de equipos", "flujo de trabajo"]
+      "es": ["blue", "gestión de procesos", "colaboración de equipos", "flujo de trabajo"],
+      "zh": ["blue", "流程管理", "团队协作", "工作流"],
+      "fr": ["blue", "gestion des processus", "collaboration d'équipe", "flux de travail"],
+      "de": ["blue", "prozessmanagement", "teamzusammenarbeit", "arbeitsablauf"],
+      "ja": ["blue", "プロセス管理", "チームコラボレーション", "ワークフロー"],
+      "pt": ["blue", "gestão de processos", "colaboração de equipes", "fluxo de trabalho"],
+      "ru": ["blue", "управление процессами", "командное сотрудничество", "рабочий процесс"],
+      "ko": ["blue", "프로세스 관리", "팀 협업", "워크플로우"],
+      "it": ["blue", "gestione dei processi", "collaborazione di team", "flusso di lavoro"],
+      "id": ["blue", "manajemen proses", "kolaborasi tim", "alur kerja"],
+      "nl": ["blue", "procesbeheer", "teamsamenwerking", "workflow"],
+      "pl": ["blue", "zarządzanie procesami", "współpraca zespołowa", "przepływ pracy"],
+      "zh-TW": ["blue", "流程管理", "團隊協作", "工作流程"],
+      "sv": ["blue", "processhantering", "teamsamarbete", "arbetsflöde"],
+      "km": ["blue", "ការគ្រប់គ្រងដំណើរការ", "កិច្ចសហការក្រុម", "លំហូរការងារ"]
     }
   }
 }
