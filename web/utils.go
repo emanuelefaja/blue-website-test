@@ -15,22 +15,22 @@ type ContentType struct {
 var ContentTypes = map[string]ContentType{
 	"docs": {
 		Name:      "docs",
-		BaseDir:   "content/docs",
+		BaseDir:   "content/en/docs",
 		URLPrefix: "/docs",
 	},
 	"api": {
 		Name:      "api",
-		BaseDir:   "content/api",
+		BaseDir:   "content/en/api",
 		URLPrefix: "/api",
 	},
 	"legal": {
 		Name:      "legal",
-		BaseDir:   "content/legal",
+		BaseDir:   "content/en/legal",
 		URLPrefix: "/legal",
 	},
 	"insights": {
 		Name:      "insights",
-		BaseDir:   "content/insights",
+		BaseDir:   "content/en/insights",
 		URLPrefix: "/insights",
 	},
 }
