@@ -74,6 +74,7 @@ DEPENDENCIES:
          selectedIndex: -1,
          loading: false,
          searchFocused: false,
+         currentLang: '{{.Language}}',
          suggestions: [
              { title: 'Platform Overview', url: '/platform/', category: 'Feature', icon: 'grid', description: 'Explore Blue\'s capabilities' },
              { title: 'Features', url: '/platform/features/', category: 'Feature', icon: 'star', description: 'Discover all Blue features' },
@@ -84,7 +85,9 @@ DEPENDENCIES:
          showingSuggestions: false,
          async init() {
              try {
-                 const response = await fetch('/searchIndex.json');
+                 // Load language-specific search index
+                 const indexFile = this.currentLang === 'en' ? '/searchIndex.json' : `/searchIndex-${this.currentLang}.json`;
+                 const response = await fetch(indexFile);
                  const data = await response.json();
                  this.fuse = new Fuse(data, {
                      keys: [
@@ -96,6 +99,14 @@ DEPENDENCIES:
                      includeScore: true,
                      includeMatches: true
                  });
+                 
+                 // Update suggestions URLs to include language prefix if needed
+                 if (this.currentLang !== 'en') {
+                     this.suggestions = this.suggestions.map(s => ({
+                         ...s,
+                         url: `/${this.currentLang}${s.url}`
+                     }));
+                 }
              } catch (error) {
                  console.error('Failed to load search index:', error);
              }
