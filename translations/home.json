@@ -334,5 +334,2363 @@
       "secondary_text": "Solicita una demo",
       "primary_text": "Comenzar"
     }
+  },
+  "zh": {
+    "welcome_back": "欢迎回来，",
+    "welcome_default": "朋友",
+    "welcome_suffix": "。",
+    "hero_title": "Blue 是一个强大的平台，用于创建、管理和扩展流程。",
+    "hero_subtitle_logged_in": "从上次离开的地方继续，或探索 Blue 的新功能。",
+    "hero_subtitle_default": "认识现代运营系统——获得可见性，加速流程，扩展您的组织。",
+    "cta_dashboard": "前往控制台",
+    "cta_get_started": "免费开始",
+    "cta_whats_new": "新功能",
+    "cta_see_how": "了解工作原理",
+    "news_bar": {
+      "main_text": "您现在可以使用白标模块创建自己的品牌版本的 Blue。",
+      "button_text": "了解更多"
+    },
+    "trusted_by": "超过 17,000 个团队的信赖之选",
+    "designed_to_turn": {
+      "title": "旨在将一切<br>转化为清晰的流程。",
+      "description": "因为优秀的组织依靠清晰、可重复的流程而繁荣。",
+      "value_props": {
+        "built_for_work": {
+          "title": "为您的实际工作方式而构建",
+          "description": "您的流程，没有强制的工作流程或僵化的结构。"
+        },
+        "platform_for_customers": {
+          "title": "为客户而非投资者打造的平台",
+          "description": "创始人领导，盈利运营，为数十年而非季度而建。"
+        },
+        "fair_pricing": {
+          "title": "公平的定价，与您共同成长",
+          "description": "$7/用户。无隐藏费用。比企业工具节省 90%。"
+        }
+      }
+    },
+    "work_the_way": "工作——应有的方式。",
+    "features": {
+      "one_source": {
+        "title": "唯一的真相来源。",
+        "description": "为您所有的业务数据创建记录，让您终于有一个地方保存所有内容。",
+        "see_also": {
+          "records": {
+            "text": "记录",
+            "description": "映射到您的业务实体"
+          },
+          "custom_fields": {
+            "text": "自定义字段",
+            "description": "建模您的数据"
+          },
+          "workspaces": {
+            "text": "工作空间",
+            "description": "通过正确的链接保持一切私密"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "一切都是流程。",
+        "description": "Blue 帮助您为所做的一切创建清晰、可重复的流程。",
+        "see_also": {
+          "lists": {
+            "text": "列表",
+            "description": "创建一致的流程步骤"
+          },
+          "checklists": {
+            "text": "检查清单",
+            "description": "确保每个人都知道该做什么"
+          },
+          "forms": {
+            "text": "表单",
+            "description": "为您提供一致的数据输入"
+          }
+        }
+      },
+      "automations": {
+        "title": "自动化帮助您扩展。",
+        "description": "Blue 强大的自动化引擎处理从状态更新和通知到复杂多步骤工作流程的一切。"
+      },
+      "your_data": {
+        "title": "您的完美数据结构。",
+        "description": "创建自定义字段，设计您自己的记录类型，构建完全适合您工作流程的完美数据库。"
+      },
+      "dashboards": {
+        "title": "实时管理仪表板。",
+        "description": "轻松构建随数据变化自动更新的仪表板。"
+      }
+    },
+    "stats": {
+      "title": "精心打造，大规模运营。",
+      "teams": {
+        "number": "17000+",
+        "description": "全球团队"
+      },
+      "processes": {
+        "number": "500万+",
+        "description": "自动化流程"
+      },
+      "records": {
+        "number": "5亿+",
+        "description": "管理的记录"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue 让一切保持完全有序——这是一个绝对精彩的工具。",
+      "quote_2": "Blue 的自动化功能帮助我们无缝运行我们的运营。",
+      "quote_3": "我的整个生活都在 Blue 中！我喜欢团队的响应速度有多快。",
+      "quote_4": "如果您在犹豫是否应该购买 Blue……答案是肯定的。"
+    },
+    "features_grid": {
+      "title": "成功所需的一切",
+      "security": {
+        "title": "安全性",
+        "description": "企业级安全，端到端加密和合规认证。"
+      },
+      "performance": {
+        "title": "性能",
+        "description": "闪电般快速的响应时间，为关键任务工作提供 99.9% 的正常运行时间保证。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "实时洞察和可定制的仪表板，跟踪最重要的内容。"
+      },
+      "integrations": {
+        "title": "集成",
+        "description": "连接超过 7,000 个工具，包括 Slack、Gmail、Zapier 和自定义 API。"
+      },
+      "automations_grid": {
+        "title": "自动化",
+        "description": "通过从您的流程中学习的智能自动化来简化工作流程。"
+      },
+      "mobile": {
+        "title": "移动应用",
+        "description": "使用 iPhone、iPad 和 Android 设备的应用程序随时随地工作。"
+      },
+      "collaboration": {
+        "title": "协作",
+        "description": "具有评论、提及和团队工作空间的实时协作工具。"
+      },
+      "customization": {
+        "title": "定制化",
+        "description": "完全可定制的界面、字段和工作流程，以满足您的业务需求。"
+      },
+      "support": {
+        "title": "支持",
+        "description": "免费电子邮件支持，可选付费电话支持。"
+      }
+    },
+    "integrations": {
+      "title": "通过我们的集成合作伙伴连接超过 7,000 个工具"
+    },
+    "use_cases": {
+      "title": "精选用例。",
+      "process_management": "流程管理",
+      "project_management": "项目管理",
+      "sales_crm": "销售 CRM",
+      "service_tickets": "服务工单",
+      "asset_management": "资产管理",
+      "content_calendar": "内容日历"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue 极大地帮助我们管理数据工作，确保我们的团队清楚他们需要做什么以及为什么。对我们来说，这是一个很棒的工具。",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "世界粮食计划署早期预警和预测部门负责人。"
+    },
+    "cta_final": {
+      "title": "准备开始了吗？",
+      "secondary_text": "申请演示",
+      "primary_text": "开始使用"
+    }
+  },
+  "fr": {
+    "welcome_back": "Bon retour, ",
+    "welcome_default": "cher ami",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue est une plateforme puissante pour créer, gérer et faire évoluer les processus.",
+    "hero_subtitle_logged_in": "Reprenez là où vous vous êtes arrêté ou explorez les nouveautés de Blue.",
+    "hero_subtitle_default": "Découvrez le système pour les opérations modernes — gagnez en visibilité, accélérez les processus et faites croître votre organisation.",
+    "cta_dashboard": "Accéder au tableau de bord",
+    "cta_get_started": "Commencer gratuitement",
+    "cta_whats_new": "Nouveautés",
+    "cta_see_how": "Voir comment ça marche",
+    "news_bar": {
+      "main_text": "Vous pouvez désormais créer votre propre version personnalisée de Blue avec le module Marque Blanche.",
+      "button_text": "En savoir plus"
+    },
+    "trusted_by": "La confiance de plus de 17 000 équipes",
+    "designed_to_turn": {
+      "title": "Conçu pour transformer tout<br> en processus clair.",
+      "description": "Parce que les grandes organisations prospèrent grâce à des processus clairs et reproductibles.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Conçu pour votre façon de travailler",
+          "description": "Vos processus sans flux de travail imposés ni structures rigides."
+        },
+        "platform_for_customers": {
+          "title": "Une plateforme pour les clients, pas les investisseurs",
+          "description": "Dirigée par le fondateur, rentable et construite pour des décennies, pas des trimestres."
+        },
+        "fair_pricing": {
+          "title": "Une tarification équitable qui évolue avec vous",
+          "description": "7$/utilisateur. Sans surprises. Économisez 90% par rapport aux outils d'entreprise."
+        }
+      }
+    },
+    "work_the_way": "Le travail — comme il devrait être.",
+    "features": {
+      "one_source": {
+        "title": "Une source unique de vérité.",
+        "description": "Créez des enregistrements pour toutes vos données d'entreprise, pour avoir enfin un endroit où tout conserver.",
+        "see_also": {
+          "records": {
+            "text": "Enregistrements",
+            "description": "correspondent à vos entités métier"
+          },
+          "custom_fields": {
+            "text": "Champs personnalisés",
+            "description": "modélisez vos données"
+          },
+          "workspaces": {
+            "text": "Espaces de travail",
+            "description": "gardez tout privé avec les bons liens"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Tout est un processus.",
+        "description": "Blue vous aide à créer des processus clairs et reproductibles pour tout ce que vous faites.",
+        "see_also": {
+          "lists": {
+            "text": "Listes",
+            "description": "créez des étapes de processus cohérentes"
+          },
+          "checklists": {
+            "text": "Listes de contrôle",
+            "description": "assurez-vous que tout le monde sait quoi faire"
+          },
+          "forms": {
+            "text": "Formulaires",
+            "description": "vous offrent une saisie de données cohérente"
+          }
+        }
+      },
+      "automations": {
+        "title": "Les automatisations vous aident à évoluer.",
+        "description": "Le puissant moteur d'automatisation de Blue gère tout, des mises à jour de statut et notifications aux flux de travail complexes en plusieurs étapes."
+      },
+      "your_data": {
+        "title": "Votre structure de données parfaite.",
+        "description": "Créez des champs personnalisés, concevez vos propres types d'enregistrements et construisez la base de données parfaite qui correspond exactement à votre flux de travail."
+      },
+      "dashboards": {
+        "title": "Tableaux de bord de gestion en temps réel.",
+        "description": "Créez facilement des tableaux de bord qui se mettent à jour automatiquement lorsque vos données changent."
+      }
+    },
+    "stats": {
+      "title": "Conçu pour fonctionner à grande échelle.",
+      "teams": {
+        "number": "17000+",
+        "description": "équipes dans le monde"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "processus automatisés"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "enregistrements gérés"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue garde tout parfaitement organisé — c'est un outil absolument merveilleux.",
+      "quote_2": "Les fonctionnalités d'automatisation de Blue nous aident à gérer nos opérations sans problème.",
+      "quote_3": "Toute ma vie est dans Blue ! J'adore la réactivité de l'équipe.",
+      "quote_4": "Si vous vous demandez si vous devriez acheter Blue... la réponse est OUI."
+    },
+    "features_grid": {
+      "title": "Tout ce dont vous avez besoin pour réussir",
+      "security": {
+        "title": "Sécurité",
+        "description": "Sécurité de niveau entreprise avec chiffrement de bout en bout et certifications de conformité."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Temps de réponse ultra-rapides et garantie de disponibilité de 99,9% pour le travail critique."
+      },
+      "analytics": {
+        "title": "Analytique",
+        "description": "Insights en temps réel et tableaux de bord personnalisables pour suivre ce qui compte le plus."
+      },
+      "integrations": {
+        "title": "Intégrations",
+        "description": "Connectez-vous à plus de 7 000 outils, notamment Slack, Gmail, Zapier et des API personnalisées."
+      },
+      "automations_grid": {
+        "title": "Automatisations",
+        "description": "Rationalisez les flux de travail avec une automatisation intelligente qui apprend de vos processus."
+      },
+      "mobile": {
+        "title": "Applications mobiles",
+        "description": "Travaillez en déplacement avec des applications pour iPhone, iPad et appareils Android."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Outils de collaboration en temps réel avec commentaires, mentions et espaces de travail d'équipe."
+      },
+      "customization": {
+        "title": "Personnalisation",
+        "description": "Interface, champs et flux de travail entièrement personnalisables pour répondre aux besoins de votre entreprise."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Support gratuit par e-mail avec support téléphonique payant en option."
+      }
+    },
+    "integrations": {
+      "title": "Connectez-vous à plus de 7 000 outils grâce à nos partenaires d'intégration"
+    },
+    "use_cases": {
+      "title": "Cas d'usage sélectionnés.",
+      "process_management": "Gestion des processus",
+      "project_management": "Gestion de projet",
+      "sales_crm": "CRM des ventes",
+      "service_tickets": "Tickets de service",
+      "asset_management": "Gestion des actifs",
+      "content_calendar": "Calendrier de contenu"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue nous a énormément aidés à gérer notre travail de données, en veillant à ce que nos équipes sachent clairement ce qu'elles doivent faire et pourquoi. C'est un excellent outil pour nous.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Chef d'unité, Alerte précoce et prévisions, Programme alimentaire mondial."
+    },
+    "cta_final": {
+      "title": "Prêt à commencer ?",
+      "secondary_text": "Demander une démo",
+      "primary_text": "Commencer"
+    }
+  },
+  "de": {
+    "welcome_back": "Willkommen zurück, ",
+    "welcome_default": "Freund",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue ist eine leistungsstarke Plattform zum Erstellen, Verwalten und Skalieren von Prozessen.",
+    "hero_subtitle_logged_in": "Machen Sie dort weiter, wo Sie aufgehört haben, oder entdecken Sie die Neuigkeiten in Blue.",
+    "hero_subtitle_default": "Lernen Sie das System für moderne Abläufe kennen — gewinnen Sie Transparenz, beschleunigen Sie Prozesse und skalieren Sie Ihre Organisation.",
+    "cta_dashboard": "Zum Dashboard",
+    "cta_get_started": "Kostenlos starten",
+    "cta_whats_new": "Neuigkeiten",
+    "cta_see_how": "So funktioniert's",
+    "news_bar": {
+      "main_text": "Sie können jetzt mit dem White-Label-Modul Ihre eigene Markenversion von Blue erstellen.",
+      "button_text": "Mehr erfahren"
+    },
+    "trusted_by": "Vertrauen von mehr als 17.000 Teams",
+    "designed_to_turn": {
+      "title": "Entwickelt, um alles<br> in einen klaren Prozess zu verwandeln.",
+      "description": "Denn großartige Organisationen gedeihen durch klare, wiederholbare Prozesse.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Gebaut für Ihre tatsächliche Arbeitsweise",
+          "description": "Ihre Prozesse ohne erzwungene Workflows oder starre Strukturen."
+        },
+        "platform_for_customers": {
+          "title": "Eine Plattform für Kunden, nicht für Investoren",
+          "description": "Gründergeführt, profitabel und für Jahrzehnte gebaut, nicht für Quartale."
+        },
+        "fair_pricing": {
+          "title": "Faire Preise, die mit Ihnen wachsen",
+          "description": "$7/Nutzer. Keine Überraschungen. Sparen Sie 90% gegenüber Enterprise-Tools."
+        }
+      }
+    },
+    "work_the_way": "Arbeit — so wie sie sein sollte.",
+    "features": {
+      "one_source": {
+        "title": "Eine einzige Quelle der Wahrheit.",
+        "description": "Erstellen Sie Datensätze für alle Ihre Geschäftsdaten, damit Sie endlich einen Ort haben, an dem Sie alles aufbewahren können.",
+        "see_also": {
+          "records": {
+            "text": "Datensätze",
+            "description": "bilden Ihre Geschäftseinheiten ab"
+          },
+          "custom_fields": {
+            "text": "Benutzerdefinierte Felder",
+            "description": "modellieren Sie Ihre Daten"
+          },
+          "workspaces": {
+            "text": "Arbeitsbereiche",
+            "description": "halten Sie alles mit den richtigen Links privat"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Alles ist ein Prozess.",
+        "description": "Blue hilft Ihnen, klare, wiederholbare Prozesse für alles zu erstellen, was Sie tun.",
+        "see_also": {
+          "lists": {
+            "text": "Listen",
+            "description": "erstellen Sie konsistente Prozessschritte"
+          },
+          "checklists": {
+            "text": "Checklisten",
+            "description": "stellen Sie sicher, dass jeder weiß, was zu tun ist"
+          },
+          "forms": {
+            "text": "Formulare",
+            "description": "bieten Ihnen eine konsistente Dateneingabe"
+          }
+        }
+      },
+      "automations": {
+        "title": "Automatisierungen helfen Ihnen zu skalieren.",
+        "description": "Die leistungsstarke Automatisierungs-Engine von Blue bewältigt alles von Statusaktualisierungen und Benachrichtigungen bis hin zu komplexen mehrstufigen Workflows."
+      },
+      "your_data": {
+        "title": "Ihre perfekte Datenstruktur.",
+        "description": "Erstellen Sie benutzerdefinierte Felder, entwerfen Sie Ihre eigenen Datensatztypen und bauen Sie die perfekte Datenbank, die genau zu Ihrem Workflow passt."
+      },
+      "dashboards": {
+        "title": "Echtzeit-Management-Dashboards.",
+        "description": "Erstellen Sie ganz einfach Dashboards, die sich automatisch aktualisieren, wenn sich Ihre Daten ändern."
+      }
+    },
+    "stats": {
+      "title": "Entwickelt für den Betrieb im großen Maßstab.",
+      "teams": {
+        "number": "17000+",
+        "description": "Teams weltweit"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "automatisierte Prozesse"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "verwaltete Datensätze"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue hält alles perfekt organisiert — es ist ein absolut wunderbares Tool.",
+      "quote_2": "Die Automatisierungsfunktionen von Blue helfen uns, unsere Abläufe nahtlos zu betreiben.",
+      "quote_3": "Mein ganzes Leben ist in Blue! Ich liebe es, wie fantastisch reaktionsschnell das Team ist.",
+      "quote_4": "Wenn Sie sich fragen, ob Sie Blue kaufen sollten... die Antwort ist JA."
+    },
+    "features_grid": {
+      "title": "Alles, was Sie zum Erfolg brauchen",
+      "security": {
+        "title": "Sicherheit",
+        "description": "Sicherheit auf Unternehmensniveau mit End-to-End-Verschlüsselung und Compliance-Zertifizierungen."
+      },
+      "performance": {
+        "title": "Leistung",
+        "description": "Blitzschnelle Reaktionszeiten und 99,9% Verfügbarkeitsgarantie für geschäftskritische Arbeiten."
+      },
+      "analytics": {
+        "title": "Analytik",
+        "description": "Echtzeit-Einblicke und anpassbare Dashboards zur Verfolgung des Wichtigsten."
+      },
+      "integrations": {
+        "title": "Integrationen",
+        "description": "Verbinden Sie sich mit über 7.000 Tools, einschließlich Slack, Gmail, Zapier und benutzerdefinierten APIs."
+      },
+      "automations_grid": {
+        "title": "Automatisierungen",
+        "description": "Optimieren Sie Workflows mit intelligenter Automatisierung, die aus Ihren Prozessen lernt."
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Arbeiten Sie unterwegs mit Apps für iPhone, iPad und Android-Geräte."
+      },
+      "collaboration": {
+        "title": "Zusammenarbeit",
+        "description": "Echtzeit-Kollaborationstools mit Kommentaren, Erwähnungen und Team-Arbeitsbereichen."
+      },
+      "customization": {
+        "title": "Anpassung",
+        "description": "Vollständig anpassbare Oberfläche, Felder und Workflows für Ihre Geschäftsanforderungen."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Kostenloser E-Mail-Support mit optionalem kostenpflichtigem Telefon-Support."
+      }
+    },
+    "integrations": {
+      "title": "Verbinden Sie sich mit über 7.000 Tools über unsere Integrationspartner"
+    },
+    "use_cases": {
+      "title": "Ausgewählte Anwendungsfälle.",
+      "process_management": "Prozessmanagement",
+      "project_management": "Projektmanagement",
+      "sales_crm": "Vertriebs-CRM",
+      "service_tickets": "Service-Tickets",
+      "asset_management": "Asset-Management",
+      "content_calendar": "Content-Kalender"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue hat uns massiv bei der Verwaltung unserer Datenarbeit geholfen und stellt sicher, dass unsere Teams klar verstehen, was sie tun müssen und warum. Es ist ein großartiges Tool für uns.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Leiter der Abteilung, Frühwarnung und Prognosen, Welternährungsprogramm."
+    },
+    "cta_final": {
+      "title": "Bereit loszulegen?",
+      "secondary_text": "Demo anfordern",
+      "primary_text": "Jetzt starten"
+    }
+  },
+  "ja": {
+    "welcome_back": "おかえりなさい、",
+    "welcome_default": "ゲスト",
+    "welcome_suffix": "さん。",
+    "hero_title": "Blue は、プロセスの作成、管理、拡張を行う強力なプラットフォームです。",
+    "hero_subtitle_logged_in": "前回の続きから始めるか、Blue の新機能をご覧ください。",
+    "hero_subtitle_default": "モダンな業務運営システムをご紹介します — 可視性を高め、プロセスを加速し、組織を拡大しましょう。",
+    "cta_dashboard": "ダッシュボードへ",
+    "cta_get_started": "無料で始める",
+    "cta_whats_new": "新着情報",
+    "cta_see_how": "使い方を見る",
+    "news_bar": {
+      "main_text": "ホワイトラベルモジュールを使用して、独自のブランド版 Blue を作成できるようになりました。",
+      "button_text": "詳しく見る"
+    },
+    "trusted_by": "17,000 以上のチームから信頼されています",
+    "designed_to_turn": {
+      "title": "すべてを明確なプロセスに<br>変えるよう設計されています。",
+      "description": "優れた組織は、明確で再現可能なプロセスによって繁栄するからです。",
+      "value_props": {
+        "built_for_work": {
+          "title": "実際の働き方に合わせて構築",
+          "description": "強制的なワークフローや硬直した構造のない、あなたのプロセス。"
+        },
+        "platform_for_customers": {
+          "title": "投資家ではなく顧客のためのプラットフォーム",
+          "description": "創業者主導、収益性があり、四半期ではなく数十年先を見据えて構築。"
+        },
+        "fair_pricing": {
+          "title": "あなたと共に成長する公正な価格設定",
+          "description": "$7/ユーザー。隠れたコストなし。エンタープライズツールより90%節約。"
+        }
+      }
+    },
+    "work_the_way": "仕事 — あるべき姿で。",
+    "features": {
+      "one_source": {
+        "title": "唯一の真実の情報源。",
+        "description": "すべてのビジネスデータのレコードを作成し、ついにすべてを保管する場所を手に入れましょう。",
+        "see_also": {
+          "records": {
+            "text": "レコード",
+            "description": "ビジネスエンティティにマッピング"
+          },
+          "custom_fields": {
+            "text": "カスタムフィールド",
+            "description": "データをモデル化"
+          },
+          "workspaces": {
+            "text": "ワークスペース",
+            "description": "適切なリンクですべてをプライベートに保つ"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "すべてがプロセスです。",
+        "description": "Blue は、あなたが行うすべてのことに対して、明確で再現可能なプロセスを作成するのに役立ちます。",
+        "see_also": {
+          "lists": {
+            "text": "リスト",
+            "description": "一貫したプロセスステップを作成"
+          },
+          "checklists": {
+            "text": "チェックリスト",
+            "description": "全員が何をすべきか確実に把握"
+          },
+          "forms": {
+            "text": "フォーム",
+            "description": "一貫したデータ入力を提供"
+          }
+        }
+      },
+      "automations": {
+        "title": "自動化があなたの拡張を支援します。",
+        "description": "Blue の強力な自動化エンジンは、ステータス更新や通知から複雑な多段階ワークフローまで、すべてを処理します。"
+      },
+      "your_data": {
+        "title": "完璧なデータ構造。",
+        "description": "カスタムフィールドを作成し、独自のレコードタイプを設計し、ワークフローに完全に適合する完璧なデータベースを構築します。"
+      },
+      "dashboards": {
+        "title": "リアルタイム管理ダッシュボード。",
+        "description": "データの変化に応じて自動的に更新されるダッシュボードを簡単に構築できます。"
+      }
+    },
+    "stats": {
+      "title": "大規模な運用のために作られています。",
+      "teams": {
+        "number": "17000+",
+        "description": "世界中のチーム"
+      },
+      "processes": {
+        "number": "500万+",
+        "description": "自動化されたプロセス"
+      },
+      "records": {
+        "number": "5億+",
+        "description": "管理されたレコード"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue はすべてを完璧に整理してくれます — 本当に素晴らしいツールです。",
+      "quote_2": "Blue の自動化機能は、私たちの業務をシームレスに実行するのに役立っています。",
+      "quote_3": "私の人生のすべてが Blue にあります！チームの対応の速さが素晴らしいです。",
+      "quote_4": "Blue を購入すべきかどうか迷っているなら...答えは YES です。"
+    },
+    "features_grid": {
+      "title": "成功に必要なすべて",
+      "security": {
+        "title": "セキュリティ",
+        "description": "エンドツーエンド暗号化とコンプライアンス認証を備えたエンタープライズグレードのセキュリティ。"
+      },
+      "performance": {
+        "title": "パフォーマンス",
+        "description": "超高速の応答時間と、ミッションクリティカルな作業のための99.9%の稼働時間保証。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "最も重要なことを追跡するためのリアルタイムインサイトとカスタマイズ可能なダッシュボード。"
+      },
+      "integrations": {
+        "title": "統合",
+        "description": "Slack、Gmail、Zapier、カスタム API を含む 7,000 以上のツールと接続。"
+      },
+      "automations_grid": {
+        "title": "自動化",
+        "description": "プロセスから学習するインテリジェントな自動化でワークフローを合理化。"
+      },
+      "mobile": {
+        "title": "モバイルアプリ",
+        "description": "iPhone、iPad、Android デバイス用のアプリで外出先でも作業。"
+      },
+      "collaboration": {
+        "title": "コラボレーション",
+        "description": "コメント、メンション、チームワークスペースを備えたリアルタイムコラボレーションツール。"
+      },
+      "customization": {
+        "title": "カスタマイズ",
+        "description": "ビジネスニーズに合わせて完全にカスタマイズ可能なインターフェース、フィールド、ワークフロー。"
+      },
+      "support": {
+        "title": "サポート",
+        "description": "無料のメールサポートとオプションの有料電話サポート。"
+      }
+    },
+    "integrations": {
+      "title": "統合パートナーを通じて 7,000 以上のツールと接続"
+    },
+    "use_cases": {
+      "title": "厳選されたユースケース。",
+      "process_management": "プロセス管理",
+      "project_management": "プロジェクト管理",
+      "sales_crm": "営業 CRM",
+      "service_tickets": "サービスチケット",
+      "asset_management": "資産管理",
+      "content_calendar": "コンテンツカレンダー"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue は私たちのデータ作業の管理に大いに役立ち、チームが何をすべきか、なぜそれをすべきかを明確に理解できるようにしています。私たちにとって素晴らしいツールです。",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "世界食糧計画、早期警戒・予測ユニット責任者。"
+    },
+    "cta_final": {
+      "title": "始める準備はできましたか？",
+      "secondary_text": "デモをリクエスト",
+      "primary_text": "始める"
+    }
+  },
+  "pt": {
+    "welcome_back": "Bem-vindo de volta, ",
+    "welcome_default": "amigo",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue é uma plataforma poderosa para criar, gerenciar e escalar processos.",
+    "hero_subtitle_logged_in": "Continue de onde parou ou explore as novidades do Blue.",
+    "hero_subtitle_default": "Conheça o sistema para operações modernas — ganhe visibilidade, acelere processos e escale sua organização.",
+    "cta_dashboard": "Ir para o Painel",
+    "cta_get_started": "Começar Gratuitamente",
+    "cta_whats_new": "Novidades",
+    "cta_see_how": "Veja Como Funciona",
+    "news_bar": {
+      "main_text": "Agora você pode criar sua própria versão personalizada do Blue com o módulo White Label.",
+      "button_text": "Saiba mais"
+    },
+    "trusted_by": "Confiança de mais de 17.000 equipes",
+    "designed_to_turn": {
+      "title": "Projetado para transformar tudo<br> em um processo claro.",
+      "description": "Porque grandes organizações prosperam com processos claros e repetíveis.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Construído para como você realmente trabalha",
+          "description": "Seus processos sem fluxos de trabalho forçados ou estruturas rígidas."
+        },
+        "platform_for_customers": {
+          "title": "Uma plataforma para clientes, não investidores",
+          "description": "Liderada pelo fundador, lucrativa e construída para décadas, não trimestres."
+        },
+        "fair_pricing": {
+          "title": "Preços justos que crescem com você",
+          "description": "$7/usuário. Sem surpresas. Economize 90% versus ferramentas empresariais."
+        }
+      }
+    },
+    "work_the_way": "Trabalho — do jeito que deveria ser.",
+    "features": {
+      "one_source": {
+        "title": "Uma única fonte de verdade.",
+        "description": "Crie registros para todos os seus dados de negócios, para finalmente ter um lugar para manter tudo.",
+        "see_also": {
+          "records": {
+            "text": "Registros",
+            "description": "mapeiam para suas entidades de negócios"
+          },
+          "custom_fields": {
+            "text": "Campos personalizados",
+            "description": "modele seus dados"
+          },
+          "workspaces": {
+            "text": "Espaços de trabalho",
+            "description": "mantenha tudo privado com os links certos"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Tudo é um processo.",
+        "description": "Blue ajuda você a criar processos claros e repetíveis para tudo que você faz.",
+        "see_also": {
+          "lists": {
+            "text": "Listas",
+            "description": "crie etapas de processo consistentes"
+          },
+          "checklists": {
+            "text": "Listas de verificação",
+            "description": "garanta que todos saibam o que fazer"
+          },
+          "forms": {
+            "text": "Formulários",
+            "description": "fornecem entrada de dados consistente"
+          }
+        }
+      },
+      "automations": {
+        "title": "Automações ajudam você a escalar.",
+        "description": "O poderoso mecanismo de automação do Blue lida com tudo, desde atualizações de status e notificações até fluxos de trabalho complexos de várias etapas."
+      },
+      "your_data": {
+        "title": "Sua estrutura de dados perfeita.",
+        "description": "Crie campos personalizados, projete seus próprios tipos de registro e construa o banco de dados perfeito que se encaixa exatamente no seu fluxo de trabalho."
+      },
+      "dashboards": {
+        "title": "Painéis de gerenciamento em tempo real.",
+        "description": "Construa facilmente painéis que se atualizam automaticamente quando seus dados mudam."
+      }
+    },
+    "stats": {
+      "title": "Criado para operar em escala.",
+      "teams": {
+        "number": "17000+",
+        "description": "equipes em todo o mundo"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "processos automatizados"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "registros gerenciados"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue mantém tudo completamente organizado — é uma ferramenta absolutamente maravilhosa.",
+      "quote_2": "Os recursos de automação do Blue nos ajudam a executar nossas operações perfeitamente.",
+      "quote_3": "Toda a minha vida está no Blue! Adoro como a equipe é fantasticamente responsiva.",
+      "quote_4": "Se você está se perguntando se deve comprar Blue... a resposta é SIM."
+    },
+    "features_grid": {
+      "title": "Tudo que você precisa para ter sucesso",
+      "security": {
+        "title": "Segurança",
+        "description": "Segurança de nível empresarial com criptografia de ponta a ponta e certificações de conformidade."
+      },
+      "performance": {
+        "title": "Desempenho",
+        "description": "Tempos de resposta ultrarrápidos e garantia de disponibilidade de 99,9% para trabalho crítico."
+      },
+      "analytics": {
+        "title": "Análises",
+        "description": "Insights em tempo real e painéis personalizáveis para acompanhar o que mais importa."
+      },
+      "integrations": {
+        "title": "Integrações",
+        "description": "Conecte-se com mais de 7.000 ferramentas, incluindo Slack, Gmail, Zapier e APIs personalizadas."
+      },
+      "automations_grid": {
+        "title": "Automações",
+        "description": "Simplifique fluxos de trabalho com automação inteligente que aprende com seus processos."
+      },
+      "mobile": {
+        "title": "Aplicativos Móveis",
+        "description": "Trabalhe em qualquer lugar com aplicativos para iPhone, iPad e dispositivos Android."
+      },
+      "collaboration": {
+        "title": "Colaboração",
+        "description": "Ferramentas de colaboração em tempo real com comentários, menções e espaços de trabalho em equipe."
+      },
+      "customization": {
+        "title": "Personalização",
+        "description": "Interface, campos e fluxos de trabalho totalmente personalizáveis para atender às necessidades do seu negócio."
+      },
+      "support": {
+        "title": "Suporte",
+        "description": "Suporte gratuito por e-mail com suporte telefônico pago opcional."
+      }
+    },
+    "integrations": {
+      "title": "Conecte-se com mais de 7.000 ferramentas através de nossos parceiros de integração"
+    },
+    "use_cases": {
+      "title": "Casos de uso selecionados.",
+      "process_management": "Gerenciamento de Processos",
+      "project_management": "Gerenciamento de Projetos",
+      "sales_crm": "CRM de Vendas",
+      "service_tickets": "Tickets de Serviço",
+      "asset_management": "Gerenciamento de Ativos",
+      "content_calendar": "Calendário de Conteúdo"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue nos ajudou massivamente a gerenciar nosso trabalho de dados, garantindo que nossas equipes tenham clareza sobre o que precisam fazer e por quê. É uma ótima ferramenta para nós.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Chefe de Unidade, Alerta Precoce e Previsão, Programa Mundial de Alimentos."
+    },
+    "cta_final": {
+      "title": "Pronto para começar?",
+      "secondary_text": "Solicite uma demonstração",
+      "primary_text": "Começar"
+    }
+  },
+  "ru": {
+    "welcome_back": "С возвращением, ",
+    "welcome_default": "друг",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue — это мощная платформа для создания, управления и масштабирования процессов.",
+    "hero_subtitle_logged_in": "Продолжите с того места, где остановились, или изучите новые возможности Blue.",
+    "hero_subtitle_default": "Познакомьтесь с системой для современных операций — получите прозрачность, ускорьте процессы и масштабируйте вашу организацию.",
+    "cta_dashboard": "Перейти к панели",
+    "cta_get_started": "Начать бесплатно",
+    "cta_whats_new": "Что нового",
+    "cta_see_how": "Посмотреть, как это работает",
+    "news_bar": {
+      "main_text": "Теперь вы можете создать собственную брендированную версию Blue с помощью модуля White Label.",
+      "button_text": "Узнать больше"
+    },
+    "trusted_by": "Доверяют более 17 000 команд",
+    "designed_to_turn": {
+      "title": "Создан для превращения всего<br> в четкий процесс.",
+      "description": "Потому что великие организации процветают благодаря четким, повторяемым процессам.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Создан для вашего реального стиля работы",
+          "description": "Ваши процессы без навязанных рабочих потоков или жестких структур."
+        },
+        "platform_for_customers": {
+          "title": "Платформа для клиентов, а не инвесторов",
+          "description": "Управляется основателем, прибыльна и создана на десятилетия, а не кварталы."
+        },
+        "fair_pricing": {
+          "title": "Честная цена, которая растет вместе с вами",
+          "description": "$7/пользователь. Без сюрпризов. Экономьте 90% по сравнению с корпоративными инструментами."
+        }
+      }
+    },
+    "work_the_way": "Работа — такой, какой она должна быть.",
+    "features": {
+      "one_source": {
+        "title": "Единый источник истины.",
+        "description": "Создайте записи для всех ваших бизнес-данных, чтобы наконец иметь одно место для хранения всего.",
+        "see_also": {
+          "records": {
+            "text": "Записи",
+            "description": "соответствуют вашим бизнес-сущностям"
+          },
+          "custom_fields": {
+            "text": "Пользовательские поля",
+            "description": "моделируйте ваши данные"
+          },
+          "workspaces": {
+            "text": "Рабочие пространства",
+            "description": "сохраняйте все в тайне с правильными ссылками"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Все является процессом.",
+        "description": "Blue помогает создавать четкие, повторяемые процессы для всего, что вы делаете.",
+        "see_also": {
+          "lists": {
+            "text": "Списки",
+            "description": "создавайте последовательные шаги процесса"
+          },
+          "checklists": {
+            "text": "Контрольные списки",
+            "description": "убедитесь, что все знают, что делать"
+          },
+          "forms": {
+            "text": "Формы",
+            "description": "обеспечивают согласованный ввод данных"
+          }
+        }
+      },
+      "automations": {
+        "title": "Автоматизация помогает вам масштабироваться.",
+        "description": "Мощный механизм автоматизации Blue обрабатывает все: от обновления статусов и уведомлений до сложных многоэтапных рабочих процессов."
+      },
+      "your_data": {
+        "title": "Ваша идеальная структура данных.",
+        "description": "Создавайте пользовательские поля, проектируйте собственные типы записей и стройте идеальную базу данных, которая точно соответствует вашему рабочему процессу."
+      },
+      "dashboards": {
+        "title": "Панели управления в реальном времени.",
+        "description": "Легко создавайте панели, которые автоматически обновляются при изменении ваших данных."
+      }
+    },
+    "stats": {
+      "title": "Создан для работы в масштабе.",
+      "teams": {
+        "number": "17000+",
+        "description": "команд по всему миру"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "автоматизированных процессов"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "управляемых записей"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue поддерживает все в полном порядке — это абсолютно замечательный инструмент.",
+      "quote_2": "Функции автоматизации Blue помогают нам безупречно управлять нашими операциями.",
+      "quote_3": "Вся моя жизнь в Blue! Мне нравится, насколько фантастически отзывчива команда.",
+      "quote_4": "Если вы задаетесь вопросом, стоит ли покупать Blue... ответ — ДА."
+    },
+    "features_grid": {
+      "title": "Все необходимое для успеха",
+      "security": {
+        "title": "Безопасность",
+        "description": "Безопасность корпоративного уровня со сквозным шифрованием и сертификатами соответствия."
+      },
+      "performance": {
+        "title": "Производительность",
+        "description": "Молниеносное время отклика и гарантия доступности 99,9% для критически важной работы."
+      },
+      "analytics": {
+        "title": "Аналитика",
+        "description": "Инсайты в реальном времени и настраиваемые панели для отслеживания самого важного."
+      },
+      "integrations": {
+        "title": "Интеграции",
+        "description": "Подключайтесь к более чем 7000 инструментам, включая Slack, Gmail, Zapier и пользовательские API."
+      },
+      "automations_grid": {
+        "title": "Автоматизация",
+        "description": "Оптимизируйте рабочие процессы с помощью интеллектуальной автоматизации, которая учится на ваших процессах."
+      },
+      "mobile": {
+        "title": "Мобильные приложения",
+        "description": "Работайте в пути с приложениями для iPhone, iPad и устройств Android."
+      },
+      "collaboration": {
+        "title": "Совместная работа",
+        "description": "Инструменты для совместной работы в реальном времени с комментариями, упоминаниями и командными рабочими пространствами."
+      },
+      "customization": {
+        "title": "Настройка",
+        "description": "Полностью настраиваемый интерфейс, поля и рабочие процессы для соответствия потребностям вашего бизнеса."
+      },
+      "support": {
+        "title": "Поддержка",
+        "description": "Бесплатная поддержка по электронной почте с дополнительной платной телефонной поддержкой."
+      }
+    },
+    "integrations": {
+      "title": "Подключайтесь к более чем 7000 инструментам через наших партнеров по интеграции"
+    },
+    "use_cases": {
+      "title": "Избранные варианты использования.",
+      "process_management": "Управление процессами",
+      "project_management": "Управление проектами",
+      "sales_crm": "CRM продаж",
+      "service_tickets": "Сервисные заявки",
+      "asset_management": "Управление активами",
+      "content_calendar": "Календарь контента"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue значительно помог нам управлять нашей работой с данными, гарантируя, что наши команды четко понимают, что им нужно делать и почему. Это отличный инструмент для нас.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Руководитель подразделения, Раннее предупреждение и прогнозирование, Всемирная продовольственная программа."
+    },
+    "cta_final": {
+      "title": "Готовы начать?",
+      "secondary_text": "Запросить демонстрацию",
+      "primary_text": "Начать"
+    }
+  },
+  "ko": {
+    "welcome_back": "다시 오신 것을 환영합니다, ",
+    "welcome_default": "고객",
+    "welcome_suffix": "님. ",
+    "hero_title": "Blue는 프로세스를 생성, 관리 및 확장하는 강력한 플랫폼입니다.",
+    "hero_subtitle_logged_in": "중단한 곳부터 계속하거나 Blue의 새로운 기능을 살펴보세요.",
+    "hero_subtitle_default": "현대적인 운영 시스템을 만나보세요 — 가시성을 확보하고, 프로세스를 가속화하며, 조직을 확장하세요.",
+    "cta_dashboard": "대시보드로 이동",
+    "cta_get_started": "무료로 시작하기",
+    "cta_whats_new": "새로운 소식",
+    "cta_see_how": "작동 방식 보기",
+    "news_bar": {
+      "main_text": "이제 화이트 라벨 모듈로 나만의 브랜드 버전 Blue를 만들 수 있습니다.",
+      "button_text": "자세히 알아보기"
+    },
+    "trusted_by": "17,000개 이상의 팀이 신뢰합니다",
+    "designed_to_turn": {
+      "title": "모든 것을 명확한 프로세스로<br> 전환하도록 설계되었습니다.",
+      "description": "훌륭한 조직은 명확하고 반복 가능한 프로세스로 번창하기 때문입니다.",
+      "value_props": {
+        "built_for_work": {
+          "title": "실제 작업 방식에 맞게 구축",
+          "description": "강제적인 워크플로우나 경직된 구조 없이 귀하의 프로세스를 지원합니다."
+        },
+        "platform_for_customers": {
+          "title": "투자자가 아닌 고객을 위한 플랫폼",
+          "description": "창업자 주도, 수익성 있고 분기가 아닌 수십 년을 위해 구축되었습니다."
+        },
+        "fair_pricing": {
+          "title": "함께 성장하는 공정한 가격",
+          "description": "$7/사용자. 숨겨진 비용 없음. 엔터프라이즈 도구 대비 90% 절약."
+        }
+      }
+    },
+    "work_the_way": "일 — 마땅히 그래야 하는 방식으로.",
+    "features": {
+      "one_source": {
+        "title": "단일 진실의 원천.",
+        "description": "모든 비즈니스 데이터에 대한 레코드를 생성하여 마침내 모든 것을 보관할 수 있는 한 곳을 확보하세요.",
+        "see_also": {
+          "records": {
+            "text": "레코드",
+            "description": "비즈니스 엔티티에 매핑"
+          },
+          "custom_fields": {
+            "text": "사용자 정의 필드",
+            "description": "데이터 모델링"
+          },
+          "workspaces": {
+            "text": "작업 공간",
+            "description": "올바른 링크로 모든 것을 비공개로 유지"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "모든 것이 프로세스입니다.",
+        "description": "Blue는 당신이 하는 모든 일에 대해 명확하고 반복 가능한 프로세스를 만들 수 있도록 도와줍니다.",
+        "see_also": {
+          "lists": {
+            "text": "목록",
+            "description": "일관된 프로세스 단계 생성"
+          },
+          "checklists": {
+            "text": "체크리스트",
+            "description": "모든 사람이 무엇을 해야 하는지 확실히 알도록"
+          },
+          "forms": {
+            "text": "양식",
+            "description": "일관된 데이터 입력 제공"
+          }
+        }
+      },
+      "automations": {
+        "title": "자동화가 확장을 도와줍니다.",
+        "description": "Blue의 강력한 자동화 엔진은 상태 업데이트와 알림부터 복잡한 다단계 워크플로우까지 모든 것을 처리합니다."
+      },
+      "your_data": {
+        "title": "완벽한 데이터 구조.",
+        "description": "사용자 정의 필드를 만들고, 자체 레코드 유형을 설계하고, 워크플로우에 완벽하게 맞는 완벽한 데이터베이스를 구축하세요."
+      },
+      "dashboards": {
+        "title": "실시간 관리 대시보드.",
+        "description": "데이터가 변경될 때 자동으로 업데이트되는 대시보드를 쉽게 구축하세요."
+      }
+    },
+    "stats": {
+      "title": "대규모 운영을 위해 제작되었습니다.",
+      "teams": {
+        "number": "17000+",
+        "description": "전 세계 팀"
+      },
+      "processes": {
+        "number": "500만+",
+        "description": "자동화된 프로세스"
+      },
+      "records": {
+        "number": "5억+",
+        "description": "관리되는 레코드"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue는 모든 것을 완벽하게 정리해줍니다 — 정말 훌륭한 도구입니다.",
+      "quote_2": "Blue의 자동화 기능은 우리가 운영을 원활하게 실행하는 데 도움이 됩니다.",
+      "quote_3": "내 인생의 모든 것이 Blue에 있습니다! 팀의 반응이 얼마나 환상적으로 빠른지 좋아합니다.",
+      "quote_4": "Blue를 구매해야 할지 고민이라면... 답은 예입니다."
+    },
+    "features_grid": {
+      "title": "성공에 필요한 모든 것",
+      "security": {
+        "title": "보안",
+        "description": "엔드투엔드 암호화와 규정 준수 인증을 갖춘 엔터프라이즈급 보안."
+      },
+      "performance": {
+        "title": "성능",
+        "description": "초고속 응답 시간과 미션 크리티컬 작업을 위한 99.9% 가동 시간 보장."
+      },
+      "analytics": {
+        "title": "분석",
+        "description": "가장 중요한 것을 추적하기 위한 실시간 인사이트와 사용자 정의 가능한 대시보드."
+      },
+      "integrations": {
+        "title": "통합",
+        "description": "Slack, Gmail, Zapier 및 사용자 정의 API를 포함한 7,000개 이상의 도구와 연결."
+      },
+      "automations_grid": {
+        "title": "자동화",
+        "description": "프로세스에서 학습하는 지능형 자동화로 워크플로우 간소화."
+      },
+      "mobile": {
+        "title": "모바일 앱",
+        "description": "iPhone, iPad 및 Android 기기용 앱으로 이동 중에도 작업."
+      },
+      "collaboration": {
+        "title": "협업",
+        "description": "댓글, 멘션 및 팀 작업 공간이 있는 실시간 협업 도구."
+      },
+      "customization": {
+        "title": "사용자 정의",
+        "description": "비즈니스 요구 사항에 맞게 완전히 사용자 정의 가능한 인터페이스, 필드 및 워크플로우."
+      },
+      "support": {
+        "title": "지원",
+        "description": "무료 이메일 지원과 선택적 유료 전화 지원."
+      }
+    },
+    "integrations": {
+      "title": "통합 파트너를 통해 7,000개 이상의 도구와 연결"
+    },
+    "use_cases": {
+      "title": "선별된 사용 사례.",
+      "process_management": "프로세스 관리",
+      "project_management": "프로젝트 관리",
+      "sales_crm": "영업 CRM",
+      "service_tickets": "서비스 티켓",
+      "asset_management": "자산 관리",
+      "content_calendar": "콘텐츠 캘린더"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue는 우리가 데이터 작업을 관리하는 데 큰 도움이 되었으며, 우리 팀이 무엇을 해야 하고 왜 해야 하는지 명확히 이해하도록 보장합니다. 우리에게 훌륭한 도구입니다.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "세계식량계획, 조기 경보 및 예측 부서장."
+    },
+    "cta_final": {
+      "title": "시작할 준비가 되셨나요?",
+      "secondary_text": "데모 요청",
+      "primary_text": "시작하기"
+    }
+  },
+  "it": {
+    "welcome_back": "Bentornato, ",
+    "welcome_default": "caro",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue è una piattaforma potente per creare, gestire e scalare i processi.",
+    "hero_subtitle_logged_in": "Riprendi da dove hai lasciato o esplora le novità di Blue.",
+    "hero_subtitle_default": "Scopri il sistema per le operazioni moderne — ottieni visibilità, accelera i processi e scala la tua organizzazione.",
+    "cta_dashboard": "Vai alla Dashboard",
+    "cta_get_started": "Inizia Gratuitamente",
+    "cta_whats_new": "Novità",
+    "cta_see_how": "Scopri Come Funziona",
+    "news_bar": {
+      "main_text": "Ora puoi creare la tua versione personalizzata di Blue con il modulo White Label.",
+      "button_text": "Scopri di più"
+    },
+    "trusted_by": "La fiducia di oltre 17.000 team",
+    "designed_to_turn": {
+      "title": "Progettato per trasformare tutto<br> in un processo chiaro.",
+      "description": "Perché le grandi organizzazioni prosperano con processi chiari e ripetibili.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Costruito per come lavori realmente",
+          "description": "I tuoi processi senza flussi di lavoro forzati o strutture rigide."
+        },
+        "platform_for_customers": {
+          "title": "Una piattaforma per i clienti, non per gli investitori",
+          "description": "Guidata dal fondatore, redditizia e costruita per decenni, non trimestri."
+        },
+        "fair_pricing": {
+          "title": "Prezzi equi che crescono con te",
+          "description": "$7/utente. Senza sorprese. Risparmia il 90% rispetto agli strumenti enterprise."
+        }
+      }
+    },
+    "work_the_way": "Il lavoro — come dovrebbe essere.",
+    "features": {
+      "one_source": {
+        "title": "Un'unica fonte di verità.",
+        "description": "Crea record per tutti i tuoi dati aziendali, per avere finalmente un posto dove conservare tutto.",
+        "see_also": {
+          "records": {
+            "text": "Record",
+            "description": "mappano le tue entità aziendali"
+          },
+          "custom_fields": {
+            "text": "Campi personalizzati",
+            "description": "modella i tuoi dati"
+          },
+          "workspaces": {
+            "text": "Spazi di lavoro",
+            "description": "mantieni tutto privato con i link giusti"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Tutto è un processo.",
+        "description": "Blue ti aiuta a creare processi chiari e ripetibili per tutto ciò che fai.",
+        "see_also": {
+          "lists": {
+            "text": "Liste",
+            "description": "crea passaggi di processo coerenti"
+          },
+          "checklists": {
+            "text": "Checklist",
+            "description": "assicura che tutti sappiano cosa fare"
+          },
+          "forms": {
+            "text": "Moduli",
+            "description": "forniscono input di dati coerenti"
+          }
+        }
+      },
+      "automations": {
+        "title": "Le automazioni ti aiutano a scalare.",
+        "description": "Il potente motore di automazione di Blue gestisce tutto, dagli aggiornamenti di stato e notifiche ai flussi di lavoro complessi multi-step."
+      },
+      "your_data": {
+        "title": "La tua struttura dati perfetta.",
+        "description": "Crea campi personalizzati, progetta i tuoi tipi di record e costruisci il database perfetto che si adatta esattamente al tuo flusso di lavoro."
+      },
+      "dashboards": {
+        "title": "Dashboard di gestione in tempo reale.",
+        "description": "Costruisci facilmente dashboard che si aggiornano automaticamente quando i tuoi dati cambiano."
+      }
+    },
+    "stats": {
+      "title": "Creato per operare su larga scala.",
+      "teams": {
+        "number": "17000+",
+        "description": "team in tutto il mondo"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "processi automatizzati"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "record gestiti"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue mantiene tutto perfettamente organizzato — è uno strumento assolutamente meraviglioso.",
+      "quote_2": "Le funzionalità di automazione di Blue ci aiutano a gestire le nostre operazioni senza problemi.",
+      "quote_3": "Tutta la mia vita è in Blue! Adoro quanto sia fantasticamente reattivo il team.",
+      "quote_4": "Se ti stai chiedendo se dovresti acquistare Blue... la risposta è SÌ."
+    },
+    "features_grid": {
+      "title": "Tutto ciò di cui hai bisogno per avere successo",
+      "security": {
+        "title": "Sicurezza",
+        "description": "Sicurezza di livello enterprise con crittografia end-to-end e certificazioni di conformità."
+      },
+      "performance": {
+        "title": "Prestazioni",
+        "description": "Tempi di risposta fulminei e garanzia di uptime del 99,9% per il lavoro mission-critical."
+      },
+      "analytics": {
+        "title": "Analisi",
+        "description": "Insight in tempo reale e dashboard personalizzabili per monitorare ciò che conta di più."
+      },
+      "integrations": {
+        "title": "Integrazioni",
+        "description": "Connettiti con oltre 7.000 strumenti tra cui Slack, Gmail, Zapier e API personalizzate."
+      },
+      "automations_grid": {
+        "title": "Automazioni",
+        "description": "Semplifica i flussi di lavoro con automazione intelligente che apprende dai tuoi processi."
+      },
+      "mobile": {
+        "title": "App Mobile",
+        "description": "Lavora in movimento con app per iPhone, iPad e dispositivi Android."
+      },
+      "collaboration": {
+        "title": "Collaborazione",
+        "description": "Strumenti di collaborazione in tempo reale con commenti, menzioni e spazi di lavoro del team."
+      },
+      "customization": {
+        "title": "Personalizzazione",
+        "description": "Interfaccia, campi e flussi di lavoro completamente personalizzabili per soddisfare le esigenze del tuo business."
+      },
+      "support": {
+        "title": "Supporto",
+        "description": "Supporto email gratuito con supporto telefonico a pagamento opzionale."
+      }
+    },
+    "integrations": {
+      "title": "Connettiti con oltre 7.000 strumenti attraverso i nostri partner di integrazione"
+    },
+    "use_cases": {
+      "title": "Casi d'uso selezionati.",
+      "process_management": "Gestione dei Processi",
+      "project_management": "Gestione dei Progetti",
+      "sales_crm": "CRM Vendite",
+      "service_tickets": "Ticket di Servizio",
+      "asset_management": "Gestione Asset",
+      "content_calendar": "Calendario Contenuti"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue ci ha aiutato enormemente a gestire il nostro lavoro sui dati, assicurando che i nostri team abbiano chiaro cosa devono fare e perché. È uno strumento fantastico per noi.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Capo Unità, Allerta Precoce e Previsioni, Programma Alimentare Mondiale."
+    },
+    "cta_final": {
+      "title": "Pronto per iniziare?",
+      "secondary_text": "Richiedi una demo",
+      "primary_text": "Inizia"
+    }
+  },
+  "id": {
+    "page_title": "Halaman Beranda",
+    "welcome_default": "di sana",
+    "welcome_back": "Selamat kembali, ",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue adalah platform yang kuat untuk membuat, mengelola, dan mengembangkan proses.",
+    "hero_subtitle_logged_in": "Lanjutkan dari tempat Anda berhenti atau jelajahi apa yang baru di Blue.",
+    "hero_subtitle_default": "Temui sistem untuk operasi modern — dapatkan visibilitas, percepat proses, dan kembangkan organisasi Anda.",
+    "cta_dashboard": "Ke Dashboard",
+    "cta_get_started": "Mulai Gratis",
+    "cta_whats_new": "Apa yang Baru",
+    "cta_see_how": "Lihat Cara Kerjanya",
+    "news_bar": {
+      "main_text": "Anda sekarang dapat membuat versi bermerek Blue Anda sendiri dengan modul White Label.",
+      "button_text": "Pelajari lebih lanjut"
+    },
+    "trusted_by": "Dipercaya oleh lebih dari 17.000 tim",
+    "designed_to_turn": {
+      "title": "Dirancang untuk mengubah segalanya<br> menjadi proses yang jelas.",
+      "description": "Karena organisasi hebat berkembang dengan proses yang jelas dan dapat diulang.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Dibangun untuk cara Anda bekerja sebenarnya",
+          "description": "Proses Anda tanpa alur kerja yang dipaksakan atau struktur yang kaku."
+        },
+        "platform_for_customers": {
+          "title": "Platform untuk pelanggan, bukan investor",
+          "description": "Dipimpin pendiri, menguntungkan, dan dibangun untuk dekade bukan kuartal."
+        },
+        "fair_pricing": {
+          "title": "Harga yang adil yang berkembang bersama Anda",
+          "description": "$7/pengguna. Tanpa kejutan. Hemat 90% vs alat enterprise."
+        }
+      }
+    },
+    "work_the_way": "Kerja — sebagaimana seharusnya.",
+    "features": {
+      "one_source": {
+        "title": "Satu sumber kebenaran.",
+        "description": "Buat catatan untuk semua data bisnis Anda, sehingga Anda akhirnya memiliki satu tempat untuk menyimpan semuanya.",
+        "see_also": {
+          "records": {
+            "text": "Catatan",
+            "description": "petakan ke entitas bisnis Anda"
+          },
+          "custom_fields": {
+            "text": "Bidang kustom",
+            "description": "modelkan data Anda"
+          },
+          "workspaces": {
+            "text": "Ruang kerja",
+            "description": "jaga semuanya tetap pribadi dengan tautan yang tepat"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Semuanya adalah proses.",
+        "description": "Blue membantu Anda membuat proses yang jelas dan dapat diulang untuk semua yang Anda lakukan.",
+        "see_also": {
+          "lists": {
+            "text": "Daftar",
+            "description": "buat langkah proses yang konsisten"
+          },
+          "checklists": {
+            "text": "Daftar periksa",
+            "description": "pastikan semua orang tahu apa yang harus dilakukan"
+          },
+          "forms": {
+            "text": "Formulir",
+            "description": "berikan input data yang konsisten"
+          }
+        }
+      },
+      "automations": {
+        "title": "Otomasi membantu Anda berkembang.",
+        "description": "Mesin otomasi Blue yang kuat menangani segalanya mulai dari pembaruan status dan notifikasi hingga alur kerja multi-langkah yang kompleks."
+      },
+      "your_data": {
+        "title": "Struktur data sempurna Anda.",
+        "description": "Buat bidang kustom, rancang jenis catatan Anda sendiri, dan bangun database sempurna yang sesuai dengan alur kerja Anda."
+      },
+      "dashboards": {
+        "title": "Dashboard manajemen real-time.",
+        "description": "Bangun dashboard dengan mudah yang otomatis diperbarui saat data Anda berubah."
+      }
+    },
+    "stats": {
+      "title": "Dibuat untuk beroperasi dalam skala besar.",
+      "teams": {
+        "number": "17rb+",
+        "description": "tim di seluruh dunia"
+      },
+      "processes": {
+        "number": "5Jt+",
+        "description": "proses otomatis"
+      },
+      "records": {
+        "number": "500Jt+",
+        "description": "catatan dikelola"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue menjaga semuanya tetap terorganisir sepenuhnya — ini adalah alat yang benar-benar luar biasa.",
+      "quote_2": "Fitur otomasi Blue membantu kami menjalankan operasi kami dengan mulus.",
+      "quote_3": "Seluruh hidup saya ada di Blue! Saya suka betapa responsifnya tim ini.",
+      "quote_4": "Jika Anda bertanya-tanya apakah harus membeli Blue... jawabannya adalah YA."
+    },
+    "features_grid": {
+      "title": "Semua yang Anda butuhkan untuk sukses",
+      "security": {
+        "title": "Keamanan",
+        "description": "Keamanan tingkat enterprise dengan enkripsi end-to-end dan sertifikasi kepatuhan."
+      },
+      "performance": {
+        "title": "Performa",
+        "description": "Waktu respons kilat dan jaminan uptime 99,9% untuk pekerjaan penting."
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Wawasan real-time dan dashboard yang dapat disesuaikan untuk melacak apa yang paling penting."
+      },
+      "integrations": {
+        "title": "Integrasi",
+        "description": "Terhubung dengan 7.000+ alat termasuk Slack, Gmail, Zapier, dan API kustom."
+      },
+      "automations_grid": {
+        "title": "Otomasi",
+        "description": "Sederhanakan alur kerja dengan otomasi cerdas yang belajar dari proses Anda."
+      },
+      "mobile": {
+        "title": "Aplikasi Mobile",
+        "description": "Bekerja di mana saja dengan aplikasi untuk iPhone, iPad, dan perangkat Android."
+      },
+      "collaboration": {
+        "title": "Kolaborasi",
+        "description": "Alat kolaborasi real-time dengan komentar, sebutan, dan ruang kerja tim."
+      },
+      "customization": {
+        "title": "Kustomisasi",
+        "description": "Antarmuka, bidang, dan alur kerja yang sepenuhnya dapat disesuaikan untuk memenuhi kebutuhan bisnis Anda."
+      },
+      "support": {
+        "title": "Dukungan",
+        "description": "Dukungan email gratis dengan dukungan telepon berbayar opsional."
+      }
+    },
+    "integrations": {
+      "title": "Terhubung dengan 7.000+ alat melalui mitra integrasi kami"
+    },
+    "use_cases": {
+      "title": "Kasus penggunaan terpilih.",
+      "process_management": "Manajemen Proses",
+      "project_management": "Manajemen Proyek",
+      "sales_crm": "CRM Penjualan",
+      "service_tickets": "Tiket Layanan",
+      "asset_management": "Manajemen Aset",
+      "content_calendar": "Kalender Konten"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue telah sangat membantu kami mengelola pekerjaan data kami, memastikan bahwa tim kami jelas tentang apa yang perlu mereka lakukan, dan mengapa. Ini adalah alat yang hebat bagi kami.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Kepala Unit, Peringatan Dini dan Prakiraan, Program Pangan Dunia."
+    },
+    "cta_final": {
+      "title": "Siap untuk memulai?",
+      "secondary_text": "Minta demo",
+      "primary_text": "Mulai"
+    }
+  },
+  "nl": {
+    "page_title": "Startpagina",
+    "welcome_default": "daar",
+    "welcome_back": "Welkom terug, ",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue is een krachtig platform voor het maken, beheren en schalen van processen.",
+    "hero_subtitle_logged_in": "Ga verder waar je gebleven was of verken wat er nieuw is in Blue.",
+    "hero_subtitle_default": "Ontmoet het systeem voor moderne operaties — krijg zichtbaarheid, versnel processen en schaal uw organisatie.",
+    "cta_dashboard": "Naar Dashboard",
+    "cta_get_started": "Gratis Beginnen",
+    "cta_whats_new": "Wat is er Nieuw",
+    "cta_see_how": "Zie Hoe Het Werkt",
+    "news_bar": {
+      "main_text": "Je kunt nu je eigen gemerkte versie van Blue maken met de White Label-module.",
+      "button_text": "Meer weten"
+    },
+    "trusted_by": "Vertrouwd door meer dan 17.000 teams",
+    "designed_to_turn": {
+      "title": "Ontworpen om alles<br> om te zetten in een duidelijk proces.",
+      "description": "Omdat geweldige organisaties gedijen op duidelijke, herhaalbare processen.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Gebouwd voor hoe je daadwerkelijk werkt",
+          "description": "Uw processen zonder gedwongen workflows of rigide structuren."
+        },
+        "platform_for_customers": {
+          "title": "Een platform voor klanten, niet investeerders",
+          "description": "Door oprichter geleid, winstgevend en gebouwd voor decennia, niet kwartalen."
+        },
+        "fair_pricing": {
+          "title": "Eerlijke prijzen die met je meegroeien",
+          "description": "$7/gebruiker. Geen verrassingen. Bespaar 90% vs enterprise tools."
+        }
+      }
+    },
+    "work_the_way": "Werk — zoals het hoort te zijn.",
+    "features": {
+      "one_source": {
+        "title": "Eén bron van waarheid.",
+        "description": "Maak records voor al uw bedrijfsgegevens, zodat u eindelijk één plek heeft om alles te bewaren.",
+        "see_also": {
+          "records": {
+            "text": "Records",
+            "description": "koppelen aan uw bedrijfsentiteiten"
+          },
+          "custom_fields": {
+            "text": "Aangepaste velden",
+            "description": "modelleer uw gegevens"
+          },
+          "workspaces": {
+            "text": "Werkruimtes",
+            "description": "houd alles privé met de juiste links"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Alles is een proces.",
+        "description": "Blue helpt je duidelijke, herhaalbare processen te maken voor alles wat je doet.",
+        "see_also": {
+          "lists": {
+            "text": "Lijsten",
+            "description": "maak consistente processtappen"
+          },
+          "checklists": {
+            "text": "Checklists",
+            "description": "zorg ervoor dat iedereen weet wat te doen"
+          },
+          "forms": {
+            "text": "Formulieren",
+            "description": "geven je consistente data-invoer"
+          }
+        }
+      },
+      "automations": {
+        "title": "Automatiseringen helpen je schalen.",
+        "description": "Blue's krachtige automatiseringsengine handelt alles af, van statusupdates en notificaties tot complexe meerstaps workflows."
+      },
+      "your_data": {
+        "title": "Uw perfecte datastructuur.",
+        "description": "Maak aangepaste velden, ontwerp uw eigen recordtypes en bouw de perfecte database die exact past bij uw workflow."
+      },
+      "dashboards": {
+        "title": "Real-time management dashboards.",
+        "description": "Bouw eenvoudig dashboards die automatisch updaten wanneer uw data verandert."
+      }
+    },
+    "stats": {
+      "title": "Gemaakt om op schaal te opereren.",
+      "teams": {
+        "number": "17k+",
+        "description": "teams wereldwijd"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "geautomatiseerde processen"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "beheerde records"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue houdt alles volledig georganiseerd — het is een absoluut geweldig tool.",
+      "quote_2": "De automatiseringsfuncties van Blue helpen ons onze operaties naadloos uit te voeren.",
+      "quote_3": "Mijn hele leven zit in Blue! Ik hou van hoe fantastisch responsief het team is.",
+      "quote_4": "Als je je afvraagt of je Blue moet kopen... het antwoord is JA."
+    },
+    "features_grid": {
+      "title": "Alles wat je nodig hebt om te slagen",
+      "security": {
+        "title": "Beveiliging",
+        "description": "Enterprise-grade beveiliging met end-to-end encryptie en compliance certificeringen."
+      },
+      "performance": {
+        "title": "Prestaties",
+        "description": "Bliksemsnelle responstijden en 99,9% uptime garantie voor mission-critical werk."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Real-time inzichten en aanpasbare dashboards om te volgen wat het meest belangrijk is."
+      },
+      "integrations": {
+        "title": "Integraties",
+        "description": "Verbind met 7.000+ tools inclusief Slack, Gmail, Zapier en aangepaste API's."
+      },
+      "automations_grid": {
+        "title": "Automatiseringen",
+        "description": "Stroomlijn workflows met intelligente automatisering die leert van uw processen."
+      },
+      "mobile": {
+        "title": "Mobiele Apps",
+        "description": "Werk onderweg met apps voor iPhone, iPad en Android-apparaten."
+      },
+      "collaboration": {
+        "title": "Samenwerking",
+        "description": "Real-time samenwerkingstools met opmerkingen, vermeldingen en teamwerkruimtes."
+      },
+      "customization": {
+        "title": "Aanpassing",
+        "description": "Volledig aanpasbare interface, velden en workflows om te voldoen aan uw bedrijfsbehoeften."
+      },
+      "support": {
+        "title": "Ondersteuning",
+        "description": "Gratis e-mailondersteuning met optionele betaalde telefoonondersteuning."
+      }
+    },
+    "integrations": {
+      "title": "Verbind met 7.000+ tools via onze integratiepartners"
+    },
+    "use_cases": {
+      "title": "Geselecteerde use cases.",
+      "process_management": "Procesbeheer",
+      "project_management": "Projectbeheer",
+      "sales_crm": "Verkoop CRM",
+      "service_tickets": "Service Tickets",
+      "asset_management": "Asset Management",
+      "content_calendar": "Content Kalender"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue heeft ons enorm geholpen bij het beheren van ons datawerk, ervoor zorgend dat onze teams duidelijk weten wat ze moeten doen en waarom. Het is een geweldig tool voor ons.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Hoofd van de Eenheid, Vroegtijdige Waarschuwing en Voorspelling, Wereldvoedselprogramma."
+    },
+    "cta_final": {
+      "title": "Klaar om te beginnen?",
+      "secondary_text": "Vraag een demo aan",
+      "primary_text": "Aan de slag"
+    }
+  },
+  "pl": {
+    "page_title": "Strona Główna",
+    "welcome_default": "tam",
+    "welcome_back": "Witaj ponownie, ",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue to potężna platforma do tworzenia, zarządzania i skalowania procesów.",
+    "hero_subtitle_logged_in": "Kontynuuj tam, gdzie skończyłeś lub poznaj nowości w Blue.",
+    "hero_subtitle_default": "Poznaj system dla nowoczesnych operacji — zyskaj widoczność, przyspiesz procesy i skaluj swoją organizację.",
+    "cta_dashboard": "Przejdź do Panelu",
+    "cta_get_started": "Zacznij Za Darmo",
+    "cta_whats_new": "Co Nowego",
+    "cta_see_how": "Zobacz Jak To Działa",
+    "news_bar": {
+      "main_text": "Teraz możesz stworzyć własną wersję Blue z Twoją marką używając modułu White Label.",
+      "button_text": "Dowiedz się więcej"
+    },
+    "trusted_by": "Zaufało nam ponad 17.000 zespołów",
+    "designed_to_turn": {
+      "title": "Zaprojektowany, by przekształcić wszystko<br> w jasny proces.",
+      "description": "Ponieważ wspaniałe organizacje prosperują dzięki jasnym, powtarzalnym procesom.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Zbudowany dla tego, jak rzeczywiście pracujesz",
+          "description": "Twoje procesy bez wymuszonych przepływów pracy czy sztywnych struktur."
+        },
+        "platform_for_customers": {
+          "title": "Platforma dla klientów, nie inwestorów",
+          "description": "Kierowana przez założyciela, rentowna i zbudowana na dekady, nie kwartały."
+        },
+        "fair_pricing": {
+          "title": "Uczciwe ceny, które rosną z Tobą",
+          "description": "$7/użytkownik. Bez niespodzianek. Oszczędź 90% vs narzędzia enterprise."
+        }
+      }
+    },
+    "work_the_way": "Praca — tak jak powinna być.",
+    "features": {
+      "one_source": {
+        "title": "Jedno źródło prawdy.",
+        "description": "Utwórz rekordy dla wszystkich danych biznesowych, by w końcu mieć jedno miejsce do przechowywania wszystkiego.",
+        "see_also": {
+          "records": {
+            "text": "Rekordy",
+            "description": "mapują do Twoich jednostek biznesowych"
+          },
+          "custom_fields": {
+            "text": "Pola niestandardowe",
+            "description": "modeluj swoje dane"
+          },
+          "workspaces": {
+            "text": "Przestrzenie robocze",
+            "description": "zachowaj wszystko w prywatności z odpowiednimi linkami"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Wszystko to proces.",
+        "description": "Blue pomaga tworzyć jasne, powtarzalne procesy dla wszystkiego, co robisz.",
+        "see_also": {
+          "lists": {
+            "text": "Listy",
+            "description": "twórz spójne kroki procesów"
+          },
+          "checklists": {
+            "text": "Listy kontrolne",
+            "description": "upewnij się, że wszyscy wiedzą, co robić"
+          },
+          "forms": {
+            "text": "Formularze",
+            "description": "zapewniają spójne wprowadzanie danych"
+          }
+        }
+      },
+      "automations": {
+        "title": "Automatyzacje pomagają skalować.",
+        "description": "Potężny silnik automatyzacji Blue obsługuje wszystko, od aktualizacji statusu i powiadomień po złożone wieloetapowe przepływy pracy."
+      },
+      "your_data": {
+        "title": "Twoja idealna struktura danych.",
+        "description": "Twórz niestandardowe pola, projektuj własne typy rekordów i buduj idealną bazę danych, która idealnie pasuje do Twojego przepływu pracy."
+      },
+      "dashboards": {
+        "title": "Dashboardy zarządzania w czasie rzeczywistym.",
+        "description": "Z łatwością buduj dashboardy, które automatycznie aktualizują się, gdy zmieniają się Twoje dane."
+      }
+    },
+    "stats": {
+      "title": "Stworzony do działania na dużą skalę.",
+      "teams": {
+        "number": "17k+",
+        "description": "zespoły na całym świecie"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "zautomatyzowane procesy"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "zarządzane rekordy"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue utrzymuje wszystko w pełni zorganizowane — to absolutnie wspaniałe narzędzie.",
+      "quote_2": "Funkcje automatyzacji Blue pomagają nam płynnie prowadzić nasze operacje.",
+      "quote_3": "Całe moje życie jest w Blue! Uwielbiam, jak fantastycznie responsywny jest zespół.",
+      "quote_4": "Jeśli zastanawiasz się, czy powinieneś kupić Blue... odpowiedź brzmi TAK."
+    },
+    "features_grid": {
+      "title": "Wszystko, czego potrzebujesz do sukcesu",
+      "security": {
+        "title": "Bezpieczeństwo",
+        "description": "Bezpieczeństwo klasy enterprise z szyfrowaniem end-to-end i certyfikatami zgodności."
+      },
+      "performance": {
+        "title": "Wydajność",
+        "description": "Błyskawiczne czasy odpowiedzi i gwarancja dostępności 99,9% dla krytycznej pracy."
+      },
+      "analytics": {
+        "title": "Analityka",
+        "description": "Wglądy w czasie rzeczywistym i konfigurowalne dashboardy do śledzenia tego, co najważniejsze."
+      },
+      "integrations": {
+        "title": "Integracje",
+        "description": "Połącz się z ponad 7.000 narzędzi, w tym Slack, Gmail, Zapier i niestandardowe API."
+      },
+      "automations_grid": {
+        "title": "Automatyzacje",
+        "description": "Usprawnij przepływy pracy dzięki inteligentnej automatyzacji, która uczy się z Twoich procesów."
+      },
+      "mobile": {
+        "title": "Aplikacje Mobilne",
+        "description": "Pracuj w ruchu z aplikacjami na iPhone, iPad i urządzenia Android."
+      },
+      "collaboration": {
+        "title": "Współpraca",
+        "description": "Narzędzia współpracy w czasie rzeczywistym z komentarzami, wzmiankami i zespołowymi przestrzeniami roboczymi."
+      },
+      "customization": {
+        "title": "Dostosowanie",
+        "description": "Pełnie konfigurowalne interfejsy, pola i przepływy pracy dopasowane do potrzeb Twojego biznesu."
+      },
+      "support": {
+        "title": "Wsparcie",
+        "description": "Darmowe wsparcie e-mailowe z opcjonalnym płatnym wsparciem telefonicznym."
+      }
+    },
+    "integrations": {
+      "title": "Połącz się z ponad 7.000 narzędzi przez naszych partnerów integracyjnych"
+    },
+    "use_cases": {
+      "title": "Wybrane przypadki użycia.",
+      "process_management": "Zarządzanie Procesami",
+      "project_management": "Zarządzanie Projektami",
+      "sales_crm": "CRM Sprzedaży",
+      "service_tickets": "Zgłoszenia Serwisowe",
+      "asset_management": "Zarządzanie Aktywami",
+      "content_calendar": "Kalendarz Treści"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue ogromnie pomógł nam w zarządzaniu naszą pracą z danymi, zapewniając, że nasze zespoły jasno rozumieją, co muszą robić i dlaczego. To świetne narzędzie dla nas.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Szef Jednostki, Wczesne Ostrzeganie i Prognozowanie, Światowy Program Żywnościowy."
+    },
+    "cta_final": {
+      "title": "Gotowy na start?",
+      "secondary_text": "Poproś o demo",
+      "primary_text": "Zacznij"
+    }
+  },
+  "zh-TW": {
+    "page_title": "首頁",
+    "welcome_default": "朋友",
+    "welcome_back": "歡迎回來，",
+    "welcome_suffix": "。",
+    "hero_title": "Blue 是一個強大的平台，用於創建、管理和擴展流程。",
+    "hero_subtitle_logged_in": "從上次離開的地方繼續，或探索 Blue 的新功能。",
+    "hero_subtitle_default": "認識現代營運系統——獲得可見性，加速流程，擴展您的組織。",
+    "cta_dashboard": "前往控制台",
+    "cta_get_started": "免費開始",
+    "cta_whats_new": "新功能",
+    "cta_see_how": "了解運作原理",
+    "news_bar": {
+      "main_text": "您現在可以使用白標模組創建自己的品牌版本 Blue。",
+      "button_text": "了解更多"
+    },
+    "trusted_by": "超過 17,000 個團隊的信賴之選",
+    "designed_to_turn": {
+      "title": "旨在將一切<br>轉化為清晰的流程。",
+      "description": "因為優秀的組織依靠清晰、可重複的流程而繁榮。",
+      "value_props": {
+        "built_for_work": {
+          "title": "為您的實際工作方式而建",
+          "description": "您的流程，沒有強制的工作流程或僵化的結構。"
+        },
+        "platform_for_customers": {
+          "title": "為客戶而非投資者建立的平台",
+          "description": "創辦人領導，獲利營運，為數十年而非季度而建。"
+        },
+        "fair_pricing": {
+          "title": "公平的定價，與您共同成長",
+          "description": "每位使用者 $7。無隱藏費用。比企業工具節省 90%。"
+        }
+      }
+    },
+    "work_the_way": "工作——應有的方式。",
+    "features": {
+      "one_source": {
+        "title": "唯一的真相來源。",
+        "description": "為您所有的業務資料建立記錄，讓您終於有一個地方保存所有內容。",
+        "see_also": {
+          "records": {
+            "text": "記錄",
+            "description": "對應到您的業務實體"
+          },
+          "custom_fields": {
+            "text": "自訂欄位",
+            "description": "建模您的資料"
+          },
+          "workspaces": {
+            "text": "工作空間",
+            "description": "透過正確的連結保持一切私密"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "一切都是流程。",
+        "description": "Blue 幫助您為所做的一切建立清晰、可重複的流程。",
+        "see_also": {
+          "lists": {
+            "text": "清單",
+            "description": "建立一致的流程步驟"
+          },
+          "checklists": {
+            "text": "檢查清單",
+            "description": "確保每個人都知道該做什麼"
+          },
+          "forms": {
+            "text": "表單",
+            "description": "為您提供一致的資料輸入"
+          }
+        }
+      },
+      "automations": {
+        "title": "自動化幫助您擴展。",
+        "description": "Blue 強大的自動化引擎處理從狀態更新和通知到複雜多步驟工作流程的一切。"
+      },
+      "your_data": {
+        "title": "您的完美資料結構。",
+        "description": "建立自訂欄位，設計您自己的記錄類型，構建完全適合您工作流程的完美資料庫。"
+      },
+      "dashboards": {
+        "title": "即時管理儀表板。",
+        "description": "輕鬆構建隨資料變化自動更新的儀表板。"
+      }
+    },
+    "stats": {
+      "title": "精心打造，大規模營運。",
+      "teams": {
+        "number": "17k+",
+        "description": "全球團隊"
+      },
+      "processes": {
+        "number": "500萬+",
+        "description": "自動化流程"
+      },
+      "records": {
+        "number": "5億+",
+        "description": "管理記錄"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue 讓一切保持完全有序——這是一個絕對精彩的工具。",
+      "quote_2": "Blue 的自動化功能幫助我們無縫營運我們的業務。",
+      "quote_3": "我的整個生活都在 Blue 中！我喜歡團隊的反應速度有多快。",
+      "quote_4": "如果您在猶豫是否應該購買 Blue……答案是肯定的。"
+    },
+    "features_grid": {
+      "title": "成功所需的一切",
+      "security": {
+        "title": "安全性",
+        "description": "企業級安全，端到端加密和合規認證。"
+      },
+      "performance": {
+        "title": "效能",
+        "description": "閃電般快速的回應時間，為關鍵任務工作提供 99.9% 的正常運行時間保證。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "即時洞察和可自訂的儀表板，追蹤最重要的內容。"
+      },
+      "integrations": {
+        "title": "整合",
+        "description": "連接超過 7,000 個工具，包括 Slack、Gmail、Zapier 和自訂 API。"
+      },
+      "automations_grid": {
+        "title": "自動化",
+        "description": "透過從您的流程中學習的智慧自動化來簡化工作流程。"
+      },
+      "mobile": {
+        "title": "行動應用程式",
+        "description": "使用 iPhone、iPad 和 Android 裝置的應用程式隨時隨地工作。"
+      },
+      "collaboration": {
+        "title": "協作",
+        "description": "具有評論、提及和團隊工作空間的即時協作工具。"
+      },
+      "customization": {
+        "title": "自訂化",
+        "description": "完全可自訂的介面、欄位和工作流程，以滿足您的業務需求。"
+      },
+      "support": {
+        "title": "支援",
+        "description": "免費電子郵件支援，可選付費電話支援。"
+      }
+    },
+    "integrations": {
+      "title": "透過我們的整合合作夥伴連接超過 7,000 個工具"
+    },
+    "use_cases": {
+      "title": "精選使用案例。",
+      "process_management": "流程管理",
+      "project_management": "專案管理",
+      "sales_crm": "銷售 CRM",
+      "service_tickets": "服務工單",
+      "asset_management": "資產管理",
+      "content_calendar": "內容行事曆"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue 極大地幫助我們管理資料工作，確保我們的團隊清楚他們需要做什麼以及為什麼。對我們來說，這是一個很棒的工具。",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "世界糧食計劃署早期預警和預測部門負責人。"
+    },
+    "cta_final": {
+      "title": "準備開始了嗎？",
+      "secondary_text": "申請示範",
+      "primary_text": "開始使用"
+    }
+  },
+  "sv": {
+    "page_title": "Startsida",
+    "welcome_default": "där",
+    "welcome_back": "Välkommen tillbaka, ",
+    "welcome_suffix": ". ",
+    "hero_title": "Blue är en kraftfull plattform för att skapa, hantera och skala processer.",
+    "hero_subtitle_logged_in": "Fortsätt där du slutade eller utforska vad som är nytt i Blue.",
+    "hero_subtitle_default": "Möt systemet för modern verksamhet — få synlighet, påskynda processer och skala din organisation.",
+    "cta_dashboard": "Gå till Dashboard",
+    "cta_get_started": "Börja Gratis",
+    "cta_whats_new": "Vad är nytt",
+    "cta_see_how": "Se hur det fungerar",
+    "news_bar": {
+      "main_text": "Du kan nu skapa din egen märkta version av Blue med White Label-modulen.",
+      "button_text": "Läs mer"
+    },
+    "trusted_by": "Betrodd av mer än 17 000 team",
+    "designed_to_turn": {
+      "title": "Designad för att förvandla allt<br> till en tydlig process.",
+      "description": "Eftersom fantastiska organisationer frodas med tydliga, repeterbara processer.",
+      "value_props": {
+        "built_for_work": {
+          "title": "Byggd för hur du faktiskt arbetar",
+          "description": "Dina processer utan påtvingade arbetsflöden eller stela strukturer."
+        },
+        "platform_for_customers": {
+          "title": "En plattform för kunder, inte investerare",
+          "description": "Grundarledd, lönsam och byggd för decennier, inte kvartal."
+        },
+        "fair_pricing": {
+          "title": "Rättvis prissättning som växer med dig",
+          "description": "$7/användare. Inga överraskningar. Spara 90% jämfört med företagsverktyg."
+        }
+      }
+    },
+    "work_the_way": "Arbete — som det borde vara.",
+    "features": {
+      "one_source": {
+        "title": "En källa till sanning.",
+        "description": "Skapa poster för all din affärsdata, så att du äntligen har en plats att förvara allt.",
+        "see_also": {
+          "records": {
+            "text": "Poster",
+            "description": "mappar till dina affärsenheter"
+          },
+          "custom_fields": {
+            "text": "Anpassade fält",
+            "description": "modellera din data"
+          },
+          "workspaces": {
+            "text": "Arbetsytor",
+            "description": "håll allt privat med rätt länkar"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "Allt är en process.",
+        "description": "Blue hjälper dig att skapa tydliga, repeterbara processer för allt du gör.",
+        "see_also": {
+          "lists": {
+            "text": "Listor",
+            "description": "skapa konsekventa processsteg"
+          },
+          "checklists": {
+            "text": "Checklistor",
+            "description": "säkerställ att alla vet vad de ska göra"
+          },
+          "forms": {
+            "text": "Formulär",
+            "description": "ger dig konsekvent datainmatning"
+          }
+        }
+      },
+      "automations": {
+        "title": "Automatiseringar hjälper dig att skala.",
+        "description": "Blues kraftfulla automatiseringsmotor hanterar allt från statusuppdateringar och notifieringar till komplexa flerstegsprocedurer."
+      },
+      "your_data": {
+        "title": "Din perfekta datastruktur.",
+        "description": "Skapa anpassade fält, designa dina egna posttyper och bygg den perfekta databasen som passar exakt med ditt arbetsflöde."
+      },
+      "dashboards": {
+        "title": "Realtids-hanteringsdashboards.",
+        "description": "Bygg enkelt dashboards som automatiskt uppdateras när din data förändras."
+      }
+    },
+    "stats": {
+      "title": "Skapad för att fungera i stor skala.",
+      "teams": {
+        "number": "17k+",
+        "description": "team världen över"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "automatiserade processer"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "hanterade poster"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue håller allt helt organiserat — det är ett absolut underbart verktyg.",
+      "quote_2": "Blues automatiseringsfunktioner hjälper oss att driva våra operationer sömlöst.",
+      "quote_3": "Hela mitt liv finns i Blue! Jag älskar hur fantastiskt responsivt teamet är.",
+      "quote_4": "Om du undrar om du ska köpa Blue... svaret är JA."
+    },
+    "features_grid": {
+      "title": "Allt du behöver för att lyckas",
+      "security": {
+        "title": "Säkerhet",
+        "description": "Företagsklass säkerhet med end-to-end kryptering och compliance-certifieringar."
+      },
+      "performance": {
+        "title": "Prestanda",
+        "description": "Blixtsnabba svarstider och 99,9% drifttidsgaranti för verksamhetskritiskt arbete."
+      },
+      "analytics": {
+        "title": "Analys",
+        "description": "Realtidsinsikter och anpassningsbara dashboards för att spåra det som är viktigast."
+      },
+      "integrations": {
+        "title": "Integrationer",
+        "description": "Anslut till 7 000+ verktyg inklusive Slack, Gmail, Zapier och anpassade API:er."
+      },
+      "automations_grid": {
+        "title": "Automatiseringar",
+        "description": "Effektivisera arbetsflöden med intelligent automatisering som lär sig från dina processer."
+      },
+      "mobile": {
+        "title": "Mobilappar",
+        "description": "Arbeta när du är på språng med appar för iPhone, iPad och Android-enheter."
+      },
+      "collaboration": {
+        "title": "Samarbete",
+        "description": "Realtids-samarbetsverktyg med kommentarer, omnämnanden och teamarbetsytor."
+      },
+      "customization": {
+        "title": "Anpassning",
+        "description": "Helt anpassningsbart gränssnitt, fält och arbetsflöden för att matcha dina affärsbehov."
+      },
+      "support": {
+        "title": "Support",
+        "description": "Gratis e-postsupport med valfri betald telefonsupport."
+      }
+    },
+    "integrations": {
+      "title": "Anslut till 7 000+ verktyg genom våra integrationspartners"
+    },
+    "use_cases": {
+      "title": "Utvalda användningsfall.",
+      "process_management": "Processhantering",
+      "project_management": "Projekthantering",
+      "sales_crm": "Sälj-CRM",
+      "service_tickets": "Serviceärenden",
+      "asset_management": "Tillgångshantering",
+      "content_calendar": "Innehållskalender"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue har hjälpt oss enormt med att hantera vårt dataarbete, och säkerställer att våra team är tydliga om vad de behöver göra och varför. Det är ett fantastiskt verktyg för oss.",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "Enhetschef, Tidig varning och prognoser, Världslivsmedelsprogrammet."
+    },
+    "cta_final": {
+      "title": "Redo att komma igång?",
+      "secondary_text": "Begär en demo",
+      "primary_text": "Kom igång"
+    }
+  },
+  "km": {
+    "page_title": "ទំព័រដើម",
+    "welcome_default": "មិត្តភក្តិ",
+    "welcome_back": "សូមស្វាគមន៍ការត្រលប់មកវិញ, ",
+    "welcome_suffix": "។ ",
+    "hero_title": "Blue គឺជាវេទិកាដ៏មានអានុភាពសម្រាប់បង្កើត គ្រប់គ្រង និងពង្រីកដំណើរការ។",
+    "hero_subtitle_logged_in": "បន្តពីកន្លែងដែលអ្នកបានបញ្ឈប់ ឬស្វែងរកអ្វីដែលថ្មីនៅក្នុង Blue។",
+    "hero_subtitle_default": "ស្គាល់ប្រព័ន្ធសម្រាប់ប្រតិបត្តិការទំនើប — ទទួលបានភាពមើលឃើញ បង្កើនល្បឿនដំណើរការ និងពង្រីកអង្គការរបស់អ្នក។",
+    "cta_dashboard": "ទៅកាន់ Dashboard",
+    "cta_get_started": "ចាប់ផ្តើមដោយឥតគិតថ្លៃ",
+    "cta_whats_new": "អ្វីដែលថ្មី",
+    "cta_see_how": "មើលរបៀបដែលវាដំណើរការ",
+    "news_bar": {
+      "main_text": "ឥឡូវនេះអ្នកអាចបង្កើតកំណែម៉ាកយីហោផ្ទាល់ខ្លួនរបស់អ្នកនៅក្នុង Blue ជាមួយម៉ូឌុល White Label។",
+      "button_text": "ស្វែងយល់បន្ថែម"
+    },
+    "trusted_by": "ទទួលបានទំនុកចិត្តពីក្រុមការងារជាង 17,000",
+    "designed_to_turn": {
+      "title": "ត្រូវបានរចនាឡើងដើម្បីប្រែក្លាយអ្វីៗទាំងអស់<br> ទៅជាដំណើរការច្បាស់លាស់។",
+      "description": "ពីព្រោះអង្គការដ៏អស្ចារ្យរីកចម្រើនលើដំណើរការច្បាស់លាស់ និងអាចធ្វើឡើងវិញបាន។",
+      "value_props": {
+        "built_for_work": {
+          "title": "សាងសង់សម្រាប់របៀបដែលអ្នកធ្វើការពិតប្រាកដ",
+          "description": "ដំណើរការរបស់អ្នកដោយគ្មានលំហូរការងារដែលបង្ខំ ឬរចនាសម្ព័ន្ធដ៏រឹងមាំ។"
+        },
+        "platform_for_customers": {
+          "title": "វេទិកាសម្រាប់អតិថិជន មិនមែនវិនិយោគិនទេ",
+          "description": "ដឹកនាំដោយzakladatel ទទួលបានប្រាក់ចំណេញ និងសាងសង់សម្រាប់ទសវត្សរ៍ មិនមែនត្រីមាសទេ។"
+        },
+        "fair_pricing": {
+          "title": "តម្លៃយុត្តិធម៌ដែលកើនឡើងជាមួយអ្នក",
+          "description": "$7/អ្នកប្រើ។ គ្មានការភ្ញាក់ផ្អើល។ សន្សំ 90% បើប្រៀបធៀបនឹងឧបករណ៍សហគ្រាស។"
+        }
+      }
+    },
+    "work_the_way": "ការងារ — ដូចដែលវាគួរតែជា។",
+    "features": {
+      "one_source": {
+        "title": "ប្រភពតែមួយនៃការពិត។",
+        "description": "បង្កើតកំណត់ត្រាសម្រាប់ទិន្នន័យអាជីវកម្មទាំងអស់របស់អ្នក ដូច្នេះអ្នកទីបំផុតមានកន្លែងមួយដើម្បីរក្សាអ្វីៗទាំងអស់។",
+        "see_also": {
+          "records": {
+            "text": "កំណត់ត្រា",
+            "description": "ផ្គូផ្គងទៅនឹងអង្គភាពអាជីវកម្មរបស់អ្នក"
+          },
+          "custom_fields": {
+            "text": "វាលផ្ទាល់ខ្លួន",
+            "description": "គំរូទិន្នន័យរបស់អ្នក"
+          },
+          "workspaces": {
+            "text": "តំបន់ការងារ",
+            "description": "រក្សាអ្វីៗទាំងអស់ឲ្យឯកជនជាមួយតំណភ្ជាប់ត្រឹមត្រូវ"
+          }
+        }
+      },
+      "everything_process": {
+        "title": "អ្វីៗទាំងអស់គឺជាដំណើរការ។",
+        "description": "Blue ជួយអ្នកបង្កើតដំណើរការច្បាស់លាស់ និងអាចធ្វើម្តងទៀតបានសម្រាប់អ្វីទាំងអស់ដែលអ្នកធ្វើ។",
+        "see_also": {
+          "lists": {
+            "text": "បញ្ជី",
+            "description": "បង្កើតជំហានដំណើរការស្ថិរ"
+          },
+          "checklists": {
+            "text": "បញ្ជីពិនិត្យ",
+            "description": "ធានាថាអ្នកគ្រប់គ្នាដឹងអ្វីដែលត្រូវធ្វើ"
+          },
+          "forms": {
+            "text": "ទម្រង់",
+            "description": "ផ្តល់ឱ្យអ្នកនូវការបញ្ចូលទិន្នន័យស្ថិរ"
+          }
+        }
+      },
+      "automations": {
+        "title": "ស្វ័យប្រវត្តិកម្មជួយអ្នកពង្រីក។",
+        "description": "ម៉ាស៊ីនស្វ័យប្រវត្តិកម្មដ៏មានអានុភាពរបស់ Blue គ្រប់គ្រងអ្វីៗទាំងអស់ពីការធ្វើបច្ចុប្បន្នភាពស្ថានភាព និងការជូនដំណឹង ទៅដល់លំហូរការងារស្មុគស្មាញច្រើនជំហាន។"
+      },
+      "your_data": {
+        "title": "រចនាសម្ព័ន្ធទិន្នន័យដ៏ល្អឥតខ្ចោះរបស់អ្នក។",
+        "description": "បង្កើតវាលផ្ទាល់ខ្លួន រចនាប្រភេទកំណត់ត្រាផ្ទាល់ខ្លួនរបស់អ្នក និងសាងសង់មូលដ្ឋានទិន្នន័យដ៏ល្អឥតខ្ចោះដែលសម្របតាមលំហូរការងាររបស់អ្នក។"
+      },
+      "dashboards": {
+        "title": "ផ្ទាំងគ្រប់គ្រងពេលវេលាជាក់ស្តែង។",
+        "description": "សាងសង់ផ្ទាំងដោយងាយស្រួលដែលធ្វើបច្ចុប្បន្នភាពដោយស្វ័យប្រវត្តិនៅពេលទិន្នន័យរបស់អ្នកផ្លាស់ប្តូរ។"
+      }
+    },
+    "stats": {
+      "title": "ត្រូវបានបង្កើតឡើងដើម្បីដំណើរការក្នុងទំហំធំ។",
+      "teams": {
+        "number": "17k+",
+        "description": "ក្រុមនៅទូទាំងពិភពលោក"
+      },
+      "processes": {
+        "number": "5M+",
+        "description": "ដំណើរការស្វ័យប្រវត្តិ"
+      },
+      "records": {
+        "number": "500M+",
+        "description": "កំណត់ត្រាបានគ្រប់គ្រង"
+      }
+    },
+    "testimonials": {
+      "quote_1": "Blue រក្សាអ្វីៗទាំងអស់ឱ្យបានរៀបចំយ៉ាងពេញលេញ — វាជាឧបករណ៍ដ៏អស្ចារ្យមួយ។",
+      "quote_2": "លក្ខណៈពិសេសស្វ័យប្រវត្តិកម្មរបស់ Blue ជួយយើងឱ្យដំណើរការប្រតិបត្តិការរបស់យើងដោយរលូន។",
+      "quote_3": "ជីវិតទាំងមូលរបស់ខ្ញុំមាននៅក្នុង Blue! ខ្ញុំចូលចិត្តភាពឆ្លើយតបដ៏អស្ចារ្យរបស់ក្រុម។",
+      "quote_4": "ប្រសិនបើអ្នកកំពុងឆ្ងល់ថាតើអ្នកគួរទិញ Blue... ចម្លើយគឺ បាទ/ចាស។"
+    },
+    "features_grid": {
+      "title": "អ្វីៗទាំងអស់ដែលអ្នកត្រូវការសម្រាប់ជោគជ័យ",
+      "security": {
+        "title": "សុវត្ថិភាព",
+        "description": "សុវត្ថិភាពកម្រិតសហគ្រាសជាមួយការអ៊ិនគ្រីបចុងដល់ចុង និងវិញ្ញាបនបត្រគោរពច្បាប់។"
+      },
+      "performance": {
+        "title": "ការអនុវត្ត",
+        "description": "ពេលវេលាឆ្លើយតបយ៉ាងលឿន និងការធានា uptime 99.9% សម្រាប់ការងារដ៏សំខាន់។"
+      },
+      "analytics": {
+        "title": "ការវិភាគ",
+        "description": "ការយល់ដឹងពេលវេលាជាក់ស្តែង និងផ្ទាំងដែលអាចកំណត់បានដើម្បីតាមដានអ្វីដែលសំខាន់បំផុត។"
+      },
+      "integrations": {
+        "title": "ការរួមបញ្ចូល",
+        "description": "ភ្ជាប់ជាមួយឧបករណ៍ 7,000+ រួមទាំង Slack, Gmail, Zapier និង API ផ្ទាល់ខ្លួន។"
+      },
+      "automations_grid": {
+        "title": "ស្វ័យប្រវត្តិកម្ម",
+        "description": "ធ្វើឱ្យលំហូរការងារកាន់តែងាយស្រួលជាមួយស្វ័យប្រវត្តិកម្មឆ្លាតវៃដែលរៀនពីដំណើរការរបស់អ្នក។"
+      },
+      "mobile": {
+        "title": "កម្មវិធីទូរស័ព្ទ",
+        "description": "ធ្វើការនៅពេលធ្វើដំណើរជាមួយកម្មវិធីសម្រាប់ iPhone, iPad និងឧបករណ៍ Android។"
+      },
+      "collaboration": {
+        "title": "សហការ",
+        "description": "ឧបករណ៍សហការពេលវេលាជាក់ស្តែងជាមួយការអត្ថាធិប្បាយ ការលើកឡើង និងតំបន់ការងារក្រុម។"
+      },
+      "customization": {
+        "title": "ការប្ដូរតាមបំណង",
+        "description": "ចំណុចប្រទាក់ វាល និងលំហូរការងារដែលអាចប្ដូរតាមបំណងពេញលេញដើម្បីបំពេញតម្រូវការអាជីវកម្មរបស់អ្នក។"
+      },
+      "support": {
+        "title": "ការគាំទ្រ",
+        "description": "ការគាំទ្រអ៊ីមែលដោយឥតគិតថ្លៃជាមួយការគាំទ្រទូរស័ព្ទបង់ប្រាក់ស្រេចចិត្ត។"
+      }
+    },
+    "integrations": {
+      "title": "ភ្ជាប់ជាមួយឧបករណ៍ 7,000+ តាមរយៈដៃគូរួមបញ្ចូលរបស់យើង"
+    },
+    "use_cases": {
+      "title": "ករណីប្រើប្រាស់ដែលបានជ្រើសរើស។",
+      "process_management": "ការគ្រប់គ្រងដំណើរការ",
+      "project_management": "ការគ្រប់គ្រងគម្រោង",
+      "sales_crm": "CRM លក់",
+      "service_tickets": "សំបុត្រសេវា",
+      "asset_management": "ការគ្រប់គ្រងទ្រព្យសម្បត្តិ",
+      "content_calendar": "ប្រតិទិនខ្លឹមសារ"
+    },
+    "testimonial_kyriacos": {
+      "quote": "Blue បានជួយយើងយ៉ាងច្រើនក្នុងការគ្រប់គ្រងការងារទិន្នន័យរបស់យើង ធានាថាក្រុមរបស់យើងច្បាស់លាស់អំពីអ្វីដែលពួកគេត្រូវធ្វើ និងហេតុអ្វី។ វាជាឧបករណ៍ដ៏អស្ចារ្យសម្រាប់យើង។",
+      "name": "Kyriacos Koupparis, PhD",
+      "title": "ប្រធានអង្គភាព ការព្រមានទាន់ពេលវេលា និងការព្យាករណ៍ កម្មវិធីអាហារពិភពលោក។"
+    },
+    "cta_final": {
+      "title": "រួចរាល់ក្នុងការចាប់ផ្តើមហើយឬ?",
+      "secondary_text": "ស្នើសុំការបង្ហាញ",
+      "primary_text": "ចាប់ផ្តើម"
+    }
   }
 }
