@@ -11,7 +11,7 @@ import (
 
 // TranslationManager handles loading and caching of translations
 type TranslationManager struct {
-	translations map[string]map[string]interface{}
+	translations map[string]map[string]interface{} // [language][namespaced_key]value
 	mu           sync.RWMutex
 }
 
@@ -24,43 +24,74 @@ func InitTranslations() error {
 		translations: make(map[string]map[string]interface{}),
 	}
 	
-	// Load translations for all supported languages
+	// Initialize language maps
 	for _, lang := range SupportedLanguages {
-		if err := translationManager.loadLanguage(lang); err != nil {
-			return fmt.Errorf("failed to load language %s: %w", lang, err)
+		translationManager.translations[lang] = make(map[string]interface{})
+	}
+	
+	// Find all translation files in the translations directory
+	translationFiles, err := filepath.Glob("translations/*.json")
+	if err != nil {
+		return fmt.Errorf("failed to glob translation files: %w", err)
+	}
+	
+	// Load each translation file
+	for _, file := range translationFiles {
+		if err := translationManager.loadFeatureFile(file); err != nil {
+			return fmt.Errorf("failed to load translation file %s: %w", file, err)
 		}
 	}
 	
 	return nil
 }
 
-// loadLanguage loads a single language file
-func (tm *TranslationManager) loadLanguage(lang string) error {
+// loadFeatureFile loads a feature-based translation file (e.g., search.json, about.json)
+func (tm *TranslationManager) loadFeatureFile(filePath string) error {
 	tm.mu.Lock()
 	defer tm.mu.Unlock()
 	
-	// Construct path to translation file
-	path := filepath.Join("translations", lang+".json")
+	// Extract feature namespace from filename (e.g., "search" from "search.json")
+	filename := filepath.Base(filePath)
+	namespace := strings.TrimSuffix(filename, ".json")
 	
 	// Read the file
-	data, err := os.ReadFile(path)
+	data, err := os.ReadFile(filePath)
 	if err != nil {
-		// If file doesn't exist and it's not English, that's okay (not translated yet)
-		if os.IsNotExist(err) && lang != DefaultLanguage {
-			tm.translations[lang] = make(map[string]interface{})
-			return nil
-		}
 		return err
 	}
 	
-	// Parse JSON
-	var trans map[string]interface{}
-	if err := json.Unmarshal(data, &trans); err != nil {
-		return fmt.Errorf("invalid JSON in %s: %w", path, err)
+	// Parse JSON - expected format: { "en": {...}, "es": {...}, ... }
+	var featureTranslations map[string]map[string]interface{}
+	if err := json.Unmarshal(data, &featureTranslations); err != nil {
+		return fmt.Errorf("invalid JSON in %s: %w", filePath, err)
 	}
 	
-	tm.translations[lang] = trans
+	// Merge into main translations with namespace prefix
+	for lang, translations := range featureTranslations {
+		if _, exists := tm.translations[lang]; !exists {
+			tm.translations[lang] = make(map[string]interface{})
+		}
+		
+		// Add namespace prefix to all keys and merge
+		tm.addNamespacedTranslations(tm.translations[lang], namespace, translations)
+	}
+	
 	return nil
+}
+
+// addNamespacedTranslations recursively adds translations with namespace prefix
+func (tm *TranslationManager) addNamespacedTranslations(target map[string]interface{}, namespace string, source map[string]interface{}) {
+	for key, value := range source {
+		namespacedKey := namespace + "." + key
+		
+		switch v := value.(type) {
+		case map[string]interface{}:
+			// Recursively flatten nested objects
+			tm.addNamespacedTranslations(target, namespacedKey, v)
+		default:
+			target[namespacedKey] = value
+		}
+	}
 }
 
 // Translate retrieves a translation for the given language and key
@@ -72,12 +103,12 @@ func Translate(lang, key string, args ...interface{}) string {
 	translationManager.mu.RLock()
 	defer translationManager.mu.RUnlock()
 	
-	// Get translation for requested language
-	value := translationManager.getNestedValue(lang, key)
+	// Get translation for requested language (key is already namespaced)
+	value := translationManager.getValue(lang, key)
 	
 	// Fallback to default language if not found
 	if value == "" && lang != DefaultLanguage {
-		value = translationManager.getNestedValue(DefaultLanguage, key)
+		value = translationManager.getValue(DefaultLanguage, key)
 	}
 	
 	// Return key if still not found
@@ -93,41 +124,29 @@ func Translate(lang, key string, args ...interface{}) string {
 	return value
 }
 
-// getNestedValue retrieves a nested value from translations using dot notation
-func (tm *TranslationManager) getNestedValue(lang, key string) string {
+// getValue retrieves a value from the flat translation map
+func (tm *TranslationManager) getValue(lang, key string) string {
 	langTranslations, exists := tm.translations[lang]
 	if !exists {
 		return ""
 	}
 	
-	// Split key by dots for nested access
-	parts := strings.Split(key, ".")
-	
-	// Navigate through nested structure
-	var current interface{} = langTranslations
-	for _, part := range parts {
-		switch v := current.(type) {
-		case map[string]interface{}:
-			current = v[part]
-			if current == nil {
-				return ""
-			}
+	// Direct lookup since we store keys in flattened format
+	if value, exists := langTranslations[key]; exists {
+		// Convert value to string
+		switch v := value.(type) {
+		case string:
+			return v
+		case float64:
+			return fmt.Sprintf("%.0f", v)
+		case bool:
+			return fmt.Sprintf("%t", v)
 		default:
 			return ""
 		}
 	}
 	
-	// Convert final value to string
-	switch v := current.(type) {
-	case string:
-		return v
-	case float64:
-		return fmt.Sprintf("%.0f", v)
-	case bool:
-		return fmt.Sprintf("%t", v)
-	default:
-		return ""
-	}
+	return ""
 }
 
 // GetTranslations returns all translations for a language (used for client-side)

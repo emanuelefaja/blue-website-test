@@ -1,0 +1,60 @@
+{
+  "en": {
+    "placeholder_short": "Search...",
+    "placeholder_long": "Search docs, features, API, insights...",
+    "searching": "Searching...",
+    "no_results": "No results found for",
+    "quick_links": "Quick Links",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Platform Overview",
+        "description": "Explore Blue's capabilities"
+      },
+      "features": {
+        "title": "Features",
+        "description": "Discover all Blue features"
+      },
+      "documentation": {
+        "title": "Documentation",
+        "description": "Learn how to use Blue effectively"
+      },
+      "api_reference": {
+        "title": "API Reference",
+        "description": "Integrate with the Blue API"
+      },
+      "contact_us": {
+        "title": "Contact Us",
+        "description": "Get in touch with our team"
+      }
+    }
+  },
+  "es": {
+    "placeholder_short": "Buscar...",
+    "placeholder_long": "Buscar documentos, funciones, API, perspectivas...",
+    "searching": "Buscando...",
+    "no_results": "No se encontraron resultados para",
+    "quick_links": "Enlaces Rápidos",
+    "suggestions": {
+      "platform_overview": {
+        "title": "Visión General de la Plataforma",
+        "description": "Explora las capacidades de Blue"
+      },
+      "features": {
+        "title": "Funciones",
+        "description": "Descubre todas las funciones de Blue"
+      },
+      "documentation": {
+        "title": "Documentación",
+        "description": "Aprende a usar Blue de manera efectiva"
+      },
+      "api_reference": {
+        "title": "Referencia de API",
+        "description": "Integra con la API de Blue"
+      },
+      "contact_us": {
+        "title": "Contáctanos",
+        "description": "Ponte en contacto con nuestro equipo"
+      }
+    }
+  }
+}

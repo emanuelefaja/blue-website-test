@@ -1,0 +1,24 @@
+{
+  "en": {
+    "company_name": "Blue",
+    "get_started": "Get Started",
+    "learn_more": "Learn More",
+    "contact_us": "Contact Us",
+    "sign_up": "Sign Up",
+    "log_in": "Log In",
+    "watch_demo": "Watch a demo",
+    "start_free_trial": "Start free trial",
+    "read_insights": "Read our insights"
+  },
+  "es": {
+    "company_name": "Blue",
+    "get_started": "Comenzar",
+    "learn_more": "Más información",
+    "contact_us": "Contáctanos",
+    "sign_up": "Registrarse",
+    "log_in": "Iniciar sesión",
+    "watch_demo": "Ver una demostración",
+    "start_free_trial": "Iniciar prueba gratuita",
+    "read_insights": "Lee nuestras perspectivas"
+  }
+}
