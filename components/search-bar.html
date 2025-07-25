@@ -75,13 +75,13 @@ DEPENDENCIES:
          loading: false,
          searchFocused: false,
          currentLang: '{{.Language}}',
-         suggestions: [
-             { title: 'Platform Overview', url: '/platform/', category: 'Feature', icon: 'grid', description: 'Explore Blue\'s capabilities' },
-             { title: 'Features', url: '/platform/features/', category: 'Feature', icon: 'star', description: 'Discover all Blue features' },
-             { title: 'Documentation', url: '/docs/start-guide/welcome', category: 'Docs', icon: 'book', description: 'Learn how to use Blue effectively' },
-             { title: 'API Reference', url: '/api/start-guide/introduction', category: 'API', icon: 'code', description: 'Integrate with the Blue API' },
-             { title: 'Contact Us', url: '/contact/', category: 'Page', icon: 'mail', description: 'Get in touch with our team' }
-         ],
+         suggestions: {{toJSON (slice
+            (dict "title" (t "search.suggestions.platform_overview.title") "url" "/platform/" "category" "Feature" "icon" "grid" "description" (t "search.suggestions.platform_overview.description"))
+            (dict "title" (t "search.suggestions.features.title") "url" "/platform/features/" "category" "Feature" "icon" "star" "description" (t "search.suggestions.features.description"))
+            (dict "title" (t "search.suggestions.documentation.title") "url" "/docs/start-guide/welcome" "category" "Docs" "icon" "book" "description" (t "search.suggestions.documentation.description"))
+            (dict "title" (t "search.suggestions.api_reference.title") "url" "/api/start-guide/introduction" "category" "API" "icon" "code" "description" (t "search.suggestions.api_reference.description"))
+            (dict "title" (t "search.suggestions.contact_us.title") "url" "/contact/" "category" "Page" "icon" "mail" "description" (t "search.suggestions.contact_us.description"))
+         )}},
          showingSuggestions: false,
          async init() {
              try {
