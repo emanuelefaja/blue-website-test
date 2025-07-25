@@ -15,7 +15,7 @@ func TestIsTOCExcluded(t *testing.T) {
 			"/platform/status",
 		},
 	}
-	
+
 	tests := []struct {
 		name     string
 		path     string
@@ -47,7 +47,7 @@ func TestIsTOCExcluded(t *testing.T) {
 			expected: false,
 		},
 	}
-	
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			result := router.isTOCExcluded(tt.path)
@@ -62,30 +62,30 @@ func TestIsTOCExcluded(t *testing.T) {
 func TestPreparePageData(t *testing.T) {
 	// Create test router with services
 	router := &Router{
-		tocExcludedPaths: []string{"/changelog"},
-		seoService:       NewSEOService(),
-		markdownService:  NewMarkdownService(),
+		tocExcludedPaths:  []string{"/changelog"},
+		seoService:        NewSEOService(),
+		markdownService:   NewMarkdownService(),
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	// Test basic page data preparation
 	content := template.HTML("<h2 id='section-1'>Section 1</h2><p>Content</p>")
-	pageData := router.preparePageData("/test", content, false, nil, &Navigation{})
-	
+	pageData := router.preparePageData("/test", content, false, nil, &Navigation{}, "en")
+
 	// Verify basic fields
 	if pageData.Path != "/test" {
 		t.Errorf("Expected path /test, got %s", pageData.Path)
 	}
-	
+
 	if pageData.Content != content {
 		t.Error("Content mismatch")
 	}
-	
+
 	if pageData.IsMarkdown {
 		t.Error("Expected IsMarkdown to be false")
 	}
-	
+
 	if pageData.CustomerNumber != 17000 {
 		t.Errorf("Expected CustomerNumber 17000, got %d", pageData.CustomerNumber)
 	}
@@ -95,7 +95,7 @@ func TestPreparePageData(t *testing.T) {
 func TestInsightsSorting(t *testing.T) {
 	// Create test router with mocked markdown service
 	markdownService := NewMarkdownService()
-	
+
 	// Pre-populate cache with test insights
 	insights := map[string]*CachedContent{
 		"/insights/old-article": {
@@ -145,28 +145,28 @@ func TestInsightsSorting(t *testing.T) {
 			},
 		},
 	}
-	
+
 	// Add insights to cache
 	for path, content := range insights {
 		markdownService.cache.Set(path, content)
 	}
-	
+
 	router := &Router{
-		tocExcludedPaths: []string{},
-		seoService:       NewSEOService(),
-		markdownService:  markdownService,
+		tocExcludedPaths:  []string{},
+		seoService:        NewSEOService(),
+		markdownService:   markdownService,
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	// Prepare page data for insights page
-	pageData := router.preparePageData("/insights", "", false, nil, &Navigation{})
-	
+	pageData := router.preparePageData("/insights", template.HTML(""), false, nil, &Navigation{}, "en")
+
 	// Verify insights are present and sorted
 	if len(pageData.Insights) != 5 {
 		t.Errorf("Expected 5 insights, got %d", len(pageData.Insights))
 	}
-	
+
 	// Check order - should be: Future (2025-01-15), New (2024-12-25), Medium (2024-06-15), Old (2024-01-01), No Date ("")
 	expectedOrder := []string{
 		"Future Article",
@@ -175,23 +175,23 @@ func TestInsightsSorting(t *testing.T) {
 		"Old Article",
 		"No Date Article",
 	}
-	
+
 	for i, expectedTitle := range expectedOrder {
 		if i < len(pageData.Insights) && pageData.Insights[i].Title != expectedTitle {
 			t.Errorf("Expected insight %d to be %q, got %q", i, expectedTitle, pageData.Insights[i].Title)
 		}
 	}
-	
+
 	// Verify dates are in descending order (except empty dates at end)
 	for i := 0; i < len(pageData.Insights)-1; i++ {
 		current := pageData.Insights[i].Date
 		next := pageData.Insights[i+1].Date
-		
+
 		// Skip comparison if we hit empty dates
 		if current == "" || next == "" {
 			continue
 		}
-		
+
 		if current < next {
 			t.Errorf("Insights not in reverse chronological order: %s < %s", current, next)
 		}
@@ -201,20 +201,20 @@ func TestInsightsSorting(t *testing.T) {
 // TestTOCGeneration tests table of contents generation
 func TestTOCGeneration(t *testing.T) {
 	router := &Router{
-		tocExcludedPaths: []string{"/excluded"},
-		seoService:       NewSEOService(),
-		markdownService:  NewMarkdownService(),
+		tocExcludedPaths:  []string{"/excluded"},
+		seoService:        NewSEOService(),
+		markdownService:   NewMarkdownService(),
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	tests := []struct {
-		name        string
-		path        string
-		content     string
-		isMarkdown  bool
-		expectTOC   bool
-		tocLength   int
+		name       string
+		path       string
+		content    string
+		isMarkdown bool
+		expectTOC  bool
+		tocLength  int
 	}{
 		{
 			name:       "Markdown with H2s",
@@ -249,15 +249,15 @@ func TestTOCGeneration(t *testing.T) {
 			tocLength:  0,
 		},
 	}
-	
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			pageData := router.preparePageData(tt.path, template.HTML(tt.content), tt.isMarkdown, nil, &Navigation{})
-			
+			pageData := router.preparePageData(tt.path, template.HTML(tt.content), tt.isMarkdown, nil, &Navigation{}, "en")
+
 			if tt.expectTOC && len(pageData.TOC) != tt.tocLength {
 				t.Errorf("Expected %d TOC entries, got %d", tt.tocLength, len(pageData.TOC))
 			}
-			
+
 			if !tt.expectTOC && len(pageData.TOC) > 0 {
 				t.Errorf("Expected no TOC entries, got %d", len(pageData.TOC))
 			}
@@ -269,7 +269,7 @@ func TestTOCGeneration(t *testing.T) {
 func TestPNGGeneration(t *testing.T) {
 	// This test verifies that PNG paths are generated for insights
 	markdownService := NewMarkdownService()
-	
+
 	// Add a test insight
 	markdownService.cache.Set("/insights/test-article", &CachedContent{
 		Frontmatter: &Frontmatter{
@@ -280,28 +280,28 @@ func TestPNGGeneration(t *testing.T) {
 			Date:        "2024-01-01",
 		},
 	})
-	
+
 	router := &Router{
-		tocExcludedPaths: []string{},
-		seoService:       NewSEOService(),
-		markdownService:  markdownService,
+		tocExcludedPaths:  []string{},
+		seoService:        NewSEOService(),
+		markdownService:   markdownService,
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	// Prepare page data for insights page
-	pageData := router.preparePageData("/insights", "", false, nil, &Navigation{})
-	
+	pageData := router.preparePageData("/insights", template.HTML(""), false, nil, &Navigation{}, "en")
+
 	// Verify PNG path is generated
 	if len(pageData.Insights) != 1 {
 		t.Fatalf("Expected 1 insight, got %d", len(pageData.Insights))
 	}
-	
+
 	insight := pageData.Insights[0]
 	if insight.PNGPath == "" {
 		t.Error("Expected PNG path to be generated")
 	}
-	
+
 	// PNG path should be based on the title converted to filename format
 	// "Test Article" -> "test-article"
 	expectedPath := "/insights/test-article.png"
@@ -313,7 +313,7 @@ func TestPNGGeneration(t *testing.T) {
 // TestInsightCategoryExtraction tests category extraction from tags
 func TestInsightCategoryExtraction(t *testing.T) {
 	markdownService := NewMarkdownService()
-	
+
 	// Test cases with different category/tag combinations
 	testCases := map[string]*CachedContent{
 		"/insights/with-category": {
@@ -335,27 +335,27 @@ func TestInsightCategoryExtraction(t *testing.T) {
 			},
 		},
 	}
-	
+
 	for path, content := range testCases {
 		markdownService.cache.Set(path, content)
 	}
-	
+
 	router := &Router{
-		tocExcludedPaths: []string{},
-		seoService:       NewSEOService(),
-		markdownService:  markdownService,
+		tocExcludedPaths:  []string{},
+		seoService:        NewSEOService(),
+		markdownService:   markdownService,
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
-	pageData := router.preparePageData("/insights", "", false, nil, &Navigation{})
-	
+
+	pageData := router.preparePageData("/insights", template.HTML(""), false, nil, &Navigation{}, "en")
+
 	// Create a map for easier lookup
 	insightsByTitle := make(map[string]InsightData)
 	for _, insight := range pageData.Insights {
 		insightsByTitle[insight.Title] = insight
 	}
-	
+
 	// Test category is used when available
 	if insight, ok := insightsByTitle["With Category"]; ok {
 		if insight.Category != "Engineering" {
@@ -364,7 +364,7 @@ func TestInsightCategoryExtraction(t *testing.T) {
 	} else {
 		t.Error("Insight 'With Category' not found")
 	}
-	
+
 	// Test first tag is used when no category
 	if insight, ok := insightsByTitle["No Category With Tags"]; ok {
 		if insight.Category != "Product Updates" {
@@ -373,7 +373,7 @@ func TestInsightCategoryExtraction(t *testing.T) {
 	} else {
 		t.Error("Insight 'No Category With Tags' not found")
 	}
-	
+
 	// Test empty category when no category or tags
 	if insight, ok := insightsByTitle["No Category No Tags"]; ok {
 		if insight.Category != "" {
@@ -387,27 +387,27 @@ func TestInsightCategoryExtraction(t *testing.T) {
 // TestSchemaDataGeneration tests that schema data is generated
 func TestSchemaDataGeneration(t *testing.T) {
 	router := &Router{
-		tocExcludedPaths: []string{},
-		seoService:       NewSEOService(),
-		markdownService:  NewMarkdownService(),
+		tocExcludedPaths:  []string{},
+		seoService:        NewSEOService(),
+		markdownService:   NewMarkdownService(),
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	// Test with frontmatter
 	frontmatter := &Frontmatter{
 		Title:       "Test Article",
 		Description: "Test description",
 		Date:        "2024-01-01",
 	}
-	
-	pageData := router.preparePageData("/insights/test", "", true, frontmatter, &Navigation{})
-	
+
+	pageData := router.preparePageData("/insights/test", template.HTML(""), true, frontmatter, &Navigation{}, "en")
+
 	// Schema data should be generated
 	if pageData.SchemaData == "" {
 		t.Error("Expected schema data to be generated")
 	}
-	
+
 	// Should not be the default empty array
 	if string(pageData.SchemaData) == "[]" {
 		t.Error("Expected non-empty schema data")
@@ -418,7 +418,7 @@ func TestSchemaDataGeneration(t *testing.T) {
 func BenchmarkInsightsSorting(b *testing.B) {
 	// Create a large number of insights
 	markdownService := NewMarkdownService()
-	
+
 	// Generate 1000 insights with random dates
 	for i := 0; i < 1000; i++ {
 		date := ""
@@ -428,7 +428,7 @@ func BenchmarkInsightsSorting(b *testing.B) {
 			day := 1 + (i % 28)
 			date = time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC).Format("2006-01-02")
 		}
-		
+
 		markdownService.cache.Set(
 			"/insights/article-"+string(rune(i)),
 			&CachedContent{
@@ -440,18 +440,18 @@ func BenchmarkInsightsSorting(b *testing.B) {
 			},
 		)
 	}
-	
+
 	router := &Router{
-		tocExcludedPaths: []string{},
-		seoService:       NewSEOService(),
-		markdownService:  markdownService,
+		tocExcludedPaths:  []string{},
+		seoService:        NewSEOService(),
+		markdownService:   markdownService,
 		navigationService: NewNavigationService(NewSEOService()),
-		schemaService:    NewSchemaService(nil, "https://example.com"),
+		schemaService:     NewSchemaService(nil, "https://example.com"),
 	}
-	
+
 	b.ResetTimer()
-	
+
 	for i := 0; i < b.N; i++ {
-		router.preparePageData("/insights", "", false, nil, &Navigation{})
+		router.preparePageData("/insights", template.HTML(""), false, nil, &Navigation{}, "en")
 	}
 }
