@@ -8,7 +8,13 @@
     "log_in": "Log In",
     "watch_demo": "Watch a demo",
     "start_free_trial": "Start free trial",
-    "read_insights": "Read our insights"
+    "read_insights": "Read our insights",
+    "copyright": "© Blue",
+    "designed_with": "Designed with",
+    "heart_emoji": "❤",
+    "across_the": "across the",
+    "system_status": "System Status",
+    "on_this_page": "On this page"
   },
   "es": {
     "company_name": "Blue",
@@ -19,6 +25,12 @@
     "log_in": "Iniciar sesión",
     "watch_demo": "Ver una demostración",
     "start_free_trial": "Iniciar prueba gratuita",
-    "read_insights": "Lee nuestras perspectivas"
+    "read_insights": "Lee nuestras perspectivas",
+    "copyright": "© Blue",
+    "designed_with": "Diseñado con",
+    "heart_emoji": "❤",
+    "across_the": "a través del",
+    "system_status": "Estado del Sistema",
+    "on_this_page": "En esta página"
   }
 }
