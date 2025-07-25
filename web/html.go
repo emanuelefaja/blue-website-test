@@ -194,9 +194,7 @@ func (hs *HTMLService) generateURLPath(filePath string) string {
 	urlPath = strings.TrimSuffix(urlPath, ".html")
 
 	// Handle index files
-	if strings.HasSuffix(urlPath, "/index") {
-		urlPath = strings.TrimSuffix(urlPath, "/index")
-	}
+	urlPath = strings.TrimSuffix(urlPath, "/index")
 
 	// Add leading slash
 	if urlPath == "" {

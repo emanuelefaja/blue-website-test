@@ -165,9 +165,7 @@ func (ms *MarkdownService) generateURLPath(filePath string) string {
 	}
 
 	// Handle index files
-	if strings.HasSuffix(urlPath, "/index") {
-		urlPath = strings.TrimSuffix(urlPath, "/index")
-	}
+	urlPath = strings.TrimSuffix(urlPath, "/index")
 
 	// Clean URL parts: remove number prefixes and normalize
 	urlParts := strings.Split(urlPath, "/")

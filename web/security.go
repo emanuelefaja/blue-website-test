@@ -88,11 +88,8 @@ func init() {
 	go func() {
 		ticker := time.NewTicker(5 * time.Minute)
 		defer ticker.Stop()
-		for {
-			select {
-			case <-ticker.C:
-				apiRateLimiter.Cleanup()
-			}
+		for range ticker.C {
+			apiRateLimiter.Cleanup()
 		}
 	}()
 }
@@ -101,19 +98,19 @@ func init() {
 func RateLimitMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		ip := getClientIP(r)
-		
+
 		if !apiRateLimiter.Allow(ip) {
 			log.Printf("Rate limit exceeded for IP: %s", ip)
-			
+
 			// Add rate limit headers
 			w.Header().Set("X-RateLimit-Limit", "60")
 			w.Header().Set("X-RateLimit-Window", "60")
 			w.Header().Set("Retry-After", "60")
-			
+
 			http.Error(w, "Rate limit exceeded. Please try again later.", http.StatusTooManyRequests)
 			return
 		}
-		
+
 		next(w, r)
 	}
 }
@@ -126,21 +123,21 @@ func SecurityHeadersMiddleware(next http.HandlerFunc) http.HandlerFunc {
 		w.Header().Set("X-Frame-Options", "DENY")
 		w.Header().Set("X-XSS-Protection", "1; mode=block")
 		w.Header().Set("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
-		
+
 		// CORS headers - restrictive for API security
 		w.Header().Set("Access-Control-Allow-Origin", "https://blue.cc")
 		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-		
+
 		// Cache headers for API responses
 		w.Header().Set("Cache-Control", "public, max-age=60")
-		
+
 		// Handle preflight requests
 		if r.Method == "OPTIONS" {
 			w.WriteHeader(http.StatusOK)
 			return
 		}
-		
+
 		next(w, r)
 	}
 }
@@ -150,11 +147,11 @@ func LoggingMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
 		ip := getClientIP(r)
-		
+
 		log.Printf("API Request: %s %s from %s", r.Method, r.URL.Path, ip)
-		
+
 		next(w, r)
-		
+
 		duration := time.Since(start)
 		log.Printf("API Response: %s %s completed in %v", r.Method, r.URL.Path, duration)
 	}
@@ -166,12 +163,12 @@ func getClientIP(r *http.Request) string {
 	if xff := r.Header.Get("X-Forwarded-For"); xff != "" {
 		return xff
 	}
-	
+
 	// Check for X-Real-IP header (common with reverse proxies)
 	if xri := r.Header.Get("X-Real-IP"); xri != "" {
 		return xri
 	}
-	
+
 	// Fallback to RemoteAddr, but strip the port
 	remoteAddr := r.RemoteAddr
 	if lastColon := strings.LastIndex(remoteAddr, ":"); lastColon != -1 {

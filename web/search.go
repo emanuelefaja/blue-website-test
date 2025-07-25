@@ -140,76 +140,6 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 	return nil
 }
 
-// collectAllSearchItems collects all search items from various sources
-func collectAllSearchItems(markdownService *MarkdownService, htmlService *HTMLService, metadata *Metadata) ([]SearchItem, error) {
-	// Use channels to collect results from goroutines
-	htmlItemsChan := make(chan []SearchItem, 1)
-	markdownItemsChan := make(chan []SearchItem, 1)
-	nonCachedItemsChan := make(chan []SearchItem, 1)
-	errorChan := make(chan error, 3)
-
-	// Index cached HTML pages concurrently
-	go func() {
-		var items []SearchItem
-		if err := indexCachedHTMLPages(&items, htmlService, metadata); err != nil {
-			errorChan <- fmt.Errorf("failed to index cached HTML pages: %w", err)
-			return
-		}
-		htmlItemsChan <- items
-	}()
-
-	// Index cached markdown content concurrently
-	go func() {
-		var items []SearchItem
-		if err := indexCachedMarkdownContent(&items, markdownService); err != nil {
-			errorChan <- fmt.Errorf("failed to index cached markdown content: %w", err)
-			return
-		}
-		markdownItemsChan <- items
-	}()
-
-	// Wait for HTML items to build indexed URLs map
-	var searchItems []SearchItem
-	select {
-	case items := <-htmlItemsChan:
-		searchItems = append(searchItems, items...)
-	case err := <-errorChan:
-		return nil, err
-	}
-
-	// Build a map of indexed URLs from cached pages
-	indexedURLs := make(map[string]bool)
-	for _, item := range searchItems {
-		if item.Type == "page" {
-			indexedURLs[item.URL] = true
-		}
-	}
-
-	// Index non-cached HTML pages (like status page) concurrently
-	go func() {
-		var items []SearchItem
-		if err := indexHTMLPages(&items, metadata, indexedURLs); err != nil {
-			errorChan <- fmt.Errorf("failed to index non-cached HTML pages: %w", err)
-			return
-		}
-		nonCachedItemsChan <- items
-	}()
-
-	// Collect remaining results
-	for i := 0; i < 2; i++ {
-		select {
-		case items := <-markdownItemsChan:
-			searchItems = append(searchItems, items...)
-		case items := <-nonCachedItemsChan:
-			searchItems = append(searchItems, items...)
-		case err := <-errorChan:
-			return nil, err
-		}
-	}
-
-	return searchItems, nil
-}
-
 // collectSearchItemsForLanguage collects search items for a specific language only
 func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService *HTMLService, metadata *Metadata, lang string) ([]SearchItem, error) {
 	var searchItems []SearchItem
@@ -281,9 +211,7 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[str
 
 		// Convert file path to URL
 		url := "/" + strings.TrimSuffix(path, ".html")
-		if strings.HasSuffix(url, "/index") {
-			url = strings.TrimSuffix(url, "/index")
-		}
+		url = strings.TrimSuffix(url, "/index")
 		if url == "/pages" {
 			url = "/"
 		}
@@ -781,94 +709,6 @@ func generateTitleFromURL(urlPath string) string {
 	}
 
 	return strings.Join(words, " ")
-}
-
-// indexCachedHTMLPages indexes pre-rendered HTML pages from cache
-func indexCachedHTMLPages(items *[]SearchItem, htmlService *HTMLService, metadata *Metadata) error {
-	cachedContent := htmlService.GetAllCachedContent()
-
-	for cacheKey, content := range cachedContent {
-		// Cache key format is "lang:path", e.g., "es:/company/about"
-		parts := strings.SplitN(cacheKey, ":", 2)
-		if len(parts) != 2 {
-			continue // Skip invalid cache keys
-		}
-
-		lang := parts[0]
-		urlPath := parts[1]
-
-		// Build the actual URL with language prefix
-		actualURL := urlPath
-		if lang != DefaultLanguage && lang != "" {
-			actualURL = "/" + lang + urlPath
-		}
-		// Extract title from rendered HTML
-		title := ""
-		if metadata != nil {
-			pageKey := getPageKey(urlPath)
-			if pageData, exists := metadata.Pages[pageKey]; exists {
-				// Use the language from the cache key
-				if langMeta, langExists := pageData[lang]; langExists && langMeta.Title != "" {
-					title = langMeta.Title
-				} else if enMeta, enExists := pageData["en"]; enExists && enMeta.Title != "" {
-					// Fallback to English
-					title = enMeta.Title
-				}
-			}
-		}
-		// If no title from metadata, extract from HTML
-		if title == "" {
-			title = extractPageTitle(content.HTML, actualURL, content.FilePath, metadata)
-		}
-
-		// Get description from metadata if available
-		description := ""
-		if metadata != nil {
-			pageKey := getPageKey(urlPath)
-
-			if pageData, exists := metadata.Pages[pageKey]; exists {
-				// Use the language from the cache key
-				if langMeta, langExists := pageData[lang]; langExists && langMeta.Description != "" {
-					description = langMeta.Description
-				} else if enMeta, enExists := pageData["en"]; enExists && enMeta.Description != "" {
-					// Fallback to English
-					description = enMeta.Description
-				}
-			}
-		}
-
-		// Extract clean text from pre-rendered HTML
-		textContent := extractTextFromHTML(content.HTML)
-
-		// Determine section/type
-		pageType := "page"
-		section := ""
-		if strings.HasPrefix(urlPath, "/platform") {
-			section = "platform"
-		} else if strings.HasPrefix(urlPath, "/company") {
-			section = "company"
-		}
-
-		// Determine category based on URL path
-		category := ""
-		if strings.HasPrefix(urlPath, "/platform/features") {
-			category = "Feature"
-		} else if strings.HasPrefix(urlPath, "/solutions") {
-			category = "Solution"
-		}
-
-		*items = append(*items, SearchItem{
-			Title:       title,
-			Description: description,
-			Content:     textContent,
-			URL:         actualURL, // Use the actual URL with language prefix
-			Type:        pageType,
-			Section:     section,
-			Category:    category,
-		})
-	}
-
-	return nil
 }
 
 // indexCachedHTMLPagesForLanguage indexes pre-rendered HTML pages for a specific language

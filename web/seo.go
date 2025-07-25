@@ -37,21 +37,21 @@ type MetadataDefaults struct {
 
 // Metadata holds the complete metadata structure
 type Metadata struct {
-	Site     SiteMetadata                           `json:"site"`
-	Pages    map[string]map[string]PageMetadata    `json:"pages"`
-	Defaults MetadataDefaults                       `json:"defaults"`
+	Site     SiteMetadata                       `json:"site"`
+	Pages    map[string]map[string]PageMetadata `json:"pages"`
+	Defaults MetadataDefaults                   `json:"defaults"`
 }
 
 // Frontmatter represents markdown file frontmatter
 type Frontmatter struct {
-	Title       string `yaml:"title"`
-	Description string `yaml:"description"`
-	Slug        string `yaml:"slug"`
-	Category    string `yaml:"category"`
+	Title       string   `yaml:"title"`
+	Description string   `yaml:"description"`
+	Slug        string   `yaml:"slug"`
+	Category    string   `yaml:"category"`
 	Tags        []string `yaml:"tags"`
-	Image       string `yaml:"image"`
-	Date        string `yaml:"date"`
-	ShowDate    bool   `yaml:"showdate"`
+	Image       string   `yaml:"image"`
+	Date        string   `yaml:"date"`
+	ShowDate    bool     `yaml:"showdate"`
 }
 
 // RedirectRules represents redirect configuration rules
@@ -65,7 +65,6 @@ type Redirects struct {
 	Redirects map[string]string `json:"redirects"`
 	Rules     RedirectRules     `json:"rules"`
 }
-
 
 // URLEntry represents a single URL in the sitemap
 type URLEntry struct {
@@ -113,11 +112,11 @@ func (s *SEOService) LoadData() error {
 	if err := s.loadMetadata(); err != nil {
 		log.Printf("Error loading metadata: %v", err)
 	}
-	
+
 	if err := s.loadRedirects(); err != nil {
 		log.Printf("Error loading redirects: %v", err)
 	}
-	
+
 	return nil
 }
 
@@ -127,7 +126,7 @@ func (s *SEOService) loadMetadata() error {
 	if err != nil {
 		return err
 	}
-	
+
 	s.metadata = &Metadata{}
 	return json.Unmarshal(data, s.metadata)
 }
@@ -138,7 +137,7 @@ func (s *SEOService) loadRedirects() error {
 	if err != nil {
 		return err
 	}
-	
+
 	s.redirects = &Redirects{}
 	return json.Unmarshal(data, s.redirects)
 }
@@ -160,21 +159,21 @@ func (s *SEOService) CheckRedirect(path string) (string, int, bool) {
 // ParseFrontmatter extracts frontmatter from markdown content
 func (s *SEOService) ParseFrontmatter(content []byte) (*Frontmatter, []byte, error) {
 	contentStr := string(content)
-	
+
 	// Normalize line endings to Unix style
 	contentStr = strings.ReplaceAll(contentStr, "\r\n", "\n")
 	contentStr = strings.ReplaceAll(contentStr, "\r", "\n")
-	
+
 	// Check if content starts with frontmatter delimiter
 	if !strings.HasPrefix(contentStr, "---\n") {
 		return nil, content, nil
 	}
-	
+
 	// Find the end of frontmatter - look for closing --- on its own line
 	lines := strings.Split(contentStr, "\n")
 	var frontmatterLines []string
 	var contentStart int
-	
+
 	// Skip the opening ---
 	for i := 1; i < len(lines); i++ {
 		if strings.TrimSpace(lines[i]) == "---" {
@@ -184,19 +183,19 @@ func (s *SEOService) ParseFrontmatter(content []byte) (*Frontmatter, []byte, err
 		}
 		frontmatterLines = append(frontmatterLines, lines[i])
 	}
-	
+
 	// If we didn't find a closing delimiter, treat as regular content
 	if contentStart == 0 {
 		return nil, content, nil
 	}
-	
+
 	// Parse the frontmatter YAML
 	frontmatterYAML := strings.Join(frontmatterLines, "\n")
 	var frontmatter Frontmatter
 	if err := yaml.Unmarshal([]byte(frontmatterYAML), &frontmatter); err != nil {
 		return nil, content, err
 	}
-	
+
 	// Return frontmatter and content without frontmatter
 	remainingLines := lines[contentStart:]
 	markdownContent := []byte(strings.Join(remainingLines, "\n"))
@@ -207,12 +206,12 @@ func (s *SEOService) ParseFrontmatter(content []byte) (*Frontmatter, []byte, err
 func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatter *Frontmatter, lang string) (string, string, []string, *PageMetadata, *SiteMetadata) {
 	// Get page key for metadata lookup
 	pageKey := s.getPageKey(path)
-	
+
 	// Get page metadata
 	var pageMeta *PageMetadata
 	var title, description string
 	var keywords []string
-	
+
 	// For markdown files, prioritize frontmatter over metadata.json
 	if isMarkdown && frontmatter != nil {
 		if frontmatter.Title != "" {
@@ -222,7 +221,7 @@ func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatt
 			description = frontmatter.Description
 		}
 	}
-	
+
 	// If no frontmatter or missing fields, use metadata.json
 	if title == "" || description == "" {
 		if s.metadata != nil {
@@ -283,19 +282,19 @@ func (s *SEOService) PreparePageMetadata(path string, isMarkdown bool, frontmatt
 			keywords = []string{"blue", "process management", "team collaboration"}
 		}
 	}
-	
+
 	// Apply title suffix if defined and not already present
 	if s.metadata != nil && s.metadata.Defaults.TitleSuffix != "" {
 		if !strings.HasSuffix(title, s.metadata.Defaults.TitleSuffix) {
 			title = title + s.metadata.Defaults.TitleSuffix
 		}
 	}
-	
+
 	var siteMeta *SiteMetadata
 	if s.metadata != nil {
 		siteMeta = &s.metadata.Site
 	}
-	
+
 	return title, description, keywords, pageMeta, siteMeta
 }
 
@@ -304,7 +303,7 @@ func (s *SEOService) getPageKey(path string) string {
 	if path == "/" {
 		return "home"
 	}
-	
+
 	// Remove leading/trailing slashes
 	cleanPath := strings.Trim(path, "/")
 	return cleanPath
@@ -315,11 +314,11 @@ func (s *SEOService) getFallbackTitle(path string) string {
 	if path == "/" {
 		return "Home"
 	}
-	
+
 	// Remove leading slash and convert to title case
 	cleanPath := strings.TrimPrefix(path, "/")
 	cleanPath = strings.TrimSuffix(cleanPath, "/")
-	
+
 	// Replace slashes with spaces and title case
 	parts := strings.Split(cleanPath, "/")
 	for i, part := range parts {
@@ -332,7 +331,7 @@ func (s *SEOService) getFallbackTitle(path string) string {
 		}
 		parts[i] = strings.Join(words, " ")
 	}
-	
+
 	return strings.Join(parts, " - ")
 }
 
@@ -342,14 +341,14 @@ func (s *SEOService) GenerateSitemap(baseURL string) error {
 	if err := s.generateSitemapIndex(baseURL); err != nil {
 		return fmt.Errorf("failed to generate sitemap index: %w", err)
 	}
-	
+
 	// Generate language-specific sitemaps
 	for _, lang := range SupportedLanguages {
 		if err := s.generateLanguageSitemap(baseURL, lang); err != nil {
 			return fmt.Errorf("failed to generate sitemap for %s: %w", lang, err)
 		}
 	}
-	
+
 	return nil
 }
 
@@ -358,44 +357,44 @@ func (s *SEOService) generateSitemapIndex(baseURL string) error {
 	// Create sitemap index entries
 	var sitemaps []SitemapEntry
 	currentTime := time.Now().Format("2006-01-02")
-	
+
 	for _, lang := range SupportedLanguages {
 		filename := "sitemap.xml"
 		if lang != DefaultLanguage {
 			filename = fmt.Sprintf("sitemap-%s.xml", lang)
 		}
-		
+
 		sitemaps = append(sitemaps, SitemapEntry{
 			Loc:     baseURL + "/" + filename,
 			LastMod: currentTime,
 		})
 	}
-	
+
 	// Create sitemap index structure
 	sitemapIndex := SitemapIndex{
 		Xmlns:    "http://www.sitemaps.org/schemas/sitemap/0.9",
 		Sitemaps: sitemaps,
 	}
-	
+
 	// Generate XML
 	xmlData, err := xml.MarshalIndent(sitemapIndex, "", "  ")
 	if err != nil {
 		return fmt.Errorf("failed to marshal sitemap index XML: %w", err)
 	}
-	
+
 	// Add XML declaration
 	xmlContent := xml.Header + string(xmlData)
-	
+
 	// Write to public/sitemap_index.xml
 	if err := os.WriteFile("public/sitemap_index.xml", []byte(xmlContent), 0644); err != nil {
 		return fmt.Errorf("failed to write sitemap_index.xml: %w", err)
 	}
-	
+
 	// Also create a copy as sitemap.xml for backward compatibility
 	if err := os.WriteFile("public/sitemap.xml", []byte(xmlContent), 0644); err != nil {
 		return fmt.Errorf("failed to write sitemap.xml: %w", err)
 	}
-	
+
 	return nil
 }
 
@@ -403,7 +402,7 @@ func (s *SEOService) generateSitemapIndex(baseURL string) error {
 func (s *SEOService) generateLanguageSitemap(baseURL, lang string) error {
 	var urls []URLEntry
 	currentTime := time.Now().Format("2006-01-02")
-	
+
 	// Add static HTML pages for this language
 	htmlUrls, err := s.scanHTMLPagesForLanguage("pages", baseURL, currentTime, lang)
 	if err != nil {
@@ -411,7 +410,7 @@ func (s *SEOService) generateLanguageSitemap(baseURL, lang string) error {
 	} else {
 		urls = append(urls, htmlUrls...)
 	}
-	
+
 	// Add markdown content pages for this language
 	markdownUrls, err := s.scanMarkdownContentForLanguage("content", baseURL, currentTime, lang)
 	if err != nil {
@@ -419,106 +418,34 @@ func (s *SEOService) generateLanguageSitemap(baseURL, lang string) error {
 	} else {
 		urls = append(urls, markdownUrls...)
 	}
-	
+
 	// Create sitemap structure
 	sitemap := URLSet{
 		Xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9",
 		URLs:  urls,
 	}
-	
+
 	// Generate XML
 	xmlData, err := xml.MarshalIndent(sitemap, "", "  ")
 	if err != nil {
 		return fmt.Errorf("failed to marshal sitemap XML: %w", err)
 	}
-	
+
 	// Add XML declaration
 	xmlContent := xml.Header + string(xmlData)
-	
+
 	// Determine filename
 	filename := "public/sitemap.xml"
 	if lang != DefaultLanguage {
 		filename = fmt.Sprintf("public/sitemap-%s.xml", lang)
 	}
-	
+
 	// Write to file
 	if err := os.WriteFile(filename, []byte(xmlContent), 0644); err != nil {
 		return fmt.Errorf("failed to write %s: %w", filename, err)
 	}
-	
+
 	return nil
-}
-
-// scanHTMLPages scans the pages directory for HTML files
-func (s *SEOService) scanHTMLPages(pagesDir, baseURL, currentTime string) ([]URLEntry, error) {
-	var urls []URLEntry
-	
-	err := filepath.Walk(pagesDir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		
-		if !info.IsDir() && strings.HasSuffix(path, ".html") {
-			// Convert file path to URL path
-			urlPath := s.filePathToURL(path, pagesDir)
-			if urlPath == "" {
-				return nil // Skip invalid paths
-			}
-			
-			// Determine priority and change frequency based on path
-			priority, changeFreq := s.getURLProperties(urlPath)
-			
-			urls = append(urls, URLEntry{
-				Loc:        baseURL + urlPath,
-				LastMod:    currentTime,
-				ChangeFreq: changeFreq,
-				Priority:   priority,
-			})
-		}
-		
-		return nil
-	})
-	
-	return urls, err
-}
-
-// scanMarkdownContent scans the content directory for markdown files
-func (s *SEOService) scanMarkdownContent(contentDir, baseURL, currentTime string) ([]URLEntry, error) {
-	var urls []URLEntry
-	
-	err := filepath.Walk(contentDir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		
-		if !info.IsDir() && strings.HasSuffix(path, ".md") {
-			// Convert file path to URL path
-			urlPath := s.markdownFilePathToURL(path, contentDir)
-			if urlPath == "" {
-				return nil // Skip invalid paths
-			}
-			
-			// Determine priority and change frequency based on path
-			priority, changeFreq := s.getURLProperties(urlPath)
-			
-			// Try to get actual modification time from file
-			lastMod := currentTime
-			if stat, err := os.Stat(path); err == nil {
-				lastMod = stat.ModTime().Format("2006-01-02")
-			}
-			
-			urls = append(urls, URLEntry{
-				Loc:        baseURL + urlPath,
-				LastMod:    lastMod,
-				ChangeFreq: changeFreq,
-				Priority:   priority,
-			})
-		}
-		
-		return nil
-	})
-	
-	return urls, err
 }
 
 // filePathToURL converts a file path to a URL path
@@ -526,7 +453,7 @@ func (s *SEOService) filePathToURL(filePath, baseDir string) string {
 	// Remove base directory prefix
 	urlPath := strings.TrimPrefix(filePath, baseDir)
 	urlPath = strings.TrimPrefix(urlPath, "/")
-	
+
 	// Skip certain files
 	if strings.Contains(filePath, "copy.html") {
 		return "" // Skip backup files
@@ -534,7 +461,7 @@ func (s *SEOService) filePathToURL(filePath, baseDir string) string {
 	if strings.Contains(filePath, "404.html") {
 		return "" // Skip 404 page from sitemap
 	}
-	
+
 	// Convert index.html to directory URLs
 	if strings.HasSuffix(urlPath, "/index.html") {
 		urlPath = strings.TrimSuffix(urlPath, "/index.html")
@@ -543,7 +470,7 @@ func (s *SEOService) filePathToURL(filePath, baseDir string) string {
 		}
 		return "/" + urlPath + "/"
 	}
-	
+
 	// Convert regular HTML files
 	if strings.HasSuffix(urlPath, ".html") {
 		urlPath = strings.TrimSuffix(urlPath, ".html")
@@ -553,7 +480,7 @@ func (s *SEOService) filePathToURL(filePath, baseDir string) string {
 		}
 		return "/" + urlPath
 	}
-	
+
 	return ""
 }
 
@@ -563,11 +490,11 @@ func (s *SEOService) markdownFilePathToURL(filePath, baseDir string) string {
 	urlPath := strings.TrimPrefix(filePath, baseDir)
 	urlPath = strings.TrimPrefix(urlPath, "/")
 	urlPath = strings.TrimSuffix(urlPath, ".md")
-	
+
 	if urlPath == "" {
 		return ""
 	}
-	
+
 	// Handle index files (remove /index suffix)
 	if strings.HasSuffix(urlPath, "/index") {
 		urlPath = strings.TrimSuffix(urlPath, "/index")
@@ -575,7 +502,7 @@ func (s *SEOService) markdownFilePathToURL(filePath, baseDir string) string {
 			urlPath = baseDir // For content section root
 		}
 	}
-	
+
 	// Apply content type URL mapping
 	contentType, found := s.getContentTypeFromBaseDir(baseDir)
 	if found {
@@ -583,7 +510,7 @@ func (s *SEOService) markdownFilePathToURL(filePath, baseDir string) string {
 		cleanPath := s.cleanPathSegments(urlPath)
 		return contentType.URLPrefix + "/" + cleanPath
 	}
-	
+
 	// Default fallback - clean the path and use as-is
 	cleanPath := s.cleanPathSegments(urlPath)
 	return "/" + cleanPath
@@ -604,11 +531,11 @@ func (s *SEOService) cleanPathSegments(urlPath string) string {
 	if urlPath == "" {
 		return ""
 	}
-	
+
 	// Split path into segments and clean each one
 	segments := strings.Split(urlPath, "/")
 	cleanedSegments := make([]string, 0, len(segments))
-	
+
 	for _, segment := range segments {
 		if segment != "" {
 			// Use CleanID to remove numeric prefixes and normalize
@@ -618,7 +545,7 @@ func (s *SEOService) cleanPathSegments(urlPath string) string {
 			}
 		}
 	}
-	
+
 	return strings.Join(cleanedSegments, "/")
 }
 
@@ -627,7 +554,7 @@ func (s *SEOService) getURLProperties(urlPath string) (priority, changeFreq stri
 	// Default values
 	priority = "0.5"
 	changeFreq = "monthly"
-	
+
 	// High priority pages
 	switch urlPath {
 	case "/":
@@ -640,7 +567,7 @@ func (s *SEOService) getURLProperties(urlPath string) (priority, changeFreq stri
 		priority = "0.8"
 		changeFreq = "monthly"
 	}
-	
+
 	// Category-based priorities
 	if strings.HasPrefix(urlPath, "/platform/") {
 		priority = "0.8"
@@ -661,34 +588,34 @@ func (s *SEOService) getURLProperties(urlPath string) (priority, changeFreq stri
 		priority = "0.4"
 		changeFreq = "weekly"
 	}
-	
+
 	return priority, changeFreq
 }
 
 // scanHTMLPagesForLanguage scans HTML pages for a specific language
 func (s *SEOService) scanHTMLPagesForLanguage(pagesDir, baseURL, currentTime, lang string) ([]URLEntry, error) {
 	var urls []URLEntry
-	
+
 	err := filepath.Walk(pagesDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
-		
+
 		if !info.IsDir() && strings.HasSuffix(path, ".html") {
 			// Convert file path to URL path
 			urlPath := s.filePathToURL(path, pagesDir)
 			if urlPath == "" {
 				return nil // Skip invalid paths
 			}
-			
+
 			// Build language-specific URL
 			if lang != DefaultLanguage {
 				urlPath = "/" + lang + urlPath
 			}
-			
+
 			// Determine priority and change frequency based on path
 			priority, changeFreq := s.getURLProperties(urlPath)
-			
+
 			urls = append(urls, URLEntry{
 				Loc:        baseURL + urlPath,
 				LastMod:    currentTime,
@@ -696,43 +623,43 @@ func (s *SEOService) scanHTMLPagesForLanguage(pagesDir, baseURL, currentTime, la
 				Priority:   priority,
 			})
 		}
-		
+
 		return nil
 	})
-	
+
 	return urls, err
 }
 
 // scanMarkdownContentForLanguage scans markdown content for a specific language
 func (s *SEOService) scanMarkdownContentForLanguage(contentDir, baseURL, currentTime, lang string) ([]URLEntry, error) {
 	var urls []URLEntry
-	
+
 	err := filepath.Walk(contentDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
-		
+
 		if !info.IsDir() && strings.HasSuffix(path, ".md") {
 			// Convert file path to URL path
 			urlPath := s.markdownFilePathToURL(path, contentDir)
 			if urlPath == "" {
 				return nil // Skip invalid paths
 			}
-			
+
 			// Build language-specific URL
 			if lang != DefaultLanguage {
 				urlPath = "/" + lang + urlPath
 			}
-			
+
 			// Determine priority and change frequency based on path
 			priority, changeFreq := s.getURLProperties(urlPath)
-			
+
 			// Try to get actual modification time from file
 			lastMod := currentTime
 			if stat, err := os.Stat(path); err == nil {
 				lastMod = stat.ModTime().Format("2006-01-02")
 			}
-			
+
 			urls = append(urls, URLEntry{
 				Loc:        baseURL + urlPath,
 				LastMod:    lastMod,
@@ -740,9 +667,9 @@ func (s *SEOService) scanMarkdownContentForLanguage(contentDir, baseURL, current
 				Priority:   priority,
 			})
 		}
-		
+
 		return nil
 	})
-	
+
 	return urls, err
 }

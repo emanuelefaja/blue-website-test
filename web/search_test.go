@@ -67,9 +67,9 @@ This is the body.`,
 			expectedContent: "# Just Content\n\nNo frontmatter here.",
 		},
 		{
-			name: "Frontmatter with Windows line endings",
-			content: "---\r\ntitle: Test\r\n---\r\nContent",
-			expectedFM: "title: Test",
+			name:            "Frontmatter with Windows line endings",
+			content:         "---\r\ntitle: Test\r\n---\r\nContent",
+			expectedFM:      "title: Test",
 			expectedContent: "Content",
 		},
 		{
@@ -199,8 +199,8 @@ func TestExtractH1Title(t *testing.T) {
 			expected: "UPPERCASE H1",
 		},
 		{
-			name:     "H1 with line breaks",
-			html:     `<h1>
+			name: "H1 with line breaks",
+			html: `<h1>
 				Multi
 				Line
 				Title
@@ -446,14 +446,18 @@ func TestExtractTextFromHTML(t *testing.T) {
 func TestExtractPageTitle(t *testing.T) {
 	// Create test metadata
 	metadata := &Metadata{
-		Pages: map[string]PageMetadata{
+		Pages: map[string]map[string]PageMetadata{
 			"about": {
-				Title:       "About Blue",
-				Description: "Learn about Blue",
+				"en": {
+					Title:       "About Blue",
+					Description: "Learn about Blue",
+				},
 			},
 			"platform/features": {
-				Title:       "Platform Features",
-				Description: "Feature overview",
+				"en": {
+					Title:       "Platform Features",
+					Description: "Feature overview",
+				},
 			},
 		},
 	}
@@ -522,7 +526,7 @@ func TestExtractPageTitle(t *testing.T) {
 func TestLoadMetadata(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -536,12 +540,16 @@ func TestLoadMetadata(t *testing.T) {
 		metadataContent := `{
 			"pages": {
 				"home": {
-					"title": "Home",
-					"description": "Welcome to Blue"
+					"en": {
+						"title": "Home",
+						"description": "Welcome to Blue"
+					}
 				},
 				"about": {
-					"title": "About",
-					"description": "About Blue"
+					"en": {
+						"title": "About",
+						"description": "About Blue"
+					}
 				}
 			}
 		}`
@@ -556,14 +564,14 @@ func TestLoadMetadata(t *testing.T) {
 			t.Errorf("Expected 2 pages, got %d", len(metadata.Pages))
 		}
 
-		if metadata.Pages["home"].Title != "Home" {
-			t.Errorf("Expected home title 'Home', got %q", metadata.Pages["home"].Title)
+		if metadata.Pages["home"]["en"].Title != "Home" {
+			t.Errorf("Expected home title 'Home', got %q", metadata.Pages["home"]["en"].Title)
 		}
 	})
 
 	t.Run("Missing metadata file", func(t *testing.T) {
 		os.Remove("data/metadata.json")
-		
+
 		_, err := loadMetadata()
 		if err == nil {
 			t.Error("Expected error for missing metadata file")
@@ -572,7 +580,7 @@ func TestLoadMetadata(t *testing.T) {
 
 	t.Run("Invalid JSON in metadata file", func(t *testing.T) {
 		os.WriteFile("data/metadata.json", []byte(`{invalid json}`), 0644)
-		
+
 		_, err := loadMetadata()
 		if err == nil {
 			t.Error("Expected error for invalid JSON")
@@ -584,7 +592,7 @@ func TestLoadMetadata(t *testing.T) {
 func TestWriteSearchIndex(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -641,7 +649,7 @@ func TestWriteSearchIndex(t *testing.T) {
 func TestIndexHTMLPages(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -683,7 +691,7 @@ func TestIndexHTMLPages(t *testing.T) {
 	// Verify URLs
 	expectedURLs := map[string]bool{
 		"/":                  false,
-		"/about":            false,
+		"/about":             false,
 		"/platform/features": false,
 	}
 
@@ -704,7 +712,7 @@ func TestIndexHTMLPages(t *testing.T) {
 	indexedURLs := map[string]bool{
 		"/about": true,
 	}
-	
+
 	var filteredItems []SearchItem
 	err = indexHTMLPages(&filteredItems, nil, indexedURLs)
 	if err != nil {
@@ -721,7 +729,7 @@ func TestIndexHTMLPages(t *testing.T) {
 func TestIndexMarkdownContent(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -801,8 +809,8 @@ API documentation for users.`,
 	}
 }
 
-// TestIndexCachedMarkdownContent tests the indexCachedMarkdownContent function
-func TestIndexCachedMarkdownContent(t *testing.T) {
+// TestIndexCachedMarkdownContentForLanguage tests the indexCachedMarkdownContentForLanguage function
+func TestIndexCachedMarkdownContentForLanguage(t *testing.T) {
 	// Create a mock MarkdownService with cached content
 	markdownService := &MarkdownService{
 		cache: &MarkdownCache{
@@ -810,22 +818,22 @@ func TestIndexCachedMarkdownContent(t *testing.T) {
 		},
 	}
 
-	// Add test content to cache
+	// Add test content to cache with language prefix
 	testContent := map[string]*CachedContent{
-		"/docs/intro": {
+		"en:/docs/intro": {
 			HTML: `<h1>Introduction</h1><p>Welcome to the docs.</p>`,
 			Frontmatter: &Frontmatter{
 				Title:       "Introduction to Blue",
 				Description: "Get started with Blue",
 			},
 		},
-		"/api/projects": {
+		"en:/api/projects": {
 			HTML: `<h1>Projects API</h1><p>Manage projects via API.</p>`,
 			Frontmatter: &Frontmatter{
 				Title: "Projects API Reference",
 			},
 		},
-		"/insights/best-practices": {
+		"en:/insights/best-practices": {
 			HTML: `<h1>Best Practices</h1><p>Learn best practices.</p>`,
 			Frontmatter: &Frontmatter{
 				Title:       "Project Management Best Practices",
@@ -839,7 +847,7 @@ func TestIndexCachedMarkdownContent(t *testing.T) {
 	}
 
 	var items []SearchItem
-	err := indexCachedMarkdownContent(&items, markdownService)
+	err := indexCachedMarkdownContentForLanguage(&items, markdownService, "en")
 	if err != nil {
 		t.Fatalf("Failed to index cached markdown content: %v", err)
 	}
@@ -888,8 +896,8 @@ func TestIndexCachedMarkdownContent(t *testing.T) {
 	}
 }
 
-// TestIndexCachedHTMLPages tests the indexCachedHTMLPages function
-func TestIndexCachedHTMLPages(t *testing.T) {
+// TestIndexCachedHTMLPagesForLanguage tests the indexCachedHTMLPagesForLanguage function
+func TestIndexCachedHTMLPagesForLanguage(t *testing.T) {
 	// Create mock services
 	htmlService := &HTMLService{
 		cache: &HTMLCache{
@@ -898,25 +906,27 @@ func TestIndexCachedHTMLPages(t *testing.T) {
 	}
 
 	metadata := &Metadata{
-		Pages: map[string]PageMetadata{
+		Pages: map[string]map[string]PageMetadata{
 			"pricing": {
-				Title:       "Pricing Plans",
-				Description: "Choose the right plan for your team",
+				"en": {
+					Title:       "Pricing Plans",
+					Description: "Choose the right plan for your team",
+				},
 			},
 		},
 	}
 
-	// Add test content to cache
+	// Add test content to cache with language prefix
 	testContent := map[string]*CachedContent{
-		"/": {
+		"en:/": {
 			HTML:     `<h1>Welcome to Blue</h1><p>Task management made simple.</p>`,
 			FilePath: "pages/index.html",
 		},
-		"/pricing": {
+		"en:/pricing": {
 			HTML:     `<h1>Pricing</h1><p>Our pricing plans.</p>`,
 			FilePath: "pages/pricing.html",
 		},
-		"/platform/features/views": {
+		"en:/platform/features/views": {
 			HTML:     `<h1>Multiple Views</h1><p>View your tasks your way.</p>`,
 			FilePath: "pages/platform/features/views.html",
 		},
@@ -927,7 +937,7 @@ func TestIndexCachedHTMLPages(t *testing.T) {
 	}
 
 	var items []SearchItem
-	err := indexCachedHTMLPages(&items, htmlService, metadata)
+	err := indexCachedHTMLPagesForLanguage(&items, htmlService, metadata, "en")
 	if err != nil {
 		t.Fatalf("Failed to index cached HTML pages: %v", err)
 	}
@@ -973,7 +983,7 @@ func TestIndexCachedHTMLPages(t *testing.T) {
 func TestGenerateSearchIndex(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -1029,7 +1039,7 @@ Guide content here.`), 0644)
 func TestGenerateSearchIndexWithCache(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -1097,7 +1107,7 @@ func TestGenerateSearchIndexWithCache(t *testing.T) {
 func TestGenerateSearchIndexWithCaches(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -1187,7 +1197,7 @@ func TestGenerateSearchIndexWithCaches(t *testing.T) {
 func TestMarkdownURLCleaning(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -1216,10 +1226,10 @@ func TestMarkdownURLCleaning(t *testing.T) {
 
 	// Check URL cleaning
 	expectedURLs := map[string]string{
-		"/docs/introduction":            "Introduction",
-		"/docs/getting-started":         "getting started",
+		"/docs/introduction":             "Introduction",
+		"/docs/getting-started":          "getting started",
 		"/docs/guides/advanced-features": "advanced features",
-		"/api/users":                    "users",
+		"/api/users":                     "users",
 	}
 
 	for _, item := range items {
@@ -1239,7 +1249,7 @@ func TestMarkdownURLCleaning(t *testing.T) {
 func TestConcurrentSearchIndexGeneration(t *testing.T) {
 	// Create a temporary directory for testing
 	testDir := t.TempDir()
-	
+
 	// Change to test directory
 	originalWd, _ := os.Getwd()
 	os.Chdir(testDir)
@@ -1291,7 +1301,7 @@ title:
 description: 
 ---
 Content`)
-		
+
 		if !strings.Contains(fm, "title:") {
 			t.Error("Expected frontmatter to contain empty title field")
 		}
@@ -1300,7 +1310,7 @@ Content`)
 	t.Run("Very long content", func(t *testing.T) {
 		longContent := strings.Repeat("This is a very long content. ", 1000)
 		html := "<h1>Title</h1><p>" + longContent + "</p>"
-		
+
 		result := extractTextFromHTML(html)
 		if !strings.Contains(result, "This is a very long content") {
 			t.Error("Failed to extract long content")
@@ -1329,7 +1339,7 @@ Content`)
 				var code = '<script>nested</script>';
 			</script>
 			<p>Content</p>`
-		
+
 		result := extractTextFromHTML(html)
 		if strings.Contains(result, "nested") || strings.Contains(result, "var code") {
 			t.Error("Script content should be completely removed")

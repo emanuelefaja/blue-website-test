@@ -55,11 +55,6 @@ func (cs *ContentService) FindMarkdownFileForLang(path, lang string) (string, er
 	return "", os.ErrNotExist
 }
 
-// findNumberedMarkdownFile handles finding files with numeric prefixes
-func (cs *ContentService) findNumberedMarkdownFile(cleanPath string, contentType ContentType) (string, error) {
-	return cs.findNumberedMarkdownFileForLang(cleanPath, contentType, DefaultLanguage)
-}
-
 // findNumberedMarkdownFileForLang handles finding language-specific files with numeric prefixes
 func (cs *ContentService) findNumberedMarkdownFileForLang(cleanPath string, contentType ContentType, lang string) (string, error) {
 	parts := strings.Split(cleanPath, "/")

@@ -158,7 +158,6 @@ type HealthChecker struct {
 	d1Client      *D1Client
 	cache         *sync.Map // Thread-safe map for caching
 	lastCheckTime *sync.Map // Last check time for each service
-	mu            sync.RWMutex
 }
 
 // NewHealthChecker creates a new health checker
@@ -242,15 +241,15 @@ func (h *HealthChecker) loadHistoricalData() error {
 			serviceName, _ := row["service_name"].(string)
 			status, _ := row["status"].(string)
 			checkedAtStr, _ := row["checked_at"].(string)
-			
+
 			checkedAt, _ := time.Parse(time.RFC3339, checkedAtStr)
-			
+
 			check := CheckResult{
 				ServiceName: serviceName,
 				Status:      status,
 				CheckedAt:   checkedAt,
 			}
-			
+
 			h.addToCache(check)
 		}
 	}
@@ -261,16 +260,16 @@ func (h *HealthChecker) loadHistoricalData() error {
 // addToCache adds a check result to the cache
 func (h *HealthChecker) addToCache(result CheckResult) {
 	key := fmt.Sprintf("%s:%s", result.ServiceName, result.CheckedAt.Format("2006-01-02"))
-	
+
 	// Get existing checks for this service/day
 	var checks []CheckResult
 	if existing, ok := h.cache.Load(key); ok {
 		checks = existing.([]CheckResult)
 	}
-	
+
 	checks = append(checks, result)
 	h.cache.Store(key, checks)
-	
+
 	// Update last check time
 	h.lastCheckTime.Store(result.ServiceName, result.CheckedAt)
 }
@@ -298,7 +297,7 @@ func (h *HealthChecker) CheckService(service Service) CheckResult {
 			status = "down"
 		}
 	}
-	
+
 	if resp != nil {
 		resp.Body.Close()
 	}
@@ -312,7 +311,7 @@ func (h *HealthChecker) CheckService(service Service) CheckResult {
 
 	// Store result in D1
 	h.storeResult(result)
-	
+
 	// Add to cache
 	h.addToCache(result)
 
@@ -341,13 +340,13 @@ func (h *HealthChecker) storeResult(result CheckResult) {
 func (h *HealthChecker) hasRecentCheck() bool {
 	sql := `SELECT COUNT(*) as count FROM service_checks 
 			WHERE checked_at >= datetime('now', '-5 minutes')`
-	
+
 	resp, err := h.d1Client.Query(sql)
 	if err != nil {
 		log.Printf("Failed to check for recent checks: %v", err)
 		return false // If we can't check, assume no recent checks and proceed
 	}
-	
+
 	for _, result := range resp.Result {
 		for _, row := range result.Results {
 			if count, ok := row["count"].(float64); ok {
@@ -355,7 +354,7 @@ func (h *HealthChecker) hasRecentCheck() bool {
 			}
 		}
 	}
-	
+
 	return false
 }
 
@@ -365,7 +364,7 @@ func (h *HealthChecker) CheckAllServicesIfNeeded() {
 		log.Println("⏭️  Recent health checks found (within last 5 minutes), skipping new checks")
 		return
 	}
-	
+
 	log.Println("🏥 No recent health checks found, performing health checks on all services")
 	h.CheckAllServices()
 }
@@ -386,7 +385,7 @@ func (h *HealthChecker) CheckAllServices() {
 // GetCurrentStatus returns the current status of all services
 func (h *HealthChecker) GetCurrentStatus() []ServiceStatus {
 	var statuses []ServiceStatus
-	
+
 	for _, service := range monitoredServices {
 		// Get last check time
 		var lastChecked string
@@ -396,17 +395,17 @@ func (h *HealthChecker) GetCurrentStatus() []ServiceStatus {
 		} else {
 			lastChecked = "Never"
 		}
-		
+
 		// Get current status from latest check
 		status := h.getLatestStatus(service.Name)
-		
+
 		statuses = append(statuses, ServiceStatus{
 			Name:        service.Name,
 			Status:      status,
 			LastChecked: lastChecked,
 		})
 	}
-	
+
 	return statuses
 }
 
@@ -414,7 +413,7 @@ func (h *HealthChecker) GetCurrentStatus() []ServiceStatus {
 func (h *HealthChecker) getLatestStatus(serviceName string) string {
 	today := time.Now().UTC().Format("2006-01-02")
 	key := fmt.Sprintf("%s:%s", serviceName, today)
-	
+
 	if checks, ok := h.cache.Load(key); ok {
 		checkList := checks.([]CheckResult)
 		if len(checkList) > 0 {
@@ -422,18 +421,18 @@ func (h *HealthChecker) getLatestStatus(serviceName string) string {
 			return checkList[len(checkList)-1].Status
 		}
 	}
-	
+
 	return "unknown"
 }
 
 // GetHistoricalData returns 90-day history for all services
 func (h *HealthChecker) GetHistoricalData() []ServiceHistory {
 	var histories []ServiceHistory
-	
+
 	for _, service := range monitoredServices {
 		days := make([]DayData, 0, 90)
 		totalUptime := 0.0
-		
+
 		// Generate data for last 90 days
 		for i := 89; i >= 0; i-- {
 			date := time.Now().UTC().AddDate(0, 0, -i)
@@ -441,24 +440,24 @@ func (h *HealthChecker) GetHistoricalData() []ServiceHistory {
 			days = append(days, dayData)
 			totalUptime += dayData.Uptime
 		}
-		
+
 		// Calculate overall uptime
 		overallUptime := totalUptime / 90.0
-		
+
 		histories = append(histories, ServiceHistory{
 			Name:   service.Name,
 			Uptime: overallUptime,
 			Days:   days,
 		})
 	}
-	
+
 	return histories
 }
 
 // getDayDataForService returns status data for a specific service and day
 func (h *HealthChecker) getDayDataForService(serviceName string, date time.Time) DayData {
 	key := fmt.Sprintf("%s:%s", serviceName, date.Format("2006-01-02"))
-	
+
 	// Check cache for data
 	if checks, ok := h.cache.Load(key); ok {
 		checkList := checks.([]CheckResult)
@@ -470,7 +469,7 @@ func (h *HealthChecker) getDayDataForService(serviceName string, date time.Time)
 					upCount++
 				}
 			}
-			
+
 			uptime := (float64(upCount) / float64(len(checkList))) * 100
 			status := "operational"
 			if uptime < 99 {
@@ -479,7 +478,7 @@ func (h *HealthChecker) getDayDataForService(serviceName string, date time.Time)
 			if uptime < 95 {
 				status = "outage"
 			}
-			
+
 			return DayData{
 				Date:   date.Format("2006-01-02"),
 				Status: status,
@@ -487,7 +486,7 @@ func (h *HealthChecker) getDayDataForService(serviceName string, date time.Time)
 			}
 		}
 	}
-	
+
 	// No data = assume operational
 	return DayData{
 		Date:   date.Format("2006-01-02"),
@@ -531,13 +530,13 @@ func StatusPageHandler(checker *HealthChecker) http.HandlerFunc {
 func CurrentStatusAPIHandler(checker *HealthChecker) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		
+
 		statuses := checker.GetCurrentStatus()
-		
+
 		response := map[string]interface{}{
 			"services": statuses,
 		}
-		
+
 		if err := json.NewEncoder(w).Encode(response); err != nil {
 			log.Printf("Failed to encode current status response: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
@@ -549,13 +548,13 @@ func CurrentStatusAPIHandler(checker *HealthChecker) http.HandlerFunc {
 func HistoricalDataAPIHandler(checker *HealthChecker) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		
+
 		histories := checker.GetHistoricalData()
-		
+
 		response := map[string]interface{}{
 			"services": histories,
 		}
-		
+
 		if err := json.NewEncoder(w).Encode(response); err != nil {
 			log.Printf("Failed to encode historical data response: %v", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
