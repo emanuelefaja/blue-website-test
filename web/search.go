@@ -107,20 +107,42 @@ func GenerateSearchIndexWithCaches(markdownService *MarkdownService, htmlService
 		itemsByLanguage[lang] = append(itemsByLanguage[lang], item)
 	}
 
-	// Generate search index for each language
+	// Generate search index for each language in parallel
+	type languageResult struct {
+		lang string
+		err  error
+	}
+	
+	resultChan := make(chan languageResult, len(itemsByLanguage))
+	
+	// Process each language concurrently
 	for lang, items := range itemsByLanguage {
-		filename := "public/searchIndex.json"
-		if lang != DefaultLanguage {
-			filename = fmt.Sprintf("public/searchIndex-%s.json", lang)
-		}
-		
-		data, err := json.MarshalIndent(items, "", "  ")
-		if err != nil {
-			return fmt.Errorf("failed to marshal search index for language %s: %w", lang, err)
-		}
-		
-		if err := os.WriteFile(filename, data, 0644); err != nil {
-			return fmt.Errorf("failed to write search index for language %s: %w", lang, err)
+		go func(lang string, items []SearchItem) {
+			filename := "public/searchIndex.json"
+			if lang != DefaultLanguage {
+				filename = fmt.Sprintf("public/searchIndex-%s.json", lang)
+			}
+			
+			data, err := json.MarshalIndent(items, "", "  ")
+			if err != nil {
+				resultChan <- languageResult{lang, fmt.Errorf("failed to marshal search index for language %s: %w", lang, err)}
+				return
+			}
+			
+			if err := os.WriteFile(filename, data, 0644); err != nil {
+				resultChan <- languageResult{lang, fmt.Errorf("failed to write search index for language %s: %w", lang, err)}
+				return
+			}
+			
+			resultChan <- languageResult{lang, nil}
+		}(lang, items)
+	}
+	
+	// Wait for all languages to complete and check for errors
+	for i := 0; i < len(itemsByLanguage); i++ {
+		result := <-resultChan
+		if result.err != nil {
+			return result.err
 		}
 	}
 
