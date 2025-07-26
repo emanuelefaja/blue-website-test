@@ -1458,140 +1458,546 @@
     {
       "id": "api-reference",
       "name": {
-        "en": "API Reference"
+        "en": "API Reference",
+        "es": "Referencia de API",
+        "zh": "API 参考",
+        "fr": "Référence API",
+        "de": "API-Referenz",
+        "ja": "API リファレンス",
+        "pt": "Referência da API",
+        "ru": "Справочник API",
+        "ko": "API 레퍼런스",
+        "it": "Riferimento API",
+        "id": "Referensi API",
+        "nl": "API Referentie",
+        "pl": "Dokumentacja API",
+        "zh-TW": "API 參考",
+        "sv": "API-referens",
+        "km": "ឯកសារយោង API"
       },
       "expanded": false,
       "children": [
         {
           "id": "api-start-guide",
-          "name": {"en": "Start Guide"},
+          "name": {
+            "en": "Start Guide",
+            "es": "Guía de inicio",
+            "zh": "入门指南",
+            "fr": "Guide de démarrage",
+            "de": "Erste Schritte",
+            "ja": "スタートガイド",
+            "pt": "Guia de início",
+            "ru": "Руководство по началу работы",
+            "ko": "시작 가이드",
+            "it": "Guida iniziale",
+            "id": "Panduan Memulai",
+            "nl": "Startgids",
+            "pl": "Przewodnik startowy",
+            "zh-TW": "入門指南",
+            "sv": "Startguide",
+            "km": "មគ្គុទ្ទេសក៍ចាប់ផ្តើម"
+          },
           "expanded": false,
           "children": [
-            {"id": "api-start-guide-introduction", "name": {"en": "Introduction"}, "href": "/api/start-guide/introduction"},
-            {"id": "api-start-guide-authentication", "name": {"en": "Authentication"}, "href": "/api/start-guide/authentication"},
-            {"id": "api-start-guide-making-requests", "name": {"en": "Making Requests"}, "href": "/api/start-guide/making-requests"},
-            {"id": "api-start-guide-graphql-playground", "name": {"en": "GraphQL Playground"}, "href": "/api/start-guide/graphql-playground"},
-            {"id": "api-start-guide-capabilities", "name": {"en": "Capabilities"}, "href": "/api/start-guide/capabilities"},
-            {"id": "api-start-guide-rate-limits", "name": {"en": "Rate Limits"}, "href": "/api/start-guide/rate-limits"},
-            {"id": "api-start-guide-upload-files", "name": {"en": "Uploading Files"}, "href": "/api/start-guide/upload-files"}
+            {
+              "id": "api-start-guide-introduction",
+              "name": {
+                "en": "Introduction",
+                "es": "Introducción",
+                "zh": "介绍",
+                "fr": "Introduction",
+                "de": "Einführung",
+                "ja": "はじめに",
+                "pt": "Introdução",
+                "ru": "Введение",
+                "ko": "소개",
+                "it": "Introduzione",
+                "id": "Pengantar",
+                "nl": "Inleiding",
+                "pl": "Wprowadzenie",
+                "zh-TW": "介紹",
+                "sv": "Introduktion",
+                "km": "ការណែនាំ"
+              },
+              "href": "/api/start-guide/introduction"
+            },
+            {
+              "id": "api-start-guide-authentication",
+              "name": {
+                "en": "Authentication",
+                "es": "Autenticación",
+                "zh": "身份验证",
+                "fr": "Authentification",
+                "de": "Authentifizierung",
+                "ja": "認証",
+                "pt": "Autenticação",
+                "ru": "Аутентификация",
+                "ko": "인증",
+                "it": "Autenticazione",
+                "id": "Autentikasi",
+                "nl": "Authenticatie",
+                "pl": "Uwierzytelnianie",
+                "zh-TW": "身份驗證",
+                "sv": "Autentisering",
+                "km": "ការផ្ទៀងផ្ទាត់"
+              },
+              "href": "/api/start-guide/authentication"
+            },
+            {
+              "id": "api-start-guide-making-requests",
+              "name": {
+                "en": "Making Requests",
+                "es": "Hacer solicitudes",
+                "zh": "发出请求",
+                "fr": "Faire des requêtes",
+                "de": "Anfragen stellen",
+                "ja": "リクエストの作成",
+                "pt": "Fazendo solicitações",
+                "ru": "Выполнение запросов",
+                "ko": "요청하기",
+                "it": "Fare richieste",
+                "id": "Membuat Permintaan",
+                "nl": "Verzoeken maken",
+                "pl": "Wykonywanie żądań",
+                "zh-TW": "發出請求",
+                "sv": "Göra förfrågningar",
+                "km": "ធ្វើសំណើ"
+              },
+              "href": "/api/start-guide/making-requests"
+            },
+            {
+              "id": "api-start-guide-graphql-playground",
+              "name": {
+                "en": "GraphQL Playground",
+                "es": "Playground de GraphQL",
+                "zh": "GraphQL 演练场",
+                "fr": "Terrain de jeu GraphQL",
+                "de": "GraphQL Playground",
+                "ja": "GraphQL プレイグラウンド",
+                "pt": "Playground GraphQL",
+                "ru": "GraphQL Playground",
+                "ko": "GraphQL 플레이그라운드",
+                "it": "GraphQL Playground",
+                "id": "GraphQL Playground",
+                "nl": "GraphQL Playground",
+                "pl": "GraphQL Playground",
+                "zh-TW": "GraphQL 演練場",
+                "sv": "GraphQL Playground",
+                "km": "GraphQL Playground"
+              },
+              "href": "/api/start-guide/graphql-playground"
+            },
+            {
+              "id": "api-start-guide-capabilities",
+              "name": {
+                "en": "Capabilities",
+                "es": "Capacidades",
+                "zh": "功能",
+                "fr": "Capacités",
+                "de": "Fähigkeiten",
+                "ja": "機能",
+                "pt": "Capacidades",
+                "ru": "Возможности",
+                "ko": "기능",
+                "it": "Capacità",
+                "id": "Kemampuan",
+                "nl": "Mogelijkheden",
+                "pl": "Możliwości",
+                "zh-TW": "功能",
+                "sv": "Funktioner",
+                "km": "សមត្ថភាព"
+              },
+              "href": "/api/start-guide/capabilities"
+            },
+            {
+              "id": "api-start-guide-rate-limits",
+              "name": {
+                "en": "Rate Limits",
+                "es": "Límites de velocidad",
+                "zh": "速率限制",
+                "fr": "Limites de débit",
+                "de": "Ratenbegrenzungen",
+                "ja": "レート制限",
+                "pt": "Limites de taxa",
+                "ru": "Ограничения скорости",
+                "ko": "속도 제한",
+                "it": "Limiti di velocità",
+                "id": "Batas Tingkat",
+                "nl": "Snelheidslimieten",
+                "pl": "Limity szybkości",
+                "zh-TW": "速率限制",
+                "sv": "Hastighetsbegränsningar",
+                "km": "ដែនកំណត់អត្រា"
+              },
+              "href": "/api/start-guide/rate-limits"
+            },
+            {
+              "id": "api-start-guide-upload-files",
+              "name": {
+                "en": "Uploading Files",
+                "es": "Subir archivos",
+                "zh": "上传文件",
+                "fr": "Téléchargement de fichiers",
+                "de": "Dateien hochladen",
+                "ja": "ファイルのアップロード",
+                "pt": "Envio de arquivos",
+                "ru": "Загрузка файлов",
+                "ko": "파일 업로드",
+                "it": "Caricamento file",
+                "id": "Mengunggah File",
+                "nl": "Bestanden uploaden",
+                "pl": "Przesyłanie plików",
+                "zh-TW": "上傳檔案",
+                "sv": "Ladda upp filer",
+                "km": "បញ្ចូលឯកសារ"
+              },
+              "href": "/api/start-guide/upload-files"
+            }
           ]
         },
         {
           "id": "api-projects",
-          "name": {"en": "Projects"},
+          "name": {
+            "en": "Projects",
+            "es": "Proyectos",
+            "zh": "项目",
+            "fr": "Projets",
+            "de": "Projekte",
+            "ja": "プロジェクト",
+            "pt": "Projetos",
+            "ru": "Проекты",
+            "ko": "프로젝트",
+            "it": "Progetti",
+            "id": "Proyek",
+            "nl": "Projecten",
+            "pl": "Projekty",
+            "zh-TW": "專案",
+            "sv": "Projekt",
+            "km": "គម្រោង"
+          },
           "expanded": false,
           "children": [
-            {"id": "api-projects-index", "name": {"en": "Projects API"}, "href": "/api/projects/index"},
-            {"id": "api-projects-create-project", "name": {"en": "Create a Project"}, "href": "/api/projects/create-project"},
-            {"id": "api-projects-delete-project", "name": {"en": "Delete Project"}, "href": "/api/projects/delete-project"},
-            {"id": "api-projects-list-projects", "name": {"en": "List all Projects"}, "href": "/api/projects/list-projects"},
-            {"id": "api-projects-archive-project", "name": {"en": "Archive Project"}, "href": "/api/projects/archive-project"},
-            {"id": "api-projects-project-activity", "name": {"en": "Project Activity"}, "href": "/api/projects/project-activity"},
-            {"id": "api-projects-rename-project", "name": {"en": "Rename Project"}, "href": "/api/projects/rename-project"},
-            {"id": "api-projects-copy-project", "name": {"en": "Copy a Project"}, "href": "/api/projects/copy-project"},
-            {"id": "api-projects-lists", "name": {"en": "Lists"}, "href": "/api/projects/lists"},
-            {"id": "api-projects-templates", "name": {"en": "Templates"}, "href": "/api/projects/templates"}
+            {
+              "id": "api-projects-index",
+              "name": {
+                "en": "Projects API",
+                "es": "API de Proyectos",
+                "zh": "项目 API",
+                "fr": "API des Projets",
+                "de": "Projekte-API",
+                "ja": "プロジェクト API",
+                "pt": "API de Projetos",
+                "ru": "API проектов",
+                "ko": "프로젝트 API",
+                "it": "API Progetti",
+                "id": "API Proyek",
+                "nl": "Projecten API",
+                "pl": "API Projektów",
+                "zh-TW": "專案 API",
+                "sv": "Projekt API",
+                "km": "API គម្រោង"
+              },
+              "href": "/api/projects/index"
+            },
+            {
+              "id": "api-projects-create-project",
+              "name": {
+                "en": "Create a Project",
+                "es": "Crear un Proyecto",
+                "zh": "创建项目",
+                "fr": "Créer un Projet",
+                "de": "Projekt erstellen",
+                "ja": "プロジェクトを作成",
+                "pt": "Criar um Projeto",
+                "ru": "Создать проект",
+                "ko": "프로젝트 생성",
+                "it": "Crea un Progetto",
+                "id": "Buat Proyek",
+                "nl": "Project aanmaken",
+                "pl": "Utwórz Projekt",
+                "zh-TW": "建立專案",
+                "sv": "Skapa ett Projekt",
+                "km": "បង្កើតគម្រោង"
+              },
+              "href": "/api/projects/create-project"
+            },
+            {
+              "id": "api-projects-delete-project",
+              "name": {
+                "en": "Delete Project",
+                "es": "Eliminar Proyecto",
+                "zh": "删除项目",
+                "fr": "Supprimer le Projet",
+                "de": "Projekt löschen",
+                "ja": "プロジェクトを削除",
+                "pt": "Excluir Projeto",
+                "ru": "Удалить проект",
+                "ko": "프로젝트 삭제",
+                "it": "Elimina Progetto",
+                "id": "Hapus Proyek",
+                "nl": "Project verwijderen",
+                "pl": "Usuń Projekt",
+                "zh-TW": "刪除專案",
+                "sv": "Ta bort Projekt",
+                "km": "លុបគម្រោង"
+              },
+              "href": "/api/projects/delete-project"
+            },
+            {
+              "id": "api-projects-list-projects",
+              "name": {
+                "en": "List all Projects",
+                "es": "Listar todos los Proyectos",
+                "zh": "列出所有项目",
+                "fr": "Lister tous les Projets",
+                "de": "Alle Projekte auflisten",
+                "ja": "すべてのプロジェクトを一覧表示",
+                "pt": "Listar todos os Projetos",
+                "ru": "Список всех проектов",
+                "ko": "모든 프로젝트 나열",
+                "it": "Elenca tutti i Progetti",
+                "id": "Daftar semua Proyek",
+                "nl": "Alle projecten weergeven",
+                "pl": "Wyświetl wszystkie Projekty",
+                "zh-TW": "列出所有專案",
+                "sv": "Lista alla Projekt",
+                "km": "បញ្ជីគម្រោងទាំងអស់"
+              },
+              "href": "/api/projects/list-projects"
+            },
+            {
+              "id": "api-projects-archive-project",
+              "name": {
+                "en": "Archive Project",
+                "es": "Archivar Proyecto",
+                "zh": "归档项目",
+                "fr": "Archiver le Projet",
+                "de": "Projekt archivieren",
+                "ja": "プロジェクトをアーカイブ",
+                "pt": "Arquivar Projeto",
+                "ru": "Архивировать проект",
+                "ko": "프로젝트 보관",
+                "it": "Archivia Progetto",
+                "id": "Arsipkan Proyek",
+                "nl": "Project archiveren",
+                "pl": "Zarchiwizuj Projekt",
+                "zh-TW": "封存專案",
+                "sv": "Arkivera Projekt",
+                "km": "ទុកបណ្ណសារគម្រោង"
+              },
+              "href": "/api/projects/archive-project"
+            },
+            {
+              "id": "api-projects-project-activity",
+              "name": {
+                "en": "Project Activity",
+                "es": "Actividad del Proyecto",
+                "zh": "项目活动",
+                "fr": "Activité du Projet",
+                "de": "Projektaktivität",
+                "ja": "プロジェクトアクティビティ",
+                "pt": "Atividade do Projeto",
+                "ru": "Активность проекта",
+                "ko": "프로젝트 활동",
+                "it": "Attività del Progetto",
+                "id": "Aktivitas Proyek",
+                "nl": "Projectactiviteit",
+                "pl": "Aktywność Projektu",
+                "zh-TW": "專案活動",
+                "sv": "Projektaktivitet",
+                "km": "សកម្មភាពគម្រោង"
+              },
+              "href": "/api/projects/project-activity"
+            },
+            {
+              "id": "api-projects-rename-project",
+              "name": {
+                "en": "Rename Project",
+                "es": "Renombrar Proyecto",
+                "zh": "重命名项目",
+                "fr": "Renommer le Projet",
+                "de": "Projekt umbenennen",
+                "ja": "プロジェクト名を変更",
+                "pt": "Renomear Projeto",
+                "ru": "Переименовать проект",
+                "ko": "프로젝트 이름 변경",
+                "it": "Rinomina Progetto",
+                "id": "Ubah Nama Proyek",
+                "nl": "Project hernoemen",
+                "pl": "Zmień nazwę Projektu",
+                "zh-TW": "重新命名專案",
+                "sv": "Byt namn på Projekt",
+                "km": "ប្តូរឈ្មោះគម្រោង"
+              },
+              "href": "/api/projects/rename-project"
+            },
+            {
+              "id": "api-projects-copy-project",
+              "name": {
+                "en": "Copy a Project",
+                "es": "Copiar un Proyecto",
+                "zh": "复制项目",
+                "fr": "Copier un Projet",
+                "de": "Projekt kopieren",
+                "ja": "プロジェクトをコピー",
+                "pt": "Copiar um Projeto",
+                "ru": "Копировать проект",
+                "ko": "프로젝트 복사",
+                "it": "Copia un Progetto",
+                "id": "Salin Proyek",
+                "nl": "Project kopiëren",
+                "pl": "Skopiuj Projekt",
+                "zh-TW": "複製專案",
+                "sv": "Kopiera ett Projekt",
+                "km": "ចម្លងគម្រោង"
+              },
+              "href": "/api/projects/copy-project"
+            },
+            {
+              "id": "api-projects-lists",
+              "name": {
+                "en": "Lists",
+                "es": "Listas",
+                "zh": "列表",
+                "fr": "Listes",
+                "de": "Listen",
+                "ja": "リスト",
+                "pt": "Listas",
+                "ru": "Списки",
+                "ko": "목록",
+                "it": "Elenchi",
+                "id": "Daftar",
+                "nl": "Lijsten",
+                "pl": "Listy",
+                "zh-TW": "清單",
+                "sv": "Listor",
+                "km": "បញ្ជី"
+              },
+              "href": "/api/projects/lists"
+            },
+            {
+              "id": "api-projects-templates",
+              "name": {
+                "en": "Templates",
+                "es": "Plantillas",
+                "zh": "模板",
+                "fr": "Modèles",
+                "de": "Vorlagen",
+                "ja": "テンプレート",
+                "pt": "Modelos",
+                "ru": "Шаблоны",
+                "ko": "템플릿",
+                "it": "Modelli",
+                "id": "Template",
+                "nl": "Sjablonen",
+                "pl": "Szablony",
+                "zh-TW": "範本",
+                "sv": "Mallar",
+                "km": "គំរូ"
+              },
+              "href": "/api/projects/templates"
+            }
           ]
         },
         {
           "id": "api-records",
-          "name": {"en": "Records"},
+          "name": {"en": "Records", "es": "Registros", "zh": "记录", "fr": "Enregistrements", "de": "Datensätze", "ja": "レコード", "pt": "Registros", "ru": "Записи", "ko": "레코드", "it": "Record", "id": "Catatan", "nl": "Records", "pl": "Rekordy", "zh-TW": "記錄", "sv": "Poster", "km": "កំណត់ត្រា"},
           "expanded": false,
           "children": [
-            {"id": "api-records-index", "name": {"en": "Create a Record"}, "href": "/api/records/index"},
-            {"id": "api-records-list-records", "name": {"en": "List Records"}, "href": "/api/records/list-records"},
-            {"id": "api-records-toggle-record-status", "name": {"en": "Toggle Record Status"}, "href": "/api/records/toggle-record-status"},
-            {"id": "api-records-tags", "name": {"en": "Tags"}, "href": "/api/records/tags"},
-            {"id": "api-records-move-record-list", "name": {"en": "Move Record to List"}, "href": "/api/records/move-record-list"},
-            {"id": "api-records-assignees", "name": {"en": "Assign Record"}, "href": "/api/records/assignees"},
-            {"id": "api-records-update-record", "name": {"en": "Update Record"}, "href": "/api/records/update-record"},
-            {"id": "api-records-copy-record", "name": {"en": "Copy Record"}, "href": "/api/records/copy-record"},
-            {"id": "api-records-add-comment", "name": {"en": "Add Comment"}, "href": "/api/records/add-comment"}
+            {"id": "api-records-index", "name": {"en": "Create a Record", "es": "Crear un Registro", "zh": "创建记录", "fr": "Créer un Enregistrement", "de": "Datensatz erstellen", "ja": "レコードを作成", "pt": "Criar um Registro", "ru": "Создать запись", "ko": "레코드 생성", "it": "Crea un Record", "id": "Buat Catatan", "nl": "Record aanmaken", "pl": "Utwórz Rekord", "zh-TW": "建立記錄", "sv": "Skapa en Post", "km": "បង្កើតកំណត់ត្រា"}, "href": "/api/records/index"},
+            {"id": "api-records-list-records", "name": {"en": "List Records", "es": "Listar Registros", "zh": "列出记录", "fr": "Lister les Enregistrements", "de": "Datensätze auflisten", "ja": "レコードを一覧表示", "pt": "Listar Registros", "ru": "Список записей", "ko": "레코드 나열", "it": "Elenca Record", "id": "Daftar Catatan", "nl": "Records weergeven", "pl": "Wyświetl Rekordy", "zh-TW": "列出記錄", "sv": "Lista Poster", "km": "បញ្ជីកំណត់ត្រា"}, "href": "/api/records/list-records"},
+            {"id": "api-records-toggle-record-status", "name": {"en": "Toggle Record Status", "es": "Alternar Estado del Registro", "zh": "切换记录状态", "fr": "Basculer le Statut de l'Enregistrement", "de": "Datensatzstatus umschalten", "ja": "レコードステータスを切り替え", "pt": "Alternar Status do Registro", "ru": "Переключить статус записи", "ko": "레코드 상태 전환", "it": "Cambia Stato Record", "id": "Ubah Status Catatan", "nl": "Record status wijzigen", "pl": "Przełącz Status Rekordu", "zh-TW": "切換記錄狀態", "sv": "Växla Poststatus", "km": "ប្តូរស្ថានភាពកំណត់ត្រា"}, "href": "/api/records/toggle-record-status"},
+            {"id": "api-records-tags", "name": {"en": "Tags", "es": "Etiquetas", "zh": "标签", "fr": "Étiquettes", "de": "Tags", "ja": "タグ", "pt": "Tags", "ru": "Теги", "ko": "태그", "it": "Tag", "id": "Tag", "nl": "Tags", "pl": "Tagi", "zh-TW": "標籤", "sv": "Taggar", "km": "ស្លាក"}, "href": "/api/records/tags"},
+            {"id": "api-records-move-record-list", "name": {"en": "Move Record to List", "es": "Mover Registro a Lista", "zh": "将记录移至列表", "fr": "Déplacer l'Enregistrement vers la Liste", "de": "Datensatz zu Liste verschieben", "ja": "レコードをリストに移動", "pt": "Mover Registro para Lista", "ru": "Переместить запись в список", "ko": "레코드를 목록으로 이동", "it": "Sposta Record in Elenco", "id": "Pindahkan Catatan ke Daftar", "nl": "Record naar lijst verplaatsen", "pl": "Przenieś Rekord do Listy", "zh-TW": "將記錄移至清單", "sv": "Flytta Post till Lista", "km": "ផ្លាស់ទីកំណត់ត្រាទៅបញ្ជី"}, "href": "/api/records/move-record-list"},
+            {"id": "api-records-assignees", "name": {"en": "Assign Record", "es": "Asignar Registro", "zh": "分配记录", "fr": "Assigner l'Enregistrement", "de": "Datensatz zuweisen", "ja": "レコードを割り当て", "pt": "Atribuir Registro", "ru": "Назначить запись", "ko": "레코드 할당", "it": "Assegna Record", "id": "Tugaskan Catatan", "nl": "Record toewijzen", "pl": "Przypisz Rekord", "zh-TW": "分配記錄", "sv": "Tilldela Post", "km": "ចាត់តាំងកំណត់ត្រា"}, "href": "/api/records/assignees"},
+            {"id": "api-records-update-record", "name": {"en": "Update Record", "es": "Actualizar Registro", "zh": "更新记录", "fr": "Mettre à jour l'Enregistrement", "de": "Datensatz aktualisieren", "ja": "レコードを更新", "pt": "Atualizar Registro", "ru": "Обновить запись", "ko": "레코드 업데이트", "it": "Aggiorna Record", "id": "Perbarui Catatan", "nl": "Record bijwerken", "pl": "Zaktualizuj Rekord", "zh-TW": "更新記錄", "sv": "Uppdatera Post", "km": "ធ្វើបច្ចុប្បន្នភាពកំណត់ត្រា"}, "href": "/api/records/update-record"},
+            {"id": "api-records-copy-record", "name": {"en": "Copy Record", "es": "Copiar Registro", "zh": "复制记录", "fr": "Copier l'Enregistrement", "de": "Datensatz kopieren", "ja": "レコードをコピー", "pt": "Copiar Registro", "ru": "Копировать запись", "ko": "레코드 복사", "it": "Copia Record", "id": "Salin Catatan", "nl": "Record kopiëren", "pl": "Skopiuj Rekord", "zh-TW": "複製記錄", "sv": "Kopiera Post", "km": "ចម្លងកំណត់ត្រា"}, "href": "/api/records/copy-record"},
+            {"id": "api-records-add-comment", "name": {"en": "Add Comment", "es": "Agregar Comentario", "zh": "添加评论", "fr": "Ajouter un Commentaire", "de": "Kommentar hinzufügen", "ja": "コメントを追加", "pt": "Adicionar Comentário", "ru": "Добавить комментарий", "ko": "댓글 추가", "it": "Aggiungi Commento", "id": "Tambahkan Komentar", "nl": "Reactie toevoegen", "pl": "Dodaj Komentarz", "zh-TW": "新增評論", "sv": "Lägg till Kommentar", "km": "បន្ថែមមតិយោបល់"}, "href": "/api/records/add-comment"}
           ]
         },
         {
           "id": "api-custom-fields",
-          "name": {"en": "Custom Fields"},
+          "name": {"en": "Custom Fields", "es": "Campos Personalizados", "zh": "自定义字段", "fr": "Champs Personnalisés", "de": "Benutzerdefinierte Felder", "ja": "カスタムフィールド", "pt": "Campos Personalizados", "ru": "Пользовательские поля", "ko": "사용자 정의 필드", "it": "Campi Personalizzati", "id": "Bidang Kustom", "nl": "Aangepaste Velden", "pl": "Pola Niestandardowe", "zh-TW": "自訂欄位", "sv": "Anpassade Fält", "km": "វាលផ្ទាល់ខ្លួន"},
           "expanded": false,
           "children": [
-            {"id": "api-custom-fields-index", "name": {"en": "Custom Fields API"}, "href": "/api/custom-fields/index"},
-            {"id": "api-custom-fields-list-custom-fields", "name": {"en": "List all Custom Fields"}, "href": "/api/custom-fields/list-custom-fields"},
-            {"id": "api-custom-fields-create-custom-fields", "name": {"en": "Create a Custom Field"}, "href": "/api/custom-fields/create-custom-fields"},
-            {"id": "api-custom-fields-custom-field-values", "name": {"en": "Set Custom Field Values"}, "href": "/api/custom-fields/custom-field-values"},
-            {"id": "api-custom-fields-delete-custom-field", "name": {"en": "Delete Custom Field"}, "href": "/api/custom-fields/delete-custom-field"},
-            {"id": "api-custom-fields-button", "name": {"en": "Button"}, "href": "/api/custom-fields/button"},
-            {"id": "api-custom-fields-checkbox", "name": {"en": "Checkbox"}, "href": "/api/custom-fields/checkbox"},
-            {"id": "api-custom-fields-country", "name": {"en": "Country"}, "href": "/api/custom-fields/country"},
-            {"id": "api-custom-fields-currency-conversion", "name": {"en": "Currency Conversion"}, "href": "/api/custom-fields/currency-conversion"},
-            {"id": "api-custom-fields-currency", "name": {"en": "Currency"}, "href": "/api/custom-fields/currency"},
-            {"id": "api-custom-fields-date", "name": {"en": "Date"}, "href": "/api/custom-fields/date"},
-            {"id": "api-custom-fields-email", "name": {"en": "Email"}, "href": "/api/custom-fields/email"},
-            {"id": "api-custom-fields-file", "name": {"en": "File"}, "href": "/api/custom-fields/file"},
-            {"id": "api-custom-fields-formula", "name": {"en": "Formula"}, "href": "/api/custom-fields/formula"},
-            {"id": "api-custom-fields-location", "name": {"en": "Location"}, "href": "/api/custom-fields/location"},
-            {"id": "api-custom-fields-lookup", "name": {"en": "Lookup"}, "href": "/api/custom-fields/lookup"},
-            {"id": "api-custom-fields-number", "name": {"en": "Number"}, "href": "/api/custom-fields/number"},
-            {"id": "api-custom-fields-percent", "name": {"en": "Percent"}, "href": "/api/custom-fields/percent"},
-            {"id": "api-custom-fields-phone", "name": {"en": "Phone"}, "href": "/api/custom-fields/phone"},
-            {"id": "api-custom-fields-rating", "name": {"en": "Rating"}, "href": "/api/custom-fields/rating"},
-            {"id": "api-custom-fields-reference", "name": {"en": "Reference"}, "href": "/api/custom-fields/reference"},
-            {"id": "api-custom-fields-select-multi", "name": {"en": "Multi-Select"}, "href": "/api/custom-fields/select-multi"},
-            {"id": "api-custom-fields-select-single", "name": {"en": "Single-Select"}, "href": "/api/custom-fields/select-single"},
-            {"id": "api-custom-fields-text-multi", "name": {"en": "Multi-Line Text"}, "href": "/api/custom-fields/text-multi"},
-            {"id": "api-custom-fields-text-single", "name": {"en": "Single-Line Text"}, "href": "/api/custom-fields/text-single"},
-            {"id": "api-custom-fields-time-duration", "name": {"en": "Time Duration"}, "href": "/api/custom-fields/time-duration"},
-            {"id": "api-custom-fields-unique-id", "name": {"en": "Unique ID"}, "href": "/api/custom-fields/unique-id"},
-            {"id": "api-custom-fields-url", "name": {"en": "URL"}, "href": "/api/custom-fields/url"}
+            {"id": "api-custom-fields-index", "name": {"en": "Custom Fields API", "es": "API de Campos Personalizados", "zh": "自定义字段 API", "fr": "API des Champs Personnalisés", "de": "API für benutzerdefinierte Felder", "ja": "カスタムフィールド API", "pt": "API de Campos Personalizados", "ru": "API пользовательских полей", "ko": "사용자 정의 필드 API", "it": "API Campi Personalizzati", "id": "API Bidang Kustom", "nl": "API Aangepaste Velden", "pl": "API Pol Niestandardowych", "zh-TW": "自訂欄位 API", "sv": "API för anpassade fält", "km": "API វាលផ្ទាល់ខ្លួន"}, "href": "/api/custom-fields/index"},
+            {"id": "api-custom-fields-list-custom-fields", "name": {"en": "List all Custom Fields", "es": "Listar todos los Campos Personalizados", "zh": "列出所有自定义字段", "fr": "Lister tous les Champs Personnalisés", "de": "Alle benutzerdefinierten Felder auflisten", "ja": "すべてのカスタムフィールドを一覧表示", "pt": "Listar todos os Campos Personalizados", "ru": "Список всех пользовательских полей", "ko": "모든 사용자 정의 필드 나열", "it": "Elenca tutti i Campi Personalizzati", "id": "Daftar semua Bidang Kustom", "nl": "Alle aangepaste velden weergeven", "pl": "Wyświetl wszystkie Pola Niestandardowe", "zh-TW": "列出所有自訂欄位", "sv": "Lista alla anpassade fält", "km": "បញ្ជីវាលផ្ទាល់ខ្លួនទាំងអស់"}, "href": "/api/custom-fields/list-custom-fields"},
+            {"id": "api-custom-fields-create-custom-fields", "name": {"en": "Create a Custom Field", "es": "Crear un Campo Personalizado", "zh": "创建自定义字段", "fr": "Créer un Champ Personnalisé", "de": "Benutzerdefiniertes Feld erstellen", "ja": "カスタムフィールドを作成", "pt": "Criar um Campo Personalizado", "ru": "Создать пользовательское поле", "ko": "사용자 정의 필드 생성", "it": "Crea un Campo Personalizzato", "id": "Buat Bidang Kustom", "nl": "Aangepast veld aanmaken", "pl": "Utwórz Pole Niestandardowe", "zh-TW": "建立自訂欄位", "sv": "Skapa ett anpassat fält", "km": "បង្កើតវាលផ្ទាល់ខ្លួន"}, "href": "/api/custom-fields/create-custom-fields"},
+            {"id": "api-custom-fields-custom-field-values", "name": {"en": "Set Custom Field Values", "es": "Establecer Valores de Campos Personalizados", "zh": "设置自定义字段值", "fr": "Définir les valeurs des champs personnalisés", "de": "Benutzerdefinierte Feldwerte festlegen", "ja": "カスタムフィールド値を設定", "pt": "Definir valores de campos personalizados", "ru": "Установить значения пользовательских полей", "ko": "사용자 정의 필드 값 설정", "it": "Imposta valori campo personalizzato", "id": "Atur Nilai Bidang Kustom", "nl": "Aangepaste veldwaarden instellen", "pl": "Ustaw wartości pól niestandardowych", "zh-TW": "設定自訂欄位值", "sv": "Ställ in värden för anpassade fält", "km": "កំណត់តម្លៃវាលផ្ទាល់ខ្លួន"}, "href": "/api/custom-fields/custom-field-values"},
+            {"id": "api-custom-fields-delete-custom-field", "name": {"en": "Delete Custom Field", "es": "Eliminar Campo Personalizado", "zh": "删除自定义字段", "fr": "Supprimer le Champ Personnalisé", "de": "Benutzerdefiniertes Feld löschen", "ja": "カスタムフィールドを削除", "pt": "Excluir Campo Personalizado", "ru": "Удалить пользовательское поле", "ko": "사용자 정의 필드 삭제", "it": "Elimina Campo Personalizzato", "id": "Hapus Bidang Kustom", "nl": "Aangepast veld verwijderen", "pl": "Usuń Pole Niestandardowe", "zh-TW": "刪除自訂欄位", "sv": "Ta bort anpassat fält", "km": "លុបវាលផ្ទាល់ខ្លួន"}, "href": "/api/custom-fields/delete-custom-field"},
+            {"id": "api-custom-fields-button", "name": {"en": "Button", "es": "Botón", "zh": "按钮", "fr": "Bouton", "de": "Schaltfläche", "ja": "ボタン", "pt": "Botão", "ru": "Кнопка", "ko": "버튼", "it": "Pulsante", "id": "Tombol", "nl": "Knop", "pl": "Przycisk", "zh-TW": "按鈕", "sv": "Knapp", "km": "ប៊ូតុង"}, "href": "/api/custom-fields/button"},
+            {"id": "api-custom-fields-checkbox", "name": {"en": "Checkbox", "es": "Casilla de verificación", "zh": "复选框", "fr": "Case à cocher", "de": "Kontrollkästchen", "ja": "チェックボックス", "pt": "Caixa de seleção", "ru": "Флажок", "ko": "체크박스", "it": "Casella di controllo", "id": "Kotak Centang", "nl": "Selectievakje", "pl": "Pole wyboru", "zh-TW": "核取方塊", "sv": "Kryssruta", "km": "ប្រអប់ធីក"}, "href": "/api/custom-fields/checkbox"},
+            {"id": "api-custom-fields-country", "name": {"en": "Country", "es": "País", "zh": "国家", "fr": "Pays", "de": "Land", "ja": "国", "pt": "País", "ru": "Страна", "ko": "국가", "it": "Paese", "id": "Negara", "nl": "Land", "pl": "Kraj", "zh-TW": "國家", "sv": "Land", "km": "ប្រទេស"}, "href": "/api/custom-fields/country"},
+            {"id": "api-custom-fields-currency-conversion", "name": {"en": "Currency Conversion", "es": "Conversión de Moneda", "zh": "货币兑换", "fr": "Conversion de devise", "de": "Währungsumrechnung", "ja": "通貨換算", "pt": "Conversão de Moeda", "ru": "Конвертация валюты", "ko": "통화 변환", "it": "Conversione valuta", "id": "Konversi Mata Uang", "nl": "Valutaconversie", "pl": "Przeliczanie walut", "zh-TW": "貨幣兌換", "sv": "Valutakonvertering", "km": "បម្លែងរូបិយប័ណ្ណ"}, "href": "/api/custom-fields/currency-conversion"},
+            {"id": "api-custom-fields-currency", "name": {"en": "Currency", "es": "Moneda", "zh": "货币", "fr": "Devise", "de": "Währung", "ja": "通貨", "pt": "Moeda", "ru": "Валюта", "ko": "통화", "it": "Valuta", "id": "Mata Uang", "nl": "Valuta", "pl": "Waluta", "zh-TW": "貨幣", "sv": "Valuta", "km": "រូបិយប័ណ្ណ"}, "href": "/api/custom-fields/currency"},
+            {"id": "api-custom-fields-date", "name": {"en": "Date", "es": "Fecha", "zh": "日期", "fr": "Date", "de": "Datum", "ja": "日付", "pt": "Data", "ru": "Дата", "ko": "날짜", "it": "Data", "id": "Tanggal", "nl": "Datum", "pl": "Data", "zh-TW": "日期", "sv": "Datum", "km": "កាលបរិច្ឆេទ"}, "href": "/api/custom-fields/date"},
+            {"id": "api-custom-fields-email", "name": {"en": "Email", "es": "Correo electrónico", "zh": "电子邮件", "fr": "E-mail", "de": "E-Mail", "ja": "メール", "pt": "E-mail", "ru": "Электронная почта", "ko": "이메일", "it": "E-mail", "id": "Email", "nl": "E-mail", "pl": "E-mail", "zh-TW": "電子郵件", "sv": "E-post", "km": "អ៊ីមែល"}, "href": "/api/custom-fields/email"},
+            {"id": "api-custom-fields-file", "name": {"en": "File", "es": "Archivo", "zh": "文件", "fr": "Fichier", "de": "Datei", "ja": "ファイル", "pt": "Arquivo", "ru": "Файл", "ko": "파일", "it": "File", "id": "File", "nl": "Bestand", "pl": "Plik", "zh-TW": "檔案", "sv": "Fil", "km": "ឯកសារ"}, "href": "/api/custom-fields/file"},
+            {"id": "api-custom-fields-formula", "name": {"en": "Formula", "es": "Fórmula", "zh": "公式", "fr": "Formule", "de": "Formel", "ja": "数式", "pt": "Fórmula", "ru": "Формула", "ko": "수식", "it": "Formula", "id": "Rumus", "nl": "Formule", "pl": "Formuła", "zh-TW": "公式", "sv": "Formel", "km": "រូបមន្ត"}, "href": "/api/custom-fields/formula"},
+            {"id": "api-custom-fields-location", "name": {"en": "Location", "es": "Ubicación", "zh": "位置", "fr": "Emplacement", "de": "Standort", "ja": "場所", "pt": "Localização", "ru": "Местоположение", "ko": "위치", "it": "Posizione", "id": "Lokasi", "nl": "Locatie", "pl": "Lokalizacja", "zh-TW": "位置", "sv": "Plats", "km": "ទីតាំង"}, "href": "/api/custom-fields/location"},
+            {"id": "api-custom-fields-lookup", "name": {"en": "Lookup", "es": "Búsqueda", "zh": "查找", "fr": "Recherche", "de": "Nachschlagen", "ja": "ルックアップ", "pt": "Pesquisa", "ru": "Поиск", "ko": "조회", "it": "Ricerca", "id": "Pencarian", "nl": "Opzoeken", "pl": "Wyszukiwanie", "zh-TW": "查詢", "sv": "Slå upp", "km": "រកមើល"}, "href": "/api/custom-fields/lookup"},
+            {"id": "api-custom-fields-number", "name": {"en": "Number", "es": "Número", "zh": "数字", "fr": "Nombre", "de": "Nummer", "ja": "数値", "pt": "Número", "ru": "Число", "ko": "숫자", "it": "Numero", "id": "Angka", "nl": "Nummer", "pl": "Numer", "zh-TW": "數字", "sv": "Nummer", "km": "លេខ"}, "href": "/api/custom-fields/number"},
+            {"id": "api-custom-fields-percent", "name": {"en": "Percent", "es": "Porcentaje", "zh": "百分比", "fr": "Pourcentage", "de": "Prozent", "ja": "パーセント", "pt": "Percentagem", "ru": "Процент", "ko": "백분율", "it": "Percentuale", "id": "Persen", "nl": "Percentage", "pl": "Procent", "zh-TW": "百分比", "sv": "Procent", "km": "ភាគរយ"}, "href": "/api/custom-fields/percent"},
+            {"id": "api-custom-fields-phone", "name": {"en": "Phone", "es": "Teléfono", "zh": "电话", "fr": "Téléphone", "de": "Telefon", "ja": "電話", "pt": "Telefone", "ru": "Телефон", "ko": "전화", "it": "Telefono", "id": "Telepon", "nl": "Telefoon", "pl": "Telefon", "zh-TW": "電話", "sv": "Telefon", "km": "ទូរស័ព្ទ"}, "href": "/api/custom-fields/phone"},
+            {"id": "api-custom-fields-rating", "name": {"en": "Rating", "es": "Calificación", "zh": "评分", "fr": "Évaluation", "de": "Bewertung", "ja": "評価", "pt": "Classificação", "ru": "Рейтинг", "ko": "평가", "it": "Valutazione", "id": "Peringkat", "nl": "Beoordeling", "pl": "Ocena", "zh-TW": "評分", "sv": "Betyg", "km": "ការវាយតម្លៃ"}, "href": "/api/custom-fields/rating"},
+            {"id": "api-custom-fields-reference", "name": {"en": "Reference", "es": "Referencia", "zh": "参考", "fr": "Référence", "de": "Referenz", "ja": "参照", "pt": "Referência", "ru": "Ссылка", "ko": "참조", "it": "Riferimento", "id": "Referensi", "nl": "Referentie", "pl": "Referencja", "zh-TW": "參考", "sv": "Referens", "km": "ឯកសារយោង"}, "href": "/api/custom-fields/reference"},
+            {"id": "api-custom-fields-select-multi", "name": {"en": "Multi-Select", "es": "Selección múltiple", "zh": "多选", "fr": "Sélection multiple", "de": "Mehrfachauswahl", "ja": "複数選択", "pt": "Seleção múltipla", "ru": "Множественный выбор", "ko": "다중 선택", "it": "Selezione multipla", "id": "Pilihan Ganda", "nl": "Meervoudige selectie", "pl": "Wielokrotny wybór", "zh-TW": "多選", "sv": "Flerval", "km": "ការជ្រើសរើសច្រើន"}, "href": "/api/custom-fields/select-multi"},
+            {"id": "api-custom-fields-select-single", "name": {"en": "Single-Select", "es": "Selección única", "zh": "单选", "fr": "Sélection unique", "de": "Einfachauswahl", "ja": "単一選択", "pt": "Seleção única", "ru": "Одиночный выбор", "ko": "단일 선택", "it": "Selezione singola", "id": "Pilihan Tunggal", "nl": "Enkele selectie", "pl": "Pojedynczy wybór", "zh-TW": "單選", "sv": "Enkelval", "km": "ការជ្រើសរើសតែមួយ"}, "href": "/api/custom-fields/select-single"},
+            {"id": "api-custom-fields-text-multi", "name": {"en": "Multi-Line Text", "es": "Texto de varias líneas", "zh": "多行文本", "fr": "Texte sur plusieurs lignes", "de": "Mehrzeiliger Text", "ja": "複数行テキスト", "pt": "Texto de várias linhas", "ru": "Многострочный текст", "ko": "여러 줄 텍스트", "it": "Testo su più righe", "id": "Teks Baris Ganda", "nl": "Tekst met meerdere regels", "pl": "Tekst wielowierszowy", "zh-TW": "多行文本", "sv": "Fleraradiga text", "km": "អត្ថបទ​ពហុ​បន្ទាត់"}, "href": "/api/custom-fields/text-multi"},
+            {"id": "api-custom-fields-text-single", "name": {"en": "Single-Line Text", "es": "Texto de una sola línea", "zh": "单行文本", "fr": "Texte sur une seule ligne", "de": "Einzeiliger Text", "ja": "単一行テキスト", "pt": "Texto de linha única", "ru": "Однострочный текст", "ko": "한 줄 텍스트", "it": "Testo a riga singola", "id": "Teks Baris Tunggal", "nl": "Tekst met één regel", "pl": "Tekst jednowierszowy", "zh-TW": "單行文本", "sv": "Enkelradig text", "km": "អត្ថបទ​មួយ​បន្ទាត់"}, "href": "/api/custom-fields/text-single"},
+            {"id": "api-custom-fields-time-duration", "name": {"en": "Time Duration", "es": "Duración de tiempo", "zh": "持续时间", "fr": "Durée", "de": "Zeitdauer", "ja": "期間", "pt": "Duração do tempo", "ru": "Продолжительность времени", "ko": "시간 지속", "it": "Durata del tempo", "id": "Durasi Waktu", "nl": "Tijdsduur", "pl": "Czas trwania", "zh-TW": "持續時間", "sv": "Tidslängd", "km": "រយៈពេលពេលវេលា"}, "href": "/api/custom-fields/time-duration"},
+            {"id": "api-custom-fields-unique-id", "name": {"en": "Unique ID", "es": "ID único", "zh": "唯一ID", "fr": "ID unique", "de": "Eindeutige ID", "ja": "一意のID", "pt": "ID exclusivo", "ru": "Уникальный ID", "ko": "고유 ID", "it": "ID univoco", "id": "ID Unik", "nl": "Unieke ID", "pl": "Unikalny identyfikator", "zh-TW": "唯一ID", "sv": "Unikt ID", "km": "លេខសម្គាល់តែមួយគត់"}, "href": "/api/custom-fields/unique-id"},
+            {"id": "api-custom-fields-url", "name": {"en": "URL", "es": "URL", "zh": "URL", "fr": "URL", "de": "URL", "ja": "URL", "pt": "URL", "ru": "URL", "ko": "URL", "it": "URL", "id": "URL", "nl": "URL", "pl": "URL", "zh-TW": "URL", "sv": "URL", "km": "URL"}, "href": "/api/custom-fields/url"}
           ]
         },
         {
           "id": "api-automations",
-          "name": {"en": "Automations"},
+          "name": {"en": "Automations", "es": "Automatizaciones", "zh": "自动化", "fr": "Automatisations", "de": "Automatisierungen", "ja": "自動化", "pt": "Automações", "ru": "Автоматизации", "ko": "자동화", "it": "Automazioni", "id": "Otomatisasi", "nl": "Automatiseringen", "pl": "Automatyzacje", "zh-TW": "自動化", "sv": "Automatiseringar", "km": "ស្វ័យប្រវត្តិកម្ម"},
           "expanded": false,
           "children": [
-            {"id": "api-automations-index", "name": {"en": "List all Automations"}, "href": "/api/automations/index"}
+            {"id": "api-automations-index", "name": {"en": "List all Automations", "es": "Listar todas las Automatizaciones", "zh": "列出所有自动化", "fr": "Lister toutes les automatisations", "de": "Alle Automatisierungen auflisten", "ja": "すべての自動化を一覧表示", "pt": "Listar todas as automações", "ru": "Список всех автоматизаций", "ko": "모든 자동화 나열", "it": "Elenca tutte le automazioni", "id": "Daftar semua Otomatisasi", "nl": "Alle automatiseringen weergeven", "pl": "Wyświetl wszystkie automatyzacje", "zh-TW": "列出所有自動化", "sv": "Lista alla automatiseringar", "km": "បញ្ជីស្វ័យប្រវត្តិកម្មទាំងអស់"}, "href": "/api/automations/index"}
           ]
         },
         {
           "id": "api-user-management",
-          "name": {"en": "User Management"},
+          "name": {"en": "User Management", "es": "Gestión de usuarios", "zh": "用户管理", "fr": "Gestion des utilisateurs", "de": "Benutzerverwaltung", "ja": "ユーザー管理", "pt": "Gerenciamento de usuários", "ru": "Управление пользователями", "ko": "사용자 관리", "it": "Gestione degli utenti", "id": "Manajemen Pengguna", "nl": "Gebruikersbeheer", "pl": "Zarządzanie użytkownikami", "zh-TW": "使用者管理", "sv": "Användarhantering", "km": "ការគ្រប់គ្រងអ្នកប្រើប្រាស់"},
           "expanded": false,
           "children": [
-            {"id": "api-user-management-index", "name": {"en": "Invite User"}, "href": "/api/user-management/index"},
-            {"id": "api-user-management-list-users", "name": {"en": "List Users"}, "href": "/api/user-management/list-users"},
-            {"id": "api-user-management-remove-user", "name": {"en": "Remove Users"}, "href": "/api/user-management/remove-user"},
-            {"id": "api-user-management-retrieve-custom-role", "name": {"en": "Custom Roles"}, "href": "/api/user-management/retrieve-custom-role"}
+            {"id": "api-user-management-index", "name": {"en": "Invite User", "es": "Invitar usuario", "zh": "邀请用户", "fr": "Inviter un utilisateur", "de": "Benutzer einladen", "ja": "ユーザーを招待", "pt": "Convidar usuário", "ru": "Пригласить пользователя", "ko": "사용자 초대", "it": "Invita utente", "id": "Undang Pengguna", "nl": "Gebruiker uitnodigen", "pl": "Zaproś użytkownika", "zh-TW": "邀請使用者", "sv": "Bjud in användare", "km": "អញ្ជើញអ្នកប្រើប្រាស់"}, "href": "/api/user-management/index"},
+            {"id": "api-user-management-list-users", "name": {"en": "List Users", "es": "Listar usuarios", "zh": "列出用户", "fr": "Lister les utilisateurs", "de": "Benutzer auflisten", "ja": "ユーザー一覧", "pt": "Listar usuários", "ru": "Список пользователей", "ko": "사용자 나열", "it": "Elenca utenti", "id": "Daftar Pengguna", "nl": "Gebruikers weergeven", "pl": "Wyświetl użytkowników", "zh-TW": "列出使用者", "sv": "Lista användare", "km": "បញ្ជីអ្នកប្រើប្រាស់"}, "href": "/api/user-management/list-users"},
+            {"id": "api-user-management-remove-user", "name": {"en": "Remove Users", "es": "Eliminar usuarios", "zh": "移除用户", "fr": "Supprimer des utilisateurs", "de": "Benutzer entfernen", "ja": "ユーザーを削除", "pt": "Remover usuários", "ru": "Удалить пользователей", "ko": "사용자 제거", "it": "Rimuovi utenti", "id": "Hapus Pengguna", "nl": "Gebruikers verwijderen", "pl": "Usuń użytkowników", "zh-TW": "移除使用者", "sv": "Ta bort användare", "km": "លុបអ្នកប្រើប្រាស់"}, "href": "/api/user-management/remove-user"},
+            {"id": "api-user-management-retrieve-custom-role", "name": {"en": "Custom Roles", "es": "Roles personalizados", "zh": "自定义角色", "fr": "Rôles personnalisés", "de": "Benutzerdefinierte Rollen", "ja": "カスタムロール", "pt": "Funções personalizadas", "ru": "Пользовательские роли", "ko": "사용자 지정 역할", "it": "Ruoli personalizzati", "id": "Peran Kustom", "nl": "Aangepaste rollen", "pl": "Role niestandardowe", "zh-TW": "自訂角色", "sv": "Anpassade roller", "km": "តួនាទីផ្ទាល់ខ្លួន"}, "href": "/api/user-management/retrieve-custom-role"}
           ]
         },
         {
           "id": "api-company-management",
-          "name": {"en": "Company Management"},
+          "name": {"en": "Company Management", "es": "Gestión de la empresa", "zh": "公司管理", "fr": "Gestion de l'entreprise", "de": "Unternehmensverwaltung", "ja": "会社管理", "pt": "Gestão da empresa", "ru": "Управление компанией", "ko": "회사 관리", "it": "Gestione aziendale", "id": "Manajemen Perusahaan", "nl": "Bedrijfsbeheer", "pl": "Zarządzanie firmą", "zh-TW": "公司管理", "sv": "Företagshantering", "km": "ការគ្រប់គ្រងក្រុមហ៊ុន"},
           "expanded": false,
           "children": [
-            {"id": "api-company-management-index", "name": {"en": "Create a Company"}, "href": "/api/company-management/index"}
+            {"id": "api-company-management-index", "name": {"en": "Create a Company", "es": "Crear una empresa", "zh": "创建公司", "fr": "Créer une entreprise", "de": "Unternehmen erstellen", "ja": "会社を作成", "pt": "Criar uma empresa", "ru": "Создать компанию", "ko": "회사 생성", "it": "Crea un'azienda", "id": "Buat Perusahaan", "nl": "Bedrijf aanmaken", "pl": "Utwórz firmę", "zh-TW": "建立公司", "sv": "Skapa ett företag", "km": "បង្កើតក្រុមហ៊ុន"}, "href": "/api/company-management/index"}
           ]
         },
         {
           "id": "api-dashboards",
-          "name": {"en": "Dashboards"},
+          "name": {"en": "Dashboards", "es": "Paneles", "zh": "仪表板", "fr": "Tableaux de bord", "de": "Dashboards", "ja": "ダッシュボード", "pt": "Painéis", "ru": "Панели мониторинга", "ko": "대시보드", "it": "Dashboard", "id": "Dasbor", "nl": "Dashboards", "pl": "Pulpity nawigacyjne", "zh-TW": "儀表板", "sv": "Instrumentpaneler", "km": "ផ្ទាំងគ្រប់គ្រង"},
           "expanded": false,
           "children": [
-            {"id": "api-dashboards-index", "name": {"en": "List Dashboards"}, "href": "/api/dashboards/index"},
-            {"id": "api-dashboards-clone-dashboard-copy", "name": {"en": "Clone Dashboard"}, "href": "/api/dashboards/-clone-dashboard-copy"},
-            {"id": "api-dashboards-rename-dashboard", "name": {"en": "Rename Dashboard"}, "href": "/api/dashboards/-rename-dashboard"}
+            {"id": "api-dashboards-index", "name": {"en": "List Dashboards", "es": "Listar paneles", "zh": "列出仪表板", "fr": "Lister les tableaux de bord", "de": "Dashboards auflisten", "ja": "ダッシュボード一覧", "pt": "Listar painéis", "ru": "Список панелей мониторинга", "ko": "대시보드 나열", "it": "Elenca dashboard", "id": "Daftar Dasbor", "nl": "Dashboards weergeven", "pl": "Wyświetl pulpity", "zh-TW": "列出儀表板", "sv": "Lista instrumentpaneler", "km": "បញ្ជីផ្ទាំងគ្រប់គ្រង"}, "href": "/api/dashboards/index"},
+            {"id": "api-dashboards-clone-dashboard-copy", "name": {"en": "Clone Dashboard", "es": "Clonar panel", "zh": "克隆仪表板", "fr": "Cloner le tableau de bord", "de": "Dashboard klonen", "ja": "ダッシュボードを複製", "pt": "Clonar painel", "ru": "Клонировать панель мониторинга", "ko": "대시보드 복제", "it": "Clona dashboard", "id": "Klon Dasbor", "nl": "Dashboard klonen", "pl": "Sklonuj pulpit", "zh-TW": "複製儀表板", "sv": "Klona instrumentpanel", "km": "ចម្លងផ្ទាំងគ្រប់គ្រង"}, "href": "/api/dashboards/-clone-dashboard-copy"},
+            {"id": "api-dashboards-rename-dashboard", "name": {"en": "Rename Dashboard", "es": "Renombrar panel", "zh": "重命名仪表板", "fr": "Renommer le tableau de bord", "de": "Dashboard umbenennen", "ja": "ダッシュボード名を変更", "pt": "Renomear painel", "ru": "Переименовать панель мониторинга", "ko": "대시보드 이름 변경", "it": "Rinomina dashboard", "id": "Ubah Nama Dasbor", "nl": "Dashboard hernoemen", "pl": "Zmień nazwę pulpitu", "zh-TW": "重新命名儀表板", "sv": "Byt namn på instrumentpanel", "km": "ប្តូរឈ្មោះផ្ទាំងគ្រប់គ្រង"}, "href": "/api/dashboards/-rename-dashboard"}
           ]
         },
         {
           "id": "api-libraries",
-          "name": {"en": "Libraries"},
+          "name": {"en": "Libraries", "es": "Librerías", "zh": "库", "fr": "Bibliothèques", "de": "Bibliotheken", "ja": "ライブラリ", "pt": "Bibliotecas", "ru": "Библиотеки", "ko": "라이브러리", "it": "Librerie", "id": "Perpustakaan", "nl": "Bibliotheken", "pl": "Biblioteki", "zh-TW": "函式庫", "sv": "Bibliotek", "km": "បណ្ណាល័យ"},
           "expanded": false,
           "children": [
-            {"id": "api-libraries-python", "name": {"en": "Python"}, "href": "/api/libraries/python"}
+            {"id": "api-libraries-python", "name": {"en": "Python", "es": "Python", "zh": "Python", "fr": "Python", "de": "Python", "ja": "Python", "pt": "Python", "ru": "Python", "ko": "Python", "it": "Python", "id": "Python", "nl": "Python", "pl": "Python", "zh-TW": "Python", "sv": "Python", "km": "Python"}, "href": "/api/libraries/python"}
           ]
         },
         {
           "id": "api-error-codes",
-          "name": {"en": "Error Codes"},
+          "name": {"en": "Error Codes", "es": "Códigos de error", "zh": "错误代码", "fr": "Codes d'erreur", "de": "Fehlercodes", "ja": "エラーコード", "pt": "Códigos de erro", "ru": "Коды ошибок", "ko": "오류 코드", "it": "Codici di errore", "id": "Kode Kesalahan", "nl": "Foutcodes", "pl": "Kody błędów", "zh-TW": "錯誤代碼", "sv": "Felkoder", "km": "កូដកំហុស"},
           "href": "/api/error-codes"
         }
       ]
@@ -1599,18 +2005,201 @@
     {
       "id": "legal",
       "name": {
-        "en": "Legal"
+        "en": "Legal",
+        "es": "Legal",
+        "zh": "法律",
+        "fr": "Juridique",
+        "de": "Rechtliches",
+        "ja": "法的事項",
+        "pt": "Legal",
+        "ru": "Правовые вопросы",
+        "ko": "법률",
+        "it": "Legale",
+        "id": "Hukum",
+        "nl": "Juridisch",
+        "pl": "Prawne",
+        "zh-TW": "法律",
+        "sv": "Juridiskt",
+        "km": "ច្បាប់"
       },
       "expanded": false,
       "children": [
-        {"id": "legal-index", "name": {"en": "Legal"}, "href": "/legal/index"},
-        {"id": "legal-terms", "name": {"en": "Terms & Conditions"}, "href": "/legal/terms"},
-        {"id": "legal-privacy", "name": {"en": "Privacy Policy"}, "href": "/legal/privacy"},
-        {"id": "legal-security", "name": {"en": "Security"}, "href": "/legal/security"},
-        {"id": "legal-gdpr", "name": {"en": "GDPR Compliance"}, "href": "/legal/gdpr"},
-        {"id": "legal-hipaa", "name": {"en": "HIPAA"}, "href": "/legal/hipaa"},
-        {"id": "legal-dpa", "name": {"en": "Data Processing Agreement"}, "href": "/legal/dpa"},
-        {"id": "legal-baa", "name": {"en": "Business Associate Agreement"}, "href": "/legal/baa"}
+        {
+          "id": "legal-index",
+          "name": {
+            "en": "Legal",
+            "es": "Legal",
+            "zh": "法律",
+            "fr": "Juridique",
+            "de": "Rechtliches",
+            "ja": "法的事項",
+            "pt": "Legal",
+            "ru": "Правовые вопросы",
+            "ko": "법률",
+            "it": "Legale",
+            "id": "Hukum",
+            "nl": "Juridisch",
+            "pl": "Prawne",
+            "zh-TW": "法律",
+            "sv": "Juridiskt",
+            "km": "ច្បាប់"
+          },
+          "href": "/legal/index"
+        },
+        {
+          "id": "legal-terms",
+          "name": {
+            "en": "Terms & Conditions",
+            "es": "Términos y Condiciones",
+            "zh": "条款和条件",
+            "fr": "Conditions Générales",
+            "de": "Allgemeine Geschäftsbedingungen",
+            "ja": "利用規約",
+            "pt": "Termos e Condições",
+            "ru": "Условия использования",
+            "ko": "이용약관",
+            "it": "Termini e Condizioni",
+            "id": "Syarat dan Ketentuan",
+            "nl": "Voorwaarden",
+            "pl": "Regulamin",
+            "zh-TW": "條款和條件",
+            "sv": "Villkor",
+            "km": "លក្ខខណ្ឌ"
+          },
+          "href": "/legal/terms"
+        },
+        {
+          "id": "legal-privacy",
+          "name": {
+            "en": "Privacy Policy",
+            "es": "Política de Privacidad",
+            "zh": "隐私政策",
+            "fr": "Politique de Confidentialité",
+            "de": "Datenschutzrichtlinie",
+            "ja": "プライバシーポリシー",
+            "pt": "Política de Privacidade",
+            "ru": "Политика конфиденциальности",
+            "ko": "개인정보 보호정책",
+            "it": "Informativa sulla Privacy",
+            "id": "Kebijakan Privasi",
+            "nl": "Privacybeleid",
+            "pl": "Polityka Prywatności",
+            "zh-TW": "隱私政策",
+            "sv": "Integritetspolicy",
+            "km": "គោលនយោបាយឯកជនភាព"
+          },
+          "href": "/legal/privacy"
+        },
+        {
+          "id": "legal-security",
+          "name": {
+            "en": "Security",
+            "es": "Seguridad",
+            "zh": "安全",
+            "fr": "Sécurité",
+            "de": "Sicherheit",
+            "ja": "セキュリティ",
+            "pt": "Segurança",
+            "ru": "Безопасность",
+            "ko": "보안",
+            "it": "Sicurezza",
+            "id": "Keamanan",
+            "nl": "Beveiliging",
+            "pl": "Bezpieczeństwo",
+            "zh-TW": "安全",
+            "sv": "Säkerhet",
+            "km": "សុវត្ថិភាព"
+          },
+          "href": "/legal/security"
+        },
+        {
+          "id": "legal-gdpr",
+          "name": {
+            "en": "GDPR Compliance",
+            "es": "Cumplimiento GDPR",
+            "zh": "GDPR 合规",
+            "fr": "Conformité GDPR",
+            "de": "GDPR-Konformität",
+            "ja": "GDPR コンプライアンス",
+            "pt": "Conformidade GDPR",
+            "ru": "Соответствие GDPR",
+            "ko": "GDPR 준수",
+            "it": "Conformità GDPR",
+            "id": "Kepatuhan GDPR",
+            "nl": "GDPR-naleving",
+            "pl": "Zgodność z GDPR",
+            "zh-TW": "GDPR 合規",
+            "sv": "GDPR-efterlevnad",
+            "km": "ការអនុលោម GDPR"
+          },
+          "href": "/legal/gdpr"
+        },
+        {
+          "id": "legal-hipaa",
+          "name": {
+            "en": "HIPAA",
+            "es": "HIPAA",
+            "zh": "HIPAA",
+            "fr": "HIPAA",
+            "de": "HIPAA",
+            "ja": "HIPAA",
+            "pt": "HIPAA",
+            "ru": "HIPAA",
+            "ko": "HIPAA",
+            "it": "HIPAA",
+            "id": "HIPAA",
+            "nl": "HIPAA",
+            "pl": "HIPAA",
+            "zh-TW": "HIPAA",
+            "sv": "HIPAA",
+            "km": "HIPAA"
+          },
+          "href": "/legal/hipaa"
+        },
+        {
+          "id": "legal-dpa",
+          "name": {
+            "en": "Data Processing Agreement",
+            "es": "Acuerdo de Procesamiento de Datos",
+            "zh": "数据处理协议",
+            "fr": "Accord de Traitement des Données",
+            "de": "Datenverarbeitungsvertrag",
+            "ja": "データ処理契約",
+            "pt": "Acordo de Processamento de Dados",
+            "ru": "Соглашение об обработке данных",
+            "ko": "데이터 처리 계약",
+            "it": "Accordo di Elaborazione Dati",
+            "id": "Perjanjian Pemrosesan Data",
+            "nl": "Gegevensverwerkingsovereenkomst",
+            "pl": "Umowa Przetwarzania Danych",
+            "zh-TW": "資料處理協議",
+            "sv": "Databehandlingsavtal",
+            "km": "កិច្ចព្រមព្រៀងដំណើរការទិន្នន័យ"
+          },
+          "href": "/legal/dpa"
+        },
+        {
+          "id": "legal-baa",
+          "name": {
+            "en": "Business Associate Agreement",
+            "es": "Acuerdo de Socio Comercial",
+            "zh": "商业伙伴协议",
+            "fr": "Accord d'Associé Commercial",
+            "de": "Geschäftspartnervertrag",
+            "ja": "ビジネスアソシエイト契約",
+            "pt": "Acordo de Associado Comercial",
+            "ru": "Соглашение о деловом партнерстве",
+            "ko": "비즈니스 어소시에이트 계약",
+            "it": "Accordo di Associato Commerciale",
+            "id": "Perjanjian Mitra Bisnis",
+            "nl": "Zakelijke Partner Overeenkomst",
+            "pl": "Umowa Partnera Biznesowego",
+            "zh-TW": "商業夥伴協議",
+            "sv": "Affärspartneravtal",
+            "km": "កិច្ចព្រមព្រៀងដៃគូអាជីវកម្ម"
+          },
+          "href": "/legal/baa"
+        }
       ]
     }
   ]
