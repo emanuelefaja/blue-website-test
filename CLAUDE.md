@@ -197,6 +197,17 @@ go test ./...
 - YAML frontmatter support for metadata
 - Automatic table of contents generation for docs
 
+### Multi-Language System
+- **Language detection**: URL-based with `/en/` and `/es/` prefixes
+- **Translation files**: JSON files in `/translations/` (en.json, es.json, etc.)
+- **Template function**: Use `{{t "key"}}` for simple translations
+- **Component data**: Use `parseJSON (printf \`{"Title": "%s"}\` (t "key"))` pattern for complex component data structures
+- **Supported languages**: Configured in `web/languages.go` - single source of truth
+- **Content structure**: 
+  - HTML pages: Language-specific pre-rendering with translation keys
+  - Markdown: Language-specific directories (`/content/en/`, `/content/es/`)
+- **Fallback**: All languages fall back to English if translation missing
+
 ## Component Patterns
 
 ### Creating New Components
