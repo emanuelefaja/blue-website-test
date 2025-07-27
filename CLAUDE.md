@@ -198,15 +198,44 @@ go test ./...
 - Automatic table of contents generation for docs
 
 ### Multi-Language System
-- **Language detection**: URL-based with `/en/` and `/es/` prefixes
-- **Translation files**: JSON files in `/translations/` (en.json, es.json, etc.)
-- **Template function**: Use `{{t "key"}}` for simple translations
-- **Component data**: Use `parseJSON (printf \`{"Title": "%s"}\` (t "key"))` pattern for complex component data structures
-- **Supported languages**: Configured in `web/languages.go` - single source of truth
+- **Language detection**: 
+  - URL-based with language prefixes (e.g., `/en/`, `/zh/`, `/es/`)
+  - Cookie preference (`lang` cookie) takes precedence
+  - Falls back to browser Accept-Language header
+  - Default to English if no preference detected
+- **Translation structure**:
+  - Modular JSON files in `/translations/` organized by section:
+    - `common.json` - Shared UI elements (navigation, buttons, etc.)
+    - `home.json` - Homepage specific translations
+    - `features.json` - Features page translations
+    - `about.json`, `values.json`, `charter.json` - Company pages
+    - `search.json` - Search functionality
+  - Each file contains language objects with nested keys for organization
+- **Template functions**:
+  - `{{t "section.key"}}` - For simple text translations
+  - `{{t "section.key" "Default Text"}}` - With fallback default
+  - `parseJSON` with `printf` for complex data structures with translations
+- **Supported languages** (16 total, configured in `web/languages.go`):
+  - en (English), zh (简体中文), es (Español), fr (Français)
+  - de (Deutsch), ja (日本語), pt (Português), ru (Русский)
+  - ko (한국어), it (Italiano), id (Indonesian), nl (Nederlands)
+  - pl (Polski), zh-TW (繁體中文), sv (Svenska), km (ភាសាខ្មែរ)
 - **Content structure**: 
-  - HTML pages: Language-specific pre-rendering with translation keys
-  - Markdown: Language-specific directories (`/content/en/`, `/content/es/`)
-- **Fallback**: All languages fall back to English if translation missing
+  - HTML pages: Use translation keys with `{{t}}` function
+  - Components: Receive translated data via template context
+  - Markdown: Future support via language-specific directories
+- **Language switching**:
+  - Language picker in navbar shows native language names
+  - Sets cookie and redirects to language-specific URL
+  - Preserves current page when switching languages
+- **SEO optimization**:
+  - Proper `og:locale` meta tags for each language
+  - Language-specific URLs for better indexing
+  - Alternate language links in HTML head
+- **Fallback behavior**: 
+  - Missing translations show the key itself as fallback
+  - All languages fall back to showing the translation key
+  - Default text can be provided as second parameter to `{{t}}`
 
 ## Component Patterns
 
