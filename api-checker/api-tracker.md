@@ -44,19 +44,19 @@
 - [🔄] 1.index.md
 - [🔧] 2.list-custom-fields.md - Enhanced: Fixed cursor pagination claim, clarified multi-project limitation, noted endCursor deprecation
 - [🔧] 3.create-custom-fields.md - Fixed: Corrected TIME_DURATION enum values (TODO_CREATED_AT, TODO_MARKED_AS_COMPLETE), added missing currency conversion parameters
-- [🔄] 4.custom-field-values.md
+- [🔧] 4.custom-field-values.md - Fixed: Removed non-existent RECORD_NOT_FOUND error, clarified FORMULA/LOOKUP fields are read-only, enhanced permissions documentation
 - [🔧] 5.delete-custom-field.md - Fixed: Removed non-existent PROJECT_NOT_ACTIVE error (98% accurate otherwise)
 - [🔄] button.md
-- [ ] checkbox.md
-- [ ] country.md
-- [ ] currency-conversion.md
+- [🔧] checkbox.md - Fixed: Added case-sensitivity note, clarified import behavior, fixed link paths, removed non-existent forms API link (95% accurate)
+- [🔄] country.md
+- [🔧] currency-conversion.md - Fixed: Corrected permission constants from CUSTOM_FIELDS_CREATE/UPDATE to standard user roles (OWNER/ADMIN)
 - [ ] currency.md
 - [ ] date.md
 - [ ] email.md
 - [ ] file.md
 - [ ] formula.md
 - [ ] location.md
-- [ ] lookup.md
+- [🔄] lookup.md
 - [ ] number.md
 - [ ] percent.md
 - [ ] phone.md

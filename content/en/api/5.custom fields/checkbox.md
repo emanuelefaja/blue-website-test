@@ -120,10 +120,12 @@ When creating tasks, checkbox values must be passed as strings:
 
 | String Value | Result |
 |--------------|---------|
-| `"true"` | ✅ Checked |
+| `"true"` | ✅ Checked (case-sensitive) |
 | `"1"` | ✅ Checked |
-| `"checked"` | ✅ Checked |
+| `"checked"` | ✅ Checked (case-sensitive) |
 | Any other value | ❌ Unchecked |
+
+**Note**: String comparisons during task creation are case-sensitive. The values must exactly match `"true"`, `"1"`, or `"checked"` to result in a checked state.
 
 ## Response Fields
 
@@ -159,7 +161,7 @@ This allows you to create automations that respond to checkbox state changes, su
 
 When importing data via CSV or other formats:
 - `"true"`, `"yes"` → Checked (case-insensitive)
-- `"false"`, `"no"`, `"0"`, empty → Unchecked
+- Any other value (including `"false"`, `"no"`, `"0"`, empty) → Unchecked
 
 ### Exporting Checkbox Values
 
@@ -251,6 +253,5 @@ When exporting data:
 
 ## Related Resources
 
-- [Custom Fields Overview](/custom-fields/list-custom-fields) - General custom field concepts
-- [Automations API](/api/automations/index) - Create automations triggered by checkbox changes
-- [Forms API](/api/forms) - Include checkboxes in custom forms
+- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General custom field concepts
+- [Automations API](/api/automations) - Create automations triggered by checkbox changes

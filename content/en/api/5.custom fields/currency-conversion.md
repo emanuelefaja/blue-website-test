@@ -295,12 +295,16 @@ When conversion fails (API error, invalid currency, etc.):
 
 ## Required Permissions
 
-| Action | Required Permission |
-|--------|-------------------|
-| Create conversion field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update conversion field | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| Create conversion options | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| View converted values | Standard record view permissions |
+Custom field management requires project-level access:
+
+| Role | Can Create/Update Fields |
+|------|-------------------------|
+| `OWNER` | ✅ Yes |
+| `ADMIN` | ✅ Yes |
+| `MEMBER` | ❌ No |
+| `CLIENT` | ❌ No |
+
+View permissions for converted values follow standard record access rules.
 
 ## Best Practices
 
@@ -345,8 +349,10 @@ When conversion fails (API error, invalid currency, etc.):
 
 - No support for cryptocurrency conversions
 - Cannot set converted values manually (always calculated)
-- Maximum 2 decimal places precision
+- Fixed 2 decimal places precision for all converted amounts
 - No support for custom exchange rates
+- No caching of exchange rates (fresh API call for each conversion)
+- Depends on Frankfurter API availability
 
 ## Related Resources
 
