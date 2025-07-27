@@ -55,16 +55,16 @@
 - [🔧] email.md - Fixed: Corrected error code (NOT_FOUND), clarified email values accessed via customField.value.text, fixed broken link, added query examples
 - [🔧] file.md - Fixed: Corrected field types (id: ID!, size: Float!), fixed permissions from constants to role-based, updated broken API links, fixed error code
 - [🔧] formula.md - Complete rewrite: Clarified formulas are for CHART calculations only, not field-level. Fixed permissions, removed non-existent error codes, corrected all broken links
-- [ ] location.md
+- [🔧] location.md - Fixed: Corrected permissions from constants to role-based, fixed broken API link
 - [🔧] lookup.md - Complete rewrite: Removed all hallucinated aggregation functions, fixed to show lookups as data extractors only (from 30% to 100% accurate)
-- [ ] number.md
-- [ ] percent.md
+- [🔧] number.md - Fixed: Added projectId parameter, clarified min/max constraints are UI-only (NO server validation), fixed error examples, corrected permissions, fixed all broken links
+- [🔧] percent.md - Fixed: Removed projectId from examples, corrected permissions to role-based, fixed operators (removed BETWEEN/NULL/NOT_NULL), replaced hallucinated aggregation API with chart aggregation, clarified % symbol handling, fixed broken links
 - [🔧] phone.md - Fixed: Clarified validation only happens on createTodo, not setTodoCustomField; removed non-existent Forms API link
-- [🔄] rating.md
-- [🔄] reference.md
-- [ ] select-multi.md
-- [🔄] select-single.md
-- [🔄] text-multi.md
+- [🔧] rating.md - Fixed: Corrected permissions to role-based, clarified validation only in forms not setTodoCustomField, removed non-existent error codes, fixed broken links, corrected min default value claim
+- [🔧] reference.md - Fixed: Corrected TodoFilterInput fields (removed status/tags, added dueStart/dueEnd), fixed selectedTodos location, updated lookup integration, removed hallucinated limitations
+- [🔧] select-multi.md - Fixed: Removed inline option creation, corrected permissions to role-based, fixed error codes, updated reorder example
+- [🔧] select-single.md - Fixed: Corrected permissions to role-based, changed selectedOption to value field, fixed error codes, added query example
+- [🔧] text-multi.md - Fixed: Corrected projectId location, updated filtering query structure, removed Forms API link, clarified TEXT_MULTI/TEXT_SINGLE are identical backend
 - [🔧] text-single.md - Fixed: Removed projectId from examples, corrected permissions to role-based, clarified text accessed via customField.value.text, fixed text parameter as optional
 - [🔧] time-duration.md - Fixed: Added missing timeDurationTargetTime field and DAYS/HOURS/MINUTES/SECONDS display formats
 - [✅] unique-id.md - Verified: 98% accurate, only fixed one broken link. All features documented correctly
@@ -74,18 +74,21 @@
 - [ ] 1.index.md
 
 ### User Management
-- [ ] 1.index.md
-- [ ] 2.list-users.md
-- [ ] 3.remove-user.md
-- [ ] 4.retrieve-custom-role.md
+- [🔧] 1.index.md - Fixed: Added projectIds parameter, corrected error codes, clarified invitation types and company restrictions, added missing error scenarios
+- [🔧] 2.list-users.md - Fixed: Corrected UserOrderByInput structure (enum vs object), fixed broken API links, added email privacy rules, updated max limit to 200
+- [🔧] 3.remove-user.md - Fixed: Clarified project owner removal restrictions, corrected company permission enforcement, updated email notification details
+- [🔧] 4.retrieve-custom-role.md - Fixed: Corrected projectId parameter requirement (optional not required), fixed default values for permissions, removed non-existent error codes, updated role limits
 
 ### Company Management
 - [ ] 1.index.md
 
 ### Dashboards
-- [ ] 1.index.md
-- [ ] 2. Clone Dashboard copy.md
+- [🔧] 1.index.md - Complete rewrite: From 20 lines to 247 lines. Added pagination structure, filtering options, sorting, permissions, error handling, and comprehensive examples
+- [🔧] 2. Clone Dashboard copy.md - Complete rewrite: From 22 lines to 200+ comprehensive documentation. Added parameters, permissions, error handling, use cases, and deep copy behavior explanation
 - [ ] 3. Rename Dashboard.md
+- [✅] 4.delete-dashboard.md - Created comprehensive documentation for deleteDashboard mutation
+- [ ] create-dashboard.md - TODO: Create documentation for createDashboard mutation (exists in API)
+- [ ] edit-dashboard.md - TODO: Create documentation for editDashboard mutation (exists in API)
 
 ### Libraries
 - [ ] 1.python.md
@@ -97,5 +100,5 @@
 - Total Files: 73
 - Verified: 11
 - Issues Found: 0
-- Fixed: 40
+- Fixed: 45
 
