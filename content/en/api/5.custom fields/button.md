@@ -63,13 +63,15 @@ mutation CreateButtonWithConfirmation {
 | `required` | Boolean | No | Whether the field is required (defaults to false) |
 | `isActive` | Boolean | No | Whether the field is active (defaults to true) |
 
-### Button Types
+### Button Type Field
 
-| Value | Description |
-|-------|-------------|
-| `noConfirmation` | Button clicks immediately without any confirmation (default) |
-| `softConfirmation` | Shows a simple confirmation dialog before executing |
-| `hardConfirmation` | Requires users to type specific text before executing |
+The `buttonType` field is a free-form string that can be used by UI clients to determine confirmation behavior. Common values include:
+
+- `""` (empty) - No confirmation
+- `"soft"` - Simple confirmation dialog
+- `"hard"` - Require typing confirmation text
+
+**Note**: These are UI hints only. The API does not validate or enforce specific values.
 
 ## Triggering Button Clicks
 
@@ -91,15 +93,15 @@ mutation ClickButton {
 | `todoId` | String! | ✅ Yes | ID of the task containing the button |
 | `customFieldId` | String! | ✅ Yes | ID of the button custom field |
 
-### Important: Confirmation Handling
+### Important: API Behavior
 
-**The API call is identical for all button types** - whether the button has no confirmation, soft confirmation, or hard confirmation. The confirmation logic is handled entirely by the Blue web interface:
+**All button clicks through the API execute immediately** regardless of any `buttonType` or `buttonConfirmText` settings. These fields are stored for UI clients to implement confirmation dialogs, but the API itself:
 
-- **No confirmation**: Button clicks execute immediately
-- **Soft confirmation**: Web UI shows a confirmation dialog
-- **Hard confirmation**: Web UI requires typing specific text
+- Does not validate confirmation text
+- Does not enforce any confirmation requirements
+- Executes the button action immediately when called
 
-When using the API directly, **all button clicks execute immediately** regardless of the button's confirmation settings. The API does not validate or enforce confirmations - this is purely a UI safety feature.
+Confirmation is purely a client-side UI safety feature.
 
 ### Example: Clicking Different Button Types
 
@@ -178,52 +180,42 @@ Important: Button fields don't store any value data. They purely serve as action
 
 ## Required Permissions
 
-Users need appropriate permissions to create and use button fields:
+Users need appropriate project roles to create and use button fields:
 
-| Action | Required Permission |
+| Action | Required Role |
 |--------|-------------------|
-| Create button field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update button field | `CUSTOM_FIELDS_UPDATE` at company or project level |
-| Click button | Standard task permissions for the containing task |
-| Configure automations | `AUTOMATIONS_CREATE` at company or project level |
+| Create button field | `OWNER` or `ADMIN` at project level |
+| Update button field | `OWNER` or `ADMIN` at project level |
+| Click button | `OWNER`, `ADMIN`, `MEMBER`, or `CLIENT` (based on field permissions) |
+| Configure automations | `OWNER` or `ADMIN` at project level |
 
 ## Error Responses
-
-### No Automations Configured
-```json
-{
-  "errors": [{
-    "message": "Button has no automations configured",
-    "extensions": {
-      "code": "NO_AUTOMATIONS"
-    }
-  }]
-}
-```
-
-### Invalid Confirmation Text
-```json
-{
-  "errors": [{
-    "message": "Confirmation text does not match",
-    "extensions": {
-      "code": "INVALID_CONFIRMATION"
-    }
-  }]
-}
-```
 
 ### Permission Denied
 ```json
 {
   "errors": [{
-    "message": "You don't have permission to use this button",
+    "message": "You don't have permission to edit this custom field",
     "extensions": {
       "code": "FORBIDDEN"
     }
   }]
 }
 ```
+
+### Custom Field Not Found
+```json
+{
+  "errors": [{
+    "message": "Custom field not found",
+    "extensions": {
+      "code": "CUSTOM_FIELD_NOT_FOUND"
+    }
+  }]
+}
+```
+
+**Note**: The API does not return specific errors for missing automations or confirmation mismatches.
 
 ## Best Practices
 
@@ -233,9 +225,10 @@ Users need appropriate permissions to create and use button fields:
 - Avoid generic names like "Button 1" or "Click Here"
 
 ### Confirmation Settings
-- Use `noConfirmation` for safe, reversible actions
-- Use `softConfirmation` for important but recoverable actions
-- Use `hardConfirmation` for destructive or irreversible actions
+- Leave `buttonType` empty for safe, reversible actions
+- Set `buttonType` to suggest confirmation behavior to UI clients
+- Use `buttonConfirmText` to specify what users should type in UI confirmations
+- Remember: These are UI hints only - API calls always execute immediately
 
 ### Automation Design
 - Keep button actions focused on a single workflow

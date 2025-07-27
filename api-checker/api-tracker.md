@@ -46,9 +46,9 @@
 - [🔧] 3.create-custom-fields.md - Fixed: Corrected TIME_DURATION enum values (TODO_CREATED_AT, TODO_MARKED_AS_COMPLETE), added missing currency conversion parameters
 - [🔧] 4.custom-field-values.md - Fixed: Removed non-existent RECORD_NOT_FOUND error, clarified FORMULA/LOOKUP fields are read-only, enhanced permissions documentation
 - [🔧] 5.delete-custom-field.md - Fixed: Removed non-existent PROJECT_NOT_ACTIVE error (98% accurate otherwise)
-- [🔄] button.md
+- [🔧] button.md - Fixed: Corrected button types to UI hints, removed non-existent errors, fixed permissions to role-based
 - [🔧] checkbox.md - Fixed: Added case-sensitivity note, clarified import behavior, fixed link paths, removed non-existent forms API link (95% accurate)
-- [🔄] country.md
+- [🔧] country.md - Fixed: Clarified validation only in createTodo, corrected storage format, explained behavioral differences between mutations
 - [🔧] currency-conversion.md - Fixed: Corrected permission constants from CUSTOM_FIELDS_CREATE/UPDATE to standard user roles (OWNER/ADMIN)
 - [ ] currency.md
 - [ ] date.md
@@ -56,10 +56,10 @@
 - [ ] file.md
 - [ ] formula.md
 - [ ] location.md
-- [🔄] lookup.md
+- [🔧] lookup.md - Complete rewrite: Removed all hallucinated aggregation functions, fixed to show lookups as data extractors only (from 30% to 100% accurate)
 - [ ] number.md
 - [ ] percent.md
-- [ ] phone.md
+- [🔄] phone.md
 - [ ] rating.md
 - [ ] reference.md
 - [ ] select-multi.md

@@ -4,7 +4,11 @@ description: Create country selection fields with ISO country code validation
 category: Custom Fields
 ---
 
-Country custom fields allow you to store and manage country information for records. The field supports both country names and ISO Alpha-2 country codes, automatically validating and converting between formats.
+Country custom fields allow you to store and manage country information for records. The field supports both country names and ISO Alpha-2 country codes.
+
+**Important**: Country validation and conversion behavior differs significantly between mutations:
+- **createTodo**: Automatically validates and converts country names to ISO codes
+- **setTodoCustomField**: Accepts any value without validation
 
 ## Basic Example
 
@@ -60,8 +64,8 @@ mutation CreateDetailedCountryField {
 
 ## Setting Country Values
 
-Country fields store data in two separate database fields that can be used independently or together:
-- **`countryCodes`**: Stores validated ISO Alpha-2 country codes as an array
+Country fields store data in two database fields:
+- **`countryCodes`**: Stores ISO Alpha-2 country codes as a comma-separated string in the database (returned as array via API)
 - **`text`**: Stores display text or country names as a string
 
 ### Understanding the Parameters
@@ -75,7 +79,9 @@ The `setTodoCustomField` mutation accepts two optional parameters for country fi
 | `countryCodes` | [String!] | No | Array of ISO Alpha-2 country codes | Stored in the `countryCodes` field |
 | `text` | String | No | Display text or country names | Stored in the `text` field |
 
-**Important**: Both `countryCodes` and `text` are optional and stored independently. You can use either one or both.
+**Important**: 
+- In `setTodoCustomField`: Both parameters are optional and stored independently
+- In `createTodo`: The system automatically sets both fields based on your input (you cannot control them independently)
 
 ### Option 1: Using Only Country Codes
 
@@ -109,7 +115,7 @@ mutation SetCountryByText {
 
 Result: `countryCodes` = `null`, `text` = `"United States"`
 
-**Note**: When using only `text`, no validation or conversion to country codes occurs.
+**Note**: When using `setTodoCustomField`, no validation occurs regardless of which parameter you use. The values are stored exactly as provided.
 
 ### Option 3: Using Both (Recommended)
 
@@ -145,7 +151,7 @@ mutation SetMultipleCountries {
 
 ## Creating Records with Country Values
 
-When creating records, the `createTodo` mutation **automatically validates and converts** country values:
+When creating records, the `createTodo` mutation **automatically validates and converts** country values. This is the only mutation that performs country validation:
 
 ```graphql
 mutation CreateRecordWithCountry {
@@ -178,8 +184,8 @@ mutation CreateRecordWithCountry {
 |------------|---------|---------|
 | Country Name | `"United States"` | Stored as `US` |
 | ISO Alpha-2 Code | `"GB"` | Stored as `GB` |
-| Multiple (comma-separated) | `"US, CA"` | Stored as array `["US", "CA"]` |
-| Mixed format | `"United States, CA"` | Converted to `["US", "CA"]` |
+| Multiple (comma-separated) | `"US, CA"` | **Not supported** - treated as single invalid value |
+| Mixed format | `"United States, CA"` | **Not supported** - treated as single invalid value |
 
 ## Response Fields
 
@@ -200,7 +206,7 @@ mutation CreateRecordWithCountry {
 Blue uses the **ISO 3166-1 Alpha-2** standard for country codes:
 
 - Two-letter country codes (e.g., US, GB, FR, DE)
-- Validated using the `i18n-iso-countries` library
+- Validation using the `i18n-iso-countries` library **only occurs in createTodo**
 - Supports all officially recognized countries
 
 ### Example Country Codes
@@ -220,18 +226,20 @@ For the complete official list of ISO 3166-1 alpha-2 country codes, visit the [I
 
 ## Validation
 
-The system validates country inputs:
+**Validation only occurs in the `createTodo` mutation**:
 
 1. **Valid ISO Code**: Accepts any valid ISO Alpha-2 code
 2. **Country Name**: Automatically converts recognized country names to codes
 3. **Invalid Input**: Throws `CustomFieldValueParseError` for unrecognized values
+
+**Note**: The `setTodoCustomField` mutation performs NO validation and accepts any string value.
 
 ### Error Example
 
 ```json
 {
   "errors": [{
-    "message": "Invalid country value: 'Atlantis'",
+    "message": "Invalid country value.",
     "extensions": {
       "code": "CUSTOM_FIELD_VALUE_PARSE_ERROR"
     }
@@ -257,8 +265,8 @@ Country fields in forms automatically validate user input and convert country na
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create country field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update country field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create country field | Project `OWNER` or `ADMIN` role |
+| Update country field | Project `OWNER` or `ADMIN` role |
 | Set country value | Standard record edit permissions |
 | View country value | Standard record view permissions |
 
@@ -291,8 +299,9 @@ Country fields in forms automatically validate user input and convert country na
 ## Best Practices
 
 ### Input Handling
-- Accept both country names and codes for user convenience
-- Always store as ISO codes for consistency
+- Use `createTodo` for automatic validation and conversion
+- Use `setTodoCustomField` carefully as it bypasses validation
+- Consider validating inputs in your application before using `setTodoCustomField`
 - Display full country names in UI for clarity
 
 ### Data Quality
@@ -301,9 +310,9 @@ Country fields in forms automatically validate user input and convert country na
 - Consider regional groupings for reporting
 
 ### Multiple Countries
-- Use array support for records that span multiple countries
-- Separate multiple values with commas in text input
-- Store all codes for complete data
+- Use array support in `setTodoCustomField` for multiple countries
+- Multiple countries in `createTodo` are **not supported** via the value field
+- Store country codes as array in `setTodoCustomField` for proper handling
 
 ## Common Use Cases
 
@@ -334,6 +343,9 @@ Country fields in forms automatically validate user input and convert country na
 - No automatic country flag icons (text-based only)
 - Cannot validate historical country codes
 - No built-in region or continent grouping
+- **Validation only works in `createTodo`, not in `setTodoCustomField`**
+- **Multiple countries not supported in `createTodo` value field**
+- **Country codes stored as comma-separated string, not true array**
 
 ## Related Resources
 

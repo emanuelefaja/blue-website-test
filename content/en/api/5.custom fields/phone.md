@@ -77,7 +77,7 @@ mutation SetPhoneValue {
 | `text` | String | No | Phone number with country code |
 | `regionCode` | String | No | Country code (automatically detected) |
 
-**Note**: While `text` is optional in the schema, a phone number is required for the field to be meaningful. The `regionCode` is automatically detected from the phone number.
+**Note**: While `text` is optional in the schema, a phone number is required for the field to be meaningful. When using `setTodoCustomField`, no validation is performed - you can store any text value and regionCode. The automatic detection only happens during record creation.
 
 ## Creating Records with Phone Values
 
@@ -124,7 +124,9 @@ mutation CreateRecordWithPhone {
 
 ## Phone Number Validation
 
-### Accepted Formats
+**Important**: Phone number validation and formatting only occurs when creating new records via `createTodo`. When updating existing phone values using `setTodoCustomField`, no validation is performed and the values are stored as provided.
+
+### Accepted Formats (During Record Creation)
 Phone numbers must include a country code in one of these formats:
 
 - **E.164 format (preferred)**: `+12345678900`
@@ -132,9 +134,9 @@ Phone numbers must include a country code in one of these formats:
 - **International with punctuation**: `+1 (234) 567-8900`
 - **Country code with dashes**: `+1-234-567-8900`
 
-**Note**: National formats without country code (like `(234) 567-8900`) may not work reliably and should include country information for proper validation.
+**Note**: National formats without country code (like `(234) 567-8900`) will be rejected during record creation.
 
-### Validation Rules
+### Validation Rules (During Record Creation)
 - Uses libphonenumber-js for parsing and validation
 - Accepts various international phone number formats
 - Automatically detects country from the number
@@ -162,9 +164,13 @@ invalid-phone          # Not a number
 
 ## Storage Format
 
-When a phone number is successfully validated:
-- **text**: Stored in international format (e.g., `+1 234 567 8900`)
-- **regionCode**: Stored as ISO country code (e.g., `US`, `GB`, `CA`)
+When creating records with phone numbers:
+- **text**: Stored in international format (e.g., `+1 234 567 8900`) after validation
+- **regionCode**: Stored as ISO country code (e.g., `US`, `GB`, `CA`) automatically detected
+
+When updating via `setTodoCustomField`:
+- **text**: Stored exactly as provided (no formatting)
+- **regionCode**: Stored exactly as provided (no validation)
 
 ## Required Permissions
 
@@ -294,4 +300,3 @@ When a phone number is successfully validated:
 - [Email Fields](/api/custom-fields/email) - For email addresses
 - [URL Fields](/api/custom-fields/url) - For website addresses
 - [Custom Fields Overview](/custom-fields/list-custom-fields) - General concepts
-- [Forms API](/api/forms) - For validated phone input
