@@ -65,7 +65,7 @@
 - [ ] select-multi.md
 - [🔄] select-single.md
 - [🔄] text-multi.md
-- [🔄] text-single.md
+- [🔧] text-single.md - Fixed: Removed projectId from examples, corrected permissions to role-based, clarified text accessed via customField.value.text, fixed text parameter as optional
 - [🔧] time-duration.md - Fixed: Added missing timeDurationTargetTime field and DAYS/HOURS/MINUTES/SECONDS display formats
 - [✅] unique-id.md - Verified: 98% accurate, only fixed one broken link. All features documented correctly
 - [🔧] url.md - Fixed: Corrected projectId parameter location, removed non-existent Forms API link, clarified role-based permissions
