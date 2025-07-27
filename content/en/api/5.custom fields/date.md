@@ -71,7 +71,12 @@ mutation SetSingleDate {
     startDate: "2025-01-15T10:00:00Z"
     endDate: "2025-01-15T10:00:00Z"
     timezone: "America/New_York"
-  })
+  }) {
+    id
+    customField {
+      value  # Contains { startDate, endDate, timezone }
+    }
+  }
 }
 ```
 
@@ -85,7 +90,12 @@ mutation SetDateRange {
     startDate: "2025-01-01T09:00:00Z"
     endDate: "2025-01-31T17:00:00Z"
     timezone: "Europe/London"
-  })
+  }) {
+    id
+    customField {
+      value  # Contains { startDate, endDate, timezone }
+    }
+  }
 }
 ```
 
@@ -99,7 +109,12 @@ mutation SetAllDayEvent {
     startDate: "2025-01-15T00:00:00Z"
     endDate: "2025-01-15T23:59:59Z"
     timezone: "Asia/Tokyo"
-  })
+  }) {
+    id
+    customField {
+      value  # Contains { startDate, endDate, timezone }
+    }
+  }
 }
 ```
 
@@ -153,10 +168,8 @@ mutation CreateRecordWithDate {
       customField {
         name
         type
+        value  # Date values are accessed here
       }
-      startDate
-      endDate
-      timezone
     }
   }
 }
@@ -178,24 +191,72 @@ When creating records, dates can be provided in various formats:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | String! | Unique identifier for the field value |
-| `customField` | CustomField! | The custom field definition |
-| `startDate` | DateTime | Start date/time in UTC |
-| `endDate` | DateTime | End date/time in UTC |
-| `timezone` | String | Timezone identifier |
-| `value` | Object | Combined date object (see below) |
+| `id` | ID! | Unique identifier for the field value |
+| `uid` | String! | Unique identifier string |
+| `customField` | CustomField! | The custom field definition (contains the date values) |
 | `todo` | Todo! | The record this value belongs to |
 | `createdAt` | DateTime! | When the value was created |
 | `updatedAt` | DateTime! | When the value was last modified |
 
+**Important**: Date values (`startDate`, `endDate`, `timezone`) are accessed through the `customField.value` field, not directly on TodoCustomField.
+
 ### Value Object Structure
+
+Date values are returned through the `customField.value` field as a JSON object:
 
 ```json
 {
-  "value": {
-    "startDate": "2025-01-15T10:00:00.000Z",
-    "endDate": "2025-01-15T17:00:00.000Z",
-    "timezone": "America/New_York"
+  "customField": {
+    "value": {
+      "startDate": "2025-01-15T10:00:00.000Z",
+      "endDate": "2025-01-15T17:00:00.000Z",
+      "timezone": "America/New_York"
+    }
+  }
+}
+```
+
+**Note**: The `value` field is on the `CustomField` type, not on `TodoCustomField`.
+
+## Querying Date Values
+
+When querying records with date custom fields, access the date values through the `customField.value` field:
+
+```graphql
+query GetRecordWithDateField {
+  todo(id: "todo_123") {
+    id
+    title
+    customFields {
+      id
+      customField {
+        name
+        type
+        value  # For DATE type, contains { startDate, endDate, timezone }
+      }
+    }
+  }
+}
+```
+
+The response will include the date values in the `value` field:
+
+```json
+{
+  "data": {
+    "todo": {
+      "customFields": [{
+        "customField": {
+          "name": "Deadline",
+          "type": "DATE",
+          "value": {
+            "startDate": "2025-01-15T10:00:00.000Z",
+            "endDate": "2025-01-15T10:00:00.000Z",
+            "timezone": "America/New_York"
+          }
+        }
+      }]
+    }
   }
 }
 ```
@@ -249,7 +310,24 @@ query FilterByDateRange {
         startDate: "2025-01-01T00:00:00Z"
         endDate: "2025-12-31T23:59:59Z"
       }
-      operator: EQ  # Overlaps with range
+      operator: EQ  # Returns todos whose dates overlap with this range
+    }]
+  }) {
+    id
+    title
+  }
+}
+```
+
+### Checking for Empty Date Fields
+
+```graphql
+query FilterEmptyDates {
+  todos(filter: {
+    customFields: [{
+      customFieldId: "date_field_id"
+      values: null
+      operator: IS  # Returns todos with no date set
     }]
   }) {
     id
@@ -260,19 +338,19 @@ query FilterByDateRange {
 
 ### Supported Operators
 
-| Operator | Description |
-|----------|-------------|
-| `EQ` | Date overlaps with specified range |
-| `NE` | Date does not overlap with range |
-| `NULL` | Date field is empty |
-| `NOT_NULL` | Date field has a value |
+| Operator | Usage | Description |
+|----------|-------|-------------|
+| `EQ` | With dateRange | Date overlaps with specified range (any intersection) |
+| `NE` | With dateRange | Date does not overlap with range |
+| `IS` | With `values: null` | Date field is empty (startDate or endDate is null) |
+| `NOT` | With `values: null` | Date field has a value (both dates are not null) |
 
 ## Required Permissions
 
 | Action | Required Permission |
 |--------|-------------------|
-| Create date field | `CUSTOM_FIELDS_CREATE` at company or project level |
-| Update date field | `CUSTOM_FIELDS_UPDATE` at company or project level |
+| Create date field | `OWNER` or `ADMIN` role at company or project level |
+| Update date field | `OWNER` or `ADMIN` role at company or project level |
 | Set date value | Standard record edit permissions |
 | View date value | Standard record view permissions |
 
@@ -302,65 +380,6 @@ query FilterByDateRange {
 }
 ```
 
-## Best Practices
-
-### Date Selection
-- Use single dates for deadlines and milestones
-- Use date ranges for events and time periods
-- Set `isDueDate: true` for deadline-type fields
-
-### Timezone Management
-- Always specify timezone for accuracy
-- Use user's local timezone for better UX
-- Be consistent within a project
-
-### Data Entry
-- Provide date pickers in your UI
-- Show timezone to avoid confusion
-- Validate dates before submission
-
-## Common Use Cases
-
-1. **Project Management**
-   - Task deadlines
-   - Milestone dates
-   - Sprint periods
-   - Project timelines
-
-2. **Event Planning**
-   - Event dates and times
-   - Registration periods
-   - Meeting schedules
-   - Booking windows
-
-3. **Contract Management**
-   - Start and end dates
-   - Renewal deadlines
-   - Notice periods
-   - Payment due dates
-
-4. **Compliance Tracking**
-   - Certification expiry
-   - Audit dates
-   - Filing deadlines
-   - Review periods
-
-## Integration Features
-
-### With Automations
-- Trigger actions based on approaching dates
-- Send reminders before deadlines
-- Update status when dates pass
-
-### With Lookups
-- Aggregate dates from related records
-- Find earliest/latest dates
-- Calculate date ranges
-
-### With Forms
-- Date picker integration
-- Automatic timezone detection
-- Range validation
 
 ## Limitations
 
@@ -372,6 +391,5 @@ query FilterByDateRange {
 
 ## Related Resources
 
-- [Custom Fields Overview](/custom-fields/list-custom-fields) - General custom field concepts
+- [Custom Fields Overview](/api/custom-fields/list-custom-fields) - General custom field concepts
 - [Automations API](/api/automations/index) - Create date-based automations
-- [Forms API](/api/forms) - Include date fields in forms

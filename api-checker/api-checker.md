@@ -17,6 +17,9 @@ This prompt guides the systematic verification of API documentation against the 
   1. Choose a file with [ ] status
   2. IMMEDIATELY update api-tracker.md to mark it as [🔄] In Progress
   3. Only then proceed with verification
+  4. Create the review checklist file and complete verification
+  5. **IMMEDIATELY after completing the review file, update the actual API documentation file based on your findings**
+  6. Update api-tracker.md to mark as [🔧] Fixed or [✅] Verified
 
 ### 2. For Each API Documentation File
 
@@ -313,5 +316,12 @@ Update `api-tracker.md` with:
 3. **Check Related Code**: Don't just verify the direct resolver, check related services
 4. **Test When Possible**: If you have access to GraphQL playground, test the actual queries
 5. **Version Awareness**: Some features might be version-specific or feature-flagged
+
+## Important: Complete Workflow
+
+**DO NOT STOP** after creating the review file! The complete workflow is:
+1. ✅ Create review file with all findings
+2. ✅ **IMMEDIATELY edit the actual API documentation file** in `/content/en/api/` to fix all issues found
+3. ✅ Update api-tracker.md with final status (🔧 Fixed if changes made, ✅ Verified if no changes needed)
 
 Remember: The goal is to ensure the documentation is 100% accurate and helpful for developers using the Blue API.

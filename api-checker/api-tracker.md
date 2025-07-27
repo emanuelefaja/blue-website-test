@@ -51,7 +51,7 @@
 - [🔧] country.md - Fixed: Clarified validation only in createTodo, corrected storage format, explained behavioral differences between mutations
 - [🔧] currency-conversion.md - Fixed: Corrected permission constants from CUSTOM_FIELDS_CREATE/UPDATE to standard user roles (OWNER/ADMIN)
 - [🔧] currency.md - Fixed: Removed non-existent projectId/isActive params, corrected permissions model, replaced hallucinated error codes with actual ones (75% accurate)
-- [ ] date.md
+- [🔧] date.md - Fixed: Corrected permission model (role-based not constants), clarified date values accessed via customField.value, fixed broken link, added query examples, corrected operators (IS/NOT instead of NULL/NOT_NULL)
 - [ ] email.md
 - [ ] file.md
 - [ ] formula.md
