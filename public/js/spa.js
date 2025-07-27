@@ -88,8 +88,9 @@ window.SPAUtils = {
     /**
      * Handle navigation to a new page
      * @param {HTMLElement} link - The clicked link element
+     * @param {boolean} isLanguageSwitch - Whether this is a language switch
      */
-    async handleNavigation(link) {
+    async handleNavigation(link, isLanguageSwitch = false) {
         try {
             // Add language prefix to the URL if needed
             const targetUrl = new URL(link.href);
@@ -103,13 +104,19 @@ window.SPAUtils = {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
             
-            const newMain = doc.querySelector('main');
-            const currentMain = document.querySelector('main');
-            
-            if (newMain && currentMain) {
-                await this.updatePageContent(newMain, currentMain, targetUrl, doc);
+            if (isLanguageSwitch) {
+                // For language switches, update more of the DOM
+                await this.updateFullPageContent(doc, targetUrl);
             } else {
-                window.location.href = targetUrl.href;
+                // For regular navigation, just update main content
+                const newMain = doc.querySelector('main');
+                const currentMain = document.querySelector('main');
+                
+                if (newMain && currentMain) {
+                    await this.updatePageContent(newMain, currentMain, targetUrl, doc);
+                } else {
+                    window.location.href = targetUrl.href;
+                }
             }
         } catch (error) {
             console.error('Client routing failed:', error);
@@ -118,6 +125,112 @@ window.SPAUtils = {
             targetUrl.pathname = this.addLanguagePrefix(targetUrl.pathname);
             window.location.href = targetUrl.href;
         }
+    },
+
+    /**
+     * Update full page content for language switching
+     * @param {Document} doc - Parsed document from response
+     * @param {URL} targetUrl - The target URL object
+     */
+    async updateFullPageContent(doc, targetUrl) {
+        // Preserve current state
+        const preservedState = {
+            darkMode: localStorage.getItem('theme') === 'dark',
+            customLogo: localStorage.getItem('customLogo'),
+            sidebarOpen: document.querySelector('body')._x_dataStack?.[0]?.sidebarsOpen ?? true,
+            searchQuery: document.getElementById('searchInput')?.value || '',
+            authState: window.AuthStateManager?.getState() || null
+        };
+
+        // Get all components that need updating
+        const componentsToUpdate = [
+            { selector: 'header', name: 'topbar' },
+            { selector: 'nav[x-data*="currentPath"]', name: 'left-sidebar' },
+            { selector: 'main', name: 'main' },
+            { selector: '.image-lightbox', name: 'lightbox' }
+        ];
+
+        // Fade out all components
+        const fadePromises = componentsToUpdate.map(component => {
+            const element = document.querySelector(component.selector);
+            if (element) {
+                element.style.transition = 'opacity 50ms ease-out';
+                element.style.opacity = '0';
+            }
+        });
+
+        // Wait for fade out
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        // Update each component
+        componentsToUpdate.forEach(component => {
+            const currentElement = document.querySelector(component.selector);
+            const newElement = doc.querySelector(component.selector);
+            
+            if (currentElement && newElement) {
+                // Replace the HTML content
+                currentElement.outerHTML = newElement.outerHTML;
+            }
+        });
+
+        // Update title and meta tags
+        const newTitle = doc.querySelector('title');
+        if (newTitle) document.title = newTitle.textContent;
+        this.updateMetaTags(doc);
+
+        // Update URL
+        window.history.pushState(null, '', targetUrl.href);
+
+        // Restore preserved state
+        if (preservedState.darkMode) {
+            document.documentElement.classList.add('dark');
+        }
+        if (preservedState.customLogo) {
+            localStorage.setItem('customLogo', preservedState.customLogo);
+        }
+
+        // Re-initialize Alpine.js components with preserved state
+        setTimeout(() => {
+            // Re-initialize Alpine on updated elements
+            componentsToUpdate.forEach(component => {
+                const element = document.querySelector(component.selector);
+                if (element && window.Alpine) {
+                    window.Alpine.initTree(element);
+                }
+            });
+
+            // Restore states after Alpine initialization
+            const bodyData = document.querySelector('body')._x_dataStack?.[0];
+            if (bodyData) {
+                bodyData.sidebarsOpen = preservedState.sidebarOpen;
+            }
+
+            // Restore search query
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && preservedState.searchQuery) {
+                searchInput.value = preservedState.searchQuery;
+            }
+
+            // Fade in all components
+            componentsToUpdate.forEach(component => {
+                const element = document.querySelector(component.selector);
+                if (element) {
+                    element.style.opacity = '1';
+                }
+            });
+
+            // Re-initialize content
+            this.reinitializeContent();
+            
+            // Re-setup routing for new elements
+            this.setupClientRouting();
+
+            // Update sidebar state
+            const pathname = targetUrl.pathname;
+            const pathWithoutLang = pathname.replace(/^\/([a-z]{2}|[a-z]{2}-[A-Z]{2})(\/|$)/, '/');
+            this.updateSidebarState(pathWithoutLang);
+
+        }, 100);
     },
 
     /**

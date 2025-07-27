@@ -52,9 +52,24 @@
                 newPath = '/' + language.code + currentPath;
             }
             
-            // Set cookie and navigate
+            // Set cookie for persistence
             document.cookie = 'lang=' + language.code + '; path=/; max-age=' + (365 * 24 * 60 * 60);
-            window.location.href = newPath;
+            
+            // Use SPA navigation to avoid page reload and flashing
+            if (window.SPAUtils && window.SPAUtils.handleNavigation) {
+                // Close the language menu first
+                this.languageMenuOpen = false;
+                
+                // Create a temporary anchor element to trigger SPA navigation
+                const tempLink = document.createElement('a');
+                tempLink.href = newPath;
+                
+                // Use the SPA navigation system with language switch flag
+                window.SPAUtils.handleNavigation(tempLink, true);
+            } else {
+                // Fallback to full reload if SPA not available
+                window.location.href = newPath;
+            }
         }
      }" 
      @click.outside="languageMenuOpen = false">
