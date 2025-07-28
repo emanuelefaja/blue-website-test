@@ -1,0 +1,2030 @@
+{
+  "en": {
+    "page_title": "Product Roadmap",
+    "subtitle": "Track our progress and see what's coming next",
+    "columns": {
+      "ideas": "Ideas",
+      "planned": "Planned",
+      "in_progress": "In Progress",
+      "testing": "Testing"
+    },
+    "changelog_card": {
+      "title": "Check out our changelog",
+      "description": "See latest features and improvements."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Voice notes",
+        "description": "Add voice notes with transcriptions in comment areas"
+      },
+      "ai_project_assistant": {
+        "title": "AI Project Assistant",
+        "description": "Intelligent assistant for project management"
+      },
+      "ai_email_automations": {
+        "title": "AI Email Automations",
+        "description": "Enhance email automations with AI"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Add a REST API on top of existing GraphQL API"
+      },
+      "n8n_integration": {
+        "title": "n8n Integration",
+        "description": "Connect Blue with n8n for advanced workflow automation"
+      },
+      "mcp_server": {
+        "title": "MCP Server",
+        "description": "Model Context Protocol server for AI integrations"
+      },
+      "data_residency": {
+        "title": "Data Residency Options",
+        "description": "Choose data storage location in US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Time Tracking",
+        "description": "Track time and generate downloadable time sheets"
+      },
+      "saved_filtered_views": {
+        "title": "Saved Filtered Views",
+        "description": "Create and save custom filtered project views"
+      },
+      "customizable_project_tabs": {
+        "title": "Customizable Project Tabs",
+        "description": "Personalize project interface with custom tabs"
+      },
+      "public_views": {
+        "title": "Public Views",
+        "description": "Share project views as public view-only links"
+      },
+      "multiple_company_owners": {
+        "title": "Multiple Company Owners",
+        "description": "Support for multiple company owners"
+      },
+      "customizable_cards": {
+        "title": "Customizable Cards",
+        "description": "Choose fields to display on card front"
+      },
+      "enhanced_login_options": {
+        "title": "Enhanced Login Options",
+        "description": "More login methods and security features"
+      },
+      "project_level_dashboard": {
+        "title": "Project Level Dashboard",
+        "description": "Project-specific dashboard"
+      },
+      "reseller_platform": {
+        "title": "Reseller Platform",
+        "description": "Dedicated platform for resellers"
+      },
+      "threaded_comments": {
+        "title": "Threaded Comments",
+        "description": "Allow replies and threads in comments"
+      },
+      "dashboard_tables": {
+        "title": "Dashboard Tables",
+        "description": "Create customizable tables in dashboards"
+      },
+      "share_file_folders": {
+        "title": "Share File Folders",
+        "description": "Create public sharing links for folders"
+      },
+      "multi_homing_records": {
+        "title": "Multi-homing Records",
+        "description": "Allow records to exist in multiple projects simultaneously"
+      },
+      "memory_usage_optimization": {
+        "title": "Memory Usage Optimization",
+        "description": "Improve performance and reduce memory footprint"
+      },
+      "scheduled_automations": {
+        "title": "Scheduled Automations",
+        "description": "Set up automations to run at specific times or intervals"
+      },
+      "relative_date_actions": {
+        "title": "Relative Date Actions",
+        "description": "Create actions based on dynamic date calculations"
+      },
+      "system_upgrade": {
+        "title": "System Upgrade",
+        "description": "Vue2 to Vue3 Upgrade and new caching engine"
+      },
+      "new_design_system": {
+        "title": "New Design System",
+        "description": "Vuetify2 to Vuetify3 Upgrade"
+      },
+      "mobile_app_speed": {
+        "title": "Mobile App Speed Improvements",
+        "description": "iOS & Android performance enhancements"
+      },
+      "copy_automation": {
+        "title": "Copy Automation",
+        "description": "Ability to copy automation within a project"
+      },
+      "conditional_automations": {
+        "title": "Conditional Automations",
+        "description": "Add And/Or logic to automation triggers"
+      },
+      "zapier_integration": {
+        "title": "Zapier Integration",
+        "description": "Connect Blue with thousands of apps through Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Relative Date Triggers",
+        "description": "Trigger automations based on days before or after due dates"
+      },
+      "enhanced_cover_images": {
+        "title": "Enhanced Cover Images",
+        "description": "Better image handling with cropping and optimization features"
+      },
+      "custom_date_automations": {
+        "title": "Custom Date Automations",
+        "description": "Create automations based on custom date field values"
+      },
+      "file_renaming": {
+        "title": "File Renaming",
+        "description": "Rename uploaded files directly within Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Granular Deletion Permissions",
+        "description": "Control record deletion rights for specific user roles"
+      },
+      "owner_project_access": {
+        "title": "Owner Project Access",
+        "description": "Allow company owners to self-invite to any project"
+      }
+    }
+  },
+  "es": {
+    "page_title": "Hoja de Ruta del Producto",
+    "subtitle": "Sigue nuestro progreso y descubre lo que viene",
+    "columns": {
+      "ideas": "Ideas",
+      "planned": "Planificado",
+      "in_progress": "En Progreso",
+      "testing": "En Pruebas"
+    },
+    "changelog_card": {
+      "title": "Consulta nuestro registro de cambios",
+      "description": "Ver las últimas funciones y mejoras."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Notas de voz",
+        "description": "Agrega notas de voz con transcripciones en áreas de comentarios"
+      },
+      "ai_project_assistant": {
+        "title": "Asistente de Proyecto con IA",
+        "description": "Asistente inteligente para la gestión de proyectos"
+      },
+      "ai_email_automations": {
+        "title": "Automatizaciones de Email con IA",
+        "description": "Mejora las automatizaciones de correo electrónico con IA"
+      },
+      "rest_api": {
+        "title": "API REST",
+        "description": "Agregar una API REST sobre la API GraphQL existente"
+      },
+      "n8n_integration": {
+        "title": "Integración con n8n",
+        "description": "Conecta Blue con n8n para automatización avanzada de flujos de trabajo"
+      },
+      "mcp_server": {
+        "title": "Servidor MCP",
+        "description": "Servidor de Protocolo de Contexto de Modelo para integraciones de IA"
+      },
+      "data_residency": {
+        "title": "Opciones de Residencia de Datos",
+        "description": "Elige la ubicación de almacenamiento de datos en US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Seguimiento de Tiempo",
+        "description": "Registra tiempo y genera hojas de tiempo descargables"
+      },
+      "saved_filtered_views": {
+        "title": "Vistas Filtradas Guardadas",
+        "description": "Crea y guarda vistas de proyecto filtradas personalizadas"
+      },
+      "customizable_project_tabs": {
+        "title": "Pestañas de Proyecto Personalizables",
+        "description": "Personaliza la interfaz del proyecto con pestañas personalizadas"
+      },
+      "public_views": {
+        "title": "Vistas Públicas",
+        "description": "Comparte vistas de proyecto como enlaces públicos de solo lectura"
+      },
+      "multiple_company_owners": {
+        "title": "Múltiples Propietarios de Empresa",
+        "description": "Soporte para múltiples propietarios de empresa"
+      },
+      "customizable_cards": {
+        "title": "Tarjetas Personalizables",
+        "description": "Elige los campos a mostrar en el frente de la tarjeta"
+      },
+      "enhanced_login_options": {
+        "title": "Opciones de Inicio de Sesión Mejoradas",
+        "description": "Más métodos de inicio de sesión y funciones de seguridad"
+      },
+      "project_level_dashboard": {
+        "title": "Panel de Control a Nivel de Proyecto",
+        "description": "Panel de control específico del proyecto"
+      },
+      "reseller_platform": {
+        "title": "Plataforma para Revendedores",
+        "description": "Plataforma dedicada para revendedores"
+      },
+      "threaded_comments": {
+        "title": "Comentarios con Hilos",
+        "description": "Permite respuestas e hilos en los comentarios"
+      },
+      "dashboard_tables": {
+        "title": "Tablas del Panel de Control",
+        "description": "Crea tablas personalizables en los paneles de control"
+      },
+      "share_file_folders": {
+        "title": "Compartir Carpetas de Archivos",
+        "description": "Crea enlaces públicos para compartir carpetas"
+      },
+      "multi_homing_records": {
+        "title": "Registros Multi-ubicación",
+        "description": "Permite que los registros existan en múltiples proyectos simultáneamente"
+      },
+      "memory_usage_optimization": {
+        "title": "Optimización del Uso de Memoria",
+        "description": "Mejora el rendimiento y reduce el consumo de memoria"
+      },
+      "scheduled_automations": {
+        "title": "Automatizaciones Programadas",
+        "description": "Configura automatizaciones para ejecutarse en momentos o intervalos específicos"
+      },
+      "relative_date_actions": {
+        "title": "Acciones de Fecha Relativa",
+        "description": "Crea acciones basadas en cálculos de fecha dinámicos"
+      },
+      "system_upgrade": {
+        "title": "Actualización del Sistema",
+        "description": "Actualización de Vue2 a Vue3 y nuevo motor de caché"
+      },
+      "new_design_system": {
+        "title": "Nuevo Sistema de Diseño",
+        "description": "Actualización de Vuetify2 a Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Mejoras de Velocidad en la App Móvil",
+        "description": "Mejoras de rendimiento para iOS y Android"
+      },
+      "copy_automation": {
+        "title": "Copiar Automatización",
+        "description": "Capacidad de copiar automatizaciones dentro de un proyecto"
+      },
+      "conditional_automations": {
+        "title": "Automatizaciones Condicionales",
+        "description": "Agregar lógica Y/O a los activadores de automatización"
+      },
+      "zapier_integration": {
+        "title": "Integración con Zapier",
+        "description": "Conecta Blue con miles de aplicaciones a través de Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Activadores de Fecha Relativa",
+        "description": "Activa automatizaciones basadas en días antes o después de fechas de vencimiento"
+      },
+      "enhanced_cover_images": {
+        "title": "Imágenes de Portada Mejoradas",
+        "description": "Mejor manejo de imágenes con funciones de recorte y optimización"
+      },
+      "custom_date_automations": {
+        "title": "Automatizaciones de Fecha Personalizada",
+        "description": "Crea automatizaciones basadas en valores de campos de fecha personalizados"
+      },
+      "file_renaming": {
+        "title": "Renombrar Archivos",
+        "description": "Renombra archivos cargados directamente dentro de Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Permisos de Eliminación Granulares",
+        "description": "Controla los derechos de eliminación de registros para roles de usuario específicos"
+      },
+      "owner_project_access": {
+        "title": "Acceso del Propietario al Proyecto",
+        "description": "Permite a los propietarios de empresa auto-invitarse a cualquier proyecto"
+      }
+    }
+  },
+  "zh": {
+    "page_title": "产品路线图",
+    "subtitle": "跟踪我们的进展，了解即将推出的功能",
+    "columns": {
+      "ideas": "想法",
+      "planned": "已计划",
+      "in_progress": "进行中",
+      "testing": "测试中"
+    },
+    "changelog_card": {
+      "title": "查看我们的更新日志",
+      "description": "查看最新功能和改进。"
+    },
+    "items": {
+      "voice_notes": {
+        "title": "语音笔记",
+        "description": "在评论区添加带转录的语音笔记"
+      },
+      "ai_project_assistant": {
+        "title": "AI项目助手",
+        "description": "用于项目管理的智能助手"
+      },
+      "ai_email_automations": {
+        "title": "AI邮件自动化",
+        "description": "使用AI增强邮件自动化功能"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "在现有GraphQL API之上添加REST API"
+      },
+      "n8n_integration": {
+        "title": "n8n集成",
+        "description": "将Blue与n8n连接以实现高级工作流自动化"
+      },
+      "mcp_server": {
+        "title": "MCP服务器",
+        "description": "用于AI集成的模型上下文协议服务器"
+      },
+      "data_residency": {
+        "title": "数据驻留选项",
+        "description": "选择数据存储位置：美国/欧盟/亚太地区"
+      },
+      "time_tracking": {
+        "title": "时间跟踪",
+        "description": "跟踪时间并生成可下载的时间表"
+      },
+      "saved_filtered_views": {
+        "title": "保存的筛选视图",
+        "description": "创建并保存自定义筛选的项目视图"
+      },
+      "customizable_project_tabs": {
+        "title": "可自定义的项目标签页",
+        "description": "使用自定义标签页个性化项目界面"
+      },
+      "public_views": {
+        "title": "公开视图",
+        "description": "将项目视图作为公开只读链接分享"
+      },
+      "multiple_company_owners": {
+        "title": "多个公司所有者",
+        "description": "支持多个公司所有者"
+      },
+      "customizable_cards": {
+        "title": "可自定义卡片",
+        "description": "选择要在卡片正面显示的字段"
+      },
+      "enhanced_login_options": {
+        "title": "增强的登录选项",
+        "description": "更多登录方式和安全功能"
+      },
+      "project_level_dashboard": {
+        "title": "项目级仪表板",
+        "description": "特定于项目的仪表板"
+      },
+      "reseller_platform": {
+        "title": "经销商平台",
+        "description": "专门为经销商设计的平台"
+      },
+      "threaded_comments": {
+        "title": "线程评论",
+        "description": "允许在评论中回复和创建线程"
+      },
+      "dashboard_tables": {
+        "title": "仪表板表格",
+        "description": "在仪表板中创建可自定义的表格"
+      },
+      "share_file_folders": {
+        "title": "分享文件夹",
+        "description": "创建文件夹的公开分享链接"
+      },
+      "multi_homing_records": {
+        "title": "多归属记录",
+        "description": "允许记录同时存在于多个项目中"
+      },
+      "memory_usage_optimization": {
+        "title": "内存使用优化",
+        "description": "提高性能并减少内存占用"
+      },
+      "scheduled_automations": {
+        "title": "计划自动化",
+        "description": "设置自动化在特定时间或间隔运行"
+      },
+      "relative_date_actions": {
+        "title": "相对日期操作",
+        "description": "基于动态日期计算创建操作"
+      },
+      "system_upgrade": {
+        "title": "系统升级",
+        "description": "Vue2升级到Vue3和新的缓存引擎"
+      },
+      "new_design_system": {
+        "title": "新设计系统",
+        "description": "Vuetify2升级到Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "移动应用速度改进",
+        "description": "iOS和Android性能增强"
+      },
+      "copy_automation": {
+        "title": "复制自动化",
+        "description": "在项目内复制自动化的功能"
+      },
+      "conditional_automations": {
+        "title": "条件自动化",
+        "description": "为自动化触发器添加与/或逻辑"
+      },
+      "zapier_integration": {
+        "title": "Zapier集成",
+        "description": "通过Zapier将Blue与数千个应用程序连接"
+      },
+      "relative_date_triggers": {
+        "title": "相对日期触发器",
+        "description": "基于到期日期前后的天数触发自动化"
+      },
+      "enhanced_cover_images": {
+        "title": "增强的封面图像",
+        "description": "更好的图像处理，包括裁剪和优化功能"
+      },
+      "custom_date_automations": {
+        "title": "自定义日期自动化",
+        "description": "基于自定义日期字段值创建自动化"
+      },
+      "file_renaming": {
+        "title": "文件重命名",
+        "description": "直接在Blue中重命名上传的文件"
+      },
+      "granular_deletion_permissions": {
+        "title": "细粒度删除权限",
+        "description": "控制特定用户角色的记录删除权限"
+      },
+      "owner_project_access": {
+        "title": "所有者项目访问权限",
+        "description": "允许公司所有者自行邀请加入任何项目"
+      }
+    }
+  },
+  "fr": {
+    "page_title": "Feuille de Route Produit",
+    "subtitle": "Suivez notre progression et découvrez ce qui arrive",
+    "columns": {
+      "ideas": "Idées",
+      "planned": "Planifié",
+      "in_progress": "En Cours",
+      "testing": "En Test"
+    },
+    "changelog_card": {
+      "title": "Consultez notre journal des modifications",
+      "description": "Voir les dernières fonctionnalités et améliorations."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Notes vocales",
+        "description": "Ajoutez des notes vocales avec transcriptions dans les zones de commentaires"
+      },
+      "ai_project_assistant": {
+        "title": "Assistant de Projet IA",
+        "description": "Assistant intelligent pour la gestion de projet"
+      },
+      "ai_email_automations": {
+        "title": "Automatisations Email avec IA",
+        "description": "Améliorez les automatisations d'email avec l'IA"
+      },
+      "rest_api": {
+        "title": "API REST",
+        "description": "Ajouter une API REST au-dessus de l'API GraphQL existante"
+      },
+      "n8n_integration": {
+        "title": "Intégration n8n",
+        "description": "Connectez Blue avec n8n pour l'automatisation avancée des flux de travail"
+      },
+      "mcp_server": {
+        "title": "Serveur MCP",
+        "description": "Serveur de protocole de contexte de modèle pour les intégrations IA"
+      },
+      "data_residency": {
+        "title": "Options de Résidence des Données",
+        "description": "Choisissez l'emplacement de stockage des données US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Suivi du Temps",
+        "description": "Suivez le temps et générez des feuilles de temps téléchargeables"
+      },
+      "saved_filtered_views": {
+        "title": "Vues Filtrées Sauvegardées",
+        "description": "Créez et sauvegardez des vues de projet filtrées personnalisées"
+      },
+      "customizable_project_tabs": {
+        "title": "Onglets de Projet Personnalisables",
+        "description": "Personnalisez l'interface du projet avec des onglets personnalisés"
+      },
+      "public_views": {
+        "title": "Vues Publiques",
+        "description": "Partagez les vues de projet comme liens publics en lecture seule"
+      },
+      "multiple_company_owners": {
+        "title": "Propriétaires d'Entreprise Multiples",
+        "description": "Support pour plusieurs propriétaires d'entreprise"
+      },
+      "customizable_cards": {
+        "title": "Cartes Personnalisables",
+        "description": "Choisissez les champs à afficher sur le devant de la carte"
+      },
+      "enhanced_login_options": {
+        "title": "Options de Connexion Améliorées",
+        "description": "Plus de méthodes de connexion et de fonctionnalités de sécurité"
+      },
+      "project_level_dashboard": {
+        "title": "Tableau de Bord au Niveau Projet",
+        "description": "Tableau de bord spécifique au projet"
+      },
+      "reseller_platform": {
+        "title": "Plateforme Revendeur",
+        "description": "Plateforme dédiée aux revendeurs"
+      },
+      "threaded_comments": {
+        "title": "Commentaires en Fil",
+        "description": "Permet les réponses et les fils dans les commentaires"
+      },
+      "dashboard_tables": {
+        "title": "Tables du Tableau de Bord",
+        "description": "Créez des tables personnalisables dans les tableaux de bord"
+      },
+      "share_file_folders": {
+        "title": "Partager des Dossiers",
+        "description": "Créez des liens de partage public pour les dossiers"
+      },
+      "multi_homing_records": {
+        "title": "Enregistrements Multi-Projets",
+        "description": "Permet aux enregistrements d'exister dans plusieurs projets simultanément"
+      },
+      "memory_usage_optimization": {
+        "title": "Optimisation de l'Utilisation Mémoire",
+        "description": "Améliore les performances et réduit l'empreinte mémoire"
+      },
+      "scheduled_automations": {
+        "title": "Automatisations Programmées",
+        "description": "Configurez des automatisations pour s'exécuter à des moments ou intervalles spécifiques"
+      },
+      "relative_date_actions": {
+        "title": "Actions de Date Relative",
+        "description": "Créez des actions basées sur des calculs de date dynamiques"
+      },
+      "system_upgrade": {
+        "title": "Mise à Niveau Système",
+        "description": "Mise à niveau de Vue2 vers Vue3 et nouveau moteur de cache"
+      },
+      "new_design_system": {
+        "title": "Nouveau Système de Design",
+        "description": "Mise à niveau de Vuetify2 vers Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Améliorations de Vitesse App Mobile",
+        "description": "Améliorations de performance iOS et Android"
+      },
+      "copy_automation": {
+        "title": "Copier l'Automatisation",
+        "description": "Capacité de copier l'automatisation au sein d'un projet"
+      },
+      "conditional_automations": {
+        "title": "Automatisations Conditionnelles",
+        "description": "Ajouter la logique ET/OU aux déclencheurs d'automatisation"
+      },
+      "zapier_integration": {
+        "title": "Intégration Zapier",
+        "description": "Connectez Blue avec des milliers d'applications via Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Déclencheurs de Date Relative",
+        "description": "Déclencher des automatisations basées sur les jours avant ou après les dates d'échéance"
+      },
+      "enhanced_cover_images": {
+        "title": "Images de Couverture Améliorées",
+        "description": "Meilleure gestion des images avec fonctions de recadrage et d'optimisation"
+      },
+      "custom_date_automations": {
+        "title": "Automatisations de Date Personnalisée",
+        "description": "Créez des automatisations basées sur les valeurs de champs de date personnalisés"
+      },
+      "file_renaming": {
+        "title": "Renommage de Fichiers",
+        "description": "Renommez les fichiers téléchargés directement dans Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Permissions de Suppression Granulaires",
+        "description": "Contrôlez les droits de suppression d'enregistrements pour des rôles d'utilisateur spécifiques"
+      },
+      "owner_project_access": {
+        "title": "Accès Propriétaire au Projet",
+        "description": "Permet aux propriétaires d'entreprise de s'auto-inviter à n'importe quel projet"
+      }
+    }
+  },
+  "de": {
+    "page_title": "Produkt-Roadmap",
+    "subtitle": "Verfolgen Sie unseren Fortschritt und sehen Sie, was als Nächstes kommt",
+    "columns": {
+      "ideas": "Ideen",
+      "planned": "Geplant",
+      "in_progress": "In Bearbeitung",
+      "testing": "Im Test"
+    },
+    "changelog_card": {
+      "title": "Sehen Sie unser Änderungsprotokoll",
+      "description": "Sehen Sie die neuesten Funktionen und Verbesserungen."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Sprachnotizen",
+        "description": "Fügen Sie Sprachnotizen mit Transkriptionen in Kommentarbereichen hinzu"
+      },
+      "ai_project_assistant": {
+        "title": "KI-Projektassistent",
+        "description": "Intelligenter Assistent für Projektmanagement"
+      },
+      "ai_email_automations": {
+        "title": "KI-E-Mail-Automatisierungen",
+        "description": "Verbessern Sie E-Mail-Automatisierungen mit KI"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Eine REST API zusätzlich zur bestehenden GraphQL API hinzufügen"
+      },
+      "n8n_integration": {
+        "title": "n8n-Integration",
+        "description": "Verbinden Sie Blue mit n8n für erweiterte Workflow-Automatisierung"
+      },
+      "mcp_server": {
+        "title": "MCP-Server",
+        "description": "Model Context Protocol Server für KI-Integrationen"
+      },
+      "data_residency": {
+        "title": "Datenresidenz-Optionen",
+        "description": "Wählen Sie den Datenspeicherort in US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Zeiterfassung",
+        "description": "Erfassen Sie Zeit und generieren Sie herunterladbare Zeitblätter"
+      },
+      "saved_filtered_views": {
+        "title": "Gespeicherte gefilterte Ansichten",
+        "description": "Erstellen und speichern Sie benutzerdefinierte gefilterte Projektansichten"
+      },
+      "customizable_project_tabs": {
+        "title": "Anpassbare Projekt-Tabs",
+        "description": "Personalisieren Sie die Projektoberfläche mit benutzerdefinierten Tabs"
+      },
+      "public_views": {
+        "title": "Öffentliche Ansichten",
+        "description": "Teilen Sie Projektansichten als öffentliche schreibgeschützte Links"
+      },
+      "multiple_company_owners": {
+        "title": "Mehrere Unternehmenseigentümer",
+        "description": "Unterstützung für mehrere Unternehmenseigentümer"
+      },
+      "customizable_cards": {
+        "title": "Anpassbare Karten",
+        "description": "Wählen Sie die Felder, die auf der Kartenvorderseite angezeigt werden"
+      },
+      "enhanced_login_options": {
+        "title": "Erweiterte Anmeldeoptionen",
+        "description": "Mehr Anmeldemethoden und Sicherheitsfunktionen"
+      },
+      "project_level_dashboard": {
+        "title": "Dashboard auf Projektebene",
+        "description": "Projektspezifisches Dashboard"
+      },
+      "reseller_platform": {
+        "title": "Wiederverkäufer-Plattform",
+        "description": "Dedizierte Plattform für Wiederverkäufer"
+      },
+      "threaded_comments": {
+        "title": "Thread-Kommentare",
+        "description": "Ermöglicht Antworten und Threads in Kommentaren"
+      },
+      "dashboard_tables": {
+        "title": "Dashboard-Tabellen",
+        "description": "Erstellen Sie anpassbare Tabellen in Dashboards"
+      },
+      "share_file_folders": {
+        "title": "Dateiordner teilen",
+        "description": "Erstellen Sie öffentliche Freigabelinks für Ordner"
+      },
+      "multi_homing_records": {
+        "title": "Multi-Homing-Datensätze",
+        "description": "Ermöglicht Datensätzen, gleichzeitig in mehreren Projekten zu existieren"
+      },
+      "memory_usage_optimization": {
+        "title": "Speichernutzungsoptimierung",
+        "description": "Verbessert die Leistung und reduziert den Speicherbedarf"
+      },
+      "scheduled_automations": {
+        "title": "Geplante Automatisierungen",
+        "description": "Richten Sie Automatisierungen ein, die zu bestimmten Zeiten oder Intervallen ausgeführt werden"
+      },
+      "relative_date_actions": {
+        "title": "Relative Datumsaktionen",
+        "description": "Erstellen Sie Aktionen basierend auf dynamischen Datumsberechnungen"
+      },
+      "system_upgrade": {
+        "title": "System-Upgrade",
+        "description": "Vue2 zu Vue3 Upgrade und neue Cache-Engine"
+      },
+      "new_design_system": {
+        "title": "Neues Design-System",
+        "description": "Vuetify2 zu Vuetify3 Upgrade"
+      },
+      "mobile_app_speed": {
+        "title": "Mobile App Geschwindigkeitsverbesserungen",
+        "description": "iOS und Android Leistungsverbesserungen"
+      },
+      "copy_automation": {
+        "title": "Automatisierung kopieren",
+        "description": "Möglichkeit, Automatisierungen innerhalb eines Projekts zu kopieren"
+      },
+      "conditional_automations": {
+        "title": "Bedingte Automatisierungen",
+        "description": "Fügen Sie UND/ODER-Logik zu Automatisierungsauslösern hinzu"
+      },
+      "zapier_integration": {
+        "title": "Zapier-Integration",
+        "description": "Verbinden Sie Blue mit Tausenden von Apps über Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Relative Datumsauslöser",
+        "description": "Lösen Sie Automatisierungen basierend auf Tagen vor oder nach Fälligkeitsdaten aus"
+      },
+      "enhanced_cover_images": {
+        "title": "Verbesserte Titelbilder",
+        "description": "Bessere Bildverarbeitung mit Zuschnitt- und Optimierungsfunktionen"
+      },
+      "custom_date_automations": {
+        "title": "Benutzerdefinierte Datumsautomatisierungen",
+        "description": "Erstellen Sie Automatisierungen basierend auf benutzerdefinierten Datumsfeldwerten"
+      },
+      "file_renaming": {
+        "title": "Datei-Umbenennung",
+        "description": "Benennen Sie hochgeladene Dateien direkt in Blue um"
+      },
+      "granular_deletion_permissions": {
+        "title": "Granulare Löschberechtigungen",
+        "description": "Kontrollieren Sie Datensatzlöschrechte für bestimmte Benutzerrollen"
+      },
+      "owner_project_access": {
+        "title": "Eigentümer-Projektzugriff",
+        "description": "Ermöglicht Unternehmenseigentümern, sich selbst zu jedem Projekt einzuladen"
+      }
+    }
+  },
+  "ja": {
+    "page_title": "製品ロードマップ",
+    "subtitle": "進捗状況を追跡し、次の機能をご確認ください",
+    "columns": {
+      "ideas": "アイデア",
+      "planned": "計画中",
+      "in_progress": "進行中",
+      "testing": "テスト中"
+    },
+    "changelog_card": {
+      "title": "変更履歴を確認",
+      "description": "最新の機能と改善をご覧ください。"
+    },
+    "items": {
+      "voice_notes": {
+        "title": "音声メモ",
+        "description": "コメントエリアに文字起こし付きの音声メモを追加"
+      },
+      "ai_project_assistant": {
+        "title": "AIプロジェクトアシスタント",
+        "description": "プロジェクト管理のためのインテリジェントアシスタント"
+      },
+      "ai_email_automations": {
+        "title": "AIメール自動化",
+        "description": "AIでメール自動化を強化"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "既存のGraphQL APIの上にREST APIを追加"
+      },
+      "n8n_integration": {
+        "title": "n8n統合",
+        "description": "高度なワークフロー自動化のためにBlueをn8nと接続"
+      },
+      "mcp_server": {
+        "title": "MCPサーバー",
+        "description": "AI統合用のモデルコンテキストプロトコルサーバー"
+      },
+      "data_residency": {
+        "title": "データレジデンシーオプション",
+        "description": "US/EU/APACでデータ保存場所を選択"
+      },
+      "time_tracking": {
+        "title": "時間追跡",
+        "description": "時間を追跡し、ダウンロード可能なタイムシートを生成"
+      },
+      "saved_filtered_views": {
+        "title": "保存されたフィルタービュー",
+        "description": "カスタムフィルターされたプロジェクトビューを作成・保存"
+      },
+      "customizable_project_tabs": {
+        "title": "カスタマイズ可能なプロジェクトタブ",
+        "description": "カスタムタブでプロジェクトインターフェースをパーソナライズ"
+      },
+      "public_views": {
+        "title": "パブリックビュー",
+        "description": "プロジェクトビューを公開読み取り専用リンクとして共有"
+      },
+      "multiple_company_owners": {
+        "title": "複数の会社オーナー",
+        "description": "複数の会社オーナーのサポート"
+      },
+      "customizable_cards": {
+        "title": "カスタマイズ可能なカード",
+        "description": "カードの表面に表示するフィールドを選択"
+      },
+      "enhanced_login_options": {
+        "title": "強化されたログインオプション",
+        "description": "より多くのログイン方法とセキュリティ機能"
+      },
+      "project_level_dashboard": {
+        "title": "プロジェクトレベルダッシュボード",
+        "description": "プロジェクト固有のダッシュボード"
+      },
+      "reseller_platform": {
+        "title": "リセラープラットフォーム",
+        "description": "リセラー専用プラットフォーム"
+      },
+      "threaded_comments": {
+        "title": "スレッドコメント",
+        "description": "コメント内での返信とスレッドを許可"
+      },
+      "dashboard_tables": {
+        "title": "ダッシュボードテーブル",
+        "description": "ダッシュボードにカスタマイズ可能なテーブルを作成"
+      },
+      "share_file_folders": {
+        "title": "ファイルフォルダーの共有",
+        "description": "フォルダーの公開共有リンクを作成"
+      },
+      "multi_homing_records": {
+        "title": "マルチホーミングレコード",
+        "description": "レコードが複数のプロジェクトに同時に存在できるようにする"
+      },
+      "memory_usage_optimization": {
+        "title": "メモリ使用量の最適化",
+        "description": "パフォーマンスを向上させ、メモリフットプリントを削減"
+      },
+      "scheduled_automations": {
+        "title": "スケジュールされた自動化",
+        "description": "特定の時間や間隔で実行される自動化を設定"
+      },
+      "relative_date_actions": {
+        "title": "相対日付アクション",
+        "description": "動的な日付計算に基づいてアクションを作成"
+      },
+      "system_upgrade": {
+        "title": "システムアップグレード",
+        "description": "Vue2からVue3へのアップグレードと新しいキャッシュエンジン"
+      },
+      "new_design_system": {
+        "title": "新しいデザインシステム",
+        "description": "Vuetify2からVuetify3へのアップグレード"
+      },
+      "mobile_app_speed": {
+        "title": "モバイルアプリの速度改善",
+        "description": "iOSとAndroidのパフォーマンス向上"
+      },
+      "copy_automation": {
+        "title": "自動化のコピー",
+        "description": "プロジェクト内で自動化をコピーする機能"
+      },
+      "conditional_automations": {
+        "title": "条件付き自動化",
+        "description": "自動化トリガーにAND/ORロジックを追加"
+      },
+      "zapier_integration": {
+        "title": "Zapier統合",
+        "description": "Zapierを通じてBlueを数千のアプリと接続"
+      },
+      "relative_date_triggers": {
+        "title": "相対日付トリガー",
+        "description": "期限日の前後の日数に基づいて自動化をトリガー"
+      },
+      "enhanced_cover_images": {
+        "title": "強化されたカバー画像",
+        "description": "トリミングと最適化機能を備えた改善された画像処理"
+      },
+      "custom_date_automations": {
+        "title": "カスタム日付自動化",
+        "description": "カスタム日付フィールド値に基づいて自動化を作成"
+      },
+      "file_renaming": {
+        "title": "ファイル名変更",
+        "description": "Blue内でアップロードされたファイルを直接リネーム"
+      },
+      "granular_deletion_permissions": {
+        "title": "詳細な削除権限",
+        "description": "特定のユーザーロールのレコード削除権限を制御"
+      },
+      "owner_project_access": {
+        "title": "オーナープロジェクトアクセス",
+        "description": "会社のオーナーが任意のプロジェクトに自己招待できるようにする"
+      }
+    }
+  },
+  "pt": {
+    "page_title": "Roteiro do Produto",
+    "subtitle": "Acompanhe nosso progresso e veja o que vem a seguir",
+    "columns": {
+      "ideas": "Ideias",
+      "planned": "Planejado",
+      "in_progress": "Em Progresso",
+      "testing": "Em Teste"
+    },
+    "changelog_card": {
+      "title": "Confira nosso registro de mudanças",
+      "description": "Veja os recursos e melhorias mais recentes."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Notas de voz",
+        "description": "Adicione notas de voz com transcrições nas áreas de comentários"
+      },
+      "ai_project_assistant": {
+        "title": "Assistente de Projeto com IA",
+        "description": "Assistente inteligente para gerenciamento de projetos"
+      },
+      "ai_email_automations": {
+        "title": "Automações de E-mail com IA",
+        "description": "Aprimore as automações de e-mail com IA"
+      },
+      "rest_api": {
+        "title": "API REST",
+        "description": "Adicionar uma API REST sobre a API GraphQL existente"
+      },
+      "n8n_integration": {
+        "title": "Integração n8n",
+        "description": "Conecte o Blue com o n8n para automação avançada de fluxo de trabalho"
+      },
+      "mcp_server": {
+        "title": "Servidor MCP",
+        "description": "Servidor de Protocolo de Contexto de Modelo para integrações de IA"
+      },
+      "data_residency": {
+        "title": "Opções de Residência de Dados",
+        "description": "Escolha o local de armazenamento de dados em US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Rastreamento de Tempo",
+        "description": "Rastreie o tempo e gere folhas de ponto baixáveis"
+      },
+      "saved_filtered_views": {
+        "title": "Visualizações Filtradas Salvas",
+        "description": "Crie e salve visualizações de projeto filtradas personalizadas"
+      },
+      "customizable_project_tabs": {
+        "title": "Abas de Projeto Personalizáveis",
+        "description": "Personalize a interface do projeto com abas personalizadas"
+      },
+      "public_views": {
+        "title": "Visualizações Públicas",
+        "description": "Compartilhe visualizações de projeto como links públicos somente leitura"
+      },
+      "multiple_company_owners": {
+        "title": "Múltiplos Proprietários da Empresa",
+        "description": "Suporte para múltiplos proprietários da empresa"
+      },
+      "customizable_cards": {
+        "title": "Cartões Personalizáveis",
+        "description": "Escolha os campos a serem exibidos na frente do cartão"
+      },
+      "enhanced_login_options": {
+        "title": "Opções de Login Aprimoradas",
+        "description": "Mais métodos de login e recursos de segurança"
+      },
+      "project_level_dashboard": {
+        "title": "Painel de Nível de Projeto",
+        "description": "Painel específico do projeto"
+      },
+      "reseller_platform": {
+        "title": "Plataforma de Revendedor",
+        "description": "Plataforma dedicada para revendedores"
+      },
+      "threaded_comments": {
+        "title": "Comentários em Thread",
+        "description": "Permite respostas e threads nos comentários"
+      },
+      "dashboard_tables": {
+        "title": "Tabelas do Painel",
+        "description": "Crie tabelas personalizáveis nos painéis"
+      },
+      "share_file_folders": {
+        "title": "Compartilhar Pastas de Arquivos",
+        "description": "Crie links de compartilhamento público para pastas"
+      },
+      "multi_homing_records": {
+        "title": "Registros Multi-Projeto",
+        "description": "Permite que registros existam em vários projetos simultaneamente"
+      },
+      "memory_usage_optimization": {
+        "title": "Otimização do Uso de Memória",
+        "description": "Melhora o desempenho e reduz o consumo de memória"
+      },
+      "scheduled_automations": {
+        "title": "Automações Agendadas",
+        "description": "Configure automações para executar em horários ou intervalos específicos"
+      },
+      "relative_date_actions": {
+        "title": "Ações de Data Relativa",
+        "description": "Crie ações baseadas em cálculos de data dinâmicos"
+      },
+      "system_upgrade": {
+        "title": "Atualização do Sistema",
+        "description": "Atualização do Vue2 para Vue3 e novo mecanismo de cache"
+      },
+      "new_design_system": {
+        "title": "Novo Sistema de Design",
+        "description": "Atualização do Vuetify2 para Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Melhorias de Velocidade do App Móvel",
+        "description": "Melhorias de desempenho para iOS e Android"
+      },
+      "copy_automation": {
+        "title": "Copiar Automação",
+        "description": "Capacidade de copiar automação dentro de um projeto"
+      },
+      "conditional_automations": {
+        "title": "Automações Condicionais",
+        "description": "Adicione lógica E/OU aos gatilhos de automação"
+      },
+      "zapier_integration": {
+        "title": "Integração Zapier",
+        "description": "Conecte o Blue com milhares de aplicativos através do Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Gatilhos de Data Relativa",
+        "description": "Acione automações com base em dias antes ou depois das datas de vencimento"
+      },
+      "enhanced_cover_images": {
+        "title": "Imagens de Capa Aprimoradas",
+        "description": "Melhor manuseio de imagens com recursos de corte e otimização"
+      },
+      "custom_date_automations": {
+        "title": "Automações de Data Personalizada",
+        "description": "Crie automações baseadas em valores de campo de data personalizados"
+      },
+      "file_renaming": {
+        "title": "Renomeação de Arquivos",
+        "description": "Renomeie arquivos enviados diretamente no Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Permissões de Exclusão Granulares",
+        "description": "Controle os direitos de exclusão de registros para funções específicas de usuário"
+      },
+      "owner_project_access": {
+        "title": "Acesso do Proprietário ao Projeto",
+        "description": "Permite que proprietários da empresa se convidem para qualquer projeto"
+      }
+    }
+  },
+  "ru": {
+    "page_title": "Дорожная карта продукта",
+    "subtitle": "Отслеживайте наш прогресс и узнайте, что будет дальше",
+    "columns": {
+      "ideas": "Идеи",
+      "planned": "Запланировано",
+      "in_progress": "В процессе",
+      "testing": "Тестирование"
+    },
+    "changelog_card": {
+      "title": "Посмотрите наш журнал изменений",
+      "description": "Посмотрите последние функции и улучшения."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Голосовые заметки",
+        "description": "Добавляйте голосовые заметки с транскрипциями в области комментариев"
+      },
+      "ai_project_assistant": {
+        "title": "ИИ-помощник проекта",
+        "description": "Интеллектуальный помощник для управления проектами"
+      },
+      "ai_email_automations": {
+        "title": "ИИ-автоматизация электронной почты",
+        "description": "Улучшите автоматизацию электронной почты с помощью ИИ"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Добавить REST API поверх существующего GraphQL API"
+      },
+      "n8n_integration": {
+        "title": "Интеграция с n8n",
+        "description": "Подключите Blue к n8n для расширенной автоматизации рабочих процессов"
+      },
+      "mcp_server": {
+        "title": "MCP-сервер",
+        "description": "Сервер протокола контекста модели для интеграций ИИ"
+      },
+      "data_residency": {
+        "title": "Опции резидентности данных",
+        "description": "Выберите место хранения данных в US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Учет времени",
+        "description": "Отслеживайте время и создавайте загружаемые табели учета рабочего времени"
+      },
+      "saved_filtered_views": {
+        "title": "Сохраненные отфильтрованные представления",
+        "description": "Создавайте и сохраняйте пользовательские отфильтрованные представления проекта"
+      },
+      "customizable_project_tabs": {
+        "title": "Настраиваемые вкладки проекта",
+        "description": "Персонализируйте интерфейс проекта с помощью пользовательских вкладок"
+      },
+      "public_views": {
+        "title": "Публичные представления",
+        "description": "Делитесь представлениями проекта как публичными ссылками только для чтения"
+      },
+      "multiple_company_owners": {
+        "title": "Несколько владельцев компании",
+        "description": "Поддержка нескольких владельцев компании"
+      },
+      "customizable_cards": {
+        "title": "Настраиваемые карточки",
+        "description": "Выберите поля для отображения на лицевой стороне карточки"
+      },
+      "enhanced_login_options": {
+        "title": "Расширенные опции входа",
+        "description": "Больше методов входа и функций безопасности"
+      },
+      "project_level_dashboard": {
+        "title": "Панель управления уровня проекта",
+        "description": "Панель управления для конкретного проекта"
+      },
+      "reseller_platform": {
+        "title": "Платформа для реселлеров",
+        "description": "Специальная платформа для реселлеров"
+      },
+      "threaded_comments": {
+        "title": "Цепочки комментариев",
+        "description": "Позволяет отвечать и создавать цепочки в комментариях"
+      },
+      "dashboard_tables": {
+        "title": "Таблицы панели управления",
+        "description": "Создавайте настраиваемые таблицы на панелях управления"
+      },
+      "share_file_folders": {
+        "title": "Общий доступ к папкам с файлами",
+        "description": "Создавайте публичные ссылки для общего доступа к папкам"
+      },
+      "multi_homing_records": {
+        "title": "Мультипроектные записи",
+        "description": "Позволяет записям существовать в нескольких проектах одновременно"
+      },
+      "memory_usage_optimization": {
+        "title": "Оптимизация использования памяти",
+        "description": "Улучшает производительность и уменьшает потребление памяти"
+      },
+      "scheduled_automations": {
+        "title": "Запланированные автоматизации",
+        "description": "Настройте автоматизации для запуска в определенное время или с интервалами"
+      },
+      "relative_date_actions": {
+        "title": "Действия с относительными датами",
+        "description": "Создавайте действия на основе динамических расчетов дат"
+      },
+      "system_upgrade": {
+        "title": "Обновление системы",
+        "description": "Обновление с Vue2 на Vue3 и новый движок кэширования"
+      },
+      "new_design_system": {
+        "title": "Новая система дизайна",
+        "description": "Обновление с Vuetify2 на Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Улучшение скорости мобильного приложения",
+        "description": "Улучшение производительности для iOS и Android"
+      },
+      "copy_automation": {
+        "title": "Копирование автоматизации",
+        "description": "Возможность копировать автоматизацию в рамках проекта"
+      },
+      "conditional_automations": {
+        "title": "Условные автоматизации",
+        "description": "Добавьте логику И/ИЛИ к триггерам автоматизации"
+      },
+      "zapier_integration": {
+        "title": "Интеграция с Zapier",
+        "description": "Подключите Blue к тысячам приложений через Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Триггеры относительных дат",
+        "description": "Запускайте автоматизации на основе дней до или после сроков выполнения"
+      },
+      "enhanced_cover_images": {
+        "title": "Улучшенные обложки",
+        "description": "Улучшенная обработка изображений с функциями обрезки и оптимизации"
+      },
+      "custom_date_automations": {
+        "title": "Автоматизации пользовательских дат",
+        "description": "Создавайте автоматизации на основе значений пользовательских полей даты"
+      },
+      "file_renaming": {
+        "title": "Переименование файлов",
+        "description": "Переименовывайте загруженные файлы прямо в Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Детальные разрешения на удаление",
+        "description": "Контролируйте права на удаление записей для определенных ролей пользователей"
+      },
+      "owner_project_access": {
+        "title": "Доступ владельца к проекту",
+        "description": "Позволяет владельцам компании самостоятельно приглашать себя в любой проект"
+      }
+    }
+  },
+  "ko": {
+    "page_title": "제품 로드맵",
+    "subtitle": "진행 상황을 추적하고 다음 계획을 확인하세요",
+    "columns": {
+      "ideas": "아이디어",
+      "planned": "계획됨",
+      "in_progress": "진행 중",
+      "testing": "테스트 중"
+    },
+    "changelog_card": {
+      "title": "변경 로그 확인하기",
+      "description": "최신 기능과 개선 사항을 확인하세요."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "음성 메모",
+        "description": "댓글 영역에 전사 기능이 포함된 음성 메모 추가"
+      },
+      "ai_project_assistant": {
+        "title": "AI 프로젝트 어시스턴트",
+        "description": "프로젝트 관리를 위한 지능형 어시스턴트"
+      },
+      "ai_email_automations": {
+        "title": "AI 이메일 자동화",
+        "description": "AI로 이메일 자동화 향상"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "기존 GraphQL API 위에 REST API 추가"
+      },
+      "n8n_integration": {
+        "title": "n8n 통합",
+        "description": "고급 워크플로우 자동화를 위해 Blue를 n8n과 연결"
+      },
+      "mcp_server": {
+        "title": "MCP 서버",
+        "description": "AI 통합을 위한 모델 컨텍스트 프로토콜 서버"
+      },
+      "data_residency": {
+        "title": "데이터 상주 옵션",
+        "description": "US/EU/APAC에서 데이터 저장 위치 선택"
+      },
+      "time_tracking": {
+        "title": "시간 추적",
+        "description": "시간을 추적하고 다운로드 가능한 타임시트 생성"
+      },
+      "saved_filtered_views": {
+        "title": "저장된 필터 뷰",
+        "description": "사용자 정의 필터된 프로젝트 뷰 생성 및 저장"
+      },
+      "customizable_project_tabs": {
+        "title": "사용자 정의 프로젝트 탭",
+        "description": "사용자 정의 탭으로 프로젝트 인터페이스 개인화"
+      },
+      "public_views": {
+        "title": "공개 뷰",
+        "description": "프로젝트 뷰를 공개 읽기 전용 링크로 공유"
+      },
+      "multiple_company_owners": {
+        "title": "여러 회사 소유자",
+        "description": "여러 회사 소유자 지원"
+      },
+      "customizable_cards": {
+        "title": "사용자 정의 카드",
+        "description": "카드 전면에 표시할 필드 선택"
+      },
+      "enhanced_login_options": {
+        "title": "향상된 로그인 옵션",
+        "description": "더 많은 로그인 방법과 보안 기능"
+      },
+      "project_level_dashboard": {
+        "title": "프로젝트 레벨 대시보드",
+        "description": "프로젝트별 대시보드"
+      },
+      "reseller_platform": {
+        "title": "리셀러 플랫폼",
+        "description": "리셀러 전용 플랫폼"
+      },
+      "threaded_comments": {
+        "title": "스레드 댓글",
+        "description": "댓글에서 답글과 스레드 허용"
+      },
+      "dashboard_tables": {
+        "title": "대시보드 테이블",
+        "description": "대시보드에서 사용자 정의 가능한 테이블 생성"
+      },
+      "share_file_folders": {
+        "title": "파일 폴더 공유",
+        "description": "폴더에 대한 공개 공유 링크 생성"
+      },
+      "multi_homing_records": {
+        "title": "다중 프로젝트 레코드",
+        "description": "레코드가 여러 프로젝트에 동시에 존재할 수 있도록 허용"
+      },
+      "memory_usage_optimization": {
+        "title": "메모리 사용 최적화",
+        "description": "성능 향상 및 메모리 사용량 감소"
+      },
+      "scheduled_automations": {
+        "title": "예약된 자동화",
+        "description": "특정 시간이나 간격으로 실행되도록 자동화 설정"
+      },
+      "relative_date_actions": {
+        "title": "상대 날짜 작업",
+        "description": "동적 날짜 계산을 기반으로 작업 생성"
+      },
+      "system_upgrade": {
+        "title": "시스템 업그레이드",
+        "description": "Vue2에서 Vue3로 업그레이드 및 새로운 캐싱 엔진"
+      },
+      "new_design_system": {
+        "title": "새로운 디자인 시스템",
+        "description": "Vuetify2에서 Vuetify3로 업그레이드"
+      },
+      "mobile_app_speed": {
+        "title": "모바일 앱 속도 개선",
+        "description": "iOS 및 Android 성능 향상"
+      },
+      "copy_automation": {
+        "title": "자동화 복사",
+        "description": "프로젝트 내에서 자동화를 복사하는 기능"
+      },
+      "conditional_automations": {
+        "title": "조건부 자동화",
+        "description": "자동화 트리거에 AND/OR 논리 추가"
+      },
+      "zapier_integration": {
+        "title": "Zapier 통합",
+        "description": "Zapier를 통해 Blue를 수천 개의 앱과 연결"
+      },
+      "relative_date_triggers": {
+        "title": "상대 날짜 트리거",
+        "description": "마감일 전후 일수를 기준으로 자동화 트리거"
+      },
+      "enhanced_cover_images": {
+        "title": "향상된 커버 이미지",
+        "description": "자르기 및 최적화 기능이 포함된 향상된 이미지 처리"
+      },
+      "custom_date_automations": {
+        "title": "사용자 정의 날짜 자동화",
+        "description": "사용자 정의 날짜 필드 값을 기반으로 자동화 생성"
+      },
+      "file_renaming": {
+        "title": "파일 이름 변경",
+        "description": "Blue 내에서 업로드된 파일 직접 이름 변경"
+      },
+      "granular_deletion_permissions": {
+        "title": "세분화된 삭제 권한",
+        "description": "특정 사용자 역할에 대한 레코드 삭제 권한 제어"
+      },
+      "owner_project_access": {
+        "title": "소유자 프로젝트 액세스",
+        "description": "회사 소유자가 모든 프로젝트에 자체 초대할 수 있도록 허용"
+      }
+    }
+  },
+  "it": {
+    "page_title": "Roadmap del Prodotto",
+    "subtitle": "Segui i nostri progressi e scopri cosa arriverà",
+    "columns": {
+      "ideas": "Idee",
+      "planned": "Pianificato",
+      "in_progress": "In Corso",
+      "testing": "In Test"
+    },
+    "changelog_card": {
+      "title": "Consulta il nostro changelog",
+      "description": "Vedi le ultime funzionalità e miglioramenti."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Note vocali",
+        "description": "Aggiungi note vocali con trascrizioni nelle aree commenti"
+      },
+      "ai_project_assistant": {
+        "title": "Assistente di Progetto AI",
+        "description": "Assistente intelligente per la gestione dei progetti"
+      },
+      "ai_email_automations": {
+        "title": "Automazioni Email con AI",
+        "description": "Migliora le automazioni email con l'AI"
+      },
+      "rest_api": {
+        "title": "API REST",
+        "description": "Aggiungere un'API REST sopra l'API GraphQL esistente"
+      },
+      "n8n_integration": {
+        "title": "Integrazione n8n",
+        "description": "Collega Blue con n8n per l'automazione avanzata dei flussi di lavoro"
+      },
+      "mcp_server": {
+        "title": "Server MCP",
+        "description": "Server del Protocollo di Contesto del Modello per integrazioni AI"
+      },
+      "data_residency": {
+        "title": "Opzioni di Residenza dei Dati",
+        "description": "Scegli la posizione di archiviazione dei dati in US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Tracciamento del Tempo",
+        "description": "Traccia il tempo e genera fogli di presenza scaricabili"
+      },
+      "saved_filtered_views": {
+        "title": "Viste Filtrate Salvate",
+        "description": "Crea e salva viste di progetto filtrate personalizzate"
+      },
+      "customizable_project_tabs": {
+        "title": "Schede di Progetto Personalizzabili",
+        "description": "Personalizza l'interfaccia del progetto con schede personalizzate"
+      },
+      "public_views": {
+        "title": "Viste Pubbliche",
+        "description": "Condividi le viste del progetto come link pubblici di sola lettura"
+      },
+      "multiple_company_owners": {
+        "title": "Proprietari Multipli dell'Azienda",
+        "description": "Supporto per più proprietari dell'azienda"
+      },
+      "customizable_cards": {
+        "title": "Schede Personalizzabili",
+        "description": "Scegli i campi da visualizzare sul fronte della scheda"
+      },
+      "enhanced_login_options": {
+        "title": "Opzioni di Accesso Migliorate",
+        "description": "Più metodi di accesso e funzionalità di sicurezza"
+      },
+      "project_level_dashboard": {
+        "title": "Dashboard a Livello di Progetto",
+        "description": "Dashboard specifico del progetto"
+      },
+      "reseller_platform": {
+        "title": "Piattaforma Rivenditori",
+        "description": "Piattaforma dedicata ai rivenditori"
+      },
+      "threaded_comments": {
+        "title": "Commenti in Thread",
+        "description": "Permette risposte e thread nei commenti"
+      },
+      "dashboard_tables": {
+        "title": "Tabelle del Dashboard",
+        "description": "Crea tabelle personalizzabili nei dashboard"
+      },
+      "share_file_folders": {
+        "title": "Condividi Cartelle di File",
+        "description": "Crea link di condivisione pubblici per le cartelle"
+      },
+      "multi_homing_records": {
+        "title": "Record Multi-Progetto",
+        "description": "Permette ai record di esistere in più progetti contemporaneamente"
+      },
+      "memory_usage_optimization": {
+        "title": "Ottimizzazione dell'Uso della Memoria",
+        "description": "Migliora le prestazioni e riduce l'impronta di memoria"
+      },
+      "scheduled_automations": {
+        "title": "Automazioni Pianificate",
+        "description": "Imposta automazioni per eseguire in orari o intervalli specifici"
+      },
+      "relative_date_actions": {
+        "title": "Azioni con Date Relative",
+        "description": "Crea azioni basate su calcoli di date dinamiche"
+      },
+      "system_upgrade": {
+        "title": "Aggiornamento del Sistema",
+        "description": "Aggiornamento da Vue2 a Vue3 e nuovo motore di cache"
+      },
+      "new_design_system": {
+        "title": "Nuovo Sistema di Design",
+        "description": "Aggiornamento da Vuetify2 a Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Miglioramenti Velocità App Mobile",
+        "description": "Miglioramenti delle prestazioni iOS e Android"
+      },
+      "copy_automation": {
+        "title": "Copia Automazione",
+        "description": "Capacità di copiare l'automazione all'interno di un progetto"
+      },
+      "conditional_automations": {
+        "title": "Automazioni Condizionali",
+        "description": "Aggiungi logica E/O ai trigger di automazione"
+      },
+      "zapier_integration": {
+        "title": "Integrazione Zapier",
+        "description": "Collega Blue con migliaia di app tramite Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Trigger con Date Relative",
+        "description": "Attiva automazioni basate su giorni prima o dopo le date di scadenza"
+      },
+      "enhanced_cover_images": {
+        "title": "Immagini di Copertina Migliorate",
+        "description": "Migliore gestione delle immagini con funzioni di ritaglio e ottimizzazione"
+      },
+      "custom_date_automations": {
+        "title": "Automazioni con Date Personalizzate",
+        "description": "Crea automazioni basate su valori di campi data personalizzati"
+      },
+      "file_renaming": {
+        "title": "Rinomina File",
+        "description": "Rinomina i file caricati direttamente in Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Permessi di Eliminazione Granulari",
+        "description": "Controlla i diritti di eliminazione dei record per ruoli utente specifici"
+      },
+      "owner_project_access": {
+        "title": "Accesso del Proprietario al Progetto",
+        "description": "Permette ai proprietari dell'azienda di auto-invitarsi a qualsiasi progetto"
+      }
+    }
+  },
+  "id": {
+    "page_title": "Roadmap Produk",
+    "subtitle": "Pantau kemajuan kami dan lihat apa yang akan datang",
+    "columns": {
+      "ideas": "Ide",
+      "planned": "Direncanakan",
+      "in_progress": "Sedang Berlangsung",
+      "testing": "Pengujian"
+    },
+    "changelog_card": {
+      "title": "Lihat log perubahan kami",
+      "description": "Lihat fitur dan peningkatan terbaru."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Catatan suara",
+        "description": "Tambahkan catatan suara dengan transkripsi di area komentar"
+      },
+      "ai_project_assistant": {
+        "title": "Asisten Proyek AI",
+        "description": "Asisten cerdas untuk manajemen proyek"
+      },
+      "ai_email_automations": {
+        "title": "Otomasi Email AI",
+        "description": "Tingkatkan otomasi email dengan AI"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Tambahkan REST API di atas API GraphQL yang ada"
+      },
+      "n8n_integration": {
+        "title": "Integrasi n8n",
+        "description": "Hubungkan Blue dengan n8n untuk otomasi alur kerja yang canggih"
+      },
+      "mcp_server": {
+        "title": "Server MCP",
+        "description": "Server Protokol Konteks Model untuk integrasi AI"
+      },
+      "data_residency": {
+        "title": "Opsi Residensi Data",
+        "description": "Pilih lokasi penyimpanan data di US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Pelacakan Waktu",
+        "description": "Lacak waktu dan hasilkan lembar waktu yang dapat diunduh"
+      },
+      "saved_filtered_views": {
+        "title": "Tampilan Tersimpan Terfilter",
+        "description": "Buat dan simpan tampilan proyek terfilter khusus"
+      },
+      "customizable_project_tabs": {
+        "title": "Tab Proyek yang Dapat Disesuaikan",
+        "description": "Personalisasi antarmuka proyek dengan tab khusus"
+      },
+      "public_views": {
+        "title": "Tampilan Publik",
+        "description": "Bagikan tampilan proyek sebagai tautan publik hanya-baca"
+      },
+      "multiple_company_owners": {
+        "title": "Beberapa Pemilik Perusahaan",
+        "description": "Dukungan untuk beberapa pemilik perusahaan"
+      },
+      "customizable_cards": {
+        "title": "Kartu yang Dapat Disesuaikan",
+        "description": "Pilih bidang untuk ditampilkan di bagian depan kartu"
+      },
+      "enhanced_login_options": {
+        "title": "Opsi Login yang Ditingkatkan",
+        "description": "Lebih banyak metode login dan fitur keamanan"
+      },
+      "project_level_dashboard": {
+        "title": "Dasbor Tingkat Proyek",
+        "description": "Dasbor khusus proyek"
+      },
+      "reseller_platform": {
+        "title": "Platform Reseller",
+        "description": "Platform khusus untuk reseller"
+      },
+      "threaded_comments": {
+        "title": "Komentar Berulir",
+        "description": "Izinkan balasan dan utas dalam komentar"
+      },
+      "dashboard_tables": {
+        "title": "Tabel Dasbor",
+        "description": "Buat tabel yang dapat disesuaikan di dasbor"
+      },
+      "share_file_folders": {
+        "title": "Bagikan Folder File",
+        "description": "Buat tautan berbagi publik untuk folder"
+      },
+      "multi_homing_records": {
+        "title": "Catatan Multi-Proyek",
+        "description": "Izinkan catatan ada di beberapa proyek secara bersamaan"
+      },
+      "memory_usage_optimization": {
+        "title": "Optimasi Penggunaan Memori",
+        "description": "Meningkatkan kinerja dan mengurangi jejak memori"
+      },
+      "scheduled_automations": {
+        "title": "Otomasi Terjadwal",
+        "description": "Atur otomasi untuk berjalan pada waktu atau interval tertentu"
+      },
+      "relative_date_actions": {
+        "title": "Tindakan Tanggal Relatif",
+        "description": "Buat tindakan berdasarkan perhitungan tanggal dinamis"
+      },
+      "system_upgrade": {
+        "title": "Peningkatan Sistem",
+        "description": "Upgrade Vue2 ke Vue3 dan mesin cache baru"
+      },
+      "new_design_system": {
+        "title": "Sistem Desain Baru",
+        "description": "Upgrade Vuetify2 ke Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Peningkatan Kecepatan Aplikasi Mobile",
+        "description": "Peningkatan kinerja iOS & Android"
+      },
+      "copy_automation": {
+        "title": "Salin Otomasi",
+        "description": "Kemampuan untuk menyalin otomasi dalam proyek"
+      },
+      "conditional_automations": {
+        "title": "Otomasi Kondisional",
+        "description": "Tambahkan logika Dan/Atau ke pemicu otomasi"
+      },
+      "zapier_integration": {
+        "title": "Integrasi Zapier",
+        "description": "Hubungkan Blue dengan ribuan aplikasi melalui Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Pemicu Tanggal Relatif",
+        "description": "Picu otomasi berdasarkan hari sebelum atau setelah tanggal jatuh tempo"
+      },
+      "enhanced_cover_images": {
+        "title": "Gambar Sampul yang Ditingkatkan",
+        "description": "Penanganan gambar yang lebih baik dengan fitur pemangkasan dan optimasi"
+      },
+      "custom_date_automations": {
+        "title": "Otomasi Tanggal Khusus",
+        "description": "Buat otomasi berdasarkan nilai bidang tanggal khusus"
+      },
+      "file_renaming": {
+        "title": "Penggantian Nama File",
+        "description": "Ganti nama file yang diunggah langsung di Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Izin Penghapusan Granular",
+        "description": "Kontrol hak penghapusan catatan untuk peran pengguna tertentu"
+      },
+      "owner_project_access": {
+        "title": "Akses Pemilik ke Proyek",
+        "description": "Izinkan pemilik perusahaan untuk mengundang diri sendiri ke proyek apa pun"
+      }
+    }
+  },
+  "nl": {
+    "page_title": "Product Roadmap",
+    "subtitle": "Volg onze voortgang en zie wat er komt",
+    "columns": {
+      "ideas": "Ideeën",
+      "planned": "Gepland",
+      "in_progress": "In Uitvoering",
+      "testing": "Testen"
+    },
+    "changelog_card": {
+      "title": "Bekijk onze changelog",
+      "description": "Bekijk de nieuwste functies en verbeteringen."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Spraaknotities",
+        "description": "Voeg spraaknotities met transcripties toe in commentaargebieden"
+      },
+      "ai_project_assistant": {
+        "title": "AI Projectassistent",
+        "description": "Intelligente assistent voor projectbeheer"
+      },
+      "ai_email_automations": {
+        "title": "AI E-mailautomatiseringen",
+        "description": "Verbeter e-mailautomatiseringen met AI"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Een REST API toevoegen bovenop bestaande GraphQL API"
+      },
+      "n8n_integration": {
+        "title": "n8n Integratie",
+        "description": "Verbind Blue met n8n voor geavanceerde workflowautomatisering"
+      },
+      "mcp_server": {
+        "title": "MCP Server",
+        "description": "Model Context Protocol server voor AI-integraties"
+      },
+      "data_residency": {
+        "title": "Data Residency Opties",
+        "description": "Kies gegevensopslaglocatie in US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Tijdregistratie",
+        "description": "Registreer tijd en genereer downloadbare urenstaten"
+      },
+      "saved_filtered_views": {
+        "title": "Opgeslagen Gefilterde Weergaven",
+        "description": "Maak en bewaar aangepaste gefilterde projectweergaven"
+      },
+      "customizable_project_tabs": {
+        "title": "Aanpasbare Projecttabbladen",
+        "description": "Personaliseer de projectinterface met aangepaste tabbladen"
+      },
+      "public_views": {
+        "title": "Openbare Weergaven",
+        "description": "Deel projectweergaven als openbare alleen-lezen links"
+      },
+      "multiple_company_owners": {
+        "title": "Meerdere Bedrijfseigenaren",
+        "description": "Ondersteuning voor meerdere bedrijfseigenaren"
+      },
+      "customizable_cards": {
+        "title": "Aanpasbare Kaarten",
+        "description": "Kies velden om weer te geven op de voorkant van de kaart"
+      },
+      "enhanced_login_options": {
+        "title": "Verbeterde Inlogopties",
+        "description": "Meer inlogmethoden en beveiligingsfuncties"
+      },
+      "project_level_dashboard": {
+        "title": "Projectniveau Dashboard",
+        "description": "Projectspecifiek dashboard"
+      },
+      "reseller_platform": {
+        "title": "Reseller Platform",
+        "description": "Speciaal platform voor resellers"
+      },
+      "threaded_comments": {
+        "title": "Discussie Opmerkingen",
+        "description": "Sta antwoorden en discussies toe in opmerkingen"
+      },
+      "dashboard_tables": {
+        "title": "Dashboard Tabellen",
+        "description": "Maak aanpasbare tabellen in dashboards"
+      },
+      "share_file_folders": {
+        "title": "Deel Bestandsmappen",
+        "description": "Maak openbare deellinks voor mappen"
+      },
+      "multi_homing_records": {
+        "title": "Multi-Project Records",
+        "description": "Sta records toe om tegelijkertijd in meerdere projecten te bestaan"
+      },
+      "memory_usage_optimization": {
+        "title": "Geheugengebruik Optimalisatie",
+        "description": "Verbeter prestaties en verminder geheugengebruik"
+      },
+      "scheduled_automations": {
+        "title": "Geplande Automatiseringen",
+        "description": "Stel automatiseringen in om op specifieke tijden of intervallen uit te voeren"
+      },
+      "relative_date_actions": {
+        "title": "Relatieve Datum Acties",
+        "description": "Maak acties op basis van dynamische datumberekeningen"
+      },
+      "system_upgrade": {
+        "title": "Systeemupgrade",
+        "description": "Vue2 naar Vue3 upgrade en nieuwe cache-engine"
+      },
+      "new_design_system": {
+        "title": "Nieuw Ontwerpsysteem",
+        "description": "Vuetify2 naar Vuetify3 upgrade"
+      },
+      "mobile_app_speed": {
+        "title": "Mobiele App Snelheidsverbeteringen",
+        "description": "iOS & Android prestatieverbeteringen"
+      },
+      "copy_automation": {
+        "title": "Kopieer Automatisering",
+        "description": "Mogelijkheid om automatisering binnen een project te kopiëren"
+      },
+      "conditional_automations": {
+        "title": "Voorwaardelijke Automatiseringen",
+        "description": "Voeg EN/OF logica toe aan automatiseringstriggers"
+      },
+      "zapier_integration": {
+        "title": "Zapier Integratie",
+        "description": "Verbind Blue met duizenden apps via Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Relatieve Datum Triggers",
+        "description": "Trigger automatiseringen op basis van dagen voor of na vervaldatums"
+      },
+      "enhanced_cover_images": {
+        "title": "Verbeterde Omslagafbeeldingen",
+        "description": "Betere afbeeldingsverwerking met bijsnijd- en optimalisatiefuncties"
+      },
+      "custom_date_automations": {
+        "title": "Aangepaste Datum Automatiseringen",
+        "description": "Maak automatiseringen op basis van aangepaste datumveldwaarden"
+      },
+      "file_renaming": {
+        "title": "Bestanden Hernoemen",
+        "description": "Hernoem geüploade bestanden direct binnen Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Granulaire Verwijderrechten",
+        "description": "Beheer recordverwijderrechten voor specifieke gebruikersrollen"
+      },
+      "owner_project_access": {
+        "title": "Eigenaar Projecttoegang",
+        "description": "Sta bedrijfseigenaren toe om zichzelf uit te nodigen voor elk project"
+      }
+    }
+  },
+  "pl": {
+    "page_title": "Mapa drogowa produktu",
+    "subtitle": "Śledź nasze postępy i zobacz, co nadchodzi",
+    "columns": {
+      "ideas": "Pomysły",
+      "planned": "Zaplanowane",
+      "in_progress": "W trakcie",
+      "testing": "Testowanie"
+    },
+    "changelog_card": {
+      "title": "Sprawdź nasz dziennik zmian",
+      "description": "Zobacz najnowsze funkcje i ulepszenia."
+    },
+    "items": {
+      "voice_notes": {
+        "title": "Notatki głosowe",
+        "description": "Dodaj notatki głosowe z transkrypcjami w obszarach komentarzy"
+      },
+      "ai_project_assistant": {
+        "title": "Asystent projektu AI",
+        "description": "Inteligentny asystent do zarządzania projektami"
+      },
+      "ai_email_automations": {
+        "title": "Automatyzacje e-mail z AI",
+        "description": "Ulepsz automatyzacje e-mail za pomocą AI"
+      },
+      "rest_api": {
+        "title": "REST API",
+        "description": "Dodaj REST API na istniejącym API GraphQL"
+      },
+      "n8n_integration": {
+        "title": "Integracja n8n",
+        "description": "Połącz Blue z n8n dla zaawansowanej automatyzacji przepływu pracy"
+      },
+      "mcp_server": {
+        "title": "Serwer MCP",
+        "description": "Serwer protokołu kontekstu modelu dla integracji AI"
+      },
+      "data_residency": {
+        "title": "Opcje rezydencji danych",
+        "description": "Wybierz lokalizację przechowywania danych w US/EU/APAC"
+      },
+      "time_tracking": {
+        "title": "Śledzenie czasu",
+        "description": "Śledź czas i generuj arkusze czasu do pobrania"
+      },
+      "saved_filtered_views": {
+        "title": "Zapisane widoki filtrowane",
+        "description": "Twórz i zapisuj niestandardowe filtrowane widoki projektu"
+      },
+      "customizable_project_tabs": {
+        "title": "Konfigurowalne karty projektu",
+        "description": "Personalizuj interfejs projektu za pomocą niestandardowych kart"
+      },
+      "public_views": {
+        "title": "Widoki publiczne",
+        "description": "Udostępniaj widoki projektu jako publiczne linki tylko do odczytu"
+      },
+      "multiple_company_owners": {
+        "title": "Wielu właścicieli firmy",
+        "description": "Wsparcie dla wielu właścicieli firmy"
+      },
+      "customizable_cards": {
+        "title": "Konfigurowalne karty",
+        "description": "Wybierz pola do wyświetlania na przedniej stronie karty"
+      },
+      "enhanced_login_options": {
+        "title": "Ulepszone opcje logowania",
+        "description": "Więcej metod logowania i funkcji bezpieczeństwa"
+      },
+      "project_level_dashboard": {
+        "title": "Panel na poziomie projektu",
+        "description": "Panel specyficzny dla projektu"
+      },
+      "reseller_platform": {
+        "title": "Platforma dla sprzedawców",
+        "description": "Dedykowana platforma dla sprzedawców"
+      },
+      "threaded_comments": {
+        "title": "Komentarze wątkowe",
+        "description": "Umożliwia odpowiedzi i wątki w komentarzach"
+      },
+      "dashboard_tables": {
+        "title": "Tabele panelu",
+        "description": "Twórz konfigurowalne tabele w panelach"
+      },
+      "share_file_folders": {
+        "title": "Udostępnianie folderów plików",
+        "description": "Twórz publiczne linki do udostępniania folderów"
+      },
+      "multi_homing_records": {
+        "title": "Rekordy wieloprojektowe",
+        "description": "Pozwala rekordom istnieć w wielu projektach jednocześnie"
+      },
+      "memory_usage_optimization": {
+        "title": "Optymalizacja użycia pamięci",
+        "description": "Poprawia wydajność i zmniejsza zużycie pamięci"
+      },
+      "scheduled_automations": {
+        "title": "Zaplanowane automatyzacje",
+        "description": "Ustaw automatyzacje do uruchamiania w określonych godzinach lub interwałach"
+      },
+      "relative_date_actions": {
+        "title": "Akcje względnej daty",
+        "description": "Twórz akcje oparte na dynamicznych obliczeniach dat"
+      },
+      "system_upgrade": {
+        "title": "Aktualizacja systemu",
+        "description": "Aktualizacja Vue2 do Vue3 i nowy silnik pamięci podręcznej"
+      },
+      "new_design_system": {
+        "title": "Nowy system projektowania",
+        "description": "Aktualizacja Vuetify2 do Vuetify3"
+      },
+      "mobile_app_speed": {
+        "title": "Poprawki szybkości aplikacji mobilnej",
+        "description": "Ulepszenia wydajności iOS i Android"
+      },
+      "copy_automation": {
+        "title": "Kopiuj automatyzację",
+        "description": "Możliwość kopiowania automatyzacji w ramach projektu"
+      },
+      "conditional_automations": {
+        "title": "Automatyzacje warunkowe",
+        "description": "Dodaj logikę I/LUB do wyzwalaczy automatyzacji"
+      },
+      "zapier_integration": {
+        "title": "Integracja Zapier",
+        "description": "Połącz Blue z tysiącami aplikacji przez Zapier"
+      },
+      "relative_date_triggers": {
+        "title": "Wyzwalacze względnej daty",
+        "description": "Wyzwalaj automatyzacje na podstawie dni przed lub po terminach"
+      },
+      "enhanced_cover_images": {
+        "title": "Ulepszone obrazy okładek",
+        "description": "Lepsza obsługa obrazów z funkcjami przycinania i optymalizacji"
+      },
+      "custom_date_automations": {
+        "title": "Automatyzacje niestandardowych dat",
+        "description": "Twórz automatyzacje oparte na wartościach niestandardowych pól daty"
+      },
+      "file_renaming": {
+        "title": "Zmiana nazw plików",
+        "description": "Zmieniaj nazwy przesłanych plików bezpośrednio w Blue"
+      },
+      "granular_deletion_permissions": {
+        "title": "Szczegółowe uprawnienia do usuwania",
+        "description": "Kontroluj prawa do usuwania rekordów dla określonych ról użytkowników"
+      },
+      "owner_project_access": {
+        "title": "Dostęp właściciela do projektu",
+        "description": "Pozwala właścicielom firmy zapraszać się do dowolnego projektu"
+      }
+    }
+  }
+}
