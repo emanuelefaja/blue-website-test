@@ -17,13 +17,13 @@ import (
 
 // SearchItem represents a single searchable document
 type SearchItem struct {
-	Title       string `json:"title"`
-	Description string `json:"description,omitempty"`
-	Content     string `json:"content"`
-	URL         string `json:"url"`
-	Type        string `json:"type"` // "page", "doc", "blog", etc.
-	Section     string `json:"section,omitempty"`
-	Category    string `json:"category,omitempty"` // Display category like "Feature", "Docs", "API"
+	Title       string   `json:"title"`
+	Description string   `json:"description,omitempty"`
+	Keywords    []string `json:"keywords"` // Extracted keywords instead of full content
+	URL         string   `json:"url"`
+	Type        string   `json:"type"` // "page", "doc", "blog", etc.
+	Section     string   `json:"section,omitempty"`
+	Category    string   `json:"category,omitempty"` // Display category like "Feature", "Docs", "API"
 }
 
 // SearchFrontmatter represents the YAML frontmatter in markdown files
@@ -199,15 +199,15 @@ type searchTask struct {
 }
 
 // processSearchTask processes a single search task into a SearchItem
-func processSearchTask(task searchTask, metadata *Metadata, lang string) (SearchItem, error) {
+func processSearchTask(task searchTask, metadata *Metadata, lang string, extractor *KeywordExtractor) (SearchItem, error) {
 	if task.isHTML {
-		return processHTMLSearchTask(task, metadata, lang)
+		return processHTMLSearchTask(task, metadata, lang, extractor)
 	}
-	return processMarkdownSearchTask(task, lang)
+	return processMarkdownSearchTask(task, lang, extractor)
 }
 
 // processHTMLSearchTask processes an HTML content task
-func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string) (SearchItem, error) {
+func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string, extractor *KeywordExtractor) (SearchItem, error) {
 	urlPath := task.urlPath
 	content := task.content
 	
@@ -252,11 +252,13 @@ func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string) (Se
 		}
 	}
 
-	// Extract clean text from pre-rendered HTML
-	// Skip text extraction for very large pages to improve performance
-	textContent := ""
+	// Extract keywords from content
+	var keywords []string
 	if len(content.HTML) < 500000 { // Skip extraction for pages larger than 500KB
-		textContent = extractTextFromHTML(content.HTML)
+		textContent := extractTextFromHTML(content.HTML)
+		// Combine title, description, and content for keyword extraction
+		fullText := title + " " + description + " " + textContent
+		keywords = extractor.ExtractKeywords(fullText, 80)
 	}
 
 	// Determine section/type
@@ -279,7 +281,7 @@ func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string) (Se
 	return SearchItem{
 		Title:       title,
 		Description: description,
-		Content:     textContent,
+		Keywords:    keywords,
 		URL:         actualURL,
 		Type:        pageType,
 		Section:     section,
@@ -288,7 +290,7 @@ func processHTMLSearchTask(task searchTask, metadata *Metadata, lang string) (Se
 }
 
 // processMarkdownSearchTask processes a markdown content task
-func processMarkdownSearchTask(task searchTask, lang string) (SearchItem, error) {
+func processMarkdownSearchTask(task searchTask, lang string, extractor *KeywordExtractor) (SearchItem, error) {
 	urlPath := task.urlPath
 	content := task.content
 	
@@ -339,17 +341,19 @@ func processMarkdownSearchTask(task searchTask, lang string) (SearchItem, error)
 		title = generateTitleFromURL(urlPath)
 	}
 
-	// Extract clean text from pre-rendered HTML
-	// Skip text extraction for very large pages to improve performance
-	textContent := ""
+	// Extract keywords from content
+	var keywords []string
 	if len(content.HTML) < 500000 { // Skip extraction for pages larger than 500KB
-		textContent = extractTextFromHTML(content.HTML)
+		textContent := extractTextFromHTML(content.HTML)
+		// Combine title, description, and content for keyword extraction
+		fullText := title + " " + description + " " + textContent
+		keywords = extractor.ExtractKeywords(fullText, 80)
 	}
 
 	return SearchItem{
 		Title:       title,
 		Description: description,
-		Content:     textContent,
+		Keywords:    keywords,
 		URL:         actualURL,
 		Type:        "content",
 		Section:     section,
@@ -359,6 +363,9 @@ func processMarkdownSearchTask(task searchTask, lang string) (SearchItem, error)
 
 // collectSearchItemsForLanguage collects search items for a specific language only
 func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService *HTMLService, metadata *Metadata, lang string) ([]SearchItem, error) {
+	// Create a shared keyword extractor for better performance
+	extractor := NewKeywordExtractor()
+	
 	// Collect all tasks for this language
 	var tasks []searchTask
 	
@@ -414,7 +421,7 @@ func collectSearchItemsForLanguage(markdownService *MarkdownService, htmlService
 			for task := range taskChan {
 				// Time the text extraction specifically
 				extractStart := time.Now()
-				item, err := processSearchTask(task, metadata, lang)
+				item, err := processSearchTask(task, metadata, lang, extractor)
 				elapsed := time.Since(extractStart)
 				
 				extractionMutex.Lock()
@@ -508,6 +515,9 @@ func getPageKey(path string) string {
 
 // indexHTMLPages indexes all HTML pages in the pages directory
 func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[string]bool) error {
+	// Create a keyword extractor for this function
+	extractor := NewKeywordExtractor()
+
 	return filepath.WalkDir("pages", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
@@ -569,10 +579,14 @@ func indexHTMLPages(items *[]SearchItem, metadata *Metadata, indexedURLs map[str
 			return nil
 		}
 
+		// Extract keywords from content
+		fullText := title + " " + description + " " + textContent
+		keywords := extractor.ExtractKeywords(fullText, 80)
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
-			Content:     textContent,
+			Keywords:    keywords,
 			URL:         url,
 			Type:        "page",
 		})
@@ -730,6 +744,9 @@ func generateTitleFromFilename(filePath string) string {
 
 // indexMarkdownContent indexes all markdown files in the content directory
 func indexMarkdownContent(items *[]SearchItem) error {
+	// Create a keyword extractor for this function
+	extractor := NewKeywordExtractor()
+
 
 	return filepath.WalkDir("content", func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
@@ -805,10 +822,14 @@ func indexMarkdownContent(items *[]SearchItem) error {
 			}
 		}
 
+		// Extract keywords from markdown content
+		fullText := title + " " + fm.Description + " " + markdownContent
+		keywords := extractor.ExtractKeywords(fullText, 80)
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: fm.Description,
-			Content:     markdownContent,
+			Keywords:    keywords,
 			URL:         url,
 			Type:        "content",
 			Section:     section,
@@ -864,6 +885,9 @@ func extractHTMLTitle(html string) string {
 
 // indexCachedMarkdownContent indexes pre-rendered markdown content from cache
 func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownService) error {
+	// Create a keyword extractor for this function
+	extractor := NewKeywordExtractor()
+
 	cachedContent := markdownService.GetAllCachedContent()
 
 	for urlPath, content := range cachedContent {
@@ -911,10 +935,14 @@ func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownSe
 		// Extract clean text from pre-rendered HTML
 		textContent := extractTextFromHTML(content.HTML)
 
+		// Extract keywords from content
+		fullText := title + " " + description + " " + textContent
+		keywords := extractor.ExtractKeywords(fullText, 80)
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
-			Content:     textContent,
+			Keywords:    keywords,
 			URL:         urlPath,
 			Type:        "content",
 			Section:     section,
@@ -927,6 +955,9 @@ func indexCachedMarkdownContent(items *[]SearchItem, markdownService *MarkdownSe
 
 // indexCachedMarkdownContentForLanguage indexes pre-rendered markdown content for a specific language
 func indexCachedMarkdownContentForLanguage(items *[]SearchItem, markdownService *MarkdownService, lang string) error {
+	// Create a keyword extractor for this function
+	extractor := NewKeywordExtractor()
+	
 	cachedContent := markdownService.GetCachedContentByLanguage(lang)
 
 	for urlPath, content := range cachedContent {
@@ -980,10 +1011,14 @@ func indexCachedMarkdownContentForLanguage(items *[]SearchItem, markdownService 
 		// Extract clean text from pre-rendered HTML
 		textContent := extractTextFromHTML(content.HTML)
 
+		// Extract keywords from content
+		fullText := title + " " + description + " " + textContent
+		keywords := extractor.ExtractKeywords(fullText, 80)
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
-			Content:     textContent,
+			Keywords:    keywords,
 			URL:         actualURL,
 			Type:        "content",
 			Section:     section,
@@ -1026,6 +1061,9 @@ func generateTitleFromURL(urlPath string) string {
 
 // indexCachedHTMLPagesForLanguage indexes pre-rendered HTML pages for a specific language
 func indexCachedHTMLPagesForLanguage(items *[]SearchItem, htmlService *HTMLService, metadata *Metadata, lang string) error {
+	// Create a keyword extractor for this function
+	extractor := NewKeywordExtractor()
+
 	cachedContent := htmlService.GetCachedContentByLanguage(lang)
 
 	for urlPath, content := range cachedContent {
@@ -1090,10 +1128,14 @@ func indexCachedHTMLPagesForLanguage(items *[]SearchItem, htmlService *HTMLServi
 			category = "Solution"
 		}
 
+		// Extract keywords from content
+		fullText := title + " " + description + " " + textContent
+		keywords := extractor.ExtractKeywords(fullText, 80)
+
 		*items = append(*items, SearchItem{
 			Title:       title,
 			Description: description,
-			Content:     textContent,
+			Keywords:    keywords,
 			URL:         actualURL,
 			Type:        pageType,
 			Section:     section,

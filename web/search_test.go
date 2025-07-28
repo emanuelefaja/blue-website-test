@@ -912,13 +912,15 @@ func TestIndexCachedMarkdownContentForLanguage(t *testing.T) {
 			}
 		}
 
-		// Content should be extracted text without HTML tags
-		if strings.Contains(strings.ToLower(item.Content), "<h1") || strings.Contains(strings.ToLower(item.Content), "</h1>") {
-			t.Errorf("Content still contains HTML tags: %q", item.Content)
+		// Keywords should be extracted
+		if len(item.Keywords) == 0 {
+			t.Errorf("No keywords extracted for %q", item.URL)
 		}
-		// Content should have some text
-		if item.Content == "" {
-			t.Errorf("Content is empty for %q", item.URL)
+		// Keywords should not contain HTML tags
+		for _, keyword := range item.Keywords {
+			if strings.Contains(keyword, "<") || strings.Contains(keyword, ">") {
+				t.Errorf("Keyword contains HTML tags: %q", keyword)
+			}
 		}
 	}
 }
