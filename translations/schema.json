@@ -1,0 +1,106 @@
+{
+  "en": {
+    "org_description": "Blue is a powerful platform to create, manage, and scale processes for modern teams.",
+    
+    "software_description": "Process management platform for modern teams",
+    "software_category": "BusinessApplication",
+    "software_operating_system": "Web, iOS, Android",
+    "feature_process_management": "Process Management",
+    "feature_team_collaboration": "Team Collaboration",
+    "feature_workflow_automation": "Workflow Automation",
+    "feature_custom_fields": "Custom Fields",
+    "feature_api_access": "API Access",
+    "feature_realtime_updates": "Real-time Updates",
+    "feature_file_attachments": "File Attachments",
+    "feature_custom_permissions": "Custom Permissions",
+    
+    "product_name": "Blue Core Subscription",
+    "product_description": "Everything you need to create, manage, and scale your processes",
+    "price_unit_text": "per user per month",
+    
+    "author_name": "Blue Team",
+    "publisher_name": "Blue",
+    
+    "faq_what_is_blue_q": "What is Blue?",
+    "faq_what_is_blue_a": "Blue is a general purpose process management platform that can be used to manage a variety of processes across organizations. It helps staff to understand what they have to do, managers to have oversight, and for everyone to stay aligned.",
+    
+    "faq_how_different_q": "How is Blue different from Asana, Monday.com, or Trello?",
+    "faq_how_different_a": "First of all, Blue is way cheaper. It's also not venture-funded, so our customers are our main priority. It's completely founder-led and we focus on a level of simplicity that they perhaps don't.",
+    
+    "faq_cost_q": "How much does Blue cost?",
+    "faq_cost_a": "Blue has one main plan with monthly and yearly options: Monthly plan: $7/month/user. Yearly plan: $70/year/user (so you get two months free)",
+    
+    "faq_trial_q": "How does the Blue free trial work?",
+    "faq_trial_a": "The free trial provides full access to all Blue features for 7 days. No credit card is required to start. If you wish to continue, you can upgrade to our paid plan at the end of the free trial and you will also have an option to extend your trial for another 7 days.",
+    
+    "faq_integrations_q": "What integrations does Blue support?",
+    "faq_integrations_a": "Blue has 5,000+ integrations via Make.com, Zapier, Pabbly Connect, Albato, and Boost.Space. We also have a full API for custom integrations and granular Webhooks.",
+    
+    "faq_mobile_q": "Does Blue have Mobile Apps?",
+    "faq_mobile_a": "Yes, native iOS and Android apps are available to access Blue on the go. Core functionality like tasks, comments, and calendars sync across devices.",
+    
+    "faq_gdpr_q": "Is Blue GDPR compliant?",
+    "faq_gdpr_a": "Yes, Blue is fully GDPR-compliant. For details, see our GDPR policy at https://blue.cc/legal/gdpr",
+    
+    "faq_encryption_q": "How is data encrypted in Blue?",
+    "faq_encryption_a": "Blue uses bank-level encryption for both data at rest and in transit. Data at rest is encrypted with 256-bit AES encryption. Data in transit is protected with TLS 1.2+ (or higher) protocols. This ensures your information is secure at all times.",
+    
+    "faq_import_q": "Can I import my existing data into Blue?",
+    "faq_import_a": "Yes, Blue supports bulk data import from CSV files. This allows you to migrate up to 200,000 records simultaneously and is perfect for migration from manual Excel workflows or other work management systems.",
+    
+    "faq_support_q": "What support options are available?",
+    "faq_support_a": "We offer email support at support@blue.cc. We also offer paid support packages for large-scale imports, full-team onboarding, priority chat support, and regular training."
+  },
+  "es": {
+    "org_description": "Blue es una plataforma poderosa para crear, gestionar y escalar procesos para equipos modernos.",
+    
+    "software_description": "Plataforma de gestión de procesos para equipos modernos",
+    "software_category": "AplicaciónEmpresarial",
+    "software_operating_system": "Web, iOS, Android",
+    "feature_process_management": "Gestión de Procesos",
+    "feature_team_collaboration": "Colaboración en Equipo",
+    "feature_workflow_automation": "Automatización de Flujos de Trabajo",
+    "feature_custom_fields": "Campos Personalizados",
+    "feature_api_access": "Acceso API",
+    "feature_realtime_updates": "Actualizaciones en Tiempo Real",
+    "feature_file_attachments": "Archivos Adjuntos",
+    "feature_custom_permissions": "Permisos Personalizados",
+    
+    "product_name": "Suscripción Blue Core",
+    "product_description": "Todo lo que necesitas para crear, gestionar y escalar tus procesos",
+    "price_unit_text": "por usuario por mes",
+    
+    "author_name": "Equipo Blue",
+    "publisher_name": "Blue",
+    
+    "faq_what_is_blue_q": "¿Qué es Blue?",
+    "faq_what_is_blue_a": "Blue es una plataforma de gestión de procesos de propósito general que se puede utilizar para gestionar una variedad de procesos en las organizaciones. Ayuda al personal a entender qué tienen que hacer, a los gerentes a tener supervisión y a todos a mantenerse alineados.",
+    
+    "faq_how_different_q": "¿En qué se diferencia Blue de Asana, Monday.com o Trello?",
+    "faq_how_different_a": "En primer lugar, Blue es mucho más económico. Tampoco está financiado por capital de riesgo, por lo que nuestros clientes son nuestra principal prioridad. Está completamente dirigido por los fundadores y nos enfocamos en un nivel de simplicidad que quizás ellos no tienen.",
+    
+    "faq_cost_q": "¿Cuánto cuesta Blue?",
+    "faq_cost_a": "Blue tiene un plan principal con opciones mensuales y anuales: Plan mensual: $7/mes/usuario. Plan anual: $70/año/usuario (obtienes dos meses gratis)",
+    
+    "faq_trial_q": "¿Cómo funciona la prueba gratuita de Blue?",
+    "faq_trial_a": "La prueba gratuita proporciona acceso completo a todas las funciones de Blue durante 7 días. No se requiere tarjeta de crédito para comenzar. Si deseas continuar, puedes actualizar a nuestro plan de pago al final de la prueba gratuita y también tendrás la opción de extender tu prueba por otros 7 días.",
+    
+    "faq_integrations_q": "¿Qué integraciones admite Blue?",
+    "faq_integrations_a": "Blue tiene más de 5,000 integraciones a través de Make.com, Zapier, Pabbly Connect, Albato y Boost.Space. También tenemos una API completa para integraciones personalizadas y Webhooks granulares.",
+    
+    "faq_mobile_q": "¿Blue tiene aplicaciones móviles?",
+    "faq_mobile_a": "Sí, las aplicaciones nativas de iOS y Android están disponibles para acceder a Blue mientras te desplazas. La funcionalidad principal como tareas, comentarios y calendarios se sincroniza entre dispositivos.",
+    
+    "faq_gdpr_q": "¿Blue cumple con el GDPR?",
+    "faq_gdpr_a": "Sí, Blue cumple completamente con el GDPR. Para obtener más detalles, consulta nuestra política de GDPR en https://blue.cc/legal/gdpr",
+    
+    "faq_encryption_q": "¿Cómo se cifran los datos en Blue?",
+    "faq_encryption_a": "Blue utiliza cifrado de nivel bancario tanto para datos en reposo como en tránsito. Los datos en reposo están cifrados con cifrado AES de 256 bits. Los datos en tránsito están protegidos con protocolos TLS 1.2+ (o superior). Esto garantiza que tu información esté segura en todo momento.",
+    
+    "faq_import_q": "¿Puedo importar mis datos existentes a Blue?",
+    "faq_import_a": "Sí, Blue admite la importación masiva de datos desde archivos CSV. Esto te permite migrar hasta 200,000 registros simultáneamente y es perfecto para la migración desde flujos de trabajo manuales de Excel u otros sistemas de gestión de trabajo.",
+    
+    "faq_support_q": "¿Qué opciones de soporte están disponibles?",
+    "faq_support_a": "Ofrecemos soporte por correo electrónico en support@blue.cc. También ofrecemos paquetes de soporte pagados para importaciones a gran escala, incorporación de equipos completos, soporte por chat prioritario y capacitación regular."
+  }
+}

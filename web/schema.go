@@ -84,7 +84,7 @@ func (s *SchemaService) generateOrganizationSchema() map[string]interface{} {
 		"name": "Blue",
 		"url": s.siteURL,
 		"logo": s.siteURL + "/logo/blue-logo.png",
-		"description": "Blue is a powerful platform to create, manage, and scale processes for modern teams.",
+		"description": Translate(s.language, "schema.org_description"),
 		"sameAs": []string{
 			"https://twitter.com/bluehq",
 			"https://www.linkedin.com/company/blue-teamwork",
@@ -97,39 +97,34 @@ func (s *SchemaService) generateOrganizationSchema() map[string]interface{} {
 		},
 	}
 	
-	// Try to get language-specific description
-	if s.metadata != nil && s.metadata.Site.Descriptions != nil {
-		if desc, ok := s.metadata.Site.Descriptions[s.language]; ok && desc != "" {
-			schema["description"] = desc
-		} else if desc, ok := s.metadata.Site.Descriptions["en"]; ok && desc != "" {
-			// Fallback to English
-			schema["description"] = desc
-		}
-	}
+	// Description is now handled by Translate function above
 	
 	return schema
 }
 
 // generateSoftwareApplicationSchema creates software application structured data
 func (s *SchemaService) generateSoftwareApplicationSchema() map[string]interface{} {
+	// Translate feature list
+	features := []string{
+		Translate(s.language, "schema.feature_process_management"),
+		Translate(s.language, "schema.feature_team_collaboration"),
+		Translate(s.language, "schema.feature_workflow_automation"),
+		Translate(s.language, "schema.feature_custom_fields"),
+		Translate(s.language, "schema.feature_api_access"),
+		Translate(s.language, "schema.feature_realtime_updates"),
+		Translate(s.language, "schema.feature_file_attachments"),
+		Translate(s.language, "schema.feature_custom_permissions"),
+	}
+	
 	return map[string]interface{}{
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
 		"name": "Blue",
-		"applicationCategory": "BusinessApplication",
-		"operatingSystem": "Web, iOS, Android",
-		"description": "Process management platform for modern teams",
+		"applicationCategory": Translate(s.language, "schema.software_category"),
+		"operatingSystem": Translate(s.language, "schema.software_operating_system"),
+		"description": Translate(s.language, "schema.software_description"),
 		"screenshot": s.siteURL + "/product/dashboard-screenshot.png",
-		"featureList": []string{
-			"Process Management",
-			"Team Collaboration", 
-			"Workflow Automation",
-			"Custom Fields",
-			"API Access",
-			"Real-time Updates",
-			"File Attachments",
-			"Custom Permissions",
-		},
+		"featureList": features,
 		"offers": map[string]interface{}{
 			"@type": "Offer",
 			"price": "7.00",
@@ -138,7 +133,7 @@ func (s *SchemaService) generateSoftwareApplicationSchema() map[string]interface
 				"@type": "UnitPriceSpecification",
 				"price": "7.00",
 				"priceCurrency": "USD",
-				"unitText": "per user per month",
+				"unitText": Translate(s.language, "schema.price_unit_text"),
 			},
 		},
 		"aggregateRating": map[string]interface{}{
@@ -161,11 +156,11 @@ func (s *SchemaService) generateArticleSchema(frontmatter *Frontmatter, path str
 		"url": s.siteURL + path,
 		"author": map[string]interface{}{
 			"@type": "Person",
-			"name": "Blue Team",
+			"name": Translate(s.language, "schema.author_name"),
 		},
 		"publisher": map[string]interface{}{
 			"@type": "Organization",
-			"name": "Blue",
+			"name": Translate(s.language, "schema.publisher_name"),
 			"logo": map[string]interface{}{
 				"@type": "ImageObject",
 				"url": s.siteURL + "/logo/blue-logo.png",
@@ -208,8 +203,8 @@ func (s *SchemaService) generateProductSchema() map[string]interface{} {
 	return map[string]interface{}{
 		"@context": "https://schema.org",
 		"@type": "Product",
-		"name": "Blue Core Subscription",
-		"description": "Everything you need to create, manage, and scale your processes",
+		"name": Translate(s.language, "schema.product_name"),
+		"description": Translate(s.language, "schema.product_description"),
 		"brand": map[string]interface{}{
 			"@type": "Brand",
 			"name": "Blue",
@@ -225,7 +220,7 @@ func (s *SchemaService) generateProductSchema() map[string]interface{} {
 				"@type": "UnitPriceSpecification",
 				"price": "7.00",
 				"priceCurrency": "USD",
-				"unitText": "per user per month",
+				"unitText": Translate(s.language, "schema.price_unit_text"),
 				"billingIncrement": 1,
 				"billingDuration": "P1M",
 			},
@@ -240,94 +235,33 @@ func (s *SchemaService) generateProductSchema() map[string]interface{} {
 
 // generateFAQSchema creates FAQ structured data
 func (s *SchemaService) generateFAQSchema() map[string]interface{} {
-	// Selected FAQs from different categories for better SEO coverage
-	faqs := []map[string]interface{}{
-		// General
-		{
+	// Build FAQ items using translations
+	faqKeys := []struct {
+		questionKey string
+		answerKey   string
+	}{
+		{"schema.faq_what_is_blue_q", "schema.faq_what_is_blue_a"},
+		{"schema.faq_how_different_q", "schema.faq_how_different_a"},
+		{"schema.faq_cost_q", "schema.faq_cost_a"},
+		{"schema.faq_trial_q", "schema.faq_trial_a"},
+		{"schema.faq_integrations_q", "schema.faq_integrations_a"},
+		{"schema.faq_mobile_q", "schema.faq_mobile_a"},
+		{"schema.faq_gdpr_q", "schema.faq_gdpr_a"},
+		{"schema.faq_encryption_q", "schema.faq_encryption_a"},
+		{"schema.faq_import_q", "schema.faq_import_a"},
+		{"schema.faq_support_q", "schema.faq_support_a"},
+	}
+	
+	faqs := make([]map[string]interface{}, 0, len(faqKeys))
+	for _, faq := range faqKeys {
+		faqs = append(faqs, map[string]interface{}{
 			"@type": "Question",
-			"name": "What is Blue?",
+			"name": Translate(s.language, faq.questionKey),
 			"acceptedAnswer": map[string]interface{}{
 				"@type": "Answer",
-				"text": "Blue is a general purpose process management platform that can be used to manage a variety of processes across organizations. It helps staff to understand what they have to do, managers to have oversight, and for everyone to stay aligned.",
+				"text": Translate(s.language, faq.answerKey),
 			},
-		},
-		{
-			"@type": "Question",
-			"name": "How is Blue different from Asana, Monday.com, or Trello?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "First of all, Blue is way cheaper. It's also not venture-funded, so our customers are our main priority. It's completely founder-led and we focus on a level of simplicity that they perhaps don't.",
-			},
-		},
-		// Pricing
-		{
-			"@type": "Question",
-			"name": "How much does Blue cost?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Blue has one main plan with monthly and yearly options: Monthly plan: $7/month/user. Yearly plan: $70/year/user (so you get two months free)",
-			},
-		},
-		{
-			"@type": "Question",
-			"name": "How does the Blue free trial work?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "The free trial provides full access to all Blue features for 7 days. No credit card is required to start. If you wish to continue, you can upgrade to our paid plan at the end of the free trial and you will also have an option to extend your trial for another 7 days.",
-			},
-		},
-		// Features
-		{
-			"@type": "Question",
-			"name": "What integrations does Blue support?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Blue has 5,000+ integrations via Make.com, Zapier, Pabbly Connect, Albato, and Boost.Space. We also have a full API for custom integrations and granular Webhooks.",
-			},
-		},
-		{
-			"@type": "Question",
-			"name": "Does Blue have Mobile Apps?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Yes, native iOS and Android apps are available to access Blue on the go. Core functionality like tasks, comments, and calendars sync across devices.",
-			},
-		},
-		// Security
-		{
-			"@type": "Question",
-			"name": "Is Blue GDPR compliant?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Yes, Blue is fully GDPR-compliant. For details, see our GDPR policy at https://blue.cc/legal/gdpr",
-			},
-		},
-		{
-			"@type": "Question",
-			"name": "How is data encrypted in Blue?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Blue uses bank-level encryption for both data at rest and in transit. Data at rest is encrypted with 256-bit AES encryption. Data in transit is protected with TLS 1.2+ (or higher) protocols. This ensures your information is secure at all times.",
-			},
-		},
-		// Getting Started
-		{
-			"@type": "Question",
-			"name": "Can I import my existing data into Blue?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "Yes, Blue supports bulk data import from CSV files. This allows you to migrate up to 200,000 records simultaneously and is perfect for migration from manual Excel workflows or other work management systems.",
-			},
-		},
-		// Support
-		{
-			"@type": "Question",
-			"name": "What support options are available?",
-			"acceptedAnswer": map[string]interface{}{
-				"@type": "Answer",
-				"text": "We offer email support at support@blue.cc. We also offer paid support packages for large-scale imports, full-team onboarding, priority chat support, and regular training.",
-			},
-		},
+		})
 	}
 	
 	return map[string]interface{}{
