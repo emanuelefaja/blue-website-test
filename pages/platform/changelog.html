@@ -60,1893 +60,522 @@
         </div>
 
         <!-- Changelog Entries -->
-        {{$changelog := parseJSON `[
-    {
-        "month": "June",
-        "year": "2025",
-        "changes": [
-          {
-            "title": "Zapier Integration",
-            "description": "Connect Blue with thousands of apps through our new Zapier integration"
-          },
-          {
-            "title": "Created At Custom Field",
-            "description": "You can now create a custom field that automatically sets the created at date for a record"
-          },
-          {
-            "title": "File Renaming",
-            "description": "You can now rename files directly within Blue"
-          },
-          {
-            "title": "Delete Permissions for Custom Roles",
-            "description": "Grant or restrict delete permissions for custom user roles"
-          },
-          {
-            "title": "Multi-Homing Records (Beta)",
-            "description": "Have the same record in multiple projects with synchronized custom field data and unified comments"
-          },
-          {
-            "title": "Restrict Record Completion",
-            "description": "Control which custom user roles can mark records as complete"
-          },
-          {
-            "title": "New File Platform",
-            "description": "Switched from AWS S3 to B2 for increased bandwidth and files now hosted in Germany"
-          },
-          {
-            "title": "Enhanced Cover Images",
-            "description": "Turn cover images off project-wide, set source data (comments, file custom fields, description) and configure aspect ratios"
-          },
-          {
-            "title": "Admin Role Management",
-            "description": "Administrators can now change the roles of other administrators, providing more flexible permission management"
-          },
-          {
-            "title": "Wiki & Docs in Templates",
-            "description": "Project templates now include wiki pages and documentation, ensuring knowledge is preserved when creating new projects from templates"
-          },
-           {
-            "title": "Support for multiple email automations. ",
-            "description": "Now one automation trigger can send up to 5 emails instead of 1 previously. "
-          },
-           {
-            "title": "Reference field support for bar charts. ",
-            "description": "Blue now supports using reference fields for the X-axis for bar charts.  "
-          },
-          {
-            "title": "Export charts as CSV. ",
-            "description": "Added a new option to individual charts to be able to export multi-project charts to a unified CSV with combined custom field data. "
-          }
-        ]
-      },
-    {
-        "month": "May",
-        "year": "2025",
-        "changes": [
-        {
-            "title": "Make.com  Integration",
-            "description": "A native Make application that allows you to send data to and from Make. "
-          },
-          {
-            "title": "Custom Field Folders",
-            "description": "Custom fields can now be organized into folders, making it easier to manage and find them"
-          },
-          {
-            "title": "Lookup Unique IDs",
-            "description": "You can now lookup unique IDs across projects"
-          },
-          {
-            "title": "Tag-based permissions engine",
-            "description": "Show/hide records based on what tags they have. "
-          }
-        ]
-      },
-    {
-        "month": "April",
-        "year": "2025",
-        "changes": [
-        {
-            "title": "Faster Record Queries",
-            "description": "A complete rewrite of our record fetching query to significantly improve speed"
-          },
-          {
-            "title": "Custom Field Folders",
-            "description": "Custom fields can now be organized into folders, making it easier to manage and find them"
-          },
-          {
-            "title": "Add Support for UniqueID on PDF Printing",
-            "description": "UniqueIDs can now be overlayed in the PDF templates for printing"
-          },
-          {
-            "title": "Add support for multi-page PDF templates",
-            "description": "You can now create multi-page PDF templates for printing"
-          },
-          {
-            "title": "Automation to assign to the person who created the record ",
-            "description": "You can now assign a record to the person who triggered the automation"
-          }
-        ]
-      },
-    {
-        "month": "March",
-        "year": "2025",
-        "changes": [
-        {
-            "title": "Time In List",
-            "description": "We've added a new feature that shows you how long a record has been in each list"
-          },  
-        {
-            "title": "Faster Dashboard Charts",
-            "description": "We've made our dashboard charts faster and more responsive"
-          },
-          {
-            "title": "Sort Database View by Date Custom Field",
-            "description": "You can now sort the database view by a custom field that contains a date"
-          },
-          {
-            "title": "Sort Database View by Single and Multiple Select Custom Field",
-            "description": "You can now sort the database view by a single and multiple select custom fields"
-          },
-          {
-            "title": "Upgraded email infrastructure",
-            "description": "We've upgraded our email infrastructure to use a more reliable and scalable provider"
-          },  
-          {
-            "title": "Record color now shows on database view",
-            "description": "The color of a record now shows on the database view"
-          },  
-          {
-            "title": "Upgraded create and update record APIs",
-            "description": "Now you can create and update records using the API while creating and updating custom fields at the same time"
-          }
-
-        ]
-      },
-    {
-        "month": "February",
-        "year": "2025",
-        "changes": [
-          {
-            "title": "Currency Conversion Custom Field",
-            "description": "Create a custom field that converts one currency to another, using the latest exchange rates for the European Central Bank"
-          },
-          {
-            "title": "Sequential Record IDs",
-            "description": "Create a custom field that automatically increments the record ID, useful for creating unique IDs for records"
-          },
-          {
-            "title": "Restrict Project Views (Beta)",
-            "description": "Restrict which project views (i.e. Kanban, Calendar, Gantt, etc.) are available in a project."
-          },
-          {
-            "title": "@mention comment permissions",
-            "description": "Restrict user roles to only see comments that specifically mention them."
-          },
-          {
-            "title": "Custom Field Filters in Dashboards",
-            "description": "You can now filter dashboards by custom fields"
-          }
-        ]
-      },
-      {
-        "month": "January",
-        "year": "2025",
-        "changes": [
-          {
-            "title": "White Label Add-On",
-            "description": "Company administrators can now customize branding with custom domains, white-labeled desktop apps, and company email domains for communications (paid add-on)"
-          },
-          {
-            "title": "Google Maps API Integration",
-            "description": "Replace OpenStreetMap with Google Maps using your own API key for enhanced address accuracy in logistics and delivery use cases"
-          },
-          {
-            "title": "Project Feature Configuration",
-            "description": "Enable/disable and rearrange project features on a per-project basis for tailored workflows"
-          },
-          {
-            "title": "HTTP Request Automation Action",
-            "description": "Send HTTP requests to any webhook or API endpoint as an automation action, using any data available in your project records"
-          },
-          {
-            "title": "GitHub OAuth Integration",
-            "description": "Use GitHub OAuth 2.0 authentication to securely send HTTP requests through automations to GitHub and other services"
-          }
-        ]
-      },
-      {
-        "month": "December",
-        "year": "2024",
-        "changes": [
-          {
-            "title": "Enhanced Button Custom Fields",
-            "description": "Create buttons with soft/hard confirmation dialogs that can trigger automations upon activation"
-          },
-          {
-            "title": "Multi-Currency Support", 
-            "description": "Currency fields now support multiple currencies that can be set individually per record"
-          },
-          {
-            "title": "Location Field CSV Support",
-            "description": "Added import/export capability for location custom fields in CSV format"
-          },
-          {
-            "title": "API Record Creation Upgrade",
-            "description": "Create records with custom field values directly through the API for seamless integrations"
-          },
-          {
-            "title": "PDF Automation Pipeline",
-            "description": "Automatically store generated PDFs in file fields and trigger automations on PDF generation"
-          },
-          {
-            "title": "International Phone Number Support",
-            "description": "Added automatic recognition of international phone number formats during CSV imports for better data standardization"
-          }
-        ]
-      },
-    {
-      "month": "November",
-      "year": "2024",
-      "changes": [
-        {
-          "title": "Enhanced Lookup Fields",
-          "description": "Lookup fields can now reference other reference fields, enabling more complex cross-project data relationships and advanced reporting capabilities"
-        },
-        {
-          "title": "Referenced By Field",
-          "description": "A new column in Database View shows all places where a record is referenced, providing better visibility into data relationships across your projects"
-        },
-        {
-          "title": "Docs in Templates",
-          "description": "Project templates now include associated documentation, making it easier to maintain consistent processes and onboard new team members"
-        },
-        {
-          "title": "Google Maps Integration",
-          "description": "Location fields now include direct links to Google Maps, allowing for easier navigation and location sharing across teams"
-        }
-      ]
-    },
-    {
-  "month": "October",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Dynamic Currency Fields.",
-      "description": "You can now create custom currency fields that support multiple currencies that can be set on a per-record basis"
-    },
-    {
-      "title": "Button Custom Field.",
-      "description": "You can now create custom fields that act like buttons, which can trigger automations"
-    },
-    {
-      "title": "Updated Calendar View",
-      "description": "We've updated our calendar view to make it easier to read and more informative"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Support for Embedding Loom Videos",
-      "description": "You can now easily embed Loom videos directly in your comments and Records"
-    },
-    {
-      "title": "New Languages",
-      "description": "We've added support for Bengali, Dutch, Hindi, Norwegian, Polish, Swahili, Tagalog, Tamil, Thai, and Turkish, making Blue even more accessible globally"
-    },
-    {
-      "title": "Improved Search Functionality",
-      "description": "Our search feature has been enhanced to provide faster and more accurate results across all your projects and Records"
-    },
-    {
-      "title": "Soft Delete Implementation",
-      "description": "We've made an internal change to store deleted lists and Records in a separate table. This lays the groundwork for future \"trash\" and restore functionalities"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Bulk Project Invites",
-      "description": "Now you can invite users to multiple projects at the same time"
-    },
-    {
-      "title": "Added Support for Loom Videos",
-      "description": "Loom videos now automatically embed when you comment a link to a Loom video"
-    },
-    {
-      "title": "New Currencies",
-      "description": "We've added support for the Georgian Lari (GEL), the Sri Lankan Rupee (LKR), and the Moroccan Dirham (MAD)"
-    },
-    {
-      "title": "Add Columns in Database View",
-      "description": "You can now add columns (i.e. custom fields!) directly in the database view"
-    },
-    {
-      "title": "Add Records in Database View",
-      "description": "You can now add records directly in the database view"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "GPT-4o-mini",
-      "description": "We've updated our AI features to use the latest and most powerful AI models"
-    },
-    {
-      "title": "Multi-language support for printing PDFs",
-      "description": "Now our print PDF feature support characters in multiple languages"
-    },
-    {
-      "title": "Keyboard Shortcuts",
-      "description": "Now you can navigate around Blue using your keyboard for common actions, and dropdowns have numbers that you can easily press to take actions"
-    },
-    {
-      "title": "Send emails to referenced email fields",
-      "description": "Now email automations can send emails to emails that are referenced from another project"
-    },
-    {
-      "title": "Form reference field dropdown",
-      "description": "Forms now support reference custom fields as single or multi select dropdowns"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Search Improvements",
-      "description": "We've improved our search algorithms and we also prioritize results in the current project"
-    },
-    {
-      "title": "See Where Records are Referenced",
-      "description": "If a record is referenced, you can see a list of all places it has been referenced right from the individual record view"
-    },
-    {
-      "title": "Gantt Chart Improvements",
-      "description": "We've made Gantt Charts smoother to use, and have also added a quarterly view, which is often the perfect view to focus on corporate planning"
-    },
-    {
-      "title": "Multi Language AI Summaries",
-      "description": "AI Summaries now support multiple languages instead of just English. We automatically detect the language and create summaries in the same language!"
-    },
-    {
-      "title": "Font Selection (Alpha)",
-      "description": "Users can choose between various Google fonts for their Blue interface"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Reference & Lookups in Email Automations",
-      "description": "You can now use Reference and Lookup custom fields in email automations, both in the content and also as addresses"
-    },
-    {
-      "title": "Reference Custom Fields in Forms",
-      "description": "You can now use Reference custom fields in forms to show a dropdown"
-    },
-    {
-      "title": "Custom Timezones",
-      "description": "You can now set your own timezone in Blue, perfect if you're using a VPN and want to override the automatic timezone detection"
-    },
-    {
-      "title": "Auto Tagging using AI",
-      "description": "You can now automatically tag records using AI either individually or in bulk"
-    },
-    {
-      "title": "Chat Improvements",
-      "description": "We've made dozens of small but noticeable improvements to our chat interface"
-    },
-    {
-      "title": "Migrated from Webpack to Vite",
-      "description": "We've moved all our code from Webpack to Vite to improve build times"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "Instant Delete",
-      "description": "Deleting a record now is instant"
-    },
-    {
-      "title": "Next-Gen Search",
-      "description": "We've rewritten the search experience from scratch. Find anything — instantly"
-    },
-    {
-      "title": "AI Summaries",
-      "description": "One-click to get summaries of all comments inside a record"
-    },
-    {
-      "title": "Direct Date Edit on Cards",
-      "description": "On Kanban View you can now edit the date directly by clicking on the card"
-    },
-    {
-      "title": "Hide Record Counts",
-      "description": "Project admins can now choose to hide the record count next to list names within project settings"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "@mentions groups",
-      "description": "You can now @mention user groups such as clients, team members, and even custom user roles"
-    },
-    {
-      "title": "New Support Beacon",
-      "description": "We have a new support beacon that can be opened by pressing \"?\" and gives you instant access to various resources"
-    },
-    {
-      "title": "Lookup a Lookup",
-      "description": "Lookup custom fields can now lookup other lookup custom fields"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "sub-10ms @mentions",
-      "description": "The @mentions dropdown is now instant"
-    },
-    {
-      "title": "Select Multiple Records",
-      "description": "Control/Command + click to select multiple records and then right click for bulk actions"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2024",
-  "changes": [
-    {
-      "title": "New Blue Brand",
-      "description": "We have redesigned our Blue Wordmark from our previous custom cursive font to a sans-serif"
-    },
-    {
-      "title": "New Documentation Site",
-      "description": "We've launched a new documentation site with AI-powered search"
-    },
-    {
-      "title": "CSV Export with Filters",
-      "description": "You can now export only records that are visible based on your active filters"
-    },
-    {
-      "title": "Colour Automations",
-      "description": "Adding or removing colours to records can now trigger automations or be used as automation actions"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Print Records as PDFs",
-      "description": "Upload PDFs as template and then overlay custom fields and print specific records as PDFs"
-    },
-    {
-      "title": "Customisable Date Format",
-      "description": "Users can now choose between dd/mm/yyyy and mm/dd/yyyy in their profile"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Conditional Automations (Alpha)",
-      "description": "Create advanced conditional automations to enable even more use cases"
-    },
-    {
-      "title": "Enhanced Lookup Fields",
-      "description": "Lookup fields can now reference other reference fields, enabling more complex cross-project data relationships and advanced reporting capabilities"
-    },
-    {
-      "title": "Referenced By Field",
-      "description": "A new column in Database View shows all places where a record is referenced, providing better visibility into data relationships across your projects"
-    },
-    {
-      "title": "Docs in Templates",
-      "description": "Project templates now include associated documentation, making it easier to maintain consistent processes and onboard new team members"
-    },
-    {
-      "title": "Google Maps Integration",
-      "description": "Location fields now include direct links to Google Maps, allowing for easier navigation and location sharing across teams"
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Custom Permissions for invites",
-      "description": "Choose which users groups can invite other users into Blue"
-    },
-    {
-      "title": "Large file import & export",
-      "description": "You can now import and export up to 250,000 items at a time"
-    },
-    {
-      "title": "Custom Permissions for Features",
-      "description": "You can now limit user groups to only see specific project features"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Record Colours",
-      "description": "Right click to colour code your Record cards, this makes it easy to highlight specific Records in your board!"
-    },
-    {
-      "title": "Record Time Length Custom Field",
-      "description": "A new custom field that allows you to pick specific events in your Record and calculate the time difference between the events"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Timeline / Gantt Charts",
-      "description": "View your projects as a Gantt Charts, which allows you to visualise all the dependencies and interconnections between your Records"
-    },
-    {
-      "title": "Cross Project References",
-      "description": "Show data from one project into another project"
-    },
-    {
-      "title": "Bar Charts",
-      "description": "Take your data and do cross-project time-series analysis"
-    },
-    {
-      "title": "Chat",
-      "description": "Every project now gets a multi-topic chat"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "New Languages",
-      "description": "Blue is now available in Japanese, Hindi, Bengali, and Marathi"
-    },
-    {
-      "title": "System Upgrade",
-      "description": "We've made a major system upgrade to make our platform even faster"
-    },
-    {
-      "title": "Raised Import Limits",
-      "description": "You can now import up to 100,000 items into Blue in one go"
-    },
-    {
-      "title": "Filter by List",
-      "description": "You can now filter by list in company map view and dashboards"
-    },
-    {
-      "title": "Copy Charts between Dashboards",
-      "description": "You can now easily create new dashboards by copying charts from other dashboards"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Share Dashboards",
-      "description": "You can now share dashboards with anyone that is already in your organisation"
-    },
-    {
-      "title": "Custom Permissions for Lists",
-      "description": "You can now decide which lists different roles can see in your projects"
-    },
-    {
-      "title": "Notifications for Form Submissions",
-      "description": "Now form submissions can trigger notifications via email and push"
-    },
-    {
-      "title": "AI Document Chat (Alpha)",
-      "description": "You can now search and chat within any PDF inside of Blue. This is great to understand long and complex documents"
-    },
-    {
-      "title": "Bonjour 🇫🇷",
-      "description": "Our mobile apps are now available in French!"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Dashboard Pie Charts",
-      "description": "Show your cross-project data in beautiful pie charts that update in realtime"
-    },
-    {
-      "title": "Footer for Forms",
-      "description": "You can now add footers to form, which is perfect for terms and conditions"
-    },
-    {
-      "title": "Improvements to Single and Multi-Select Field",
-      "description": "We now support up to 100,000 items with infinite scroll, type-as-you-search, and bulk import"
-    },
-    {
-      "title": "Submission Times on Form Entries",
-      "description": "We now show the precise time when forms were submitted"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Improved Logging",
-      "description": "We're now logging and monitoring even more aspects of our infrastructure"
-    },
-    {
-      "title": "iPad App",
-      "description": "If you use an iPad, you can now have a dedicated and beautiful app that leverages all that extra screen real-estate"
-    },
-    {
-      "title": "New Real-Time Engine",
-      "description": "We have completely rewritten our real-time engine to make it faster and more performant"
-    },
-    {
-      "title": "Improved @mentions",
-      "description": "We have upgraded our @mentions to be significantly faster and more scalable than before"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Custom Permissions",
-      "description": "Create granular project permissions to unlock new use cases like never before"
-    },
-    {
-      "title": "Improved Bulk Actions",
-      "description": "Bulk Record List actions now respect active filters"
-    },
-    {
-      "title": "Create List from List Menu (Alpha)",
-      "description": "You can now create lists to the left or right of any existing list"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2023",
-  "changes": [
-    {
-      "title": "Dashboards Stats Card",
-      "description": "Turn your data into knowledge with dashboards. Query across projects to surface key insights about your organisation"
-    },
-    {
-      "title": "Cross-Project Automations",
-      "description": "We now allow Records that are moved across projects to trigger automations"
-    },
-    {
-      "title": "Formula Custom Field",
-      "description": "A new custom field that can take the outputs of other fields and run calculations on them. This increases the flexibility of Blue and allows numerous new use cases"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Telegram Custom Field (Alpha)",
-      "description": "We now have a dedicated custom field for Telegram, the popular messaging application. This means you can add telegram IDs and instantly open Telegram from Blue"
-    },
-    {
-      "title": "Automation: Send Email",
-      "description": "A new automation that can send emails from Blue based on any available trigger"
-    },
-    {
-      "title": "Updated Completed Filters",
-      "description": "We've redesigned our complete/incomplete filter to improve usability, and now you can show all Records, or just complete or incomplete Records"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "New Database",
-      "description": "Blue now runs on an entirely new database structure. Write speeds increased by 50%, while read speeds are up over 100%"
-    },
-    {
-      "title": "Company Map View",
-      "description": "You can now view geographic data from multiple projects from one convenient location"
-    },
-    {
-      "title": "Forms QR Code ",
-      "description": "You can now download a QR code for every form in the form share options"
-    },
-    {
-      "title": "Create Tags Directly from Tag Filters",
-      "description": "Previously, you could only create a tag from within a Record. Now, you can do this directly with the project tag filter"
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Webhooks",
-      "description": "Trigger events in third party applications automatically using Blue webhooks, which are filterable by project and by type of event"
-    },
-    {
-      "title": "Automations V2",
-      "description": "We're adding two new triggers (On Due Date Expiration and When Anyone Is Assigned) and several new actions such as moving Records to other projects, copying Records, and also the creation of checklists!"
-    },
-    {
-      "title": "Improved Country Custom Field",
-      "description": "You can now use advanced filter with the country custom field, and you can also export country lists via CSV when you export your project"
-    },
-    {
-      "title": "Templates V2 ",
-      "description": "Templates are now even more powerful, they support Automations, Custom Fields, and Checklists"
-    },
-    {
-      "title": "Date Custom Field",
-      "description": "Sometimes you need more than one date per Record. With our new custom field you can add as many dates as you need!"
-    },
-    {
-      "title": "Blue Docs",
-      "description": "Create an unlimited amount of real-time documents in any project"
-    },
-    {
-      "title": "Set Project Icons",
-      "description": "Instead of uploading a picture for a project icon, you can now choose a color and icon instead"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Dependecies",
-      "description": "Mark Records as blocked by other Records, or as blocking other Records. This is the first step towards Gantt Charts"
-    },
-    {
-      "title": "Right Click Records",
-      "description": "Sometimes you need to edit a Record, fast. Now you can — just right click on a Record"
-    },
-    {
-      "title": "Improved Project Activity",
-      "description": "Project activity now logs deleted Record lists as well as form submissions"
-    },
-    {
-      "title": "Show Percentage on Checklists",
-      "description": "We now display the % completion of checklists based on the number of items completed"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Wiki",
-      "description": "Each project has its own infinite Wiki, a place where you can store your project knowledge! This includes an automatically updating table of contents of easy navigation"
-    },
-    {
-      "title": "Mention Records",
-      "description": "Previously, you could only mention people. Now, you can also easily reference another Record by using typing @@ and then searching for a Record"
-    },
-    {
-      "title": "Global Database",
-      "description": "To support our customers in over 125 countries, we have launched global synced databased in the United States, Europe, and Asia Pacific. This provides another layer of redundancy, and even faster access speeds — regardless of where in the world you're based!"
-    },
-    {
-      "title": "Embedded Translations",
-      "description": "We now have automatic deployment of our new translations directly from the translation management system"
-    },
-    {
-      "title": "Share Files with Public Link",
-      "description": "Create a shareable public link to any file in Blue"
-    },
-    {
-      "title": "Better Notification Emails",
-      "description": "We now show the contents of the comments that trigger an email notification directly within an email — so you no longer need to click to see what was said"
-    },
-    {
-      "title": "Better (Looking) User Guide",
-      "description": "We took our and gave it a facelift"
-    },
-    {
-      "title": "Russian & Portuguese",
-      "description": "Privet and Olá — Blue is now available in both Russian and Portuguese"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Custom Domains",
-      "description": "Blue now supports custom domains"
-    },
-    {
-      "title": "Better Transactional Emails",
-      "description": "We have now split out our service for transactional emails to improve email deliverability — ensuring you get your notifications each time"
-    },
-    {
-      "title": "Upgraded Infrastructure",
-      "description": "As part of our global scaling efforts, we have deployed the Blue web application on over 270 data centers worldwide, enabling us to reach 95% of world's population in less than 50ms"
-    },
-    {
-      "title": "Intelligent Traffic Routing",
-      "description": "Speed is our priority, and we now intelligently route our internet traffic across the world based on each individual customer's location, ensuring faster load times for everyone"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Hello Blue",
-      "description": "We are changing our name from Bloo to Blue!"
-    },
-    {
-      "title": "Updated Board Design",
-      "description": "We have updated our board view, to make it even easier on the eyes"
-    },
-    {
-      "title": "New Currencies",
-      "description": "We have added another 15+ currencies to Blue to support users from across the globe"
-    },
-    {
-      "title": "Copy Forms",
-      "description": "You could not copy forms between projects, and now you can!"
-    },
-    {
-      "title": "Add Records From the Bottom",
-      "description": "Sometimes you want to add Records from the top, sometimes from bottom. Now you can do both"
-    },
-    {
-      "title": "Tags for Forms",
-      "description": "You can select tags to be automatically applied to form entries for specific forms"
-    },
-    {
-      "title": "Bulk Add Items",
-      "description": "Copy and paste from a spreadsheet or a list to bulk create lists, Records, checklists, and checklist items"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "New Currencies",
-      "description": "Blue now supports the Malaysian Ringgit, Egyptian Pound, and the Indonesian Rupee"
-    },
-    {
-      "title": "Self-Extend Trials",
-      "description": "If new potential customers need to extend their free trial, they can now do it by themselves without having to reach out to the customer support team!"
-    },
-    {
-      "title": "Change Company URL",
-      "description": "If you need to change your Blue organizational URL, this is now possible!"
-    },
-    {
-      "title": "Credit Card for Free Trials",
-      "description": "All future free trials will require credit cards. This helps us keep the platform spam free and ensures that we can focus on making Blue constantly better"
-    },
-    {
-      "title": "Improved Activity Filters",
-      "description": "Project activity can now be filtered by tags and people instead of only by date"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Improved Billing Portal (Alpha)",
-      "description": "A new portal that allows our customers to add tax information, download previous invoices/receipts, and update their payment details"
-    },
-    {
-      "title": "Project folders on Mobile",
-      "description": "Project folders are now supported on both iOS and Android mobile applications"
-    },
-    {
-      "title": "Start and Due Times",
-      "description": "You can set start times and due times for Records to get an extra level of accuracy on when something needs to get done. This opens us a large number of new use cases for Blue"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Reminders",
-      "description": "Snooze any Record and get a email or push reminder at a later date"
-    },
-    {
-      "title": "Change Company URL (Alpha)",
-      "description": "Previously you had to contact support to change your company URL, now you can do this yourself!"
-    },
-    {
-      "title": "Sort by Custom Fields in Database View",
-      "description": "When in database view, you can now sort any of the columns that are custom fields"
-    },
-    {
-      "title": "Set Company Color",
-      "description": "The company owner can enforce an interface color for all users in his company"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "Bulk Edit Records",
-      "description": "You can bulk assign, tag, and move Records in any list"
-    },
-    {
-      "title": "Add Web Links to Checklists ",
-      "description": "We now support web links than open in a new tab within checklist items"
-    },
-    {
-      "title": "Project Settings",
-      "description": "Project administrators now have a specific area to manage project-specific settings"
-    },
-    {
-      "title": "Hide User Emails",
-      "description": "Project administrators can now choose to hide all user emails within a project, or just for clients"
-    },
-    {
-      "title": "Sign In Alerts ",
-      "description": "If we detect an unusual sign-in attempt to your Blue account, we now send you an alert email to make sure it was really you"
-    },
-    {
-      "title": "Performance Improvements",
-      "description": "We've been making large upgrades to our underlining libraries, future proofing Blue so we can continue to innovate for the long-term"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2022",
-  "changes": [
-    {
-      "title": "New Currencies",
-      "description": "We are bringing support for the Pakistani Rupee and the Nigerian Naira!"
-    },
-    {
-      "title": "Toggle Project Features (Alpha)",
-      "description": "You can decide which features in a project you want to enable or disable"
-    },
-    {
-      "title": "Embeddable Forms",
-      "description": "We now provide an easy way to copy the HTML code required to embed Blue forms directly into your website — collecting data has never been so easy"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "File Folders",
-      "description": "You can create nested folders to organize your files in a logical manner"
-    },
-    {
-      "title": "Speed Improvements",
-      "description": "We've made major software optimizations to Blue to make it 300% faster. Things feel instant right now"
-    },
-    {
-      "title": "New Authentication System",
-      "description": "We have implemented a new authentication system that removes the use of cookies and improves security. It also sets up for Single Sign On in 2022"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "5 New Languages!",
-      "description": "🇬🇪🇭🇺🇸🇪🇷🇴🇨🇿We're happy to announce that Blue is now available in Georgian , Hungarian, Swedish, Romanian, and Czech! We now have a total of 15 languages available which actually broke our language selection component, so we redesigned that as well :)"
-    },
-    {
-      "title": "YouTube Video Embeds",
-      "description": "When you drop a YouTube link in a comment or a Record description, we will embed the YouTube video player right in so everyone catch watch the video inside of Blue"
-    },
-    {
-      "title": "Country Custom Fields",
-      "description": "We noticed lots of customers creating their own country lists using custom fields, so now there is a specific custom fields that provides a multi-select list of every country in the world without you having to input each one manually"
-    },
-    {
-      "title": "Preview Audio",
-      "description": "When you upload an audio file into a comment, you'll now be able to play it directly within Blue instead of having to download it"
-    },
-    {
-      "title": "Assigned checklist items to show in My Records",
-      "description": "You can now get a complete overview of what you need to get done, because we show both Records and checklist items under \"My Records\""
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Log Deleted Records",
-      "description": "We now keep track of who deleted which Records — which brings further transparency into Blue "
-    },
-    {
-      "title": "Edit Comments",
-      "description": "Sometimes you need to go back and edit something you wrote. Now you can, and you'll see a small \"edited\" text to let everyone know that a comment was edited"
-    },
-    {
-      "title": "Custom Links",
-      "description": "The ability for company owners to add useful links to the sidebar, and choose whether clients should see them or not"
-    },
-    {
-      "title": "New Onboarding Emails",
-      "description": "Each time a new user joins Blue, they will now receive a series of emails to help them get on board"
-    },
-    {
-      "title": "Record Comment & Audit Filter",
-      "description": "Sometimes Records can get cluttered with comments and activity items. You can now filters what you want to see. This is automagically saved as your default view across all projects and Records"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Community Translation",
-      "description": "We've launched the ability for anyone to translate Blue into their own native language"
-    },
-    {
-      "title": "Security Enhancements",
-      "description": "As the number of organizations using Blue keeps growing, we took some time out to have a security audit and enhance the level of protection that we provide customers"
-    },
-    {
-      "title": "Database View",
-      "description": "A completely new way to view your project data. Filter, sort, and splice your data in database view, where each custom field becomes a column"
-    },
-    {
-      "title": "Repeating Records",
-      "description": "Repeat Records on your schedule and create even better processes in your organization"
-    },
-    {
-      "title": "Dark Mode Improvements",
-      "description": "Everyone loves dark mode, now we've made it even better"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Safer Project Deletion",
-      "description": "We're improving the project deletion workflow to include an additional step for safety — so you'll never delete an entire project by accident"
-    },
-    {
-      "title": "Copy Record URL",
-      "description": "A quick and easy way to copy the URL of a Record when you're using our web app"
-    },
-    {
-      "title": "Custom Field Filters",
-      "description": "New advanced stackable filters for various custom fields"
-    },
-    {
-      "title": "Calendar Sync",
-      "description": "One way sync to gCal, iCal, and Outlook"
-    },
-    {
-      "title": "Custom Interface Colors",
-      "description": "You are able to change the interface color of Blue to be something other than blue!"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Checklist Notifications",
-      "description": "Now you can receive notifications on changes to individual checklist items — just the same way you get notifications about Records"
-    },
-    {
-      "title": "Filter and Selection Usability Improvements",
-      "description": "We know surface already select items at the top of the list for assignees and filters, and custom fields selections are now ordered by usage across our entire user base"
-    },
-    {
-      "title": "Social Proof on Signup Page",
-      "description": "We now showcase the total number of registered companies on the Sign Up and Sign In pages!"
-    },
-    {
-      "title": "People Page Real-Time Improvements",
-      "description": "No our people page updates in real-time for role changes, new invites, and users who accept invites"
-    },
-    {
-      "title": "Deleted Records logs",
-      "description": "We now keep a log on project activities of all delete Records"
-    },
-    {
-      "title": "All Users Can See Project Details",
-      "description": "We now show the project description to all users, not just administrators"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "File Upload for Forms",
-      "description": "Forms now support the custom field for file uploads, which means you can use forms for things like CV uploads, projects briefs, and more"
-    },
-    {
-      "title": "Project Folders",
-      "description": "Group your projects in the sidebar with color-coded folders for better organization. Perfect when you have dozens of projects on the go"
-    },
-    {
-      "title": "Change Email",
-      "description": "It's been more than 3 years, but now you can finally change your email without asking us to do it for you! ;)"
-    },
-    {
-      "title": "Birthday Tracking",
-      "description": "You can add your birthday in your profile, and we will remind the company owner to buy you a present ;)"
-    },
-    {
-      "title": "German Language",
-      "description": "Hallo! German language is now available in our Beta app across the world. Danke!"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Custom Field for Files",
-      "description": "You can now create custom fields that support adding multiple files at the same time. This is great for creating a more structured process for uploading documents and feedback"
-    },
-    {
-      "title": "Improved Tags",
-      "description": "We've increased the number of tag colors from 16 to 20 and improved the color palette to be easier on the eyes"
-    },
-    {
-      "title": "API",
-      "description": "Every single action that you can do in Blue is available via our API. This is a beta feature so its not yet recommended for mission-critical processes"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Spanish Language",
-      "description": "Hola! Spanish language is now available! We've got a few more languages coming soon"
-    },
-    {
-      "title": "New Currencies",
-      "description": "We have added support for new currencies including the British pound, Philippine Peso, Ethereum and Bitcoin"
-    },
-    {
-      "title": "Files in Mobile Apps",
-      "description": "Our mobile apps now support browsing and previewing through all the files in your projects"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Project Templates",
-      "description": "Take process to the next level by creating your own templates! These will be available to all your team members, so you can keep work consistent and save time"
-    },
-    {
-      "title": "Duplicate Projects",
-      "description": "You can now copy an entire project in a few clicks. Copy the entire thing, or pick and choose what you want to copy across"
-    },
-    {
-      "title": "Automation Notifications",
-      "description": "Now you can receive notifications each time something happens via an automation. This is a great way to stay up to date with what's happening"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Forms",
-      "description": "You can now create multiple forms for each project, and pick and choose which custom fields to enable to build your perfect forms. Share these outside of Blue and watch the entries automatically become Records in your projects"
-    },
-    {
-      "title": "My Records V2",
-      "description": "Now your Records are automatically categorized by what's coming up soon and what's late, helping you keep track of what you have to get done"
-    },
-    {
-      "title": "Searchable Tags",
-      "description": "Now you can easily search for tags when tagging Records, perfect for projects where you have lots and lots of tags"
-    },
-    {
-      "title": "Updated Client Permissions",
-      "description": "Clients can no longer delete other people's Records in projects or create new lists in projects"
-    },
-    {
-      "title": "Timezone Aware",
-      "description": "Blue now automatically detects your timezone and ensures reminders are sent at the right time"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2021",
-  "changes": [
-    {
-      "title": "Location Custom Field",
-      "description": "You can now add multiple location custom fields to a Record. You can search for a place, drag and drop a pin on a map, or just enter the coordinates if you have them in hand"
-    },
-    {
-      "title": "Map View",
-      "description": "If you're using the location custom field, you can now switch views and see all your Records in a map. This is great to view customer addresses, location of equipment, and more!"
-    },
-    {
-      "title": "New Currencies",
-      "description": "Due to lots of requests, we've added a whole bunch of new currencies that are now supported by our custom fields. Hello to Brazil, India, Korean, and a few other countries! :)"
-    },
-    {
-      "title": "Import & Export V2",
-      "description": "We've added custom field management including in that we also added new fields; currency, selection, and tag for a faster mapping process! Additionally, the ability to auto-assign headers based on the column names making it easier for you!"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Import & Export Records",
-      "description": "Import and export Records via CSV files. This works with all custom fields and supports up to 100,000 Records at a time!"
-    },
-    {
-      "title": "Additional Templates",
-      "description": "We've added new templates for onboarding new employees, reading lists, meeting notes, and user research"
-    },
-    {
-      "title": "Built in GIFs",
-      "description": "Sometimes, the best way to communicate is with an animated cat :)"
-    },
-    {
-      "title": "Improved Rickroll",
-      "description": "We've linked directly to 43 seconds into the video, because we're never gunna give you up"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Built In Support",
-      "description": "You can now access our support team right within Blue. Our help widget automagically suggest relevant help guide content based on the feature you're on, and you can reach out to our team via live chat or email directly within Blue"
-    },
-    {
-      "title": "Dark Mode on Android",
-      "description": "Now our Android app supports dark mode. Sync it up with your phone settings or choose your always-on favorite theme"
-    },
-    {
-      "title": "Improved Record Filter Interface",
-      "description": "We've significantly improved the interface for Record filtering, now you have one less click for all actions and you can see exactly what's filtered at a glance"
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Automations",
-      "description": "Take your productivity to the next level by automating common actions. Create triggers based on actions like assigning people, moving Records, and setting due dates, and automatically take actions"
-    },
-    {
-      "title": "Dark Mode on iOS",
-      "description": "Now our iOS app supports dark mode. Sync it up with your phone settings or choose your always-on favorite theme"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Project Templates",
-      "description": "Whether you're hiring new people, kick starting sales, or planning an event, we've got a template to get you going to record time"
-    },
-    {
-      "title": "Unread Mentions Filters",
-      "description": "Now if you've got a lot of @mentions during the day, you can filters just by the ones you haven't read to stay on top of things"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Grid View",
-      "description": "Now the default view on files has switched from a list to a grid, with built in preview of common files, and a handy button to switch back to list view as required!"
-    },
-    {
-      "title": "Record Checklists on iOS & Android",
-      "description": "Create checklists, assign people, and set a due date to checklist items right from your Blue app"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "New iOS App",
-      "description": "Our iOS has had a new release that add lots of new functionality like archived projects, tags, Record history, and lots and lots of performance improvements. We've also updated the interface to bring it in line with Apple's latest interface guidelines"
-    },
-    {
-      "title": "New Android App",
-      "description": "Android has received some love with a new update that add lots of new features, improved offline support, and generally makes using an Android phone a pleasure :)"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Improvements to Web App",
-      "description": "We've made significant performance improvements for our web app to cope with the increased usage across our customer base, and we've made the real-time data updates more... real-time!"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Assignee & Due Dates on Checklists",
-      "description": "Now, you have the ability to assign an individual checklist item to team members, and also set start and due dates! This is great for more granular project planning"
-    },
-    {
-      "title": "Updated Dashboard Interface",
-      "description": "Once you log into Blue, now you see a more organized and clean-looking dashboard that allows quick access to recent projects right on top, followed by your active companies, and inactive ones"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Custom Fields",
-      "description": "This new feature allows you to customize your Record fields. In addition to adding a due date or assignee to your Record, you can add specific fields for phone numbers, URLs, emails, currency, and more"
-    },
-    {
-      "title": "@mention Page",
-      "description": "This is your go-to place for all @mentions you get from comments, Records, updates, discussions, and across different projects and company"
-    },
-    {
-      "title": "Dark Mode",
-      "description": "You can now feel at ease when working at night or in the dark"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "List View",
-      "description": "Adding to Boards and Calendar View, this new feature allows you to view your Records in a list format.  And you can check your Records off as you go, like checklists"
-    },
-    {
-      "title": "View/Comment Only",
-      "description": "You can now give people access to only view the details of a project or only comment"
-    },
-    {
-      "title": "Change User Access Level",
-      "description": "Before, you would have to remove the person and add them back in with the new access level. Now you can directly change their access level in People Management"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Fullscreen Mode",
-      "description": "To limit the amount of distractions presented by the digital noise, you can now view your boards in Fullscreen and go into deep focus"
-    },
-    {
-      "title": "Company Calendar",
-      "description": "Before you could only turn on Calendar View for Projects, now you can see all that happens within your company across multiple projects in the Company Calendar. Big picture planning gets simple!"
-    },
-    {
-      "title": "Performance Improvements",
-      "description": "We've made Blue even faster and more reliable"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2020",
-  "changes": [
-    {
-      "title": "Archive Projects",
-      "description": "Long list of projects on your workspace can be overwhelming; our new update gives you option to archive completed or projects you simply want to hide in the time being"
-    },
-    {
-      "title": "Ability to Leave Company",
-      "description": "We've added a feature that allows you to remove yourself from a company. But don't forget to say bye!"
-    },
-    {
-      "title": "Improved Board UI and Loading",
-      "description": "We've removed all shadows from Record cards and created a cleaner view of your workspace. Small changes in drag & drop shadows, loading views, and little touches this and there,  and voila... your new Blue work station!"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Checklists",
-      "description": "Sometimes a Record may come with other small tasks that need to be completed, and you can now add checklists inside to avoid missing small details"
-    },
-    {
-      "title": "Android App",
-      "description": "Now Android users can enjoy the same benefits as iOS users. We have a new shiny app that has all the features you need, while giving a fast way to access Blue while on the go"
-    },
-    {
-      "title": "Assignees' Faces on Cards",
-      "description": "One glance is all it takes to see which members are assigned to a task, unless your members decide not to add their pictures, which is also fine"
-    },
-    {
-      "title": "Improved Record Interface",
-      "description": "Nothing beats design that embraces simplicity; Blue's updated interface makes Records look more organized, and now you can move your Record across different columns through a dropdown option"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "File Management",
-      "description": "Forget about Dropbox or Google Drive, you can now see all files uploaded in your project, and also store files separately from tasks and comments, as well as download multiple files at the same time"
-    },
-    {
-      "title": "Date Ranges for Records",
-      "description": "Sometimes, Records don't just have a due date, but have a particular timeframe during which they need to be worked on. Now, you can set both start dates and due dates for Recordsl"
-    },
-    {
-      "title": "Copy & Move Records",
-      "description": "If you've ever needed to move or copy Records across projects...well you're in luck, because now you can!"
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Tags",
-      "description": "If you track related but separate groups of tasks in one project, you'll now be able to color-code them and also filter them out to get a clearer overall picture"
-    },
-    {
-      "title": "Emoji Support! :)",
-      "description": "Sometimes words are not enough, and that's why you can now search through Emojis to the find the perfect one to express what you want to say!"
-    },
-    {
-      "title": "Bigger Maximum File Size",
-      "description": "We've now increased the maximum file size to 2GB, which is great for large design files, marketing videos, and more. Uploads are also even faster, and you can drag and drop anywhere on the browser to upload files"
-    },
-    {
-      "title": "Per Project Notification Indicator",
-      "description": "You'll now see a number next to each project on the sidebar, indicating how many new things have happened since you last checked"
-    },
-    {
-      "title": "Resources on the Sidebar",
-      "description": "We've added useful links to the sidebar to download our apps, learning videos, and more!"
-    },
-    {
-      "title": "Sticky Toolbar",
-      "description": "For those extra long comments or descriptions, the toolbar now sticks to the top of the screen so you always have the tools at your disposal"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Calendars",
-      "description": "Being able to view Records in a calendar format brings about lots of advantages, and it is perfect for things like editorial calendars, social media posting schedules, and more!"
-    },
-    {
-      "title": "Record History",
-      "description": "It's key to be able to see the full history of each Record, from when it was created, to which column it was moved to, to any name changes, due date changes, and more"
-    },
-    {
-      "title": "Someone is Writing Indicator",
-      "description": "It's annoying when you post a comment and someone immediately posts before or after you, and you cross the discussions and causes confusion. Now you can see if someone is writing at the same time as you are, so you can better judge when you should post"
-    },
-    {
-      "title": "Mark All Records in Column as Done",
-      "description": "You can now mark an entire column on a board as done with two clicks. This is helpful when you've got a long list that's complete and you don't want to mark each item as done one by one"
-    },
-    {
-      "title": "Discussion List Improvements",
-      "description": "We've made the discussion list much easier to navigate, especially if you have a large number of long discussions!"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Beta Testing Website!",
-      "description": "You can now visit [https://beta.app.blue.cc](https://beta.app.blue.cc/) and login with your usual details to access all the upcoming features and give them a try!"
-    },
-    {
-      "title": "Per-Action Notification Settings",
-      "description": "Choose which actions should give you notifications, so you can roll your own completed customizable notifications preferences"
-    },
-    {
-      "title": "Someone is Writing Indicator",
-      "description": "It's annoying when you post a comment and someone immediately posts before or after you, and you cross the discussions and causes confusion. Now you can see if someone is writing at the same time as you are, so you can better judge when you should post"
-    },
-    {
-      "title": "Search Inside Comments",
-      "description": "We've upgrade our already-powerful search engine to have the ability to search within any comments made on any Record, discussions, or update!"
-    },
-    {
-      "title": "Leave a Project",
-      "description": "Yeah...we didn't have this before and you had to ask others to kick you out of a project. Now we do, and you can leave by yourself if you need!"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Per-Project Notifications",
-      "description": "Choose which projects should give you notifications, and which projects should stay quiet, so you can focus on what's important to you"
-    },
-    {
-      "title": "Billing",
-      "description": "We've got secure payments built right inside our app, as we like to get paid, you know ;)"
-    },
-    {
-      "title": "Upgraded Design",
-      "description": "We've upgraded Blue to the latest Material Design 2 guidelines"
-    },
-    {
-      "title": "Speed Boost",
-      "description": "Blue was already quite fast, but we've made it over 50% faster!"
-    },
-    {
-      "title": "Drag & Drop Projects",
-      "description": "You're now able to reorder the projects in your sidebar to put the projects that are most important to you at the top of the list"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "My Records",
-      "description": "Keeping track of your responsibilities just got a whole lot easier! We now collect all your assigned Records across all your projects in one, so you can easily see what's on your plate"
-    },
-    {
-      "title": "Real-Time Search",
-      "description": "Now you can search through all your Record, discussions, files, and updates from the top navigation bar. You'll never need to worry about where something was stored ever again"
-    },
-    {
-      "title": "Auto Saving Drafts",
-      "description": "Every message you write on our web or desktop applications now automatically save as you type, even if you close Blue and reopen it later. This ensures that you never lose anything mid-sentence!"
-    },
-    {
-      "title": "Gallery for Photos",
-      "description": "Now when you click on a photo on a comment, you'll be presented the photo in a gallery view and you can browse through all the other photos in that Record or message"
-    },
-    {
-      "title": "Offline Mode for iOS",
-      "description": "You can now use Blue on iOS while offline, and still see all your important data that you've previously looked at. That's great for long haul flights, or whenever the internet is not behaving itself ;)"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Email Notifications for @mentions",
-      "description": "When someone mentions you in a Record or comments, it normally means that it's quite important. Now we will email you to tell you to check out what was said"
-    },
-    {
-      "title": "Play Videos in Blue",
-      "description": "Now when you upload a video file in Blue, we'll automatically turn that into a player so everyone can view the video without needing to download the file!"
-    },
-    {
-      "title": "Emails to AWS SES",
-      "description": "We're now sending emails from AWS SES, which means they are less likely to end up in your spam, and you should also see emails being delivered immediately"
-    },
-    {
-      "title": "Upload Files & Multiple Photos on iOS",
-      "description": "We've built on top of the photo upload feature to add the ability to upload any file via iOS and also to select multiple photos and upload them all at the same time"
-    },
-    {
-      "title": "Drag and Drop Columns on iOS",
-      "description": "Now you can move board columns around on iOS. Simply long press on a column and it will pop out, and you can drag and drop to reorder your processes or Record lists"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Company Management",
-      "description": "Team management across the entire company, as well as the ability to upload your company logo and change company"
-    },
-    {
-      "title": "Multi-Language",
-      "description": "Giving the ability for people to have Blue in their own native language! Khmer & Vietnamese are the first on the list"
-    },
-    {
-      "title": "Increased Maximum File Size",
-      "description": "We've just increased the maximum allowed file size from 100mb to 500mb. Feel free to uploads those large schematics, videos, photo collections, and anything else you want"
-    },
-    {
-      "title": "Upload Videos on iOS",
-      "description": "You can now post videos into any discussions, comment, or Record directly via the iOS app"
-    },
-    {
-      "title": "Date Filters for Activity",
-      "description": "We've added the ability to filter both the project and global activity by date, which is great if you want to know what happened at a particular point in time in a project"
-    }
-  ]
-},
-{
-  "month": "March",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Pending Invitation Management",
-      "description": "When you invite lots of new people to a project, it can be difficult to remember who's been invited when, and sometimes people lose the invitations. Now you easily manage any invitations that have been sent, including extending the invitation as well as cancelling it"
-    },
-    {
-      "title": "Icons for Most Common File Types",
-      "description": "Blue comes with unlimited storage, so it's great to add all your different file types!  We now have custom icons for over 40 of the most common file types, so your files will look ever better once they're on Blue!"
-    },
-    {
-      "title": "iOS App Released!",
-      "description": "Now our iOS app is out of the beta and on the App Store for anyone to download"
-    },
-    {
-      "title": "Browser Notifications Reminder",
-      "description": "If you're wondering why you're not getting notifications, we now remind you to turn them on in your browsers so you can get the best from Blue (and your team!)"
-    }
-  ]
-},
-{
-  "month": "February",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Realtime Keyword Filters",
-      "description": "Now you can filters across all Records in a project by typing for the name, and we'll automatically hide all Records that don't match that search result"
-    },
-    {
-      "title": "Mac & Windows App",
-      "description": "We've launched both the Mac and Windows applications. These can be installed via Google Chrome"
-    },
-    {
-      "title": "Realtime",
-      "description": "Anytime you do something, such as posting a new comment, it is instantly updated across both the web and mobile applications"
-    },
-    {
-      "title": "Filter Completed Records",
-      "description": "When a project has been going on for a while, it can fill up with old completed Records that you don't really need to see all the time. Now you can filter them away to keep things focussed"
-    }
-  ]
-},
-{
-  "month": "January",
-  "year": "2019",
-  "changes": [
-    {
-      "title": "Self Sign Up",
-      "description": "Now anyone with an email address can sign up to Blue, from anywhere in the world"
-    },
-    {
-      "title": "Record Filters & Sorting",
-      "description": "When you've got a lot of Records in a project it can get difficult to find things. Now you can filter by whether a Record has been completed, due dates within a date range, and also who's been assigned to the Record. And if you need to sort you Records, you can also do so!"
-    }
-  ]
-},
-{
-  "month": "December",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Pretty URLs",
-      "description": "Now all URLs are completely human readable and friendly to the eyes, which means that when you share a link with someone, they can instantly tell where that will lead"
-    },
-    {
-      "title": "Performance Improvements",
-      "description": "We took some time away from building new stuff to ensure that Blue stays as fast as ever"
-    }
-  ]
-},
-{
-  "month": "November",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Automatic 30 Day Backups",
-      "description": "We now backup all data everyday for 30 days, so you can sleep well at night knowing everything is as safe as it can be"
-    },
-    {
-      "title": "Notifications v1",
-      "description": "Both browser and mobile notifications for a whole different bunch of actions, so you can stay on top of your work"
-    }
-  ]
-},
-{
-  "month": "October",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Project and Global Activity",
-      "description": "Each project now has a timeline of everything that has happened. Also, you can see a timeline of your entire company and see what's been going on across all your projects"
-    },
-    {
-      "title": "People Search",
-      "description": "If a project has a large number of people, you'll now find that a handy real-time search bar appears to help you find who you're looking for in the People page :)"
-    }
-  ]
-},
-{
-  "month": "September",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Team Management",
-      "description": "Add and remove people from projects, and give them different permissions to ensure everyone can see and do what they need to!"
-    },
-    {
-      "title": "Multiple Companies",
-      "description": "Now you can have the ability to switch between multiple companies, each with their own projects and people"
-    }
-  ]
-},
-{
-  "month": "August",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "@mentions",
-      "description": "Need to give a teammate a heads up? Now you can by mentioning them in comments using @mentions! You'll automagically see a list of suggestions based on what you're typing and the people in the project"
-    },
-    {
-      "title": "File Uploads",
-      "description": "We now support the uploading of files to any discussions/Record/comment. You get unlimited storage, with maximum file size of 100mb per file"
-    }
-  ]
-},
-{
-  "month": "July",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Mobile App Beta",
-      "description": "We've released the beta versions of both Android and iOS mobile apps for our users to try. Being able to work on-the-go is important, as it stops you having to be stuck in the office!"
-    },
-    {
-      "title": "Boards",
-      "description": "Now you can track Records list across a board and build your own processes to keep everything in check. This is hands-down the best way to ensure that work keeps flowing in the right direction"
-    }
-  ]
-},
-{
-  "month": "June",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Infinite Scroll",
-      "description": "Nobody likes trying to remember what page something is on. With infinite scroll, we keep loading all your information for you as your scroll down the page"
-    },
-    {
-      "title": "Status Updates",
-      "description": "Keeping on top of what's going on is important. With status updates, you can see what others have been up to as well as post your own updates"
-    },
-    {
-      "title": "Projects",
-      "description": "Now you can create projects to keep things neat and tidy, and the cool thing is, each Blue accounts comes with an unlimited amount of projects!"
-    }
-  ]
-},
-{
-  "month": "May",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Passwordless Sign In",
-      "description": "We now support passwordless sign in for Blue. This is the safest way to login to an application as it doesn't require you to remember anything"
-    },
-    {
-      "title": "Discussions",
-      "description": "Now you can start and reply to discussions in Blue. Communication is the most important aspect of teamwork, and now you can do it right inside Blue"
-    }
-  ]
-},
-{
-  "month": "April",
-  "year": "2018",
-  "changes": [
-    {
-      "title": "Start!",
-      "description": "We've started building Blue. We're excited at the possibility of helping people change the way they work for the better"
-    }
-  ]
-}
-]`}}
+        {{$changelog := slice
+          (dict "month" "June" "year" "2025" "changes" (slice
+            (dict "title" "Zapier Integration" "description" "Connect Blue with thousands of apps through our new Zapier integration")
+            (dict "title" "Created At Custom Field" "description" "You can now create a custom field that automatically sets the created at date for a record")
+            (dict "title" "File Renaming" "description" "You can now rename files directly within Blue")
+            (dict "title" "Delete Permissions for Custom Roles" "description" "Grant or restrict delete permissions for custom user roles")
+            (dict "title" "Multi-Homing Records (Beta)" "description" "Have the same record in multiple projects with synchronized custom field data and unified comments")
+            (dict "title" "Restrict Record Completion" "description" "Control which custom user roles can mark records as complete")
+            (dict "title" "New File Platform" "description" "Switched from AWS S3 to B2 for increased bandwidth and files now hosted in Germany")
+            (dict "title" "Enhanced Cover Images" "description" "Turn cover images off project-wide, set source data (comments, file custom fields, description) and configure aspect ratios")
+            (dict "title" "Admin Role Management" "description" "Administrators can now change the roles of other administrators, providing more flexible permission management")
+            (dict "title" "Wiki & Docs in Templates" "description" "Project templates now include wiki pages and documentation, ensuring knowledge is preserved when creating new projects from templates")
+            (dict "title" "Support for multiple email automations." "description" "Now one automation trigger can send up to 5 emails instead of 1 previously.")
+            (dict "title" "Reference field support for bar charts." "description" "Blue now supports using reference fields for the X-axis for bar charts.")
+            (dict "title" "Export charts as CSV." "description" "Added a new option to individual charts to be able to export multi-project charts to a unified CSV with combined custom field data.")
+          ))
+          (dict "month" "May" "year" "2025" "changes" (slice
+            (dict "title" "Make.com Integration" "description" "A native Make application that allows you to send data to and from Make.")
+            (dict "title" "Custom Field Folders" "description" "Custom fields can now be organized into folders, making it easier to manage and find them")
+            (dict "title" "Lookup Unique IDs" "description" "You can now lookup unique IDs across projects")
+            (dict "title" "Tag-based permissions engine" "description" "Show/hide records based on what tags they have.")
+          ))
+          (dict "month" "April" "year" "2025" "changes" (slice
+            (dict "title" "Faster Record Queries" "description" "A complete rewrite of our record fetching query to significantly improve speed")
+            (dict "title" "Custom Field Folders" "description" "Custom fields can now be organized into folders, making it easier to manage and find them")
+            (dict "title" "Add Support for UniqueID on PDF Printing" "description" "UniqueIDs can now be overlayed in the PDF templates for printing")
+            (dict "title" "Add support for multi-page PDF templates" "description" "You can now create multi-page PDF templates for printing")
+            (dict "title" "Automation to assign to the person who created the record " "description" "You can now assign a record to the person who triggered the automation")
+          ))
+          (dict "month" "March" "year" "2025" "changes" (slice
+            (dict "title" "Time In List" "description" "We've added a new feature that shows you how long a record has been in each list")
+            (dict "title" "Faster Dashboard Charts" "description" "We've made our dashboard charts faster and more responsive")
+            (dict "title" "Sort Database View by Date Custom Field" "description" "You can now sort the database view by a custom field that contains a date")
+            (dict "title" "Sort Database View by Single and Multiple Select Custom Field" "description" "You can now sort the database view by a single and multiple select custom fields")
+            (dict "title" "Upgraded email infrastructure" "description" "We've upgraded our email infrastructure to use a more reliable and scalable provider")
+            (dict "title" "Record color now shows on database view" "description" "The color of a record now shows on the database view")
+            (dict "title" "Upgraded create and update record APIs" "description" "Now you can create and update records using the API while creating and updating custom fields at the same time")
+          ))
+          (dict "month" "February" "year" "2025" "changes" (slice
+            (dict "title" "Currency Conversion Custom Field" "description" "Create a custom field that converts one currency to another, using the latest exchange rates for the European Central Bank")
+            (dict "title" "Sequential Record IDs" "description" "Create a custom field that automatically increments the record ID, useful for creating unique IDs for records")
+            (dict "title" "Restrict Project Views (Beta)" "description" "Restrict which project views (i.e. Kanban, Calendar, Gantt, etc.) are available in a project.")
+            (dict "title" "@mention comment permissions" "description" "Restrict user roles to only see comments that specifically mention them.")
+            (dict "title" "Custom Field Filters in Dashboards" "description" "You can now filter dashboards by custom fields")
+          ))
+          (dict "month" "January" "year" "2025" "changes" (slice
+            (dict "title" "White Label Add-On" "description" "Company administrators can now customize branding with custom domains, white-labeled desktop apps, and company email domains for communications (paid add-on)")
+            (dict "title" "Google Maps API Integration" "description" "Replace OpenStreetMap with Google Maps using your own API key for enhanced address accuracy in logistics and delivery use cases")
+            (dict "title" "Project Feature Configuration" "description" "Enable/disable and rearrange project features on a per-project basis for tailored workflows")
+            (dict "title" "HTTP Request Automation Action" "description" "Send HTTP requests to any webhook or API endpoint as an automation action, using any data available in your project records")
+            (dict "title" "GitHub OAuth Integration" "description" "Use GitHub OAuth 2.0 authentication to securely send HTTP requests through automations to GitHub and other services")
+          ))
+          (dict "month" "December" "year" "2024" "changes" (slice
+            (dict "title" "Enhanced Button Custom Fields" "description" "Create buttons with soft/hard confirmation dialogs that can trigger automations upon activation")
+            (dict "title" "Multi-Currency Support" "description" "Currency fields now support multiple currencies that can be set individually per record")
+            (dict "title" "Location Field CSV Support" "description" "Added import/export capability for location custom fields in CSV format")
+            (dict "title" "API Record Creation Upgrade" "description" "Create records with custom field values directly through the API for seamless integrations")
+            (dict "title" "PDF Automation Pipeline" "description" "Automatically store generated PDFs in file fields and trigger automations on PDF generation")
+            (dict "title" "International Phone Number Support" "description" "Added automatic recognition of international phone number formats during CSV imports for better data standardization")
+          ))
+          (dict "month" "November" "year" "2024" "changes" (slice
+            (dict "title" "Enhanced Lookup Fields" "description" "Lookup fields can now reference other reference fields, enabling more complex cross-project data relationships and advanced reporting capabilities")
+            (dict "title" "Referenced By Field" "description" "A new column in Database View shows all places where a record is referenced, providing better visibility into data relationships across your projects")
+            (dict "title" "Docs in Templates" "description" "Project templates now include associated documentation, making it easier to maintain consistent processes and onboard new team members")
+            (dict "title" "Google Maps Integration" "description" "Location fields now include direct links to Google Maps, allowing for easier navigation and location sharing across teams")
+          ))
+          (dict "month" "October" "year" "2024" "changes" (slice
+            (dict "title" "Dynamic Currency Fields." "description" "You can now create custom currency fields that support multiple currencies that can be set on a per-record basis")
+            (dict "title" "Button Custom Field." "description" "You can now create custom fields that act like buttons, which can trigger automations")
+            (dict "title" "Updated Calendar View" "description" "We've updated our calendar view to make it easier to read and more informative")
+          ))
+          (dict "month" "September" "year" "2024" "changes" (slice
+            (dict "title" "Support for Embedding Loom Videos" "description" "You can now easily embed Loom videos directly in your comments and Records")
+            (dict "title" "New Languages" "description" "We've added support for Bengali, Dutch, Hindi, Norwegian, Polish, Swahili, Tagalog, Tamil, Thai, and Turkish, making Blue even more accessible globally")
+            (dict "title" "Improved Search Functionality" "description" "Our search feature has been enhanced to provide faster and more accurate results across all your projects and Records")
+            (dict "title" "Soft Delete Implementation" "description" "We've made an internal change to store deleted lists and Records in a separate table. This lays the groundwork for future \"trash\" and restore functionalities")
+          ))
+          (dict "month" "August" "year" "2024" "changes" (slice
+            (dict "title" "Bulk Project Invites" "description" "Now you can invite users to multiple projects at the same time")
+            (dict "title" "Added Support for Loom Videos" "description" "Loom videos now automatically embed when you comment a link to a Loom video")
+            (dict "title" "New Currencies" "description" "We've added support for the Georgian Lari (GEL), the Sri Lankan Rupee (LKR), and the Moroccan Dirham (MAD)")
+            (dict "title" "Add Columns in Database View" "description" "You can now add columns (i.e. custom fields!) directly in the database view")
+            (dict "title" "Add Records in Database View" "description" "You can now add records directly in the database view")
+          ))
+          (dict "month" "July" "year" "2024" "changes" (slice
+            (dict "title" "GPT-4o-mini" "description" "We've updated our AI features to use the latest and most powerful AI models")
+            (dict "title" "Multi-language support for printing PDFs" "description" "Now our print PDF feature support characters in multiple languages")
+            (dict "title" "Keyboard Shortcuts" "description" "Now you can navigate around Blue using your keyboard for common actions, and dropdowns have numbers that you can easily press to take actions")
+            (dict "title" "Send emails to referenced email fields" "description" "Now email automations can send emails to emails that are referenced from another project")
+            (dict "title" "Form reference field dropdown" "description" "Forms now support reference custom fields as single or multi select dropdowns")
+          ))
+          (dict "month" "June" "year" "2024" "changes" (slice
+            (dict "title" "Search Improvements" "description" "We've improved our search algorithms and we also prioritize results in the current project")
+            (dict "title" "See Where Records are Referenced" "description" "If a record is referenced, you can see a list of all places it has been referenced right from the individual record view")
+            (dict "title" "Gantt Chart Improvements" "description" "We've made Gantt Charts smoother to use, and have also added a quarterly view, which is often the perfect view to focus on corporate planning")
+            (dict "title" "Multi Language AI Summaries" "description" "AI Summaries now support multiple languages instead of just English. We automatically detect the language and create summaries in the same language!")
+            (dict "title" "Font Selection (Alpha)" "description" "Users can choose between various Google fonts for their Blue interface")
+          ))
+          (dict "month" "May" "year" "2024" "changes" (slice
+            (dict "title" "Reference & Lookups in Email Automations" "description" "You can now use Reference and Lookup custom fields in email automations, both in the content and also as addresses")
+            (dict "title" "Reference Custom Fields in Forms" "description" "You can now use Reference custom fields in forms to show a dropdown")
+            (dict "title" "Custom Timezones" "description" "You can now set your own timezone in Blue, perfect if you're using a VPN and want to override the automatic timezone detection")
+            (dict "title" "Auto Tagging using AI" "description" "You can now automatically tag records using AI either individually or in bulk")
+            (dict "title" "Chat Improvements" "description" "We've made dozens of small but noticeable improvements to our chat interface")
+            (dict "title" "Migrated from Webpack to Vite" "description" "We've moved all our code from Webpack to Vite to improve build times")
+          ))
+          (dict "month" "April" "year" "2024" "changes" (slice
+            (dict "title" "Instant Delete" "description" "Deleting a record now is instant")
+            (dict "title" "Next-Gen Search" "description" "We've rewritten the search experience from scratch. Find anything — instantly")
+            (dict "title" "AI Summaries" "description" "One-click to get summaries of all comments inside a record")
+            (dict "title" "Direct Date Edit on Cards" "description" "On Kanban View you can now edit the date directly by clicking on the card")
+            (dict "title" "Hide Record Counts" "description" "Project admins can now choose to hide the record count next to list names within project settings")
+          ))
+          (dict "month" "March" "year" "2024" "changes" (slice
+            (dict "title" "@mentions groups" "description" "You can now @mention user groups such as clients, team members, and even custom user roles")
+            (dict "title" "New Support Beacon" "description" "We have a new support beacon that can be opened by pressing \"?\" and gives you instant access to various resources")
+            (dict "title" "Lookup a Lookup" "description" "Lookup custom fields can now lookup other lookup custom fields")
+          ))
+          (dict "month" "February" "year" "2024" "changes" (slice
+            (dict "title" "sub-10ms @mentions" "description" "The @mentions dropdown is now instant")
+            (dict "title" "Select Multiple Records" "description" "Control/Command + click to select multiple records and then right click for bulk actions")
+          ))
+          (dict "month" "January" "year" "2024" "changes" (slice
+            (dict "title" "New Blue Brand" "description" "We have redesigned our Blue Wordmark from our previous custom cursive font to a sans-serif")
+            (dict "title" "New Documentation Site" "description" "We've launched a new documentation site with AI-powered search")
+            (dict "title" "CSV Export with Filters" "description" "You can now export only records that are visible based on your active filters")
+            (dict "title" "Colour Automations" "description" "Adding or removing colours to records can now trigger automations or be used as automation actions")
+          ))
+          (dict "month" "December" "year" "2023" "changes" (slice
+            (dict "title" "Print Records as PDFs" "description" "Upload PDFs as template and then overlay custom fields and print specific records as PDFs")
+            (dict "title" "Customisable Date Format" "description" "Users can now choose between dd/mm/yyyy and mm/dd/yyyy in their profile")
+          ))
+          (dict "month" "November" "year" "2023" "changes" (slice
+            (dict "title" "Conditional Automations (Alpha)" "description" "Create advanced conditional automations to enable even more use cases")
+            (dict "title" "Enhanced Lookup Fields" "description" "Lookup fields can now reference other reference fields, enabling more complex cross-project data relationships and advanced reporting capabilities")
+            (dict "title" "Referenced By Field" "description" "A new column in Database View shows all places where a record is referenced, providing better visibility into data relationships across your projects")
+            (dict "title" "Docs in Templates" "description" "Project templates now include associated documentation, making it easier to maintain consistent processes and onboard new team members")
+            (dict "title" "Google Maps Integration" "description" "Location fields now include direct links to Google Maps, allowing for easier navigation and location sharing across teams")
+          ))
+          (dict "month" "October" "year" "2023" "changes" (slice
+            (dict "title" "Custom Permissions for invites" "description" "Choose which users groups can invite other users into Blue")
+            (dict "title" "Large file import & export" "description" "You can now import and export up to 250,000 items at a time")
+            (dict "title" "Custom Permissions for Features" "description" "You can now limit user groups to only see specific project features")
+          ))
+          (dict "month" "September" "year" "2023" "changes" (slice
+            (dict "title" "Record Colours" "description" "Right click to colour code your Record cards, this makes it easy to highlight specific Records in your board!")
+            (dict "title" "Record Time Length Custom Field" "description" "A new custom field that allows you to pick specific events in your Record and calculate the time difference between the events")
+          ))
+          (dict "month" "August" "year" "2023" "changes" (slice
+            (dict "title" "Timeline / Gantt Charts" "description" "View your projects as a Gantt Charts, which allows you to visualise all the dependencies and interconnections between your Records")
+            (dict "title" "Cross Project References" "description" "Show data from one project into another project")
+            (dict "title" "Bar Charts" "description" "Take your data and do cross-project time-series analysis")
+            (dict "title" "Chat" "description" "Every project now gets a multi-topic chat")
+          ))
+          (dict "month" "July" "year" "2023" "changes" (slice
+            (dict "title" "New Languages" "description" "Blue is now available in Japanese, Hindi, Bengali, and Marathi")
+            (dict "title" "System Upgrade" "description" "We've made a major system upgrade to make our platform even faster")
+            (dict "title" "Raised Import Limits" "description" "You can now import up to 100,000 items into Blue in one go")
+            (dict "title" "Filter by List" "description" "You can now filter by list in company map view and dashboards")
+            (dict "title" "Copy Charts between Dashboards" "description" "You can now easily create new dashboards by copying charts from other dashboards")
+          ))
+          (dict "month" "June" "year" "2023" "changes" (slice
+            (dict "title" "Share Dashboards" "description" "You can now share dashboards with anyone that is already in your organisation")
+            (dict "title" "Custom Permissions for Lists" "description" "You can now decide which lists different roles can see in your projects")
+            (dict "title" "Notifications for Form Submissions" "description" "Now form submissions can trigger notifications via email and push")
+            (dict "title" "AI Document Chat (Alpha)" "description" "You can now search and chat within any PDF inside of Blue. This is great to understand long and complex documents")
+            (dict "title" "Bonjour 🇫🇷" "description" "Our mobile apps are now available in French!")
+          ))
+          (dict "month" "April" "year" "2023" "changes" (slice
+            (dict "title" "Dashboard Pie Charts" "description" "Show your cross-project data in beautiful pie charts that update in realtime")
+            (dict "title" "Footer for Forms" "description" "You can now add footers to form, which is perfect for terms and conditions")
+            (dict "title" "Improvements to Single and Multi-Select Field" "description" "We now support up to 100,000 items with infinite scroll, type-as-you-search, and bulk import")
+            (dict "title" "Submission Times on Form Entries" "description" "We now show the precise time when forms were submitted")
+          ))
+          (dict "month" "March" "year" "2023" "changes" (slice
+            (dict "title" "Improved Logging" "description" "We're now logging and monitoring even more aspects of our infrastructure")
+            (dict "title" "iPad App" "description" "If you use an iPad, you can now have a dedicated and beautiful app that leverages all that extra screen real-estate")
+            (dict "title" "New Real-Time Engine" "description" "We have completely rewritten our real-time engine to make it faster and more performant")
+            (dict "title" "Improved @mentions" "description" "We have upgraded our @mentions to be significantly faster and more scalable than before")
+          ))
+          (dict "month" "February" "year" "2023" "changes" (slice
+            (dict "title" "Custom Permissions" "description" "Create granular project permissions to unlock new use cases like never before")
+            (dict "title" "Improved Bulk Actions" "description" "Bulk Record List actions now respect active filters")
+            (dict "title" "Create List from List Menu (Alpha)" "description" "You can now create lists to the left or right of any existing list")
+          ))
+          (dict "month" "January" "year" "2023" "changes" (slice
+            (dict "title" "Dashboards Stats Card" "description" "Turn your data into knowledge with dashboards. Query across projects to surface key insights about your organisation")
+            (dict "title" "Cross-Project Automations" "description" "We now allow Records that are moved across projects to trigger automations")
+            (dict "title" "Formula Custom Field" "description" "A new custom field that can take the outputs of other fields and run calculations on them. This increases the flexibility of Blue and allows numerous new use cases")
+          ))
+          (dict "month" "December" "year" "2022" "changes" (slice
+            (dict "title" "Telegram Custom Field (Alpha)" "description" "We now have a dedicated custom field for Telegram, the popular messaging application. This means you can add telegram IDs and instantly open Telegram from Blue")
+            (dict "title" "Automation: Send Email" "description" "A new automation that can send emails from Blue based on any available trigger")
+            (dict "title" "Updated Completed Filters" "description" "We've redesigned our complete/incomplete filter to improve usability, and now you can show all Records, or just complete or incomplete Records")
+          ))
+          (dict "month" "November" "year" "2022" "changes" (slice
+            (dict "title" "New Database" "description" "Blue now runs on an entirely new database structure. Write speeds increased by 50%, while read speeds are up over 100%")
+            (dict "title" "Company Map View" "description" "You can now view geographic data from multiple projects from one convenient location")
+            (dict "title" "Forms QR Code " "description" "You can now download a QR code for every form in the form share options")
+            (dict "title" "Create Tags Directly from Tag Filters" "description" "Previously, you could only create a tag from within a Record. Now, you can do this directly with the project tag filter")
+          ))
+          (dict "month" "October" "year" "2022" "changes" (slice
+            (dict "title" "Webhooks" "description" "Trigger events in third party applications automatically using Blue webhooks, which are filterable by project and by type of event")
+            (dict "title" "Automations V2" "description" "We're adding two new triggers (On Due Date Expiration and When Anyone Is Assigned) and several new actions such as moving Records to other projects, copying Records, and also the creation of checklists!")
+            (dict "title" "Improved Country Custom Field" "description" "You can now use advanced filter with the country custom field, and you can also export country lists via CSV when you export your project")
+            (dict "title" "Templates V2 " "description" "Templates are now even more powerful, they support Automations, Custom Fields, and Checklists")
+            (dict "title" "Date Custom Field" "description" "Sometimes you need more than one date per Record. With our new custom field you can add as many dates as you need!")
+            (dict "title" "Blue Docs" "description" "Create an unlimited amount of real-time documents in any project")
+            (dict "title" "Set Project Icons" "description" "Instead of uploading a picture for a project icon, you can now choose a color and icon instead")
+          ))
+          (dict "month" "September" "year" "2022" "changes" (slice
+            (dict "title" "Dependecies" "description" "Mark Records as blocked by other Records, or as blocking other Records. This is the first step towards Gantt Charts")
+            (dict "title" "Right Click Records" "description" "Sometimes you need to edit a Record, fast. Now you can — just right click on a Record")
+            (dict "title" "Improved Project Activity" "description" "Project activity now logs deleted Record lists as well as form submissions")
+            (dict "title" "Show Percentage on Checklists" "description" "We now display the % completion of checklists based on the number of items completed")
+          ))
+          (dict "month" "August" "year" "2022" "changes" (slice
+            (dict "title" "Wiki" "description" "Each project has its own infinite Wiki, a place where you can store your project knowledge! This includes an automatically updating table of contents of easy navigation")
+            (dict "title" "Mention Records" "description" "Previously, you could only mention people. Now, you can also easily reference another Record by using typing @@ and then searching for a Record")
+            (dict "title" "Global Database" "description" "To support our customers in over 125 countries, we have launched global synced databased in the United States, Europe, and Asia Pacific. This provides another layer of redundancy, and even faster access speeds — regardless of where in the world you're based!")
+            (dict "title" "Embedded Translations" "description" "We now have automatic deployment of our new translations directly from the translation management system")
+            (dict "title" "Share Files with Public Link" "description" "Create a shareable public link to any file in Blue")
+            (dict "title" "Better Notification Emails" "description" "We now show the contents of the comments that trigger an email notification directly within an email — so you no longer need to click to see what was said")
+            (dict "title" "Better (Looking) User Guide" "description" "We took our and gave it a facelift")
+            (dict "title" "Russian & Portuguese" "description" "Privet and Olá — Blue is now available in both Russian and Portuguese")
+          ))
+          (dict "month" "July" "year" "2022" "changes" (slice
+            (dict "title" "Custom Domains" "description" "Blue now supports custom domains")
+            (dict "title" "Better Transactional Emails" "description" "We have now split out our service for transactional emails to improve email deliverability — ensuring you get your notifications each time")
+            (dict "title" "Upgraded Infrastructure" "description" "As part of our global scaling efforts, we have deployed the Blue web application on over 270 data centers worldwide, enabling us to reach 95% of world's population in less than 50ms")
+            (dict "title" "Intelligent Traffic Routing" "description" "Speed is our priority, and we now intelligently route our internet traffic across the world based on each individual customer's location, ensuring faster load times for everyone")
+          ))
+          (dict "month" "June" "year" "2022" "changes" (slice
+            (dict "title" "Hello Blue" "description" "We are changing our name from Bloo to Blue!")
+            (dict "title" "Updated Board Design" "description" "We have updated our board view, to make it even easier on the eyes")
+            (dict "title" "New Currencies" "description" "We have added another 15+ currencies to Blue to support users from across the globe")
+            (dict "title" "Copy Forms" "description" "You could not copy forms between projects, and now you can!")
+            (dict "title" "Add Records From the Bottom" "description" "Sometimes you want to add Records from the top, sometimes from bottom. Now you can do both")
+            (dict "title" "Tags for Forms" "description" "You can select tags to be automatically applied to form entries for specific forms")
+            (dict "title" "Bulk Add Items" "description" "Copy and paste from a spreadsheet or a list to bulk create lists, Records, checklists, and checklist items")
+          ))
+          (dict "month" "May" "year" "2022" "changes" (slice
+            (dict "title" "New Currencies" "description" "Blue now supports the Malaysian Ringgit, Egyptian Pound, and the Indonesian Rupee")
+            (dict "title" "Self-Extend Trials" "description" "If new potential customers need to extend their free trial, they can now do it by themselves without having to reach out to the customer support team!")
+            (dict "title" "Change Company URL" "description" "If you need to change your Blue organizational URL, this is now possible!")
+            (dict "title" "Credit Card for Free Trials" "description" "All future free trials will require credit cards. This helps us keep the platform spam free and ensures that we can focus on making Blue constantly better")
+            (dict "title" "Improved Activity Filters" "description" "Project activity can now be filtered by tags and people instead of only by date")
+          ))
+          (dict "month" "April" "year" "2022" "changes" (slice
+            (dict "title" "Improved Billing Portal (Alpha)" "description" "A new portal that allows our customers to add tax information, download previous invoices/receipts, and update their payment details")
+            (dict "title" "Project folders on Mobile" "description" "Project folders are now supported on both iOS and Android mobile applications")
+            (dict "title" "Start and Due Times" "description" "You can set start times and due times for Records to get an extra level of accuracy on when something needs to get done. This opens us a large number of new use cases for Blue")
+          ))
+          (dict "month" "March" "year" "2022" "changes" (slice
+            (dict "title" "Reminders" "description" "Snooze any Record and get a email or push reminder at a later date")
+            (dict "title" "Change Company URL (Alpha)" "description" "Previously you had to contact support to change your company URL, now you can do this yourself!")
+            (dict "title" "Sort by Custom Fields in Database View" "description" "When in database view, you can now sort any of the columns that are custom fields")
+            (dict "title" "Set Company Color" "description" "The company owner can enforce an interface color for all users in his company")
+          ))
+          (dict "month" "February" "year" "2022" "changes" (slice
+            (dict "title" "Bulk Edit Records" "description" "You can bulk assign, tag, and move Records in any list")
+            (dict "title" "Add Web Links to Checklists " "description" "We now support web links than open in a new tab within checklist items")
+            (dict "title" "Project Settings" "description" "Project administrators now have a specific area to manage project-specific settings")
+            (dict "title" "Hide User Emails" "description" "Project administrators can now choose to hide all user emails within a project, or just for clients")
+            (dict "title" "Sign In Alerts " "description" "If we detect an unusual sign-in attempt to your Blue account, we now send you an alert email to make sure it was really you")
+            (dict "title" "Performance Improvements" "description" "We've been making large upgrades to our underlining libraries, future proofing Blue so we can continue to innovate for the long-term")
+          ))
+          (dict "month" "January" "year" "2022" "changes" (slice
+            (dict "title" "New Currencies" "description" "We are bringing support for the Pakistani Rupee and the Nigerian Naira!")
+            (dict "title" "Toggle Project Features (Alpha)" "description" "You can decide which features in a project you want to enable or disable")
+            (dict "title" "Embeddable Forms" "description" "We now provide an easy way to copy the HTML code required to embed Blue forms directly into your website — collecting data has never been so easy")
+          ))
+          (dict "month" "December" "year" "2021" "changes" (slice
+            (dict "title" "File Folders" "description" "You can create nested folders to organize your files in a logical manner")
+            (dict "title" "Speed Improvements" "description" "We've made major software optimizations to Blue to make it 300% faster. Things feel instant right now")
+            (dict "title" "New Authentication System" "description" "We have implemented a new authentication system that removes the use of cookies and improves security. It also sets up for Single Sign On in 2022")
+          ))
+          (dict "month" "November" "year" "2021" "changes" (slice
+            (dict "title" "5 New Languages!" "description" "🇬🇪🇭🇺🇸🇪🇷🇴🇨🇿We're happy to announce that Blue is now available in Georgian , Hungarian, Swedish, Romanian, and Czech! We now have a total of 15 languages available which actually broke our language selection component, so we redesigned that as well :)")
+            (dict "title" "YouTube Video Embeds" "description" "When you drop a YouTube link in a comment or a Record description, we will embed the YouTube video player right in so everyone catch watch the video inside of Blue")
+            (dict "title" "Country Custom Fields" "description" "We noticed lots of customers creating their own country lists using custom fields, so now there is a specific custom fields that provides a multi-select list of every country in the world without you having to input each one manually")
+            (dict "title" "Preview Audio" "description" "When you upload an audio file into a comment, you'll now be able to play it directly within Blue instead of having to download it")
+            (dict "title" "Assigned checklist items to show in My Records" "description" "You can now get a complete overview of what you need to get done, because we show both Records and checklist items under \"My Records\"")
+          ))
+          (dict "month" "October" "year" "2021" "changes" (slice
+            (dict "title" "Log Deleted Records" "description" "We now keep track of who deleted which Records — which brings further transparency into Blue ")
+            (dict "title" "Edit Comments" "description" "Sometimes you need to go back and edit something you wrote. Now you can, and you'll see a small \"edited\" text to let everyone know that a comment was edited")
+            (dict "title" "Custom Links" "description" "The ability for company owners to add useful links to the sidebar, and choose whether clients should see them or not")
+            (dict "title" "New Onboarding Emails" "description" "Each time a new user joins Blue, they will now receive a series of emails to help them get on board")
+            (dict "title" "Record Comment & Audit Filter" "description" "Sometimes Records can get cluttered with comments and activity items. You can now filters what you want to see. This is automagically saved as your default view across all projects and Records")
+          ))
+          (dict "month" "September" "year" "2021" "changes" (slice
+            (dict "title" "Community Translation" "description" "We've launched the ability for anyone to translate Blue into their own native language")
+            (dict "title" "Security Enhancements" "description" "As the number of organizations using Blue keeps growing, we took some time out to have a security audit and enhance the level of protection that we provide customers")
+            (dict "title" "Database View" "description" "A completely new way to view your project data. Filter, sort, and splice your data in database view, where each custom field becomes a column")
+            (dict "title" "Repeating Records" "description" "Repeat Records on your schedule and create even better processes in your organization")
+            (dict "title" "Dark Mode Improvements" "description" "Everyone loves dark mode, now we've made it even better")
+          ))
+          (dict "month" "August" "year" "2021" "changes" (slice
+            (dict "title" "Safer Project Deletion" "description" "We're improving the project deletion workflow to include an additional step for safety — so you'll never delete an entire project by accident")
+            (dict "title" "Copy Record URL" "description" "A quick and easy way to copy the URL of a Record when you're using our web app")
+            (dict "title" "Custom Field Filters" "description" "New advanced stackable filters for various custom fields")
+            (dict "title" "Calendar Sync" "description" "One way sync to gCal, iCal, and Outlook")
+            (dict "title" "Custom Interface Colors" "description" "You are able to change the interface color of Blue to be something other than blue!")
+          ))
+          (dict "month" "July" "year" "2021" "changes" (slice
+            (dict "title" "Checklist Notifications" "description" "Now you can receive notifications on changes to individual checklist items — just the same way you get notifications about Records")
+            (dict "title" "Filter and Selection Usability Improvements" "description" "We know surface already select items at the top of the list for assignees and filters, and custom fields selections are now ordered by usage across our entire user base")
+            (dict "title" "Social Proof on Signup Page" "description" "We now showcase the total number of registered companies on the Sign Up and Sign In pages!")
+            (dict "title" "People Page Real-Time Improvements" "description" "No our people page updates in real-time for role changes, new invites, and users who accept invites")
+            (dict "title" "Deleted Records logs" "description" "We now keep a log on project activities of all delete Records")
+            (dict "title" "All Users Can See Project Details" "description" "We now show the project description to all users, not just administrators")
+          ))
+          (dict "month" "June" "year" "2021" "changes" (slice
+            (dict "title" "File Upload for Forms" "description" "Forms now support the custom field for file uploads, which means you can use forms for things like CV uploads, projects briefs, and more")
+            (dict "title" "Project Folders" "description" "Group your projects in the sidebar with color-coded folders for better organization. Perfect when you have dozens of projects on the go")
+            (dict "title" "Change Email" "description" "It's been more than 3 years, but now you can finally change your email without asking us to do it for you! ;)")
+            (dict "title" "Birthday Tracking" "description" "You can add your birthday in your profile, and we will remind the company owner to buy you a present ;)")
+            (dict "title" "German Language" "description" "Hallo! German language is now available in our Beta app across the world. Danke!")
+          ))
+          (dict "month" "May" "year" "2021" "changes" (slice
+            (dict "title" "Custom Field for Files" "description" "You can now create custom fields that support adding multiple files at the same time. This is great for creating a more structured process for uploading documents and feedback")
+            (dict "title" "Improved Tags" "description" "We've increased the number of tag colors from 16 to 20 and improved the color palette to be easier on the eyes")
+            (dict "title" "API" "description" "Every single action that you can do in Blue is available via our API. This is a beta feature so its not yet recommended for mission-critical processes")
+          ))
+          (dict "month" "April" "year" "2021" "changes" (slice
+            (dict "title" "Spanish Language" "description" "Hola! Spanish language is now available! We've got a few more languages coming soon")
+            (dict "title" "New Currencies" "description" "We have added support for new currencies including the British pound, Philippine Peso, Ethereum and Bitcoin")
+            (dict "title" "Files in Mobile Apps" "description" "Our mobile apps now support browsing and previewing through all the files in your projects")
+          ))
+          (dict "month" "March" "year" "2021" "changes" (slice
+            (dict "title" "Project Templates" "description" "Take process to the next level by creating your own templates! These will be available to all your team members, so you can keep work consistent and save time")
+            (dict "title" "Duplicate Projects" "description" "You can now copy an entire project in a few clicks. Copy the entire thing, or pick and choose what you want to copy across")
+            (dict "title" "Automation Notifications" "description" "Now you can receive notifications each time something happens via an automation. This is a great way to stay up to date with what's happening")
+          ))
+          (dict "month" "February" "year" "2021" "changes" (slice
+            (dict "title" "Forms" "description" "You can now create multiple forms for each project, and pick and choose which custom fields to enable to build your perfect forms. Share these outside of Blue and watch the entries automatically become Records in your projects")
+            (dict "title" "My Records V2" "description" "Now your Records are automatically categorized by what's coming up soon and what's late, helping you keep track of what you have to get done")
+            (dict "title" "Searchable Tags" "description" "Now you can easily search for tags when tagging Records, perfect for projects where you have lots and lots of tags")
+            (dict "title" "Updated Client Permissions" "description" "Clients can no longer delete other people's Records in projects or create new lists in projects")
+            (dict "title" "Timezone Aware" "description" "Blue now automatically detects your timezone and ensures reminders are sent at the right time")
+          ))
+          (dict "month" "January" "year" "2021" "changes" (slice
+            (dict "title" "Location Custom Field" "description" "You can now add multiple location custom fields to a Record. You can search for a place, drag and drop a pin on a map, or just enter the coordinates if you have them in hand")
+            (dict "title" "Map View" "description" "If you're using the location custom field, you can now switch views and see all your Records in a map. This is great to view customer addresses, location of equipment, and more!")
+            (dict "title" "New Currencies" "description" "Due to lots of requests, we've added a whole bunch of new currencies that are now supported by our custom fields. Hello to Brazil, India, Korean, and a few other countries! :)")
+            (dict "title" "Import & Export V2" "description" "We've added custom field management including in that we also added new fields; currency, selection, and tag for a faster mapping process! Additionally, the ability to auto-assign headers based on the column names making it easier for you!")
+          ))
+          (dict "month" "December" "year" "2020" "changes" (slice
+            (dict "title" "Import & Export Records" "description" "Import and export Records via CSV files. This works with all custom fields and supports up to 100,000 Records at a time!")
+            (dict "title" "Additional Templates" "description" "We've added new templates for onboarding new employees, reading lists, meeting notes, and user research")
+            (dict "title" "Built in GIFs" "description" "Sometimes, the best way to communicate is with an animated cat :)")
+            (dict "title" "Improved Rickroll" "description" "We've linked directly to 43 seconds into the video, because we're never gunna give you up")
+          ))
+          (dict "month" "November" "year" "2020" "changes" (slice
+            (dict "title" "Built In Support" "description" "You can now access our support team right within Blue. Our help widget automagically suggest relevant help guide content based on the feature you're on, and you can reach out to our team via live chat or email directly within Blue")
+            (dict "title" "Dark Mode on Android" "description" "Now our Android app supports dark mode. Sync it up with your phone settings or choose your always-on favorite theme")
+            (dict "title" "Improved Record Filter Interface" "description" "We've significantly improved the interface for Record filtering, now you have one less click for all actions and you can see exactly what's filtered at a glance")
+          ))
+          (dict "month" "October" "year" "2020" "changes" (slice
+            (dict "title" "Automations" "description" "Take your productivity to the next level by automating common actions. Create triggers based on actions like assigning people, moving Records, and setting due dates, and automatically take actions")
+            (dict "title" "Dark Mode on iOS" "description" "Now our iOS app supports dark mode. Sync it up with your phone settings or choose your always-on favorite theme")
+          ))
+          (dict "month" "September" "year" "2020" "changes" (slice
+            (dict "title" "Project Templates" "description" "Whether you're hiring new people, kick starting sales, or planning an event, we've got a template to get you going to record time")
+            (dict "title" "Unread Mentions Filters" "description" "Now if you've got a lot of @mentions during the day, you can filters just by the ones you haven't read to stay on top of things")
+          ))
+          (dict "month" "August" "year" "2020" "changes" (slice
+            (dict "title" "Grid View" "description" "Now the default view on files has switched from a list to a grid, with built in preview of common files, and a handy button to switch back to list view as required!")
+            (dict "title" "Record Checklists on iOS & Android" "description" "Create checklists, assign people, and set a due date to checklist items right from your Blue app")
+          ))
+          (dict "month" "July" "year" "2020" "changes" (slice
+            (dict "title" "New iOS App" "description" "Our iOS has had a new release that add lots of new functionality like archived projects, tags, Record history, and lots and lots of performance improvements. We've also updated the interface to bring it in line with Apple's latest interface guidelines")
+            (dict "title" "New Android App" "description" "Android has received some love with a new update that add lots of new features, improved offline support, and generally makes using an Android phone a pleasure :)")
+          ))
+          (dict "month" "June" "year" "2020" "changes" (slice
+            (dict "title" "Improvements to Web App" "description" "We've made significant performance improvements for our web app to cope with the increased usage across our customer base, and we've made the real-time data updates more... real-time!")
+          ))
+          (dict "month" "May" "year" "2020" "changes" (slice
+            (dict "title" "Assignee & Due Dates on Checklists" "description" "Now, you have the ability to assign an individual checklist item to team members, and also set start and due dates! This is great for more granular project planning")
+            (dict "title" "Updated Dashboard Interface" "description" "Once you log into Blue, now you see a more organized and clean-looking dashboard that allows quick access to recent projects right on top, followed by your active companies, and inactive ones")
+          ))
+          (dict "month" "April" "year" "2020" "changes" (slice
+            (dict "title" "Custom Fields" "description" "This new feature allows you to customize your Record fields. In addition to adding a due date or assignee to your Record, you can add specific fields for phone numbers, URLs, emails, currency, and more")
+            (dict "title" "@mention Page" "description" "This is your go-to place for all @mentions you get from comments, Records, updates, discussions, and across different projects and company")
+            (dict "title" "Dark Mode" "description" "You can now feel at ease when working at night or in the dark")
+          ))
+          (dict "month" "March" "year" "2020" "changes" (slice
+            (dict "title" "List View" "description" "Adding to Boards and Calendar View, this new feature allows you to view your Records in a list format.  And you can check your Records off as you go, like checklists")
+            (dict "title" "View/Comment Only" "description" "You can now give people access to only view the details of a project or only comment")
+            (dict "title" "Change User Access Level" "description" "Before, you would have to remove the person and add them back in with the new access level. Now you can directly change their access level in People Management")
+          ))
+          (dict "month" "February" "year" "2020" "changes" (slice
+            (dict "title" "Fullscreen Mode" "description" "To limit the amount of distractions presented by the digital noise, you can now view your boards in Fullscreen and go into deep focus")
+            (dict "title" "Company Calendar" "description" "Before you could only turn on Calendar View for Projects, now you can see all that happens within your company across multiple projects in the Company Calendar. Big picture planning gets simple!")
+            (dict "title" "Performance Improvements" "description" "We've made Blue even faster and more reliable")
+          ))
+          (dict "month" "January" "year" "2020" "changes" (slice
+            (dict "title" "Archive Projects" "description" "Long list of projects on your workspace can be overwhelming; our new update gives you option to archive completed or projects you simply want to hide in the time being")
+            (dict "title" "Ability to Leave Company" "description" "We've added a feature that allows you to remove yourself from a company. But don't forget to say bye!")
+            (dict "title" "Improved Board UI and Loading" "description" "We've removed all shadows from Record cards and created a cleaner view of your workspace. Small changes in drag & drop shadows, loading views, and little touches this and there,  and voila... your new Blue work station!")
+          ))
+          (dict "month" "December" "year" "2019" "changes" (slice
+            (dict "title" "Checklists" "description" "Sometimes a Record may come with other small tasks that need to be completed, and you can now add checklists inside to avoid missing small details")
+            (dict "title" "Android App" "description" "Now Android users can enjoy the same benefits as iOS users. We have a new shiny app that has all the features you need, while giving a fast way to access Blue while on the go")
+            (dict "title" "Assignees' Faces on Cards" "description" "One glance is all it takes to see which members are assigned to a task, unless your members decide not to add their pictures, which is also fine")
+            (dict "title" "Improved Record Interface" "description" "Nothing beats design that embraces simplicity; Blue's updated interface makes Records look more organized, and now you can move your Record across different columns through a dropdown option")
+          ))
+          (dict "month" "November" "year" "2019" "changes" (slice
+            (dict "title" "File Management" "description" "Forget about Dropbox or Google Drive, you can now see all files uploaded in your project, and also store files separately from tasks and comments, as well as download multiple files at the same time")
+            (dict "title" "Date Ranges for Records" "description" "Sometimes, Records don't just have a due date, but have a particular timeframe during which they need to be worked on. Now, you can set both start dates and due dates for Recordsl")
+            (dict "title" "Copy & Move Records" "description" "If you've ever needed to move or copy Records across projects...well you're in luck, because now you can!")
+          ))
+          (dict "month" "October" "year" "2019" "changes" (slice
+            (dict "title" "Tags" "description" "If you track related but separate groups of tasks in one project, you'll now be able to color-code them and also filter them out to get a clearer overall picture")
+            (dict "title" "Emoji Support! :)" "description" "Sometimes words are not enough, and that's why you can now search through Emojis to the find the perfect one to express what you want to say!")
+            (dict "title" "Bigger Maximum File Size" "description" "We've now increased the maximum file size to 2GB, which is great for large design files, marketing videos, and more. Uploads are also even faster, and you can drag and drop anywhere on the browser to upload files")
+            (dict "title" "Per Project Notification Indicator" "description" "You'll now see a number next to each project on the sidebar, indicating how many new things have happened since you last checked")
+            (dict "title" "Resources on the Sidebar" "description" "We've added useful links to the sidebar to download our apps, learning videos, and more!")
+            (dict "title" "Sticky Toolbar" "description" "For those extra long comments or descriptions, the toolbar now sticks to the top of the screen so you always have the tools at your disposal")
+          ))
+          (dict "month" "September" "year" "2019" "changes" (slice
+            (dict "title" "Calendars" "description" "Being able to view Records in a calendar format brings about lots of advantages, and it is perfect for things like editorial calendars, social media posting schedules, and more!")
+            (dict "title" "Record History" "description" "It's key to be able to see the full history of each Record, from when it was created, to which column it was moved to, to any name changes, due date changes, and more")
+            (dict "title" "Someone is Writing Indicator" "description" "It's annoying when you post a comment and someone immediately posts before or after you, and you cross the discussions and causes confusion. Now you can see if someone is writing at the same time as you are, so you can better judge when you should post")
+            (dict "title" "Mark All Records in Column as Done" "description" "You can now mark an entire column on a board as done with two clicks. This is helpful when you've got a long list that's complete and you don't want to mark each item as done one by one")
+            (dict "title" "Discussion List Improvements" "description" "We've made the discussion list much easier to navigate, especially if you have a large number of long discussions!")
+          ))
+          (dict "month" "August" "year" "2019" "changes" (slice
+            (dict "title" "Beta Testing Website!" "description" "You can now visit [https://beta.app.blue.cc](https://beta.app.blue.cc/) and login with your usual details to access all the upcoming features and give them a try!")
+            (dict "title" "Per-Action Notification Settings" "description" "Choose which actions should give you notifications, so you can roll your own completed customizable notifications preferences")
+            (dict "title" "Someone is Writing Indicator" "description" "It's annoying when you post a comment and someone immediately posts before or after you, and you cross the discussions and causes confusion. Now you can see if someone is writing at the same time as you are, so you can better judge when you should post")
+            (dict "title" "Search Inside Comments" "description" "We've upgrade our already-powerful search engine to have the ability to search within any comments made on any Record, discussions, or update!")
+            (dict "title" "Leave a Project" "description" "Yeah...we didn't have this before and you had to ask others to kick you out of a project. Now we do, and you can leave by yourself if you need!")
+          ))
+          (dict "month" "July" "year" "2019" "changes" (slice
+            (dict "title" "Per-Project Notifications" "description" "Choose which projects should give you notifications, and which projects should stay quiet, so you can focus on what's important to you")
+            (dict "title" "Billing" "description" "We've got secure payments built right inside our app, as we like to get paid, you know ;)")
+            (dict "title" "Upgraded Design" "description" "We've upgraded Blue to the latest Material Design 2 guidelines")
+            (dict "title" "Speed Boost" "description" "Blue was already quite fast, but we've made it over 50% faster!")
+            (dict "title" "Drag & Drop Projects" "description" "You're now able to reorder the projects in your sidebar to put the projects that are most important to you at the top of the list")
+          ))
+          (dict "month" "June" "year" "2019" "changes" (slice
+            (dict "title" "My Records" "description" "Keeping track of your responsibilities just got a whole lot easier! We now collect all your assigned Records across all your projects in one, so you can easily see what's on your plate")
+            (dict "title" "Real-Time Search" "description" "Now you can search through all your Record, discussions, files, and updates from the top navigation bar. You'll never need to worry about where something was stored ever again")
+            (dict "title" "Auto Saving Drafts" "description" "Every message you write on our web or desktop applications now automatically save as you type, even if you close Blue and reopen it later. This ensures that you never lose anything mid-sentence!")
+            (dict "title" "Gallery for Photos" "description" "Now when you click on a photo on a comment, you'll be presented the photo in a gallery view and you can browse through all the other photos in that Record or message")
+            (dict "title" "Offline Mode for iOS" "description" "You can now use Blue on iOS while offline, and still see all your important data that you've previously looked at. That's great for long haul flights, or whenever the internet is not behaving itself ;)")
+          ))
+          (dict "month" "May" "year" "2019" "changes" (slice
+            (dict "title" "Email Notifications for @mentions" "description" "When someone mentions you in a Record or comments, it normally means that it's quite important. Now we will email you to tell you to check out what was said")
+            (dict "title" "Play Videos in Blue" "description" "Now when you upload a video file in Blue, we'll automatically turn that into a player so everyone can view the video without needing to download the file!")
+            (dict "title" "Emails to AWS SES" "description" "We're now sending emails from AWS SES, which means they are less likely to end up in your spam, and you should also see emails being delivered immediately")
+            (dict "title" "Upload Files & Multiple Photos on iOS" "description" "We've built on top of the photo upload feature to add the ability to upload any file via iOS and also to select multiple photos and upload them all at the same time")
+            (dict "title" "Drag and Drop Columns on iOS" "description" "Now you can move board columns around on iOS. Simply long press on a column and it will pop out, and you can drag and drop to reorder your processes or Record lists")
+          ))
+          (dict "month" "April" "year" "2019" "changes" (slice
+            (dict "title" "Company Management" "description" "Team management across the entire company, as well as the ability to upload your company logo and change company")
+            (dict "title" "Multi-Language" "description" "Giving the ability for people to have Blue in their own native language! Khmer & Vietnamese are the first on the list")
+            (dict "title" "Increased Maximum File Size" "description" "We've just increased the maximum allowed file size from 100mb to 500mb. Feel free to uploads those large schematics, videos, photo collections, and anything else you want")
+            (dict "title" "Upload Videos on iOS" "description" "You can now post videos into any discussions, comment, or Record directly via the iOS app")
+            (dict "title" "Date Filters for Activity" "description" "We've added the ability to filter both the project and global activity by date, which is great if you want to know what happened at a particular point in time in a project")
+          ))
+          (dict "month" "March" "year" "2019" "changes" (slice
+            (dict "title" "Pending Invitation Management" "description" "When you invite lots of new people to a project, it can be difficult to remember who's been invited when, and sometimes people lose the invitations. Now you easily manage any invitations that have been sent, including extending the invitation as well as cancelling it")
+            (dict "title" "Icons for Most Common File Types" "description" "Blue comes with unlimited storage, so it's great to add all your different file types!  We now have custom icons for over 40 of the most common file types, so your files will look ever better once they're on Blue!")
+            (dict "title" "iOS App Released!" "description" "Now our iOS app is out of the beta and on the App Store for anyone to download")
+            (dict "title" "Browser Notifications Reminder" "description" "If you're wondering why you're not getting notifications, we now remind you to turn them on in your browsers so you can get the best from Blue (and your team!)")
+          ))
+          (dict "month" "February" "year" "2019" "changes" (slice
+            (dict "title" "Realtime Keyword Filters" "description" "Now you can filters across all Records in a project by typing for the name, and we'll automatically hide all Records that don't match that search result")
+            (dict "title" "Mac & Windows App" "description" "We've launched both the Mac and Windows applications. These can be installed via Google Chrome")
+            (dict "title" "Realtime" "description" "Anytime you do something, such as posting a new comment, it is instantly updated across both the web and mobile applications")
+            (dict "title" "Filter Completed Records" "description" "When a project has been going on for a while, it can fill up with old completed Records that you don't really need to see all the time. Now you can filter them away to keep things focussed")
+          ))
+          (dict "month" "January" "year" "2019" "changes" (slice
+            (dict "title" "Self Sign Up" "description" "Now anyone with an email address can sign up to Blue, from anywhere in the world")
+            (dict "title" "Record Filters & Sorting" "description" "When you've got a lot of Records in a project it can get difficult to find things. Now you can filter by whether a Record has been completed, due dates within a date range, and also who's been assigned to the Record. And if you need to sort you Records, you can also do so!")
+          ))
+          (dict "month" "December" "year" "2018" "changes" (slice
+            (dict "title" "Pretty URLs" "description" "Now all URLs are completely human readable and friendly to the eyes, which means that when you share a link with someone, they can instantly tell where that will lead")
+            (dict "title" "Performance Improvements" "description" "We took some time away from building new stuff to ensure that Blue stays as fast as ever")
+          ))
+          (dict "month" "November" "year" "2018" "changes" (slice
+            (dict "title" "Automatic 30 Day Backups" "description" "We now backup all data everyday for 30 days, so you can sleep well at night knowing everything is as safe as it can be")
+            (dict "title" "Notifications v1" "description" "Both browser and mobile notifications for a whole different bunch of actions, so you can stay on top of your work")
+          ))
+          (dict "month" "October" "year" "2018" "changes" (slice
+            (dict "title" "Project and Global Activity" "description" "Each project now has a timeline of everything that has happened. Also, you can see a timeline of your entire company and see what's been going on across all your projects")
+            (dict "title" "People Search" "description" "If a project has a large number of people, you'll now find that a handy real-time search bar appears to help you find who you're looking for in the People page :)")
+          ))
+          (dict "month" "September" "year" "2018" "changes" (slice
+            (dict "title" "Team Management" "description" "Add and remove people from projects, and give them different permissions to ensure everyone can see and do what they need to!")
+            (dict "title" "Multiple Companies" "description" "Now you can have the ability to switch between multiple companies, each with their own projects and people")
+          ))
+          (dict "month" "August" "year" "2018" "changes" (slice
+            (dict "title" "@mentions" "description" "Need to give a teammate a heads up? Now you can by mentioning them in comments using @mentions! You'll automagically see a list of suggestions based on what you're typing and the people in the project")
+            (dict "title" "File Uploads" "description" "We now support the uploading of files to any discussions/Record/comment. You get unlimited storage, with maximum file size of 100mb per file")
+          ))
+          (dict "month" "July" "year" "2018" "changes" (slice
+            (dict "title" "Mobile App Beta" "description" "We've released the beta versions of both Android and iOS mobile apps for our users to try. Being able to work on-the-go is important, as it stops you having to be stuck in the office!")
+            (dict "title" "Boards" "description" "Now you can track Records list across a board and build your own processes to keep everything in check. This is hands-down the best way to ensure that work keeps flowing in the right direction")
+          ))
+          (dict "month" "June" "year" "2018" "changes" (slice
+            (dict "title" "Infinite Scroll" "description" "Nobody likes trying to remember what page something is on. With infinite scroll, we keep loading all your information for you as your scroll down the page")
+            (dict "title" "Status Updates" "description" "Keeping on top of what's going on is important. With status updates, you can see what others have been up to as well as post your own updates")
+            (dict "title" "Projects" "description" "Now you can create projects to keep things neat and tidy, and the cool thing is, each Blue accounts comes with an unlimited amount of projects!")
+          ))
+          (dict "month" "May" "year" "2018" "changes" (slice
+            (dict "title" "Passwordless Sign In" "description" "We now support passwordless sign in for Blue. This is the safest way to login to an application as it doesn't require you to remember anything")
+            (dict "title" "Discussions" "description" "Now you can start and reply to discussions in Blue. Communication is the most important aspect of teamwork, and now you can do it right inside Blue")
+          ))
+          (dict "month" "April" "year" "2018" "changes" (slice
+            (dict "title" "Start!" "description" "We've started building Blue. We're excited at the possibility of helping people change the way they work for the better")
+          ))
+        }}
         
         <!-- Filtered Changelog Entries -->
         <div>
