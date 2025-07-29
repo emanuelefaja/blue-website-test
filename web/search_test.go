@@ -13,7 +13,7 @@ func TestSearchItemStructure(t *testing.T) {
 	item := SearchItem{
 		Title:       "Test Page",
 		Description: "Test description",
-		Content:     "Test content",
+		Keywords:    []string{"test", "content"},
 		URL:         "/test",
 		Type:        "page",
 		Section:     "docs",
@@ -27,8 +27,8 @@ func TestSearchItemStructure(t *testing.T) {
 	if item.Description != "Test description" {
 		t.Errorf("Expected description 'Test description', got %q", item.Description)
 	}
-	if item.Content != "Test content" {
-		t.Errorf("Expected content 'Test content', got %q", item.Content)
+	if len(item.Keywords) != 2 || item.Keywords[0] != "test" || item.Keywords[1] != "content" {
+		t.Errorf("Expected keywords ['test', 'content'], got %v", item.Keywords)
 	}
 	if item.URL != "/test" {
 		t.Errorf("Expected URL '/test', got %q", item.URL)
@@ -632,14 +632,14 @@ func TestWriteSearchIndex(t *testing.T) {
 		{
 			Title:       "Test Page 1",
 			Description: "Description 1",
-			Content:     "Content 1",
+			Keywords:    []string{"content", "1"},
 			URL:         "/test1",
 			Type:        "page",
 		},
 		{
 			Title:       "Test Page 2",
 			Description: "Description 2",
-			Content:     "Content 2",
+			Keywords:    []string{"content", "2"},
 			URL:         "/test2",
 			Type:        "content",
 			Section:     "docs",
@@ -1208,7 +1208,8 @@ func TestGenerateSearchIndexWithCaches(t *testing.T) {
 		},
 	}
 
-	err := GenerateSearchIndexWithCaches(markdownService, htmlService)
+	logger := NewLogger()
+	_, err := GenerateSearchIndexWithCaches(markdownService, htmlService, logger)
 	if err != nil {
 		t.Fatalf("Failed to generate search index with caches: %v", err)
 	}
@@ -1319,10 +1320,10 @@ func TestConcurrentSearchIndexGeneration(t *testing.T) {
 		go func(n int) {
 			items := []SearchItem{
 				{
-					Title:   "Concurrent Test",
-					Content: "Test content",
-					URL:     "/test",
-					Type:    "page",
+					Title:    "Concurrent Test",
+					Keywords: []string{"test", "content"},
+					URL:      "/test",
+					Type:     "page",
 				},
 			}
 			writeSearchIndex(items)
