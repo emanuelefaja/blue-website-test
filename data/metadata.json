@@ -517,82 +517,82 @@
     },
     "platform/features/map": {
       "en": {
-        "title": "Map View - Visualize Location Data",
+        "title": "Map",
         "description": "Transform your location data into actionable insights with Blue's interactive map view. Track assets, analyze geographical patterns, and make data-driven decisions.",
         "keywords": ["map view", "location tracking", "geographical data", "asset tracking", "real-time maps", "blue"]
       },
       "es": {
-        "title": "Vista de Mapa - Visualiza Datos de Ubicación",
+        "title": "Mapa",
         "description": "Transforma tus datos de ubicación en información accionable con la vista de mapa interactiva de Blue. Rastrea activos, analiza patrones geográficos y toma decisiones basadas en datos.",
         "keywords": ["vista de mapa", "seguimiento de ubicación", "datos geográficos", "seguimiento de activos", "mapas en tiempo real", "blue"]
       },
       "zh": {
-        "title": "地图视图 - 可视化位置数据",
+        "title": "地图",
         "description": "使用 Blue 的交互式地图视图将您的位置数据转化为可操作的见解。跟踪资产、分析地理模式并做出数据驱动的决策。",
         "keywords": ["地图视图", "位置跟踪", "地理数据", "资产跟踪", "实时地图", "blue"]
       },
       "fr": {
-        "title": "Vue Carte - Visualisez les Données de Localisation",
+        "title": "Carte",
         "description": "Transformez vos données de localisation en informations exploitables avec la vue carte interactive de Blue. Suivez les actifs, analysez les modèles géographiques et prenez des décisions basées sur les données.",
         "keywords": ["vue carte", "suivi de localisation", "données géographiques", "suivi des actifs", "cartes en temps réel", "blue"]
       },
       "de": {
-        "title": "Kartenansicht - Standortdaten Visualisieren",
+        "title": "Karte",
         "description": "Verwandeln Sie Ihre Standortdaten mit der interaktiven Kartenansicht von Blue in umsetzbare Erkenntnisse. Verfolgen Sie Assets, analysieren Sie geografische Muster und treffen Sie datengestützte Entscheidungen.",
         "keywords": ["kartenansicht", "standortverfolgung", "geografische daten", "asset-tracking", "echtzeit-karten", "blue"]
       },
       "ja": {
-        "title": "マップビュー - 位置データの可視化",
+        "title": "マップ",
         "description": "Blueのインタラクティブなマップビューで位置データを実用的な洞察に変換します。資産を追跡し、地理的パターンを分析し、データ駆動型の意思決定を行います。",
         "keywords": ["マップビュー", "位置追跡", "地理データ", "資産追跡", "リアルタイムマップ", "blue"]
       },
       "pt": {
-        "title": "Visualização de Mapa - Visualize Dados de Localização",
+        "title": "Mapa",
         "description": "Transforme seus dados de localização em insights acionáveis com a visualização de mapa interativa do Blue. Rastreie ativos, analise padrões geográficos e tome decisões baseadas em dados.",
         "keywords": ["visualização de mapa", "rastreamento de localização", "dados geográficos", "rastreamento de ativos", "mapas em tempo real", "blue"]
       },
       "ru": {
-        "title": "Вид карты - Визуализация данных о местоположении",
+        "title": "Карта",
         "description": "Преобразуйте данные о местоположении в практические идеи с помощью интерактивного вида карты Blue. Отслеживайте активы, анализируйте географические закономерности и принимайте решения на основе данных.",
         "keywords": ["вид карты", "отслеживание местоположения", "географические данные", "отслеживание активов", "карты в реальном времени", "blue"]
       },
       "ko": {
-        "title": "지도 보기 - 위치 데이터 시각화",
+        "title": "지도",
         "description": "Blue의 대화형 지도 보기로 위치 데이터를 실행 가능한 인사이트로 변환하세요. 자산을 추적하고, 지리적 패턴을 분석하며, 데이터 기반 의사결정을 내릴 수 있습니다.",
         "keywords": ["지도 보기", "위치 추적", "지리적 데이터", "자산 추적", "실시간 지도", "blue"]
       },
       "it": {
-        "title": "Vista Mappa - Visualizza i Dati di Posizione",
+        "title": "Mappa",
         "description": "Trasforma i tuoi dati di posizione in informazioni fruibili con la vista mappa interattiva di Blue. Traccia gli asset, analizza i modelli geografici e prendi decisioni basate sui dati.",
         "keywords": ["vista mappa", "tracciamento posizione", "dati geografici", "tracciamento asset", "mappe in tempo reale", "blue"]
       },
       "id": {
-        "title": "Tampilan Peta - Visualisasikan Data Lokasi",
+        "title": "Peta",
         "description": "Ubah data lokasi Anda menjadi wawasan yang dapat ditindaklanjuti dengan tampilan peta interaktif Blue. Lacak aset, analisis pola geografis, dan buat keputusan berdasarkan data.",
         "keywords": ["tampilan peta", "pelacakan lokasi", "data geografis", "pelacakan aset", "peta waktu nyata", "blue"]
       },
       "nl": {
-        "title": "Kaartweergave - Visualiseer Locatiegegevens",
+        "title": "Kaart",
         "description": "Transformeer uw locatiegegevens in bruikbare inzichten met de interactieve kaartweergave van Blue. Volg activa, analyseer geografische patronen en neem datagestuurde beslissingen.",
         "keywords": ["kaartweergave", "locatietracking", "geografische gegevens", "asset tracking", "realtime kaarten", "blue"]
       },
       "pl": {
-        "title": "Widok Mapy - Wizualizuj Dane Lokalizacyjne",
+        "title": "Mapa",
         "description": "Przekształć swoje dane lokalizacyjne w praktyczne informacje dzięki interaktywnemu widokowi mapy Blue. Śledź zasoby, analizuj wzorce geograficzne i podejmuj decyzje oparte na danych.",
         "keywords": ["widok mapy", "śledzenie lokalizacji", "dane geograficzne", "śledzenie zasobów", "mapy w czasie rzeczywistym", "blue"]
       },
       "zh-TW": {
-        "title": "地圖檢視 - 視覺化位置資料",
+        "title": "地圖",
         "description": "使用 Blue 的互動式地圖檢視將您的位置資料轉化為可操作的見解。追蹤資產、分析地理模式並做出數據驅動的決策。",
         "keywords": ["地圖檢視", "位置追蹤", "地理資料", "資產追蹤", "即時地圖", "blue"]
       },
       "sv": {
-        "title": "Kartvy - Visualisera Platsdata",
+        "title": "Karta",
         "description": "Omvandla din platsdata till handlingsbara insikter med Blues interaktiva kartvy. Spåra tillgångar, analysera geografiska mönster och fatta datadrivna beslut.",
         "keywords": ["kartvy", "platsspårning", "geografisk data", "tillgångsspårning", "realtidskartor", "blue"]
       },
       "km": {
-        "title": "ទិដ្ឋភាពផែនទី - មើលឃើញទិន្នន័យទីតាំង",
+        "title": "ផែនទី",
         "description": "បំប្លែងទិន្នន័យទីតាំងរបស់អ្នកទៅជាការយល់ដឹងដែលអាចធ្វើសកម្មភាពជាមួយនឹងទិដ្ឋភាពផែនទីអន្តរកម្មរបស់ Blue។ តាមដានទ្រព្យសម្បត្តិ វិភាគគំរូភូមិសាស្ត្រ និងធ្វើការសម្រេចចិត្តផ្អែកលើទិន្នន័យ។",
         "keywords": ["ទិដ្ឋភាពផែនទី", "ការតាមដានទីតាំង", "ទិន្នន័យភូមិសាស្ត្រ", "ការតាមដានទ្រព្យសម្បត្តិ", "ផែនទីពេលវេលាជាក់ស្តែង", "blue"]
       }
