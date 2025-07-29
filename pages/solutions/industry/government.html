@@ -80,10 +80,42 @@
         {{template "features-grid-simple" $governmentFeatures}}
     </div>
 
-    <!-- Government Use Cases Section Header -->
-    <div class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Government use cases</h2>
-    </div>
+    <!-- Audit Trail & Accountability Section -->
+    <section class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Built-in accountability that citizens can trust</h2>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-16">
+            Blue automatically tracks every decision and action, ensuring complete transparency and giving you the evidence you need to demonstrate responsible governance.
+        </p>
+        {{template "hero-video" 
+            dict 
+                "VideoUrl" "https://media.blue.cc/audit-trails-org.mp4"
+                "MarginBottom" "mb-20"
+        }}
+        
+        {{$auditTrailBenefits := parseJSON `{
+            "Benefits": [
+                {
+                    "Title": "Complete Action Tracking",
+                    "Description": "Every edit, view, and change is automatically logged with user identification, timestamps, and detailed action descriptions."
+                },
+                {
+                    "Title": "Regulatory Compliance",
+                    "Description": "Meet government audit requirements with comprehensive trails that track data lifecycle from creation to deletion."
+                },
+                {
+                    "Title": "Public Accountability",
+                    "Description": "Demonstrate transparency to citizens and oversight bodies with detailed records of all government activities and decisions."
+                }
+            ],
+            "MarginBottom": "mb-16"
+        }`}}
+        {{template "feature-benefits-grid" $auditTrailBenefits}}
+        
+        
+    </section>
+
+
 
     <!-- Citizen Service Requests Feature -->
     <div class="mb-20 px-6 lg:px-8">
@@ -151,62 +183,9 @@
         {{template "feature-video" $recordsManagementData}}
     </div>
 
-    <!-- Public Transparency Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$transparencyData := parseJSON `{
-            "VideoPosition": "right",
-            "VideoUrl": "/product/dashboards.mp4",
-            "Title": "Public transparency and reporting",
-            "Description": "Provide citizens with self-service access to public information. Automatically generate reports, track performance metrics, and demonstrate accountability.",
-            "Button": {
-                "Text": "Learn about transparency features",
-                "Url": "/platform/features/dashboards"
-            },
-            "SeeAlso": {
-                "Links": [
-                    { "Text": "Wiki & Docs", "Description": "publish public information and FAQs", "Url": "/platform/features/wiki-docs" },
-                    { "Text": "CSV Export", "Description": "provide data for public records requests", "Url": "/docs/integrations/csv-export" },
-                    { "Text": "Calendar View", "Description": "share public meeting schedules", "Url": "/platform/features/calendar" }
-                ]
-            }
-        }`}}
-        {{template "feature-video" $transparencyData}}
-    </div>
 
-    <!-- Audit Trail & Accountability Section -->
-    <section class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Built-in accountability that citizens can trust</h2>
-        
-        <p class="text-lg text-gray-600 dark:text-gray-400 mb-16">
-            Blue automatically tracks every decision and action, ensuring complete transparency and giving you the evidence you need to demonstrate responsible governance.
-        </p>
-        {{template "hero-video" 
-            dict 
-                "VideoUrl" "https://media.blue.cc/audit-trails-org.mp4"
-                "MarginBottom" "mb-20"
-        }}
-        
-        {{$auditTrailBenefits := parseJSON `{
-            "Benefits": [
-                {
-                    "Title": "Complete Action Tracking",
-                    "Description": "Every edit, view, and change is automatically logged with user identification, timestamps, and detailed action descriptions."
-                },
-                {
-                    "Title": "Regulatory Compliance",
-                    "Description": "Meet government audit requirements with comprehensive trails that track data lifecycle from creation to deletion."
-                },
-                {
-                    "Title": "Public Accountability",
-                    "Description": "Demonstrate transparency to citizens and oversight bodies with detailed records of all government activities and decisions."
-                }
-            ],
-            "MarginBottom": "mb-16"
-        }`}}
-        {{template "feature-benefits-grid" $auditTrailBenefits}}
-        
-        
-    </section>
+
+
 
 
     <!-- Government Stats Section -->
