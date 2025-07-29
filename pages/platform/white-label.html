@@ -135,10 +135,10 @@
         {{$domainData := parseJSON `{
             "Title": "Your own custom domain",
             "Description": "Run Blue on your own domain like app.yourcompany.com. Custom domains work for the main application, public forms, and file sharing links.",
-            "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "left"
+            "ImageUrl": "/product/white-label-domain.png",
+            "ImagePosition": "left"
         }`}}
-        {{template "feature-video" $domainData}}
+        {{template "feature-image" $domainData}}
     </section>
 
     <!-- Email Customization Section -->
@@ -146,10 +146,10 @@
         {{$emailData := parseJSON `{
             "Title": "Email notifications from your domain",
             "Description": "Configure your own SMTP server to send all system emails from your domain. Customize email templates, sender names, and content to match your brand voice.",
-            "VideoUrl": "/testvideo2.mp4",
-            "VideoPosition": "right"
+            "ImageUrl": "/product/white-label-email.png",
+            "ImagePosition": "right"
         }`}}
-        {{template "feature-video" $emailData}}
+        {{template "feature-image" $emailData}}
     </section>
 
 
