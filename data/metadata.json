@@ -432,6 +432,88 @@
         "description": "ទទួលបានព័ត៌មានថ្មីៗអំពីមុខងារ និងការកែលម្អចុងក្រោយនៅក្នុង Blue។",
         "keywords": ["កំណត់ហេតុផ្លាស់ប្តូរ", "ការអាប់ដេត", "មុខងារ", "ការកែលម្អ", "blue"]
       }
+    },
+    "platform/status": {
+      "en": {
+        "title": "Platform Status",
+        "description": "Check the current operational status and uptime history of Blue's services.",
+        "keywords": ["status", "uptime", "availability", "system health", "blue"]
+      },
+      "es": {
+        "title": "Estado de la Plataforma",
+        "description": "Consulte el estado operativo actual y el historial de tiempo de actividad de los servicios de Blue.",
+        "keywords": ["estado", "tiempo de actividad", "disponibilidad", "salud del sistema", "blue"]
+      },
+      "zh": {
+        "title": "平台状态",
+        "description": "查看 Blue 服务的当前运行状态和正常运行时间历史记录。",
+        "keywords": ["状态", "正常运行时间", "可用性", "系统健康", "blue"]
+      },
+      "fr": {
+        "title": "État de la Plateforme",
+        "description": "Vérifiez l'état opérationnel actuel et l'historique de disponibilité des services Blue.",
+        "keywords": ["état", "disponibilité", "disponibilité", "santé du système", "blue"]
+      },
+      "de": {
+        "title": "Plattformstatus",
+        "description": "Überprüfen Sie den aktuellen Betriebsstatus und die Verfügbarkeitshistorie der Blue-Dienste.",
+        "keywords": ["status", "verfügbarkeit", "verfügbarkeit", "systemzustand", "blue"]
+      },
+      "ja": {
+        "title": "プラットフォームステータス",
+        "description": "Blueサービスの現在の稼働状況と稼働時間履歴を確認してください。",
+        "keywords": ["ステータス", "稼働時間", "可用性", "システム健全性", "blue"]
+      },
+      "pt": {
+        "title": "Status da Plataforma",
+        "description": "Verifique o status operacional atual e o histórico de tempo de atividade dos serviços Blue.",
+        "keywords": ["status", "tempo de atividade", "disponibilidade", "saúde do sistema", "blue"]
+      },
+      "ru": {
+        "title": "Статус платформы",
+        "description": "Проверьте текущий операционный статус и историю работоспособности сервисов Blue.",
+        "keywords": ["статус", "время работы", "доступность", "состояние системы", "blue"]
+      },
+      "ko": {
+        "title": "플랫폼 상태",
+        "description": "Blue 서비스의 현재 운영 상태와 가동 시간 기록을 확인하세요.",
+        "keywords": ["상태", "가동 시간", "가용성", "시스템 상태", "blue"]
+      },
+      "it": {
+        "title": "Stato della Piattaforma",
+        "description": "Controlla lo stato operativo attuale e la cronologia del tempo di attività dei servizi Blue.",
+        "keywords": ["stato", "tempo di attività", "disponibilità", "salute del sistema", "blue"]
+      },
+      "id": {
+        "title": "Status Platform",
+        "description": "Periksa status operasional saat ini dan riwayat waktu aktif layanan Blue.",
+        "keywords": ["status", "waktu aktif", "ketersediaan", "kesehatan sistem", "blue"]
+      },
+      "nl": {
+        "title": "Platformstatus",
+        "description": "Controleer de huidige operationele status en uptime-geschiedenis van Blue's diensten.",
+        "keywords": ["status", "uptime", "beschikbaarheid", "systeemgezondheid", "blue"]
+      },
+      "pl": {
+        "title": "Status Platformy",
+        "description": "Sprawdź aktualny status operacyjny i historię dostępności usług Blue.",
+        "keywords": ["status", "czas działania", "dostępność", "stan systemu", "blue"]
+      },
+      "zh-TW": {
+        "title": "平台狀態",
+        "description": "查看 Blue 服務的當前運行狀態和正常運行時間歷史記錄。",
+        "keywords": ["狀態", "正常運行時間", "可用性", "系統健康", "blue"]
+      },
+      "sv": {
+        "title": "Plattformsstatus",
+        "description": "Kontrollera den aktuella driftstatusen och drifttidshistoriken för Blues tjänster.",
+        "keywords": ["status", "drifttid", "tillgänglighet", "systemhälsa", "blue"]
+      },
+      "km": {
+        "title": "ស្ថានភាពវេទិកា",
+        "description": "ពិនិត្យស្ថានភាពប្រតិបត្តិការបច្ចុប្បន្ន និងប្រវត្តិពេលវេលាដំណើរការនៃសេវាកម្មរបស់ Blue។",
+        "keywords": ["ស្ថានភាព", "ពេលវេលាដំណើរការ", "ភាពអាចប្រើបាន", "សុខភាពប្រព័ន្ធ", "blue"]
+      }
     }
   },
   "defaults": {
