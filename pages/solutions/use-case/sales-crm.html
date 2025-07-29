@@ -93,7 +93,7 @@
             {{$customFieldsData := parseJSON `{
                 "Title": "Your dream sales database.",
                 "Description": "Blue adapts to your data structure, not the other way around. Visually design the fields you need. Combine custom fields for advanced use cases such as cross-references and automatic calculations. Set permissions on a per-field basis to only show your team what you want them to see.",
-                "VideoUrl": "/testvideo2.mp4",
+                "VideoUrl": "https://media.blue.cc/database-group-example.mp4",
                 "VideoPosition": "right",
                 "SeeAlso": {
                     "Heading": "Learn more",
@@ -118,33 +118,6 @@
             }`}}
             
             {{template "feature-video" $customFieldsData}}
-        </div>
-        
-        <!-- Notifications Feature Video -->
-        <div>
-            {{$notificationsData := parseJSON `{
-                "Title": "Know what's going on with smart notifications",
-                "Description": "Switch to Deep Work Mode when you need to focus without distractions. Get granular control over how and when you're notified for each type of activity.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "SeeAlso": {
-                    "Heading": "See also",
-                    "Links": [
-                        {
-                            "Text": "Profile settings",
-                            "Url": "/docs/user-management/profile-settings",
-                            "Description": "— Customize your personal preferences"
-                        },
-                        {
-                            "Text": "Mention",
-                            "Url": "/docs/user-management/mentions",
-                            "Description": "team members to notify them instantly."
-                        }
-                    ]
-                }
-            }`}}
-            
-            {{template "feature-video" $notificationsData}}
         </div>
     </section>
 
