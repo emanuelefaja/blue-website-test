@@ -6,21 +6,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Customer Logos Section -->
-    <div class="mb-20">
-        {{$professionalServicesLogos := parseJSON `{
-            "title": "Trusted by agencies and professional services firms worldwide",
-            "logos": [
-                { "name": "Consulting Partners", "src": "/customers/consulting-partners.svg" },
-                { "name": "Legal Associates", "src": "/customers/legal-associates.svg" },
-                { "name": "Marketing Collective", "src": "/customers/marketing-collective.svg" },
-                { "name": "Accounting Solutions", "src": "/customers/accounting-solutions.svg" },
-                { "name": "Strategy Group", "src": "/customers/strategy-group.svg" }
-            ]
-        }`}}
-        {{template "logo-grid" $professionalServicesLogos}}
-    </div>
-
     <!-- Problem Agitation Section -->
     <div class="mb-20">
         {{$professionalServicesProblems := parseJSON `{

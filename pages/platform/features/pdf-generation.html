@@ -13,18 +13,9 @@
         "MarginBottom" "mb-20"
 }}
 
-<!-- Template Setup Feature -->
-{{$templateSetupFeature := parseJSON `{
-    "Title": "Design custom templates with drag-and-drop simplicity.",
-    "Description": "Upload your PDF template and drag record fields directly onto the document. Position data exactly where you need it for professional, branded output every time.",
-    "VideoUrl": "/product/pdf-template-setup.mp4",
-    "VideoPosition": "right"
-}`}}
-{{template "feature-video" $templateSetupFeature}}
-
 <!-- Use Cases Grid -->
 {{$useCasesData := parseJSON `{
-    "Title": "Perfect for every document workflow",
+    "Title": "Perfect for every document workflow.",
     "Description": "From customer-facing documents to internal reports, PDF generation streamlines your documentation process.",
     "Features": [
         {
@@ -57,13 +48,12 @@
 {{template "features-grid-simple" $useCasesData}}
 
 <!-- Field Support Feature -->
-{{$fieldSupportFeature := parseJSON `{
-    "Title": "Support for all your important data.",
-    "Description": "PDF generation works with every field type in Blue. From basic text and dates to complex formulas and references - your templates capture the complete picture with precise positioning.",
-    "VideoUrl": "/product/pdf-field-mapping.mp4",
-    "VideoPosition": "left"
-}`}}
-{{template "feature-video" $fieldSupportFeature}}
+<section class="mb-20">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Support for all your important data.</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">PDF generation works with every field type in Blue. From basic text and dates to complex formulas and references - your templates capture the complete picture with precise positioning.</p>
+    </div>
+</section>
 
 <!-- Field Support Benefits -->
 {{$fieldSupportBenefits := parseJSON `{
@@ -89,7 +79,7 @@
 {{$generationFeature := parseJSON `{
     "Title": "One-click document generation.",
     "Description": "Generate PDFs instantly from any record. Preview before output, then download or print directly - no manual data entry or formatting required.",
-    "VideoUrl": "/product/pdf-generation-process.mp4",
+    "VideoUrl": "https://media.blue.cc/print-pdf-record.mp4",
     "VideoPosition": "right"
 }`}}
 {{template "feature-video" $generationFeature}}
