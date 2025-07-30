@@ -156,27 +156,32 @@
         {{template "feature-video" $projectManagementData}}
     </div>
 
-    <!-- Client Portal Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$clientPortalData := parseJSON `{
-            "VideoPosition": "left",
-            "VideoUrl": "/product/client-portal.mp4",
-            "Title": "Client Portal & Collaboration",
-            "Description": "Invite clients into their own workspace where they can see project progress, upload files, and stay updated. Available with full white-label branding options.",
-            "Button": {
-                "Text": "See Client Portal Features",
-                "Url": "/solutions/use-case/customer-portal"
-            },
-            "SeeAlso": {
-                "Links": [
-                    { "Text": "White Label", "Description": "create fully branded client experiences", "Url": "/platform/white-label" },
-                    { "Text": "PDF Generation", "Description": "automatically create project reports and invoices", "Url": "/platform/features/pdf-generation" },
-                    { "Text": "Wiki & Docs", "Description": "build client knowledge bases and project documentation", "Url": "/platform/features/wiki" }
-                ]
-            }
-        }`}}
-        {{template "feature-video" $clientPortalData}}
-    </div>
+    <!-- Client Portal & Collaboration Section -->
+    <section id="client-portal" class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Client Portal & Collaboration</h2>
+        
+        <div class="max-w-7xl mx-auto mb-8">
+            <div class="mb-8">
+                <p class="text-lg text-gray-600 max-w-3xl">Invite clients into their own workspace where they can see project progress, upload files, and stay updated. Available with full white-label branding options for a seamless client experience.</p>
+            </div>
+            
+            {{template "hero-video" 
+                dict 
+                    "VideoUrl" "/product/client-portal.mp4"
+                    "ShowUnmuteButton" true
+                    "Id" "clientportal"
+            }}
+            
+            <div class="text-center mt-8">
+                <a href="/solutions/use-case/customer-portal" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
+                    See Client Portal Features
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Hiring & HR Feature -->
     <div class="mb-20 px-6 lg:px-8">
@@ -200,27 +205,7 @@
         {{template "feature-video" $hiringData}}
     </div>
 
-    <!-- Billing & Time Tracking Feature -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{$billingData := parseJSON `{
-            "VideoPosition": "left",
-            "VideoUrl": "/product/time-tracking.mp4",
-            "Title": "Billing & Time Tracking",
-            "Description": "Track billable hours, monitor project profitability, and generate invoices. See real-time data on revenue, utilization rates, and project margins.",
-            "Button": {
-                "Text": "Explore Billing Features",
-                "Url": "/platform/features/time-tracking"
-            },
-            "SeeAlso": {
-                "Links": [
-                    { "Text": "Time In List Fields", "Description": "track how long invoices remain unpaid", "Url": "/docs/custom-fields/time-in-list" },
-                    { "Text": "Database View", "Description": "analyze financial data in spreadsheet format", "Url": "/platform/features/database" },
-                    { "Text": "CSV Export", "Description": "export billing data to accounting systems", "Url": "/docs/integrations/csv-export" }
-                ]
-            }
-        }`}}
-        {{template "feature-video" $billingData}}
-    </div>
+
 
     <!-- Business Intelligence Feature -->
     <div class="mb-20 px-6 lg:px-8">
