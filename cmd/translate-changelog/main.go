@@ -18,12 +18,12 @@ import (
 
 // ChangelogEntry represents a single changelog entry to translate
 type ChangelogEntry struct {
-	Key         string // e.g., "2025_june_zapier_integration_title"
-	Value       string // The text to translate
-	IsTitle     bool   // true for _title, false for _description
-	Year        string
-	Month       string
-	BaseKey     string // e.g., "2025_june_zapier_integration"
+	Key     string // e.g., "2025_june_zapier_integration_title"
+	Value   string // The text to translate
+	IsTitle bool   // true for _title, false for _description
+	Year    string
+	Month   string
+	BaseKey string // e.g., "2025_june_zapier_integration"
 }
 
 // TranslationTask represents a single translation job
@@ -73,25 +73,18 @@ var languageNames = map[string]string{
 
 // Supported languages from web/languages.go (excluding English)
 var targetLanguages = []string{
-	"zh", "es", "fr", "de", "ja", "pt", "ru", "ko", 
+	"zh", "es", "fr", "de", "ja", "pt", "ru", "ko",
 	"it", "id", "nl", "pl", "zh-TW", "sv", "km",
 }
 
 const (
-	inputTokenCost  = 0.15   // $0.15 per 1M input tokens for gpt-4o-mini
-	outputTokenCost = 0.60   // $0.60 per 1M output tokens for gpt-4o-mini
-	progressFile    = "translation_progress.json"
+	inputTokenCost  = 0.15 // $0.15 per 1M input tokens for gpt-4o-mini
+	outputTokenCost = 0.60 // $0.60 per 1M output tokens for gpt-4o-mini
 )
-
-// Progress tracking
-type Progress struct {
-	CompletedKeys map[string]map[string]bool `json:"completed_keys"` // [lang][key]bool
-	mu            sync.Mutex
-}
 
 func main() {
 	// Load environment variables
-	if err := godotenv.Load("../../.env"); err != nil {
+	if err := godotenv.Load(".env"); err != nil {
 		fmt.Printf("Warning: .env file not found: %v\n", err)
 	}
 
@@ -107,7 +100,7 @@ func main() {
 	)
 
 	// Load existing changelog
-	changelogPath := "../../translations/changelog.json"
+	changelogPath := "translations/changelog.json"
 	changelogData, err := loadChangelog(changelogPath)
 	if err != nil {
 		fmt.Printf("Error loading changelog: %v\n", err)
@@ -118,12 +111,9 @@ func main() {
 	englishEntries := extractEnglishEntries(changelogData)
 	fmt.Printf("Found %d English changelog entries to translate\n", len(englishEntries))
 
-	// Load or create progress tracking
-	progress := loadProgress()
-
 	// Build translation tasks
-	tasks := buildTranslationTasks(englishEntries, targetLanguages, progress)
-	
+	tasks := buildTranslationTasks(englishEntries, targetLanguages, changelogData)
+
 	if len(tasks) == 0 {
 		fmt.Println("All translations are complete!")
 		return
@@ -164,7 +154,7 @@ func main() {
 
 	// Start result processor
 	doneChan := make(chan bool)
-	go processResults(resultChan, changelogData, changelogPath, progress, stats, &fileMutex, doneChan)
+	go processResults(resultChan, changelogData, changelogPath, stats, &fileMutex, doneChan)
 
 	// Wait for workers
 	wg.Wait()
@@ -206,7 +196,7 @@ func extractEnglishEntries(changelog map[string]interface{}) []ChangelogEntry {
 			entries = append(entries, ChangelogEntry{
 				Key:     key,
 				Value:   value,
-				IsTitle: false, // UI strings are more like descriptions
+				IsTitle: false,  // UI strings are more like descriptions
 				Year:    "0000", // Sort UI translations first
 				Month:   "ui",
 				BaseKey: key,
@@ -276,41 +266,35 @@ func extractEnglishEntries(changelog map[string]interface{}) []ChangelogEntry {
 	return entries
 }
 
-func loadProgress() *Progress {
-	progress := &Progress{
-		CompletedKeys: make(map[string]map[string]bool),
-	}
-
-	data, err := os.ReadFile(progressFile)
-	if err == nil {
-		json.Unmarshal(data, progress)
-	}
-
-	// Initialize maps for all languages
-	for _, lang := range targetLanguages {
-		if progress.CompletedKeys[lang] == nil {
-			progress.CompletedKeys[lang] = make(map[string]bool)
-		}
-	}
-
-	return progress
-}
-
-func saveProgress(progress *Progress) {
-	progress.mu.Lock()
-	defer progress.mu.Unlock()
-
-	data, _ := json.MarshalIndent(progress, "", "  ")
-	os.WriteFile(progressFile, data, 0644)
-}
-
-func buildTranslationTasks(entries []ChangelogEntry, languages []string, progress *Progress) []TranslationTask {
+func buildTranslationTasks(entries []ChangelogEntry, languages []string, changelog map[string]interface{}) []TranslationTask {
 	var tasks []TranslationTask
 
 	for _, lang := range languages {
+		// Get existing translations for this language
+		var existingKeys map[string]bool
+		if langData, ok := changelog[lang].(map[string]interface{}); ok {
+			existingKeys = make(map[string]bool)
+
+			// Check regular keys
+			for key := range langData {
+				if key != "months" {
+					existingKeys[key] = true
+				}
+			}
+
+			// Check months keys
+			if monthsData, ok := langData["months"].(map[string]interface{}); ok {
+				for monthKey := range monthsData {
+					existingKeys["months."+monthKey] = true
+				}
+			}
+		} else {
+			existingKeys = make(map[string]bool)
+		}
+
 		for _, entry := range entries {
 			// Check if already translated
-			if progress.CompletedKeys[lang][entry.Key] {
+			if existingKeys[entry.Key] {
 				continue
 			}
 
@@ -393,8 +377,8 @@ For UI text (page titles, navigation), keep translations concise and clear.
 For changelog descriptions, preserve any markdown formatting if present.`
 }
 
-func processResults(resultChan <-chan TranslationResult, changelog map[string]interface{}, 
-	changelogPath string, progress *Progress, stats *TranslationStats, 
+func processResults(resultChan <-chan TranslationResult, changelog map[string]interface{},
+	changelogPath string, stats *TranslationStats,
 	fileMutex *sync.Mutex, doneChan chan<- bool) {
 
 	for result := range resultChan {
@@ -411,14 +395,14 @@ func processResults(resultChan <-chan TranslationResult, changelog map[string]in
 
 		// Update changelog data
 		fileMutex.Lock()
-		
+
 		// Ensure language exists in changelog
 		if _, ok := changelog[result.Task.TargetLang]; !ok {
 			changelog[result.Task.TargetLang] = make(map[string]interface{})
 		}
-		
+
 		langData := changelog[result.Task.TargetLang].(map[string]interface{})
-		
+
 		// Handle nested months structure
 		if strings.HasPrefix(result.Task.Entry.Key, "months.") {
 			// Ensure months object exists
@@ -435,12 +419,6 @@ func processResults(resultChan <-chan TranslationResult, changelog map[string]in
 
 		// Save to file
 		saveChangelog(changelogPath, changelog)
-
-		// Update progress
-		progress.mu.Lock()
-		progress.CompletedKeys[result.Task.TargetLang][result.Task.Entry.Key] = true
-		progress.mu.Unlock()
-		saveProgress(progress)
 
 		fileMutex.Unlock()
 
@@ -474,7 +452,7 @@ func printFinalSummary(stats *TranslationStats) {
 	inputTokens := atomic.LoadInt64(&stats.TotalInputTokens)
 	outputTokens := atomic.LoadInt64(&stats.TotalOutputTokens)
 
-	totalCost := float64(inputTokens)/1_000_000*inputTokenCost + 
+	totalCost := float64(inputTokens)/1_000_000*inputTokenCost +
 		float64(outputTokens)/1_000_000*outputTokenCost
 
 	fmt.Printf("\n=== Translation Complete ===\n")
@@ -484,7 +462,7 @@ func printFinalSummary(stats *TranslationStats) {
 	fmt.Printf("Duration: %s\n", duration.Round(time.Second))
 	fmt.Printf("Tokens used: %d input, %d output\n", inputTokens, outputTokens)
 	fmt.Printf("Estimated cost: $%.4f\n", totalCost)
-	
+
 	if failed > 0 {
 		fmt.Printf("\nNote: %d translations failed. Run the script again to retry.\n", failed)
 	}
