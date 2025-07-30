@@ -71,10 +71,47 @@ var languageNames = map[string]string{
 	"km":    "Khmer",
 }
 
-// Supported languages from web/languages.go (excluding English)
-var targetLanguages = []string{
-	"zh", "es", "fr", "de", "ja", "pt", "ru", "ko",
-	"it", "id", "nl", "pl", "zh-TW", "sv", "km",
+// getTargetLanguages reads supported languages from web/languages.go
+func getTargetLanguages() ([]string, error) {
+	// Read the languages.go file
+	data, err := os.ReadFile("web/languages.go")
+	if err != nil {
+		return nil, fmt.Errorf("failed to read web/languages.go: %v", err)
+	}
+
+	content := string(data)
+
+	// Find the SupportedLanguages slice
+	start := strings.Index(content, "var SupportedLanguages = []string{")
+	if start == -1 {
+		return nil, fmt.Errorf("SupportedLanguages not found in web/languages.go")
+	}
+
+	end := strings.Index(content[start:], "}")
+	if end == -1 {
+		return nil, fmt.Errorf("end of SupportedLanguages not found")
+	}
+
+	// Extract the slice content
+	sliceContent := content[start : start+end]
+
+	var languages []string
+	// Parse each line to extract language codes
+	lines := strings.Split(sliceContent, "\n")
+	for _, line := range lines {
+		line = strings.TrimSpace(line)
+		if strings.HasPrefix(line, "\"") {
+			// Extract language code between quotes
+			if endQuote := strings.Index(line[1:], "\""); endQuote != -1 {
+				lang := line[1 : endQuote+1]
+				if lang != "en" { // Exclude English since it's the source
+					languages = append(languages, lang)
+				}
+			}
+		}
+	}
+
+	return languages, nil
 }
 
 const (
@@ -104,6 +141,13 @@ func main() {
 	changelogData, err := loadChangelog(changelogPath)
 	if err != nil {
 		fmt.Printf("Error loading changelog: %v\n", err)
+		os.Exit(1)
+	}
+
+	// Get target languages from web/languages.go
+	targetLanguages, err := getTargetLanguages()
+	if err != nil {
+		fmt.Printf("Error reading target languages: %v\n", err)
 		os.Exit(1)
 	}
 
