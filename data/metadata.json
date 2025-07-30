@@ -1335,6 +1335,88 @@
         "keywords": ["ការជ្រើសរើសបុគ្គលិក", "ការជ្រើសរើស", "ដំណើរការជ្រើសរើស", "ការតាមដានបេក្ខជន", "ការចូលធ្វើការ", "បំពង់ជ្រើសរើស", "blue"]
       }
     },
+    "solutions/use-case/process-management": {
+      "en": {
+        "title": "Process Management",
+        "description": "Design, automate, and optimize any business process with Blue's flexible workflow engine and complete visibility.",
+        "keywords": ["process management", "workflow automation", "business process", "process optimization", "workflow engine", "process visibility", "blue"]
+      },
+      "es": {
+        "title": "Gestión de Procesos",
+        "description": "Diseña, automatiza y optimiza cualquier proceso empresarial con el motor de flujo de trabajo flexible de Blue y visibilidad completa.",
+        "keywords": ["gestión de procesos", "automatización de flujos de trabajo", "proceso empresarial", "optimización de procesos", "motor de flujo de trabajo", "visibilidad de procesos", "blue"]
+      },
+      "zh": {
+        "title": "流程管理",
+        "description": "使用 Blue 灵活的工作流引擎和完整可见性来设计、自动化和优化任何业务流程。",
+        "keywords": ["流程管理", "工作流自动化", "业务流程", "流程优化", "工作流引擎", "流程可见性", "blue"]
+      },
+      "fr": {
+        "title": "Gestion des Processus",
+        "description": "Concevez, automatisez et optimisez tout processus métier avec le moteur de flux de travail flexible de Blue et une visibilité complète.",
+        "keywords": ["gestion des processus", "automatisation des flux de travail", "processus métier", "optimisation des processus", "moteur de flux de travail", "visibilité des processus", "blue"]
+      },
+      "de": {
+        "title": "Prozessmanagement",
+        "description": "Entwerfen, automatisieren und optimieren Sie jeden Geschäftsprozess mit Blues flexibler Workflow-Engine und vollständiger Transparenz.",
+        "keywords": ["prozessmanagement", "workflow-automatisierung", "geschäftsprozess", "prozessoptimierung", "workflow-engine", "prozess-transparenz", "blue"]
+      },
+      "ja": {
+        "title": "プロセス管理",
+        "description": "Blueの柔軟なワークフローエンジンと完全な可視性で、あらゆるビジネスプロセスを設計、自動化、最適化します。",
+        "keywords": ["プロセス管理", "ワークフロー自動化", "ビジネスプロセス", "プロセス最適化", "ワークフローエンジン", "プロセス可視性", "blue"]
+      },
+      "pt": {
+        "title": "Gestão de Processos",
+        "description": "Projete, automatize e otimize qualquer processo empresarial com o motor de fluxo de trabalho flexível do Blue e visibilidade completa.",
+        "keywords": ["gestão de processos", "automação de fluxo de trabalho", "processo empresarial", "otimização de processos", "motor de fluxo de trabalho", "visibilidade de processos", "blue"]
+      },
+      "ru": {
+        "title": "Управление Процессами",
+        "description": "Проектируйте, автоматизируйте и оптимизируйте любые бизнес-процессы с помощью гибкого движка рабочих процессов Blue и полной видимости.",
+        "keywords": ["управление процессами", "автоматизация рабочих процессов", "бизнес-процесс", "оптимизация процессов", "движок рабочих процессов", "видимость процессов", "blue"]
+      },
+      "ko": {
+        "title": "프로세스 관리",
+        "description": "Blue의 유연한 워크플로우 엔진과 완전한 가시성으로 모든 비즈니스 프로세스를 설계, 자동화 및 최적화하세요.",
+        "keywords": ["프로세스 관리", "워크플로우 자동화", "비즈니스 프로세스", "프로세스 최적화", "워크플로우 엔진", "프로세스 가시성", "blue"]
+      },
+      "it": {
+        "title": "Gestione dei Processi",
+        "description": "Progetta, automatizza e ottimizza qualsiasi processo aziendale con il motore di flusso di lavoro flessibile di Blue e visibilità completa.",
+        "keywords": ["gestione dei processi", "automazione del flusso di lavoro", "processo aziendale", "ottimizzazione dei processi", "motore di flusso di lavoro", "visibilità dei processi", "blue"]
+      },
+      "id": {
+        "title": "Manajemen Proses",
+        "description": "Rancang, otomatisasi, dan optimalkan proses bisnis apa pun dengan mesin alur kerja yang fleksibel dari Blue dan visibilitas lengkap.",
+        "keywords": ["manajemen proses", "otomasi alur kerja", "proses bisnis", "optimasi proses", "mesin alur kerja", "visibilitas proses", "blue"]
+      },
+      "nl": {
+        "title": "Procesbeheer",
+        "description": "Ontwerp, automatiseer en optimaliseer elk bedrijfsproces met Blue's flexibele workflow-engine en volledige zichtbaarheid.",
+        "keywords": ["procesbeheer", "workflow-automatisering", "bedrijfsproces", "procesoptimalisatie", "workflow-engine", "proces zichtbaarheid", "blue"]
+      },
+      "pl": {
+        "title": "Zarządzanie Procesami",
+        "description": "Projektuj, automatyzuj i optymalizuj dowolny proces biznesowy dzięki elastycznemu silnikowi przepływu pracy Blue i pełnej widoczności.",
+        "keywords": ["zarządzanie procesami", "automatyzacja przepływu pracy", "proces biznesowy", "optymalizacja procesów", "silnik przepływu pracy", "widoczność procesów", "blue"]
+      },
+      "zh-TW": {
+        "title": "流程管理",
+        "description": "使用 Blue 靈活的工作流程引擎和完整可見性來設計、自動化和優化任何業務流程。",
+        "keywords": ["流程管理", "工作流程自動化", "業務流程", "流程優化", "工作流程引擎", "流程可見性", "blue"]
+      },
+      "sv": {
+        "title": "Processhantering",
+        "description": "Designa, automatisera och optimera alla affärsprocesser med Blue's flexibla arbetsflödesmotor och fullständig synlighet.",
+        "keywords": ["processhantering", "arbetsflödesautomatisering", "affärsprocess", "processoptimering", "arbetsflödesmotor", "processsynlighet", "blue"]
+      },
+      "km": {
+        "title": "ការគ្រប់គ្រងដំណើរការ",
+        "description": "រចនា ធ្វើស្វ័យប្រវត្តិកម្ម និងបង្កើនប្រសិទ្ធភាពដំណើរការអាជីវកម្មណាមួយជាមួយនឹងម៉ាស៊ីនលំហូរការងារដែលអាចបត់បែនបានរបស់ Blue និងភាពមើលឃើញពេញលេញ។",
+        "keywords": ["ការគ្រប់គ្រងដំណើរការ", "ស្វ័យប្រវត្តិកម្មលំហូរការងារ", "ដំណើរការអាជីវកម្ម", "ការបង្កើនប្រសិទ្ធភាពដំណើរការ", "ម៉ាស៊ីនលំហូរការងារ", "ភាពមើលឃើញដំណើរការ", "blue"]
+      }
+    },
     "solutions/industry/professional-services": {
       "en": {
         "title": "Professional Services",
