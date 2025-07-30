@@ -1,8 +1,433 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "IT Solutions" 
-            "Subtitle" "Streamline IT operations with asset management, incident response, and infrastructure workflows." 
-            "MarginBottom" "mb-8"
+            "Title" "Blue helps IT teams keep work running smoothly." 
+            "Subtitle" "Standardize ticket workflows, log incidents, manage assets, and present everything in one place." 
+            "MarginBottom" "mb-16"
     }}
+
+    {{template "hero-video" 
+        dict 
+            "VideoUrl" "/testvideo2.mp4"
+            "ShowUnmuteButton" true
+            "Id" "it-solutions"
+    }}
+
+    <!-- Customer Logos -->
+    <section class="mb-16">
+        {{$logoData := parseJSON `{
+            "title": "Powering the world's best IT managers",
+            "logos": [
+                { "name": "Heineken", "src": "/customers/heineken.svg" },
+                { "name": "Deloitte", "src": "/customers/deloitte.svg" },
+                { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
+                { "name": "FedEx", "src": "/customers/fedex.svg" },
+                { "name": "World Food Programme", "src": "/customers/wfp.svg" },
+                { "name": "ILO", "src": "/customers/ilo.webp" }
+            ]
+        }`}}
+        
+        {{template "logo-grid" $logoData}}
+    </section>
+
+    <!-- Modern Ticket Management Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8 text-center">The modern way to manage tickets.</h2>
+        
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-16 text-center max-w-3xl mx-auto">
+            Blue is your one source of truth—making work easier, faster, and better.
+        </p>
+
+        <!-- Ticket Management Features Grid -->
+        {{$ticketFeaturesData := parseJSON `{
+            "Features": [
+                {
+                    "Icon": "document",
+                    "Title": "Intake Forms",
+                    "Description": "Easily capture service tickets with customizable forms."
+                },
+                {
+                    "Icon": "bolt",
+                    "Title": "Smart Routing", 
+                    "Description": "Automatically assign tickets to the right team members based on input data."
+                },
+                {
+                    "Icon": "chart",
+                    "Title": "Custom Analytics",
+                    "Description": "Analyze ticket trends and performance with custom reports."
+                },
+                {
+                    "Icon": "cogs",
+                    "Title": "Structured Data",
+                    "Description": "Utilize custom fields to keep ticket data organized and neat."
+                },
+                {
+                    "Icon": "lightbulb",
+                    "Title": "Email Notifications",
+                    "Description": "Create custom email notifications for each step leveraging any of the data available."
+                },
+                {
+                    "Icon": "shield",
+                    "Title": "Custom Permissions",
+                    "Description": "Set detailed access levels to control who sees what."
+                }
+            ]
+        }`}}
+
+        {{template "features-grid-simple" $ticketFeaturesData}}
+    </section>
+
+    <!-- Stats Section -->
+    <section class="mb-16">
+        {{$statsData := parseJSON `{
+            "Stats": [
+                {
+                    "Number": "3.6M+",
+                    "Description": "service tickets tracked"
+                },
+                {
+                    "Number": "40%", 
+                    "Description": "faster resolution times"
+                },
+                {
+                    "Number": "85%",
+                    "Description": "customer satisfaction increase"
+                }
+            ]
+        }`}}
+        
+        {{template "stats-section" $statsData}}
+    </section>
+
+    <!-- Custom Processes Feature -->
+    <section class="mb-16">
+        <div class="mb-16">
+            {{$customProcessData := parseJSON `{
+                "Title": "Create your own custom processes for managing tickets.",
+                "Description": "Every organization is different. With Blue, you can create your own custom workflow that fits your organization like a glove. Use your own terminology and process steps for faster ticket processing with customized alerts.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about workflows",
+                    "Url": "/docs/automations/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Workflow features",
+                    "Links": [
+                        {
+                            "Text": "Custom statuses",
+                            "Url": "/docs/projects/lists",
+                            "Description": "for your process steps"
+                        },
+                        {
+                            "Text": "Smart automations",
+                            "Url": "/docs/automations/introduction", 
+                            "Description": "for automatic routing"
+                        },
+                        {
+                            "Text": "Custom notifications",
+                            "Url": "/docs/automations/actions/email-automations",
+                            "Description": "for status updates"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $customProcessData}}
+        </div>
+    </section>
+
+    <!-- Custom Fields Section -->
+    <section class="mb-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4">Capture exactly the data that you need.</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">Use custom fields to manage structured data at scale. Blue has dozens of fields available to ensure you can match your specific data type.</p>
+            
+            <!-- Custom Fields Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Single Line Text -->
+                <a href="/docs/custom-fields/single-line-text" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Single Line Text</h3>
+                    <p class="text-gray-600 dark:text-gray-400">A free text field to add any data you need.</p>
+                </a>
+
+                <!-- Multiple Line Text -->
+                <a href="/docs/custom-fields/multiple-line-text" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Multiple Line Text</h3>
+                    <p class="text-gray-600 dark:text-gray-400">A large space to add multi-line text descriptions.</p>
+                </a>
+
+                <!-- URL Link -->
+                <a href="/docs/custom-fields/url-link" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">URL Link</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add any URL you need and open it in a new tab in one click.</p>
+                </a>
+
+                <!-- Currency -->
+                <a href="/docs/custom-fields/currency" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Currency</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Choose from dozens of currencies to track your money.</p>
+                </a>
+
+                <!-- Country -->
+                <a href="/docs/custom-fields/country" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Country</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Get a list of countries that you can select.</p>
+                </a>
+
+                <!-- Date -->
+                <a href="/docs/custom-fields/date" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Date</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Pick any start and end date. Add time and show it on a calendar.</p>
+                </a>
+
+                <!-- Formula -->
+                <a href="/docs/custom-fields/formula" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Formula</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create calculated fields with powerful formulas and expressions.</p>
+                </a>
+
+                <!-- File -->
+                <a href="/docs/custom-fields/file" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">File</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add multiple files to have a more structured data set.</p>
+                </a>
+
+                <!-- Single Select -->
+                <a href="/docs/custom-fields/single-select" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Single Select</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create a list and select one option for each record.</p>
+                </a>
+
+                <!-- Multiple Select -->
+                <a href="/docs/custom-fields/multiple-select" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Multiple Select</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create a list and select multiple options for each record.</p>
+                </a>
+
+                <!-- Location Map -->
+                <a href="/docs/custom-fields/location-map" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Location Map</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add location data that will then show up on the map view.</p>
+                </a>
+
+                <!-- Phone Number -->
+                <a href="/docs/custom-fields/phone-number" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Phone Number</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Automatically formatted phone numbers and one-click calls.</p>
+                </a>
+
+                <!-- Email -->
+                <a href="/docs/custom-fields/email" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add structured emails into our dedicated email field.</p>
+                </a>
+
+                <!-- Star Rating -->
+                <a href="/docs/custom-fields/star-rating" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Star Rating</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Rate items with customizable star ratings for reviews and feedback.</p>
+                </a>
+
+                <!-- Checkbox -->
+                <a href="/docs/custom-fields/checkbox" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Checkbox</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add a checkbox that you can use for approvals.</p>
+                </a>
+
+                <!-- Number -->
+                <a href="/docs/custom-fields/number" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Number</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add numbers with min and max values.</p>
+                </a>
+
+                <!-- Percent -->
+                <a href="/docs/custom-fields/percent" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Percent</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add a percentage indicator to any record in Blue.</p>
+                </a>
+
+                <!-- Unique ID -->
+                <a href="/docs/custom-fields/unique-id" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Unique ID</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Create a unique ID that you can use to reference records.</p>
+                </a>
+
+                <!-- Reference -->
+                <a href="/docs/custom-fields/reference" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Reference</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Reference records from other projects.</p>
+                </a>
+
+                <!-- Lookup -->
+                <a href="/docs/custom-fields/lookup" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Lookup</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Lookup data from other records in reference fields.</p>
+                </a>
+
+                <!-- Duration -->
+                <a href="/docs/custom-fields/duration" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Duration</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Calculate the duration of time between events.</p>
+                </a>
+
+                <!-- Button -->
+                <a href="/docs/custom-fields/button" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Button</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Add action buttons to trigger automations and workflows.</p>
+                </a>
+
+                <!-- Time in List -->
+                <a href="/docs/custom-fields/time-in-list" class="block p-6 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand-blue dark:hover:border-brand-blue transition-colors">
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Time in List</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Automatically track how long records spend in each list or stage.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automations Section -->
+    <section class="mb-16">
+        <div class="mb-16">
+            {{$automationsData := parseJSON `{
+                "Title": "Automations keep the admin work away.",
+                "Description": "Nobody likes to do work for work's sake. Blue's powerful automations means that your team can stay focussed on solving problems instead of low-value administration work. Spend more time on strategy with faster resolution times and customized alerts.",
+                "VideoUrl": "https://media.blue.cc/automations-on-off.mp4",
+                "VideoPosition": "left",
+                "Button": {
+                    "Text": "Explore automations",
+                    "Url": "/docs/automations/introduction"
+                },
+                "SeeAlso": {
+                    "Heading": "Automation features",
+                    "Links": [
+                        {
+                            "Text": "Smart assignment",
+                            "Url": "/docs/automations/actions",
+                            "Description": "based on ticket type"
+                        },
+                        {
+                            "Text": "SLA monitoring",
+                            "Url": "/docs/custom-fields/time-in-list",
+                            "Description": "with automatic alerts"
+                        },
+                        {
+                            "Text": "Status automations",
+                            "Url": "/docs/automations/triggers",
+                            "Description": "for workflow progression"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $automationsData}}
+        </div>
+    </section>
+
+    <!-- Asset Management Section -->
+    <section class="mb-16">
+        <div class="mb-16">
+            {{$assetManagementData := parseJSON `{
+                "Title": "Track every asset seamlessly.",
+                "Description": "Easily manage and monitor all your IT assets, with detailed information at your fingertips. Real-time tracking, detailed asset profiles with usage history and maintenance records, plus automated alerts for asset maintenance and lifecycle events.",
+                "VideoUrl": "/testvideo2.mp4",
+                "VideoPosition": "right",
+                "Button": {
+                    "Text": "Learn about asset management",
+                    "Url": "/solutions/asset-management"
+                },
+                "SeeAlso": {
+                    "Heading": "Asset features",
+                    "Links": [
+                        {
+                            "Text": "Asset database",
+                            "Url": "/docs/custom-fields/introduction",
+                            "Description": "for equipment tracking"
+                        },
+                        {
+                            "Text": "Maintenance scheduling",
+                            "Url": "/docs/records/repeat",
+                            "Description": "automated reminders"
+                        },
+                        {
+                            "Text": "Location tracking",
+                            "Url": "/docs/custom-fields/location-map",
+                            "Description": "real-time monitoring"
+                        }
+                    ]
+                }
+            }`}}
+            
+            {{template "feature-video" $assetManagementData}}
+        </div>
+    </section>
+
+    <!-- First CTA -->
+    <section class="mb-16">
+        {{$firstCTA := parseJSON `{
+            "Title": "Boost your productivity. Start using Blue today.",
+            "Subtitle": "Blue organizes work so teams know what to do, how to do it — and why it matters.",
+            "SecondaryText": "See a demo",
+            "SecondaryUrl": "/contact",
+            "PrimaryText": "Get started",
+            "PrimaryUrl": "https://app.blue.cc"
+        }`}}
+        
+        {{template "dual-button-cta" $firstCTA}}
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+        {{$faqData := parseJSON `{
+            "categories": [
+                {
+                    "name": "Frequently asked questions",
+                    "questions": [
+                        {
+                            "question": "How does Blue handle IT service requests?",
+                            "answer": "Blue provides customizable intake forms that capture all necessary information for service requests. Smart routing automatically assigns tickets to the right team members based on priority, type, or any custom criteria you set up. You can track SLA compliance and response times with real-time dashboards."
+                        },
+                        {
+                            "question": "Can Blue manage IT asset inventory?",
+                            "answer": "Yes, Blue's flexible database structure is perfect for asset management. Track serial numbers, purchase dates, warranties, locations, and any other asset data you need. Set up automated maintenance schedules and receive alerts for lifecycle events like warranty expiration."
+                        },
+                        {
+                            "question": "How does Blue support IT change management?",
+                            "answer": "Create custom workflows for change requests with approval stages, impact assessments, and rollback procedures. Use custom fields to track change details and automations to notify stakeholders at each stage. All changes are automatically documented with complete audit trails."
+                        },
+                        {
+                            "question": "Can Blue improve IT team collaboration?",
+                            "answer": "Absolutely. Blue provides a single source of truth for all IT operations. Team members can see real-time updates, collaborate on tickets with comments and file sharing, and stay informed with smart notifications. Cross-team visibility eliminates silos and improves response times."
+                        },
+                        {
+                            "question": "Does Blue support compliance and audit requirements?",
+                            "answer": "Yes, Blue automatically logs all changes with complete audit trails. Generate compliance reports, track regulatory requirements, and maintain detailed records of all IT activities. Custom fields help you capture specific compliance data your organization needs."
+                        },
+                        {
+                            "question": "What features does Blue offer for IT project management?",
+                            "answer": "Blue includes Kanban boards for visual project management, timeline views for project planning, task dependencies to prevent delays, and resource tracking with custom fields. Create project templates and use automations to streamline recurring IT projects."
+                        },
+                        {
+                            "question": "Can Blue integrate with other IT tools?",
+                            "answer": "Yes, Blue integrates with popular IT tools through our API and automation platform. Connect with monitoring systems, help desk software, and other IT infrastructure to create a unified workflow. Use webhooks and API endpoints to sync data in real-time."
+                        },
+                        {
+                            "question": "Is it possible to automate IT workflows with Blue?",
+                            "answer": "Blue's powerful automation engine can handle complex IT workflows. Automatically route tickets based on urgency, create recurring maintenance tasks, send escalation alerts, and update asset statuses. Reduce manual work and ensure nothing falls through the cracks."
+                        },
+                        {
+                            "question": "Can Blue assist in incident management?",
+                            "answer": "Blue excels at incident management with priority classification, automatic escalation, and real-time status updates. Track incident resolution times, maintain post-incident reports, and use analytics to identify recurring issues and prevent future incidents."
+                        },
+                        {
+                            "question": "Is Blue suitable for small and large IT teams?",
+                            "answer": "Yes, Blue scales from small IT departments to enterprise operations. Start with basic ticket management and add complexity as your team grows. Features like role-based permissions, multi-project workspaces, and advanced reporting grow with your organization."
+                        }
+                    ]
+                }
+            ]
+        }`}}
+        
+        {{template "faq-sections" $faqData}}
+    </section>
 
