@@ -1,25 +1,94 @@
 {
-  "en": {
-    "page_title": "Blue is bringing delight to process management.",
-    "page_subtitle": "We're an independent company with a passion for helping teams work better, together.",
+  "de": {
+    "awards": {
+      "description": "Vertraut von Tausenden von Teams weltweit und anerkannt von Branchenführern.",
+      "title": "Auszeichnungen \u0026 Anerkennung"
+    },
     "blue_team_alt": "Blue Team",
-    "mission_title": "Our mission is to organize the world's work.",
-    "stats": {
-      "customers_number": "17,000+",
-      "customers_label": "incredible customers",
-      "countries_number": "120+",
-      "countries_label": "Countries served",
-      "years_number": "7+",
-      "years_label": "Years in business"
+    "ceo_message": {
+      "greeting": "Hallo,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Ich bin Manny, der Gründer und CEO von Blue. Ich habe Blue ins Leben gerufen, um die Herausforderungen zu bewältigen, denen ich beim Wachstum meiner Beratung gegenüberstand. Es stellt sich heraus, dass viele Menschen Schwierigkeiten haben, organisiert zu bleiben und ihre Geschäftsprozesse zu optimieren.",
+      "paragraph_2": "Die zentrale Idee ist, dass Blue einfach zu bedienen ist, sodass Ihr Team es tatsächlich nutzt. Wir haben alle Geld für Softwareplattformen verschwendet, die viel versprochen, aber nicht gehalten haben: Sie sind starr, umständlich und brauchen ewig, um verstanden zu werden.",
+      "paragraph_3": "Blue ist anders – Es ist super einfach zu bedienen, unglaublich flexibel und dennoch leistungsstark genug für ernsthafte Arbeiten. Und das Beste daran ist, dass Sie Ihre Prozesse nicht ändern müssen! Blue passt sich Ihren bestehenden Prozessen an – und bietet Ihnen Transparenz, Automatisierungen und Seelenfrieden. Sie werden nachts gut schlafen, in dem Wissen, dass nichts durch die Ritzen fällt.",
+      "paragraph_4": "Deshalb habe ich Blue entwickelt – weil es kein Unternehmen gibt, das eine einfache Lösung für die Skalierung von Prozessen anbietet, ohne all den Überfluss.",
+      "paragraph_5": "Danke fürs Lesen, und ich hoffe, Sie genießen die Nutzung von Blue!",
+      "paragraph_6": "Ich weiß, dass wir es gerne entwickeln!",
+      "sign_off": "Bleiben Sie produktiv,",
+      "subtitle": "Wir haben das für Sie entwickelt.",
+      "title": "Nachricht des CEO",
+      "title_role": "Gründer \u0026 CEO von Blue"
+    },
+    "cta": {
+      "title": "Bereit, Blue in Aktion zu sehen?"
+    },
+    "funding": {
+      "customers": "Kunden",
+      "description": "Wir werden von den anspruchsvollsten Investoren der Welt unterstützt: unseren Kunden.",
+      "founder_owned": "Gründergeführte",
+      "our_investors": "Unsere Investoren?",
+      "paragraph_1": "Während andere Risikokapital jagen, haben wir einen anderen Weg gewählt. Wir sind stolz darauf, bootstrapped zu sein, was bedeutet, dass wir unseren Kunden und nicht einem Vorstand verantwortlich sind. Diese Unabhängigkeit ermöglicht es uns, uns auf den Aufbau des bestmöglichen Produkts zu konzentrieren, langfristige Entscheidungen zu treffen und die Unternehmenskultur aufrechtzuerhalten, die uns hierher gebracht hat.",
+      "paragraph_2": "Jeder Kunde, der an unsere Vision glaubt. Jedes Team, das uns mit seinen Arbeitsabläufen vertraut. Jede Person, die sich für Blue anstelle der stark finanzierten Alternativen entschieden hat. Ihr seid nicht nur Nutzer – ihr seid Partner beim Aufbau von etwas Nachhaltigem.",
+      "runway": "Startbahn",
+      "title": "Finanzierung",
+      "vc_raised": "Venture Capital Beschafft"
     },
     "global_team": {
-      "title": "Globally distributed team and infrastructure",
-      "description": "This is where the work happens."
+      "description": "Hier findet die Arbeit statt.",
+      "title": "Global verteiltes Team und Infrastruktur"
     },
+    "learn_more": {
+      "description": "Tauchen Sie ein in unsere Erkenntnisse, in denen wir unsere Gedanken zum Aufbau besserer Prozesse, zur Skalierung von Operationen und zur Schaffung eines erstklassigen Produkts ohne Risikokapital teilen.",
+      "title": "Möchten Sie mehr erfahren?"
+    },
+    "mission_title": "Unsere Mission ist es, die Arbeit der Welt zu organisieren.",
+    "page_subtitle": "Wir sind ein unabhängiges Unternehmen mit einer Leidenschaft dafür, Teams dabei zu helfen, besser zusammenzuarbeiten.",
+    "page_title": "Blue bringt Freude ins Prozessmanagement.",
+    "stats": {
+      "countries_label": "Länder, die bedient werden",
+      "countries_number": "120+",
+      "customers_label": "unglaubliche Kunden",
+      "customers_number": "17.000+",
+      "years_label": "Jahre im Geschäft",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Gegründet als Reaktion auf die Herausforderungen beim Skalieren einer Beratung. Die Vision: Prozessmanagement angenehm gestalten.",
+      "2018_title": "Blue wird geboren",
+      "2019_desc": "Blues erster Kunde validiert die Vision. Die Reise von der Idee zur Realität beginnt.",
+      "2019_title": "Erster zahlender Kunde",
+      "2020_desc": "Das Wort verbreitet sich über Blues einzigartigen Ansatz. Teams lieben die Kombination aus Einfachheit und Leistung.",
+      "2020_title": "1.000 Kunden-Meilenstein",
+      "2021_desc": "API-Starts mit 100% Funktionsabdeckung, die leistungsstarke Integrationen und Automatisierungsfunktionen ermöglicht.",
+      "2021_title": "API-Start",
+      "2022_desc": "Bloo wird zu Blue und markiert ein neues Kapitel in unserer Reise mit einer erneuerten Markenidentität.",
+      "2022_title": "Umbenennung",
+      "2024_desc": "Enterprise-Funktionen wie White Label, erweiterte Berechtigungen und API v2 unterstützen Blue dabei, auf Unternehmenskunden zu skalieren.",
+      "2024_title": "White-Label-Launch",
+      "2025_desc": "Engagiert für unsere Mission: die Arbeit der Welt zu organisieren, indem wir die beste Prozessmanagement-Plattform auf dem Planeten entwickeln.",
+      "2025_title": "Die Reise geht weiter",
+      "title": "Unsere Reise"
+    },
+    "why_different": {
+      "description": "Wir haben Blue von Grund auf mit einer anderen Philosophie entwickelt. Eine Philosophie, die Einfachheit, Flexibilität und den Erfolg unserer Kunden in den Mittelpunkt all unseres Handelns stellt.",
+      "point_1_desc": "Wir haben Ihren Schmerz gespürt. Blue wurde aus realen Erfahrungen beim Skalieren von Unternehmen geboren, nicht aus den Vorstandszimmern von Risikokapitalgebern, die Wachstum um jeden Preis vorantreiben.",
+      "point_1_title": "Von Betreibern für Betreiber",
+      "point_2_desc": "Ihr Team wird Blue tatsächlich nutzen, da es intuitiv ist. Gleichzeitig lässt es sich mühelos von 5 auf 5.000 Benutzer skalieren, ohne dass architektonische Änderungen erforderlich sind.",
+      "point_2_title": "Einfach genug für alle, leistungsstark genug für Unternehmen",
+      "point_3_desc": "Wir zwingen Sie nicht in starre Arbeitsabläufe. Blue passt sich Ihren bestehenden Prozessen an und bietet Ihnen die Werkzeuge, um diese im Laufe der Zeit zu verbessern.",
+      "point_3_title": "Passt sich Ihnen an, nicht umgekehrt.",
+      "title": "Warum Blue sich von anderen Plattformen unterscheidet.\u003cbr\u003e"
+    }
+  },
+  "en": {
+    "awards": {
+      "description": "Trusted by thousands of teams worldwide and recognized by industry leaders.",
+      "title": "Awards \u0026 Recognition"
+    },
+    "blue_team_alt": "Blue Team",
     "ceo_message": {
-      "title": "Message from the CEO",
-      "subtitle": "We built this for you.",
       "greeting": "Hey there,",
+      "name": "Emanuele Faja",
       "paragraph_1": "I'm Manny, the founder and CEO of Blue. I created Blue to address the challenges I faced while scaling my consultancy. Turns out — many people struggle to stay organized and streamline their business processes.",
       "paragraph_2": "The central idea is that Blue is easy to use, so your team actually use it. We have all wasted money on software platforms that promised much but failed to deliver: they are rigid, awkward, and take forever to understand.",
       "paragraph_3": "Blue is different — It's super easy to use, incredibly flexible, and yet powerful enough for serious work. And the great thing is that you don't have to change your processes! Blue adapts to your existing processes — giving you visibility, automations, and peace of mind. You'll sleep well at night knowing that nothing slips through the cracks.",
@@ -27,80 +96,80 @@
       "paragraph_5": "Thanks for reading, and I hope you enjoy using Blue!",
       "paragraph_6": "I know that we enjoy building it!",
       "sign_off": "Stay productive,",
-      "name": "Emanuele Faja",
-      "title_role": "Founder & CEO of Blue"
-    },
-    "why_different": {
-      "title": "Why Blue is different<br>from other platforms.",
-      "description": "We've built Blue from the ground up with a different philosophy. One that puts simplicity, flexibility, and customer success at the core of everything we do.",
-      "point_1_title": "Built by operators, for operators",
-      "point_1_desc": "We've felt your pain. Blue was born from real-world experience scaling businesses, not venture capital boardrooms pushing growth at any cost.",
-      "point_2_title": "Simple enough for everyone, powerful enough for enterprises",
-      "point_2_desc": "Your team will actually use Blue because it's intuitive. Yet it scales effortlessly from 5 to 5,000 users without architectural changes.",
-      "point_3_title": "Adapts to you, not the other way around",
-      "point_3_desc": "We don't force you into rigid workflows. Blue molds to your existing processes while giving you the tools to improve them over time."
-    },
-    "awards": {
-      "title": "Awards & Recognition",
-      "description": "Trusted by thousands of teams worldwide and recognized by industry leaders."
-    },
-    "funding": {
-      "title": "Funding",
-      "description": "We're backed by the most demanding investors in the world: our customers.",
-      "vc_raised": "Venture Capital Raised",
-      "customers": "Customers",
-      "founder_owned": "Founder Owned",
-      "runway": "Runway",
-      "paragraph_1": "While others chase venture capital, we've chosen a different path. We're proudly bootstrapped, which means we answer to our customers, not to a board room. This independence allows us to focus on building the best product possible, make decisions for the long term, and maintain the company culture that got us here.",
-      "our_investors": "Our investors?",
-      "paragraph_2": "Every customer who believes in our vision. Every team that trusts us with their workflows. Every person who chose Blue over the heavily-funded alternatives. You're not just users – you're partners in building something sustainable."
-    },
-    "timeline": {
-      "title": "Our Journey",
-      "2018_title": "Blue is born",
-      "2018_desc": "Founded in response to the challenges of scaling a consultancy. The vision: make process management delightful.",
-      "2019_title": "First paying customer",
-      "2019_desc": "Blue's first customer validates the vision. The journey from concept to reality begins.",
-      "2020_title": "1,000 customers milestone",
-      "2020_desc": "Word spreads about Blue's unique approach. Teams love the simplicity and power combination.",
-      "2021_title": "API Launch",
-      "2021_desc": "API launches with 100% feature coverage, enabling powerful integrations and automation capabilities.",
-      "2022_title": "Rebranding",
-      "2022_desc": "Bloo becomes Blue, marking a new chapter in our journey with a refreshed brand identity.",
-      "2024_title": "White Label launch",
-      "2024_desc": "Enterprise features including White Label, advanced permissions, and API v2 help Blue scale to enterprise customers.",
-      "2025_title": "The journey continues",
-      "2025_desc": "Committed to our mission: organize the world's work by building the best process management platform on the planet."
-    },
-    "learn_more": {
-      "title": "Want to learn more?",
-      "description": "Dive into our insights where we share our thoughts on building better processes, scaling operations, and creating a world-class product without venture capital."
+      "subtitle": "We built this for you.",
+      "title": "Message from the CEO",
+      "title_role": "Founder \u0026 CEO of Blue"
     },
     "cta": {
       "title": "Ready to see Blue in action?"
+    },
+    "funding": {
+      "customers": "Customers",
+      "description": "We're backed by the most demanding investors in the world: our customers.",
+      "founder_owned": "Founder Owned",
+      "our_investors": "Our investors?",
+      "paragraph_1": "While others chase venture capital, we've chosen a different path. We're proudly bootstrapped, which means we answer to our customers, not to a board room. This independence allows us to focus on building the best product possible, make decisions for the long term, and maintain the company culture that got us here.",
+      "paragraph_2": "Every customer who believes in our vision. Every team that trusts us with their workflows. Every person who chose Blue over the heavily-funded alternatives. You're not just users – you're partners in building something sustainable.",
+      "runway": "Runway",
+      "title": "Funding",
+      "vc_raised": "Venture Capital Raised"
+    },
+    "global_team": {
+      "description": "This is where the work happens.",
+      "title": "Globally distributed team and infrastructure"
+    },
+    "learn_more": {
+      "description": "Dive into our insights where we share our thoughts on building better processes, scaling operations, and creating a world-class product without venture capital.",
+      "title": "Want to learn more?"
+    },
+    "mission_title": "Our mission is to organize the world's work.",
+    "page_subtitle": "We're an independent company with a passion for helping teams work better, together.",
+    "page_title": "Blue is bringing delight to process management.",
+    "stats": {
+      "countries_label": "Countries served",
+      "countries_number": "120+",
+      "customers_label": "incredible customers",
+      "customers_number": "17,000+",
+      "years_label": "Years in business",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Founded in response to the challenges of scaling a consultancy. The vision: make process management delightful.",
+      "2018_title": "Blue is born",
+      "2019_desc": "Blue's first customer validates the vision. The journey from concept to reality begins.",
+      "2019_title": "First paying customer",
+      "2020_desc": "Word spreads about Blue's unique approach. Teams love the simplicity and power combination.",
+      "2020_title": "1,000 customers milestone",
+      "2021_desc": "API launches with 100% feature coverage, enabling powerful integrations and automation capabilities.",
+      "2021_title": "API Launch",
+      "2022_desc": "Bloo becomes Blue, marking a new chapter in our journey with a refreshed brand identity.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Enterprise features including White Label, advanced permissions, and API v2 help Blue scale to enterprise customers.",
+      "2024_title": "White Label launch",
+      "2025_desc": "Committed to our mission: organize the world's work by building the best process management platform on the planet.",
+      "2025_title": "The journey continues",
+      "title": "Our Journey"
+    },
+    "why_different": {
+      "description": "We've built Blue from the ground up with a different philosophy. One that puts simplicity, flexibility, and customer success at the core of everything we do.",
+      "point_1_desc": "We've felt your pain. Blue was born from real-world experience scaling businesses, not venture capital boardrooms pushing growth at any cost.",
+      "point_1_title": "Built by operators, for operators",
+      "point_2_desc": "Your team will actually use Blue because it's intuitive. Yet it scales effortlessly from 5 to 5,000 users without architectural changes.",
+      "point_2_title": "Simple enough for everyone, powerful enough for enterprises",
+      "point_3_desc": "We don't force you into rigid workflows. Blue molds to your existing processes while giving you the tools to improve them over time.",
+      "point_3_title": "Adapts to you, not the other way around",
+      "title": "Why Blue is different\u003cbr\u003efrom other platforms."
     }
   },
   "es": {
-    "page_title": "Blue está llevando el deleite a la gestión de procesos.",
-    "page_subtitle": "Somos una empresa independiente con pasión por ayudar a los equipos a trabajar mejor, juntos.",
+    "awards": {
+      "description": "Confiado por miles de equipos en todo el mundo y reconocido por líderes de la industria.",
+      "title": "Premios y Reconocimientos"
+    },
     "blue_team_alt": "Equipo Blue",
-    "mission_title": "Nuestra misión es organizar el trabajo del mundo.",
-    "stats": {
-      "customers_number": "17,000+",
-      "customers_label": "clientes increíbles",
-      "countries_number": "120+",
-      "countries_label": "Países atendidos",
-      "years_number": "7+",
-      "years_label": "Años en el negocio"
-    },
-    "global_team": {
-      "title": "Equipo e infraestructura distribuidos globalmente",
-      "description": "Aquí es donde sucede el trabajo."
-    },
     "ceo_message": {
-      "title": "Mensaje del CEO",
-      "subtitle": "Construimos esto para ti.",
       "greeting": "Hola,",
+      "name": "Emanuele Faja",
       "paragraph_1": "Soy Manny, el fundador y CEO de Blue. Creé Blue para abordar los desafíos que enfrenté mientras escalaba mi consultoría. Resulta que muchas personas luchan por mantenerse organizadas y optimizar sus procesos de negocio.",
       "paragraph_2": "La idea central es que Blue es fácil de usar, por lo que tu equipo realmente lo usa. Todos hemos desperdiciado dinero en plataformas de software que prometían mucho pero no cumplieron: son rígidas, incómodas y tardan una eternidad en entenderse.",
       "paragraph_3": "Blue es diferente: es súper fácil de usar, increíblemente flexible y, aun así, lo suficientemente potente para el trabajo serio. Y lo mejor es que no tienes que cambiar tus procesos. Blue se adapta a tus procesos existentes, brindándote visibilidad, automatizaciones y tranquilidad. Dormirás bien por la noche sabiendo que nada se escapa.",
@@ -108,57 +177,1122 @@
       "paragraph_5": "Gracias por leer, ¡y espero que disfrutes usando Blue!",
       "paragraph_6": "¡Sé que disfrutamos construyéndolo!",
       "sign_off": "Mantente productivo,",
-      "name": "Emanuele Faja",
+      "subtitle": "Construimos esto para ti.",
+      "title": "Mensaje del CEO",
       "title_role": "Fundador y CEO de Blue"
-    },
-    "why_different": {
-      "title": "Por qué Blue es diferente<br>de otras plataformas.",
-      "description": "Hemos construido Blue desde cero con una filosofía diferente. Una que pone la simplicidad, la flexibilidad y el éxito del cliente en el centro de todo lo que hacemos.",
-      "point_1_title": "Construido por operadores, para operadores",
-      "point_1_desc": "Hemos sentido tu dolor. Blue nació de la experiencia real escalando negocios, no de salas de juntas de capital de riesgo impulsando el crecimiento a cualquier costo.",
-      "point_2_title": "Lo suficientemente simple para todos, lo suficientemente poderoso para empresas",
-      "point_2_desc": "Tu equipo realmente usará Blue porque es intuitivo. Sin embargo, escala sin esfuerzo de 5 a 5,000 usuarios sin cambios arquitectónicos.",
-      "point_3_title": "Se adapta a ti, no al revés",
-      "point_3_desc": "No te forzamos a flujos de trabajo rígidos. Blue se adapta a tus procesos existentes mientras te brinda las herramientas para mejorarlos con el tiempo."
-    },
-    "awards": {
-      "title": "Premios y Reconocimientos",
-      "description": "Confiado por miles de equipos en todo el mundo y reconocido por líderes de la industria."
-    },
-    "funding": {
-      "title": "Financiamiento",
-      "description": "Estamos respaldados por los inversionistas más exigentes del mundo: nuestros clientes.",
-      "vc_raised": "Capital de Riesgo Recaudado",
-      "customers": "Clientes",
-      "founder_owned": "Propiedad del Fundador",
-      "runway": "Tiempo de operación",
-      "paragraph_1": "Mientras otros persiguen capital de riesgo, nosotros hemos elegido un camino diferente. Estamos orgullosamente autofinanciados, lo que significa que respondemos a nuestros clientes, no a una sala de juntas. Esta independencia nos permite enfocarnos en construir el mejor producto posible, tomar decisiones a largo plazo y mantener la cultura empresarial que nos trajo hasta aquí.",
-      "our_investors": "¿Nuestros inversionistas?",
-      "paragraph_2": "Cada cliente que cree en nuestra visión. Cada equipo que confía en nosotros con sus flujos de trabajo. Cada persona que eligió Blue sobre las alternativas fuertemente financiadas. No son solo usuarios: son socios en la construcción de algo sostenible."
-    },
-    "timeline": {
-      "title": "Nuestro Viaje",
-      "2018_title": "Blue nace",
-      "2018_desc": "Fundada en respuesta a los desafíos de escalar una consultoría. La visión: hacer que la gestión de procesos sea agradable.",
-      "2019_title": "Primer cliente de pago",
-      "2019_desc": "El primer cliente de Blue valida la visión. Comienza el viaje del concepto a la realidad.",
-      "2020_title": "Hito de 1,000 clientes",
-      "2020_desc": "Se corre la voz sobre el enfoque único de Blue. A los equipos les encanta la combinación de simplicidad y poder.",
-      "2021_title": "Lanzamiento de API",
-      "2021_desc": "La API se lanza con cobertura del 100% de funciones, habilitando poderosas capacidades de integración y automatización.",
-      "2022_title": "Cambio de marca",
-      "2022_desc": "Bloo se convierte en Blue, marcando un nuevo capítulo en nuestro viaje con una identidad de marca renovada.",
-      "2024_title": "Lanzamiento de White Label",
-      "2024_desc": "Las funciones empresariales que incluyen White Label, permisos avanzados y API v2 ayudan a Blue a escalar hacia clientes empresariales.",
-      "2025_title": "El viaje continúa",
-      "2025_desc": "Comprometidos con nuestra misión: organizar el trabajo del mundo construyendo la mejor plataforma de gestión de procesos del planeta."
-    },
-    "learn_more": {
-      "title": "¿Quieres saber más?",
-      "description": "Sumérgete en nuestras reflexiones donde compartimos nuestros pensamientos sobre cómo construir mejores procesos, escalar operaciones y crear un producto de clase mundial sin capital de riesgo."
     },
     "cta": {
       "title": "¿Listo para ver Blue en acción?"
+    },
+    "funding": {
+      "customers": "Clientes",
+      "description": "Estamos respaldados por los inversionistas más exigentes del mundo: nuestros clientes.",
+      "founder_owned": "Propiedad del Fundador",
+      "our_investors": "¿Nuestros inversionistas?",
+      "paragraph_1": "Mientras otros persiguen capital de riesgo, nosotros hemos elegido un camino diferente. Estamos orgullosamente autofinanciados, lo que significa que respondemos a nuestros clientes, no a una sala de juntas. Esta independencia nos permite enfocarnos en construir el mejor producto posible, tomar decisiones a largo plazo y mantener la cultura empresarial que nos trajo hasta aquí.",
+      "paragraph_2": "Cada cliente que cree en nuestra visión. Cada equipo que confía en nosotros con sus flujos de trabajo. Cada persona que eligió Blue sobre las alternativas fuertemente financiadas. No son solo usuarios: son socios en la construcción de algo sostenible.",
+      "runway": "Tiempo de operación",
+      "title": "Financiamiento",
+      "vc_raised": "Capital de Riesgo Recaudado"
+    },
+    "global_team": {
+      "description": "Aquí es donde sucede el trabajo.",
+      "title": "Equipo e infraestructura distribuidos globalmente"
+    },
+    "learn_more": {
+      "description": "Sumérgete en nuestras reflexiones donde compartimos nuestros pensamientos sobre cómo construir mejores procesos, escalar operaciones y crear un producto de clase mundial sin capital de riesgo.",
+      "title": "¿Quieres saber más?"
+    },
+    "mission_title": "Nuestra misión es organizar el trabajo del mundo.",
+    "page_subtitle": "Somos una empresa independiente con pasión por ayudar a los equipos a trabajar mejor, juntos.",
+    "page_title": "Blue está llevando el deleite a la gestión de procesos.",
+    "stats": {
+      "countries_label": "Países atendidos",
+      "countries_number": "120+",
+      "customers_label": "clientes increíbles",
+      "customers_number": "17,000+",
+      "years_label": "Años en el negocio",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Fundada en respuesta a los desafíos de escalar una consultoría. La visión: hacer que la gestión de procesos sea agradable.",
+      "2018_title": "Blue nace",
+      "2019_desc": "El primer cliente de Blue valida la visión. Comienza el viaje del concepto a la realidad.",
+      "2019_title": "Primer cliente de pago",
+      "2020_desc": "Se corre la voz sobre el enfoque único de Blue. A los equipos les encanta la combinación de simplicidad y poder.",
+      "2020_title": "Hito de 1,000 clientes",
+      "2021_desc": "La API se lanza con cobertura del 100% de funciones, habilitando poderosas capacidades de integración y automatización.",
+      "2021_title": "Lanzamiento de API",
+      "2022_desc": "Bloo se convierte en Blue, marcando un nuevo capítulo en nuestro viaje con una identidad de marca renovada.",
+      "2022_title": "Cambio de marca",
+      "2024_desc": "Las funciones empresariales que incluyen White Label, permisos avanzados y API v2 ayudan a Blue a escalar hacia clientes empresariales.",
+      "2024_title": "Lanzamiento de White Label",
+      "2025_desc": "Comprometidos con nuestra misión: organizar el trabajo del mundo construyendo la mejor plataforma de gestión de procesos del planeta.",
+      "2025_title": "El viaje continúa",
+      "title": "Nuestro Viaje"
+    },
+    "why_different": {
+      "description": "Hemos construido Blue desde cero con una filosofía diferente. Una que pone la simplicidad, la flexibilidad y el éxito del cliente en el centro de todo lo que hacemos.",
+      "point_1_desc": "Hemos sentido tu dolor. Blue nació de la experiencia real escalando negocios, no de salas de juntas de capital de riesgo impulsando el crecimiento a cualquier costo.",
+      "point_1_title": "Construido por operadores, para operadores",
+      "point_2_desc": "Tu equipo realmente usará Blue porque es intuitivo. Sin embargo, escala sin esfuerzo de 5 a 5,000 usuarios sin cambios arquitectónicos.",
+      "point_2_title": "Lo suficientemente simple para todos, lo suficientemente poderoso para empresas",
+      "point_3_desc": "No te forzamos a flujos de trabajo rígidos. Blue se adapta a tus procesos existentes mientras te brinda las herramientas para mejorarlos con el tiempo.",
+      "point_3_title": "Se adapta a ti, no al revés",
+      "title": "Por qué Blue es diferente\u003cbr\u003ede otras plataformas."
+    }
+  },
+  "fr": {
+    "awards": {
+      "description": "Fiable pour des milliers d'équipes à travers le monde et reconnu par les leaders du secteur.",
+      "title": "Récompenses et Reconnaissance"
+    },
+    "blue_team_alt": "Équipe Blue",
+    "ceo_message": {
+      "greeting": "Bonjour,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Je suis Manny, le fondateur et PDG de Blue. J'ai créé Blue pour répondre aux défis que j'ai rencontrés lors de la croissance de ma société de conseil. Il s'avère que de nombreuses personnes ont du mal à rester organisées et à rationaliser leurs processus d'affaires.",
+      "paragraph_2": "L'idée centrale est que Blue est facile à utiliser, ce qui fait que votre équipe l'utilise réellement. Nous avons tous gaspillé de l'argent sur des plateformes logicielles qui promettaient beaucoup mais n'ont pas tenu leurs promesses : elles sont rigides, maladroites et prennent une éternité à comprendre.",
+      "paragraph_3": "Blue est différent — Il est super facile à utiliser, incroyablement flexible, et pourtant suffisamment puissant pour un travail sérieux. Et le meilleur, c'est que vous n'avez pas à changer vos processus ! Blue s'adapte à vos processus existants — vous offrant visibilité, automatisations et tranquillité d'esprit. Vous dormirez bien la nuit en sachant que rien ne passe à travers les mailles du filet.",
+      "paragraph_4": "C'est pourquoi j'ai créé Blue — parce qu'il n'existe pas d'entreprise offrant une solution simple pour faire évoluer les opérations, sans tout le superflu.",
+      "paragraph_5": "Merci de votre lecture, et j'espère que vous apprécierez utiliser Blue !",
+      "paragraph_6": "Je sais que nous aimons le construire !",
+      "sign_off": "Restez productif,",
+      "subtitle": "Nous l'avons construit pour vous.",
+      "title": "Message du PDG",
+      "title_role": "Fondateur et PDG de Blue"
+    },
+    "cta": {
+      "title": "Prêt à voir Blue en action ?"
+    },
+    "funding": {
+      "customers": "Clients",
+      "description": "Nous sommes soutenus par les investisseurs les plus exigeants au monde : nos clients.",
+      "founder_owned": "Propriété du Fondateur",
+      "our_investors": "Nos investisseurs ?",
+      "paragraph_1": "Alors que d'autres poursuivent des capitaux-risque, nous avons choisi un chemin différent. Nous sommes fièrement autofinancés, ce qui signifie que nous répondons à nos clients, et non à une salle de conseil. Cette indépendance nous permet de nous concentrer sur la création du meilleur produit possible, de prendre des décisions à long terme et de maintenir la culture d'entreprise qui nous a amenés ici.",
+      "paragraph_2": "Chaque client qui croit en notre vision. Chaque équipe qui nous fait confiance pour ses flux de travail. Chaque personne qui a choisi Blue plutôt que les alternatives fortement financées. Vous n'êtes pas seulement des utilisateurs – vous êtes des partenaires dans la construction de quelque chose de durable.",
+      "runway": "Piste",
+      "title": "Financement",
+      "vc_raised": "Capital-risque levé"
+    },
+    "global_team": {
+      "description": "C'est ici que le travail se fait.",
+      "title": "Équipe et infrastructure distribuées à l'échelle mondiale"
+    },
+    "learn_more": {
+      "description": "Plongez dans nos insights où nous partageons nos réflexions sur la création de meilleurs processus, l'extension des opérations et la création d'un produit de classe mondiale sans capital-risque.",
+      "title": "Vous voulez en savoir plus ?"
+    },
+    "mission_title": "Notre mission est d'organiser le travail dans le monde.",
+    "page_subtitle": "Nous sommes une entreprise indépendante passionnée par l'aide aux équipes pour mieux travailler ensemble.",
+    "page_title": "Blue apporte de la joie à la gestion des processus.",
+    "stats": {
+      "countries_label": "Pays desservis",
+      "countries_number": "120+",
+      "customers_label": "clients incroyables",
+      "customers_number": "17 000+",
+      "years_label": "Années d'activité",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Fondée en réponse aux défis de la mise à l'échelle d'un cabinet de conseil. La vision : rendre la gestion des processus agréable.",
+      "2018_title": "Blue est né.",
+      "2019_desc": "Le premier client de Blue valide la vision. Le parcours de la conception à la réalité commence.",
+      "2019_title": "Premier client payant",
+      "2020_desc": "La nouvelle se répand sur l'approche unique de Blue. Les équipes adorent la combinaison de simplicité et de puissance.",
+      "2020_title": "1 000 clients atteints",
+      "2021_desc": "L'API est lancée avec une couverture fonctionnelle de 100 %, permettant des intégrations puissantes et des capacités d'automatisation.",
+      "2021_title": "Lancement de l'API",
+      "2022_desc": "Bloo devient Blue, marquant un nouveau chapitre de notre parcours avec une identité de marque renouvelée.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Les fonctionnalités d'entreprise, y compris le White Label, les autorisations avancées et l'API v2, aident Blue à s'adapter aux clients d'entreprise.",
+      "2024_title": "Lancement en marque blanche",
+      "2025_desc": "Engagés envers notre mission : organiser le travail dans le monde en construisant la meilleure plateforme de gestion des processus sur la planète.",
+      "2025_title": "Le voyage continue",
+      "title": "Notre parcours"
+    },
+    "why_different": {
+      "description": "Nous avons construit Blue depuis le début avec une philosophie différente. Une philosophie qui place la simplicité, la flexibilité et le succès client au cœur de tout ce que nous faisons.",
+      "point_1_desc": "Nous avons ressenti votre douleur. Blue est né d'une expérience concrète dans la mise à l'échelle des entreprises, et non des salles de conseil en capital-risque cherchant à croître à tout prix.",
+      "point_1_title": "Conçu par des opérateurs, pour des opérateurs",
+      "point_2_desc": "Votre équipe utilisera réellement Blue car il est intuitif. De plus, il s'adapte sans effort de 5 à 5 000 utilisateurs sans modifications architecturales.",
+      "point_2_title": "Assez simple pour tout le monde, assez puissant pour les entreprises",
+      "point_3_desc": "Nous ne vous contraignons pas à des flux de travail rigides. Blue s'adapte à vos processus existants tout en vous fournissant les outils nécessaires pour les améliorer au fil du temps.",
+      "point_3_title": "S'adapte à vous, et non l'inverse.",
+      "title": "Pourquoi Blue est différent\u003cbr\u003edes autres plateformes."
+    }
+  },
+  "id": {
+    "awards": {
+      "description": "Dipercaya oleh ribuan tim di seluruh dunia dan diakui oleh para pemimpin industri.",
+      "title": "Penghargaan \u0026 Pengakuan"
+    },
+    "blue_team_alt": "Tim Blue",
+    "ceo_message": {
+      "greeting": "Halo,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Saya Manny, pendiri dan CEO Blue. Saya menciptakan Blue untuk mengatasi tantangan yang saya hadapi saat mengembangkan konsultan saya. Ternyata — banyak orang kesulitan untuk tetap terorganisir dan menyederhanakan proses bisnis mereka.",
+      "paragraph_2": "Ide sentralnya adalah bahwa Blue mudah digunakan, sehingga tim Anda benar-benar menggunakannya. Kita semua pernah menghabiskan uang untuk platform perangkat lunak yang menjanjikan banyak hal tetapi gagal memenuhi janji: mereka kaku, canggung, dan memerlukan waktu lama untuk dipahami.",
+      "paragraph_3": "Blue berbeda — Sangat mudah digunakan, sangat fleksibel, dan cukup kuat untuk pekerjaan serius. Dan hal hebatnya adalah Anda tidak perlu mengubah proses Anda! Blue beradaptasi dengan proses yang sudah ada — memberikan Anda visibilitas, otomatisasi, dan ketenangan pikiran. Anda akan tidur nyenyak di malam hari mengetahui bahwa tidak ada yang terlewat.",
+      "paragraph_4": "Itulah mengapa saya membangun Blue — karena tidak ada perusahaan yang memiliki solusi sederhana untuk meningkatkan operasi, tanpa semua hal yang tidak perlu.",
+      "paragraph_5": "Terima kasih telah membaca, dan saya harap Anda menikmati penggunaan Blue!",
+      "paragraph_6": "Saya tahu bahwa kami menikmati membangunnya!",
+      "sign_off": "Tetap produktif,",
+      "subtitle": "Kami membangun ini untuk Anda.",
+      "title": "Pesan dari CEO",
+      "title_role": "Pendiri \u0026 CEO Blue"
+    },
+    "cta": {
+      "title": "Siap untuk melihat Blue beraksi?"
+    },
+    "funding": {
+      "customers": "Pelanggan",
+      "description": "Kami didukung oleh investor paling menuntut di dunia: pelanggan kami.",
+      "founder_owned": "Dikendalikan oleh Pendiri",
+      "our_investors": "Para investor kami?",
+      "paragraph_1": "Sementara yang lain mengejar modal ventura, kami telah memilih jalur yang berbeda. Kami dengan bangga beroperasi secara mandiri, yang berarti kami bertanggung jawab kepada pelanggan kami, bukan kepada ruang rapat. Kemandirian ini memungkinkan kami untuk fokus membangun produk terbaik yang mungkin, membuat keputusan untuk jangka panjang, dan mempertahankan budaya perusahaan yang membawa kami sampai di sini.",
+      "paragraph_2": "Setiap pelanggan yang percaya pada visi kami. Setiap tim yang mempercayakan alur kerja mereka kepada kami. Setiap orang yang memilih Blue daripada alternatif yang didanai secara besar-besaran. Anda bukan hanya pengguna – Anda adalah mitra dalam membangun sesuatu yang berkelanjutan.",
+      "runway": "Landasan",
+      "title": "Pendanaan",
+      "vc_raised": "Modal Ventura yang Dihimpun"
+    },
+    "global_team": {
+      "description": "Ini adalah tempat di mana pekerjaan terjadi.",
+      "title": "Tim dan infrastruktur yang terdistribusi secara global"
+    },
+    "learn_more": {
+      "description": "Selami wawasan kami di mana kami membagikan pemikiran kami tentang membangun proses yang lebih baik, meningkatkan operasi, dan menciptakan produk kelas dunia tanpa modal ventura.",
+      "title": "Ingin belajar lebih lanjut?"
+    },
+    "mission_title": "Misi kami adalah mengorganisir pekerjaan di seluruh dunia.",
+    "page_subtitle": "Kami adalah perusahaan independen yang memiliki semangat untuk membantu tim bekerja lebih baik, bersama-sama.",
+    "page_title": "Blue membawa kebahagiaan dalam manajemen proses.",
+    "stats": {
+      "countries_label": "Negara yang dilayani",
+      "countries_number": "120+",
+      "customers_label": "pelanggan yang luar biasa",
+      "customers_number": "17.000+",
+      "years_label": "Tahun beroperasi",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Didirikan sebagai respons terhadap tantangan dalam meningkatkan skala sebuah konsultan. Visi: menjadikan manajemen proses menyenangkan.",
+      "2018_title": "Blue lahir",
+      "2019_desc": "Pelanggan pertama Blue memvalidasi visi tersebut. Perjalanan dari konsep ke realitas dimulai.",
+      "2019_title": "Pelanggan pertama yang membayar",
+      "2020_desc": "Kabar tentang pendekatan unik Blue menyebar. Tim-tim menyukai kombinasi kesederhanaan dan kekuatan.",
+      "2020_title": "Tonggak 1.000 pelanggan",
+      "2021_desc": "API diluncurkan dengan cakupan fitur 100%, memungkinkan integrasi yang kuat dan kemampuan otomatisasi.",
+      "2021_title": "Peluncuran API",
+      "2022_desc": "Bloo menjadi Blue, menandai babak baru dalam perjalanan kami dengan identitas merek yang diperbarui.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Fitur enterprise termasuk White Label, izin lanjutan, dan API v2 membantu Blue untuk berkembang ke pelanggan enterprise.",
+      "2024_title": "Peluncuran White Label",
+      "2025_desc": "Komitmen terhadap misi kami: mengorganisir pekerjaan dunia dengan membangun platform manajemen proses terbaik di planet ini.",
+      "2025_title": "Perjalanan masih berlanjut",
+      "title": "Perjalanan Kami"
+    },
+    "why_different": {
+      "description": "Kami telah membangun Blue dari dasar dengan filosofi yang berbeda. Filosofi yang menempatkan kesederhanaan, fleksibilitas, dan keberhasilan pelanggan sebagai inti dari segala yang kami lakukan.",
+      "point_1_desc": "Kami memahami kesulitan Anda. Blue lahir dari pengalaman nyata dalam mengembangkan bisnis, bukan dari ruang rapat modal ventura yang mendorong pertumbuhan dengan biaya berapa pun.",
+      "point_1_title": "Dibangun oleh operator, untuk operator",
+      "point_2_desc": "Tim Anda akan benar-benar menggunakan Blue karena antarmukanya yang intuitif. Namun, Blue dapat dengan mudah diskalakan dari 5 hingga 5.000 pengguna tanpa perubahan arsitektur.",
+      "point_2_title": "Cukup sederhana untuk semua orang, cukup kuat untuk perusahaan.",
+      "point_3_desc": "Kami tidak memaksa Anda ke dalam alur kerja yang kaku. Blue menyesuaikan dengan proses yang sudah ada sambil memberikan Anda alat untuk meningkatkannya seiring waktu.",
+      "point_3_title": "Menyesuaikan dengan Anda, bukan sebaliknya.",
+      "title": "Mengapa Blue berbeda\u003cbr\u003edari platform lainnya."
+    }
+  },
+  "it": {
+    "awards": {
+      "description": "Fidato da migliaia di team in tutto il mondo e riconosciuto dai leader del settore.",
+      "title": "Premi e Riconoscimenti"
+    },
+    "blue_team_alt": "Team Blue",
+    "ceo_message": {
+      "greeting": "Ciao,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Sono Manny, il fondatore e CEO di Blue. Ho creato Blue per affrontare le sfide che ho incontrato mentre scalavo la mia consulenza. Si è rivelato che molte persone faticano a rimanere organizzate e a semplificare i loro processi aziendali.",
+      "paragraph_2": "L'idea centrale è che Blue è facile da usare, quindi il tuo team lo utilizza effettivamente. Abbiamo tutti sprecato denaro su piattaforme software che promettevano molto ma non hanno mantenuto le promesse: sono rigide, scomode e richiedono un'eternità per essere comprese.",
+      "paragraph_3": "Blue è diverso: è super facile da usare, incredibilmente flessibile eppure abbastanza potente per un lavoro serio. E la cosa fantastica è che non devi cambiare i tuoi processi! Blue si adatta ai tuoi processi esistenti, offrendoti visibilità, automazioni e tranquillità. Dormirai bene la notte sapendo che nulla sfugge.",
+      "paragraph_4": "Ecco perché ho creato Blue: perché non esiste un'azienda con una soluzione semplice per scalare le operazioni, senza tutte le complicazioni.",
+      "paragraph_5": "Grazie per aver letto e spero che ti piaccia utilizzare Blue!",
+      "paragraph_6": "So che ci piace costruirlo!",
+      "sign_off": "Rimani produttivo,",
+      "subtitle": "L'abbiamo costruito per te.",
+      "title": "Messaggio dal CEO",
+      "title_role": "Fondatore e CEO di Blue"
+    },
+    "cta": {
+      "title": "Pronto a vedere Blue in azione?"
+    },
+    "funding": {
+      "customers": "Clienti",
+      "description": "Siamo supportati dai più esigenti investitori al mondo: i nostri clienti.",
+      "founder_owned": "Fondatore Proprietario",
+      "our_investors": "I nostri investitori?",
+      "paragraph_1": "Mentre altri inseguono il capitale di rischio, noi abbiamo scelto un percorso diverso. Siamo orgogliosamente autofinanziati, il che significa che rispondiamo ai nostri clienti, non a una sala riunioni. Questa indipendenza ci consente di concentrarci sulla creazione del miglior prodotto possibile, prendere decisioni a lungo termine e mantenere la cultura aziendale che ci ha portato fin qui.",
+      "paragraph_2": "Ogni cliente che crede nella nostra visione. Ogni team che si fida di noi per i propri flussi di lavoro. Ogni persona che ha scelto Blue rispetto alle alternative fortemente finanziate. Non siete solo utenti – siete partner nella costruzione di qualcosa di sostenibile.",
+      "runway": "Pista",
+      "title": "Finanziamento",
+      "vc_raised": "Capitale di rischio raccolto"
+    },
+    "global_team": {
+      "description": "Questo è il luogo in cui avviene il lavoro.",
+      "title": "Team e infrastruttura distribuiti a livello globale"
+    },
+    "learn_more": {
+      "description": "Immergiti nelle nostre intuizioni dove condividiamo i nostri pensieri su come costruire processi migliori, scalare le operazioni e creare un prodotto di classe mondiale senza capitale di rischio.",
+      "title": "Vuoi saperne di più?"
+    },
+    "mission_title": "La nostra missione è organizzare il lavoro nel mondo.",
+    "page_subtitle": "Siamo un'azienda indipendente con la passione di aiutare i team a lavorare meglio, insieme.",
+    "page_title": "Blue sta portando gioia nella gestione dei processi.",
+    "stats": {
+      "countries_label": "Paesi serviti",
+      "countries_number": "120+",
+      "customers_label": "clienti incredibili",
+      "customers_number": "17.000+",
+      "years_label": "Anni di attività",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Fondata in risposta alle sfide della scalabilità di una consulenza. La visione: rendere la gestione dei processi un'esperienza piacevole.",
+      "2018_title": "Blue è nato.",
+      "2019_desc": "Il primo cliente di Blue convalida la visione. Inizia il viaggio dal concetto alla realtà.",
+      "2019_title": "Primo cliente pagante",
+      "2020_desc": "La voce si diffonde riguardo all'approccio unico di Blue. I team amano la combinazione di semplicità e potenza.",
+      "2020_title": "Traguardo di 1.000 clienti",
+      "2021_desc": "Le API vengono lanciate con una copertura delle funzionalità del 100%, consentendo potenti integrazioni e capacità di automazione.",
+      "2021_title": "Lancio API",
+      "2022_desc": "Bloo diventa Blue, segnando un nuovo capitolo nel nostro percorso con una rinnovata identità di marca.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Le funzionalità per le imprese, tra cui White Label, permessi avanzati e API v2, aiutano Blue a scalare per i clienti enterprise.",
+      "2024_title": "Lancio White Label",
+      "2025_desc": "Impegnati nella nostra missione: organizzare il lavoro nel mondo costruendo la migliore piattaforma di gestione dei processi del pianeta.",
+      "2025_title": "Il viaggio continua",
+      "title": "Il nostro viaggio"
+    },
+    "why_different": {
+      "description": "Abbiamo costruito Blue da zero con una filosofia diversa. Una che pone semplicità, flessibilità e successo del cliente al centro di tutto ciò che facciamo.",
+      "point_1_desc": "Abbiamo sentito il vostro dolore. Blue è nato dall'esperienza reale di scalare aziende, non dalle sale riunioni di venture capital che spingono per la crescita a qualsiasi costo.",
+      "point_1_title": "Costruito da operatori, per operatori",
+      "point_2_desc": "Il tuo team utilizzerà effettivamente Blue perché è intuitivo. Inoltre, scala senza sforzo da 5 a 5.000 utenti senza modifiche architettoniche.",
+      "point_2_title": "Semplice abbastanza per tutti, potente abbastanza per le imprese.",
+      "point_3_desc": "Non ti costringiamo a flussi di lavoro rigidi. Blue si adatta ai tuoi processi esistenti, offrendoti gli strumenti per migliorarli nel tempo.",
+      "point_3_title": "Si adatta a te, non il contrario.",
+      "title": "Perché Blue è diversa\u003cbr\u003eda altre piattaforme."
+    }
+  },
+  "ja": {
+    "awards": {
+      "description": "世界中の何千ものチームに信頼され、業界のリーダーに認められています。",
+      "title": "受賞歴と評価"
+    },
+    "blue_team_alt": "ブルーチーム",
+    "ceo_message": {
+      "greeting": "こんにちは、",
+      "name": "エマヌエーレ・ファヤ",
+      "paragraph_1": "私はマニー、Blueの創設者兼CEOです。私はコンサルタント業を拡大する際に直面した課題に対処するためにBlueを作りました。多くの人々が整理整頓を維持し、ビジネスプロセスを効率化するのに苦労していることがわかりました。",
+      "paragraph_2": "中心となるアイデアは、Blueが使いやすいということです。そのため、あなたのチームは実際にそれを利用します。私たちは皆、多くを約束しながらも実際には期待に応えられなかったソフトウェアプラットフォームにお金を無駄にしてきました。それらは硬直していて、使いにくく、理解するのに時間がかかります。",
+      "paragraph_3": "Blueは異なります — 使いやすく、非常に柔軟でありながら、本格的な作業にも十分なパワーを持っています。そして素晴らしいことに、プロセスを変更する必要はありません！Blueは既存のプロセスに適応し、可視性、自動化、そして安心感を提供します。何も見落とすことがないと知っているので、安心して夜も眠れます。",
+      "paragraph_4": "だからこそ、私はBlueを作りました。すべての余計なものなしに、オペレーションをスケールするためのシンプルなソリューションを提供する会社が存在しなかったからです。",
+      "paragraph_5": "お読みいただきありがとうございます。Blueのご利用をお楽しみください！",
+      "paragraph_6": "私たちがそれを作るのを楽しんでいることは知っています！",
+      "sign_off": "生産性を保ちましょう、",
+      "subtitle": "私たちはこれをあなたのために作りました。",
+      "title": "CEOからのメッセージ",
+      "title_role": "Blueの創設者兼CEO"
+    },
+    "cta": {
+      "title": "Blueの実演をご覧になる準備はできましたか？"
+    },
+    "funding": {
+      "customers": "顧客",
+      "description": "私たちは、世界で最も要求の厳しい投資家であるお客様に支えられています。",
+      "founder_owned": "創業者所有",
+      "our_investors": "私たちの投資家は？",
+      "paragraph_1": "他の企業がベンチャーキャピタルを追い求める中、私たちは異なる道を選びました。私たちは誇りを持って自己資金で運営しており、これは取締役会ではなく、お客様に対して責任を持つことを意味します。この独立性により、私たちは可能な限り最高の製品を構築し、長期的な判断を下し、ここまで私たちを導いてくれた企業文化を維持することに集中できます。",
+      "paragraph_2": "私たちのビジョンを信じてくださるすべてのお客様。私たちにワークフローを任せてくださるすべてのチーム。資金が豊富な代替手段の中からBlueを選んでくださったすべての方々。あなた方は単なるユーザーではありません – 持続可能なものを共に築くパートナーです。",
+      "runway": "ランウェイ",
+      "title": "資金調達",
+      "vc_raised": "調達したベンチャーキャピタル"
+    },
+    "global_team": {
+      "description": "ここが作業が行われる場所です。",
+      "title": "グローバルに分散したチームとインフラストラクチャ"
+    },
+    "learn_more": {
+      "description": "私たちのインサイトに飛び込み、より良いプロセスの構築、オペレーションのスケーリング、ベンチャーキャピタルなしでの世界クラスの製品の創造についての考えを共有します。",
+      "title": "もっと知りたいですか？"
+    },
+    "mission_title": "私たちの使命は、世界の仕事を整理することです。",
+    "page_subtitle": "私たちは、チームがより良く協力して働けるよう支援することに情熱を注ぐ独立した会社です。",
+    "page_title": "Blueはプロセス管理に喜びをもたらします。",
+    "stats": {
+      "countries_label": "提供国",
+      "countries_number": "120以上",
+      "customers_label": "素晴らしい顧客",
+      "customers_number": "17,000以上",
+      "years_label": "ビジネス年数",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "コンサルタントのスケーリングに関する課題に応えるために設立されました。ビジョン：プロセス管理を楽しいものにすること。",
+      "2018_title": "Blueが誕生しました",
+      "2019_desc": "Blueの最初の顧客がビジョンを検証します。コンセプトから現実への旅が始まります。",
+      "2019_title": "最初の有料顧客",
+      "2020_desc": "Blueのユニークなアプローチについての情報が広がっています。チームはそのシンプルさとパワーの組み合わせを愛しています。",
+      "2020_title": "1,000顧客のマイルストーン",
+      "2021_desc": "APIは100%の機能カバレッジでローンチし、強力な統合と自動化機能を実現します。",
+      "2021_title": "APIのローンチ",
+      "2022_desc": "BlooはBlueに生まれ変わり、新しいブランドアイデンティティで私たちの旅の新しい章を迎えます。",
+      "2022_title": "リブランディング",
+      "2024_desc": "エンタープライズ機能には、ホワイトラベル、詳細な権限設定、API v2が含まれており、Blueはエンタープライズ顧客に対応するためにスケールアップします。",
+      "2024_title": "ホワイトラベルの立ち上げ",
+      "2025_desc": "私たちの使命にコミットしています：世界の仕事を整理し、地球上で最高のプロセス管理プラットフォームを構築すること。",
+      "2025_title": "旅は続きます",
+      "title": "私たちの旅"
+    },
+    "why_different": {
+      "description": "私たちは、シンプルさ、柔軟性、そして顧客の成功をすべての中心に置く異なる哲学で、ゼロからBlueを構築しました。",
+      "point_1_desc": "私たちはあなたの苦労を理解しています。Blueは、成長を何よりも優先するベンチャーキャピタルのボードルームではなく、実際のビジネスを拡大する経験から生まれました。",
+      "point_1_title": "オペレーターによって、オペレーターのために作られました",
+      "point_2_desc": "あなたのチームは、Blueが直感的であるため、実際に使用するでしょう。それでも、5人から5,000人のユーザーまで、アーキテクチャの変更なしにスケールアップできます。",
+      "point_2_title": "誰にでも簡単で、企業にとっては強力です。",
+      "point_3_desc": "私たちはあなたを厳格なワークフローに押し込むことはありません。Blueはあなたの既存のプロセスに合わせて形を変え、時間をかけてそれらを改善するためのツールを提供します。",
+      "point_3_title": "あなたに合わせて、逆ではありません。",
+      "title": "Blueが他のプラットフォームと異なる理由\u003cbr\u003e"
+    }
+  },
+  "km": {
+    "awards": {
+      "description": "ទទួលបានការជឿជាក់ពីក្រុមហ៊ុនរាប់ពាន់នៅជុំវិញពិភពលោក និងត្រូវបានស្គាល់ដោយមេដឹកនាំឧស្សាហកម្ម។",
+      "title": "រង្វាន់ និងការទទួលស្គាល់"
+    },
+    "blue_team_alt": "ក្រុមប្លូ",
+    "ceo_message": {
+      "greeting": "សួស្តី!",
+      "name": "Emanuele Faja",
+      "paragraph_1": "ខ្ញុំគឺម៉ាន់នី អ្នកបង្កើត និងប្រធានអង្គភាពនៃ Blue។ ខ្ញុំបានបង្កើត Blue ដើម្បីដោះស្រាយបញ្ហាដែលខ្ញុំបានប្រឈមមុខនៅពេលបង្កើនក្រុមប្រឹក្សារបស់ខ្ញុំ។ ចុងក្រោយនេះ - មនុស្សជាច្រើនមានការលំបាកក្នុងការរក្សាសម្រួល និងធ្វើឱ្យដំណើរការអាជីវកម្មរបស់ពួកគេមានប្រសិទ្ធភាព។",
+      "paragraph_2": "គំនិតមូលដ្ឋានគឺថា Blue ប្រើប្រាស់បានយ៉ាងងាយស្រួល ដូច្នេះក្រុមរបស់អ្នកអាចប្រើប្រាស់វាបានយ៉ាងពិតប្រាកដ។ យើងទាំងអស់គ្នាបានចំណាយប្រាក់លើវេទិកាផ្សេងៗដែលបានសន្យាថានឹងផ្តល់អ្វីៗជាច្រើន ប៉ុន្តែបរាជ័យក្នុងការផ្តល់នូវអ្វីដែលបានសន្យា៖ វាមានភាពតឹងរឹង មិនងាយស្រួល និងត្រូវការពេលវេលាយូរដើម្បីយល់ច្បាស់។",
+      "paragraph_3": "Blue គឺខុសគ្នា — វាងាយស្រួលក្នុងការប្រើប្រាស់, មានភាពបត់បែនខ្លាំង, ហើយមានអំណាចគ្រប់គ្រាន់សម្រាប់ការងារដែលធ្ងន់ធ្ងរ។ ហើយអ្វីដែលអស្ចារ្យគឺអ្នកមិនចាំបាច់ប្តូរប្រព័ន្ធរបស់អ្នកទេ! Blue អាចបត់បែនទៅតាមប្រព័ន្ធដែលមានស្រាប់របស់អ្នក — ផ្តល់ឱ្យអ្នកនូវការមើលឃើញ, ការបង្កើតស្វ័យប្រវត្តិ, និងសេចក្តីសុខចិត្ត។ អ្នកនឹងគេងបានល្អនៅយប់ ដោយដឹងថាអ្វីៗមិនបានរំលងចេញពីក្រឡា។",
+      "paragraph_4": "ហេតុអ្វីបានជា​ខ្ញុំបានកសាង Blue ឡើយ - ពីព្រោះមិនមានក្រុមហ៊ុនណាមួយដែលមានដំណោះស្រាយសាមញ្ញសម្រាប់ការពង្រីកប្រតិបត្តិការ ដោយគ្មានអ្វីដែលមិនចាំបាច់។",
+      "paragraph_5": "សូមអរគុណសម្រាប់ការអាន ហើយខ្ញុំសង្ឃឹមថាអ្នកនឹងរីករាយក្នុងការប្រើប្រាស់ Blue!",
+      "paragraph_6": "ខ្ញុំដឹងថាយើងរីករាយក្នុងការបង្កើតវា!",
+      "sign_off": "រក្សាទំនាក់ទំនងសកម្ម,",
+      "subtitle": "យើងបានកសាងនេះសម្រាប់អ្នក។",
+      "title": "សារពីប្រធានអង្គភាព",
+      "title_role": "ស្ថាបនិក និងអគ្គនាយកនៃ Blue"
+    },
+    "cta": {
+      "title": "តើអ្នក Prepared to see Blue in action?"
+    },
+    "funding": {
+      "customers": "អតិថិជន",
+      "description": "យើងត្រូវបានគាំទ្រដោយអ្នកវិនិយោគដែលមានការទាមទារបំផុតនៅលើពិភពលោក៖ អតិថិជនរបស់យើង។",
+      "founder_owned": "បង្កើតដោយម្ចាស់",
+      "our_investors": "អ្នកវិនិយោគរបស់យើង?",
+      "paragraph_1": "នៅពេលដែលអ្នកដទៃតាមរកទុនវិនិយោគ, យើងបានជ្រើសរើសផ្លូវផ្សេង។ យើងមានមោទនភាពក្នុងការបង្កើតដោយខ្លួនឯង, ដែលមានន័យថាយើងឆ្លើយតបចំពោះអតិថិជនរបស់យើង, មិនមែនចំពោះក្រុមប្រឹក្សា។ សេរីភាពនេះអនុញ្ញាតឱ្យយើងផ្តោតលើការបង្កើតផលិតផលល្អបំផុត, ធ្វើការសម្រេចចិត្តសម្រាប់អនាគត, និងរក្សាសាសន៍ក្រុមហ៊ុនដែលនាំយើងមកទីនេះ។",
+      "paragraph_2": "រាល់អតិថិជនដែលជឿជាក់ក្នុងទស្សនៈរបស់យើង។ រាល់ក្រុមដែលទុកចិត្តយើងក្នុងការគ្រប់គ្រងដំណើរការរបស់ពួកគេ។ រាល់មនុស្សដែលបានជ្រើសរើស Blue ជាងជម្រើសដែលមានការគាំទ្រពាណិជ្ជកម្មយ៉ាងខ្លាំង។ អ្នកមិនមែនជាអ្នកប្រើប្រាស់ទេ - អ្នកគឺជាដៃគូក្នុងការបង្កើតអ្វីមួយដែលអាចទ្រាំទ្រ​បាន។",
+      "runway": "របងហោះ",
+      "title": "មូលនិធិ",
+      "vc_raised": "ទុនវិនិយោគដែលបានប្រមូលរួម"
+    },
+    "global_team": {
+      "description": "នេះគឺជាកន្លែងដែលការងារកើតឡើង។",
+      "title": "ក្រុម និងមូលដ្ឋានដែលចែកចាយនៅទូទាំងពិភពលោក"
+    },
+    "learn_more": {
+      "description": "ចូលទៅក្នុងការយល់ដឹងរបស់យើង ដែលយើងចែករំលែកគំនិតអំពីការកសាងដំណើរការដែលល្អប្រសើរ ការពង្រីកប្រតិបត្តិការ និងការបង្កើតផលិតផលថ្នាក់ពិភពលោកដោយគ្មានការវិនិយោគពីអ្នកវិនិយោគ។",
+      "title": "ចង់រៀនបន្ថែមទៀតទេ?"
+    },
+    "mission_title": "បេសកកម្មរបស់យើងគឺដើម្បីរៀបចំការងារនៅលើពិភពលោក។",
+    "page_subtitle": "យើងគឺជាក្រុមហ៊ុនឯករាជ្យមួយដែលមានចំណង់ចំណូលចិត្តក្នុងការជួយក្រុមធ្វើការល្អប្រសើរឡើងរួមគ្នា។",
+    "page_title": "Blue កំពុងនាំមកនូវភាពរីករាយក្នុងការគ្រប់គ្រងដំណើរការ។",
+    "stats": {
+      "countries_label": "ប្រទេសដែលបានផ្តល់សេវា",
+      "countries_number": "120+",
+      "customers_label": "អតិថិជនអស្ចារ្យ",
+      "customers_number": "17,000+",
+      "years_label": "ឆ្នាំក្នុងអាជីវកម្ម",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "បានបង្កើតឡើងក្នុងការឆ្លើយតបនឹងបញ្ហានៃការពង្រីកក្រុមហ៊ុនប្រឹក្សា។ ទស្សនៈ៖ ធ្វើឲ្យការគ្រប់គ្រងដំណើរការមានភាពរីករាយ។",
+      "2018_title": "Blue បានកើតឡើង",
+      "2019_desc": "អតិថិជនដំបូងរបស់ Blue បានអះអាងពីទស្សនវិស័យ។ ការធ្វើដំណើរពីគំនិតទៅជ realidade ចាប់ផ្តើមឡើង។",
+      "2019_title": "អតិថិជនដែលបង់ប្រាក់ដំបូង",
+      "2020_desc": "ពាក្យបានចេញពីការចូលរួមអំពីវិធីសាស្ត្រដ៏មានលក្ខណៈពិសេសរបស់ Blue។ ក្រុមការងារមានសេចក្តីស្រឡាញ់នូវភាពសាមញ្ញ និងកម្លាំងដែលបញ្ចូលគ្នា។",
+      "2020_title": "មុខងារ 1,000 អតិថិជន",
+      "2021_desc": "API ត្រូវបានចាប់ផ្តើមជាមួយការការពារសមត្ថភាព 100% ដែលអនុញ្ញាតឱ្យមានការតភ្ជាប់ និងសមត្ថភាពស្វ័យប្រវត្តិដ៏មានអំណាច។",
+      "2021_title": "ការចាប់ផ្តើម API",
+      "2022_desc": "Bloo បានក្លាយជា Blue ដែលសំដែងពីជំពូកថ្មីក្នុងដំណើររបស់យើងជាមួយអត្តសញ្ញាណម៉ាកថ្មី។",
+      "2022_title": "ការផ្លាស់ប្តូរតំបន់ម៉ាក",
+      "2024_desc": "លក្ខណៈពិសេសសម្រាប់សហគ្រាស រួមមាន White Label, អាជ្ញាប័ណ្ណកម្រិតខ្ពស់ និង API v2 ជួយឲ្យ Blue អាចពង្រីកទៅកាន់អតិថិជនសហគ្រាស។",
+      "2024_title": "ការចាប់ផ្តើម White Label",
+      "2025_desc": "តែងតែប្តេជ្ញាចិត្តចំពោះបេសកកម្មរបស់យើង៖ រៀបចំការងារនៅលើពិភពលោកដោយការកសាងវេទិកាអ្នកគ្រប់គ្រងដំណើរការល្អបំផុតនៅលើភពផែនដី។",
+      "2025_title": "ដំណើរនេះបន្តទៀត",
+      "title": "ដំណើរកំសាន្តរបស់យើង"
+    },
+    "why_different": {
+      "description": "យើងបានកសាង Blue ពីមូលដ្ឋានជាមួយទស្សនៈខុសគ្នា។ ទស្សនៈមួយដែលដាក់សាមញ្ញភាព, ភាពអាចបត់បែន, និងភាពជោគជ័យរបស់អតិថិជនជាគន្លងសំខាន់ក្នុងអ្វីគ្រប់យ៉ាងដែលយើងធ្វើ។",
+      "point_1_desc": "យើងបានស្គាល់ពីការឈឺចាប់របស់អ្នក។ Blue បានកើតឡើងពីបទពិសោធន៍ក្នុងពិភពលោកពេលពង្រីកអាជីវកម្ម មិនមែនពីក្រុមប្រឹក្សាធនាគារវិនិយោគដែលចុះបញ្ជីការលូតលាស់ដោយគ្មានការពិចារណា។",
+      "point_1_title": "សាងសង់ដោយអ្នកប្រតិបត្តិការ សម្រាប់អ្នកប្រតិបត្តិការ",
+      "point_2_desc": "ក្រុមរបស់អ្នកនឹងប្រើប្រាស់ Blue ពីព្រោះវាមានភាពងាយស្រួលក្នុងការប្រើប្រាស់។ ទោះយ៉ាងណា វាអាចពង្រីកបានយ៉ាងរលូនចាប់ពី ៥ ទៅ ៥,០០០ អ្នកប្រើដោយគ្មានការផ្លាស់ប្តូរប្រព័ន្ធស្ថាបត្យកម្ម។",
+      "point_2_title": "គឺមានភាពសាមញ្ញគ្រប់គ្នា ប៉ុន្តែមានអំណាចគ្រប់គ្រាន់សម្រាប់សហគ្រាស",
+      "point_3_desc": "យើងមិនបង្ខំអ្នកឲ្យប្រើប្រាស់ការងារដែលតឹងរឹងទេ។ Blue បង្កើតឡើងដើម្បីសម្រួលទៅនឹងដំណើរការដែលអ្នកមាននៅរួមគ្នា ខណៈពេលផ្តល់ឧបករណ៍ដើម្បីបង្កើនប្រសិទ្ធភាពរបស់វានៅពេលវេលា។",
+      "point_3_title": "ការប្រែប្រួលទៅតាមអ្នក មិនមែនតាមវិធីផ្សេងទៀតទេ",
+      "title": "ហេតុអ្វីបានជា Blue មានភាពខុសគ្នាពីវេទិកាផ្សេងទៀត។"
+    }
+  },
+  "ko": {
+    "awards": {
+      "description": "전 세계 수천 개 팀의 신뢰를 받으며, 업계 리더들에 의해 인정받고 있습니다.",
+      "title": "수상 및 인정"
+    },
+    "blue_team_alt": "블루 팀",
+    "ceo_message": {
+      "greeting": "안녕하세요,",
+      "name": "에마누엘레 파야",
+      "paragraph_1": "저는 Blue의 창립자이자 CEO인 Manny입니다. 저는 제 컨설팅 회사를 확장하면서 직면했던 문제들을 해결하기 위해 Blue를 만들었습니다. 많은 사람들이 조직을 유지하고 비즈니스 프로세스를 간소화하는 데 어려움을 겪고 있다는 사실을 알게 되었습니다.",
+      "paragraph_2": "중심 아이디어는 Blue가 사용하기 쉽기 때문에 귀하의 팀이 실제로 이를 사용한다는 것입니다. 우리는 모두 많은 약속을 했지만 실망스러운 소프트웨어 플랫폼에 돈을 낭비한 경험이 있습니다: 이들은 경직되어 있고, 사용하기 불편하며, 이해하는 데 오랜 시간이 걸립니다.",
+      "paragraph_3": "Blue는 다릅니다 — 사용이 매우 간편하고, 놀라울 정도로 유연하며, 동시에 진지한 작업을 수행할 수 있을 만큼 강력합니다. 그리고 좋은 점은 당신의 프로세스를 변경할 필요가 없다는 것입니다! Blue는 기존 프로세스에 맞춰 조정되어 가시성, 자동화 및 마음의 평화를 제공합니다. 아무것도 놓치는 일이 없다는 것을 알고 편안하게 잘 수 있습니다.",
+      "paragraph_4": "그래서 제가 Blue를 만든 이유입니다. 복잡한 요소 없이 운영을 확장할 수 있는 간단한 솔루션을 제공하는 회사가 없기 때문입니다.",
+      "paragraph_5": "읽어 주셔서 감사합니다. Blue를 사용하시면서 즐거운 경험이 되시길 바랍니다!",
+      "paragraph_6": "우리가 그것을 만드는 것을 즐긴다는 것을 알고 있습니다!",
+      "sign_off": "생산성을 유지하세요,",
+      "subtitle": "우리는 이것을 당신을 위해 만들었습니다.",
+      "title": "CEO의 메시지",
+      "title_role": "Blue의 창립자 및 CEO"
+    },
+    "cta": {
+      "title": "Blue의 작동 모습을 보실 준비가 되셨나요?"
+    },
+    "funding": {
+      "customers": "고객",
+      "description": "우리는 세계에서 가장 까다로운 투자자인 고객들로부터 지원받고 있습니다.",
+      "founder_owned": "창립자 소유",
+      "our_investors": "우리의 투자자들?",
+      "paragraph_1": "다른 이들이 벤처 자본을 쫓는 동안, 우리는 다른 길을 선택했습니다. 우리는 자립적으로 운영되고 있으며, 이는 우리가 고객에게 책임을 진다는 것을 의미합니다. 이러한 독립성 덕분에 우리는 가능한 최고의 제품을 만드는 데 집중하고, 장기적인 결정을 내리며, 우리를 여기까지 이끌어 준 회사 문화를 유지할 수 있습니다.",
+      "paragraph_2": "우리의 비전을 믿는 모든 고객. 우리의 워크플로우를 신뢰하는 모든 팀. 자금이 풍부한 대안 대신 Blue를 선택한 모든 사람. 여러분은 단순한 사용자가 아닙니다 – 여러분은 지속 가능한 무언가를 구축하는 파트너입니다.",
+      "runway": "활주로",
+      "title": "자금 지원",
+      "vc_raised": "모집된 벤처 캐피탈"
+    },
+    "global_team": {
+      "description": "여기서 작업이 이루어집니다.",
+      "title": "전 세계에 분산된 팀 및 인프라"
+    },
+    "learn_more": {
+      "description": "우리의 통찰력에 대해 알아보세요. 우리는 더 나은 프로세스를 구축하고, 운영을 확장하며, 벤처 자본 없이 세계적 수준의 제품을 만드는 방법에 대한 생각을 공유합니다.",
+      "title": "더 알고 싶으신가요?"
+    },
+    "mission_title": "우리의 사명은 세계의 업무를 조직하는 것입니다.",
+    "page_subtitle": "우리는 팀이 함께 더 잘 일할 수 있도록 돕는 데 열정을 가진 독립적인 회사입니다.",
+    "page_title": "Blue는 프로세스 관리에 즐거움을 더하고 있습니다.",
+    "stats": {
+      "countries_label": "제공 국가",
+      "countries_number": "120+",
+      "customers_label": "믿을 수 없는 고객들",
+      "customers_number": "17,000+",
+      "years_label": "사업 연수",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "컨설팅 회사를 확장하는 데 따른 도전 과제에 대응하여 설립되었습니다. 비전: 프로세스 관리가 즐거워지도록 합니다.",
+      "2018_title": "Blue가 탄생했습니다.",
+      "2019_desc": "Blue의 첫 고객이 비전을 검증합니다. 개념에서 현실로의 여정이 시작됩니다.",
+      "2019_title": "첫 유료 고객",
+      "2020_desc": "블루의 독특한 접근 방식에 대한 소문이 퍼집니다. 팀들은 단순함과 강력함의 조합을 좋아합니다.",
+      "2020_title": "1,000 고객 이정표",
+      "2021_desc": "API는 100% 기능 커버리지를 제공하여 강력한 통합 및 자동화 기능을 지원합니다.",
+      "2021_title": "API 출시",
+      "2022_desc": "Bloo는 Blue로 변경되어 새롭게 리브랜딩된 아이덴티티와 함께 우리의 여정에서 새로운 장을 열게 됩니다.",
+      "2022_title": "리브랜딩",
+      "2024_desc": "화이트 라벨, 고급 권한, API v2와 같은 엔터프라이즈 기능은 Blue가 엔터프라이즈 고객에게 확장할 수 있도록 돕습니다.",
+      "2024_title": "화이트 라벨 출시",
+      "2025_desc": "우리의 사명에 헌신합니다: 지구상에서 최고의 프로세스 관리 플랫폼을 구축하여 세계의 업무를 조직합니다.",
+      "2025_title": "여정은 계속됩니다",
+      "title": "우리의 여정"
+    },
+    "why_different": {
+      "description": "우리는 모든 것을 단순성, 유연성 및 고객 성공을 중심으로 하는 다른 철학으로 Blue를 처음부터 끝까지 구축했습니다.",
+      "point_1_desc": "우리는 당신의 고통을 느꼈습니다. Blue는 비용을 불문하고 성장을 추구하는 벤처 캐피탈 이사회가 아닌, 실제 비즈니스를 확장하는 경험에서 태어났습니다.",
+      "point_1_title": "운영자를 위해, 운영자에 의해 제작됨",
+      "point_2_desc": "귀하의 팀은 Blue가 직관적이기 때문에 실제로 사용할 것입니다. 또한, 5명에서 5,000명 사용자까지 아키텍처 변경 없이 손쉽게 확장됩니다.",
+      "point_2_title": "모두가 쉽게 사용할 수 있을 만큼 간단하고, 기업에 적합할 만큼 강력합니다.",
+      "point_3_desc": "우리는 당신을 경직된 워크플로우에 강요하지 않습니다. Blue는 기존 프로세스에 맞춰 조정되며, 시간이 지남에 따라 이를 개선할 수 있는 도구를 제공합니다.",
+      "point_3_title": "당신에 맞춰 조정됩니다, 반대가 아닙니다.",
+      "title": "Blue가 다른 플랫폼과 다른 이유\u003cbr\u003e"
+    }
+  },
+  "nl": {
+    "awards": {
+      "description": "Vertrouwd door duizenden teams wereldwijd en erkend door toonaangevende bedrijven.",
+      "title": "Awards \u0026 Recognition"
+    },
+    "blue_team_alt": "Blauw Team",
+    "ceo_message": {
+      "greeting": "Hallo daar,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Ik ben Manny, de oprichter en CEO van Blue. Ik heb Blue opgericht om de uitdagingen aan te pakken waarmee ik te maken kreeg tijdens het opschalen van mijn adviesbureau. Het blijkt dat veel mensen moeite hebben om georganiseerd te blijven en hun bedrijfsprocessen te stroomlijnen.",
+      "paragraph_2": "Het centrale idee is dat Blue eenvoudig te gebruiken is, zodat je team het daadwerkelijk gebruikt. We hebben allemaal geld verspild aan softwareplatforms die veel beloofden maar niet konden leveren: ze zijn star, ongemakkelijk en het kost een eeuwigheid om ze te begrijpen.",
+      "paragraph_3": "Blue is anders — Het is super eenvoudig te gebruiken, ongelooflijk flexibel en toch krachtig genoeg voor serieus werk. En het mooie is dat je je processen niet hoeft te veranderen! Blue past zich aan je bestaande processen aan — en biedt je zichtbaarheid, automatiseringen en gemoedsrust. Je slaapt goed 's nachts, wetende dat er niets tussen de kieren door glipt.",
+      "paragraph_4": "Dat is waarom ik Blue heb gebouwd — omdat er geen bedrijf is met een eenvoudige oplossing voor het opschalen van operaties, zonder al het gedoe.",
+      "paragraph_5": "Bedankt voor het lezen, en ik hoop dat je plezier hebt in het gebruik van Blue!",
+      "paragraph_6": "Ik weet dat we ervan genieten om het te bouwen!",
+      "sign_off": "Blijf productief,",
+      "subtitle": "We hebben dit voor jou gebouwd.",
+      "title": "Bericht van de CEO",
+      "title_role": "Oprichter \u0026 CEO van Blue"
+    },
+    "cta": {
+      "title": "Klaar om Blue in actie te zien?"
+    },
+    "funding": {
+      "customers": "Klanten",
+      "description": "We worden ondersteund door de meest veeleisende investeerders ter wereld: onze klanten.",
+      "founder_owned": "Oprichtersbezit",
+      "our_investors": "Onze investeerders?",
+      "paragraph_1": "Terwijl anderen op zoek zijn naar durfkapitaal, hebben wij voor een andere weg gekozen. We zijn trots op onze bootstrapping, wat betekent dat we verantwoording afleggen aan onze klanten, niet aan een bestuurskamer. Deze onafhankelijkheid stelt ons in staat om ons te concentreren op het bouwen van het best mogelijke product, beslissingen voor de lange termijn te nemen en de bedrijfscultuur te behouden die ons hier heeft gebracht.",
+      "paragraph_2": "Elke klant die gelooft in onze visie. Elk team dat ons vertrouwt met hun workflows. Iedere persoon die voor Blue heeft gekozen boven de zwaar gefinancierde alternatieven. Jullie zijn niet alleen gebruikers – jullie zijn partners in het bouwen van iets duurzaams.",
+      "runway": "Startbaan",
+      "title": "Financiering",
+      "vc_raised": "Venture Capital Verhoogd"
+    },
+    "global_team": {
+      "description": "Dit is waar het werk gebeurt.",
+      "title": "Globaal verspreid team en infrastructuur"
+    },
+    "learn_more": {
+      "description": "Duik in onze inzichten waarin we onze gedachten delen over het bouwen van betere processen, het opschalen van operaties en het creëren van een product van wereldklasse zonder durfkapitaal.",
+      "title": "Wilt u meer leren?"
+    },
+    "mission_title": "Onze missie is om het werk in de wereld te organiseren.",
+    "page_subtitle": "We zijn een onafhankelijk bedrijf met een passie voor het helpen van teams om beter samen te werken.",
+    "page_title": "Blue brengt vreugde in procesbeheer.",
+    "stats": {
+      "countries_label": "Gediend landen",
+      "countries_number": "120+",
+      "customers_label": "ongelooflijke klanten",
+      "customers_number": "17.000+",
+      "years_label": "Jaren in bedrijf",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Opgericht als reactie op de uitdagingen van het opschalen van een consultancy. De visie: maak procesmanagement aangenaam.",
+      "2018_title": "Blue is geboren",
+      "2019_desc": "De eerste klant van Blue valideert de visie. De reis van concept naar realiteit begint.",
+      "2019_title": "Eerste betalende klant",
+      "2020_desc": "Het nieuws verspreidt zich over Blue's unieke aanpak. Teams houden van de combinatie van eenvoud en kracht.",
+      "2020_title": "1.000 klanten mijlpaal",
+      "2021_desc": "API-lanceringen met 100% functie-dekking, waardoor krachtige integraties en automatiseringsmogelijkheden mogelijk zijn.",
+      "2021_title": "API Lancering",
+      "2022_desc": "Bloo wordt Blue, wat een nieuw hoofdstuk in onze reis markeert met een vernieuwde merkidentiteit.",
+      "2022_title": "Hernamen",
+      "2024_desc": "Enterprise-functies zoals White Label, geavanceerde machtigingen en API v2 helpen Blue om te schalen naar enterprise-klanten.",
+      "2024_title": "White Label lancering",
+      "2025_desc": "Toegewijd aan onze missie: het organiseren van het werk van de wereld door het beste procesmanagementplatform op de planeet te bouwen.",
+      "2025_title": "De reis gaat verder",
+      "title": "Onze Reis"
+    },
+    "why_different": {
+      "description": "We hebben Blue vanaf de grond opgebouwd met een andere filosofie. Een filosofie die eenvoud, flexibiliteit en klantensucces centraal stelt in alles wat we doen.",
+      "point_1_desc": "We hebben uw pijn gevoeld. Blue is ontstaan uit de praktijkervaring van het opschalen van bedrijven, niet uit de vergaderzalen van durfkapitaal die groei koste wat het kost nastreven.",
+      "point_1_title": "Gebouwd door operators, voor operators",
+      "point_2_desc": "Uw team zal Blue daadwerkelijk gebruiken omdat het intuïtief is. Toch schaalt het moeiteloos van 5 naar 5.000 gebruikers zonder architectonische wijzigingen.",
+      "point_2_title": "Eenvoudig genoeg voor iedereen, krachtig genoeg voor ondernemingen",
+      "point_3_desc": "We dwingen je niet in rigide workflows. Blue past zich aan je bestaande processen aan en biedt je de tools om deze in de loop van de tijd te verbeteren.",
+      "point_3_title": "Past zich aan jou aan, niet andersom.",
+      "title": "Waarom Blue anders is\u003cbr\u003edan andere platforms."
+    }
+  },
+  "pl": {
+    "awards": {
+      "description": "Zaufany przez tysiące zespołów na całym świecie i doceniany przez liderów branży.",
+      "title": "Nagrody i Wyróżnienia"
+    },
+    "blue_team_alt": "Zespół Blue",
+    "ceo_message": {
+      "greeting": "Cześć,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Jestem Manny, założyciel i dyrektor generalny Blue. Stworzyłem Blue, aby rozwiązać problemy, z którymi się zmagałem podczas rozwijania mojej firmy doradczej. Okazuje się, że wiele osób ma trudności z organizacją i usprawnieniem swoich procesów biznesowych.",
+      "paragraph_2": "Centralnym pomysłem jest to, że Blue jest łatwy w użyciu, dzięki czemu Twój zespół rzeczywiście go wykorzystuje. Wszyscy wydaliśmy pieniądze na platformy oprogramowania, które obiecywały wiele, ale nie spełniły oczekiwań: są sztywne, niewygodne i zajmują wieczność, aby je zrozumieć.",
+      "paragraph_3": "Blue jest inny — jest niezwykle łatwy w użyciu, niesamowicie elastyczny, a jednocześnie wystarczająco potężny do poważnej pracy. A najlepsze jest to, że nie musisz zmieniać swoich procesów! Blue dostosowuje się do twoich istniejących procesów — zapewniając ci widoczność, automatyzacje i spokój umysłu. Będziesz spać spokojnie, wiedząc, że nic nie umknie twojej uwadze.",
+      "paragraph_4": "Dlatego zbudowałem Blue — ponieważ nie ma firmy oferującej proste rozwiązanie do skalowania operacji, bez zbędnych dodatków.",
+      "paragraph_5": "Dziękujemy za przeczytanie i mam nadzieję, że korzystanie z Blue sprawi Ci przyjemność!",
+      "paragraph_6": "Wiem, że cieszymy się z jego budowania!",
+      "sign_off": "Bądź produktywny,",
+      "subtitle": "Zbudowaliśmy to dla Ciebie.",
+      "title": "Wiadomość od CEO",
+      "title_role": "Założyciel i CEO Blue"
+    },
+    "cta": {
+      "title": "Gotowy, aby zobaczyć Blue w akcji?"
+    },
+    "funding": {
+      "customers": "Klienci",
+      "description": "Jesteśmy wspierani przez najbardziej wymagających inwestorów na świecie: naszych klientów.",
+      "founder_owned": "Właściciel założyciel",
+      "our_investors": "Nasi inwestorzy?",
+      "paragraph_1": "Podczas gdy inni gonią za kapitałem venture, wybraliśmy inną drogę. Jesteśmy dumnie finansowani z własnych środków, co oznacza, że odpowiadamy naszym klientom, a nie zarządowi. Ta niezależność pozwala nam skupić się na budowaniu najlepszego możliwego produktu, podejmowaniu decyzji na dłuższą metę oraz utrzymywaniu kultury firmy, która doprowadziła nas do tego miejsca.",
+      "paragraph_2": "Każdy klient, który wierzy w naszą wizję. Każdy zespół, który ufa nam w zakresie swoich procesów. Każda osoba, która wybrała Blue zamiast mocno finansowanych alternatyw. Nie jesteście tylko użytkownikami – jesteście partnerami w budowaniu czegoś trwałego.",
+      "runway": "Pas startowy",
+      "title": "Finansowanie",
+      "vc_raised": "Zebrany kapitał venture capital"
+    },
+    "global_team": {
+      "description": "To jest miejsce, gdzie odbywa się praca.",
+      "title": "Globalnie rozproszony zespół i infrastruktura"
+    },
+    "learn_more": {
+      "description": "Zanurz się w naszych spostrzeżeniach, gdzie dzielimy się naszymi myślami na temat budowania lepszych procesów, skalowania operacji i tworzenia produktu światowej klasy bez kapitału venture.",
+      "title": "Chcesz dowiedzieć się więcej?"
+    },
+    "mission_title": "Naszą misją jest zorganizowanie pracy na świecie.",
+    "page_subtitle": "Jesteśmy niezależną firmą z pasją do pomagania zespołom w lepszej współpracy.",
+    "page_title": "Blue wprowadza radość do zarządzania procesami.",
+    "stats": {
+      "countries_label": "Kraje obsługiwane",
+      "countries_number": "120+",
+      "customers_label": "niesamowici klienci",
+      "customers_number": "17 000+",
+      "years_label": "Lata w branży",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Założona w odpowiedzi na wyzwania związane z skalowaniem firmy doradczej. Wizja: uczynić zarządzanie procesami przyjemnym.",
+      "2018_title": "Blue się narodził",
+      "2019_desc": "Pierwszy klient Blue potwierdza wizję. Rozpoczyna się podróż od koncepcji do rzeczywistości.",
+      "2019_title": "Pierwszy płacący klient",
+      "2020_desc": "Wieść o unikalnym podejściu Blue rozchodzi się. Zespoły uwielbiają połączenie prostoty i mocy.",
+      "2020_title": "Milestone 1,000 klientów",
+      "2021_desc": "API uruchamia się z 100% pokryciem funkcji, umożliwiając potężne integracje i możliwości automatyzacji.",
+      "2021_title": "Uruchomienie API",
+      "2022_desc": "Bloo staje się Blue, co oznacza nowy rozdział w naszej podróży z odświeżoną tożsamością marki.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Funkcje dla przedsiębiorstw, w tym White Label, zaawansowane uprawnienia i API v2, pomagają Blue w skalowaniu do klientów korporacyjnych.",
+      "2024_title": "Uruchomienie White Label",
+      "2025_desc": "Zaangażowani w naszą misję: zorganizować pracę na świecie, budując najlepszą platformę do zarządzania procesami na planecie.",
+      "2025_title": "Podróż trwa dalej",
+      "title": "Nasza podróż"
+    },
+    "why_different": {
+      "description": "Zbudowaliśmy Blue od podstaw z inną filozofią. Taką, która stawia prostotę, elastyczność i sukces klienta w centrum wszystkiego, co robimy.",
+      "point_1_desc": "Czuliśmy Twój ból. Blue powstało z doświadczenia w rozwijaniu biznesów w rzeczywistym świecie, a nie z sal konferencyjnych inwestorów, którzy dążą do wzrostu za wszelką cenę.",
+      "point_1_title": "Zbudowane przez operatorów, dla operatorów",
+      "point_2_desc": "Twoja drużyna rzeczywiście będzie korzystać z Blue, ponieważ jest intuicyjna. Jednocześnie bez trudu skaluje się od 5 do 5,000 użytkowników bez zmian w architekturze.",
+      "point_2_title": "Na tyle proste dla każdego, na tyle potężne dla przedsiębiorstw",
+      "point_3_desc": "Nie zmuszamy Cię do sztywnych procesów. Blue dostosowuje się do Twoich istniejących procesów, jednocześnie dając Ci narzędzia do ich ulepszania w miarę upływu czasu.",
+      "point_3_title": "Dostosowuje się do Ciebie, a nie odwrotnie.",
+      "title": "Dlaczego Blue różni się\u003cbr\u003eod innych platform."
+    }
+  },
+  "pt": {
+    "awards": {
+      "description": "Confiado por milhares de equipes em todo o mundo e reconhecido por líderes da indústria.",
+      "title": "Prêmios e Reconhecimento"
+    },
+    "blue_team_alt": "Equipe Blue",
+    "ceo_message": {
+      "greeting": "Olá,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Sou Manny, o fundador e CEO da Blue. Criei a Blue para enfrentar os desafios que encontrei ao escalar minha consultoria. Acontece que muitas pessoas têm dificuldade em se manter organizadas e otimizar seus processos de negócios.",
+      "paragraph_2": "A ideia central é que o Blue é fácil de usar, para que sua equipe realmente o utilize. Todos nós já desperdiçamos dinheiro em plataformas de software que prometeram muito, mas falharam em entregar: elas são rígidas, complicadas e levam uma eternidade para serem compreendidas.",
+      "paragraph_3": "Blue é diferente — É super fácil de usar, incrivelmente flexível e, ainda assim, poderoso o suficiente para trabalhos sérios. E a melhor parte é que você não precisa mudar seus processos! Blue se adapta aos seus processos existentes — oferecendo visibilidade, automações e tranquilidade. Você vai dormir bem à noite sabendo que nada passa despercebido.",
+      "paragraph_4": "Então é por isso que eu criei o Blue — porque não há empresa com uma solução simples para escalar operações, sem toda a complicação.",
+      "paragraph_5": "Obrigado por ler, e espero que você aproveite usar o Blue!",
+      "paragraph_6": "Eu sei que gostamos de construí-lo!",
+      "sign_off": "Mantenha-se produtivo,",
+      "subtitle": "Nós construímos isso para você.",
+      "title": "Mensagem do CEO",
+      "title_role": "Fundador e CEO da Blue"
+    },
+    "cta": {
+      "title": "Pronto para ver o Blue em ação?"
+    },
+    "funding": {
+      "customers": "Clientes",
+      "description": "Estamos apoiados pelos investidores mais exigentes do mundo: nossos clientes.",
+      "founder_owned": "Fundador Proprietário",
+      "our_investors": "Nossos investidores?",
+      "paragraph_1": "Enquanto outros buscam capital de risco, escolhemos um caminho diferente. Estamos orgulhosamente autofinanciados, o que significa que respondemos aos nossos clientes, não a uma sala de reuniões. Essa independência nos permite focar em construir o melhor produto possível, tomar decisões para o longo prazo e manter a cultura da empresa que nos trouxe até aqui.",
+      "paragraph_2": "Cada cliente que acredita em nossa visão. Cada equipe que confia em nós para gerenciar seus fluxos de trabalho. Cada pessoa que escolheu a Blue em vez das alternativas fortemente financiadas. Vocês não são apenas usuários – são parceiros na construção de algo sustentável.",
+      "runway": "Pista de decolagem",
+      "title": "Financiamento",
+      "vc_raised": "Capital de Risco Captado"
+    },
+    "global_team": {
+      "description": "É aqui que o trabalho acontece.",
+      "title": "Equipe e infraestrutura distribuídas globalmente"
+    },
+    "learn_more": {
+      "description": "Mergulhe em nossas percepções, onde compartilhamos nossos pensamentos sobre como construir melhores processos, escalar operações e criar um produto de classe mundial sem capital de risco.",
+      "title": "Quer saber mais?"
+    },
+    "mission_title": "Nossa missão é organizar o trabalho do mundo.",
+    "page_subtitle": "Somos uma empresa independente com a paixão de ajudar equipes a trabalhar melhor, juntas.",
+    "page_title": "A Blue está trazendo satisfação para a gestão de processos.",
+    "stats": {
+      "countries_label": "Países atendidos",
+      "countries_number": "120+",
+      "customers_label": "clientes incríveis",
+      "customers_number": "17.000+",
+      "years_label": "Anos no mercado",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Fundada em resposta aos desafios de escalar uma consultoria. A visão: tornar a gestão de processos agradável.",
+      "2018_title": "Blue nasce",
+      "2019_desc": "O primeiro cliente da Blue valida a visão. A jornada do conceito à realidade começa.",
+      "2019_title": "Primeiro cliente pagante",
+      "2020_desc": "A notícia se espalha sobre a abordagem única da Blue. As equipes adoram a combinação de simplicidade e poder.",
+      "2020_title": "Marco de 1.000 clientes",
+      "2021_desc": "A API é lançada com 100% de cobertura de recursos, permitindo integrações poderosas e capacidades de automação.",
+      "2021_title": "Lançamento da API",
+      "2022_desc": "Bloo se torna Blue, marcando um novo capítulo em nossa jornada com uma identidade de marca renovada.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Recursos empresariais, incluindo White Label, permissões avançadas e API v2, ajudam o Blue a escalar para clientes corporativos.",
+      "2024_title": "Lançamento de Marca Branca",
+      "2025_desc": "Comprometidos com nossa missão: organizar o trabalho do mundo construindo a melhor plataforma de gerenciamento de processos do planeta.",
+      "2025_title": "A jornada continua",
+      "title": "Nossa Jornada"
+    },
+    "why_different": {
+      "description": "Construímos o Blue do zero com uma filosofia diferente. Uma que coloca a simplicidade, a flexibilidade e o sucesso do cliente no centro de tudo o que fazemos.",
+      "point_1_desc": "Sentimos sua dor. O Blue nasceu da experiência do mundo real em escalar negócios, e não de salas de reuniões de capital de risco pressionando por crescimento a qualquer custo.",
+      "point_1_title": "Construído por operadores, para operadores",
+      "point_2_desc": "Sua equipe realmente usará o Blue porque é intuitivo. Além disso, ele escala facilmente de 5 a 5.000 usuários sem mudanças arquitetônicas.",
+      "point_2_title": "Simples o suficiente para todos, poderoso o suficiente para empresas.",
+      "point_3_desc": "Nós não o forçamos a seguir fluxos de trabalho rígidos. O Blue se adapta aos seus processos existentes enquanto oferece as ferramentas para melhorá-los ao longo do tempo.",
+      "point_3_title": "Adapta-se a você, e não o contrário.",
+      "title": "Por que a Blue é diferente\u003cbr\u003ede outras plataformas."
+    }
+  },
+  "ru": {
+    "awards": {
+      "description": "Доверие тысяч команд по всему миру и признание лидеров отрасли.",
+      "title": "Награды и признание"
+    },
+    "blue_team_alt": "Команда Blue",
+    "ceo_message": {
+      "greeting": "Привет,",
+      "name": "Эмануэле Фая",
+      "paragraph_1": "Я Мэнни, основатель и генеральный директор Blue. Я создал Blue, чтобы решить проблемы, с которыми я столкнулся при масштабировании своей консалтинговой компании. Оказалось, что многие люди испытывают трудности с организацией и оптимизацией своих бизнес-процессов.",
+      "paragraph_2": "Центральная идея заключается в том, что Blue прост в использовании, поэтому ваша команда действительно будет им пользоваться. Мы все тратили деньги на программные платформы, которые обещали многое, но не оправдали ожиданий: они жесткие, неудобные и требуют много времени на освоение.",
+      "paragraph_3": "Blue отличается — он очень прост в использовании, невероятно гибок и в то же время достаточно мощен для серьезной работы. И самое замечательное, что вам не нужно менять свои процессы! Blue адаптируется к вашим существующим процессам — предоставляя вам видимость, автоматизацию и спокойствие. Вы будете спать спокойно, зная, что ничего не ускользнет от вашего внимания.",
+      "paragraph_4": "Вот почему я создал Blue — потому что нет компании с простым решением для масштабирования операций, без всей этой лишней информации.",
+      "paragraph_5": "Спасибо за чтение, и надеюсь, вам понравится использовать Blue!",
+      "paragraph_6": "Я знаю, что нам нравится это создавать!",
+      "sign_off": "Оставайтесь продуктивными,",
+      "subtitle": "Мы создали это для вас.",
+      "title": "Сообщение от генерального директора",
+      "title_role": "Основатель и генеральный директор Blue"
+    },
+    "cta": {
+      "title": "Готовы увидеть Blue в действии?"
+    },
+    "funding": {
+      "customers": "Клиенты",
+      "description": "Мы поддерживаемся самыми требовательными инвесторами в мире: нашими клиентами.",
+      "founder_owned": "Основательская собственность",
+      "our_investors": "Наши инвесторы?",
+      "paragraph_1": "Пока другие гонятся за венчурным капиталом, мы выбрали другой путь. Мы с гордостью финансируем себя самостоятельно, что означает, что мы подотчетны нашим клиентам, а не совету директоров. Эта независимость позволяет нам сосредоточиться на создании лучшего продукта, принимать решения на долгосрочную перспективу и поддерживать корпоративную культуру, которая привела нас сюда.",
+      "paragraph_2": "Каждый клиент, который верит в наше видение. Каждая команда, которая доверяет нам свои рабочие процессы. Каждый человек, который выбрал Blue вместо щедро финансируемых альтернатив. Вы не просто пользователи – вы партнёры в создании чего-то устойчивого.",
+      "runway": "Взлетно-посадочная полоса",
+      "title": "Финансирование",
+      "vc_raised": "Привлеченный венчурный капитал"
+    },
+    "global_team": {
+      "description": "Здесь происходит работа.",
+      "title": "Глобально распределенная команда и инфраструктура"
+    },
+    "learn_more": {
+      "description": "Погрузитесь в наши аналитические материалы, где мы делимся мыслями о создании лучших процессов, масштабировании операций и разработке продукта мирового класса без венчурного капитала.",
+      "title": "Хотите узнать больше?"
+    },
+    "mission_title": "Наша миссия — организовать работу всего мира.",
+    "page_subtitle": "Мы независимая компания, увлеченная тем, чтобы помогать командам работать лучше вместе.",
+    "page_title": "Blue приносит радость в управление процессами.",
+    "stats": {
+      "countries_label": "Страны обслуживания",
+      "countries_number": "120+",
+      "customers_label": "невероятные клиенты",
+      "customers_number": "17,000+",
+      "years_label": "Годы в бизнесе",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Основана в ответ на вызовы масштабирования консалтинга. Видение: сделать управление процессами приятным.",
+      "2018_title": "Blue родился",
+      "2019_desc": "Первый клиент Blue подтверждает видение. Путешествие от концепции к реальности начинается.",
+      "2019_title": "Первый платящий клиент",
+      "2020_desc": "Слухи о уникальном подходе Blue распространяются. Команды ценят сочетание простоты и мощи.",
+      "2020_title": "Этап в 1,000 клиентов",
+      "2021_desc": "API запускается с 100% покрытием функций, обеспечивая мощные интеграции и возможности автоматизации.",
+      "2021_title": "Запуск API",
+      "2022_desc": "Bloo становится Blue, что ознаменовывает новую главу в нашем пути с обновленной брендинговой идентичностью.",
+      "2022_title": "Ребрендинг",
+      "2024_desc": "Функции для предприятий, включая White Label, расширенные разрешения и API v2, помогают Blue масштабироваться для корпоративных клиентов.",
+      "2024_title": "Запуск под собственным брендом",
+      "2025_desc": "Привержены нашей миссии: организовать работу мира, создавая лучшую платформу управления процессами на планете.",
+      "2025_title": "Путешествие продолжается",
+      "title": "Наше путешествие"
+    },
+    "why_different": {
+      "description": "Мы создали Blue с нуля, основываясь на другой философии. Философии, которая ставит простоту, гибкость и успех клиентов в центр всего, что мы делаем.",
+      "point_1_desc": "Мы понимаем вашу боль. Blue возник из реального опыта масштабирования бизнеса, а не из заседаний венчурного капитала, где стремятся к росту любой ценой.",
+      "point_1_title": "Создано операторами для операторов",
+      "point_2_desc": "Ваша команда действительно будет использовать Blue, потому что он интуитивно понятен. При этом он без усилий масштабируется от 5 до 5,000 пользователей без изменений в архитектуре.",
+      "point_2_title": "Достаточно прост для всех, достаточно мощен для предприятий",
+      "point_3_desc": "Мы не заставляем вас следовать жестким рабочим процессам. Blue адаптируется к вашим существующим процессам, предоставляя вам инструменты для их улучшения со временем.",
+      "point_3_title": "Адаптируется под вас, а не наоборот.",
+      "title": "Почему Blue отличается\u003cbr\u003eот других платформ."
+    }
+  },
+  "sv": {
+    "awards": {
+      "description": "Betrodd av tusentals team världen över och erkänd av branschledare.",
+      "title": "Utmärkelser och erkännande"
+    },
+    "blue_team_alt": "Blue Team",
+    "ceo_message": {
+      "greeting": "Hej där,",
+      "name": "Emanuele Faja",
+      "paragraph_1": "Jag är Manny, grundare och VD för Blue. Jag skapade Blue för att hantera de utmaningar jag stötte på när jag växte min konsultverksamhet. Det visar sig att många människor har svårt att hålla sig organiserade och effektivisera sina affärsprocesser.",
+      "paragraph_2": "Den centrala idén är att Blue är lätt att använda, så att ditt team faktiskt använder det. Vi har alla slösat pengar på programvaruplattformar som lovade mycket men misslyckades med att leverera: de är stela, besvärliga och tar en evighet att förstå.",
+      "paragraph_3": "Blue är annorlunda — Det är superenkelt att använda, otroligt flexibelt och ändå tillräckligt kraftfullt för seriöst arbete. Och det bästa är att du inte behöver ändra dina processer! Blue anpassar sig till dina befintliga processer — vilket ger dig insyn, automatiseringar och sinnesro. Du kommer att sova gott om natten och veta att inget glider genom sprickorna.",
+      "paragraph_4": "Så det är därför jag byggde Blue — för det finns inget företag med en enkel lösning för att skala verksamheter, utan allt krångel.",
+      "paragraph_5": "Tack för att du läste, och jag hoppas att du gillar att använda Blue!",
+      "paragraph_6": "Jag vet att vi tycker om att bygga det!",
+      "sign_off": "Håll dig produktiv,",
+      "subtitle": "Vi byggde detta för dig.",
+      "title": "Meddelande från VD:n",
+      "title_role": "Grundare och VD för Blue"
+    },
+    "cta": {
+      "title": "Redo att se Blue i aktion?"
+    },
+    "funding": {
+      "customers": "Kunder",
+      "description": "Vi stöds av de mest krävande investerarna i världen: våra kunder.",
+      "founder_owned": "Grundarägd",
+      "our_investors": "Våra investerare?",
+      "paragraph_1": "Medan andra jagar riskkapital har vi valt en annan väg. Vi är stolt bootstrappade, vilket innebär att vi svarar mot våra kunder, inte mot en styrelse. Denna oberoende gör att vi kan fokusera på att bygga den bästa produkten möjligt, fatta beslut för långsiktig framgång och upprätthålla den företagskultur som har tagit oss hit.",
+      "paragraph_2": "Varje kund som tror på vår vision. Varje team som litar på oss med sina arbetsflöden. Varje person som valde Blue framför de tungt finansierade alternativen. Ni är inte bara användare – ni är partners i att bygga något hållbart.",
+      "runway": "Landningsbana",
+      "title": "Finansiering",
+      "vc_raised": "Riskkapital insamlat"
+    },
+    "global_team": {
+      "description": "Detta är platsen där arbetet sker.",
+      "title": "Globalt distribuerat team och infrastruktur"
+    },
+    "learn_more": {
+      "description": "Dyk ner i våra insikter där vi delar med oss av våra tankar om att bygga bättre processer, skala upp verksamheter och skapa en produkt i världsklass utan riskkapital.",
+      "title": "Vill du veta mer?"
+    },
+    "mission_title": "Vår mission är att organisera världens arbete.",
+    "page_subtitle": "Vi är ett oberoende företag med en passion för att hjälpa team att arbeta bättre tillsammans.",
+    "page_title": "Blue skapar glädje i processhantering.",
+    "stats": {
+      "countries_label": "Länder som betjänas",
+      "countries_number": "120+",
+      "customers_label": "otroliga kunder",
+      "customers_number": "17 000+",
+      "years_label": "År i verksamhet",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "Grundat som svar på utmaningarna med att skala en konsultverksamhet. Visionen: göra processhantering njutbar.",
+      "2018_title": "Blue föds",
+      "2019_desc": "Blues första kund validerar visionen. Resan från koncept till verklighet börjar.",
+      "2019_title": "Första betalande kund",
+      "2020_desc": "Rykten sprider sig om Blues unika tillvägagångssätt. Team älskar kombinationen av enkelhet och kraft.",
+      "2020_title": "1 000 kunders milstolpe",
+      "2021_desc": "API-lanseringen har 100% funktions täckning, vilket möjliggör kraftfulla integrationer och automatiseringsmöjligheter.",
+      "2021_title": "API-lansering",
+      "2022_desc": "Bloo blir Blue, vilket markerar ett nytt kapitel i vår resa med en förnyad varumärkesidentitet.",
+      "2022_title": "Rebranding",
+      "2024_desc": "Företagsfunktioner inklusive White Label, avancerade behörigheter och API v2 hjälper Blue att växa till företagskunder.",
+      "2024_title": "Lansering av White Label",
+      "2025_desc": "Engagerade i vår mission: att organisera världens arbete genom att bygga den bästa plattformen för processhantering på planeten.",
+      "2025_title": "Resan fortsätter",
+      "title": "Vår resa"
+    },
+    "why_different": {
+      "description": "Vi har byggt Blue från grunden med en annan filosofi. En som sätter enkelhet, flexibilitet och kundframgång i centrum för allt vi gör.",
+      "point_1_desc": "Vi har känt er smärta. Blue föddes ur verkliga erfarenheter av att skala företag, inte från riskkapitalstyrelser som pressar på för tillväxt till varje pris.",
+      "point_1_title": "Byggd av operatörer, för operatörer",
+      "point_2_desc": "Ditt team kommer faktiskt att använda Blue eftersom det är intuitivt. Ändå skalar det enkelt från 5 till 5 000 användare utan arkitektoniska förändringar.",
+      "point_2_title": "Enkel nog för alla, kraftfull nog för företag",
+      "point_3_desc": "Vi tvingar inte in dig i stela arbetsflöden. Blue anpassar sig efter dina befintliga processer samtidigt som vi ger dig verktygen för att förbättra dem över tid.",
+      "point_3_title": "Anpassar sig efter dig, inte tvärtom",
+      "title": "Varför Blue är annorlunda\u003cbr\u003eän andra plattformar."
+    }
+  },
+  "zh": {
+    "awards": {
+      "description": "受到全球数千个团队的信赖，并获得行业领袖的认可。",
+      "title": "奖项与荣誉"
+    },
+    "blue_team_alt": "蓝队",
+    "ceo_message": {
+      "greeting": "你好，",
+      "name": "埃马努埃尔·法哈",
+      "paragraph_1": "我是Manny，Blue的创始人兼首席执行官。我创建Blue是为了应对我在扩展咨询业务时遇到的挑战。事实证明，许多人在保持组织性和简化业务流程方面都面临困难。",
+      "paragraph_2": "核心理念是，Blue 易于使用，因此您的团队实际上会使用它。我们都曾在那些承诺良多但未能兑现的软件平台上浪费过钱：它们僵化、笨拙，并且需要很长时间才能理解。",
+      "paragraph_3": "Blue与众不同——它非常易于使用，灵活性极高，同时又足够强大，适合严肃的工作。最棒的是，您无需更改现有流程！Blue能够适应您现有的流程——为您提供可视化、自动化和安心。您可以高枕无忧，知道没有任何事情会被忽视。",
+      "paragraph_4": "这就是我创建Blue的原因——因为没有公司提供简单的解决方案来扩展运营，而不需要那些繁琐的东西。",
+      "paragraph_5": "感谢您的阅读，希望您喜欢使用Blue！",
+      "paragraph_6": "我知道我们喜欢构建它！",
+      "sign_off": "保持高效，",
+      "subtitle": "我们为您打造了这个。",
+      "title": "来自首席执行官的信息",
+      "title_role": "Blue的创始人兼首席执行官"
+    },
+    "cta": {
+      "title": "准备好看看 Blue 的实际应用了吗？"
+    },
+    "funding": {
+      "customers": "客户",
+      "description": "我们得到了世界上最苛刻的投资者的支持：我们的客户。",
+      "founder_owned": "创始人拥有",
+      "our_investors": "我们的投资者？",
+      "paragraph_1": "在其他公司追逐风险投资时，我们选择了不同的道路。我们自豪地实现了自给自足，这意味着我们对客户负责，而不是对董事会。这种独立性使我们能够专注于构建最佳产品，做出长期决策，并保持让我们走到今天的公司文化。",
+      "paragraph_2": "每一位相信我们愿景的客户。每一个信任我们工作流程的团队。每一个选择Blue而非资金雄厚替代品的人。你们不仅仅是用户——你们是共同构建可持续发展的合作伙伴。",
+      "runway": "跑道",
+      "title": "资金",
+      "vc_raised": "风险投资筹集"
+    },
+    "global_team": {
+      "description": "这里是工作的地方。",
+      "title": "全球分布的团队和基础设施"
+    },
+    "learn_more": {
+      "description": "深入了解我们的见解，我们分享了关于如何构建更好的流程、扩展运营以及在没有风险投资的情况下创建世界级产品的想法。",
+      "title": "想要了解更多吗？"
+    },
+    "mission_title": "我们的使命是组织全球的工作。",
+    "page_subtitle": "我们是一家独立公司，热衷于帮助团队更好地协作。",
+    "page_title": "Blue 正在为流程管理带来愉悦体验。",
+    "stats": {
+      "countries_label": "服务国家",
+      "countries_number": "120+",
+      "customers_label": "令人难以置信的客户",
+      "customers_number": "17,000+",
+      "years_label": "经营年限",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "成立于应对咨询公司扩展挑战的背景下。愿景：让流程管理变得愉悦。",
+      "2018_title": "Blue 诞生了",
+      "2019_desc": "Blue的首位客户验证了这一愿景。从概念到现实的旅程开始了。",
+      "2019_title": "首位付费客户",
+      "2020_desc": "关于Blue独特方法的消息传播开来。团队们喜欢这种简单与强大相结合的方式。",
+      "2020_title": "1,000客户里程碑",
+      "2021_desc": "API发布时具备100%的功能覆盖，支持强大的集成和自动化能力。",
+      "2021_title": "API启动",
+      "2022_desc": "Bloo 变成了 Blue，标志着我们旅程中的新篇章，伴随着全新的品牌形象。",
+      "2022_title": "重新品牌化",
+      "2024_desc": "企业功能，包括白标、高级权限和API v2，帮助Blue扩展到企业客户。",
+      "2024_title": "白标发布",
+      "2025_desc": "致力于我们的使命：通过构建全球最佳的流程管理平台来组织世界的工作。",
+      "2025_title": "旅程继续",
+      "title": "我们的旅程"
+    },
+    "why_different": {
+      "description": "我们从零开始构建了Blue，采用了不同的理念。这个理念将简单性、灵活性和客户成功置于我们所做一切的核心。",
+      "point_1_desc": "我们理解你的痛苦。Blue的诞生源于真实的业务扩展经验，而不是风险投资董事会在任何代价下推动增长。",
+      "point_1_title": "由操作人员为操作人员构建",
+      "point_2_desc": "您的团队会真正使用 Blue，因为它直观易用。同时，它可以毫不费力地从 5 个用户扩展到 5,000 个用户，而无需进行架构更改。",
+      "point_2_title": "简单到每个人都能使用，强大到满足企业需求",
+      "point_3_desc": "我们不会强迫您遵循僵化的工作流程。Blue 会适应您现有的流程，同时为您提供工具，以便随着时间的推移改进这些流程。",
+      "point_3_title": "适应您，而不是反过来",
+      "title": "为什么Blue与其他平台不同\u003cbr\u003e。"
+    }
+  },
+  "zh-TW": {
+    "awards": {
+      "description": "受到全球數千個團隊的信賴，並獲得行業領導者的認可。",
+      "title": "獎項與認可"
+    },
+    "blue_team_alt": "藍隊",
+    "ceo_message": {
+      "greeting": "您好，",
+      "name": "埃馬努埃萊·法哈",
+      "paragraph_1": "我是Manny，Blue的創始人兼首席執行官。我創立Blue是為了解決我在擴展諮詢業務時所面臨的挑戰。結果發現，許多人在保持組織性和簡化業務流程方面都面臨困難。",
+      "paragraph_2": "核心理念是，Blue 易於使用，因此您的團隊實際上會使用它。我們都曾在那些承諾良多卻未能實現的軟體平台上浪費過金錢：它們僵化、笨拙，且需要很長時間才能理解。",
+      "paragraph_3": "Blue 與眾不同 — 它非常易於使用，靈活性極高，卻又足夠強大以應對嚴肅的工作。而且最棒的是，您不必改變您的流程！Blue 會適應您現有的流程 — 為您提供可見性、自動化和安心。您可以安然入睡，因為您知道沒有任何事情會被忽略。",
+      "paragraph_4": "所以這就是我創建 Blue 的原因——因為沒有任何公司提供一個簡單的解決方案來擴展業務，而不需要那些繁瑣的東西。",
+      "paragraph_5": "感謝您的閱讀，希望您喜歡使用 Blue！",
+      "paragraph_6": "我知道我們喜歡建立它！",
+      "sign_off": "保持高效，",
+      "subtitle": "我們為您打造了這個。",
+      "title": "CEO 的訊息",
+      "title_role": "Blue的創始人兼首席執行官"
+    },
+    "cta": {
+      "title": "準備好看看 Blue 的實際運作了嗎？"
+    },
+    "funding": {
+      "customers": "客戶",
+      "description": "我們的支持來自世界上最苛刻的投資者：我們的客戶。",
+      "founder_owned": "創辦人擁有",
+      "our_investors": "我們的投資者？",
+      "paragraph_1": "在其他人追逐風險投資的同時，我們選擇了一條不同的道路。我們自豪地依靠自籌資金，這意味著我們對客戶負責，而不是對董事會負責。這種獨立性使我們能夠專注於打造最佳產品，做出長期決策，並維持讓我們走到今天的公司文化。",
+      "paragraph_2": "每一位相信我們願景的客戶。每一個信任我們的工作流程的團隊。每一位選擇 Blue 而非資金雄厚替代方案的人。你們不僅僅是用戶——你們是共同建立可持續發展事業的夥伴。",
+      "runway": "跑道",
+      "title": "資金",
+      "vc_raised": "風險資本籌集"
+    },
+    "global_team": {
+      "description": "這裡是工作的地方。",
+      "title": "全球分布的團隊和基礎設施"
+    },
+    "learn_more": {
+      "description": "深入了解我們的見解，我們分享關於建立更佳流程、擴展運營以及在不依賴風險投資的情況下創造世界級產品的想法。",
+      "title": "想要了解更多嗎？"
+    },
+    "mission_title": "我們的使命是組織全球的工作。",
+    "page_subtitle": "我們是一家獨立公司，熱衷於幫助團隊更好地協作。",
+    "page_title": "Blue 正在為流程管理帶來愉悅。",
+    "stats": {
+      "countries_label": "服務的國家",
+      "countries_number": "120+",
+      "customers_label": "令人難以置信的客戶",
+      "customers_number": "17,000+",
+      "years_label": "營業年限",
+      "years_number": "7+"
+    },
+    "timeline": {
+      "2018_desc": "成立的目的是為了應對擴展顧問公司的挑戰。願景：讓流程管理變得愉悅。",
+      "2018_title": "Blue 誕生了",
+      "2019_desc": "Blue的第一位客戶驗證了這一願景。從概念到現實的旅程開始了。",
+      "2019_title": "第一位付費客戶",
+      "2020_desc": "有關Blue獨特方法的消息傳開了。團隊們喜愛這種簡單與強大相結合的方式。",
+      "2020_title": "1,000 客戶里程碑",
+      "2021_desc": "API 發佈時具備 100% 功能覆蓋，實現強大的整合和自動化能力。",
+      "2021_title": "API 發佈",
+      "2022_desc": "Bloo 變成 Blue，標誌著我們旅程中的新篇章，並帶來全新的品牌形象。",
+      "2022_title": "重新品牌化",
+      "2024_desc": "企業功能，包括白標、進階權限和 API v2，幫助 Blue 擴展至企業客戶。",
+      "2024_title": "白標啟動",
+      "2025_desc": "致力於我們的使命：通過建立全球最佳的流程管理平台來組織世界的工作。",
+      "2025_title": "旅程繼續",
+      "title": "我們的旅程"
+    },
+    "why_different": {
+      "description": "我們從零開始構建 Blue，採用了一種不同的理念。這種理念將簡單性、靈活性和客戶成功置於我們所做一切的核心。",
+      "point_1_desc": "我們感受到你的痛苦。Blue 源於真實世界中擴展業務的經驗，而不是風險投資董事會在任何成本下推動增長。",
+      "point_1_title": "為操作員而建，由操作員打造",
+      "point_2_desc": "您的團隊將實際使用 Blue，因為它直觀易用。它能夠毫不費力地從 5 位用戶擴展到 5,000 位用戶，而無需進行架構更改。",
+      "point_2_title": "簡單到足以讓每個人使用，強大到足以滿足企業需求",
+      "point_3_desc": "我們不會強迫您遵循僵化的工作流程。Blue 會適應您現有的流程，同時為您提供工具，以便隨著時間的推移改善這些流程。",
+      "point_3_title": "適應您，而不是反過來",
+      "title": "為什麼 Blue 與其他平台不同\u003cbr\u003e。"
     }
   }
 }
