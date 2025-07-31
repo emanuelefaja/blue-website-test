@@ -1,20 +1,20 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Brand" 
-            "Subtitle" "Our brand styles define the visual identity and typography that creates a consistent experience." 
+            "Title" (t "brand.page_title") 
+            "Subtitle" (t "brand.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
     <!-- Logo Section -->
     <section id="workmark" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Wordmark</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.wordmark_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Workmark Variants -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-6">Wordmark Variants</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-6">{{t "brand.wordmark_variants_title"}}</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- Blue Logo (Default) -->
@@ -22,7 +22,7 @@
                         <div class="mb-4">
                             <img src="/logo/Blue%20logo.png" alt="Blue Logo" class="h-16 mx-auto">
                         </div>
-                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">Standard Logo</div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">{{t "brand.standard_logo"}}</div>
                     </div>
                     
                     <!-- Blue Logo (Black) -->
@@ -30,7 +30,7 @@
                         <div class="mb-4">
                             <img src="/logo/Blue%20logo%20(black).png" alt="Blue Logo Black" class="h-16 mx-auto">
                         </div>
-                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">Black Logo</div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">{{t "brand.black_logo"}}</div>
                     </div>
                     
                     <!-- Blue Logo (White) - on brand blue background -->
@@ -38,7 +38,7 @@
                         <div class="mb-4">
                             <img src="/logo/Blue%20logo%20(white).png" alt="Blue Logo White" class="h-16 mx-auto">
                         </div>
-                        <div class="text-sm font-medium text-white">White Logo</div>
+                        <div class="text-sm font-medium text-white">{{t "brand.white_logo"}}</div>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
             <!-- App Icons -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-6">App Icons</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-6">{{t "brand.app_icons_title"}}</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- App Icon 1 -->
@@ -54,7 +54,7 @@
                         <div class="mb-4">
                             <img src="/logo/Blue%20app%20icon%201.png" alt="Blue App Icon 1" class="h-12 w-12 mx-auto">
                         </div>
-                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">App Icon Blue</div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">{{t "brand.app_icon_blue"}}</div>
                     </div>
                     
                     <!-- App Icon 2 -->
@@ -62,16 +62,16 @@
                         <div class="mb-4">
                             <img src="/logo/Blue%20app%20icon%202.png" alt="Blue App Icon 2" class="h-12 w-12 mx-auto">
                         </div>
-                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">App Icon White</div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-gray-100">{{t "brand.app_icon_white"}}</div>
                     </div>
                 </div>
             </div>
             
             <!-- Download All Logos -->
             <div class="text-center">
-                <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">Download all logo variants in PNG and SVG formats</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">{{t "brand.download_description"}}</div>
                 <a href="/logo/bluelogos.zip" download class="inline-flex items-center px-4 py-2 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
-                    Download
+                    {{t "brand.download_button"}}
                 </a>
             </div>
         </div>
@@ -79,13 +79,13 @@
 
     <!-- Typography Section -->
     <section id="typography" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Typography</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.typography_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Headings -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">Headings</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">{{t "brand.headings_title"}}</h3>
                 
                 <div class="space-y-8">
                     <!-- H1 -->
@@ -94,7 +94,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900</code>
                         </div>
                         <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100">
-                            The future of process management
+                            {{t "brand.h1_sample"}}
                         </h1>
                     </div>
 
@@ -104,7 +104,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-3xl md:text-4xl font-medium tracking-tight text-gray-900</code>
                         </div>
                         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100">
-                            Build better workflows together
+                            {{t "brand.h2_sample"}}
                         </h2>
                     </div>
 
@@ -114,7 +114,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-2xl font-medium text-gray-900</code>
                         </div>
                         <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">
-                            Streamline your operations
+                            {{t "brand.h3_sample"}}
                         </h3>
                     </div>
 
@@ -124,7 +124,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-xl font-medium text-gray-900</code>
                         </div>
                         <h4 class="text-xl font-medium text-gray-900 dark:text-gray-100">
-                            Enhanced team collaboration
+                            {{t "brand.h4_sample"}}
                         </h4>
                     </div>
 
@@ -134,7 +134,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-lg font-medium text-gray-900</code>
                         </div>
                         <h5 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                            Project management made simple
+                            {{t "brand.h5_sample"}}
                         </h5>
                     </div>
 
@@ -144,7 +144,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-base font-medium text-gray-900</code>
                         </div>
                         <h6 class="text-base font-medium text-gray-900 dark:text-gray-100">
-                            Feature highlights and details
+                            {{t "brand.h6_sample"}}
                         </h6>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
             <!-- Paragraph Text -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">Paragraph Text</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">{{t "brand.paragraph_text_title"}}</h3>
                 
                 <div class="space-y-6">
                     <!-- Large Paragraph -->
@@ -162,7 +162,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-lg text-gray-600</code>
                         </div>
                         <p class="text-lg text-gray-600 dark:text-gray-400">
-                            Blue is designed to adapt to your team's unique workflow. Whether you're managing complex projects or simple tasks, our platform provides the flexibility and power you need to succeed.
+                            {{t "brand.large_paragraph_sample"}}
                         </p>
                     </div>
 
@@ -172,7 +172,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-base text-gray-600</code>
                         </div>
                         <p class="text-base text-gray-600 dark:text-gray-400">
-                            Create custom fields, automate workflows, and collaborate in real-time. Our intuitive interface makes it easy for teams to get started while providing advanced features for power users.
+                            {{t "brand.regular_paragraph_sample"}}
                         </p>
                     </div>
 
@@ -182,7 +182,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-sm text-gray-600</code>
                         </div>
                         <p class="text-sm text-gray-600 dark:text-gray-400">
-                            Perfect for captions, metadata, and secondary information that supports your main content.
+                            {{t "brand.small_paragraph_sample"}}
                         </p>
                     </div>
 
@@ -192,7 +192,7 @@
                             <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">text-base text-gray-900</code>
                         </div>
                         <p class="text-base text-gray-900 dark:text-gray-100">
-                            Use darker text for primary content and important information that needs to stand out from secondary text.
+                            {{t "brand.body_text_sample"}}
                         </p>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
             <!-- Call Out Text -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">Call Out Text</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-8">{{t "brand.call_out_text_title"}}</h3>
                 
                 <div class="space-y-6">
                     <!-- Mission Statement Style -->
@@ -211,7 +211,7 @@
                         </div>
                         {{template "call-out-text" 
                             dict 
-                                "Text" "Our mission is to organize the world's work by building the best process management platform on the planet." 
+                                "Text" (t "brand.mission_statement") 
                                 "MarginBottom" ""
                         }}
                     </div>
@@ -222,7 +222,7 @@
 
     <!-- Color Palette Section -->
     <section id="color-palette" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Color Palette</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.color_palette_title"}}</h2>
         <hr class="border-gray-200 dark:border-gray-700 mb-8">
         
         <div class="space-y-8">
@@ -232,31 +232,31 @@
                     <!-- Blue Blue -->
                     <div class="h-32 rounded-lg flex flex-col items-center justify-center text-center" style="background-color: #00A0D2;">
                         <div class="font-mono text-sm font-medium text-white">#00A0D2</div>
-                        <div class="text-sm text-white mt-1">Blue Blue</div>
+                        <div class="text-sm text-white mt-1">{{t "brand.blue_blue"}}</div>
                     </div>
                     
                     <!-- Cyclamen -->
                     <div class="h-32 rounded-lg flex flex-col items-center justify-center text-center" style="background-color: #F06C9B;">
                         <div class="font-mono text-sm font-medium text-white">#F06C9B</div>
-                        <div class="text-sm text-white mt-1">Cyclamen</div>
+                        <div class="text-sm text-white mt-1">{{t "brand.cyclamen"}}</div>
                     </div>
                     
                     <!-- Mustard -->
                     <div class="h-32 rounded-lg flex flex-col items-center justify-center text-center" style="background-color: #FED766;">
                         <div class="font-mono text-sm font-medium text-black">#FED766</div>
-                        <div class="text-sm text-black mt-1">Mustard</div>
+                        <div class="text-sm text-black mt-1">{{t "brand.mustard"}}</div>
                     </div>
                     
                     <!-- Aquamarine -->
                     <div class="h-32 rounded-lg flex flex-col items-center justify-center text-center" style="background-color: #A9F0D1;">
                         <div class="font-mono text-sm font-medium text-black">#A9F0D1</div>
-                        <div class="text-sm text-black mt-1">Aquamarine</div>
+                        <div class="text-sm text-black mt-1">{{t "brand.aquamarine"}}</div>
                     </div>
                     
                     <!-- Giants Orange -->
                     <div class="h-32 rounded-lg flex flex-col items-center justify-center text-center" style="background-color: #F86624;">
                         <div class="font-mono text-sm font-medium text-white">#F86624</div>
-                        <div class="text-sm text-white mt-1">Giants Orange</div>
+                        <div class="text-sm text-white mt-1">{{t "brand.giants_orange"}}</div>
                     </div>
                 </div>
             </div>
@@ -265,68 +265,68 @@
 
     <!-- Features Grid Section -->
     <section id="features-grid" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Features Grid</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.features_grid_title"}}</h2>
         
         <div>
             <hr class="border-gray-200 dark:border-gray-700 mb-8">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Features Grid Component</h3>
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.features_grid_subtitle"}}</h3>
             <div class="mt-2 text-sm text-gray-500 mb-6">
                 <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">features-grid-simple component with optional URLs, Font Awesome icons, and responsive 3-column layout</code>
             </div>
             
-            {{$featuresData := parseJSON `{
-                "Title": "Platform capabilities showcase",
-                "Features": [
-                    {
-                        "Icon": "shield",
-                        "Title": "Security",
-                        "Description": "Enterprise-grade security with end-to-end encryption and compliance certifications.",
-                        "Url": "/platform/security"
-                    },
-                    {
-                        "Icon": "bolt",
-                        "Title": "Performance",
-                        "Description": "Lightning-fast response times and 99.9% uptime guarantee for mission-critical work."
-                    },
-                    {
-                        "Icon": "chart",
-                        "Title": "Analytics",
-                        "Description": "Real-time insights and customizable dashboards to track what matters most.",
-                        "Url": "/platform/features/dashboards"
-                    },
-                    {
-                        "Icon": "plug",
-                        "Title": "Integration",
-                        "Description": "Connect with 5,000+ tools including Slack, Gmail, Zapier, and custom APIs."
-                    },
-                    {
-                        "Icon": "magic",
-                        "Title": "Automation",
-                        "Description": "Streamline workflows with intelligent automation that learns from your processes.",
-                        "Url": "/platform/automation"
-                    },
-                    {
-                        "Icon": "mobile",
-                        "Title": "Mobile",
-                        "Description": "Full-featured mobile apps for iOS and Android with offline sync capabilities."
-                    },
-                    {
-                        "Icon": "users",
-                        "Title": "Collaboration",
-                        "Description": "Real-time collaboration tools with comments, mentions, and team workspaces."
-                    },
-                    {
-                        "Icon": "cogs",
-                        "Title": "Customization",
-                        "Description": "Fully customizable interface, fields, and workflows to match your business needs."
-                    },
-                    {
-                        "Icon": "headset",
-                        "Title": "Support",
-                        "Description": "24/7 expert support with live chat, phone, and dedicated success managers."
-                    }
-                ]
-            }`}}
+            {{$featuresData := dict
+                "Title" (t "brand.features_showcase_title")
+                "Features" (slice
+                    (dict
+                        "Icon" "shield"
+                        "Title" (t "brand.security_title")
+                        "Description" (t "brand.security_description")
+                        "Url" "/platform/security"
+                    )
+                    (dict
+                        "Icon" "bolt"
+                        "Title" (t "brand.performance_title")
+                        "Description" (t "brand.performance_description")
+                    )
+                    (dict
+                        "Icon" "chart"
+                        "Title" (t "brand.analytics_title")
+                        "Description" (t "brand.analytics_description")
+                        "Url" "/platform/features/dashboards"
+                    )
+                    (dict
+                        "Icon" "plug"
+                        "Title" (t "brand.integration_title")
+                        "Description" (t "brand.integration_description")
+                    )
+                    (dict
+                        "Icon" "magic"
+                        "Title" (t "brand.automation_title")
+                        "Description" (t "brand.automation_description")
+                        "Url" "/platform/automation"
+                    )
+                    (dict
+                        "Icon" "mobile"
+                        "Title" (t "brand.mobile_title")
+                        "Description" (t "brand.mobile_description")
+                    )
+                    (dict
+                        "Icon" "users"
+                        "Title" (t "brand.collaboration_title")
+                        "Description" (t "brand.collaboration_description")
+                    )
+                    (dict
+                        "Icon" "cogs"
+                        "Title" (t "brand.customization_title")
+                        "Description" (t "brand.customization_description")
+                    )
+                    (dict
+                        "Icon" "headset"
+                        "Title" (t "brand.support_title")
+                        "Description" (t "brand.support_description")
+                    )
+                )
+            }}
             
             {{template "features-grid-simple" $featuresData}}
         </div>
@@ -334,13 +334,13 @@
 
     <!-- Card Components Section -->
     <section id="card-components" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Card Components</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.card_components_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Standard Card Style -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Standard Card</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.standard_card_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow</code>
                 </div>
@@ -348,8 +348,8 @@
                 <!-- Example Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
                     <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="text-2xl font-semibold">Sales</h3>
-                        <p class="text-gray-600">Explore plans, discuss enterprise solutions, or schedule a personalized demo.</p>
+                        <h3 class="text-2xl font-semibold">{{t "brand.sales_card_title"}}</h3>
+                        <p class="text-gray-600">{{t "brand.sales_card_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
                             sales@blue.cc
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -359,8 +359,8 @@
                     </div>
                     
                     <div class="bg-white border border-gray-200 rounded-xl p-8 space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="text-2xl font-semibold">Help & support</h3>
-                        <p class="text-gray-600">Have questions about features, experiencing issues, or want to share feedback? We're here to help.</p>
+                        <h3 class="text-2xl font-semibold">{{t "brand.help_support_title"}}</h3>
+                        <p class="text-gray-600">{{t "brand.help_support_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
                             support@blue.cc
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -374,7 +374,7 @@
             <!-- Insights Card Style -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Insights Card</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.insights_card_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">cursor-pointer group with h-64 image, title, category and date</code>
                 </div>
@@ -387,10 +387,10 @@
                         </div>
                         
                         <!-- Insight Content -->
-                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">AI Auto Categorization</h3>
+                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "brand.ai_categorization_title"}}</h3>
                         
                         <div class="flex items-center gap-4 text-sm">
-                            <span class="font-medium text-gray-600 dark:text-gray-400">Product Updates</span>
+                            <span class="font-medium text-gray-600 dark:text-gray-400">{{t "brand.product_updates_category"}}</span>
                             <span class="text-gray-400 dark:text-gray-500">June 15, 2024</span>
                         </div>
                     </div>
@@ -401,10 +401,10 @@
                         </div>
                         
                         <!-- Insight Content -->
-                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Custom Permissions Engineering</h3>
+                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "brand.custom_permissions_title"}}</h3>
                         
                         <div class="flex items-center gap-4 text-sm">
-                            <span class="font-medium text-gray-600 dark:text-gray-400">Engineering</span>
+                            <span class="font-medium text-gray-600 dark:text-gray-400">{{t "brand.engineering_category"}}</span>
                             <span class="text-gray-400 dark:text-gray-500">May 28, 2024</span>
                         </div>
                     </div>
@@ -415,10 +415,10 @@
                         </div>
                         
                         <!-- Insight Content -->
-                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Kanban Best Practices</h3>
+                        <h3 class="text font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "brand.kanban_best_practices_title"}}</h3>
                         
                         <div class="flex items-center gap-4 text-sm">
-                            <span class="font-medium text-gray-600 dark:text-gray-400">Best Practices</span>
+                            <span class="font-medium text-gray-600 dark:text-gray-400">{{t "brand.best_practices_category"}}</span>
                             <span class="text-gray-400 dark:text-gray-500">April 12, 2024</span>
                         </div>
                     </div>
@@ -428,7 +428,7 @@
             <!-- Large Cards Style ---->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Large Cards</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.large_cards_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">cursor-pointer group with h-80 image, larger text, 2-column grid</code>
                 </div>
@@ -441,10 +441,10 @@
                         </div>
                         
                         <!-- Large Card Content ---->
-                        <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Advanced Workflow Automation</h3>
+                        <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "brand.advanced_workflow_title"}}</h3>
                         
                         <div class="flex items-center gap-4 text-sm">
-                            <span class="font-medium text-gray-600 dark:text-gray-400">Product Updates</span>
+                            <span class="font-medium text-gray-600 dark:text-gray-400">{{t "brand.product_updates_category"}}</span>
                             <span class="text-gray-400 dark:text-gray-500">June 28, 2024</span>
                         </div>
                     </div>
@@ -455,10 +455,10 @@
                         </div>
                         
                         <!-- Large Card Content ---->
-                        <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">Enterprise Security Features</h3>
+                        <h3 class="text-xl font-medium mb-3 text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">{{t "brand.enterprise_security_title"}}</h3>
                         
                         <div class="flex items-center gap-4 text-sm">
-                            <span class="font-medium text-gray-600 dark:text-gray-400">Engineering</span>
+                            <span class="font-medium text-gray-600 dark:text-gray-400">{{t "brand.engineering_category"}}</span>
                             <span class="text-gray-400 dark:text-gray-500">June 20, 2024</span>
                         </div>
                     </div>
@@ -469,12 +469,12 @@
 
     <!-- Grid Layouts Section -->
     <section id="grid-layouts" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Grid Layouts</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.grid_layouts_title"}}</h2>
         
         <!-- 2x2 Grid with Dividers -->
         <div>
             <hr class="border-gray-200 dark:border-gray-700 mb-8">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">2x2 Grid with Dividers</h3>
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.grid_dividers_title"}}</h3>
             <div class="mt-2 text-sm text-gray-500 mb-6">
                 <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">grid grid-cols-1 md:grid-cols-2 gap-0 with border-b border-gray-200 md:border-r</code>
             </div>
@@ -484,10 +484,10 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                     <!-- Item 1 -->
                     <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
-                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Divided Item 1</h3>
-                        <p class="text-gray-600 dark:text-gray-400">First item in the divided grid layout with clean borders.</p>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{t "brand.divided_item_1_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "brand.divided_item_1_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
-                            Action Link
+                            {{t "brand.action_link"}}
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -496,10 +496,10 @@
                     
                     <!-- Item 2 -->
                     <div class="p-8 space-y-4 border-b border-gray-200 dark:border-gray-700">
-                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Divided Item 2</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Second item showing the right column of the divided layout.</p>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{t "brand.divided_item_2_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "brand.divided_item_2_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
-                            Learn More
+                            {{t "brand.learn_more"}}
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
@@ -508,10 +508,10 @@
                     
                     <!-- Item 3 -->
                     <div class="p-8 space-y-4 md:border-r border-gray-200 dark:border-gray-700 md:dark:border-gray-700">
-                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Divided Item 3</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Third item in the bottom row of the divided grid.</p>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{t "brand.divided_item_3_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "brand.divided_item_3_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
-                            Get Started
+                            {{t "brand.get_started"}}
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -520,10 +520,10 @@
                     
                     <!-- Item 4 -->
                     <div class="p-8 space-y-4">
-                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">Divided Item 4</h3>
-                        <p class="text-gray-600 dark:text-gray-400">Fourth item completing the divided grid pattern.</p>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">{{t "brand.divided_item_4_title"}}</h3>
+                        <p class="text-gray-600 dark:text-gray-400">{{t "brand.divided_item_4_description"}}</p>
                         <a href="#" class="inline-flex items-center text-brand-blue hover:text-brand-blue/80 font-medium">
-                            Contact
+                            {{t "brand.contact"}}
                             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
@@ -536,45 +536,45 @@
         <!-- Product Grid ---->
         <div>
             <hr class="border-gray-200 dark:border-gray-700 mb-8">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Product Grid</h3>
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.product_grid_title"}}</h3>
             <div class="mt-2 text-sm text-gray-500 mb-6">
                 <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Full width 2x2 grid with dividers separating product features</code>
             </div>
             
             <!-- Example Product Grid ---->
             <div>
-                {{$productGridData := parseJSON `{
-                    "Products": [
-                        {
-                            "Title": "Project Management",
-                            "Description": "Organize your team's tasks and track project progress from start to finish.",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
-                            "BorderBottom": true,
-                            "BorderRight": true
-                        },
-                        {
-                            "Title": "Team Collaboration",
-                            "Description": "Enable seamless communication and real-time collaboration across your entire team.",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
-                            "BorderBottom": true,
-                            "BorderRight": false
-                        },
-                        {
-                            "Title": "Workflow Automation",
-                            "Description": "Automate repetitive tasks and streamline your processes to save time and reduce errors.",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
-                            "BorderBottom": false,
-                            "BorderRight": true
-                        },
-                        {
-                            "Title": "Analytics & Reports",
-                            "Description": "Get detailed insights and comprehensive reports to make data-driven decisions.",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png",
-                            "BorderBottom": false,
-                            "BorderRight": false
-                        }
-                    ]
-                }`}}
+                {{$productGridData := dict
+                    "Products" (slice
+                        (dict
+                            "Title" (t "brand.project_management_title")
+                            "Description" (t "brand.project_management_description")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                            "BorderBottom" true
+                            "BorderRight" true
+                        )
+                        (dict
+                            "Title" (t "brand.team_collaboration_title")
+                            "Description" (t "brand.team_collaboration_description")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                            "BorderBottom" true
+                            "BorderRight" false
+                        )
+                        (dict
+                            "Title" (t "brand.workflow_automation_title")
+                            "Description" (t "brand.workflow_automation_description")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                            "BorderBottom" false
+                            "BorderRight" true
+                        )
+                        (dict
+                            "Title" (t "brand.analytics_reports_title")
+                            "Description" (t "brand.analytics_reports_description")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                            "BorderBottom" false
+                            "BorderRight" false
+                        )
+                    )
+                }}
                 
                 {{template "product-grid" $productGridData}}
             </div>
@@ -583,34 +583,34 @@
         <!-- Client Logo Grid -->
         <div>
             <hr class="border-gray-200 dark:border-gray-700 mb-8">
-            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Client Logo Grid</h3>
+            <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.client_logo_grid_title"}}</h3>
             <div class="mt-2 text-sm text-gray-500 mb-6">
                 <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">logo-grid template with JSON data for customer logos</code>
             </div>
             <div class="p-8">
-                {{$logoData := parseJSON `{
-                    "title": "Trusted by more than 17,000 teams",
-                    "logos": [
-                        { "name": "CBRE", "src": "/customers/cbre.svg" },
-                        { "name": "Cisco", "src": "/customers/cisco.svg" },
-                        { "name": "Deloitte", "src": "/customers/deloitte.svg" },
-                        { "name": "FedEx", "src": "/customers/fedex.svg" },
-                        { "name": "Manulife", "src": "/customers/manulife.svg" },
-                        { "name": "Red Hat", "src": "/customers/redhat.svg" },
-                        { "name": "Heineken", "src": "/customers/heineken.svg" },
-                        { "name": "Marriott", "src": "/customers/marriot.svg" },
-                        { "name": "Decathlon", "src": "/customers/decathlon.svg" },
-                        { "name": "TotalEnergies", "src": "/customers/totalenergies.svg" },
-                        { "name": "Sheraton", "src": "/customers/sheraton.svg" },
-                        { "name": "VMware", "src": "/customers/vmware.svg" },
-                        { "name": "Columbia University", "src": "/customers/columbia-university.webp" },
-                        { "name": "Save the Children", "src": "/customers/savethechildren.svg" },
-                        { "name": "World Food Programme", "src": "/customers/wfp.svg" },
-                        { "name": "UNDP", "src": "/customers/undp.svg" },
-                        { "name": "ILO", "src": "/customers/ilo.webp" },
-                        { "name": "ADB", "src": "/customers/adb.svg" }
-                    ]
-                }`}}
+                {{$logoData := dict
+                    "title" (t "brand.trusted_by_teams")
+                    "logos" (slice
+                        (dict "name" "CBRE" "src" "/customers/cbre.svg")
+                        (dict "name" "Cisco" "src" "/customers/cisco.svg")
+                        (dict "name" "Deloitte" "src" "/customers/deloitte.svg")
+                        (dict "name" "FedEx" "src" "/customers/fedex.svg")
+                        (dict "name" "Manulife" "src" "/customers/manulife.svg")
+                        (dict "name" "Red Hat" "src" "/customers/redhat.svg")
+                        (dict "name" "Heineken" "src" "/customers/heineken.svg")
+                        (dict "name" "Marriott" "src" "/customers/marriot.svg")
+                        (dict "name" "Decathlon" "src" "/customers/decathlon.svg")
+                        (dict "name" "TotalEnergies" "src" "/customers/totalenergies.svg")
+                        (dict "name" "Sheraton" "src" "/customers/sheraton.svg")
+                        (dict "name" "VMware" "src" "/customers/vmware.svg")
+                        (dict "name" "Columbia University" "src" "/customers/columbia-university.webp")
+                        (dict "name" "Save the Children" "src" "/customers/savethechildren.svg")
+                        (dict "name" "World Food Programme" "src" "/customers/wfp.svg")
+                        (dict "name" "UNDP" "src" "/customers/undp.svg")
+                        (dict "name" "ILO" "src" "/customers/ilo.webp")
+                        (dict "name" "ADB" "src" "/customers/adb.svg")
+                    )
+                }}
                 
                 {{template "logo-grid" $logoData}}
             </div>
@@ -620,20 +620,20 @@
 
     <!-- Image Styles Section -->
     <section id="image-styles" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Image Styles</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.image_styles_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Product Screenshots -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Product Screenshots</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.product_screenshots_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]</code>
                 </div>
                 <div class="p-8">
                     <img 
                         src="https://www.blue.cc/product/simple-screenshot-home.png" 
-                        alt="Depth screenshot style 2px"
+                        alt="{{t "brand.depth_screenshot_alt"}}"
                         class="w-full max-w-4xl mx-auto border-2 border-gray-200 rounded-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)]"
                     />
                 </div>
@@ -642,14 +642,14 @@
             <!-- Team Photos -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Team Photos</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.team_photos_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">rounded-3xl for warm, friendly team imagery</code>
                 </div>
                 <div class="p-8">
                     <img 
                         src="/pictures/blueteam.jpeg" 
-                        alt="Blue Team Photo"
+                        alt="{{t "brand.blue_team_photo_alt"}}"
                         class="w-full h-auto rounded-3xl"
                     />
                 </div>
@@ -661,13 +661,13 @@
 
     <!-- Video Styles Section -->
     <section id="video-styles" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Video Styles</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.video_styles_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Hero Videos -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Hero Videos</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.hero_videos_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">w-screen h-auto object-cover rounded-2xl with autoplay muted loop playsinline controls</code>
                 </div>
@@ -681,7 +681,7 @@
                         controls
                     >
                         <source src="/testvideo2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                        {{t "brand.your_browser_not_support_video"}}
                     </video>
                 </div>
             </div>
@@ -689,41 +689,41 @@
             <!-- Product Feature Videos -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Product Feature Video (Right)</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.product_feature_video_right_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">feature-video component with text left, video right, optional "See also" section</code>
                 </div>
                 <div class="p-8">
-                    {{$featureVideoData := parseJSON `{
-                        "Title": "Enhanced team collaboration",
-                        "Description": "See your work your way with multiple views, real-time updates, and seamless collaboration tools. Switch between Kanban boards, calendars, timelines, and more to match your team's workflow.",
-                        "VideoUrl": "/testvideo2.mp4",
-                        "VideoPosition": "right",
-                        "Button": {
-                            "Text": "Learn more",
-                            "Url": "/docs/user-management/mentions"
-                        },
-                        "SeeAlso": {
-                            "Heading": "See also",
-                            "Links": [
-                                {
-                                    "Text": "Project management views",
-                                    "Url": "/docs/views/kanban-board",
-                                    "Description": "Learn about different ways to visualize your work"
-                                },
-                                {
-                                    "Text": "Real-time collaboration",
-                                    "Url": "/docs/user-management/mentions", 
-                                    "Description": "How teams work together in Blue"
-                                },
-                                {
-                                    "Text": "Custom workflows",
-                                    "Url": "/docs/workflows",
-                                    "Description": "Create custom workflows for your team"
-                                }
-                            ]
-                        }
-                    }`}}
+                    {{$featureVideoData := dict
+                        "Title" (t "brand.enhanced_team_collaboration_title")
+                        "Description" (t "brand.enhanced_team_collaboration_description")
+                        "VideoUrl" "/testvideo2.mp4"
+                        "VideoPosition" "right"
+                        "Button" (dict
+                            "Text" (t "brand.learn_more_button")
+                            "Url" "/docs/user-management/mentions"
+                        )
+                        "SeeAlso" (dict
+                            "Heading" (t "brand.see_also_heading")
+                            "Links" (slice
+                                (dict
+                                    "Text" (t "brand.project_management_views_text")
+                                    "Url" "/docs/views/kanban-board"
+                                    "Description" (t "brand.project_management_views_description")
+                                )
+                                (dict
+                                    "Text" (t "brand.real_time_collaboration_text")
+                                    "Url" "/docs/user-management/mentions" 
+                                    "Description" (t "brand.real_time_collaboration_description")
+                                )
+                                (dict
+                                    "Text" (t "brand.custom_workflows_text")
+                                    "Url" "/docs/workflows"
+                                    "Description" (t "brand.custom_workflows_description")
+                                )
+                            )
+                        )
+                    }}
                     
                     {{template "feature-video" $featureVideoData}}
                 </div>
@@ -732,17 +732,17 @@
             <!-- Product Feature Video (Left) -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Product Feature Video (Left)</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.product_feature_video_left_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">feature-video component with video left, text right, without "See also" section</code>
                 </div>
                 <div class="p-8">
-                    {{$featureVideoDataLeft := parseJSON `{
-                        "Title": "Powerful automation workflows",
-                        "Description": "Create sophisticated automations without code using our visual workflow builder. Connect tools, trigger actions based on custom conditions, and save hours of manual work every week.",
-                        "VideoUrl": "/testvideo2.mp4",
-                        "VideoPosition": "left"
-                    }`}}
+                    {{$featureVideoDataLeft := dict
+                        "Title" (t "brand.powerful_automation_workflows_title")
+                        "Description" (t "brand.powerful_automation_workflows_description")
+                        "VideoUrl" "/testvideo2.mp4"
+                        "VideoPosition" "left"
+                    }}
                     
                     {{template "feature-video" $featureVideoDataLeft}}
                 </div>
@@ -752,40 +752,40 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Testimonials</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.testimonials_title"}}</h2>
         
         <div class="space-y-12">
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Customer Video Testimonials</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.customer_video_testimonials_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">testimonial-videos component with 4x1 grid</code>
                 </div>
                 
-                {{$testimonialData := parseJSON `{
-                    "testimonials": [
-                        {
-                            "quote": "Blue just helps keep things completely organised — it's an absolutely wonderful tool.",
-                            "videoUrl": "https://media.blue.cc/davidzack-testimonial.mp4",
-                            "posterUrl": "/testimonials/davidsacks.jpeg"
-                        },
-                        {
-                            "quote": "The automation features of Blue help us run our operations seamlessly.",
-                            "videoUrl": "https://media.blue.cc/lady.mp4",
-                            "posterUrl": "/testimonials/lady.jpg"
-                        },
-                        {
-                            "quote": "My entire life is in Blue! I love how fantasticly responsive the team is.",
-                            "videoUrl": "https://media.blue.cc/ricklews-testimonial.mov",
-                            "posterUrl": "/testimonials/ricklewis.jpg"
-                        },
-                        {
-                            "quote": "If you're wondering if you should buy Blue...the answer is YES.",
-                            "videoUrl": "https://media.blue.cc/ana.mov",
-                            "posterUrl": "/testimonials/ana-testimonial.jpg"
-                        }
-                    ]
-                }`}}
+                {{$testimonialData := dict
+                    "testimonials" (slice
+                        (dict
+                            "quote" (t "brand.testimonial_1_quote")
+                            "videoUrl" "https://media.blue.cc/davidzack-testimonial.mp4"
+                            "posterUrl" "/testimonials/davidsacks.jpeg"
+                        )
+                        (dict
+                            "quote" (t "brand.testimonial_2_quote")
+                            "videoUrl" "https://media.blue.cc/lady.mp4"
+                            "posterUrl" "/testimonials/lady.jpg"
+                        )
+                        (dict
+                            "quote" (t "brand.testimonial_3_quote")
+                            "videoUrl" "https://media.blue.cc/ricklews-testimonial.mov"
+                            "posterUrl" "/testimonials/ricklewis.jpg"
+                        )
+                        (dict
+                            "quote" (t "brand.testimonial_4_quote")
+                            "videoUrl" "https://media.blue.cc/ana.mov"
+                            "posterUrl" "/testimonials/ana-testimonial.jpg"
+                        )
+                    )
+                }}
                 
                 {{template "testimonial-videos" $testimonialData}}
             </div>
@@ -793,7 +793,7 @@
             <!-- Side-by-Side Written Testimonials -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Side-by-Side Written Testimonials</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.side_by_side_testimonials_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Two-column layout with vertical divider</code>
                 </div>
@@ -805,14 +805,14 @@
                         <img src="/customers/deloitte.svg" alt="Deloitte" class="h-8 mb-8">
                         
                         <!-- Quote -->
-                        <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">"Blue has transformed how we manage our global consulting projects. The automation features have saved us countless hours and improved our client delivery significantly."</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">"{{t "brand.deloitte_quote"}}"</p>
                         
                         <!-- Profile -->
                         <div class="flex items-center gap-4">
                             <img src="/testimonials/davidsacks.jpeg" alt="David Sacks" class="w-12 h-12 rounded-full object-cover">
                             <div>
-                                <div class="font-semibold text-gray-900 dark:text-gray-100">David Sacks</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">Partner at Deloitte</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">{{t "brand.david_sacks_name"}}</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "brand.david_sacks_role"}}</div>
                             </div>
                         </div>
                     </div>
@@ -823,14 +823,14 @@
                         <img src="/customers/cisco.svg" alt="Cisco" class="h-8 mb-8">
                         
                         <!-- Quote -->
-                        <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">"The flexibility and power of Blue's platform has enabled us to standardize processes across our entire organization while maintaining team autonomy."</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">"{{t "brand.cisco_quote"}}"</p>
                         
                         <!-- Profile -->
                         <div class="flex items-center gap-4">
                             <img src="/testimonials/lady.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
                             <div>
-                                <div class="font-semibold text-gray-900 dark:text-gray-100">Sarah Johnson</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">VP of Operations at Cisco</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">{{t "brand.sarah_johnson_name"}}</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "brand.sarah_johnson_role"}}</div>
                             </div>
                         </div>
                     </div>
@@ -840,7 +840,7 @@
             <!-- Grid Testimonials -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Grid Testimonials</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.grid_testimonials_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Three-column grid with light grey cards</code>
                 </div>
@@ -848,39 +848,39 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Testimonial 1 -->
                     <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">"Blue has completely transformed our project management workflow. The intuitive interface and powerful automation features have made our team 3x more productive."</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">"{{t "brand.testimonial_grid_1_quote"}}"</p>
                         
                         <div class="flex items-center gap-4">
                             <img src="/testimonials/ricklewis.jpg" alt="Rick Lewis" class="w-12 h-12 rounded-full object-cover">
                             <div>
-                                <div class="font-semibold text-gray-900 dark:text-gray-100">Rick Lewis</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">CEO at Digital Agency</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">{{t "brand.rick_lewis_name"}}</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "brand.rick_lewis_role"}}</div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Testimonial 2 -->
                     <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">"The white-label capabilities of Blue have been instrumental in scaling our client services. We can now deliver enterprise-grade solutions with our own branding."</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">"{{t "brand.testimonial_grid_2_quote"}}"</p>
                         
                         <div class="flex items-center gap-4">
                             <img src="/testimonials/ana-testimonial.jpg" alt="Ana Martinez" class="w-12 h-12 rounded-full object-cover">
                             <div>
-                                <div class="font-semibold text-gray-900 dark:text-gray-100">Ana Martinez</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">COO at Scale Corp</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">{{t "brand.ana_martinez_name"}}</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "brand.ana_martinez_role"}}</div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Testimonial 3 -->
                     <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">"We've saved hours every week using Blue's automation tools. The ROI has been incredible - it paid for itself within the first month of implementation and it just keeps getting better."</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">"{{t "brand.testimonial_grid_3_quote"}}"</p>
                         
                         <div class="flex items-center gap-4">
                             <img src="/testimonials/pere.jpg" alt="Pere Rodriguez" class="w-12 h-12 rounded-full object-cover">
                             <div>
-                                <div class="font-semibold text-gray-900 dark:text-gray-100">Pere Rodriguez</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">Director at Enterprise Inc</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">{{t "brand.pere_rodriguez_name"}}</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">{{t "brand.pere_rodriguez_role"}}</div>
                             </div>
                         </div>
                     </div>
@@ -891,33 +891,33 @@
 
     <!-- Stats Section -->
     <section id="stats" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Stats</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.stats_title"}}</h2>
         
         <div class="space-y-12">
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Stats Section Component</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.stats_section_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">stats-section component with title and stats array</code>
                 </div>
                 
-                {{$statsData := parseJSON `{
-                    "Title": "Leading companies trust Blue to streamline their operations",
-                    "Stats": [
-                        {
-                            "Number": "17K+",
-                            "Description": "teams worldwide"
-                        },
-                        {
-                            "Number": "5M+",
-                            "Description": "processes automated"
-                        },
-                        {
-                            "Number": "50M+",
-                            "Description": "records managed"
-                        }
-                    ]
-                }`}}
+                {{$statsData := dict
+                    "Title" (t "brand.stats_heading")
+                    "Stats" (slice
+                        (dict
+                            "Number" "17K+"
+                            "Description" (t "brand.teams_worldwide")
+                        )
+                        (dict
+                            "Number" "5M+"
+                            "Description" (t "brand.processes_automated")
+                        )
+                        (dict
+                            "Number" "50M+"
+                            "Description" (t "brand.records_managed")
+                        )
+                    )
+                }}
                 
                 {{template "stats-section" $statsData}}
             </div>
@@ -926,23 +926,23 @@
 
     <!-- Buttons Section -->
     <section id="buttons" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Buttons</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.buttons_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Primary Buttons ---->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Primary Buttons</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.primary_buttons_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90</code>
                 </div>
                 
                 <div class="flex flex-wrap gap-4">
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center">
-                        Primary Button
+                        {{t "brand.primary_button"}}
                     </a>
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center">
-                        Sign Up
+                        {{t "brand.sign_up"}}
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold" style="color: #00a0d2; border-color: #00a0d2;">↵</span>
                     </a>
                 </div>
@@ -951,17 +951,17 @@
             <!-- Secondary Buttons ---->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Secondary Buttons</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.secondary_buttons_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50</code>
                 </div>
                 
                 <div class="flex flex-wrap gap-4">
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
-                        Secondary Button
+                        {{t "brand.secondary_button"}}
                     </a>
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none transition duration-150 ease-in-out flex items-center">
-                        Log In
+                        {{t "brand.log_in"}}
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">L</span>
                     </a>
                 </div>
@@ -970,17 +970,17 @@
             <!-- Contact/Accent Buttons ---->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Accent Buttons</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.accent_buttons_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100</code>
                 </div>
                 
                 <div class="flex flex-wrap gap-4">
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out flex items-center cursor-pointer">
-                        Accent Button
+                        {{t "brand.accent_button"}}
                     </a>
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition duration-150 ease-in-out flex items-center cursor-pointer">
-                        Contact
+                        {{t "brand.contact"}}
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300">C</span>
                     </a>
                 </div>
@@ -989,20 +989,20 @@
             <!-- Button Sizes ---->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Button Sizes</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.button_sizes_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Various padding combinations for different button sizes</code>
                 </div>
                 
                 <div class="flex flex-wrap items-center gap-4">
                     <a href="#" class="px-3 py-1 text-xs font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                        Small
+                        {{t "brand.small"}}
                     </a>
                     <a href="#" class="px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                        Medium
+                        {{t "brand.medium"}}
                     </a>
                     <a href="#" class="px-6 py-3 text-base font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
-                        Large
+                        {{t "brand.large"}}
                     </a>
                 </div>
             </div>
@@ -1011,24 +1011,24 @@
 
     <!-- Call to Actions Section -->
     <section id="Call to Actions" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Call to Actions</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.call_to_actions_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Dual Button CTA -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Dual Button CTA</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.dual_button_cta_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">dual-button-cta component with title and two action buttons</code>
                 </div>
                 
-                {{$ctaData := parseJSON `{
-                    "Title": "Ready to get started?",
-                    "SecondaryText": "Request a demo",
-                    "SecondaryUrl": "/contact",
-                    "PrimaryText": "Get started",
-                    "PrimaryUrl": "https://app.blue.cc"
-                }`}}
+                {{$ctaData := dict
+                    "Title" (t "brand.ready_to_get_started")
+                    "SecondaryText" (t "brand.request_demo")
+                    "SecondaryUrl" "/contact"
+                    "PrimaryText" (t "brand.get_started")
+                    "PrimaryUrl" "https://app.blue.cc"
+                }}
                 
                 {{template "dual-button-cta" $ctaData}}
             </div>
@@ -1036,31 +1036,31 @@
             <!-- News Bar CTA -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">News Bar CTA</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.news_bar_cta_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">news-bar component with announcement text and button</code>
                 </div>
                 
-                {{$newsBarData := parseJSON `{
-                    "MainText": "Blue Design System 2.0 is now available with enhanced components and dark mode support.",
-                    "ButtonText": "Explore updates",
-                    "ButtonUrl": "/brand"
-                }`}}
+                {{$newsBarData := dict
+                    "MainText" (t "brand.news_bar_main_text")
+                    "ButtonText" (t "brand.explore_updates")
+                    "ButtonUrl" "/brand"
+                }}
                 {{template "news-bar" $newsBarData}}
             </div>
             
             <!-- Career CTA -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Career Call to Action</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.career_cta_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">bg-gray-50 rounded-3xl with centered content</code>
                 </div>
                 
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-3xl p-32 text-center">
-                    <h3 class="text-3xl font-medium text-gray-900 dark:text-gray-100 mb-8">Join us in shaping a future of technology</h3>
+                    <h3 class="text-3xl font-medium text-gray-900 dark:text-gray-100 mb-8">{{t "brand.join_us_heading"}}</h3>
                     <a href="#" class="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-brand-blue/90 transition-colors">
-                        View careers
+                        {{t "brand.view_careers"}}
                     </a>
                 </div>
             </div>
@@ -1069,43 +1069,43 @@
 
     <!-- Interactive Feature Showcase Section -->
     <section id="interactive-feature-showcase" class="mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">Interactive Feature Showcase</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-8">{{t "brand.interactive_feature_showcase_title"}}</h2>
         
         <div class="space-y-12">
             <!-- Left Position (Default) -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Left Position (Default)</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.left_position_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "left" - Menu on left, preview on right</code>
                 </div>
                 
-                {{$showcaseDataLeft := parseJSON `{
-                    "Title": "Explore platform capabilities (Left)",
-                    "Position": "left",
-                    "Features": [
-                        {
-                            "Id": "project-kickoff-left",
-                            "Title": "Project kickoff",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "flow-chart-left",
-                            "Title": "Flow chart",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "weekly-team-meeting-left",
-                            "Title": "Weekly team meeting",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "customer-journey-map-left",
-                            "Title": "Customer journey map",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        }
-                    ]
-                }`}}
+                {{$showcaseDataLeft := dict
+                    "Title" (t "brand.explore_platform_left")
+                    "Position" "left"
+                    "Features" (slice
+                        (dict
+                            "Id" "project-kickoff-left"
+                            "Title" (t "brand.project_kickoff")
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "flow-chart-left"
+                            "Title" (t "brand.flow_chart")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "weekly-team-meeting-left"
+                            "Title" (t "brand.weekly_team_meeting")
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "customer-journey-map-left"
+                            "Title" (t "brand.customer_journey_map")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                    )
+                }}
                 
                 {{template "interactive-feature-showcase" $showcaseDataLeft}}
             </div>
@@ -1113,37 +1113,37 @@
             <!-- Right Position -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Right Position</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.right_position_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "right" - Menu on left with right-aligned text, preview on right</code>
                 </div>
                 
-                {{$showcaseDataRight := parseJSON `{
-                    "Title": "Team collaboration features (Right)",
-                    "Position": "right",
-                    "Features": [
-                        {
-                            "Id": "standup-right",
-                            "Title": "Daily standup",
-                            "VideoUrl": "/testvideo2.mp4"
-                        },
-                        {
-                            "Id": "retrospective-right",
-                            "Title": "Sprint retrospective",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "roadmap-review-right",
-                            "Title": "Roadmap planning",
-                            "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                        },
-                        {
-                            "Id": "project-timeline-right",
-                            "Title": "Timeline tracking",
-                            "VideoUrl": "/testvideo2.mp4"
-                        }
-                    ]
-                }`}}
+                {{$showcaseDataRight := dict
+                    "Title" (t "brand.team_collaboration_features")
+                    "Position" "right"
+                    "Features" (slice
+                        (dict
+                            "Id" "standup-right"
+                            "Title" (t "brand.daily_standup")
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                        (dict
+                            "Id" "retrospective-right"
+                            "Title" (t "brand.sprint_retrospective")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "roadmap-review-right"
+                            "Title" (t "brand.roadmap_planning")
+                            "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
+                        )
+                        (dict
+                            "Id" "project-timeline-right"
+                            "Title" (t "brand.timeline_tracking")
+                            "VideoUrl" "/testvideo2.mp4"
+                        )
+                    )
+                }}
                 
                 {{template "interactive-feature-showcase" $showcaseDataRight}}
             </div>
@@ -1151,7 +1151,7 @@
             <!-- Top Position -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Top Position</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.top_position_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "bottom" - Menu grid first (top), preview second (bottom) - responsive: 1 col mobile, 2 tablet, 3 desktop</code>
                 </div>
@@ -1199,7 +1199,7 @@
             <!-- Bottom Position -->
             <div>
                 <hr class="border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">Bottom Position</h3>
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100 mb-4">{{t "brand.bottom_position_title"}}</h3>
                 <div class="mt-2 text-sm text-gray-500 mb-6">
                     <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">Position: "top" - Preview first (top), menu grid second (bottom) - responsive: 1 col mobile, 2 tablet, 3 desktop</code>
                 </div>
