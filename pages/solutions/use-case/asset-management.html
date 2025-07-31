@@ -35,20 +35,20 @@
         {{$valuePropsData := dict 
             "Title" (t "asset-management.value_props_title")
             "Description" (t "asset-management.value_props_description")
-            "ValueProps" (parseJSON `[
-                {
-                    "Title": "{{t \"asset-management.unlimited_flexibility_title\"}}",
-                    "Description": "{{t \"asset-management.unlimited_flexibility_description\"}}"
-                },
-                {
-                    "Title": "{{t \"asset-management.complete_audit_trail_title\"}}",
-                    "Description": "{{t \"asset-management.complete_audit_trail_description\"}}"
-                },
-                {
-                    "Title": "{{t \"asset-management.api_first_design_title\"}}",
-                    "Description": "{{t \"asset-management.api_first_design_description\"}}"
-                }
-            ]`)
+            "ValueProps" (slice
+                (dict
+                    "Title" (t "asset-management.unlimited_flexibility_title")
+                    "Description" (t "asset-management.unlimited_flexibility_description")
+                )
+                (dict
+                    "Title" (t "asset-management.complete_audit_trail_title")
+                    "Description" (t "asset-management.complete_audit_trail_description")
+                )
+                (dict
+                    "Title" (t "asset-management.api_first_design_title")
+                    "Description" (t "asset-management.api_first_design_description")
+                )
+            )
         }}
         
         {{template "value-propositions" $valuePropsData}}
@@ -58,20 +58,20 @@
     <section class="mb-16">
         {{$statsData := dict 
             "Title" (t "asset-management.stats_title")
-            "Stats" (parseJSON `[
-                {
-                    "Number": "30%",
-                    "Description": "{{t \"asset-management.stat_downtime_reduction\"}}"
-                },
-                {
-                    "Number": "25%",
-                    "Description": "{{t \"asset-management.stat_utilization_increase\"}}"
-                },
-                {
-                    "Number": "40%",
-                    "Description": "{{t \"asset-management.stat_faster_requests\"}}"
-                }
-            ]`)
+            "Stats" (slice
+                (dict
+                    "Number" "30%"
+                    "Description" (t "asset-management.stat_downtime_reduction")
+                )
+                (dict
+                    "Number" "25%"
+                    "Description" (t "asset-management.stat_utilization_increase")
+                )
+                (dict
+                    "Number" "40%"
+                    "Description" (t "asset-management.stat_faster_requests")
+                )
+            )
         }}
         
         {{template "stats-section" $statsData}}
@@ -92,18 +92,18 @@
                 )
                 "SeeAlso" (dict 
                     "Heading" (t "asset-management.asset_data_features")
-                    "Links" (parseJSON `[
-                        {
-                            "Text": "{{t \"asset-management.unique_id_generation\"}}",
-                            "Url": "/docs/custom-fields/unique-id",
-                            "Description": "{{t \"asset-management.unique_id_generation_description\"}}"
-                        },
-                        {
-                            "Text": "{{t \"asset-management.reference_fields\"}}",
-                            "Url": "/docs/custom-fields/reference",
-                            "Description": "{{t \"asset-management.reference_fields_description\"}}"
-                        }
-                    ]`)
+                    "Links" (slice
+                        (dict
+                            "Text" (t "asset-management.unique_id_generation")
+                            "Url" "/docs/custom-fields/unique-id"
+                            "Description" (t "asset-management.unique_id_generation_description")
+                        )
+                        (dict
+                            "Text" (t "asset-management.reference_fields")
+                            "Url" "/docs/custom-fields/reference"
+                            "Description" (t "asset-management.reference_fields_description")
+                        )
+                    )
                 )
             }}
             
@@ -119,23 +119,23 @@
                 "VideoPosition" "left"
                 "SeeAlso" (dict 
                     "Heading" (t "asset-management.maintenance_features")
-                    "Links" (parseJSON `[
-                        {
-                            "Text": "{{t \"asset-management.recurring_records\"}}",
-                            "Url": "/docs/records/repeat",
-                            "Description": "{{t \"asset-management.recurring_records_description\"}}"
-                        },
-                        {
-                            "Text": "{{t \"asset-management.maintenance_automations\"}}",
-                            "Url": "/docs/automations/introduction",
-                            "Description": "{{t \"asset-management.maintenance_automations_description\"}}"
-                        },
-                        {
-                            "Text": "{{t \"asset-management.due_date_tracking\"}}",
-                            "Url": "/docs/custom-fields/date",
-                            "Description": "{{t \"asset-management.due_date_tracking_description\"}}"
-                        }
-                    ]`)
+                    "Links" (slice
+                        (dict
+                            "Text" (t "asset-management.recurring_records")
+                            "Url" "/docs/records/repeat"
+                            "Description" (t "asset-management.recurring_records_description")
+                        )
+                        (dict
+                            "Text" (t "asset-management.maintenance_automations")
+                            "Url" "/docs/automations/introduction"
+                            "Description" (t "asset-management.maintenance_automations_description")
+                        )
+                        (dict
+                            "Text" (t "asset-management.due_date_tracking")
+                            "Url" "/docs/custom-fields/date"
+                            "Description" (t "asset-management.due_date_tracking_description")
+                        )
+                    )
                 )
             }}
             
@@ -151,23 +151,23 @@
                 "VideoPosition" "right"
                 "SeeAlso" (dict 
                     "Heading" (t "asset-management.assignment_tools")
-                    "Links" (parseJSON `[
-                        {
-                            "Text": "{{t \"asset-management.button_fields\"}}",
-                            "Url": "/docs/custom-fields/button",
-                            "Description": "{{t \"asset-management.button_fields_description\"}}"
-                        },
-                        {
-                            "Text": "{{t \"asset-management.checkbox_workflows\"}}",
-                            "Url": "/docs/custom-fields/checkbox",
-                            "Description": "{{t \"asset-management.checkbox_workflows_description\"}}"
-                        },
-                        {
-                            "Text": "{{t \"asset-management.user_assignment\"}}",
-                            "Url": "/docs/user-management/introduction",
-                            "Description": "{{t \"asset-management.user_assignment_description\"}}"
-                        }
-                    ]`)
+                    "Links" (slice
+                        (dict
+                            "Text" (t "asset-management.button_fields")
+                            "Url" "/docs/custom-fields/button"
+                            "Description" (t "asset-management.button_fields_description")
+                        )
+                        (dict
+                            "Text" (t "asset-management.checkbox_workflows")
+                            "Url" "/docs/custom-fields/checkbox"
+                            "Description" (t "asset-management.checkbox_workflows_description")
+                        )
+                        (dict
+                            "Text" (t "asset-management.user_assignment")
+                            "Url" "/docs/user-management/introduction"
+                            "Description" (t "asset-management.user_assignment_description")
+                        )
+                    )
                 )
             }}
             
@@ -288,53 +288,53 @@
     <section class="mb-16">
         {{$featuresData := dict 
             "Title" (t "asset-management.features_title")
-            "Features" (parseJSON `[
-                {
-                    "Icon": "database",
-                    "Title": "{{t \"asset-management.centralized_database_title\"}}",
-                    "Description": "{{t \"asset-management.centralized_database_description\"}}"
-                },
-                {
-                    "Icon": "calendar",
-                    "Title": "{{t \"asset-management.maintenance_scheduling_title\"}}",
-                    "Description": "{{t \"asset-management.maintenance_scheduling_description\"}}"
-                },
-                {
-                    "Icon": "map-pin",
-                    "Title": "{{t \"asset-management.location_tracking_title\"}}",
-                    "Description": "{{t \"asset-management.location_tracking_description\"}}"
-                },
-                {
-                    "Icon": "users",
-                    "Title": "{{t \"asset-management.asset_assignment_title\"}}",
-                    "Description": "{{t \"asset-management.asset_assignment_description\"}}"
-                },
-                {
-                    "Icon": "chart-bar",
-                    "Title": "{{t \"asset-management.utilization_analytics_title\"}}",
-                    "Description": "{{t \"asset-management.utilization_analytics_description\"}}"
-                },
-                {
-                    "Icon": "shield-check",
-                    "Title": "{{t \"asset-management.compliance_management_title\"}}",
-                    "Description": "{{t \"asset-management.compliance_management_description\"}}"
-                },
-                {
-                    "Icon": "code",
-                    "Title": "{{t \"asset-management.api_integration_feature_title\"}}",
-                    "Description": "{{t \"asset-management.api_integration_feature_description\"}}"
-                },
-                {
-                    "Icon": "clock",
-                    "Title": "{{t \"asset-management.lifecycle_management_title\"}}",
-                    "Description": "{{t \"asset-management.lifecycle_management_description\"}}"
-                },
-                {
-                    "Icon": "bell",
-                    "Title": "{{t \"asset-management.smart_notifications_title\"}}",
-                    "Description": "{{t \"asset-management.smart_notifications_description\"}}"
-                }
-            ]`)
+            "Features" (slice
+                (dict
+                    "Icon" "database"
+                    "Title" (t "asset-management.centralized_database_title")
+                    "Description" (t "asset-management.centralized_database_description")
+                )
+                (dict
+                    "Icon" "calendar"
+                    "Title" (t "asset-management.maintenance_scheduling_title")
+                    "Description" (t "asset-management.maintenance_scheduling_description")
+                )
+                (dict
+                    "Icon" "map-pin"
+                    "Title" (t "asset-management.location_tracking_title")
+                    "Description" (t "asset-management.location_tracking_description")
+                )
+                (dict
+                    "Icon" "users"
+                    "Title" (t "asset-management.asset_assignment_title")
+                    "Description" (t "asset-management.asset_assignment_description")
+                )
+                (dict
+                    "Icon" "chart-bar"
+                    "Title" (t "asset-management.utilization_analytics_title")
+                    "Description" (t "asset-management.utilization_analytics_description")
+                )
+                (dict
+                    "Icon" "shield-check"
+                    "Title" (t "asset-management.compliance_management_title")
+                    "Description" (t "asset-management.compliance_management_description")
+                )
+                (dict
+                    "Icon" "code"
+                    "Title" (t "asset-management.api_integration_feature_title")
+                    "Description" (t "asset-management.api_integration_feature_description")
+                )
+                (dict
+                    "Icon" "clock"
+                    "Title" (t "asset-management.lifecycle_management_title")
+                    "Description" (t "asset-management.lifecycle_management_description")
+                )
+                (dict
+                    "Icon" "bell"
+                    "Title" (t "asset-management.smart_notifications_title")
+                    "Description" (t "asset-management.smart_notifications_description")
+                )
+            )
         }}
 
         {{template "features-grid-simple" $featuresData}}
@@ -358,53 +358,53 @@
     <section class="mb-16">
         
         {{$faqData := dict 
-            "categories" (parseJSON `[
-                {
-                    "name": "{{t \"asset-management.faq_category\"}}",
-                    "questions": [
-                        {
-                            "question": "{{t \"asset-management.faq_track_different_types_question\"}}",
-                            "answer": "{{t \"asset-management.faq_track_different_types_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_integration_question\"}}",
-                            "answer": "{{t \"asset-management.faq_integration_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_maintenance_scheduling_question\"}}",
-                            "answer": "{{t \"asset-management.faq_maintenance_scheduling_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_reduce_downtime_question\"}}",
-                            "answer": "{{t \"asset-management.faq_reduce_downtime_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_location_tracking_question\"}}",
-                            "answer": "{{t \"asset-management.faq_location_tracking_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_approval_workflows_question\"}}",
-                            "answer": "{{t \"asset-management.faq_approval_workflows_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_compliance_auditing_question\"}}",
-                            "answer": "{{t \"asset-management.faq_compliance_auditing_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_custom_reports_question\"}}",
-                            "answer": "{{t \"asset-management.faq_custom_reports_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_security_question\"}}",
-                            "answer": "{{t \"asset-management.faq_security_answer\"}}"
-                        },
-                        {
-                            "question": "{{t \"asset-management.faq_scalability_question\"}}",
-                            "answer": "{{t \"asset-management.faq_scalability_answer\"}}"
-                        }
-                    ]
-                }
-            ]`)
+            "categories" (slice
+                (dict
+                    "name" (t "asset-management.faq_category")
+                    "questions" (slice
+                        (dict
+                            "question" (t "asset-management.faq_track_different_types_question")
+                            "answer" (t "asset-management.faq_track_different_types_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_integration_question")
+                            "answer" (t "asset-management.faq_integration_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_maintenance_scheduling_question")
+                            "answer" (t "asset-management.faq_maintenance_scheduling_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_reduce_downtime_question")
+                            "answer" (t "asset-management.faq_reduce_downtime_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_location_tracking_question")
+                            "answer" (t "asset-management.faq_location_tracking_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_approval_workflows_question")
+                            "answer" (t "asset-management.faq_approval_workflows_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_compliance_auditing_question")
+                            "answer" (t "asset-management.faq_compliance_auditing_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_custom_reports_question")
+                            "answer" (t "asset-management.faq_custom_reports_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_security_question")
+                            "answer" (t "asset-management.faq_security_answer")
+                        )
+                        (dict
+                            "question" (t "asset-management.faq_scalability_question")
+                            "answer" (t "asset-management.faq_scalability_answer")
+                        )
+                    )
+                )
+            )
         }}
         
         {{template "faq-sections" $faqData}}
