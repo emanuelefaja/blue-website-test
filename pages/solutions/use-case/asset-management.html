@@ -29,6 +29,31 @@
         {{template "logo-grid" $logoData}}
     </section>
 
+
+    <!-- Value Proposition Section -->
+    <section class="mb-16">
+        {{$valuePropsData := parseJSON `{
+            "Title": "Why Blue beats traditional asset management software",
+            "Description": "Rigid asset management systems force you into their way of thinking. Blue adapts to yours.",
+            "ValueProps": [
+                {
+                    "Title": "Unlimited flexibility",
+                    "Description": "Track any asset type with custom fields designed for your exact needs."
+                },
+                {
+                    "Title": "Complete audit trail",
+                    "Description": "Every change is automatically logged for compliance and accountability."
+                },
+                {
+                    "Title": "API-first design",
+                    "Description": "Your asset data is instantly available to any other system you use."
+                }
+            ]
+        }`}}
+        
+        {{template "value-propositions" $valuePropsData}}
+    </section>
+
     <!-- Stats Section -->
     <section class="mb-16">
         {{$statsData := parseJSON `{
@@ -150,113 +175,114 @@
         </div>
         
         <!-- API Integration & Analytics -->
-        <div>
-            {{$apiData := parseJSON `{
-                "Title": "Your asset data, available everywhere.",
-                "Description": "Blue's API instantly exposes your asset inventory to any other software—no developer setup required. Build real-time dashboards to track utilization, costs, and performance metrics that matter to your business.",
-                "VideoUrl": "/testvideo2.mp4",
-                "VideoPosition": "left",
-                "Button": {
-                    "Text": "Explore the API",
-                    "Url": "/docs/integrations/api"
-                },
-                "SeeAlso": {
-                    "Heading": "Integration options",
-                    "Links": [
-                        {
-                            "Text": "Real-time API access",
-                            "Url": "/platform/api",
-                            "Description": "instant data synchronization"
-                        },
-                        {
-                            "Text": "Asset dashboards",
-                            "Url": "/docs/dashboards/introduction",
-                            "Description": "for performance tracking"
-                        }
-                    ]
-                }
+        <div class="mb-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left side - Text content -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-medium text-gray-900 dark:text-gray-100">
+                            Your asset data, available everywhere.
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Blue's API instantly exposes your asset inventory to any other software—no developer setup required. Create, update, and sync asset data with external systems in real-time.
+                        </p>
+                        
+                        <!-- Button -->
+                        <div class="pt-2">
+                            <a href="/platform/api" 
+                               class="inline-flex items-center px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out">
+                                Explore the API
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- See Also -->
+                        <div class="pt-4">
+                            <h5 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
+                                See also
+                            </h5>
+                            <ul class="space-y-2">
+                                <li>
+                                    <a href="/docs/integrations/api" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                        API integration
+                                    </a>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> real-time data synchronization</span>
+                                </li>
+                                <li>
+                                    <a href="/docs/dashboards/introduction" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                        Asset dashboards
+                                    </a>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> for performance tracking</span>
+                                </li>
+                                <li>
+                                    <a href="/docs/custom-fields/introduction" class="text-sm text-brand-blue hover:text-brand-blue/80 transition-colors">
+                                        Custom fields
+                                    </a>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400"> flexible asset data structure</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right side - Code Example -->
+                    <div class="prose prose-lg max-w-none">
+                        <pre><code class="language-graphql">mutation CreateAsset {
+  createTodo(
+    input: {
+      title: "Dell OptiPlex 7090 - Workstation"
+      description: "&lt;p&gt;High-performance desktop workstation assigned to Engineering team.&lt;/p&gt;"
+      placement: TOP
+      assigneeIds: ["user_john_doe"]
+      tags: [
+        { title: "IT Equipment", color: "#3b82f6" }
+        { title: "Active" }
+      ]
+      customFields: [
+        {
+          customFieldId: "Serial Number"
+          value: "DL7090-2025-001"
+        }
+        {
+          customFieldId: "Asset Type"
+          value: "Desktop Computer"
+        }
+        {
+          customFieldId: "Purchase Date"
+          value: "2025-01-10"
+        }
+        {
+          customFieldId: "Location"
+          value: "Engineering Floor - Desk 15"
+        }
+      ]
+    }
+  )
+}</code></pre>
+                    </div>
+                                </div>
+            </div>
+        </div>
+        
+        <!-- Integration Partners -->
+        <div class="mb-16">
+            {{$integrationData := parseJSON `{
+                "title": "Connect with 7,000+ tools through our integration partners",
+                "logos": [
+                    { "name": "Zapier", "src": "/images/zapier.svg" },
+                    { "name": "Make.com", "src": "/images/make.svg" },
+                    { "name": "Pabbly Connect", "src": "/images/pabbly.svg" },
+                    { "name": "Albato", "src": "/images/albato.png" },
+                    { "name": "Boost.space", "src": "/images/boost-space.svg" }
+                ]
             }`}}
-            
-            {{template "feature-video" $apiData}}
+            {{template "logo-grid" $integrationData}}
         </div>
     </section>
 
-    <!-- Interactive Feature Showcase -->
-    <section class="mb-16">
-        {{$showcaseData := parseJSON `{
-            "Title": "Perfect for every type of asset",
-            "Features": [
-                {
-                    "Id": "it-equipment",
-                    "Title": "IT Equipment",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "vehicles",
-                    "Title": "Vehicle Fleet",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "machinery",
-                    "Title": "Heavy Machinery",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "office-furniture",
-                    "Title": "Office Furniture",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                },
-                {
-                    "Id": "medical-equipment",
-                    "Title": "Medical Equipment",
-                    "VideoUrl": "/testvideo2.mp4"
-                },
-                {
-                    "Id": "tools-equipment",
-                    "Title": "Tools & Equipment",
-                    "ImageUrl": "https://www.blue.cc/product/simple-screenshot-home.png"
-                }
-            ]
-        }`}}
-        
-        {{template "interactive-feature-showcase" $showcaseData}}
-    </section>
+    
 
-    <!-- Testimonial -->
-    <section class="mb-16">        
-        {{template "testimonial-single" 
-            dict 
-                "Quote" "Blue transformed our asset management from spreadsheets to a sophisticated system. We reduced equipment downtime by 30% and our audit preparation time by hours."
-                "VideoUrl" "/testvideo2.mp4"
-                "PosterUrl" "/testimonials/june.jpg"
-                "Name" "David Kim"
-                "Title" "Facilities Manager"
-        }}
-    </section>
-
-    <!-- Value Proposition Section -->
-    <section class="mb-16">
-        {{$valuePropsData := parseJSON `{
-            "Title": "Why Blue beats traditional asset management software",
-            "Description": "Rigid asset management systems force you into their way of thinking. Blue adapts to yours.",
-            "ValueProps": [
-                {
-                    "Title": "Unlimited flexibility",
-                    "Description": "Track any asset type with custom fields designed for your exact needs."
-                },
-                {
-                    "Title": "Complete audit trail",
-                    "Description": "Every change is automatically logged for compliance and accountability."
-                },
-                {
-                    "Title": "API-first design",
-                    "Description": "Your asset data is instantly available to any other system you use."
-                }
-            ]
-        }`}}
-        
-        {{template "value-propositions" $valuePropsData}}
-    </section>
 
     <!-- Asset Management Features Grid -->
     <section class="mb-16">
