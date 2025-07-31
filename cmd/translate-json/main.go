@@ -73,18 +73,6 @@ const (
 )
 
 func main() {
-	// Check arguments
-	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run cmd/translate-json/main.go <json-file>")
-		fmt.Println("Example: go run cmd/translate-json/main.go about.json")
-		os.Exit(1)
-	}
-
-	jsonFile := os.Args[1]
-	if !strings.HasSuffix(jsonFile, ".json") {
-		jsonFile += ".json"
-	}
-
 	// Load environment variables
 	if err := godotenv.Load(".env"); err != nil {
 		fmt.Printf("Warning: .env file not found: %v\n", err)
@@ -108,77 +96,68 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Load existing JSON file
-	jsonPath := "translations/" + jsonFile
-	jsonData, err := loadJSON(jsonPath)
-	if err != nil {
-		fmt.Printf("Error loading %s: %v\n", jsonPath, err)
-		os.Exit(1)
-	}
-
-	// Extract English entries
-	englishEntries, err := extractEnglishEntries(jsonData)
-	if err != nil {
-		fmt.Printf("Error extracting English entries: %v\n", err)
-		os.Exit(1)
-	}
-	fmt.Printf("Found %d English entries to translate in %s\n", len(englishEntries), jsonFile)
-
-	// Build translation tasks
-	tasks := buildTranslationTasks(englishEntries, targetLanguages, jsonData)
-
-	if len(tasks) == 0 {
-		fmt.Println("All translations are complete!")
+	// Check for help flags
+	if len(os.Args) >= 2 && (os.Args[1] == "-help" || os.Args[1] == "--help" || os.Args[1] == "-h") {
+		fmt.Println("Usage:")
+		fmt.Println("  go run cmd/translate-json/main.go [json-file]")
+		fmt.Println("")
+		fmt.Println("Examples:")
+		fmt.Println("  go run cmd/translate-json/main.go about.json    # Translate specific file")
+		fmt.Println("  go run cmd/translate-json/main.go              # Scan and translate all files needing work")
+		fmt.Println("")
+		fmt.Println("When no file is specified, the tool will automatically scan the translations/")
+		fmt.Println("directory and process all files that have missing translations.")
 		return
 	}
 
-	fmt.Printf("\n=== Translation Summary ===\n")
-	fmt.Printf("File: %s\n", jsonFile)
-	fmt.Printf("Total translations needed: %d\n", len(tasks))
-	fmt.Printf("Languages: %v\n", targetLanguages)
+	// Check if specific file provided or batch mode
+	if len(os.Args) >= 2 {
+		// Single file mode (existing behavior)
+		jsonFile := os.Args[1]
+		if !strings.HasSuffix(jsonFile, ".json") {
+			jsonFile += ".json"
+		}
 
-	// Initialize statistics
-	stats := &TranslationStats{
-		TotalTasks: len(tasks),
-		StartTime:  time.Now(),
+		err := processFile(jsonFile, targetLanguages, &client)
+		if err != nil {
+			fmt.Printf("Error processing %s: %v\n", jsonFile, err)
+			os.Exit(1)
+		}
+	} else {
+		// Batch mode - scan all files and process those needing translations
+		fmt.Println("No specific file provided. Scanning translations directory for files needing translation...")
+
+		filesToProcess, err := findFilesNeedingTranslation(targetLanguages)
+		if err != nil {
+			fmt.Printf("Error scanning translations directory: %v\n", err)
+			os.Exit(1)
+		}
+
+		if len(filesToProcess) == 0 {
+			fmt.Println("🎉 All translation files are complete! No work needed.")
+			return
+		}
+
+		fmt.Printf("Found %d files needing translation: %v\n\n", len(filesToProcess), filesToProcess)
+
+		// Process each file
+		for i, jsonFile := range filesToProcess {
+			fmt.Printf("=== Processing file %d/%d: %s ===\n", i+1, len(filesToProcess), jsonFile)
+
+			err := processFile(jsonFile, targetLanguages, &client)
+			if err != nil {
+				fmt.Printf("Error processing %s: %v\n", jsonFile, err)
+				// Continue with next file instead of exiting
+				continue
+			}
+
+			if i < len(filesToProcess)-1 {
+				fmt.Printf("\n✅ Completed %s. Moving to next file...\n\n", jsonFile)
+			}
+		}
+
+		fmt.Println("\n🎉 Batch processing complete! All files have been processed.")
 	}
-
-	// Number of concurrent workers
-	const workerCount = 50
-
-	// Create channels
-	taskChan := make(chan TranslationTask, len(tasks))
-	resultChan := make(chan TranslationResult, len(tasks))
-
-	// Mutex for file writing
-	var fileMutex sync.Mutex
-
-	// Start workers
-	var wg sync.WaitGroup
-	for i := 0; i < workerCount; i++ {
-		wg.Add(1)
-		go translationWorker(i, &client, taskChan, resultChan, &wg)
-	}
-
-	// Send tasks to channel
-	for _, task := range tasks {
-		taskChan <- task
-	}
-	close(taskChan)
-
-	// Start result processor
-	doneChan := make(chan bool)
-	go processResults(resultChan, jsonData, jsonPath, stats, &fileMutex, doneChan)
-
-	// Wait for workers
-	wg.Wait()
-	close(resultChan)
-
-	// Wait for result processor
-	<-doneChan
-
-	// Final summary
-	printFinalSummary(stats)
 }
 
 // getTargetLanguages reads supported languages from web/languages.go
@@ -472,4 +451,158 @@ func printFinalSummary(stats *TranslationStats) {
 	if failed > 0 {
 		fmt.Printf("\nNote: %d translations failed. Run the script again to retry.\n", failed)
 	}
+}
+
+// findFilesNeedingTranslation scans the translations directory and returns files that need translation
+func findFilesNeedingTranslation(targetLanguages []string) ([]string, error) {
+	translationsDir := "translations"
+
+	// Read directory contents
+	entries, err := os.ReadDir(translationsDir)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read translations directory: %v", err)
+	}
+
+	var filesToProcess []string
+
+	// Check each JSON file
+	for _, entry := range entries {
+		if !entry.IsDir() && strings.HasSuffix(entry.Name(), ".json") {
+			needsTranslation, err := fileNeedsTranslation(entry.Name(), targetLanguages)
+			if err != nil {
+				fmt.Printf("Warning: Error checking %s: %v\n", entry.Name(), err)
+				continue
+			}
+
+			if needsTranslation {
+				filesToProcess = append(filesToProcess, entry.Name())
+			}
+		}
+	}
+
+	return filesToProcess, nil
+}
+
+// fileNeedsTranslation checks if a file has missing translations
+func fileNeedsTranslation(jsonFile string, targetLanguages []string) (bool, error) {
+	jsonPath := "translations/" + jsonFile
+	jsonData, err := loadJSON(jsonPath)
+	if err != nil {
+		return false, err
+	}
+
+	// Check if English section exists
+	if _, ok := jsonData["en"].(map[string]interface{}); !ok {
+		// No English section means no translations needed
+		return false, nil
+	}
+
+	// Extract English entries
+	englishEntries, err := extractEnglishEntries(jsonData)
+	if err != nil {
+		return false, err
+	}
+
+	if len(englishEntries) == 0 {
+		// No English content to translate
+		return false, nil
+	}
+
+	// Check if any language is missing translations
+	for _, lang := range targetLanguages {
+		langData, exists := jsonData[lang].(map[string]interface{})
+		if !exists {
+			// Language section doesn't exist - needs translation
+			return true, nil
+		}
+
+		// Check if all English keys are translated in this language
+		existingKeys := make(map[string]bool)
+		getAllKeys(langData, []string{}, existingKeys)
+
+		for _, entry := range englishEntries {
+			if !existingKeys[entry.Key] {
+				// Missing translation found
+				return true, nil
+			}
+		}
+	}
+
+	// All languages have all translations
+	return false, nil
+}
+
+// processFile handles the translation of a single file (extracted from main logic)
+func processFile(jsonFile string, targetLanguages []string, client *openai.Client) error {
+	// Load existing JSON file
+	jsonPath := "translations/" + jsonFile
+	jsonData, err := loadJSON(jsonPath)
+	if err != nil {
+		return fmt.Errorf("error loading %s: %v", jsonPath, err)
+	}
+
+	// Extract English entries
+	englishEntries, err := extractEnglishEntries(jsonData)
+	if err != nil {
+		return fmt.Errorf("error extracting English entries: %v", err)
+	}
+	fmt.Printf("Found %d English entries to translate in %s\n", len(englishEntries), jsonFile)
+
+	// Build translation tasks
+	tasks := buildTranslationTasks(englishEntries, targetLanguages, jsonData)
+
+	if len(tasks) == 0 {
+		fmt.Printf("✅ All translations are complete for %s!\n", jsonFile)
+		return nil
+	}
+
+	fmt.Printf("\n=== Translation Summary ===\n")
+	fmt.Printf("File: %s\n", jsonFile)
+	fmt.Printf("Total translations needed: %d\n", len(tasks))
+	fmt.Printf("Languages: %v\n", targetLanguages)
+
+	// Initialize statistics
+	stats := &TranslationStats{
+		TotalTasks: len(tasks),
+		StartTime:  time.Now(),
+	}
+
+	// Number of concurrent workers
+	const workerCount = 50
+
+	// Create channels
+	taskChan := make(chan TranslationTask, len(tasks))
+	resultChan := make(chan TranslationResult, len(tasks))
+
+	// Mutex for file writing
+	var fileMutex sync.Mutex
+
+	// Start workers
+	var wg sync.WaitGroup
+	for i := 0; i < workerCount; i++ {
+		wg.Add(1)
+		go translationWorker(i, client, taskChan, resultChan, &wg)
+	}
+
+	// Send tasks to channel
+	for _, task := range tasks {
+		taskChan <- task
+	}
+	close(taskChan)
+
+	// Start result processor
+	doneChan := make(chan bool)
+	go processResults(resultChan, jsonData, jsonPath, stats, &fileMutex, doneChan)
+
+	// Wait for workers
+	wg.Wait()
+	close(resultChan)
+
+	// Wait for result processor
+	<-doneChan
+
+	// Final summary
+	printFinalSummary(stats)
+
+	return nil
 }
