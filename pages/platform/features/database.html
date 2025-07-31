@@ -1,16 +1,16 @@
 <!-- Main content -->
     {{template "page-heading" 
         dict 
-            "Title" "Ditch Excel. Embrace Database View." 
-            "Subtitle" "Collaborate effortlessly, edit records instantly, and manage millions of rows with our intuitive spreadsheet-style interface." 
+            "Title" (t "database.page_title") 
+            "Subtitle" (t "database.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
     <!-- Key Benefits Section -->
     <section class="mb-20">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4 text-center">The database you always wanted.</h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">Fast, performant and beautiful. This is the database that you will actually enjoy working with.</p>
+            <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4 text-center">{{t "database.benefits_title"}}</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center">{{t "database.benefits_subtitle"}}</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center">
@@ -19,8 +19,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Lightning Fast</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Handle millions of rows with instant loading and real-time updates.</p>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">{{t "database.benefit_1_title"}}</h3>
+                    <p class="text-gray-600 dark:text-gray-400">{{t "database.benefit_1_description"}}</p>
                 </div>
 
                 <div class="text-center">
@@ -29,8 +29,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Collaborative</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Work together in real-time with no conflicts or version issues.</p>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">{{t "database.benefit_2_title"}}</h3>
+                    <p class="text-gray-600 dark:text-gray-400">{{t "database.benefit_2_description"}}</p>
                 </div>
 
                 <div class="text-center">
@@ -39,105 +39,105 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">Intuitive</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Familiar spreadsheet interface with powerful database capabilities.</p>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">{{t "database.benefit_3_title"}}</h3>
+                    <p class="text-gray-600 dark:text-gray-400">{{t "database.benefit_3_description"}}</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Essential Data Feature -->
-    {{$essentialDataFeature := parseJSON `{
-        "Title": "Keep essential data at your fingertips.",
-        "Description": "Never lose sight of crucial information no matter how many columns you have. Pin key columns, hide unnecessary ones, and focus on what matters.",
-        "VideoUrl": "https://media.blue.cc/database-hide-example.mp4",
-        "VideoPosition": "right"
-    }`}}
+    {{$essentialDataFeature := dict
+        "Title" (t "database.essential_data_title")
+        "Description" (t "database.essential_data_description")
+        "VideoUrl" "https://media.blue.cc/database-hide-example.mp4"
+        "VideoPosition" "right"
+    }}
     {{template "feature-video" $essentialDataFeature}}
 
     <!-- Filter and Sort Feature -->
-    {{$filterSortFeature := parseJSON `{
-        "Title": "Filter, sort, and group like a pro.",
-        "Description": "Leverage advanced stacked filters, sort multiple columns, and create groups and subgroups to organize your database and find what you need in seconds.",
-        "VideoUrl": "https://media.blue.cc/database-group-example.mp4",
-        "VideoPosition": "left"
-    }`}}
+    {{$filterSortFeature := dict
+        "Title" (t "database.filter_sort_title")
+        "Description" (t "database.filter_sort_description")
+        "VideoUrl" "https://media.blue.cc/database-group-example.mp4"
+        "VideoPosition" "left"
+    }}
     {{template "feature-video" $filterSortFeature}}
 
 
     <!-- Connections Feature -->
-    {{$connectionsFeature := parseJSON `{
-        "Title": "Create connections to achieve a single source of truth.",
-        "Description": "Link records and fields between databases to create a truly interconnected, company-wide data management system. Update data everywhere at once.",
-        "VideoUrl": "https://media.blue.cc/reference-lookup-example.mp4",
-        "VideoPosition": "right"
-    }`}}
+    {{$connectionsFeature := dict
+        "Title" (t "database.connections_title")
+        "Description" (t "database.connections_description")
+        "VideoUrl" "https://media.blue.cc/reference-lookup-example.mp4"
+        "VideoPosition" "right"
+    }}
     {{template "feature-video" $connectionsFeature}}
 
     <!-- Permissions Feature -->
-    {{$permissionsFeature := parseJSON `{
-        "Title": "Row-level permissions and granular access control with custom user roles.",
-        "Description": "Set granular permission at the column level to ensure that your information is disclosed only to those who need to know.",
-        "VideoUrl": "https://media.blue.cc/user-permissions-custom-fields.mp4",
-        "VideoPosition": "left"
-    }`}}
+    {{$permissionsFeature := dict
+        "Title" (t "database.permissions_title")
+        "Description" (t "database.permissions_description")
+        "VideoUrl" "https://media.blue.cc/user-permissions-custom-fields.mp4"
+        "VideoPosition" "left"
+    }}
     {{template "feature-video" $permissionsFeature}}
 
     <!-- FAQ Section -->
     <section class="mb-20">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">Frequently asked questions</h2>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-16">{{t "database.faq_section_title"}}</h2>
         
-        {{$faqData := parseJSON `{
-            "categories": [
-                {
-                    "name": "About Database View",
-                    "questions": [
-                        {
-                            "question": "What is the Database View in Blue?",
-                            "answer": "The Database View presents your records in a spreadsheet-style interactive table. This view is ideal for managing large datasets, enabling powerful filtering, sorting, and editing capabilities."
-                        },
-                        {
-                            "question": "How do I group records in the Database View?",
-                            "answer": "Drag column headers to group records by specific properties. You can also multi-group using multiple columns to arrange your data effectively."
-                        },
-                        {
-                            "question": "What are interactive columns in the Database View?",
-                            "answer": "Each column represents a custom field, with the ability to instantly edit data within cells. You can rearrange column placement via drag-and-drop for better organization."
-                        },
-                        {
-                            "question": "How does infinite scroll work in the Database View?",
-                            "answer": "The database table enables infinite vertical scrolling, allowing you to manage vast datasets spanning tens or hundreds of thousands of records seamlessly."
-                        },
-                        {
-                            "question": "How can I access detailed information for a record?",
-                            "answer": "Right-click any record to open a details pane showing the full record information. This allows you to drill down without having to open the full record."
-                        },
-                        {
-                            "question": "What bulk actions are available in the Database View?",
-                            "answer": "If it's a number/formula field, you can instantly see the total sum. Bulk actions facilitate quick data analysis and management across multiple records."
-                        },
-                        {
-                            "question": "How can I manage columns in the Database View?",
-                            "answer": "You can click on a column header to sort all your records by that column and access various options like pinning columns, autosizing, grouping by assignees, and showing/hiding columns."
-                        },
-                        {
-                            "question": "Can I customize the Database View for my needs?",
-                            "answer": "Any changes you make to the view of the database only apply to your user. Other users will see the default database view unless they make their own changes to the view."
-                        }
-                    ]
-                }
-            ]
-        }`}}
+        {{$faqData := dict
+            "categories" (slice
+                (dict
+                    "name" (t "database.faq_category_about")
+                    "questions" (slice
+                        (dict
+                            "question" (t "database.faq_question_1")
+                            "answer" (t "database.faq_answer_1")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_2")
+                            "answer" (t "database.faq_answer_2")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_3")
+                            "answer" (t "database.faq_answer_3")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_4")
+                            "answer" (t "database.faq_answer_4")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_5")
+                            "answer" (t "database.faq_answer_5")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_6")
+                            "answer" (t "database.faq_answer_6")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_7")
+                            "answer" (t "database.faq_answer_7")
+                        )
+                        (dict
+                            "question" (t "database.faq_question_8")
+                            "answer" (t "database.faq_answer_8")
+                        )
+                    )
+                )
+            )
+        }}
         
         {{template "faq-sections" $faqData}}
     </section>
 
     <!-- Call to Action -->
-    {{$ctaData := parseJSON `{
-        "Title": "Boost your productivity. Start using Blue today.",
-        "PrimaryText": "Get Started Free",
-        "PrimaryUrl": "https://app.blue.cc",
-        "SecondaryText": "View documentation",
-        "SecondaryUrl": "/docs/database"
-    }`}}
+    {{$ctaData := dict
+        "Title" (t "database.cta_title")
+        "PrimaryText" (t "database.cta_primary_text")
+        "PrimaryUrl" "https://app.blue.cc"
+        "SecondaryText" (t "database.cta_secondary_text")
+        "SecondaryUrl" "/docs/database"
+    }}
     {{template "dual-button-cta" $ctaData}}

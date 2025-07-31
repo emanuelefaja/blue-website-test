@@ -1,0 +1,158 @@
+{
+  "en": {
+    "page_title": "Build your perfect data structure — no code required.",
+    "page_subtitle": "Create custom fields that map exactly to your business needs. From simple text to advanced formulas, Blue's 23 field types let you capture any information your organization requires.",
+    
+    "value_proposition_title": "Your business is unique. Your data structure should be too.",
+    "value_proposition_description": "Stop forcing your processes into rigid templates. With Blue's custom fields, you design the exact data structure your organization needs — all without writing a single line of code.",
+    
+    "benefit_1_title": "23 Field Types",
+    "benefit_1_description": "Text, numbers, formulas, buttons — capture any data your business needs.",
+    
+    "benefit_2_title": "No Code Required",
+    "benefit_2_description": "Point-and-click configuration. No technical expertise needed.",
+    
+    "benefit_3_title": "Scales With You",
+    "benefit_3_description": "Add fields as your needs grow. No rigid limits — your data structure evolves with your business.",
+    
+    "all_fields_title": "Every field type you need to run your business.",
+    "all_fields_description": "Choose from 23 purpose-built field types to capture, calculate, and connect your data.",
+    
+    "category_text_content": "Text & Content",
+    "field_single_line_text": "Single Line Text",
+    "field_single_line_text_desc": "Capture names, titles, and short text",
+    "field_multiple_line_text": "Multiple Line Text",
+    "field_multiple_line_text_desc": "Add descriptions and detailed notes",
+    "field_url_link": "URL Link",
+    "field_url_link_desc": "Store clickable web links",
+    "field_star_rating": "Star Rating",
+    "field_star_rating_desc": "Collect ratings and feedback",
+    
+    "category_numbers_money": "Numbers & Money",
+    "field_number": "Number",
+    "field_number_desc": "Track quantities and metrics",
+    "field_currency": "Currency",
+    "field_currency_desc": "Handle money in any currency",
+    "field_percent": "Percent",
+    "field_percent_desc": "Display progress and ratios",
+    "field_formula": "Formula",
+    "field_formula_desc": "Calculate values automatically",
+    
+    "category_date_time": "Date & Time",
+    "field_date": "Date",
+    "field_date_desc": "Schedule with dates and times",
+    "field_duration": "Duration",
+    "field_duration_desc": "Track time between events",
+    "field_time_in_list": "Time in List",
+    "field_time_in_list_desc": "Auto-track stage duration",
+    
+    "category_selections": "Selections",
+    "field_single_select": "Single Select",
+    "field_single_select_desc": "Choose one option from a list",
+    "field_multiple_select": "Multiple Select",
+    "field_multiple_select_desc": "Select multiple options",
+    "field_checkbox": "Checkbox",
+    "field_checkbox_desc": "Simple yes/no choices",
+    "field_country": "Country",
+    "field_country_desc": "Select from all countries",
+    
+    "category_contact_location": "Contact & Location",
+    "field_email": "Email",
+    "field_email_desc": "Store validated email addresses",
+    "field_phone_number": "Phone Number",
+    "field_phone_number_desc": "Click-to-call phone numbers",
+    "field_location_map": "Location Map",
+    "field_location_map_desc": "Pin locations on maps",
+    
+    "category_advanced": "Advanced",
+    "field_button": "Button",
+    "field_button_desc": "Trigger automations with a click",
+    "field_reference": "Reference",
+    "field_reference_desc": "Link to other records",
+    "field_lookup": "Lookup",
+    "field_lookup_desc": "Pull data from linked records",
+    "field_file": "File",
+    "field_file_desc": "Attach documents and images",
+    "field_unique_id": "Unique ID",
+    "field_unique_id_desc": "Generate unique identifiers",
+    
+    "combinations_title": "Powerful field combinations that work better together.",
+    
+    "reference_lookup_title": "Reference + Lookup: Connect your data intelligently",
+    "reference_lookup_description": "Link records across projects with Reference fields, then use Lookup fields to automatically pull in related data. Perfect for customer information, product catalogs, or any connected data.",
+    
+    "formula_number_title": "Formula + Number/Currency: Automate your calculations",
+    "formula_number_description": "Combine Formula fields with Number and Currency fields to automatically calculate totals, margins, commissions, or any business metric. No more manual spreadsheet calculations.",
+    
+    "button_automation_title": "Button + Automations: One-click workflows",
+    "button_automation_description": "Add Button fields to trigger complex automations instantly. Send invoices, update statuses, notify teams, or run any workflow — all with a single click.",
+    
+    "use_cases_title": "Built for how you work.",
+    "use_cases_description": "Custom fields adapt to any industry or use case. Here's how different teams use them to build their perfect workflow.",
+    
+    "sales_teams": "Sales Teams",
+    "sales_currency": "Currency fields for deal values",
+    "sales_formula": "Formula fields for commission calculations",
+    "sales_single_select": "Single Select for pipeline stages",
+    "sales_time_in_list": "Time in List to track sales velocity",
+    
+    "hr_teams": "HR Teams",
+    "hr_file": "File fields for resumes and documents",
+    "hr_star_rating": "Star Rating for interview feedback",
+    "hr_date": "Date fields for start dates",
+    "hr_reference": "Reference to link to departments",
+    
+    "operations_teams": "Operations Teams",
+    "operations_location": "Location Map for asset tracking",
+    "operations_duration": "Duration for time tracking",
+    "operations_button": "Button fields to trigger workflows",
+    "operations_unique_id": "Unique ID for inventory codes",
+    
+    "support_teams": "Support Teams",
+    "support_single_select": "Single Select for ticket priority",
+    "support_email": "Email for customer contact",
+    "support_time_in_list": "Time in List for SLA tracking",
+    "support_star_rating": "Star Rating for satisfaction scores",
+    
+    "marketing_teams": "Marketing Teams",
+    "marketing_url": "URL Link for campaign links",
+    "marketing_multiple_select": "Multiple Select for channels",
+    "marketing_percent": "Percent for conversion rates",
+    "marketing_file": "File fields for creative assets",
+    
+    "finance_teams": "Finance Teams",
+    "finance_currency": "Currency with multi-currency support",
+    "finance_formula": "Formula for financial calculations",
+    "finance_checkbox": "Checkbox for approval workflows",
+    "finance_reference": "Reference to link transactions",
+    
+    "faq_title": "Frequently asked questions",
+    "faq_category": "About Custom Fields",
+    
+    "faq_question_1": "What are custom fields in Blue?",
+    "faq_answer_1": "Custom fields allow you to build data structures that map exactly to your business needs — all without writing any code. With 23 different field types, you can capture any information your organization requires, from simple text to complex calculations and relationships between records.",
+    
+    "faq_question_2": "How many custom fields can I add?",
+    "faq_answer_2": "There are no hard limits on the number of custom fields you can add to your projects. While you can have several hundred fields, performance may gradually decrease as the number grows. Most organizations find that 20-50 fields per project covers all their needs effectively.",
+    
+    "faq_question_3": "Which field types are unique to Blue?",
+    "faq_answer_3": "Blue offers several unique field types that set us apart: the Button field lets you trigger automations with a single click, and the Time in List field automatically tracks how long records spend in each stage of your process. These fields enable powerful workflows that aren't possible in other tools.",
+    
+    "faq_question_4": "Can I change field types after creating them?",
+    "faq_answer_4": "To maintain data integrity, field types cannot be changed after creation. However, you can create a new field with the desired type and use automations or bulk editing to migrate your data. This approach ensures your existing data remains safe while you transition to the new field structure.",
+    
+    "faq_question_5": "How do custom fields work with other Blue features?",
+    "faq_answer_5": "Custom fields integrate seamlessly with all Blue features. They can trigger automations, appear in forms, display in dashboards, and be accessed via our API. Different field types work particularly well together — like using Reference fields with Lookups, or Formula fields with Numbers and Currency.",
+    
+    "faq_question_6": "Can I use formulas with custom fields?",
+    "faq_answer_6": "Yes! Formula fields can perform calculations using data from other Number, Currency, and Date fields. You can create everything from simple additions to complex business calculations. Formulas update automatically when the underlying data changes, keeping your calculations always current.",
+    
+    "faq_question_7": "Are custom fields available on all plans?",
+    "faq_answer_7": "All Blue plans include custom fields. Every plan gets access to all 23 field types with no restrictions. This ensures that businesses of any size can build the exact data structure they need without artificial limitations.",
+    
+    "cta_title": "Build your perfect data structure today.",
+    "cta_description": "Create custom fields that map to your exact business needs — no coding required.",
+    "cta_primary_text": "Get Started Free",
+    "cta_secondary_text": "View documentation"
+  }
+}

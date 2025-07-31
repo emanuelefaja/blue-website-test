@@ -1,0 +1,65 @@
+{
+  "en": {
+    "page_title": "Get real-time dashboards for all your metrics",
+    "page_subtitle": "Transform your data into actionable insights with powerful charts, real-time updates, and customizable dashboards that help you make better decisions.",
+    
+    "stat_cards_title": "Stat Cards turn your data into one clear metric",
+    "stat_cards_description": "Distill your complex data into one simple, digestible metric that is easy to understand at a glance.",
+    
+    "stat_cards_benefit_1_title": "Instant Overview",
+    "stat_cards_benefit_1_description": "View key metrics quickly. Data is summarized to sharpen focus and track progress.",
+    "stat_cards_benefit_2_title": "Real-Time Updates",
+    "stat_cards_benefit_2_description": "Monitor changes as they occur. Always be informed with the latest data.",
+    "stat_cards_benefit_3_title": "Visually Engaging",
+    "stat_cards_benefit_3_description": "Bold and clear design. Stat cards highlight critical numbers for quick assessment.",
+    
+    "pie_charts_title": "Pie Charts help you spot where to focus",
+    "pie_charts_description": "Visualize data proportions instantly to prioritize efforts and resources efficiently.",
+    
+    "pie_charts_benefit_1_title": "Visual Breakdown",
+    "pie_charts_benefit_1_description": "View percentages and amounts together. Each slice shows size and value.",
+    "pie_charts_benefit_2_title": "Flexible Totals",
+    "pie_charts_benefit_2_description": "Customize how you total—average, count, max, min, or sum.",
+    "pie_charts_benefit_3_title": "Color Insights",
+    "pie_charts_benefit_3_description": "Color segments for quick trend spotting. Clear, distinct, informative.",
+    
+    "bar_charts_title": "Bar Charts allow you to spot trends over time",
+    "bar_charts_description": "Track trends over time with precision. Blue's bar charts are updated automatically, giving you the insight to make data-driven decisions.",
+    
+    "bar_charts_benefit_1_title": "Trend Analysis",
+    "bar_charts_benefit_1_description": "Track changes over time with clear visual progression. Spot patterns and trends instantly.",
+    "bar_charts_benefit_2_title": "Easy Comparison",
+    "bar_charts_benefit_2_description": "Compare multiple data sets side by side. Different time periods, teams, or categories at a glance.",
+    "bar_charts_benefit_3_title": "Automatic Updates",
+    "bar_charts_benefit_3_description": "Charts refresh with real-time data. Always see the most current trends and metrics.",
+    
+    "cta_title": "Turn your data into actionable insights.",
+    "cta_primary_text": "Get Started Free",
+    "cta_secondary_text": "View documentation",
+    
+    "faq_category_dashboard_features": "Dashboard Features",
+    "faq_category_sharing_customization": "Sharing & Customization",
+    "faq_category_support": "Support",
+    
+    "faq_question_1": "What types of charts are available in Blue's dashboards?",
+    "faq_answer_1": "Blue offers a comprehensive suite of visualization options including stat cards, pie charts, bar charts, line graphs, area charts, scatter plots, and more. Each chart type is designed to present your data in the most meaningful way possible.",
+    
+    "faq_question_2": "Can I combine data from multiple projects in a single dashboard?",
+    "faq_answer_2": "Yes! Blue allows you to create cross-project dashboards that aggregate data from multiple sources. This gives you a complete view of your organization's performance in one centralized location.",
+    
+    "faq_question_3": "How can I share dashboards with my team members?",
+    "faq_answer_3": "Dashboards can be shared with specific team members or groups through Blue's permission system. You can control who can view, edit, or manage each dashboard, ensuring the right people have access to the right information.",
+    
+    "faq_question_4": "Can I share dashboards with people outside my organization?",
+    "faq_answer_4": "Yes, Blue allows you to create public dashboard links that can be shared with external stakeholders, clients, or partners. You can control which data is visible and set expiration dates for added security.",
+    
+    "faq_question_5": "What filtering options are available for dashboards?",
+    "faq_answer_5": "Blue provides powerful filtering capabilities including date ranges, custom fields, tags, status, assignees, and more. You can save filter presets and apply them across multiple charts for consistent data views.",
+    
+    "faq_question_6": "Can I customize the layout of my dashboard?",
+    "faq_answer_6": "Absolutely! Blue's dashboards feature a drag-and-drop interface that lets you arrange charts, resize widgets, and create the perfect layout for your needs. You can also save multiple layout configurations.",
+    
+    "faq_question_7": "How can I provide feedback or suggestions for the dashboard feature?",
+    "faq_answer_7": "We love hearing from our users! You can submit feedback through the in-app feedback button, join our community forum, or reach out to our support team directly. Your input helps us continuously improve Blue's dashboard capabilities."
+  }
+}

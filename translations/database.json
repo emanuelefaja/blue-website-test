@@ -1,0 +1,59 @@
+{
+  "en": {
+    "page_title": "Ditch Excel. Embrace Database View.",
+    "page_subtitle": "Collaborate effortlessly, edit records instantly, and manage millions of rows with our intuitive spreadsheet-style interface.",
+    
+    "benefits_title": "The database you always wanted.",
+    "benefits_subtitle": "Fast, performant and beautiful. This is the database that you will actually enjoy working with.",
+    
+    "benefit_1_title": "Lightning Fast",
+    "benefit_1_description": "Handle millions of rows with instant loading and real-time updates.",
+    "benefit_2_title": "Collaborative",
+    "benefit_2_description": "Work together in real-time with no conflicts or version issues.",
+    "benefit_3_title": "Intuitive",
+    "benefit_3_description": "Familiar spreadsheet interface with powerful database capabilities.",
+    
+    "essential_data_title": "Keep essential data at your fingertips.",
+    "essential_data_description": "Never lose sight of crucial information no matter how many columns you have. Pin key columns, hide unnecessary ones, and focus on what matters.",
+    
+    "filter_sort_title": "Filter, sort, and group like a pro.",
+    "filter_sort_description": "Leverage advanced stacked filters, sort multiple columns, and create groups and subgroups to organize your database and find what you need in seconds.",
+    
+    "connections_title": "Create connections to achieve a single source of truth.",
+    "connections_description": "Link records and fields between databases to create a truly interconnected, company-wide data management system. Update data everywhere at once.",
+    
+    "permissions_title": "Row-level permissions and granular access control with custom user roles.",
+    "permissions_description": "Set granular permission at the column level to ensure that your information is disclosed only to those who need to know.",
+    
+    "faq_section_title": "Frequently asked questions",
+    "faq_category_about": "About Database View",
+    
+    "faq_question_1": "What is the Database View in Blue?",
+    "faq_answer_1": "The Database View presents your records in a spreadsheet-style interactive table. This view is ideal for managing large datasets, enabling powerful filtering, sorting, and editing capabilities.",
+    
+    "faq_question_2": "How do I group records in the Database View?",
+    "faq_answer_2": "Drag column headers to group records by specific properties. You can also multi-group using multiple columns to arrange your data effectively.",
+    
+    "faq_question_3": "What are interactive columns in the Database View?",
+    "faq_answer_3": "Each column represents a custom field, with the ability to instantly edit data within cells. You can rearrange column placement via drag-and-drop for better organization.",
+    
+    "faq_question_4": "How does infinite scroll work in the Database View?",
+    "faq_answer_4": "The database table enables infinite vertical scrolling, allowing you to manage vast datasets spanning tens or hundreds of thousands of records seamlessly.",
+    
+    "faq_question_5": "How can I access detailed information for a record?",
+    "faq_answer_5": "Right-click any record to open a details pane showing the full record information. This allows you to drill down without having to open the full record.",
+    
+    "faq_question_6": "What bulk actions are available in the Database View?",
+    "faq_answer_6": "If it's a number/formula field, you can instantly see the total sum. Bulk actions facilitate quick data analysis and management across multiple records.",
+    
+    "faq_question_7": "How can I manage columns in the Database View?",
+    "faq_answer_7": "You can click on a column header to sort all your records by that column and access various options like pinning columns, autosizing, grouping by assignees, and showing/hiding columns.",
+    
+    "faq_question_8": "Can I customize the Database View for my needs?",
+    "faq_answer_8": "Any changes you make to the view of the database only apply to your user. Other users will see the default database view unless they make their own changes to the view.",
+    
+    "cta_title": "Boost your productivity. Start using Blue today.",
+    "cta_primary_text": "Get Started Free",
+    "cta_secondary_text": "View documentation"
+  }
+}

@@ -1,164 +1,164 @@
     {{template "page-heading" 
         dict 
-            "Title" "Get real-time dashboards for all your metrics" 
-            "Subtitle" "Transform your data into actionable insights with powerful charts, real-time updates, and customizable dashboards that help you make better decisions." 
+            "Title" (t "dashboards.page_title") 
+            "Subtitle" (t "dashboards.page_subtitle") 
             "MarginBottom" "mb-16"
     }}
 
 
     <!-- Stat Cards Feature -->
-    {{$statCardsFeature := parseJSON `{
-        "Title": "Stat Cards turn your data into one clear metric",
-        "Description": "Distill your complex data into one simple, digestible metric that is easy to understand at a glance.",
-        "ImageUrl": "/product/stats-cards.png",
-        "ImagePosition": "right"
-    }`}}
+    {{$statCardsFeature := dict
+        "Title" (t "dashboards.stat_cards_title")
+        "Description" (t "dashboards.stat_cards_description")
+        "ImageUrl" "/product/stats-cards.png"
+        "ImagePosition" "right"
+    }}
     {{template "feature-image" $statCardsFeature}}
 
     <!-- Stat Cards Benefits Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{$statCardsBenefits := parseJSON `{
-            "Benefits": [
-                {
-                    "Title": "Instant Overview",
-                    "Description": "View key metrics quickly. Data is summarized to sharpen focus and track progress."
-                },
-                {
-                    "Title": "Real-Time Updates",
-                    "Description": "Monitor changes as they occur. Always be informed with the latest data."
-                },
-                {
-                    "Title": "Visually Engaging",
-                    "Description": "Bold and clear design. Stat cards highlight critical numbers for quick assessment."
-                }
-            ],
-            "MarginBottom": "mb-20"
-        }`}}
+        {{$statCardsBenefits := dict
+            "Benefits" (slice
+                (dict
+                    "Title" (t "dashboards.stat_cards_benefit_1_title")
+                    "Description" (t "dashboards.stat_cards_benefit_1_description")
+                )
+                (dict
+                    "Title" (t "dashboards.stat_cards_benefit_2_title")
+                    "Description" (t "dashboards.stat_cards_benefit_2_description")
+                )
+                (dict
+                    "Title" (t "dashboards.stat_cards_benefit_3_title")
+                    "Description" (t "dashboards.stat_cards_benefit_3_description")
+                )
+            )
+            "MarginBottom" "mb-20"
+        }}
         {{template "feature-benefits-grid" $statCardsBenefits}}
     </div>
 
     <!-- Pie Charts Feature -->
-    {{$pieChartsFeature := parseJSON `{
-        "Title": "Pie Charts help you spot where to focus",
-        "Description": "Visualize data proportions instantly to prioritize efforts and resources efficiently.",
-        "ImageUrl": "/product/pie-charts.png",
-        "ImagePosition": "left"
-    }`}}
+    {{$pieChartsFeature := dict
+        "Title" (t "dashboards.pie_charts_title")
+        "Description" (t "dashboards.pie_charts_description")
+        "ImageUrl" "/product/pie-charts.png"
+        "ImagePosition" "left"
+    }}
     {{template "feature-image" $pieChartsFeature}}
 
     <!-- Pie Charts Benefits Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{$pieChartsBenefits := parseJSON `{
-            "Benefits": [
-                {
-                    "Title": "Visual Breakdown",
-                    "Description": "View percentages and amounts together. Each slice shows size and value."
-                },
-                {
-                    "Title": "Flexible Totals",
-                    "Description": "Customize how you total—average, count, max, min, or sum."
-                },
-                {
-                    "Title": "Color Insights",
-                    "Description": "Color segments for quick trend spotting. Clear, distinct, informative."
-                }
-            ],
-            "MarginBottom": "mb-20"
-        }`}}
+        {{$pieChartsBenefits := dict
+            "Benefits" (slice
+                (dict
+                    "Title" (t "dashboards.pie_charts_benefit_1_title")
+                    "Description" (t "dashboards.pie_charts_benefit_1_description")
+                )
+                (dict
+                    "Title" (t "dashboards.pie_charts_benefit_2_title")
+                    "Description" (t "dashboards.pie_charts_benefit_2_description")
+                )
+                (dict
+                    "Title" (t "dashboards.pie_charts_benefit_3_title")
+                    "Description" (t "dashboards.pie_charts_benefit_3_description")
+                )
+            )
+            "MarginBottom" "mb-20"
+        }}
         {{template "feature-benefits-grid" $pieChartsBenefits}}
     </div>
 
     <!-- Bar Charts Feature -->
-    {{$barChartsFeature := parseJSON `{
-        "Title": "Bar Charts allow you to spot trends over time",
-        "Description": "Track trends over time with precision. Blue's bar charts are updated automatically, giving you the insight to make data-driven decisions.",
-        "ImageUrl": "/product/bar-charts.png",
-        "ImagePosition": "right"
-    }`}}
+    {{$barChartsFeature := dict
+        "Title" (t "dashboards.bar_charts_title")
+        "Description" (t "dashboards.bar_charts_description")
+        "ImageUrl" "/product/bar-charts.png"
+        "ImagePosition" "right"
+    }}
     {{template "feature-image" $barChartsFeature}}
 
     <!-- Bar Charts Benefits Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {{$barChartsBenefits := parseJSON `{
-            "Benefits": [
-                {
-                    "Title": "Trend Analysis",
-                    "Description": "Track changes over time with clear visual progression. Spot patterns and trends instantly."
-                },
-                {
-                    "Title": "Easy Comparison",
-                    "Description": "Compare multiple data sets side by side. Different time periods, teams, or categories at a glance."
-                },
-                {
-                    "Title": "Automatic Updates",
-                    "Description": "Charts refresh with real-time data. Always see the most current trends and metrics."
-                }
-            ],
-            "MarginBottom": "mb-20"
-        }`}}
+        {{$barChartsBenefits := dict
+            "Benefits" (slice
+                (dict
+                    "Title" (t "dashboards.bar_charts_benefit_1_title")
+                    "Description" (t "dashboards.bar_charts_benefit_1_description")
+                )
+                (dict
+                    "Title" (t "dashboards.bar_charts_benefit_2_title")
+                    "Description" (t "dashboards.bar_charts_benefit_2_description")
+                )
+                (dict
+                    "Title" (t "dashboards.bar_charts_benefit_3_title")
+                    "Description" (t "dashboards.bar_charts_benefit_3_description")
+                )
+            )
+            "MarginBottom" "mb-20"
+        }}
         {{template "feature-benefits-grid" $barChartsBenefits}}
     </div>
 
     <!-- CTA Section -->
-    {{$ctaData := parseJSON `{
-        "Title": "Turn your data into actionable insights.",
-        "PrimaryText": "Get Started Free",
-        "PrimaryUrl": "https://app.blue.cc",
-        "SecondaryText": "View documentation",
-        "SecondaryUrl": "/docs/dashboards"
-    }`}}
+    {{$ctaData := dict
+        "Title" (t "dashboards.cta_title")
+        "PrimaryText" (t "dashboards.cta_primary_text")
+        "PrimaryUrl" "https://app.blue.cc"
+        "SecondaryText" (t "dashboards.cta_secondary_text")
+        "SecondaryUrl" "/docs/dashboards"
+    }}
     {{template "dual-button-cta" $ctaData}}
 
     <!-- FAQ Section -->
-    {{$faqData := parseJSON `{
-        "categories": [
-            {
-                "id": "dashboard-features",
-                "name": "Dashboard Features",
-                "questions": [
-                    {
-                        "question": "What types of charts are available in Blue's dashboards?",
-                        "answer": "Blue offers a comprehensive suite of visualization options including stat cards, pie charts, bar charts, line graphs, area charts, scatter plots, and more. Each chart type is designed to present your data in the most meaningful way possible."
-                    },
-                    {
-                        "question": "Can I combine data from multiple projects in a single dashboard?",
-                        "answer": "Yes! Blue allows you to create cross-project dashboards that aggregate data from multiple sources. This gives you a complete view of your organization's performance in one centralized location."
-                    },
-                    {
-                        "question": "How can I share dashboards with my team members?",
-                        "answer": "Dashboards can be shared with specific team members or groups through Blue's permission system. You can control who can view, edit, or manage each dashboard, ensuring the right people have access to the right information."
-                    }
-                ]
-            },
-            {
-                "id": "sharing-customization",
-                "name": "Sharing & Customization",
-                "questions": [
-                    {
-                        "question": "Can I share dashboards with people outside my organization?",
-                        "answer": "Yes, Blue allows you to create public dashboard links that can be shared with external stakeholders, clients, or partners. You can control which data is visible and set expiration dates for added security."
-                    },
-                    {
-                        "question": "What filtering options are available for dashboards?",
-                        "answer": "Blue provides powerful filtering capabilities including date ranges, custom fields, tags, status, assignees, and more. You can save filter presets and apply them across multiple charts for consistent data views."
-                    },
-                    {
-                        "question": "Can I customize the layout of my dashboard?",
-                        "answer": "Absolutely! Blue's dashboards feature a drag-and-drop interface that lets you arrange charts, resize widgets, and create the perfect layout for your needs. You can also save multiple layout configurations."
-                    }
-                ]
-            },
-            {
-                "id": "support",
-                "name": "Support",
-                "questions": [
-                    {
-                        "question": "How can I provide feedback or suggestions for the dashboard feature?",
-                        "answer": "We love hearing from our users! You can submit feedback through the in-app feedback button, join our community forum, or reach out to our support team directly. Your input helps us continuously improve Blue's dashboard capabilities."
-                    }
-                ]
-            }
-        ]
-    }`}}
+    {{$faqData := dict
+        "categories" (slice
+            (dict
+                "id" "dashboard-features"
+                "name" (t "dashboards.faq_category_dashboard_features")
+                "questions" (slice
+                    (dict
+                        "question" (t "dashboards.faq_question_1")
+                        "answer" (t "dashboards.faq_answer_1")
+                    )
+                    (dict
+                        "question" (t "dashboards.faq_question_2")
+                        "answer" (t "dashboards.faq_answer_2")
+                    )
+                    (dict
+                        "question" (t "dashboards.faq_question_3")
+                        "answer" (t "dashboards.faq_answer_3")
+                    )
+                )
+            )
+            (dict
+                "id" "sharing-customization"
+                "name" (t "dashboards.faq_category_sharing_customization")
+                "questions" (slice
+                    (dict
+                        "question" (t "dashboards.faq_question_4")
+                        "answer" (t "dashboards.faq_answer_4")
+                    )
+                    (dict
+                        "question" (t "dashboards.faq_question_5")
+                        "answer" (t "dashboards.faq_answer_5")
+                    )
+                    (dict
+                        "question" (t "dashboards.faq_question_6")
+                        "answer" (t "dashboards.faq_answer_6")
+                    )
+                )
+            )
+            (dict
+                "id" "support"
+                "name" (t "dashboards.faq_category_support")
+                "questions" (slice
+                    (dict
+                        "question" (t "dashboards.faq_question_7")
+                        "answer" (t "dashboards.faq_answer_7")
+                    )
+                )
+            )
+        )
+    }}
     {{template "faq-sections" $faqData}}
 
