@@ -99,11 +99,15 @@ for maximum compatibility and isolation.
                 @media (min-width: 768px) {
                     .testimonial-grid {
                         grid-template-columns: repeat(2, 1fr) !important;
+                        max-width: 768px !important;
+                        margin: 0 auto !important;
                     }
                 }
-                @media (min-width: 1024px) {
+                @media (min-width: 1536px) {
                     .testimonial-grid {
                         grid-template-columns: repeat(4, 1fr) !important;
+                        max-width: 100% !important;
+                        margin: 0 !important;
                     }
                 }
                 /* Hide video loading spinner */
