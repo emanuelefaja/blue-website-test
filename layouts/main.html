@@ -38,7 +38,7 @@
                         {{if .IsMarkdown}}
                         <div class="py-20 prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:text-gray-900 dark:prose-headings:text-gray-100 prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-code:text-blue-600 dark:prose-code:text-blue-400 prose-code:bg-blue-50 dark:prose-code:bg-blue-950/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded">
                             {{if .Frontmatter}}
-                            {{template "page-heading" (dict "Title" .Frontmatter.Title "Subtitle" .Frontmatter.Description "MarginBottom" "mb-8")}}
+                            {{template "page-heading" (dict "Title" .Frontmatter.Title "Subtitle" .Frontmatter.Description "MarginBottom" "mb-2")}}
                             <hr class="mt-1 mb-8 border-gray-200 dark:border-gray-700">
                             {{end}}
                             {{.Content}}
