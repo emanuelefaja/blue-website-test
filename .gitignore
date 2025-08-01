@@ -111,3 +111,12 @@ pages/mobile.html
 /public/insights
 /api-checker/reviews
 generate_changelog_json.py
+web/public/insights/with-category.png
+web/public/insights/test-article.png
+web/public/insights/old-article.png
+web/public/insights/no-date-article.png
+web/public/insights/no-category-with-tags.png
+web/public/insights/no-category-no-tags.png
+web/public/insights/new-article.png
+web/public/insights/medium-article.png
+web/public/insights/future-article.png
