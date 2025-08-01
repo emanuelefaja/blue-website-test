@@ -83,9 +83,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Initialize OpenAI client
+	// Initialize OpenAI client with timeout configuration
 	client := openai.NewClient(
 		option.WithAPIKey(apiKey),
+		option.WithRequestTimeout(5 * time.Minute), // Increase timeout for large translations
 	)
 
 	// Get base content directory
@@ -196,6 +197,7 @@ func translationWorker(id int, client *openai.Client, systemPrompt string, taskC
 	defer wg.Done()
 
 	for task := range taskChan {
+		fmt.Printf("\n  WORKER %d: Starting %s -> %s\n", id, task.SourceFile, task.TargetLang)
 		startTime := time.Now()
 		inputTokens, outputTokens, err := translateInsight(client, task, systemPrompt)
 		duration := time.Since(startTime)
@@ -353,15 +355,30 @@ func translateInsight(client *openai.Client, task TranslationTask, systemPrompt 
 		return 0, 0, fmt.Errorf("failed to read source file: %w", err)
 	}
 
+	// Check if file is large (more than 100 lines after stripping frontmatter)
+	lines := strings.Split(string(content), "\n")
+	if len(lines) > 100 {
+		// Use chunked translation for large files
+		return translateLargeInsight(client, task, systemPrompt, string(content))
+	}
+
+	// For smaller files, use the original single-request method
+	return translateSmallInsight(client, task, systemPrompt, string(content))
+}
+
+// translateSmallInsight handles files that can be translated in a single request
+func translateSmallInsight(client *openai.Client, task TranslationTask, systemPrompt string, content string) (int, int, error) {
 	// Strip out category and date before sending to OpenAI
-	contentForTranslation, originalLines := stripPreservableFields(string(content))
+	contentForTranslation, originalLines := stripPreservableFields(content)
 
 	// Prepare user prompt with stripped content
 	userPrompt := fmt.Sprintf("Translate the following ENTIRE markdown document from English to %s. Translate ALL content including the body text, not just the frontmatter:\n\n%s", 
 		languageNames[task.TargetLang], contentForTranslation)
 
-	// Create chat completion request
-	ctx := context.Background()
+	// Create chat completion request with timeout
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
+	defer cancel()
+	
 	params := openai.ChatCompletionNewParams{
 		Model: openai.ChatModelGPT4oMini,
 		Messages: []openai.ChatCompletionMessageParamUnion{
@@ -401,6 +418,91 @@ func translateInsight(client *openai.Client, task TranslationTask, systemPrompt 
 	outputTokens := int(completion.Usage.CompletionTokens)
 
 	return inputTokens, outputTokens, nil
+}
+
+// translateLargeInsight handles large files by splitting them into chunks
+func translateLargeInsight(client *openai.Client, task TranslationTask, systemPrompt string, content string) (int, int, error) {
+	fmt.Printf("\n  CHUNKING [%s -> %s]: File has %d lines, using chunked translation\n", 
+		task.SourceFile, task.TargetLang, len(strings.Split(content, "\n")))
+	
+	// First, extract and preserve the frontmatter
+	parts := strings.SplitN(content, "---", 3)
+	if len(parts) < 3 {
+		return 0, 0, fmt.Errorf("invalid markdown format")
+	}
+
+	frontmatter := parts[1]
+	body := parts[2]
+
+	// Strip category and date from frontmatter
+	strippedFrontmatter, originalLines := stripPreservableFieldsFromFrontmatter(frontmatter)
+
+	// Translate frontmatter separately
+	fmt.Printf("  CHUNK [%s -> %s]: Translating frontmatter...\n", task.SourceFile, task.TargetLang)
+	frontmatterTokensIn, frontmatterTokensOut, translatedFrontmatter, err := translateFrontmatter(client, task, systemPrompt, strippedFrontmatter)
+	if err != nil {
+		return 0, 0, fmt.Errorf("failed to translate frontmatter: %w", err)
+	}
+
+	// Split body into chunks (by paragraphs to maintain context)
+	chunks := splitBodyIntoChunks(body, 25) // 25 lines per chunk for smaller requests
+	fmt.Printf("  CHUNK [%s -> %s]: Split into %d chunks\n", task.SourceFile, task.TargetLang, len(chunks))
+	
+	var translatedChunks []string
+	totalInputTokens := frontmatterTokensIn
+	totalOutputTokens := frontmatterTokensOut
+
+	// Translate each chunk
+	for i, chunk := range chunks {
+		fmt.Printf("  CHUNK [%s -> %s]: Translating chunk %d/%d (%d chars)...\n", 
+			task.SourceFile, task.TargetLang, i+1, len(chunks), len(chunk))
+		
+		chunkPrompt := fmt.Sprintf("Translate the following markdown content from English to %s. This is part %d of %d of a larger document. Maintain all markdown formatting:\n\n%s", 
+			languageNames[task.TargetLang], i+1, len(chunks), chunk)
+
+		ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
+		defer cancel()
+
+		params := openai.ChatCompletionNewParams{
+			Model: openai.ChatModelGPT4oMini,
+			Messages: []openai.ChatCompletionMessageParamUnion{
+				openai.SystemMessage("You are a professional translator. Translate the given markdown content while preserving all formatting, links, and structure."),
+				openai.UserMessage(chunkPrompt),
+			},
+			Temperature: openai.Float(0.3),
+		}
+
+		completion, err := client.Chat.Completions.New(ctx, params)
+		if err != nil {
+			return 0, 0, fmt.Errorf("failed to translate chunk %d: %w", i+1, err)
+		}
+
+		if len(completion.Choices) == 0 {
+			return 0, 0, fmt.Errorf("no response for chunk %d", i+1)
+		}
+
+		translatedChunks = append(translatedChunks, completion.Choices[0].Message.Content)
+		totalInputTokens += int(completion.Usage.PromptTokens)
+		totalOutputTokens += int(completion.Usage.CompletionTokens)
+	}
+
+	// Reassemble the document
+	restoredFrontmatter := restoreFrontmatterFields(translatedFrontmatter, originalLines)
+	translatedBody := strings.Join(translatedChunks, "\n\n")
+	finalContent := fmt.Sprintf("---\n%s\n---\n%s", restoredFrontmatter, translatedBody)
+
+	// Ensure target directory exists
+	targetDir := filepath.Dir(task.TargetPath)
+	if err := os.MkdirAll(targetDir, 0755); err != nil {
+		return 0, 0, fmt.Errorf("failed to create target directory: %w", err)
+	}
+
+	// Write translated file
+	if err := os.WriteFile(task.TargetPath, []byte(finalContent), 0644); err != nil {
+		return 0, 0, fmt.Errorf("failed to write translated file: %w", err)
+	}
+
+	return totalInputTokens, totalOutputTokens, nil
 }
 
 // stripPreservableFields removes category and date from content before translation
@@ -503,4 +605,121 @@ func formatDuration(d time.Duration) string {
 		return fmt.Sprintf("%dm %ds", m, s)
 	}
 	return fmt.Sprintf("%ds", s)
+}
+
+// Helper functions for large file translation
+
+// stripPreservableFieldsFromFrontmatter strips category and date from frontmatter only
+func stripPreservableFieldsFromFrontmatter(frontmatter string) (stripped string, originalLines []string) {
+	lines := strings.Split(strings.TrimSpace(frontmatter), "\n")
+	var newLines []string
+	
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if strings.HasPrefix(trimmed, "category:") || strings.HasPrefix(trimmed, "date:") {
+			originalLines = append(originalLines, line)
+		} else if trimmed != "" {
+			newLines = append(newLines, line)
+		}
+	}
+	
+	return strings.Join(newLines, "\n"), originalLines
+}
+
+// translateFrontmatter translates only the frontmatter portion
+func translateFrontmatter(client *openai.Client, task TranslationTask, systemPrompt string, frontmatter string) (int, int, string, error) {
+	prompt := fmt.Sprintf("Translate the following YAML frontmatter fields from English to %s. Only translate the values of 'title' and 'description' fields, not the field names themselves:\n\n%s", 
+		languageNames[task.TargetLang], frontmatter)
+
+	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Minute)
+	defer cancel()
+
+	params := openai.ChatCompletionNewParams{
+		Model: openai.ChatModelGPT4oMini,
+		Messages: []openai.ChatCompletionMessageParamUnion{
+			openai.SystemMessage("You are a professional translator. Translate only the values of the title and description fields. Keep field names in English."),
+			openai.UserMessage(prompt),
+		},
+		Temperature: openai.Float(0.3),
+	}
+
+	completion, err := client.Chat.Completions.New(ctx, params)
+	if err != nil {
+		return 0, 0, "", err
+	}
+
+	if len(completion.Choices) == 0 {
+		return 0, 0, "", fmt.Errorf("no response from OpenAI")
+	}
+
+	translatedFrontmatter := completion.Choices[0].Message.Content
+	inputTokens := int(completion.Usage.PromptTokens)
+	outputTokens := int(completion.Usage.CompletionTokens)
+
+	return inputTokens, outputTokens, translatedFrontmatter, nil
+}
+
+// splitBodyIntoChunks splits the markdown body into manageable chunks
+func splitBodyIntoChunks(body string, linesPerChunk int) []string {
+	// Split by double newlines to preserve paragraphs
+	paragraphs := strings.Split(body, "\n\n")
+	
+	var chunks []string
+	var currentChunk []string
+	currentLines := 0
+	
+	for _, para := range paragraphs {
+		paraLines := len(strings.Split(para, "\n"))
+		
+		// If adding this paragraph would exceed the limit, start a new chunk
+		if currentLines > 0 && currentLines+paraLines > linesPerChunk {
+			chunks = append(chunks, strings.Join(currentChunk, "\n\n"))
+			currentChunk = []string{para}
+			currentLines = paraLines
+		} else {
+			currentChunk = append(currentChunk, para)
+			currentLines += paraLines
+		}
+	}
+	
+	// Add the last chunk
+	if len(currentChunk) > 0 {
+		chunks = append(chunks, strings.Join(currentChunk, "\n\n"))
+	}
+	
+	return chunks
+}
+
+// restoreFrontmatterFields restores the original category and date fields
+func restoreFrontmatterFields(translatedFrontmatter string, originalLines []string) string {
+	lines := strings.Split(strings.TrimSpace(translatedFrontmatter), "\n")
+	
+	// Fix any accidentally translated field names
+	translations := map[string]string{
+		"título": "title", "titre": "title", "titel": "title", "titolo": "title", 
+		"tytuł": "title", "заголовок": "title", "タイトル": "title", "제목": "title", 
+		"标题": "title", "標題": "title",
+		"descripción": "description", "beschreibung": "description", "descrizione": "description", 
+		"descrição": "description", "opis": "description", "описание": "description", 
+		"説明": "description", "설명": "description", "描述": "description",
+	}
+	
+	var fixedLines []string
+	for _, line := range lines {
+		fixedLine := line
+		for wrong, correct := range translations {
+			if strings.Contains(line, wrong+":") {
+				fixedLine = strings.Replace(line, wrong+":", correct+":", 1)
+				break
+			}
+		}
+		if strings.TrimSpace(fixedLine) != "" {
+			fixedLines = append(fixedLines, fixedLine)
+		}
+	}
+	
+	// Add back the original category and date lines
+	fixedLines = append(fixedLines, originalLines...)
+	
+	return strings.Join(fixedLines, "\n")
 }
