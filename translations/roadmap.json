@@ -93,10 +93,6 @@
         "title": "Multi-homing Records",
         "description": "Allow records to exist in multiple projects simultaneously"
       },
-      "memory_usage_optimization": {
-        "title": "Memory Usage Optimization",
-        "description": "Improve performance and reduce memory footprint"
-      },
       "scheduled_automations": {
         "title": "Scheduled Automations",
         "description": "Set up automations to run at specific times or intervals"
@@ -248,10 +244,6 @@
       "multi_homing_records": {
         "title": "Registros Multi-ubicación",
         "description": "Permite que los registros existan en múltiples proyectos simultáneamente"
-      },
-      "memory_usage_optimization": {
-        "title": "Optimización del Uso de Memoria",
-        "description": "Mejora el rendimiento y reduce el consumo de memoria"
       },
       "scheduled_automations": {
         "title": "Automatizaciones Programadas",
@@ -405,10 +397,6 @@
         "title": "多归属记录",
         "description": "允许记录同时存在于多个项目中"
       },
-      "memory_usage_optimization": {
-        "title": "内存使用优化",
-        "description": "提高性能并减少内存占用"
-      },
       "scheduled_automations": {
         "title": "计划自动化",
         "description": "设置自动化在特定时间或间隔运行"
@@ -560,10 +548,6 @@
       "multi_homing_records": {
         "title": "Enregistrements Multi-Projets",
         "description": "Permet aux enregistrements d'exister dans plusieurs projets simultanément"
-      },
-      "memory_usage_optimization": {
-        "title": "Optimisation de l'Utilisation Mémoire",
-        "description": "Améliore les performances et réduit l'empreinte mémoire"
       },
       "scheduled_automations": {
         "title": "Automatisations Programmées",
@@ -717,10 +701,6 @@
         "title": "Multi-Homing-Datensätze",
         "description": "Ermöglicht Datensätzen, gleichzeitig in mehreren Projekten zu existieren"
       },
-      "memory_usage_optimization": {
-        "title": "Speichernutzungsoptimierung",
-        "description": "Verbessert die Leistung und reduziert den Speicherbedarf"
-      },
       "scheduled_automations": {
         "title": "Geplante Automatisierungen",
         "description": "Richten Sie Automatisierungen ein, die zu bestimmten Zeiten oder Intervallen ausgeführt werden"
@@ -872,10 +852,6 @@
       "multi_homing_records": {
         "title": "マルチホーミングレコード",
         "description": "レコードが複数のプロジェクトに同時に存在できるようにする"
-      },
-      "memory_usage_optimization": {
-        "title": "メモリ使用量の最適化",
-        "description": "パフォーマンスを向上させ、メモリフットプリントを削減"
       },
       "scheduled_automations": {
         "title": "スケジュールされた自動化",
@@ -1029,10 +1005,6 @@
         "title": "Registros Multi-Projeto",
         "description": "Permite que registros existam em vários projetos simultaneamente"
       },
-      "memory_usage_optimization": {
-        "title": "Otimização do Uso de Memória",
-        "description": "Melhora o desempenho e reduz o consumo de memória"
-      },
       "scheduled_automations": {
         "title": "Automações Agendadas",
         "description": "Configure automações para executar em horários ou intervalos específicos"
@@ -1184,10 +1156,6 @@
       "multi_homing_records": {
         "title": "Мультипроектные записи",
         "description": "Позволяет записям существовать в нескольких проектах одновременно"
-      },
-      "memory_usage_optimization": {
-        "title": "Оптимизация использования памяти",
-        "description": "Улучшает производительность и уменьшает потребление памяти"
       },
       "scheduled_automations": {
         "title": "Запланированные автоматизации",
@@ -1341,10 +1309,6 @@
         "title": "다중 프로젝트 레코드",
         "description": "레코드가 여러 프로젝트에 동시에 존재할 수 있도록 허용"
       },
-      "memory_usage_optimization": {
-        "title": "메모리 사용 최적화",
-        "description": "성능 향상 및 메모리 사용량 감소"
-      },
       "scheduled_automations": {
         "title": "예약된 자동화",
         "description": "특정 시간이나 간격으로 실행되도록 자동화 설정"
@@ -1496,10 +1460,6 @@
       "multi_homing_records": {
         "title": "Record Multi-Progetto",
         "description": "Permette ai record di esistere in più progetti contemporaneamente"
-      },
-      "memory_usage_optimization": {
-        "title": "Ottimizzazione dell'Uso della Memoria",
-        "description": "Migliora le prestazioni e riduce l'impronta di memoria"
       },
       "scheduled_automations": {
         "title": "Automazioni Pianificate",
@@ -1653,10 +1613,6 @@
         "title": "Catatan Multi-Proyek",
         "description": "Izinkan catatan ada di beberapa proyek secara bersamaan"
       },
-      "memory_usage_optimization": {
-        "title": "Optimasi Penggunaan Memori",
-        "description": "Meningkatkan kinerja dan mengurangi jejak memori"
-      },
       "scheduled_automations": {
         "title": "Otomasi Terjadwal",
         "description": "Atur otomasi untuk berjalan pada waktu atau interval tertentu"
@@ -1808,10 +1764,6 @@
       "multi_homing_records": {
         "title": "Multi-Project Records",
         "description": "Sta records toe om tegelijkertijd in meerdere projecten te bestaan"
-      },
-      "memory_usage_optimization": {
-        "title": "Geheugengebruik Optimalisatie",
-        "description": "Verbeter prestaties en verminder geheugengebruik"
       },
       "scheduled_automations": {
         "title": "Geplande Automatiseringen",
@@ -1965,10 +1917,6 @@
         "title": "Rekordy wieloprojektowe",
         "description": "Pozwala rekordom istnieć w wielu projektach jednocześnie"
       },
-      "memory_usage_optimization": {
-        "title": "Optymalizacja użycia pamięci",
-        "description": "Poprawia wydajność i zmniejsza zużycie pamięci"
-      },
       "scheduled_automations": {
         "title": "Zaplanowane automatyzacje",
         "description": "Ustaw automatyzacje do uruchamiania w określonych godzinach lub interwałach"
@@ -2120,10 +2068,6 @@
       "multi_homing_records": {
         "title": "多歸屬記錄",
         "description": "允許記錄同時存在於多個專案中"
-      },
-      "memory_usage_optimization": {
-        "title": "記憶體使用優化",
-        "description": "提高效能並減少記憶體占用"
       },
       "scheduled_automations": {
         "title": "計劃自動化",
@@ -2277,10 +2221,6 @@
         "title": "Multi-homing poster",
         "description": "Tillåt poster att existera i flera projekt samtidigt"
       },
-      "memory_usage_optimization": {
-        "title": "Minnesanvändningsoptimering",
-        "description": "Förbättra prestanda och minska minnesavtrycket"
-      },
       "scheduled_automations": {
         "title": "Schemalagda automatiseringar",
         "description": "Ställ in automatiseringar att köras vid specifika tider eller intervaller"
@@ -2432,10 +2372,6 @@
       "multi_homing_records": {
         "title": "កំណត់ត្រាពហុគម្រោង",
         "description": "អនុញ្ញាតឱ្យកំណត់ត្រាមាននៅក្នុងគម្រោងច្រើនក្នុងពេលតែមួយ"
-      },
-      "memory_usage_optimization": {
-        "title": "ការបង្កើនប្រសិទ្ធភាពការប្រើប្រាស់អង្គចងចាំ",
-        "description": "កែលម្អដំណើរការ និងកាត់បន្ថយការប្រើប្រាស់អង្គចងចាំ"
       },
       "scheduled_automations": {
         "title": "ស្វ័យប្រវត្តិកម្មដែលបានកំណត់ពេល",
