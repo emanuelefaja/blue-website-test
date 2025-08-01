@@ -6,13 +6,6 @@
             "MarginBottom" "mb-16"
     }}
 
-    {{template "hero-video" 
-        dict 
-            "VideoUrl" "/testvideo2.mp4"
-            "ShowUnmuteButton" true
-            "Id" "partners"
-    }}
-
     <!-- Stats Section -->
     <section class="mb-16">
         {{$statsData := dict
@@ -41,109 +34,6 @@
         }}
         
         {{template "stats-section" $statsData}}
-    </section>
-
-    <!-- Feature Videos Section -->
-    <section class="mb-16">
-        <!-- Analytics Dashboard Feature -->
-        <div class="mb-16">
-            {{$analyticsData := dict
-                "Title" "Real-time analytics at your fingertips."
-                "Description" "Track your performance with a comprehensive dashboard. See clicks, sign-ups, conversions, and earnings in real-time. Export data, create custom reports, and optimize your campaigns based on what's working."
-                "VideoUrl" "/testvideo2.mp4"
-                "VideoPosition" "right"
-                "Button" (dict
-                    "Text" "Join the program"
-                    "Url" "https://partners.blue.cc"
-                )
-                "SeeAlso" (dict
-                    "Heading" "Partner tools"
-                    "Links" (slice
-                        (dict
-                            "Text" "Multiple tracking links"
-                            "Url" "#"
-                            "Description" "for different campaigns"
-                        )
-                        (dict
-                            "Text" "Conversion tracking"
-                            "Url" "#"
-                            "Description" "see what's working"
-                        )
-                        (dict
-                            "Text" "Monthly reports"
-                            "Url" "#"
-                            "Description" "detailed performance data"
-                        )
-                    )
-                )
-            }}
-            
-            {{template "feature-video" $analyticsData}}
-        </div>
-        
-        <!-- Progressive Commission Feature -->
-        <div class="mb-16">
-            {{$commissionData := dict
-                "Title" "Grow your earnings as you grow."
-                "Description" "Start earning immediately and increase your commission rate as you bring more customers. The more successful referrals you make, the higher your percentage grows - up to 42% lifetime revenue share. Your rate increases automatically, no negotiation needed."
-                "VideoUrl" "/testvideo2.mp4"
-                "VideoPosition" "left"
-                "SeeAlso" (dict
-                    "Heading" "Commission structure"
-                    "Links" (slice
-                        (dict
-                            "Text" "Progressive rates"
-                            "Url" "#"
-                            "Description" "earn more as you grow"
-                        )
-                        (dict
-                            "Text" "Lifetime commissions"
-                            "Url" "#"
-                            "Description" "as long as customer stays"
-                        )
-                        (dict
-                            "Text" "No earning caps"
-                            "Url" "#"
-                            "Description" "unlimited potential"
-                        )
-                    )
-                )
-            }}
-            
-            {{template "feature-video" $commissionData}}
-        </div>
-        
-        <!-- Marketing Support Feature -->
-        <div>
-            {{$supportData := dict
-                "Title" "We help you succeed."
-                "Description" "Get access to marketing materials, co-branded content, and dedicated support. High-performing partners receive custom landing pages on blue.cc to maximize conversions. Our team is here to help you create content that converts."
-                "VideoUrl" "/testvideo2.mp4"
-                "VideoPosition" "right"
-                "SeeAlso" (dict
-                    "Heading" "Partner benefits"
-                    "Links" (slice
-                        (dict
-                            "Text" "Marketing assets"
-                            "Url" "#"
-                            "Description" "banners, templates, copy"
-                        )
-                        (dict
-                            "Text" "Custom landing pages"
-                            "Url" "#"
-                            "Description" "for top performers"
-                        )
-                        (dict
-                            "Text" "Dedicated support"
-                            "Url" "#"
-                            "Description" "partner success team"
-                        )
-                    )
-                )
-            }}
-            
-            {{template "feature-video" $supportData}}
-        </div>
     </section>
 
     <!-- Value Proposition Section -->
@@ -203,47 +93,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Interactive Feature Showcase -->
-    <section class="mb-16">
-        {{$showcaseData := dict
-            "Title" "Perfect for every type of partner"
-            "Features" (slice
-                (dict
-                    "Id" "agencies"
-                    "Title" "Agencies"
-                    "VideoUrl" "/testvideo2.mp4"
-                )
-                (dict
-                    "Id" "consultants"
-                    "Title" "Consultants"
-                    "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-                )
-                (dict
-                    "Id" "influencers"
-                    "Title" "Content Creators"
-                    "VideoUrl" "/testvideo2.mp4"
-                )
-                (dict
-                    "Id" "coaches"
-                    "Title" "Business Coaches"
-                    "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-                )
-                (dict
-                    "Id" "educators"
-                    "Title" "Educators"
-                    "VideoUrl" "/testvideo2.mp4"
-                )
-                (dict
-                    "Id" "software"
-                    "Title" "Software Companies"
-                    "ImageUrl" "https://www.blue.cc/product/simple-screenshot-home.png"
-                )
-            )
-        }}
-        
-        {{template "interactive-feature-showcase" $showcaseData}}
     </section>
 
     <!-- First CTA -->
