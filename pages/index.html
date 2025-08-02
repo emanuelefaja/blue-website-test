@@ -72,6 +72,48 @@
     </p>
 </div>
 
+<!-- Top Position -->
+<div>
+    
+    {{$showcaseDataTop := dict
+        "Position" "bottom"
+        "Features" (slice
+            (dict
+                "Id" "automation-setup-top"
+                "Title" "CRM"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "trigger-conditions-top"
+                "Title" "HR"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "workflow-actions-top"
+                "Title" "IT"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "automation-testing-top"
+                "Title" "Finance"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "performance-monitoring-top"
+                "Title" "Sales"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+            (dict
+                "Id" "integration-management-top"
+                "Title" "Marketing"
+                "VideoUrl" "/testvideo2.mp4"
+            )
+        )
+    }}
+    
+    {{template "interactive-feature-showcase" $showcaseDataTop}}
+</div>
+
     {{template "hero-video" 
         dict 
             "VideoUrl" "/testvideo2.mp4"

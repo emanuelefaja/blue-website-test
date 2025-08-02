@@ -121,10 +121,26 @@ USE CASES:
         x-data="{
             selectedFeature: '{{(index .Features 0).Id}}',
             hoveredFeature: null,
+            underlineLeft: 0,
+            underlineWidth: 0,
             selectFeature(id) {
                 this.selectedFeature = id;
+                this.updateUnderline();
+            },
+            updateUnderline() {
+                this.$nextTick(() => {
+                    const activeButton = this.$refs.tabNav?.querySelector(`[data-feature='${this.selectedFeature}']`);
+                    if (activeButton && this.$refs.tabNav) {
+                        const navRect = this.$refs.tabNav.getBoundingClientRect();
+                        const buttonRect = activeButton.getBoundingClientRect();
+                        this.underlineLeft = buttonRect.left - navRect.left;
+                        this.underlineWidth = buttonRect.width;
+                    }
+                });
             }
         }"
+        x-init="$nextTick(() => updateUnderline())"
+        @resize.window="updateUnderline()"
     >
         {{if eq $position "top"}}
         <!-- Top Layout: Feature Preview First -->
@@ -165,70 +181,40 @@ USE CASES:
         </div>
         
         <!-- Feature Menu Below -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-            {{range .Features}}
-            <div 
-                class="relative cursor-pointer group"
-                @click="selectFeature('{{.Id}}')"
-                @mouseenter="hoveredFeature = '{{.Id}}'"
-                @mouseleave="hoveredFeature = null"
-            >
-                <!-- Blue Circle (animated) -->
-                <div 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
-                    :class="{
-                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                ></div>
+        <div>
+            <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
+                {{range $index, $feature := .Features}}
+                <button @click="selectFeature('{{$feature.Id}}')" 
+                        data-feature="{{$feature.Id}}"
+                        :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer relative">
+                    {{$feature.Title}}
+                </button>
+                {{end}}
                 
-                <!-- Feature Text -->
-                <div 
-                    class="py-3 px-4 transition-all duration-300 ease-out"
-                    :class="{
-                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                >
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200 dark:border-gray-700">
-                </div>
-            </div>
-            {{end}}
+                <!-- Animated underline -->
+                <div class="absolute bottom-0 h-0.5 bg-brand-blue transition-all duration-300 ease-out"
+                     :style="`left: ${underlineLeft}px; width: ${underlineWidth}px;`"></div>
+            </nav>
         </div>
         
         {{else if eq $position "bottom"}}
         <!-- Bottom Layout: Feature Menu First -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-            {{range .Features}}
-            <div 
-                class="relative cursor-pointer group"
-                @click="selectFeature('{{.Id}}')"
-                @mouseenter="hoveredFeature = '{{.Id}}'"
-                @mouseleave="hoveredFeature = null"
-            >
-                <!-- Blue Circle (animated) -->
-                <div 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
-                    :class="{
-                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                ></div>
+        <div>
+            <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
+                {{range $index, $feature := .Features}}
+                <button @click="selectFeature('{{$feature.Id}}')" 
+                        data-feature="{{$feature.Id}}"
+                        :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer relative">
+                    {{$feature.Title}}
+                </button>
+                {{end}}
                 
-                <!-- Feature Text -->
-                <div 
-                    class="py-3 px-4 transition-all duration-300 ease-out"
-                    :class="{
-                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                >
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200 dark:border-gray-700">
-                </div>
-            </div>
-            {{end}}
+                <!-- Animated underline -->
+                <div class="absolute bottom-0 h-0.5 bg-brand-blue transition-all duration-300 ease-out"
+                     :style="`left: ${underlineLeft}px; width: ${underlineWidth}px;`"></div>
+            </nav>
         </div>
         
         <!-- Feature Preview Below -->
@@ -307,70 +293,40 @@ USE CASES:
         </div>
         
         <!-- Feature Menu on Right -->
-        <div class="space-y-2 order-2">
-            {{range .Features}}
-            <div 
-                class="relative cursor-pointer group"
-                @click="selectFeature('{{.Id}}')"
-                @mouseenter="hoveredFeature = '{{.Id}}'"
-                @mouseleave="hoveredFeature = null"
-            >
-                <!-- Blue Circle (animated) - positioned on left for right layout -->
-                <div 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
-                    :class="{
-                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                ></div>
+        <div class="order-2">
+            <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
+                {{range $index, $feature := .Features}}
+                <button @click="selectFeature('{{$feature.Id}}')" 
+                        data-feature="{{$feature.Id}}"
+                        :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer relative">
+                    {{$feature.Title}}
+                </button>
+                {{end}}
                 
-                <!-- Feature Text -->
-                <div 
-                    class="py-3 px-4 transition-all duration-300 ease-out"
-                    :class="{
-                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                >
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200 dark:border-gray-700">
-                </div>
-            </div>
-            {{end}}
+                <!-- Animated underline -->
+                <div class="absolute bottom-0 h-0.5 bg-brand-blue transition-all duration-300 ease-out"
+                     :style="`left: ${underlineLeft}px; width: ${underlineWidth}px;`"></div>
+            </nav>
         </div>
         
         {{else}}
         <!-- Left Layout (Default): Feature Menu First -->
-        <div class="space-y-2">
-            {{range .Features}}
-            <div 
-                class="relative cursor-pointer group"
-                @click="selectFeature('{{.Id}}')"
-                @mouseenter="hoveredFeature = '{{.Id}}'"
-                @mouseleave="hoveredFeature = null"
-            >
-                <!-- Blue Circle (animated) -->
-                <div 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-brand-blue rounded-full transition-all duration-300 ease-out"
-                    :class="{
-                        'opacity-100 translate-x-0': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'opacity-0 -translate-x-4': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                ></div>
+        <div>
+            <nav x-ref="tabNav" class="relative flex flex-wrap gap-3 sm:gap-8 text-sm sm:text-lg">
+                {{range $index, $feature := .Features}}
+                <button @click="selectFeature('{{$feature.Id}}')" 
+                        data-feature="{{$feature.Id}}"
+                        :class="selectedFeature === '{{$feature.Id}}' ? 'text-brand-blue font-medium' : 'text-gray-500 hover:text-brand-blue transition-colors duration-200'"
+                        class="pb-0.5 sm:pb-1 cursor-pointer relative">
+                    {{$feature.Title}}
+                </button>
+                {{end}}
                 
-                <!-- Feature Text -->
-                <div 
-                    class="py-3 px-4 transition-all duration-300 ease-out"
-                    :class="{
-                        'pl-6': selectedFeature === '{{.Id}}' || hoveredFeature === '{{.Id}}',
-                        'pl-0': selectedFeature !== '{{.Id}}' && hoveredFeature !== '{{.Id}}'
-                    }"
-                >
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">{{.Title}}</h3>
-                    <hr class="border-gray-200 dark:border-gray-700">
-                </div>
-            </div>
-            {{end}}
+                <!-- Animated underline -->
+                <div class="absolute bottom-0 h-0.5 bg-brand-blue transition-all duration-300 ease-out"
+                     :style="`left: ${underlineLeft}px; width: ${underlineWidth}px;`"></div>
+            </nav>
         </div>
         
         <!-- Feature Preview on Right -->
