@@ -74,6 +74,10 @@ DEPENDENCIES:
          selectedIndex: -1,
          loading: false,
          searchFocused: false,
+         isHovering: false,
+         animationInterval: null,
+         animatedPlaceholder: '',
+         dotCount: 0,
          currentLang: '{{.Language}}',
          suggestions: {{toJSON (slice
             (dict "title" (t "search.suggestions.platform_overview.title") "url" "/platform/" "category" "Feature" "icon" "grid" "description" (t "search.suggestions.platform_overview.description"))
@@ -304,11 +308,37 @@ DEPENDENCIES:
                  'Insights': count === 1 ? 'Insight' : 'Insights'
              };
              return plurals[category] || category;
+         },
+         startPlaceholderAnimation() {
+             // Get the base placeholder text without dots
+             const basePlaceholder = '{{t "search.placeholder_short"}}';
+             const baseText = basePlaceholder.replace(/\.+$/, ''); // Remove trailing dots
+             
+             // Set initial animated placeholder
+             this.animatedPlaceholder = baseText + '.';
+             this.dotCount = 1;
+             
+             // Start the animation interval
+             this.animationInterval = setInterval(() => {
+                 this.dotCount = (this.dotCount % 3) + 1; // Cycle 1, 2, 3
+                 this.animatedPlaceholder = baseText + '.'.repeat(this.dotCount);
+             }, 500);
+         },
+         stopPlaceholderAnimation() {
+             if (this.animationInterval) {
+                 clearInterval(this.animationInterval);
+                 this.animationInterval = null;
+             }
+             this.isHovering = false;
+             this.dotCount = 0;
+             this.animatedPlaceholder = '';
          }
      }"
      @click.away="showResults = false; searchFocused = false; showingSuggestions = false">
     <div class="relative transition-all duration-300 ease-out"
-         :class="searchFocused ? 'w-[28rem]' : 'w-72'">
+         :class="searchFocused ? 'w-[28rem]' : 'w-72'"
+         @mouseenter="if (!searchFocused) { isHovering = true; startPlaceholderAnimation() }"
+         @mouseleave="stopPlaceholderAnimation()">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg class="w-4 h-4 text-gray-400" fill="currentColor">
                 <use href="/icons/sprite.svg#search"></use>
@@ -322,7 +352,7 @@ DEPENDENCIES:
             @focus="searchFocused = true; showSuggestions(); query && search()"
             @blur="setTimeout(() => { if (!showResults) searchFocused = false }, 200)"
             class="block w-full pl-10 pr-16 py-2 border border-transparent bg-gray-100 dark:bg-gray-800 rounded-lg text-sm placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 focus:outline-none focus:bg-white dark:focus:bg-gray-700 focus:border-gray-200 dark:focus:border-gray-700 transition-all duration-300"
-            :placeholder="searchFocused ? '{{t "search.placeholder_long"}}' : '{{t "search.placeholder_short"}}'"
+            :placeholder="isHovering && !searchFocused ? animatedPlaceholder : (searchFocused ? '{{t "search.placeholder_long"}}' : '{{t "search.placeholder_short"}}')"
             autocomplete="off"
             id="searchInput"
         >
