@@ -92,7 +92,19 @@
                     <div class="hidden lg:flex space-x-1">
                         {{range .Days}}
                         <div 
-                            x-data="{ tooltipVisible: false }"
+                            x-data="{ 
+                                tooltipVisible: false,
+                                date: '{{.Date}}',
+                                formattedDate: '',
+                                init() {
+                                    const dateObj = new Date(this.date + 'T00:00:00');
+                                    this.formattedDate = dateObj.toLocaleDateString('en-US', { 
+                                        month: 'long', 
+                                        day: 'numeric', 
+                                        year: 'numeric' 
+                                    });
+                                }
+                            }"
                             @mouseenter="tooltipVisible = true"
                             @mouseleave="tooltipVisible = false"
                             class="relative">
@@ -102,7 +114,7 @@
                                  x-transition
                                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50">
                                 <div class="relative px-2 py-1 text-white bg-gray-900 rounded text-xs whitespace-nowrap">
-                                    {{.Date}}<br>
+                                    <span x-text="formattedDate">{{.Date}}</span><br>
                                     {{if eq .Status "operational"}}{{t "status.statuses.operational"}}{{else if eq .Status "degraded"}}{{t "status.statuses.degraded"}}{{else if eq .Status "outage"}}{{t "status.statuses.outage"}}{{else}}{{t "status.statuses.unknown"}}{{end}} ({{printf "%.1f" .Uptime}}%)
                                     <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
                                         <div class="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-gray-900"></div>
