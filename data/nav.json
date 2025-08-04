@@ -2201,6 +2201,28 @@
             "km": "កិច្ចព្រមព្រៀងដៃគូអាជីវកម្ម"
           },
           "href": "/legal/baa"
+        },
+        {
+          "id": "legal-partner-agreement",
+          "name": {
+            "en": "Partner Agreement",
+            "es": "Acuerdo de Socio",
+            "zh": "合作伙伴协议",
+            "fr": "Accord de Partenariat",
+            "de": "Partnervereinbarung",
+            "ja": "パートナー契約",
+            "pt": "Acordo de Parceria",
+            "ru": "Партнерское соглашение",
+            "ko": "파트너 계약",
+            "it": "Accordo di Partnership",
+            "id": "Perjanjian Kemitraan",
+            "nl": "Partnerovereenkomst",
+            "pl": "Umowa Partnerska",
+            "zh-TW": "合作夥伴協議",
+            "sv": "Partneravtal",
+            "km": "កិច្ចព្រមព្រៀងដៃគូ"
+          },
+          "href": "/legal/partner-agreement"
         }
       ]
     }
