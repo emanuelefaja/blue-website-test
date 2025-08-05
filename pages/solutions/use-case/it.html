@@ -84,43 +84,6 @@
         {{template "stats-section" $statsData}}
     </section>
 
-    <!-- Custom Processes Feature -->
-    <section class="mb-16">
-        <div class="mb-16">
-            {{$customProcessData := dict
-                "Title" (t "it.custom_process_title")
-                "Description" (t "it.custom_process_description")
-                "VideoUrl" "/testvideo2.mp4"
-                "VideoPosition" "right"
-                "Button" (dict
-                    "Text" (t "it.custom_process_button")
-                    "Url" "/docs/automations/introduction"
-                )
-                "SeeAlso" (dict
-                    "Heading" (t "it.custom_process_see_also")
-                    "Links" (slice
-                        (dict
-                            "Text" (t "it.custom_process_link_1")
-                            "Url" "/docs/projects/lists"
-                            "Description" (t "it.custom_process_link_1_desc")
-                        )
-                        (dict
-                            "Text" (t "it.custom_process_link_2")
-                            "Url" "/docs/automations/introduction"
-                            "Description" (t "it.custom_process_link_2_desc")
-                        )
-                        (dict
-                            "Text" (t "it.custom_process_link_3")
-                            "Url" "/docs/automations/actions/email-automations"
-                            "Description" (t "it.custom_process_link_3_desc")
-                        )
-                    )
-                )
-            }}
-            
-            {{template "feature-video" $customProcessData}}
-        </div>
-    </section>
 
     <!-- Custom Fields Section -->
     <section class="mb-16">

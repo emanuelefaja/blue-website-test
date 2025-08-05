@@ -108,38 +108,7 @@
             </div>
         </div>
         
-        <!-- Security & Compliance -->
-        <div>
-            {{$complianceData := dict
-                "Title" (t "process-management.compliance_title")
-                "Description" (t "process-management.compliance_description")
-                "VideoUrl" "/testvideo2.mp4"
-                "VideoPosition" "left"
-                "SeeAlso" (dict
-                    "Heading" (t "process-management.compliance_heading")
-                    "Links" (slice
-                        (dict
-                            "Text" (t "process-management.compliance_link_1_text")
-                            "Url" "/docs/user-management/roles/custom-user-roles"
-                            "Description" (t "process-management.compliance_link_1_desc")
-                        )
-                        (dict
-                            "Text" (t "process-management.compliance_link_2_text")
-                            "Url" "/docs/projects/activity"
-                            "Description" (t "process-management.compliance_link_2_desc")
-                        )
-                        (dict
-                            "Text" (t "process-management.compliance_link_3_text")
-                            "Url" "/docs/user-management/organisation-administrator"
-                            "Description" (t "process-management.compliance_link_3_desc")
-                        )
-                    )
-                )
-            }}
-            
-            {{template "feature-video" $complianceData}}
-        </div>
-    </section>
+       
    
          <!-- Ivan Keogh Testimonial -->
          <div class="mb-16">
