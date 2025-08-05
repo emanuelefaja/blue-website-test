@@ -72,64 +72,11 @@
     </p>
 </div>
 
-<!-- Hero Videos -->
-<div>
-    
-    {{$showcaseDataTop := dict
-        "Position" "bottom"
-        "Features" (slice
-            (dict
-                "Id" "automation-setup-top"
-                "Title" "CRM"
-                "VideoUrl" "/testvideo2.mp4"
-                "ShowUnmuteButton" true
-            )
-            (dict
-                "Id" "trigger-conditions-top"
-                "Title" "HR"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-                "ShowUnmuteButton" true
-            )
-            (dict
-                "Id" "workflow-actions-top"
-                "Title" "IT"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "automation-testing-top"
-                "Title" "Finance"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "service-tickets-top"
-                "Title" "Service Tickets"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "performance-monitoring-top"
-                "Title" "Sales"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "integration-management-top"
-                "Title" "Marketing"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "operations-top"
-                "Title" "Operations"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-            (dict
-                "Id" "compliance-top"
-                "Title" "Compliance"
-                "VideoUrl" "https://media.blue.cc/white-label-overview.mp4"
-            )
-        )
-    }}
-    
-    {{template "interactive-feature-showcase" $showcaseDataTop}}
-</div>
+<!-- Hero Image -->
+{{template "hero-video" dict 
+    "ImageUrl" "/product/simple-screenshot-home.png"
+    "ImageAlt" "Blue platform dashboard showing customer list with tags, price, and profit data"
+}}
 
 
     <!-- Hero CTAs -->
