@@ -4,22 +4,22 @@
         languageMenuOpen: false,
         currentLang: '{{.Language}}',
         languages: [
-            { code: 'en', flag: '🇺🇸', name: 'English' },
-            { code: 'zh', flag: '🇨🇳', name: '简体中文' },
-            { code: 'es', flag: '🇪🇸', name: 'Español' },
-            { code: 'fr', flag: '🇫🇷', name: 'Français' },
-            { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
-            { code: 'ja', flag: '🇯🇵', name: '日本語' },
-            { code: 'pt', flag: '🇵🇹', name: 'Português' },
-            { code: 'ru', flag: '🇷🇺', name: 'Русский' },
-            { code: 'ko', flag: '🇰🇷', name: '한국어' },
-            { code: 'it', flag: '🇮🇹', name: 'Italiano' },
-            { code: 'id', flag: '🇮🇩', name: 'Indonesian' },
-            { code: 'nl', flag: '🇳🇱', name: 'Nederlands' },
-            { code: 'pl', flag: '🇵🇱', name: 'Polski' },
-            { code: 'zh-TW', flag: '🇹🇼', name: '繁體中文' },
-            { code: 'sv', flag: '🇸🇪', name: 'Svenska' },
-            { code: 'km', flag: '🇰🇭', name: 'ភាសាខ្មែរ' }
+            { code: 'en', flag: 'us', name: 'English' },
+            { code: 'zh', flag: 'cn', name: '简体中文' },
+            { code: 'es', flag: 'es', name: 'Español' },
+            { code: 'fr', flag: 'fr', name: 'Français' },
+            { code: 'de', flag: 'de', name: 'Deutsch' },
+            { code: 'ja', flag: 'jp', name: '日本語' },
+            { code: 'pt', flag: 'pt', name: 'Português' },
+            { code: 'ru', flag: 'ru', name: 'Русский' },
+            { code: 'ko', flag: 'kr', name: '한국어' },
+            { code: 'it', flag: 'it', name: 'Italiano' },
+            { code: 'id', flag: 'id', name: 'Indonesian' },
+            { code: 'nl', flag: 'nl', name: 'Nederlands' },
+            { code: 'pl', flag: 'pl', name: 'Polski' },
+            { code: 'zh-TW', flag: 'tw', name: '繁體中文' },
+            { code: 'sv', flag: 'se', name: 'Svenska' },
+            { code: 'km', flag: 'kh', name: 'ភាសាខ្មែរ' }
         ],
         selectedLanguage: null,
         hoverTimeout: null,
@@ -117,7 +117,9 @@
                      class="px-4 py-2.5 cursor-pointer transition-colors"
                      :class="selectedLanguage.code === language.code ? 'bg-blue-50 dark:bg-blue-900/30' : 'hover:bg-blue-50 dark:hover:bg-blue-900/30'">
                     <div class="flex items-center gap-2 min-w-0">
-                        <span class="text-lg flex-shrink-0" x-text="language.flag"></span>
+                        <img :src="'/flags/' + language.flag + '.svg'" 
+                             :alt="language.name + ' flag'"
+                             class="flex-shrink-0 w-5 h-4 rounded-sm object-cover shadow-sm">
                         <span class="text-sm text-gray-900 dark:text-gray-100 whitespace-nowrap" 
                               :class="selectedLanguage.code === language.code ? 'font-bold' : 'font-medium'"
                               x-text="language.name"></span>
