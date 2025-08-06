@@ -1,0 +1,490 @@
+{{define "ai-sidebar"}}
+<!-- AI Sidebar (outside the wrapper, fixed position) -->
+<div x-show="$store.aiSidebar.open"
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="translate-x-full"
+     x-transition:enter-end="translate-x-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="translate-x-0"
+     x-transition:leave-end="translate-x-full"
+     class="fixed right-0 top-0 bottom-0 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 z-[100] flex flex-col transition-all duration-300"
+     :style="'width: ' + ($store.aiSidebar.expanded ? '768px' : '384px')"
+     @keydown.escape.window="$store.aiSidebar.open = false"
+     x-data="{
+         messages: JSON.parse(sessionStorage.getItem('aiMessages') || '[]'),
+         input: '',
+         threadId: sessionStorage.getItem('aiThreadId') || null,
+         loading: false,
+         loadingText: '',
+         loadingInterval: null,
+         streamingSupported: true,
+         currentStreamMessage: null,
+         streamingContent: '',
+         loadingWords: [
+             'Processing...',
+             'Thinking...',
+             'Analyzing...',
+             'Computing...',
+             'Researching...',
+             'Contemplating...',
+             'Evaluating...',
+             'Considering...',
+             'Formulating...',
+             'Preparing response...',
+             'Compiling thoughts...',
+             'Parsing request...',
+             'Synthesizing...',
+             'Optimizing response...',
+             'Calculating...',
+             'Querying knowledge...',
+             'Indexing information...',
+             'Decoding request...',
+             'Pondering deeply...',
+             'Brainstorming...',
+             'Crafting response...',
+             'Consulting the docs...',
+             'Reading the manual...',
+             'Checking my notes...',
+             'Double-checking facts...',
+             'Gathering insights...',
+             'Connecting dots...',
+             'Finding patterns...',
+             'Brewing ideas...',
+             'Dusting off knowledge...',
+             'Warming up neurons...',
+             'Flexing AI muscles...',
+             'Sharpening digital pencils...',
+             'Adjusting virtual glasses...',
+             'Rolling up sleeves...',
+             'Cracking digital knuckles...',
+             'Putting on thinking cap...',
+             'Consulting crystal ball...'
+         ],
+         lastLoadingIndex: -1,
+         
+         init() {
+             // Restore scroll position
+             this.$nextTick(() => {
+                 const container = this.$refs.messagesContainer;
+                 container.scrollTop = container.scrollHeight;
+             });
+             
+             // Watch for sidebar open state and focus input
+             this.$watch('$store.aiSidebar.open', (isOpen) => {
+                 if (isOpen) {
+                     this.$nextTick(() => {
+                         const textarea = this.$el.querySelector('textarea');
+                         if (textarea) {
+                             textarea.focus();
+                         }
+                     });
+                 }
+             });
+         },
+         
+         getRandomLoadingText() {
+             let newIndex;
+             do {
+                 newIndex = Math.floor(Math.random() * this.loadingWords.length);
+             } while (newIndex === this.lastLoadingIndex && this.loadingWords.length > 1);
+             this.lastLoadingIndex = newIndex;
+             return this.loadingWords[newIndex];
+         },
+         
+         startLoadingAnimation() {
+             this.loadingText = this.getRandomLoadingText();
+             this.loadingInterval = setInterval(() => {
+                 this.loadingText = this.getRandomLoadingText();
+             }, 3000);
+         },
+         
+         stopLoadingAnimation() {
+             if (this.loadingInterval) {
+                 clearInterval(this.loadingInterval);
+                 this.loadingInterval = null;
+             }
+             this.loadingText = '';
+         },
+         
+         saveSession() {
+             sessionStorage.setItem('aiMessages', JSON.stringify(this.messages));
+             if (this.threadId) {
+                 sessionStorage.setItem('aiThreadId', this.threadId);
+             }
+         },
+         
+         async sendMessage() {
+             if (!this.input.trim() || this.loading) return;
+             
+             const message = this.input.trim();
+             this.input = '';
+             this.loading = true;
+             this.startLoadingAnimation();
+             
+             // Add user message
+             this.messages.push({
+                 role: 'user',
+                 content: message,
+                 timestamp: new Date()
+             });
+             this.saveSession();
+             
+             // Reset textarea height
+             const textarea = this.$el.querySelector('textarea');
+             if (textarea) {
+                 textarea.style.height = 'auto';
+             }
+             
+             // Scroll to bottom
+             this.$nextTick(() => {
+                 const container = this.$refs.messagesContainer;
+                 container.scrollTop = container.scrollHeight;
+             });
+             
+             // Use streaming if supported
+             if (this.streamingSupported) {
+                 await this.sendMessageStream(message);
+             } else {
+                 await this.sendMessageNonStream(message);
+             }
+         },
+         
+         async sendMessageStream(message) {
+             console.log('[AI Stream] Starting stream for message:', message);
+             try {
+                 const response = await fetch('/api/assistant/stream', {
+                     method: 'POST',
+                     headers: {
+                         'Content-Type': 'application/json'
+                     },
+                     body: JSON.stringify({
+                         message: message,
+                         threadId: this.threadId
+                     })
+                 });
+                 
+                 console.log('[AI Stream] Response status:', response.status);
+                 console.log('[AI Stream] Response headers:', response.headers.get('content-type'));
+                 
+                 if (!response.ok) {
+                     console.error('[AI Stream] Response not OK:', response.status, response.statusText);
+                     throw new Error('Stream request failed');
+                 }
+                 
+                 // Stop loading animation once stream starts
+                 this.stopLoadingAnimation();
+                 
+                 // Create assistant message placeholder
+                 this.streamingContent = '';
+                 const assistantMessage = {
+                     role: 'assistant',
+                     content: '',
+                     timestamp: new Date(),
+                     streaming: true
+                 };
+                 this.messages.push(assistantMessage);
+                 this.currentStreamMessage = assistantMessage;
+                 
+                 // Read the stream
+                 const reader = response.body.getReader();
+                 const decoder = new TextDecoder();
+                 let buffer = '';
+                 console.log('[AI Stream] Starting to read stream...');
+                 
+                 while (true) {
+                     const { done, value } = await reader.read();
+                     if (done) {
+                         console.log('[AI Stream] Stream reading complete');
+                         break;
+                     }
+                     
+                     buffer += decoder.decode(value, { stream: true });
+                     const lines = buffer.split('\n');
+                     buffer = lines.pop() || '';
+                     
+                     for (const line of lines) {
+                         if (line.trim() === '') continue; // Skip empty lines
+                         console.log('[AI Stream] Received line:', line);
+                         
+                         if (line.startsWith('data: ')) {
+                             const data = line.slice(6).trim();
+                             if (data === '[DONE]') {
+                                 console.log('[AI Stream] Received DONE signal');
+                                 // Stream complete
+                                 this.currentStreamMessage.streaming = false;
+                                 this.currentStreamMessage = null;
+                                 this.saveSession();
+                             } else {
+                                 try {
+                                     const chunk = JSON.parse(data);
+                                     if (chunk.error) {
+                                         this.currentStreamMessage.content = '{{tjs "common.ai_error_prefix"}}' + chunk.error;
+                                         this.currentStreamMessage.error = true;
+                                         this.currentStreamMessage.streaming = false;
+                                     } else if (chunk.content) {
+                                         this.streamingContent += chunk.content;
+                                         this.currentStreamMessage.content = this.streamingContent;
+                                         // Scroll to bottom as content streams
+                                         this.$nextTick(() => {
+                                             const container = this.$refs.messagesContainer;
+                                             container.scrollTop = container.scrollHeight;
+                                         });
+                                     }
+                                     if (chunk.threadId && !this.threadId) {
+                                         this.threadId = chunk.threadId;
+                                     }
+                                 } catch (e) {
+                                     console.error('Error parsing chunk:', e);
+                                 }
+                             }
+                         }
+                     }
+                 }
+             } catch (error) {
+                 console.error('Streaming error:', error);
+                 // Fall back to non-streaming
+                 this.streamingSupported = false;
+                 if (this.currentStreamMessage) {
+                     // Remove incomplete streaming message
+                     const index = this.messages.indexOf(this.currentStreamMessage);
+                     if (index > -1) {
+                         this.messages.splice(index, 1);
+                     }
+                 }
+                 await this.sendMessageNonStream(message);
+             } finally {
+                 this.loading = false;
+                 this.stopLoadingAnimation();
+                 this.streamingContent = '';
+                 this.currentStreamMessage = null;
+             }
+         },
+         
+         async sendMessageNonStream(message) {
+             try {
+                 const response = await fetch('/api/assistant', {
+                     method: 'POST',
+                     headers: {
+                         'Content-Type': 'application/json'
+                     },
+                     body: JSON.stringify({
+                         message: message,
+                         threadId: this.threadId
+                     })
+                 });
+                 
+                 const data = await response.json();
+                 
+                 if (data.error) {
+                     this.messages.push({
+                         role: 'assistant',
+                         content: '{{tjs "common.ai_error_encountered"}}' + data.error,
+                         timestamp: new Date(),
+                         error: true
+                     });
+                 } else {
+                     this.threadId = data.threadId;
+                     this.messages.push({
+                         role: 'assistant',
+                         content: data.response,
+                         timestamp: new Date()
+                     });
+                     this.saveSession();
+                 }
+             } catch (error) {
+                 this.messages.push({
+                     role: 'assistant',
+                     content: '{{tjs "common.ai_error_connection"}}',
+                     timestamp: new Date(),
+                     error: true
+                 });
+             } finally {
+                 this.loading = false;
+                 this.stopLoadingAnimation();
+                 this.$nextTick(() => {
+                     const container = this.$refs.messagesContainer;
+                     container.scrollTop = container.scrollHeight;
+                 });
+             }
+         },
+         
+         clearConversation() {
+             this.messages = [];
+             this.threadId = null;
+             sessionStorage.removeItem('aiMessages');
+             sessionStorage.removeItem('aiThreadId');
+         }
+     }">
+    
+    <!-- Sidebar Header -->
+    <div class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-blue" fill="currentColor">
+                    <use href="/icons/sprite.svg#bolt"></use>
+                </svg>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">{{t "common.ai_assistant"}}</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <!-- Clear conversation button with tooltip -->
+                <div class="relative" x-data="{ showClearTooltip: false, tooltipText: '{{tjs "common.clear_conversation"}}' }">
+                    <button @click="clearConversation()"
+                            @mouseenter="showClearTooltip = true"
+                            @mouseleave="showClearTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#trash"></use>
+                        </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div x-show="showClearTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50"
+                         x-text="tooltipText">
+                    </div>
+                </div>
+                
+                <!-- Toggle width button (COMMENTED OUT DUE TO LAYOUT ISSUES) -->
+                <!--
+                <div class="relative" x-data="{ showExpandTooltip: false }">
+                    <button @click="$store.aiSidebar.toggleExpanded()"
+                            @mouseenter="showExpandTooltip = true"
+                            @mouseleave="showExpandTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#expand"></use>
+                        </svg>
+                        <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#compress"></use>
+                        </svg>
+                    </button>
+                    <div x-show="showExpandTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50">
+                        <span x-text="$store.aiSidebar.expanded ? 'Collapse sidebar' : 'Expand sidebar'"></span>
+                    </div>
+                </div>
+                -->
+                
+                <!-- Close button with tooltip -->
+                <div class="relative" x-data="{ showCloseTooltip: false, tooltipText: '{{tjs "common.close_ai_assistant"}}' }">
+                    <button @click="$store.aiSidebar.open = false"
+                            @mouseenter="showCloseTooltip = true"
+                            @mouseleave="showCloseTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#xmark"></use>
+                        </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div x-show="showCloseTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full right-0 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50"
+                         x-text="tooltipText">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Messages Container -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4" x-ref="messagesContainer">
+        <!-- AI Disclaimer -->
+        <p class="text-xs text-gray-400 dark:text-gray-500 text-center mb-4">
+            {{t "common.ai_disclaimer"}}
+        </p>
+        
+        <!-- Welcome message -->
+        <div x-show="messages.length === 0" class="text-center py-8">
+            <svg class="w-12 h-12 mx-auto text-gray-400 dark:text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">{{t "common.ai_welcome_title"}}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{{t "common.ai_welcome_subtitle"}}</p>
+        </div>
+        
+        <!-- Messages -->
+        <template x-for="(message, index) in messages" :key="index">
+            <div :class="message.role === 'user' ? 'flex justify-end' : 'flex justify-start'">
+                <div :class="[
+                    'relative max-w-[80%] rounded-lg p-3',
+                    message.role === 'user' 
+                        ? 'bg-brand-blue text-white' 
+                        : message.error 
+                            ? 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100'
+                ]">
+                    <div class="text-sm" 
+                         x-html="message.role === 'assistant' && !message.error ? formatAIMessage(message.content) : message.content"
+                         x-init="if (message.role === 'assistant' && !message.error && !message.streaming) { $nextTick(() => highlightAICode($el)) }"></div>
+                    <div class="flex items-center justify-between mt-1">
+                        <div class="text-xs opacity-70" 
+                             x-text="new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})"></div>
+                        <!-- Copy button for assistant messages -->
+                        <template x-if="message.role === 'assistant' && !message.error">
+                            <button @click="navigator.clipboard.writeText(message.content).then(() => { const svg = $el.querySelector('svg'); svg.classList.add('text-green-600', 'dark:text-green-400'); setTimeout(() => { svg.classList.remove('text-green-600', 'dark:text-green-400'); }, 2000); })"
+                                    class="ml-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors opacity-60 hover:opacity-100 cursor-pointer"
+                                    :title="'{{t "common.copy_to_clipboard"}}'">
+                                <svg class="w-3.5 h-3.5 text-gray-600 dark:text-gray-400" fill="currentColor">
+                                    <use href="/icons/sprite.svg#copy"></use>
+                                </svg>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- Loading indicator -->
+        <div x-show="loading" class="flex justify-start">
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 min-w-[120px]">
+                <div class="text-sm text-gray-600 dark:text-gray-300 italic transition-opacity duration-500"
+                     x-text="loadingText"
+                     :class="loadingText ? 'opacity-100' : 'opacity-0'">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Input Area -->
+    <div class="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800">
+        <form @submit.prevent="sendMessage()" class="flex gap-2 items-end">
+            <textarea 
+                x-model="input"
+                :disabled="loading"
+                placeholder="{{t "common.ai_input_placeholder"}}"
+                class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 disabled:opacity-50 resize-none min-h-[40px] max-h-[200px]"
+                @input="autoResizeTextarea($el)"
+                @keydown.enter.prevent="if (!$event.shiftKey) sendMessage()"
+                @keydown.shift.enter.prevent="input += '\n'; $nextTick(() => autoResizeTextarea($el))"
+                rows="1"></textarea>
+            <button 
+                type="submit"
+                :disabled="loading || !input.trim()"
+                class="px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-brand-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg class="w-5 h-5" fill="currentColor">
+                    <use href="/icons/sprite.svg#paper-plane"></use>
+                </svg>
+            </button>
+        </form>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            {{t "common.ai_helper_text"}}
+        </p>
+    </div>
+</div>
+{{end}}

@@ -64,7 +64,9 @@ BEHAVIOR:
      x-transition:leave="transition ease-in duration-200"
      x-transition:leave-start="opacity-100 translate-y-0"
      x-transition:leave-end="opacity-0 -translate-y-full"
-     class="fixed top-0 left-0 right-0 z-[60] bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 hidden lg:block">
+     class="fixed top-0 left-0 right-0 z-[60] bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 hidden lg:block transition-all duration-300"
+     :class="$store.aiSidebar && $store.aiSidebar.open ? '!left-0 !right-auto' : ''"
+     :style="$store.aiSidebar && $store.aiSidebar.open ? ($store.aiSidebar.expanded ? 'width: calc(100% - 768px);' : 'width: calc(100% - 384px);') : ''">
     <div class="relative flex items-center justify-center px-4 py-2.5 text-sm">
         <!-- Announcement content -->
         <div class="flex items-center space-x-2 text-gray-700 dark:text-gray-300">

@@ -122,6 +122,21 @@ func (r *Router) SetStatusChecker(checker *HealthChecker) {
 
 // ServeHTTP implements the http.Handler interface
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	// Handle API endpoints first (before language detection)
+	if strings.HasPrefix(req.URL.Path, "/api/") {
+		switch req.URL.Path {
+		case "/api/assistant":
+			HandleAssistant(w, req)
+			return
+		case "/api/assistant/stream":
+			HandleAssistantStream(w, req)
+			return
+		default:
+			http.Error(w, "API endpoint not found", http.StatusNotFound)
+			return
+		}
+	}
+
 	// Handle health check endpoint
 	if req.URL.Path == "/health" {
 		HealthHandler(w, req)

@@ -119,6 +119,15 @@ func getTemplateFuncs(lang string) template.FuncMap {
 		return Translate(lang, key, args...)
 	}
 	
+	// tjs is like t but escapes the result for safe use in JavaScript strings
+	funcs["tjs"] = func(key string, args ...interface{}) string {
+		result := Translate(lang, key, args...)
+		// Escape backslashes first, then single quotes for JavaScript
+		result = strings.ReplaceAll(result, "\\", "\\\\")
+		result = strings.ReplaceAll(result, "'", "\\'")
+		return result
+	}
+	
 	return funcs
 }
 

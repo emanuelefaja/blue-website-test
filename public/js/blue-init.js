@@ -32,6 +32,9 @@ window.BlueInit = {
         // Initialize font loader
         this.initFontLoader();
         
+        // Initialize AI Assistant
+        this.initAIAssistant();
+        
         console.log('✅ Blue initialization complete');
     },
     
@@ -189,6 +192,26 @@ window.BlueInit = {
             FontLoader.init();
         } else {
             console.warn('FontLoader not loaded - dynamic fonts will not work');
+        }
+    },
+    
+    /**
+     * Initialize AI Assistant functionality
+     */
+    initAIAssistant() {
+        // The AI assistant script is self-initializing with its own DOMContentLoaded handler
+        // We just need to ensure Alpine store is available
+        if (typeof Alpine !== 'undefined') {
+            // Check if the store is already initialized (it should be from main.html)
+            setTimeout(() => {
+                if (Alpine.store('aiSidebar')) {
+                    console.log('✅ AI Assistant store verified');
+                } else {
+                    console.warn('AI Assistant store not found - keyboard shortcuts may not work');
+                }
+            }, 100);
+        } else {
+            console.warn('Alpine not loaded - AI Assistant will not work');
         }
     }
 };

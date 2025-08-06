@@ -99,16 +99,18 @@
 </div>
 
 <!-- Top Navigation Bar -->
-<header class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl backdrop-saturate-150 fixed z-50 h-16 transition-all duration-300 left-0 right-0 xl:left-1/2 xl:-translate-x-1/2"
+<header class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl backdrop-saturate-150 fixed z-50 h-16 transition-all duration-300 left-0 right-0 xl:left-1/2 xl:-translate-x-1/2 xl:w-full"
         :class="[
             hasExternalNewsBar ? 'top-0 lg:top-10' : 'top-0 lg:top-0',
-            scrolled ? (hasExternalNewsBar ? 'xl:top-14' : 'xl:top-4') + ' xl:w-[85%] 2xl:w-[80%] xl:rounded-2xl xl:shadow-lg' : 'xl:w-full'
+            scrolled ? (hasExternalNewsBar ? 'xl:top-14' : 'xl:top-4') + ' xl:rounded-2xl xl:shadow-lg' : '',
+            scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'xl:w-[85%] 2xl:w-[80%]' : '',
+            $store.aiSidebar && $store.aiSidebar.open ? '!left-0 !right-auto !translate-x-0' : ''
         ]"
-        :style="scrolled ? 'box-shadow: 0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);' : ''"
+        :style="(scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'box-shadow: 0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);' : '') + ($store.aiSidebar && $store.aiSidebar.open ? ($store.aiSidebar.expanded ? ' width: calc(100% - 768px);' : ' width: calc(100% - 384px);') : '')"
         @keydown.escape="mobileMenuOpen = false">
-    <div class="relative flex items-center justify-between px-4 h-full">
+    <div class="relative flex items-center px-4 h-full gap-4">
         <!-- Logo and Toggle -->
-        <div class="flex items-center">
+        <div class="flex items-center flex-shrink-0">
             <a :href="'/'" class="flex items-center" 
                @click="window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'))">
                 <img :src="customLogoUrl || '/logo/logo.svg'" 
@@ -130,11 +132,44 @@
             </button>
         </div>
         
-        <!-- Search Bar Component -->
-        {{template "search-bar" .}}
+        <!-- Search Bar Component (flex child with margin on 2xl) -->
+        <div class="flex-1 max-w-2xl mx-auto">
+            {{template "search-bar" .}}
+        </div>
         
         <!-- Right side controls -->
-        <div class="hidden lg:flex items-center space-x-0 2xl:space-x-4">
+        <div class="hidden lg:flex items-center flex-shrink-0 space-x-0 2xl:space-x-4">
+            <!-- AI Assistant Button -->
+            <div class="relative" x-data="{ showTooltip: false }">
+                <button @click="$store.aiSidebar.toggle()"
+                        @mouseenter="showTooltip = true"
+                        @mouseleave="showTooltip = false"
+                        class="p-2 focus:outline-none transition-colors duration-200 cursor-pointer"
+                        :class="$store.aiSidebar.open ? 'text-gray-700 dark:text-gray-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
+                        aria-label="{{t "common.ask_ai"}}">
+                    <svg class="w-5 h-5" fill="currentColor">
+                        <use href="/icons/sprite.svg#bolt"></use>
+                    </svg>
+                </button>
+                <!-- Tooltip -->
+                <div x-show="showTooltip"
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 scale-95"
+                     x-transition:enter-end="opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-75"
+                     x-transition:leave-start="opacity-100 scale-100"
+                     x-transition:leave-end="opacity-0 scale-95"
+                     x-data="{ isMac: navigator.userAgent.indexOf('Mac') !== -1 }"
+                     class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none flex items-center gap-2">
+                    <span>{{t "common.ask_ai"}}</span>
+                    <div class="flex items-center gap-1">
+                        <span x-show="isMac" class="inline-flex items-center justify-center w-5 h-5 bg-gray-200 dark:bg-gray-700 rounded text-xs font-bold text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600">⌘</span>
+                        <span x-show="!isMac" class="inline-flex items-center justify-center w-7 h-5 bg-gray-200 dark:bg-gray-700 rounded text-xs font-bold text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600">Ctrl</span>
+                        <span class="inline-flex items-center justify-center w-5 h-5 bg-gray-200 dark:bg-gray-700 rounded text-xs font-bold text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600">I</span>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Language Switcher -->
             {{template "language-switcher" .}}
             
@@ -313,14 +348,20 @@
                             window.location.href = '/contact';
                         }
                     } else if (event.key === 'Enter') {
-                        event.preventDefault();
-                        // Check if user is logged in
-                        if (window.AuthCookie && window.AuthCookie.isLoggedIn()) {
-                            // Open app for logged in users
-                            window.open('https://app.blue.cc', '_blank');
-                        } else {
-                            // Sign up for non-logged in users
-                            openSignUp();
+                        // Check if AI sidebar is open or if we're typing in it
+                        const aiSidebarOpen = window.Alpine && window.Alpine.store('aiSidebar') && window.Alpine.store('aiSidebar').open;
+                        const isInAISidebar = activeElement.closest('.fixed.right-0.top-0.bottom-0.z-\\[100\\]') !== null;
+                        
+                        if (!aiSidebarOpen && !isInAISidebar) {
+                            event.preventDefault();
+                            // Check if user is logged in
+                            if (window.AuthCookie && window.AuthCookie.isLoggedIn()) {
+                                // Open app for logged in users
+                                window.open('https://app.blue.cc', '_blank');
+                            } else {
+                                // Sign up for non-logged in users
+                                openSignUp();
+                            }
                         }
                     }
                 }

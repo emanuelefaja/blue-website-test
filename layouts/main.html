@@ -10,6 +10,28 @@
     class="bg-white dark:bg-gray-900 overflow-x-hidden transition-colors duration-300"
     data-language="{{.Language}}">
     
+    <!-- Alpine Store for AI Sidebar -->
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('aiSidebar', {
+                open: false,
+                expanded: sessionStorage.getItem('aiSidebarExpanded') === 'true',
+                toggle() {
+                    this.open = !this.open;
+                },
+                toggleExpanded() {
+                    this.expanded = !this.expanded;
+                    sessionStorage.setItem('aiSidebarExpanded', this.expanded);
+                }
+            });
+        });
+    </script>
+    
+    <!-- Wrapper for entire website content that will be width-constrained -->
+    <div class="transition-all duration-300 ease-out"
+         :class="$store.aiSidebar.open ? 'overflow-y-auto' : ''"
+         :style="$store.aiSidebar.open ? ($store.aiSidebar.expanded ? 'width: calc(100% - 768px); height: 100vh; position: fixed; left: 0; top: 0;' : 'width: calc(100% - 384px); height: 100vh; position: fixed; left: 0; top: 0;') : 'width: 100%; min-height: 100vh; position: relative;'">
+    
     {{$topNewsData := dict
         "message" (t "common.news_message")
         "linkText" (t "common.explore_link")
@@ -20,7 +42,7 @@
     {{template "topbar" .}}
     
     <!-- Main Layout -->
-    <div class="flex pt-16 lg:pt-[104px] min-h-screen" 
+    <div class="flex pt-16 lg:pt-[104px] min-h-screen relative" 
          x-data="{ 
              hasNewsBar() { 
                  return localStorage.getItem('topNewsBarDismissed') !== 'true' 
@@ -214,6 +236,7 @@
     <script src="/js/pricing-calculator.js"></script>
     <script src="/js/font-loader.js"></script>
     <script src="/js/highlight-loader.js"></script>
+    <script src="/js/ai-assistant.js"></script>
     <script src="/js/blue-init.js"></script>
     
     <!-- Then initialize with error handling -->
@@ -235,6 +258,11 @@
             BlueInit.initAll();
         });
     </script>
+    
+    </div> <!-- End of wrapper div that gets pushed -->
+    
+    <!-- AI Sidebar Component -->
+    {{template "ai-sidebar" .}}
 </body>
 </html>
 {{end}}
