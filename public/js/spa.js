@@ -156,7 +156,8 @@ window.SPAUtils = {
             { selector: 'header', name: 'topbar' },
             { selector: 'nav[x-data*="currentPath"]', name: 'left-sidebar' },
             { selector: 'main', name: 'main' },
-            { selector: '.image-lightbox', name: 'lightbox' }
+            { selector: '.image-lightbox', name: 'lightbox' },
+            { selector: '.fixed.right-0.top-0.bottom-0.bg-white', name: 'ai-sidebar' }
         ];
 
         // Fade out all components
