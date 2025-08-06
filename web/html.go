@@ -20,6 +20,14 @@ type HTMLService struct {
 	markdownService *MarkdownService
 	schemaService   *SchemaService
 	statusChecker   *HealthChecker
+	
+	// Template cache for pre-compiled templates
+	templateCache struct {
+		sync.RWMutex
+		contentTemplates map[string]*template.Template // [lang]->template
+		mainTemplates    map[string]*template.Template // [lang]->template
+		initialized      bool
+	}
 }
 
 // NewHTMLService creates a new HTML service
@@ -42,6 +50,53 @@ func (hs *HTMLService) SetSchemaService(schemaService *SchemaService) {
 // SetStatusChecker sets the status checker for the HTML service
 func (hs *HTMLService) SetStatusChecker(statusChecker *HealthChecker) {
 	hs.statusChecker = statusChecker
+}
+
+// precompileTemplates pre-compiles templates for all languages
+func (hs *HTMLService) precompileTemplates() error {
+	hs.templateCache.Lock()
+	defer hs.templateCache.Unlock()
+	
+	if hs.templateCache.initialized {
+		return nil
+	}
+	
+	// Initialize maps
+	hs.templateCache.contentTemplates = make(map[string]*template.Template)
+	hs.templateCache.mainTemplates = make(map[string]*template.Template)
+	
+	// Load component files once
+	componentFiles, err := hs.loadComponentTemplates()
+	if err != nil {
+		return fmt.Errorf("failed to load component templates: %w", err)
+	}
+	
+	// Pre-compile for each language
+	for _, lang := range SupportedLanguages {
+		// Content template with components
+		contentTmpl := template.New("page-content").Funcs(getTemplateFuncs(lang))
+		if len(componentFiles) > 0 {
+			contentTmpl, err = contentTmpl.ParseFiles(componentFiles...)
+			if err != nil {
+				return fmt.Errorf("failed to parse content components for %s: %w", lang, err)
+			}
+		}
+		hs.templateCache.contentTemplates[lang] = contentTmpl
+		
+		// Main layout template with components
+		templateFiles := []string{filepath.Join(hs.layoutsDir, "main.html")}
+		templateFiles = append(templateFiles, componentFiles...)
+		
+		mainTmpl := template.New("main.html").Funcs(getTemplateFuncs(lang))
+		mainTmpl, err = mainTmpl.ParseFiles(templateFiles...)
+		if err != nil {
+			return fmt.Errorf("failed to parse main template for %s: %w", lang, err)
+		}
+		hs.templateCache.mainTemplates[lang] = mainTmpl
+	}
+	
+	hs.templateCache.initialized = true
+	return nil
 }
 
 // getCacheKey generates a language-specific cache key
@@ -112,17 +167,16 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 		return fmt.Errorf("failed to walk pages directory: %w", err)
 	}
 
+	// Pre-compile templates for all languages once
+	if err := hs.precompileTemplates(); err != nil {
+		return fmt.Errorf("failed to pre-compile templates: %w", err)
+	}
+
 	// Process all tasks in parallel using worker pool
 	const numWorkers = 30
 	taskChan := make(chan htmlTask, len(htmlTasks))
 	resultChan := make(chan int, len(htmlTasks))
 	errorChan := make(chan error, numWorkers)
-
-	// Pre-cache component templates once
-	componentFiles, err := hs.loadComponentTemplates()
-	if err != nil {
-		return fmt.Errorf("failed to load component templates: %w", err)
-	}
 
 	// Start workers
 	var wg sync.WaitGroup
@@ -131,8 +185,8 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 		go func() {
 			defer wg.Done()
 			for task := range taskChan {
-				// Pre-render the HTML page with the specific language
-				html, err := hs.renderHTMLPageWithComponents(task.path, task.urlPath, navigationService, seoService, task.lang, componentFiles)
+				// Pre-render the HTML page with the specific language using optimized method
+				html, err := hs.renderHTMLPageOptimized(task.path, task.urlPath, navigationService, seoService, task.lang)
 				if err != nil {
 					log.Printf("Warning: failed to pre-render %s for language %s: %v", task.path, task.lang, err)
 					continue // Continue processing other tasks
@@ -294,6 +348,66 @@ func (hs *HTMLService) isExcluded(urlPath string, excludedPages []string) bool {
 	return false
 }
 
+// renderHTMLPageOptimized renders an HTML page using pre-compiled templates
+func (hs *HTMLService) renderHTMLPageOptimized(
+	filePath, urlPath string,
+	navigationService *NavigationService,
+	seoService *SEOService,
+	lang string,
+) (string, error) {
+	// Read the HTML file
+	contentBytes, err := os.ReadFile(filePath)
+	if err != nil {
+		return "", fmt.Errorf("failed to read file %s: %w", filePath, err)
+	}
+	
+	// Get pre-compiled templates for this language
+	hs.templateCache.RLock()
+	contentTmpl, contentOk := hs.templateCache.contentTemplates[lang]
+	mainTmpl, mainOk := hs.templateCache.mainTemplates[lang]
+	hs.templateCache.RUnlock()
+	
+	if !contentOk || !mainOk {
+		return "", fmt.Errorf("templates not pre-compiled for language: %s", lang)
+	}
+	
+	// Clone templates for thread safety
+	contentTmpl, err = contentTmpl.Clone()
+	if err != nil {
+		return "", fmt.Errorf("failed to clone content template: %w", err)
+	}
+	mainTmpl, err = mainTmpl.Clone()
+	if err != nil {
+		return "", fmt.Errorf("failed to clone main template: %w", err)
+	}
+	
+	// Parse the specific page content into the cloned template
+	contentTmpl, err = contentTmpl.Parse(string(contentBytes))
+	if err != nil {
+		return "", fmt.Errorf("failed to parse page template: %w", err)
+	}
+	
+	// Prepare page data
+	pageData := hs.preparePageData(urlPath, "", false, nil, navigationService, seoService, lang)
+	
+	// Execute content template
+	var renderedContent strings.Builder
+	if err = contentTmpl.Execute(&renderedContent, pageData); err != nil {
+		return "", fmt.Errorf("failed to execute page template: %w", err)
+	}
+	
+	// Prepare final page data with rendered content
+	finalPageData := hs.preparePageData(urlPath, template.HTML(renderedContent.String()), false, nil, navigationService, seoService, lang)
+	
+	// Execute main template
+	var finalHTML strings.Builder
+	if err := mainTmpl.ExecuteTemplate(&finalHTML, "main.html", finalPageData); err != nil {
+		return "", fmt.Errorf("failed to execute main template: %w", err)
+	}
+	
+	return finalHTML.String(), nil
+}
+
 // GetCachedContent retrieves pre-rendered HTML content from cache
 func (hs *HTMLService) GetCachedContent(urlPath string) (*CachedContent, bool) {
 	return hs.cache.Get(urlPath)
@@ -337,22 +451,20 @@ func (hs *HTMLService) RegenerateStatusPages(router *Router) error {
 		return fmt.Errorf("failed to stat status page: %w", err)
 	}
 	
-	// Load component templates once
-	componentFiles, err := hs.loadComponentTemplates()
-	if err != nil {
-		return fmt.Errorf("failed to load component templates: %w", err)
+	// Ensure templates are pre-compiled
+	if err := hs.precompileTemplates(); err != nil {
+		return fmt.Errorf("failed to pre-compile templates: %w", err)
 	}
 	
 	// Regenerate for each language
 	for _, lang := range SupportedLanguages {
-		// Render the status page with current data
-		html, err := hs.renderHTMLPageWithComponents(
+		// Render the status page with current data using optimized method
+		html, err := hs.renderHTMLPageOptimized(
 			statusPagePath, 
 			statusURLPath, 
 			router.navigationService, 
 			router.seoService, 
-			lang, 
-			componentFiles,
+			lang,
 		)
 		if err != nil {
 			log.Printf("Failed to regenerate status page for language %s: %v", lang, err)
