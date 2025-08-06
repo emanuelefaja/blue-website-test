@@ -28,6 +28,13 @@ type HTMLService struct {
 		mainTemplates    map[string]*template.Template // [lang]->template
 		initialized      bool
 	}
+	
+	// Page content cache for HTML files
+	pageContentCache struct {
+		sync.RWMutex
+		content map[string][]byte // [filepath]->content
+		loaded  bool
+	}
 }
 
 // NewHTMLService creates a new HTML service
@@ -99,6 +106,62 @@ func (hs *HTMLService) precompileTemplates() error {
 	return nil
 }
 
+// preloadPageContent loads all HTML page content into memory cache
+func (hs *HTMLService) preloadPageContent() error {
+	hs.pageContentCache.Lock()
+	defer hs.pageContentCache.Unlock()
+	
+	if hs.pageContentCache.loaded {
+		return nil
+	}
+	
+	hs.pageContentCache.content = make(map[string][]byte)
+	
+	// Walk through all HTML files in pages directory
+	err := filepath.WalkDir(hs.pagesDir, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		
+		// Skip non-HTML files
+		if !strings.HasSuffix(path, ".html") {
+			return nil
+		}
+		
+		// Read file content once
+		content, err := os.ReadFile(path)
+		if err != nil {
+			return fmt.Errorf("failed to read %s: %w", path, err)
+		}
+		
+		// Cache the content
+		hs.pageContentCache.content[path] = content
+		return nil
+	})
+	
+	if err != nil {
+		return fmt.Errorf("failed to walk pages directory: %w", err)
+	}
+	
+	hs.pageContentCache.loaded = true
+	return nil
+}
+
+// getCachedPageContent retrieves cached page content or falls back to disk
+func (hs *HTMLService) getCachedPageContent(filePath string) ([]byte, error) {
+	hs.pageContentCache.RLock()
+	defer hs.pageContentCache.RUnlock()
+	
+	content, ok := hs.pageContentCache.content[filePath]
+	if !ok {
+		// Fallback to reading from disk if not cached
+		return os.ReadFile(filePath)
+	}
+	
+	// Return a copy to prevent mutations
+	return append([]byte(nil), content...), nil
+}
+
 // getCacheKey generates a language-specific cache key
 func (hs *HTMLService) getCacheKey(lang, path string) string {
 	return lang + ":" + path
@@ -165,6 +228,11 @@ func (hs *HTMLService) PreRenderAllHTMLPages(navigationService *NavigationServic
 
 	if err != nil {
 		return fmt.Errorf("failed to walk pages directory: %w", err)
+	}
+
+	// Preload all page content into memory
+	if err := hs.preloadPageContent(); err != nil {
+		return fmt.Errorf("failed to preload page content: %w", err)
 	}
 
 	// Pre-compile templates for all languages once
@@ -355,8 +423,8 @@ func (hs *HTMLService) renderHTMLPageOptimized(
 	seoService *SEOService,
 	lang string,
 ) (string, error) {
-	// Read the HTML file
-	contentBytes, err := os.ReadFile(filePath)
+	// Get cached page content instead of reading from disk
+	contentBytes, err := hs.getCachedPageContent(filePath)
 	if err != nil {
 		return "", fmt.Errorf("failed to read file %s: %w", filePath, err)
 	}
@@ -449,6 +517,11 @@ func (hs *HTMLService) RegenerateStatusPages(router *Router) error {
 	info, err := os.Stat(statusPagePath)
 	if err != nil {
 		return fmt.Errorf("failed to stat status page: %w", err)
+	}
+	
+	// Ensure page content is preloaded
+	if err := hs.preloadPageContent(); err != nil {
+		return fmt.Errorf("failed to preload page content: %w", err)
 	}
 	
 	// Ensure templates are pre-compiled
