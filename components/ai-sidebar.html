@@ -422,7 +422,7 @@
         <template x-for="(message, index) in messages" :key="index">
             <div :class="message.role === 'user' ? 'flex justify-end' : 'flex justify-start'">
                 <div :class="[
-                    'max-w-[80%] rounded-lg p-3',
+                    'relative max-w-[80%] rounded-lg p-3',
                     message.role === 'user' 
                         ? 'bg-brand-blue text-white' 
                         : message.error 
@@ -432,8 +432,20 @@
                     <div class="text-sm" 
                          x-html="message.role === 'assistant' && !message.error ? formatAIMessage(message.content) : message.content"
                          x-init="if (message.role === 'assistant' && !message.error && !message.streaming) { $nextTick(() => highlightAICode($el)) }"></div>
-                    <div class="text-xs mt-1 opacity-70" 
-                         x-text="new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})"></div>
+                    <div class="flex items-center justify-between mt-1">
+                        <div class="text-xs opacity-70" 
+                             x-text="new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})"></div>
+                        <!-- Copy button for assistant messages -->
+                        <template x-if="message.role === 'assistant' && !message.error">
+                            <button @click="navigator.clipboard.writeText(message.content).then(() => { const svg = $el.querySelector('svg'); svg.classList.add('text-green-600', 'dark:text-green-400'); setTimeout(() => { svg.classList.remove('text-green-600', 'dark:text-green-400'); }, 2000); })"
+                                    class="ml-2 p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors opacity-60 hover:opacity-100 cursor-pointer"
+                                    :title="'{{t "common.copy_to_clipboard"}}'">
+                                <svg class="w-3.5 h-3.5 text-gray-600 dark:text-gray-400" fill="currentColor">
+                                    <use href="/icons/sprite.svg#copy"></use>
+                                </svg>
+                            </button>
+                        </template>
+                    </div>
                 </div>
             </div>
         </template>
