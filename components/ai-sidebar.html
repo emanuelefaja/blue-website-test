@@ -1,0 +1,228 @@
+{{define "ai-sidebar"}}
+<!-- AI Sidebar (outside the wrapper, fixed position) -->
+<div x-show="$store.aiSidebar.open"
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="translate-x-full"
+     x-transition:enter-end="translate-x-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="translate-x-0"
+     x-transition:leave-end="translate-x-full"
+     class="fixed right-0 top-0 bottom-0 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 z-[100] flex flex-col transition-all duration-300"
+     :style="'width: ' + ($store.aiSidebar.expanded ? '768px' : '384px')"
+     @click.outside="$store.aiSidebar.open = false"
+     @keydown.escape.window="$store.aiSidebar.open = false"
+     x-data="{
+         messages: JSON.parse(sessionStorage.getItem('aiMessages') || '[]'),
+         input: '',
+         threadId: sessionStorage.getItem('aiThreadId') || null,
+         loading: false,
+         
+         init() {
+             // Restore scroll position
+             this.$nextTick(() => {
+                 const container = this.$refs.messagesContainer;
+                 container.scrollTop = container.scrollHeight;
+             });
+         },
+         
+         saveSession() {
+             sessionStorage.setItem('aiMessages', JSON.stringify(this.messages));
+             if (this.threadId) {
+                 sessionStorage.setItem('aiThreadId', this.threadId);
+             }
+         },
+         
+         async sendMessage() {
+             if (!this.input.trim() || this.loading) return;
+             
+             const message = this.input.trim();
+             this.input = '';
+             this.loading = true;
+             
+             // Add user message
+             this.messages.push({
+                 role: 'user',
+                 content: message,
+                 timestamp: new Date()
+             });
+             this.saveSession();
+             
+             // Reset textarea height
+             const textarea = this.$el.querySelector('textarea');
+             if (textarea) {
+                 textarea.style.height = 'auto';
+             }
+             
+             // Scroll to bottom
+             this.$nextTick(() => {
+                 const container = this.$refs.messagesContainer;
+                 container.scrollTop = container.scrollHeight;
+             });
+             
+             try {
+                 const response = await fetch('/api/assistant', {
+                     method: 'POST',
+                     headers: {
+                         'Content-Type': 'application/json'
+                     },
+                     body: JSON.stringify({
+                         message: message,
+                         threadId: this.threadId
+                     })
+                 });
+                 
+                 const data = await response.json();
+                 
+                 if (data.error) {
+                     this.messages.push({
+                         role: 'assistant',
+                         content: 'Sorry, I encountered an error: ' + data.error,
+                         timestamp: new Date(),
+                         error: true
+                     });
+                 } else {
+                     this.threadId = data.threadId;
+                     this.messages.push({
+                         role: 'assistant',
+                         content: data.response,
+                         timestamp: new Date()
+                     });
+                     this.saveSession();
+                 }
+             } catch (error) {
+                 this.messages.push({
+                     role: 'assistant',
+                     content: 'Sorry, I could not connect to the AI service. Please try again later.',
+                     timestamp: new Date(),
+                     error: true
+                 });
+             } finally {
+                 this.loading = false;
+                 this.$nextTick(() => {
+                     const container = this.$refs.messagesContainer;
+                     container.scrollTop = container.scrollHeight;
+                 });
+             }
+         },
+         
+         clearConversation() {
+             this.messages = [];
+             this.threadId = null;
+             sessionStorage.removeItem('aiMessages');
+             sessionStorage.removeItem('aiThreadId');
+         }
+     }">
+    
+    <!-- Sidebar Header -->
+    <div class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Assistant</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="clearConversation()"
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                        title="Clear conversation">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                </button>
+                <button @click="$store.aiSidebar.toggleExpanded()"
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                        :title="$store.aiSidebar.expanded ? 'Collapse chat' : 'Expand chat'">
+                    <!-- Expand icon (arrows pointing outward) -->
+                    <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                    </svg>
+                    <!-- Collapse icon (arrows pointing inward) -->
+                    <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l4-4m0 0V9m0-4H5m14 10l-4 4m0 0v-4m0 4h4M5 15l4 4m0-4H5m14-6l-4-4m4 0h-4m0 0v4"></path>
+                    </svg>
+                </button>
+                <button @click="$store.aiSidebar.open = false"
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Messages Container -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4" x-ref="messagesContainer">
+        <!-- Welcome message -->
+        <div x-show="messages.length === 0" class="text-center py-8">
+            <svg class="w-12 h-12 mx-auto text-gray-400 dark:text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">How can I help you?</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Ask me anything about Blue or this documentation.</p>
+        </div>
+        
+        <!-- Messages -->
+        <template x-for="(message, index) in messages" :key="index">
+            <div :class="message.role === 'user' ? 'flex justify-end' : 'flex justify-start'">
+                <div :class="[
+                    'max-w-[80%] rounded-lg p-3',
+                    message.role === 'user' 
+                        ? 'bg-brand-blue text-white' 
+                        : message.error 
+                            ? 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100'
+                ]">
+                    <div class="text-sm" 
+                         x-html="message.role === 'assistant' && !message.error ? formatAIMessage(message.content) : message.content"
+                         x-init="if (message.role === 'assistant' && !message.error) { $nextTick(() => highlightAICode($el)) }"></div>
+                    <div class="text-xs mt-1 opacity-70" 
+                         x-text="new Date(message.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})"></div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- Loading indicator -->
+        <div x-show="loading" class="flex justify-start">
+            <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-3">
+                <div class="flex space-x-2">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Input Area -->
+    <div class="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-800">
+        <form @submit.prevent="sendMessage()" class="flex gap-2 items-end">
+            <textarea 
+                x-model="input"
+                :disabled="loading"
+                placeholder="Type your message..."
+                class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 disabled:opacity-50 resize-none min-h-[40px] max-h-[200px]"
+                @input="autoResizeTextarea($el)"
+                @keydown.enter.prevent="if (!$event.shiftKey) sendMessage()"
+                @keydown.shift.enter.prevent="input += '\n'; $nextTick(() => autoResizeTextarea($el))"
+                rows="1"></textarea>
+            <button 
+                type="submit"
+                :disabled="loading || !input.trim()"
+                class="px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-brand-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg x-show="!loading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                <svg x-show="loading" class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+        </form>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            Enter to send • Shift+Enter for new line • ⌘I to open
+        </p>
+    </div>
+</div>
+{{end}}
