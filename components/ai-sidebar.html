@@ -314,31 +314,78 @@
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Assistant</h2>
             </div>
             <div class="flex items-center gap-2">
-                <button @click="clearConversation()"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
-                        title="Clear conversation">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
-                        <use href="/icons/sprite.svg#trash"></use>
-                    </svg>
-                </button>
-                <button @click="$store.aiSidebar.toggleExpanded()"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
-                        :title="$store.aiSidebar.expanded ? 'Collapse chat' : 'Expand chat'">
-                    <!-- Expand icon (arrows pointing outward) -->
-                    <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
-                        <use href="/icons/sprite.svg#expand"></use>
-                    </svg>
-                    <!-- Collapse icon (arrows pointing inward) -->
-                    <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
-                        <use href="/icons/sprite.svg#compress"></use>
-                    </svg>
-                </button>
-                <button @click="$store.aiSidebar.open = false"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
-                        <use href="/icons/sprite.svg#xmark"></use>
-                    </svg>
-                </button>
+                <!-- Clear conversation button with tooltip -->
+                <div class="relative" x-data="{ showClearTooltip: false }">
+                    <button @click="clearConversation()"
+                            @mouseenter="showClearTooltip = true"
+                            @mouseleave="showClearTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#trash"></use>
+                        </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div x-show="showClearTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50">
+                        Clear conversation
+                    </div>
+                </div>
+                
+                <!-- Toggle width button (COMMENTED OUT DUE TO LAYOUT ISSUES) -->
+                <!--
+                <div class="relative" x-data="{ showExpandTooltip: false }">
+                    <button @click="$store.aiSidebar.toggleExpanded()"
+                            @mouseenter="showExpandTooltip = true"
+                            @mouseleave="showExpandTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#expand"></use>
+                        </svg>
+                        <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#compress"></use>
+                        </svg>
+                    </button>
+                    <div x-show="showExpandTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50">
+                        <span x-text="$store.aiSidebar.expanded ? 'Collapse sidebar' : 'Expand sidebar'"></span>
+                    </div>
+                </div>
+                -->
+                
+                <!-- Close button with tooltip -->
+                <div class="relative" x-data="{ showCloseTooltip: false }">
+                    <button @click="$store.aiSidebar.open = false"
+                            @mouseenter="showCloseTooltip = true"
+                            @mouseleave="showCloseTooltip = false"
+                            class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                            <use href="/icons/sprite.svg#xmark"></use>
+                        </svg>
+                    </button>
+                    <!-- Tooltip -->
+                    <div x-show="showCloseTooltip"
+                         x-transition:enter="transition ease-out duration-200"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute top-full right-0 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none z-50">
+                        Close AI assistant
+                    </div>
+                </div>
             </div>
         </div>
     </div>

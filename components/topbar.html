@@ -142,8 +142,8 @@
                 <button @click="$store.aiSidebar.toggle()"
                         @mouseenter="showTooltip = true"
                         @mouseleave="showTooltip = false"
-                        class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200 cursor-pointer"
-                        :class="$store.aiSidebar.open ? 'text-brand-blue dark:text-brand-blue' : ''"
+                        class="p-2 focus:outline-none transition-colors duration-200 cursor-pointer"
+                        :class="$store.aiSidebar.open ? 'text-gray-700 dark:text-gray-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
                         aria-label="Ask AI">
                     <svg class="w-5 h-5" fill="currentColor">
                         <use href="/icons/sprite.svg#bolt"></use>
@@ -157,7 +157,7 @@
                      x-transition:leave="transition ease-in duration-75"
                      x-transition:leave-start="opacity-100 scale-100"
                      x-transition:leave-end="opacity-0 scale-95"
-                     class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 text-xs text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded shadow-lg whitespace-nowrap pointer-events-none">
+                     class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap pointer-events-none">
                     Ask AI
                 </div>
             </div>
