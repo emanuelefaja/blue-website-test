@@ -117,35 +117,35 @@
     <div class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                <svg class="w-5 h-5 text-brand-blue" fill="currentColor">
+                    <use href="/icons/sprite.svg#bolt"></use>
                 </svg>
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">AI Assistant</h2>
             </div>
             <div class="flex items-center gap-2">
                 <button @click="clearConversation()"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
                         title="Clear conversation">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                        <use href="/icons/sprite.svg#trash"></use>
                     </svg>
                 </button>
                 <button @click="$store.aiSidebar.toggleExpanded()"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
                         :title="$store.aiSidebar.expanded ? 'Collapse chat' : 'Expand chat'">
                     <!-- Expand icon (arrows pointing outward) -->
-                    <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                    <svg x-show="!$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                        <use href="/icons/sprite.svg#expand"></use>
                     </svg>
                     <!-- Collapse icon (arrows pointing inward) -->
-                    <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l4-4m0 0V9m0-4H5m14 10l-4 4m0 0v-4m0 4h4M5 15l4 4m0-4H5m14-6l-4-4m4 0h-4m0 0v4"></path>
+                    <svg x-show="$store.aiSidebar.expanded" class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                        <use href="/icons/sprite.svg#compress"></use>
                     </svg>
                 </button>
                 <button @click="$store.aiSidebar.open = false"
-                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        class="p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor">
+                        <use href="/icons/sprite.svg#xmark"></use>
                     </svg>
                 </button>
             </div>
@@ -211,8 +211,8 @@
                 type="submit"
                 :disabled="loading || !input.trim()"
                 class="px-4 py-2 bg-brand-blue text-white rounded-lg hover:bg-brand-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                <svg x-show="!loading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                <svg x-show="!loading" class="w-5 h-5" fill="currentColor">
+                    <use href="/icons/sprite.svg#paper-plane"></use>
                 </svg>
                 <svg x-show="loading" class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
