@@ -108,9 +108,9 @@
         ]"
         :style="(scrolled && !($store.aiSidebar && $store.aiSidebar.open) ? 'box-shadow: 0 -10px 15px -3px rgb(0 0 0 / 0.1), 0 -4px 6px -4px rgb(0 0 0 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);' : '') + ($store.aiSidebar && $store.aiSidebar.open ? ($store.aiSidebar.expanded ? ' width: calc(100% - 768px);' : ' width: calc(100% - 384px);') : '')"
         @keydown.escape="mobileMenuOpen = false">
-    <div class="relative flex items-center justify-between px-4 h-full">
+    <div class="relative flex items-center px-4 h-full gap-4">
         <!-- Logo and Toggle -->
-        <div class="flex items-center">
+        <div class="flex items-center flex-shrink-0">
             <a :href="'/'" class="flex items-center" 
                @click="window.dispatchEvent(new CustomEvent('collapse-sidebar-menus'))">
                 <img :src="customLogoUrl || '/logo/logo.svg'" 
@@ -132,11 +132,13 @@
             </button>
         </div>
         
-        <!-- Search Bar Component -->
-        {{template "search-bar" .}}
+        <!-- Search Bar Component (flex child with margin on 2xl) -->
+        <div class="flex-1 max-w-2xl mx-auto">
+            {{template "search-bar" .}}
+        </div>
         
         <!-- Right side controls -->
-        <div class="hidden lg:flex items-center space-x-0 2xl:space-x-4">
+        <div class="hidden lg:flex items-center flex-shrink-0 space-x-0 2xl:space-x-4">
             <!-- AI Assistant Button -->
             <div class="relative" x-data="{ showTooltip: false }">
                 <button @click="$store.aiSidebar.toggle()"
