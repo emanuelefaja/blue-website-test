@@ -6,35 +6,7 @@
             "MarginBottom" "mb-16"
     }}
 
-    <!-- Awards & Recognition -->
-    <section class="mb-16">
-        
-        {{$awardsData := dict
-            "awards" (slice
-                (dict
-                    "name" "High Performer G2 Winter 2025"
-                    "src" "/awards/high-performer-g2-winter-2025.png"
-                )
-                (dict
-                    "name" "Momentum Leader G2 Winter 2025"
-                    "src" "/awards/momentum-leader-g2-winter-2025.png"
-                )
-                (dict
-                    "name" "Crozdesk Happiest Users"
-                    "src" "/awards/crozdesk-happiest-users-badge.webp"
-                )
-                (dict
-                    "name" "Crozdesk Quality Choice"
-                    "src" "/awards/crozdesk-quality-choice-badge.webp"
-                )
-                (dict
-                    "name" "Crozdesk Trusted Vendor"
-                    "src" "/awards/crozdesk-trusted-vendor-badge.webp"
-                )
-            )
-        }}
-        {{template "awards-grid" $awardsData}}
-    </section>
+    
 
     <!-- Partner Badge Display -->
     <section class="mb-16 text-center">
@@ -142,7 +114,7 @@
                 { name: 'Asia Pacific', x: 80, y: 45, priority: true },
                 { name: 'Latin America', x: 25, y: 60, priority: false },
                 { name: 'Africa', x: 52, y: 55, priority: false },
-                { name: 'Australia', x: 85, y: 70, priority: false }
+                { name: 'Australia', x: 87, y: 75, priority: false }
             ]
         }">
             <!-- World Map SVG -->
@@ -457,6 +429,8 @@
         </div>
     </section>
 
+    
+
     <!-- CEO Message on Partnerships -->
     <section id="CEO-message" class="mb-16">
         <div class="max-w-4xl mx-auto">
@@ -514,6 +488,36 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="mb-16">
+        
+        {{$awardsData := dict
+            "awards" (slice
+                (dict
+                    "name" "High Performer G2 Winter 2025"
+                    "src" "/awards/high-performer-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Momentum Leader G2 Winter 2025"
+                    "src" "/awards/momentum-leader-g2-winter-2025.png"
+                )
+                (dict
+                    "name" "Crozdesk Happiest Users"
+                    "src" "/awards/crozdesk-happiest-users-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Quality Choice"
+                    "src" "/awards/crozdesk-quality-choice-badge.webp"
+                )
+                (dict
+                    "name" "Crozdesk Trusted Vendor"
+                    "src" "/awards/crozdesk-trusted-vendor-badge.webp"
+                )
+            )
+        }}
+        {{template "awards-grid" $awardsData}}
     </section>
 
     <!-- Partner Testimonial -->
