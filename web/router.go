@@ -26,10 +26,13 @@ type Router struct {
 
 // ServeHTTP implements the http.Handler interface
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	// Handle API endpoints first (before language detection)
+	// Handle actual API endpoints first (before language detection)
 	if strings.HasPrefix(req.URL.Path, "/api/") {
-		r.handleAPI(w, req)
-		return
+		if r.handleAPI(w, req) {
+			return
+		}
+		// If it's not an actual API endpoint, fall through to regular routing
+		// This allows API documentation (/api/introduction, etc.) to be served as content
 	}
 
 	// Handle health check endpoint
@@ -89,15 +92,18 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	r.handlePage(w, req, path, lang)
 }
 
-// handleAPI handles API endpoints
-func (r *Router) handleAPI(w http.ResponseWriter, req *http.Request) {
+// handleAPI handles API endpoints, returns true if handled, false if should fall through
+func (r *Router) handleAPI(w http.ResponseWriter, req *http.Request) bool {
 	switch req.URL.Path {
 	case "/api/assistant":
 		HandleAssistant(w, req)
+		return true
 	case "/api/assistant/stream":
 		HandleAssistantStream(w, req)
+		return true
 	default:
-		http.Error(w, "API endpoint not found", http.StatusNotFound)
+		// Not an actual API endpoint, let it fall through to content serving
+		return false
 	}
 }
 
