@@ -95,7 +95,7 @@ USE CASES:
             {{if .Icon}}
             <div class="w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="currentColor">
-                    <use href="/icons/sprite.svg#{{.Icon}}"></use>
+                    <use href="{{spriteURL .Icon}}"></use>
                 </svg>
             </div>
             {{end}}

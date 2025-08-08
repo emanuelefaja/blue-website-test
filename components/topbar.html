@@ -152,7 +152,7 @@
                         :class="$store.aiSidebar.open ? 'text-gray-700 dark:text-gray-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
                         aria-label="{{t "common.ask_ai"}}">
                     <svg class="w-5 h-5" fill="currentColor">
-                        <use href="/icons/sprite.svg#bolt"></use>
+                        <use href="{{spriteURL "bolt"}}"></use>
                     </svg>
                 </button>
                 <!-- Tooltip -->
@@ -182,10 +182,10 @@
                     class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 focus:outline-none transition-colors duration-200 cursor-pointer"
                     :aria-label="darkMode ? '{{t "common.switch_to_light_mode"}}' : '{{t "common.switch_to_dark_mode"}}'">
                 <svg x-show="darkMode" x-cloak class="w-5 h-5 transition-transform duration-200" fill="currentColor">
-                    <use href="/icons/sprite.svg#sun"></use>
+                    <use href="{{spriteURL "sun"}}"></use>
                 </svg>
                 <svg x-show="!darkMode" x-cloak class="w-5 h-5 transition-transform duration-200" fill="currentColor">
-                    <use href="/icons/sprite.svg#moon"></use>
+                    <use href="{{spriteURL "moon"}}"></use>
                 </svg>
             </button>
             
@@ -208,7 +208,7 @@
                                   :class="profileHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.account"}}</span>
                         </span>
                         <svg class="w-4 h-4 ml-2 text-gray-500 dark:text-gray-400" fill="currentColor">
-                            <use href="/icons/sprite.svg#user"></use>
+                            <use href="{{spriteURL "user"}}"></use>
                         </svg>
                     </a>
                     

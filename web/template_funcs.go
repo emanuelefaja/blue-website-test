@@ -6,10 +6,35 @@ import (
 	"fmt"
 	"html"
 	"html/template"
+	"os"
 	"regexp"
 	"strings"
 	"time"
 )
+
+// Global variable to store the sprite version
+var spriteVersion string
+
+// initSpriteVersion calculates a version based on sprite.svg modification time
+func initSpriteVersion() {
+	file, err := os.Open("public/icons/sprite.svg")
+	if err != nil {
+		// If file doesn't exist, use timestamp
+		spriteVersion = fmt.Sprintf("%d", time.Now().Unix())
+		return
+	}
+	defer file.Close()
+
+	// Get file modification time
+	info, err := file.Stat()
+	if err != nil {
+		spriteVersion = fmt.Sprintf("%d", time.Now().Unix())
+		return
+	}
+
+	// Use modification time as version
+	spriteVersion = fmt.Sprintf("%d", info.ModTime().Unix())
+}
 
 // templateFuncs defines template functions used across all templates
 var templateFuncs = template.FuncMap{
@@ -19,6 +44,13 @@ var templateFuncs = template.FuncMap{
 	},
 	"dict": dict,
 	"slice": slice,
+	"spriteURL": func(iconName string) string {
+		// Return sprite URL with cache-busting query parameter
+		if spriteVersion == "" {
+			initSpriteVersion()
+		}
+		return fmt.Sprintf("/icons/sprite.svg?v=%s#%s", spriteVersion, iconName)
+	},
 	"html": func(s string) template.HTML {
 		// Sanitize HTML to only allow specific safe tags
 		return template.HTML(sanitizeHTML(s))

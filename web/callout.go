@@ -3,7 +3,9 @@ package web
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"strings"
+	"time"
 
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
@@ -13,6 +15,30 @@ import (
 	"github.com/yuin/goldmark/util"
 	"gopkg.in/yaml.v3"
 )
+
+// Global variable to cache sprite version for callouts
+var calloutSpriteVersion string
+
+// getCalloutSpriteVersion gets or initializes the sprite version for callouts
+func getCalloutSpriteVersion() string {
+	if calloutSpriteVersion == "" {
+		file, err := os.Open("public/icons/sprite.svg")
+		if err != nil {
+			calloutSpriteVersion = fmt.Sprintf("%d", time.Now().Unix())
+			return calloutSpriteVersion
+		}
+		defer file.Close()
+
+		info, err := file.Stat()
+		if err != nil {
+			calloutSpriteVersion = fmt.Sprintf("%d", time.Now().Unix())
+			return calloutSpriteVersion
+		}
+
+		calloutSpriteVersion = fmt.Sprintf("%d", info.ModTime().Unix())
+	}
+	return calloutSpriteVersion
+}
 
 // CalloutNode represents a callout node in the AST
 type CalloutNode struct {
@@ -204,8 +230,8 @@ func (r *CalloutRenderer) renderCallout(w util.BufWriter, source []byte, node as
 		// Icon container
 		w.WriteString(`<div class="w-10 h-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">`)
 		w.WriteString(fmt.Sprintf(`<svg class="w-5 h-5 text-brand-blue dark:text-brand-blue" fill="currentColor">
-			<use href="/icons/sprite.svg#%s"></use>
-		</svg>`, iconName))
+			<use href="/icons/sprite.svg?v=%s#%s"></use>
+		</svg>`, getCalloutSpriteVersion(), iconName))
 		w.WriteString(`</div>`)
 
 		// Content with hover color change
@@ -223,8 +249,8 @@ func (r *CalloutRenderer) renderCallout(w util.BufWriter, source []byte, node as
 		// Icon container
 		w.WriteString(`<div class="w-10 h-10 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">`)
 		w.WriteString(fmt.Sprintf(`<svg class="w-5 h-5 text-brand-blue dark:text-brand-blue" fill="currentColor">
-			<use href="/icons/sprite.svg#%s"></use>
-		</svg>`, iconName))
+			<use href="/icons/sprite.svg?v=%s#%s"></use>
+		</svg>`, getCalloutSpriteVersion(), iconName))
 		w.WriteString(`</div>`)
 
 		// Content without hover effects
