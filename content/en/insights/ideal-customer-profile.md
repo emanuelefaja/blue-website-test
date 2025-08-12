@@ -151,7 +151,7 @@ Ideal customers typically evaluate Blue against:
 ## Red Flags & Disqualifiers
 
 ### 🚩 Deal Killers
-- **Requires specific industry compliance** (HIPAA, SOX, etc.) that Blue doesn't currently support
+- **Requires specific industry compliance** (SOX, etc.) that Blue doesn't currently support
 - **Needs complex, pre-built integrations** with legacy systems as a day-one requirement
 - **Mandates on-premise only** with no cloud component allowed
 - **Under 50 employees** with no immediate growth plans
