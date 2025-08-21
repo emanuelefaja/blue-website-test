@@ -60,6 +60,10 @@
                const element = document.getElementById(anchor);
                if (element) {
                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                   // Update URL with the anchor hash without triggering navigation
+                   if (window.history && window.history.pushState) {
+                       window.history.pushState(null, '', '#' + anchor);
+                   }
                }
            },
            getArrowDirection(itemId) {
