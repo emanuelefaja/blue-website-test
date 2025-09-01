@@ -23,8 +23,10 @@ DATA STRUCTURE:
     "Title": "Your CTA headline",          // Main headline text (required)
     "PrimaryText": "Primary action",       // Primary button text (optional)
     "PrimaryUrl": "/primary-link",         // Primary button URL (required if PrimaryText)
+    "PrimaryExternal": true,               // Open primary link in new tab (optional, default: false)
     "SecondaryText": "Secondary action",   // Secondary button text (optional)
-    "SecondaryUrl": "/secondary-link",      // Secondary button URL (required if SecondaryText)
+    "SecondaryUrl": "/secondary-link",     // Secondary button URL (required if SecondaryText)
+    "SecondaryExternal": true,             // Open secondary link in new tab (optional, default: false)
     "MarginBottom": "mb-20"                // Bottom margin class (optional, default: "mb-16")
 }
 
@@ -95,15 +97,17 @@ USE CASES:
         <div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
             <!-- Secondary Button (Contact style) - Only show when not logged in -->
             <template x-if="(!authState || !authState.isLoggedIn) && {{if .SecondaryText}}true{{else}}false{{end}}">
-                <a href="{{.SecondaryUrl}}" 
+                <a href="{{if .SecondaryUrl}}{{.SecondaryUrl | safeURL}}{{end}}" 
+                   {{if .SecondaryExternal}}target="_blank" rel="noopener noreferrer"{{end}}
                    class="px-6 py-3 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 dark:bg-blue-950/30 text-gray-900 dark:text-gray-100 hover:bg-blue-100 dark:hover:bg-blue-900/40 focus:outline-none transition duration-150 ease-in-out whitespace-nowrap">
                     {{.SecondaryText}}
                 </a>
             </template>
             
             <!-- Primary Button -->
-            <a :href="authState && authState.isLoggedIn ? 'https://app.blue.cc' : '{{.PrimaryUrl}}'" 
-               :target="authState && authState.isLoggedIn ? '_blank' : '_self'"
+            <a :href="authState && authState.isLoggedIn ? 'https://app.blue.cc' : '{{safeURL .PrimaryUrl}}'" 
+               :target="authState && authState.isLoggedIn ? '_blank' : {{if .PrimaryExternal}}'_blank'{{else}}'_self'{{end}}"
+               {{if .PrimaryExternal}}:rel="authState && authState.isLoggedIn ? 'noopener noreferrer' : 'noopener noreferrer'"{{end}}
                class="px-6 py-3 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition duration-150 ease-in-out flex items-center whitespace-nowrap">
                 <span x-show="authState && authState.isLoggedIn">Launch App</span>
                 <span x-show="!authState || !authState.isLoggedIn">{{.PrimaryText}}</span>
