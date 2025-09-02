@@ -1,5 +1,6 @@
 {
   "redirects": {
+    "/pricing": "/demo",
     "/api-docs": "/api/start-guide/introduction",
     "/api": "/api/start-guide/introduction",
     "/api/": "/api/start-guide/introduction",

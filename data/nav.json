@@ -146,28 +146,6 @@
       ]
     },
     {
-      "id": "pricing",
-      "name": {
-        "en": "Pricing",
-        "es": "Precios",
-        "zh": "定价",
-        "fr": "Tarifs",
-        "de": "Preise",
-        "ja": "料金",
-        "pt": "Preços",
-        "ru": "Цены",
-        "ko": "가격",
-        "it": "Prezzi",
-        "id": "Harga",
-        "nl": "Prijzen",
-        "pl": "Cennik",
-        "zh-TW": "定價",
-        "sv": "Priser",
-        "km": "តម្លៃ"
-      },
-      "href": "/pricing"
-    },
-    {
       "id": "customers",
       "name": {
         "en": "Customers",

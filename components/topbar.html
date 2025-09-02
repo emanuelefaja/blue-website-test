@@ -255,41 +255,40 @@
                               :style="magneticButtons['login'] ? `transform: translateX(${magneticButtons['login'].x * 0.5}px)` : ''">L</span>
                     </a>
                     
-                    <!-- Contact -->
-                    <a :href="'/contact'" 
-                       @mousemove="handleMagnetic($event, 'contact')"
-                       @mouseleave="contactHovering = false; resetMagnetic('contact')"
-                       :style="getMagneticStyle('contact')"
+                    <!-- Support -->
+                    <a :href="'/contact/support'" 
+                       @mousemove="handleMagnetic($event, 'support')"
+                       @mouseleave="supportHovering = false; resetMagnetic('support')"
+                       :style="getMagneticStyle('support')"
                        class="hidden xl:flex relative px-4 py-2 text-sm font-semibold rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 focus:outline-none transition-all duration-200 ease-out items-center cursor-pointer overflow-hidden"
-                       x-data="{ contactHovering: false }"
-                       @mouseenter="contactHovering = true">
+                       x-data="{ supportHovering: false }"
+                       @mouseenter="supportHovering = true">
                         <span class="relative h-5 overflow-hidden inline-block">
                             <span class="block transition-transform duration-300"
-                                  :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.contact"}}</span>
+                                  :class="supportHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.support"}}</span>
                             <span class="block transition-transform duration-300"
-                                  :class="contactHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.connect"}}</span>
+                                  :class="supportHovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.get_help"}}</span>
                         </span>
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-gray-200 rounded text-xs font-bold text-gray-700 border border-gray-300 transition-transform duration-200"
-                              :style="magneticButtons['contact'] ? `transform: translateX(${magneticButtons['contact'].x * 0.5}px)` : ''">C</span>
+                              :style="magneticButtons['support'] ? `transform: translateX(${magneticButtons['support'].x * 0.5}px)` : ''">S</span>
                     </a>
                     
-                    <!-- Sign Up -->
-                    <a href="https://app.blue.cc" 
-                       target="_blank" 
-                       @mousemove="handleMagnetic($event, 'signup')"
-                       @mouseleave="hovering = false; resetMagnetic('signup')"
-                       :style="getMagneticStyle('signup')"
+                    <!-- Book Demo -->
+                    <a :href="'/demo'" 
+                       @mousemove="handleMagnetic($event, 'bookdemo')"
+                       @mouseleave="hovering = false; resetMagnetic('bookdemo')"
+                       :style="getMagneticStyle('bookdemo')"
                        class="relative px-4 py-2 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200 ease-out flex items-center hover:shadow-lg overflow-hidden"
                        x-data="{ hovering: false }"
                        @mouseenter="hovering = true">
-                        <span class="relative h-5 overflow-hidden inline-block">
-                            <span class="block transition-transform duration-300"
-                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.sign_up"}}</span>
-                            <span class="block transition-transform duration-300"
-                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.try_blue"}}</span>
+                        <span class="relative h-5 overflow-hidden inline-block whitespace-nowrap">
+                            <span class="block transition-transform duration-300 whitespace-nowrap"
+                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.book_demo"}}</span>
+                            <span class="block transition-transform duration-300 whitespace-nowrap"
+                                  :class="hovering ? '-translate-y-5' : 'translate-y-0'">{{t "common.schedule"}}</span>
                         </span>
                         <span class="ml-2 inline-flex items-center justify-center w-5 h-5 bg-white rounded text-xs font-bold transition-transform duration-200 border" 
-                              :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['signup'] ? 'transform: translateX(' + (magneticButtons['signup'].x * 0.5) + 'px)' : ''}`">↵</span>
+                              :style="`color: #00a0d2; border-color: #00a0d2; ${magneticButtons['bookdemo'] ? 'transform: translateX(' + (magneticButtons['bookdemo'].x * 0.5) + 'px)' : ''}`">↵</span>
                     </a>
                 </div>
             </template>
@@ -297,11 +296,10 @@
         
         <!-- Mobile Sign Up Button and Menu Button -->
         <div class="lg:hidden flex items-center space-x-2">
-            <!-- Mobile Sign Up Button -->
-            <a href="https://app.blue.cc" 
-               target="_blank"
+            <!-- Mobile Book Demo Button -->
+            <a :href="'/demo'" 
                class="px-3 py-1.5 text-sm font-semibold rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 focus:outline-none transition-all duration-200">
-                {{t "common.sign_up"}}
+                {{t "common.book_demo"}}
             </a>
             
             <!-- Mobile Menu Button -->
@@ -325,8 +323,15 @@
                 window.open('https://app.blue.cc', '_blank');
             }
 
-            function openSignUp() {
-                window.open('https://app.blue.cc', '_blank');
+            function openBookDemo() {
+                // Find and click the book demo link to use SPA routing
+                const bookDemoLink = document.querySelector('a[href="/demo"]');
+                if (bookDemoLink) {
+                    bookDemoLink.click();
+                } else {
+                    // Fallback to direct navigation if link not found
+                    window.location.href = '/demo';
+                }
             }
 
             function handleKeyPress(event) {
@@ -364,15 +369,15 @@
                     if (event.key.toLowerCase() === 'l') {
                         event.preventDefault();
                         openLogin();
-                    } else if (event.key.toLowerCase() === 'c') {
+                    } else if (event.key.toLowerCase() === 's') {
                         event.preventDefault();
-                        // Find and click the contact link to use SPA routing
-                        const contactLink = document.querySelector('a[href="/contact"]');
-                        if (contactLink) {
-                            contactLink.click();
+                        // Find and click the support link to use SPA routing
+                        const supportLink = document.querySelector('a[href="/contact/support"]');
+                        if (supportLink) {
+                            supportLink.click();
                         } else {
                             // Fallback to direct navigation if link not found
-                            window.location.href = '/contact';
+                            window.location.href = '/contact/support';
                         }
                     } else if (event.key === 'Enter') {
                         // Check if AI sidebar is open or if we're typing in it
@@ -386,8 +391,8 @@
                                 // Open app for logged in users
                                 window.open('https://app.blue.cc', '_blank');
                             } else {
-                                // Sign up for non-logged in users
-                                openSignUp();
+                                // Book demo for non-logged in users
+                                openBookDemo();
                             }
                         }
                     }
@@ -520,20 +525,20 @@
             
             <!-- Mobile Menu Actions -->
             <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 space-y-3">
-                <a :href="'/contact'" 
+                <a :href="'/contact/support'" 
                    @click="mobileMenuOpen = false"
                    class="block w-full px-4 py-2 text-sm font-semibold text-center rounded-md border-2 border-brand-blue bg-blue-50 text-gray-900 hover:bg-blue-100 transition duration-150 ease-in-out">
-                    {{t "common.contact"}}
+                    {{t "common.support"}}
                 </a>
                 <a href="https://app.blue.cc" 
                    target="_blank"
                    class="block w-full px-4 py-2 text-sm font-semibold text-center rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition duration-150 ease-in-out">
                     {{t "common.log_in"}}
                 </a>
-                <a href="https://app.blue.cc" 
-                   target="_blank"
+                <a :href="'/demo'" 
+                   @click="mobileMenuOpen = false"
                    class="block w-full px-4 py-2 text-sm font-semibold text-center rounded-md border border-transparent bg-brand-blue text-white hover:bg-brand-blue/90 transition duration-150 ease-in-out">
-                    {{t "common.sign_up"}}
+                    {{t "common.book_demo"}}
                 </a>
                 
                 <!-- Divider -->
