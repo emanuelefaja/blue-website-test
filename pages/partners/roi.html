@@ -1,0 +1,379 @@
+<!-- Main content -->
+    {{template "page-heading" 
+        dict 
+            "Title" "Partner Revenue Calculator" 
+            "Subtitle" "See your earning potential as a Blue Certified Partner" 
+            "MarginBottom" "mb-16"
+    }}
+
+    <!-- Calculator Section -->
+    <section class="mb-16">
+        <div class="max-w-7xl mx-auto" x-data="partnerROICalculator()">
+            <!-- Scenario Presets -->
+            <div class="mb-8 flex flex-wrap gap-4 justify-center">
+                <button @click="setScenario('conservative')"
+                        :class="activeScenario === 'conservative' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                    Conservative Scenario
+                    <span class="text-sm text-gray-600 block">5 clients @ $25K/year</span>
+                </button>
+                <button @click="setScenario('moderate')"
+                        :class="activeScenario === 'moderate' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                    Moderate Scenario
+                    <span class="text-sm text-gray-600 block">10 clients @ $50K/year</span>
+                </button>
+                <button @click="setScenario('aggressive')"
+                        :class="activeScenario === 'aggressive' ? 'border-brand-blue bg-blue-50' : 'border-gray-300'"
+                        class="px-6 py-3 rounded-lg border-2 hover:border-brand-blue hover:bg-blue-50 transition-all duration-200 font-medium cursor-pointer">
+                    Aggressive Scenario
+                    <span class="text-sm text-gray-600 block">20 clients @ $100K/year</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Left Side - Inputs -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Your Business Projections</h3>
+                    
+                    <!-- Number of Clients -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">
+                            Number of clients you'll bring
+                            <span class="text-3xl font-bold text-brand-blue ml-3" x-text="numClients"></span>
+                        </label>
+                        <input type="range"
+                               min="1"
+                               max="50"
+                               x-model="numClients"
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               style="-webkit-appearance: none; background: linear-gradient(to right, #00A0D2 0%, #00A0D2 " x-bind:style="`background: linear-gradient(to right, #00A0D2 0%, #00A0D2 ${(numClients - 1) / 49 * 100}%, #E5E7EB ${(numClients - 1) / 49 * 100}%, #E5E7EB 100%)`" />
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>1 client</span>
+                            <span>50 clients</span>
+                        </div>
+                    </div>
+
+                    <!-- Average Deal Size -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">
+                            Average annual contract value
+                            <span class="text-3xl font-bold text-brand-blue ml-3">$<span x-text="formatNumber(avgDealSize)"></span></span>
+                        </label>
+                        <input type="range"
+                               min="15000"
+                               max="500000"
+                               step="5000"
+                               x-model="avgDealSize"
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               style="-webkit-appearance: none; background: linear-gradient(to right, #00A0D2 0%, #00A0D2 " x-bind:style="`background: linear-gradient(to right, #00A0D2 0%, #00A0D2 ${(avgDealSize - 15000) / (500000 - 15000) * 100}%, #E5E7EB ${(avgDealSize - 15000) / (500000 - 15000) * 100}%, #E5E7EB 100%)`" />
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>$15K</span>
+                            <span>$500K</span>
+                        </div>
+                    </div>
+
+                    <!-- Client Growth Rate -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">
+                            Annual client growth rate
+                            <span class="text-3xl font-bold text-brand-blue ml-3"><span x-text="clientGrowthRate"></span>%</span>
+                        </label>
+                        <input type="range"
+                               min="0"
+                               max="100"
+                               x-model="clientGrowthRate"
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               style="-webkit-appearance: none; background: linear-gradient(to right, #00A0D2 0%, #00A0D2 " x-bind:style="`background: linear-gradient(to right, #00A0D2 0%, #00A0D2 ${clientGrowthRate}%, #E5E7EB ${clientGrowthRate}%, #E5E7EB 100%)`" />
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>No growth</span>
+                            <span>100% growth</span>
+                        </div>
+                    </div>
+
+                    <!-- Client Retention Rate -->
+                    <div class="mb-8">
+                        <label class="block text-lg font-medium text-gray-900 dark:text-gray-100 mb-3">
+                            Client retention rate
+                            <span class="text-3xl font-bold text-brand-blue ml-3"><span x-text="retentionRate"></span>%</span>
+                        </label>
+                        <input type="range"
+                               min="70"
+                               max="100"
+                               x-model="retentionRate"
+                               class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
+                               style="-webkit-appearance: none; background: linear-gradient(to right, #00A0D2 0%, #00A0D2 " x-bind:style="`background: linear-gradient(to right, #00A0D2 0%, #00A0D2 ${(retentionRate - 70) / 30 * 100}%, #E5E7EB ${(retentionRate - 70) / 30 * 100}%, #E5E7EB 100%)`" />
+                        <div class="flex justify-between text-sm text-gray-500 mt-2">
+                            <span>70%</span>
+                            <span>100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Results -->
+                <div class="bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border-2 border-brand-blue">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Your Projected Earnings</h3>
+                    
+                    <!-- Key Metrics -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg text-gray-700 dark:text-gray-300">Year 1 earnings (50%)</span>
+                            <span class="text-2xl font-bold text-brand-blue">$<span x-text="formatNumber(year1Earnings)"></span></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg text-gray-700 dark:text-gray-300">Year 2 earnings (50%)</span>
+                            <span class="text-2xl font-bold text-brand-blue">$<span x-text="formatNumber(year2Earnings)"></span></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg text-gray-700 dark:text-gray-300">Years 3-10 total (25%)</span>
+                            <span class="text-2xl font-bold text-brand-blue">$<span x-text="formatNumber(years3to10Earnings)"></span></span>
+                        </div>
+                        
+                        <div class="border-t-2 border-brand-blue pt-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-semibold text-gray-900 dark:text-gray-100">10-year total earnings</span>
+                                <span class="text-3xl font-bold text-brand-blue">$<span x-text="formatNumber(totalEarnings)"></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings Chart -->
+                    <div class="mb-8" x-data="{ hoveredBar: null }">
+                        <h4 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Earnings Growth Over Time</h4>
+                        <div class="relative h-48 bg-white dark:bg-gray-800 rounded-lg p-4">
+                            <!-- Simple bar chart visualization -->
+                            <div class="flex items-end justify-between h-full gap-1">
+                                <template x-for="(year, index) in yearlyEarnings" :key="index">
+                                    <div class="flex-1 flex flex-col items-center justify-end relative group">
+                                        <!-- Tooltip -->
+                                        <div x-show="hoveredBar === index"
+                                             x-transition:enter="transition ease-out duration-200"
+                                             x-transition:enter-start="opacity-0 scale-95"
+                                             x-transition:enter-end="opacity-100 scale-100"
+                                             x-transition:leave="transition ease-in duration-150"
+                                             x-transition:leave-start="opacity-100 scale-100"
+                                             x-transition:leave-end="opacity-0 scale-95"
+                                             class="absolute bottom-full mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded whitespace-nowrap z-10">
+                                            <div class="font-semibold">Year <span x-text="index + 1"></span></div>
+                                            <div>$<span x-text="formatNumber(year)"></span></div>
+                                            <svg class="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px" width="8" height="4" viewBox="0 0 8 4">
+                                                <path fill="currentColor" class="text-gray-900 dark:text-gray-700" d="M0 0h8L4 4z"/>
+                                            </svg>
+                                        </div>
+                                        <!-- Bar -->
+                                        <div class="w-full bg-brand-blue hover:bg-brand-blue/80 rounded-t transition-all duration-300 min-h-[2px] cursor-pointer"
+                                             :style="`height: ${Math.max(2, (year / Math.max(...yearlyEarnings)) * 160)}px`"
+                                             @mouseenter="hoveredBar = index"
+                                             @mouseleave="hoveredBar = null">
+                                        </div>
+                                        <span class="text-xs text-gray-500 mt-1" x-text="index + 1"></span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Recurring Revenue -->
+                    <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Monthly recurring revenue (Year 3+)</span>
+                            <span class="text-lg font-bold text-green-600 dark:text-green-400">$<span x-text="formatNumber(Math.round(yearlyEarnings[2] / 12))"></span>/mo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Assumptions -->
+            <div class="mt-12 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">How we calculate your earnings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-600 dark:text-gray-400">
+                    <div>
+                        <h4 class="font-medium text-gray-900 dark:text-gray-100 mb-2">Commission Structure</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>• 50% commission for the first two years</li>
+                            <li>• 25% commission for lifetime after year 2</li>
+                            <li>• Includes all expansions and upgrades</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900 dark:text-gray-100 mb-2">Growth Assumptions</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>• Client growth compounds annually</li>
+                            <li>• Retention rate affects existing clients</li>
+                            <li>• Deal sizes grow with client usage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mb-16">
+        {{$ctaData := dict
+            "Title" "Ready to start earning?"
+            "Subtitle" "Join our partner program and start building recurring revenue today."
+            "PrimaryText" "Schedule Partnership Call"
+            "PrimaryUrl" "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3BNmJi48WvzJaG8nZkWdSUE4B31koCpXvEHuafbneqoGo43gBd7mkgYxEGpbXEKgSPv0V8caeV"
+            "PrimaryExternal" true
+            "SecondaryText" "Learn More"
+            "SecondaryUrl" "/partners"
+        }}
+        
+        {{template "dual-button-cta" $ctaData}}
+    </section>
+
+
+
+    <!-- CSS for Slider Styling -->
+    <style>
+        /* Base input styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* Webkit browsers (Chrome, Safari, newer Edge) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00A0D2;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: -6px; /* Center the thumb with the 8px track */
+        }
+
+        /* Firefox */
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #00A0D2;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Webkit browsers track */
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Firefox track */
+        input[type="range"]::-moz-range-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            background: #E5E7EB;
+        }
+
+        /* Dark mode adjustments */
+        .dark input[type="range"]::-webkit-slider-thumb {
+            background: #3ABFF8;
+        }
+
+        .dark input[type="range"]::-moz-range-thumb {
+            background: #3ABFF8;
+        }
+
+        .dark input[type="range"]::-moz-range-track {
+            background: #374151;
+        }
+    </style>
+
+    <!-- JavaScript for Calculator -->
+    <script>
+    window.partnerROICalculator = function() {
+        return {
+            // Input variables
+            numClients: 10,
+            avgDealSize: 50000,
+            clientGrowthRate: 25,
+            retentionRate: 90,
+            activeScenario: 'moderate', // Track which scenario is active
+            
+            // Scenario presets
+            setScenario(type) {
+                this.activeScenario = type; // Update active scenario
+                switch(type) {
+                    case 'conservative':
+                        this.numClients = 5;
+                        this.avgDealSize = 25000;
+                        this.clientGrowthRate = 10;
+                        this.retentionRate = 85;
+                        break;
+                    case 'moderate':
+                        this.numClients = 10;
+                        this.avgDealSize = 50000;
+                        this.clientGrowthRate = 25;
+                        this.retentionRate = 90;
+                        break;
+                    case 'aggressive':
+                        this.numClients = 20;
+                        this.avgDealSize = 100000;
+                        this.clientGrowthRate = 50;
+                        this.retentionRate = 95;
+                        break;
+                }
+            },
+            
+            // Helper function to format numbers
+            formatNumber(num) {
+                return Math.round(num).toLocaleString();
+            },
+            
+            // Calculate yearly earnings
+            get yearlyEarnings() {
+                let earnings = [];
+                let activeClients = this.numClients;
+                const growthRate = this.clientGrowthRate / 100;
+                const retention = this.retentionRate / 100;
+                
+                for (let year = 1; year <= 10; year++) {
+                    // Apply retention to existing clients
+                    if (year > 1) {
+                        activeClients = activeClients * retention;
+                    }
+                    
+                    // Add new clients based on growth
+                    if (year > 1) {
+                        activeClients += this.numClients * Math.pow(1 + growthRate, year - 1) - this.numClients * Math.pow(1 + growthRate, year - 2);
+                    }
+                    
+                    // Calculate commission based on year
+                    const commissionRate = year <= 2 ? 0.5 : 0.25;
+                    const yearEarnings = activeClients * this.avgDealSize * commissionRate;
+                    
+                    earnings.push(yearEarnings);
+                }
+                
+                return earnings;
+            },
+            
+            get year1Earnings() {
+                return this.yearlyEarnings[0] || 0;
+            },
+            
+            get year2Earnings() {
+                return this.yearlyEarnings[1] || 0;
+            },
+            
+            get years3to10Earnings() {
+                return this.yearlyEarnings.slice(2).reduce((sum, val) => sum + val, 0);
+            },
+            
+            get totalEarnings() {
+                return this.yearlyEarnings.reduce((sum, val) => sum + val, 0);
+            }
+        }
+    };
+    </script>
