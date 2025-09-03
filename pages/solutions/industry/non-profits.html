@@ -43,14 +43,15 @@
         {{template "features-grid-simple" $nonprofitFeatures}}
     </div>
 
-     <!-- Testimonial Section -->
-     <div class="mb-20 px-6 lg:px-8">
+
+    <!-- Additional Testimonial -->
+    <div class="mb-20 px-6 lg:px-8">
         {{template "testimonial-single" 
             dict 
-                "ImageUrl" "/testimonials/kyriacos.jpeg"
-                "Quote" (t "non-profits.testimonial_quote")
-                "Name" (t "non-profits.testimonial_name")
-                "Title" (t "non-profits.testimonial_title")
+                "ImageUrl" "/pictures/claire.jpeg"
+                "Quote" (t "non-profits.testimonial_2_quote")
+                "Name" (t "non-profits.testimonial_2_name")
+                "Title" (t "non-profits.testimonial_2_title")
         }}
     </div>
 
@@ -124,6 +125,17 @@
         {{template "feature-video" $volunteerManagementData}}
     </div>
 
+       <!-- Testimonial Section -->
+       <div class="mb-20 px-6 lg:px-8">
+        {{template "testimonial-single" 
+            dict 
+                "ImageUrl" "/testimonials/kyriacos.jpeg"
+                "Quote" (t "non-profits.testimonial_quote")
+                "Name" (t "non-profits.testimonial_name")
+                "Title" (t "non-profits.testimonial_title")
+        }}
+    </div>
+
 
 
     <!-- Non-Profit Stats Section -->
@@ -148,28 +160,7 @@
         {{template "stats-section" $nonprofitStatsData}}
     </div>
 
-    <!-- Non-Profit Pricing Section -->
-    <div class="mb-20 px-6 lg:px-8">
-        {{template "pricing-card" dict
-            "Title" (t "non-profits.pricing_section_title")
-            "Description" (t "non-profits.pricing_description")
-            "WhatsIncludedText" (t "non-profits.pricing_whats_included")
-            "Features" (slice
-                (t "non-profits.pricing_feature_1")
-                (t "non-profits.pricing_feature_2")
-                (t "non-profits.pricing_feature_3")
-                (t "non-profits.pricing_feature_4")
-                (t "non-profits.pricing_feature_5")
-                (t "non-profits.pricing_feature_6")
-            )
-            "MonthlyPrice" (t "non-profits.pricing_monthly_price")
-            "YearlyPrice" (t "non-profits.pricing_yearly_price")
-            "PriceUnit" (t "non-profits.pricing_per_user")
-            "ButtonText" (t "non-profits.pricing_cta_button")
-            "ButtonLink" "mailto:support@blue.cc?subject=Application for Non-Profit Blue License"
-            "FooterText" (t "non-profits.pricing_verification_note")
-        }}
-    </div>
+
 
     <!-- FAQ Section -->
     <div class="mb-20">
