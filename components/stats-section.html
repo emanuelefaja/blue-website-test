@@ -104,34 +104,50 @@ USE CASES:
                         current: 0, 
                         description: '{{.Description}}',
                         target: 0,
-                        suffix: ''
+                        suffix: '',
+                        // New fields for separated prefix/suffix
+                        staticPrefix: '{{.Prefix}}' || '',
+                        staticSuffix: '{{.Suffix}}' || '',
+                        hasStaticFormat: {{if or .Prefix .Suffix}}true{{else}}false{{end}}
                     },
                     {{end}}
                 ],
                 init() {
                     this.stats.forEach(stat => {
-                        const text = stat.originalText;
-                        // Extract number and suffix (including %)
-                        // Updated regex to handle numbers with commas
-                        const match = text.match(/^([\d,]+(?:\.\d+)?)\s*([KMB+%]*)/i);
-                        if (match) {
-                            // Remove commas before parsing
-                            let num = parseFloat(match[1].replace(/,/g, ''));
-                            const suffix = match[2] || '';
-                            
-                            // Convert K, M, B to actual numbers
-                            if (suffix.includes('K')) num *= 1000;
-                            else if (suffix.includes('M')) num *= 1000000;
-                            else if (suffix.includes('B')) num *= 1000000000;
-                            
+                        // If using new static prefix/suffix format
+                        if (stat.hasStaticFormat) {
+                            // Parse the number directly
+                            const num = parseFloat(stat.originalText.replace(/,/g, ''));
                             stat.target = num;
-                            stat.suffix = suffix;
-                            stat.isPercentage = suffix.includes('%');
-                        } else {
-                            // Fallback for plain numbers
-                            stat.target = parseInt(text.replace(/,/g, '')) || 0;
                             stat.suffix = '';
-                            stat.isPercentage = false;
+                            stat.isPercentage = stat.staticSuffix.includes('%');
+                            stat.isMultiplier = stat.staticSuffix === 'x';
+                            stat.isCurrency = stat.staticPrefix === '$';
+                        } else {
+                            // Original parsing logic for backward compatibility
+                            const text = stat.originalText;
+                            // Extract number and suffix (including %)
+                            // Updated regex to handle numbers with commas
+                            const match = text.match(/^([\d,]+(?:\.\d+)?)\s*([KMB+%]*)/i);
+                            if (match) {
+                                // Remove commas before parsing
+                                let num = parseFloat(match[1].replace(/,/g, ''));
+                                const suffix = match[2] || '';
+                                
+                                // Convert K, M, B to actual numbers
+                                if (suffix.includes('K')) num *= 1000;
+                                else if (suffix.includes('M')) num *= 1000000;
+                                else if (suffix.includes('B')) num *= 1000000000;
+                                
+                                stat.target = num;
+                                stat.suffix = suffix;
+                                stat.isPercentage = suffix.includes('%');
+                            } else {
+                                // Fallback for plain numbers
+                                stat.target = parseInt(text.replace(/,/g, '')) || 0;
+                                stat.suffix = '';
+                                stat.isPercentage = false;
+                            }
                         }
                     });
                 },
@@ -161,6 +177,29 @@ USE CASES:
                     if (suffix.includes('M')) return Math.floor(num / 1000000) + 'M+';
                     if (suffix.includes('B')) return Math.floor(num / 1000000000) + 'B+';
                     return num.toLocaleString() + (suffix.includes('+') ? '+' : '');
+                },
+                formatStatNumber(stat) {
+                    // If using static prefix/suffix format
+                    if (stat.hasStaticFormat) {
+                        let formattedNum;
+                        if (stat.isMultiplier) {
+                            // For multipliers like 3.5x, preserve decimal
+                            formattedNum = stat.current % 1 === 0 ? stat.current : stat.current.toFixed(1);
+                        } else if (stat.isCurrency) {
+                            // For currency, format with commas
+                            formattedNum = Math.floor(stat.current).toLocaleString();
+                        } else if (stat.isPercentage) {
+                            // For percentages with static format
+                            formattedNum = stat.current.toFixed(1);
+                        } else {
+                            // Default formatting
+                            formattedNum = stat.current.toLocaleString();
+                        }
+                        return stat.staticPrefix + formattedNum + stat.staticSuffix;
+                    } else {
+                        // Use original formatting for backward compatibility
+                        return this.formatNumber(stat.current, stat.suffix);
+                    }
                 }
              }"
              x-init="init(); updateProgress()"
@@ -170,7 +209,7 @@ USE CASES:
             <template x-for="(stat, index) in stats" :key="index">
                 <div class="text-center">
                     <!-- Large Number -->
-                    <div class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4" x-text="formatNumber(stat.current, stat.suffix)"></div>
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-gray-900 dark:text-gray-100 mb-4" x-text="formatStatNumber(stat)"></div>
                     <!-- Description -->
                     <div class="text-lg text-gray-600 dark:text-gray-400" x-text="stat.description"></div>
                 </div>
