@@ -1,0 +1,264 @@
+<!-- Main content -->
+    {{template "page-heading" 
+        dict 
+            "Title" "Configurable, flexible, and unified logistics operations platform." 
+            "Subtitle" "Take back control of your logistics operations and see open POs, sales, and dispatch in one place." 
+            "MarginBottom" "mb-16"
+    }}
+
+
+    <!-- Problem Agitation Section -->
+    <div class="mb-20">
+        {{$logisticsProblems := dict
+            "Title" "Whats wrong with the status quo?"
+            "Description" "Five critical issues destroying logistics profitability"
+            "ValueProps" (slice
+                (dict
+                    "Title" "Manual data entry"
+                    "Description" "Teams waste hours on repetitive tasks like status updates and document management that should be automated."
+                )
+                (dict
+                    "Title" "Disconnected systems"
+                    "Description" "Jumping between multiple platforms and manually copying data creates constant errors and inefficiencies."
+                )
+                (dict
+                    "Title" "Missed follow-ups"
+                    "Description" "Critical tasks fall through the cracks causing late notifications and lost customers."
+                )
+                (dict
+                    "Title" "Rigid workflows"
+                    "Description" "Traditional TMS platforms force you into their one-size-fits-all workflows requiring expensive consultants and months to implement."
+                )
+                (dict
+                    "Title" "Can't scale"
+                    "Description" "Growing volume requires hiring proportional staff because systems become bottlenecks instead of enablers."
+                )
+            )
+        }}
+        {{template "value-propositions" $logisticsProblems}}
+    </div>
+
+    <!-- Stats Section -->
+    <section class="mb-16">
+        {{$statsData := dict
+            "Title" "Blue transforms logistics operations"
+            "Stats" (slice
+                (dict
+                    "Number" "72"
+                    "Suffix" "%"
+                    "Description" "Reduction in manual data entry"
+                )
+                (dict
+                    "Number" "3.5"
+                    "Suffix" "x"
+                    "Description" "Faster order processing"
+                )
+                (dict
+                    "Number" "250000"
+                    "Prefix" "$"
+                    "Description" "Average annual savings per client"
+                )
+            )
+        }}
+        
+        {{template "stats-section" $statsData}}
+    </section>
+
+    <!-- Features Section -->
+    <section class="max-w-7xl mx-auto">
+        <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Solutions that solve real logistics problems</h3>
+        
+        <!-- Infinite Customization -->
+        <div class="mb-20">
+            {{$customizationData := dict
+                "Title" "Infinite Customization for Every Mode"
+                "Description" "Configure custom statuses for air, ocean, LTL, rail, and truckload. Build exactly what your customers need to see. Integrate with Samsara, Spot Tracking, and any logistics API."
+                "VideoUrl" "https://media.blue.cc/custom-fields-showcase.mp4"
+                "VideoPosition" "left"
+            }}
+            {{template "feature-video" $customizationData}}
+        </div>
+
+        <!-- Real-Time Intelligence -->
+        <div class="mb-20">
+            {{$intelligenceData := dict
+                "Title" "Real-Time Intelligence Dashboard"
+                "Description" "Live GP and revenue dashboards with to-the-penny accuracy. Automated track and trace finds your trucks instantly. Visual confirmations when containers are loaded or customs cleared."
+                "VideoUrl" "https://media.blue.cc/dashboard-showcase.mp4"
+                "VideoPosition" "right"
+            }}
+            {{template "feature-video" $intelligenceData}}
+        </div>
+
+        <!-- Enterprise Customer Testimonial -->
+    <section class="mb-16">        
+        {{template "testimonial-single" 
+            dict 
+                "Quote" (t "sales-crm.testimonial_3_quote")
+                "VideoUrl" "https://media.blue.cc/dandeigan.mp4"
+                "PosterUrl" "/testimonials/dandeigan.jpg"
+                "Name" "Dan Deigan"
+                "Title" (t "sales-crm.testimonial_3_title")
+        }}
+    </section>
+
+        <!-- Customer Portal -->
+        <div class="mb-20">
+            {{$portalData := dict
+                "Title" "White-Label Customer Portal"
+                "Description" "Give customers self-service tracking with your branding. Send notifications from your domain. Provide spending reports and dashboards they can access 24/7."
+                "ImageUrl" "/product/white-label-email.png"
+                "ImagePosition" "left"
+            }}
+            {{template "feature-image" $portalData}}
+        </div>
+
+        <!-- Security & Compliance -->
+        <div class="mb-20">
+            <h3 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Enterprise Security & Compliance</h3>
+            <p class="text-lg text-gray-600 mb-12">Department folders with field-level permissions keep data segregated. Full audit trail creates a blockchain of events. Prevent customer data leaks with granular access controls.</p>
+            
+            <!-- Security Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-5xl mx-auto">
+                <!-- Enterprise-Level Encryption -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">Enterprise-Level Encryption</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Blue utilizes AWS enterprise-level encryption to protect your sensitive data both at rest and in transit.</p>
+                </div>
+                
+                <!-- Monitoring and Redundancy -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">Monitoring and Redundancy</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Our advanced monitoring and alert systems, combined with multiple redundant systems, ensure high availability and minimize downtime.</p>
+                </div>
+                
+                <!-- Secure Backend Systems -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700 md:border-r md:dark:border-gray-700">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">Secure Backend Systems</h3>
+                    <p class="text-gray-600 dark:text-gray-400">All backend systems are secured by multi-factor authentication (MFA) to prevent unauthorized access to customer data.</p>
+                </div>
+                
+                <!-- Regular Security Audits -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 border-b border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">Regular Security Audits</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Blue undergoes regular security audits by third parties to identify and address any potential vulnerabilities.</p>
+                </div>
+                
+                <!-- Daily Data Backups -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 md:border-r border-gray-200 dark:border-gray-700 md:dark:border-gray-700">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">Daily Data Backups</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Your data is backed up daily to ensure data integrity and enable quick disaster recovery if needed.</p>
+                </div>
+                
+                <!-- External Security Researchers -->
+                <div class="p-6 sm:p-8 space-y-3 sm:space-y-4">
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100">External Security Researchers</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Blue works with external security researchers to identify and resolve any vulnerabilities proactively.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automation Hub -->
+        <div class="mb-20">
+            {{$automationData := dict
+                "Title" "Automation That Actually Works"
+                "Description" "Convert emails to load sheets automatically. Set smart follow-up reminders that never miss. Trigger status updates across systems. No more manual work."
+                "VideoUrl" "https://media.blue.cc/automations-on-off.mp4"
+                "VideoPosition" "left"
+            }}
+            {{template "feature-video" $automationData}}
+        </div>
+
+    </section>
+
+    
+
+    <!-- FAQ Section -->
+    <div class="mb-20">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-16">Frequently Asked Questions</h2>
+        
+        {{$logisticsFaqData := dict
+            "categories" (slice
+                (dict
+                    "name" "Implementation & Setup"
+                    "questions" (slice
+                        (dict
+                            "question" "How long does it take to implement Blue for logistics?"
+                            "answer" "Most logistics companies are fully operational within 2-4 weeks. Our platform is designed for rapid deployment with pre-built logistics workflows, allowing you to start with core features immediately while customizing as you go."
+                        )
+                        (dict
+                            "question" "Can Blue integrate with our existing TMS and WMS systems?"
+                            "answer" "Yes. Blue provides GraphQL API with 100% feature coverage, and out of the box integration with 7,000+ tools to integrate with any logistics software including Samsara, Spot Tracking, project44, and major TMS/WMS platforms. Our team assists with integration setup."
+                        )
+                        (dict
+                            "question" "Do we need technical staff to set up Blue?"
+                            "answer" "No technical expertise required. Blue uses a visual configuration system that logistics managers can set up themselves. Our support team provides training and assists with initial configuration."
+                        )
+                    )
+                )
+                (dict
+                    "name" "Features & Capabilities"
+                    "questions" (slice
+                        (dict
+                            "question" "Can we track different shipping modes in one platform?"
+                            "answer" "Absolutely. Blue handles air, ocean, rail, LTL, and truckload shipments in a unified platform. Create custom statuses and workflows specific to each mode while maintaining a single source of truth."
+                        )
+                        (dict
+                            "question" "How does the customer portal work?"
+                            "answer" "Your customers get their own branded portal where they can track shipments, view documents, and access reports 24/7. You control exactly what they see, and all notifications come from your domain."
+                        )
+                        (dict
+                            "question" "Can Blue handle our document management needs?"
+                            "answer" "Yes. Blue automatically converts emails to load sheets, stores all documents with shipments, maintains version control, and provides instant search across all files. Set permissions to control access."
+                        )
+                    )
+                )
+                (dict
+                    "name" "Scalability & Performance"
+                    "questions" (slice
+                        (dict
+                            "question" "What volume can Blue handle?"
+                            "answer" "Blue processes millions of records for enterprise clients. Our infrastructure scales automatically with your growth - whether you're handling 100 or 100,000 shipments per month."
+                        )
+                        (dict
+                            "question" "How reliable is the platform?"
+                            "answer" "Blue maintains 99.99% uptime with redundant systems across multiple data centers. Real-time synchronization ensures your data is always accessible and protected."
+                        )
+                        (dict
+                            "question" "Can Blue grow with our business?"
+                            "answer" "Absolutely. Start with basic features and add capabilities as needed. No migration required as you scale - the same platform handles small operations to enterprise logistics networks."
+                        )
+                    )
+                )
+                (dict
+                    "name" "Pricing & Support"
+                    "questions" (slice
+                        (dict
+                            "question" "How is Blue priced for logistics companies?"
+                            "answer" "We offer fixed-fee pricing with no hidden fees. Volume discounts available for larger teams. All plans include unlimited shipments, API calls, and storage."
+                        )
+                        (dict
+                            "question" "What kind of support is available?"
+                            "answer" "All logistics customers receive priority support with dedicated onboarding specialists. We provide 24/7 support via email, chat, and phone, plus extensive documentation and training resources."
+                        )
+                        (dict
+                            "question" "Is there a trial period?"
+                            "answer" "Yes. We offer a 30-day free trial with full features and support. Our team helps you set up real workflows during the trial to ensure Blue meets your specific logistics needs."
+                        )
+                    )
+                )
+            )
+        }}
+        
+        {{template "faq-sections" $logisticsFaqData}}
+    </div>
+
+    <!-- Final CTA -->
+    <div class="px-6 lg:px-8">
+        {{$ctaData := dict
+            "Title" "Ready to transform your logistics operations?"
+            "PrimaryText" "Book Demo"
+            "PrimaryUrl" "/contact/sales"
+        }}
+        {{template "dual-button-cta" $ctaData}}
+    </div>

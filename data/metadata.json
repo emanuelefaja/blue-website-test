@@ -9214,6 +9214,232 @@
         "title": "專業服務"
       }
     },
+    "solutions/industry/logistics": {
+      "de": {
+        "description": "Konfigurierbare, flexible und einheitliche Logistikbetriebsplattform. Übernehmen Sie die Kontrolle über Ihre Logistikabläufe und sehen Sie offene Bestellungen, Verkäufe und Versand an einem Ort.",
+        "keywords": [
+          "blue",
+          "logistik",
+          "lieferkettenmanagement",
+          "transportmanagement",
+          "tms",
+          "wms",
+          "frachtverfolgung",
+          "versandmanagement"
+        ],
+        "title": "Logistik"
+      },
+      "en": {
+        "description": "Configurable, flexible, and unified logistics operations platform. Take back control of your logistics operations and see open POs, sales, and dispatch in one place.",
+        "keywords": [
+          "blue",
+          "logistics",
+          "supply chain management",
+          "transportation management",
+          "tms",
+          "wms",
+          "freight tracking",
+          "shipping management"
+        ],
+        "title": "Logistics"
+      },
+      "es": {
+        "description": "Plataforma de operaciones logísticas configurable, flexible y unificada. Retoma el control de tus operaciones logísticas y ve órdenes abiertas, ventas y despacho en un solo lugar.",
+        "keywords": [
+          "blue",
+          "logística",
+          "gestión de cadena de suministro",
+          "gestión de transporte",
+          "tms",
+          "wms",
+          "seguimiento de carga",
+          "gestión de envíos"
+        ],
+        "title": "Logística"
+      },
+      "fr": {
+        "description": "Plateforme d'opérations logistiques configurable, flexible et unifiée. Reprenez le contrôle de vos opérations logistiques et visualisez les bons de commande ouverts, les ventes et les expéditions en un seul endroit.",
+        "keywords": [
+          "blue",
+          "logistique",
+          "gestion de la chaîne d'approvisionnement",
+          "gestion du transport",
+          "tms",
+          "wms",
+          "suivi de fret",
+          "gestion des expéditions"
+        ],
+        "title": "Logistique"
+      },
+      "id": {
+        "description": "Platform operasi logistik yang dapat dikonfigurasi, fleksibel, dan terpadu. Ambil kembali kendali operasi logistik Anda dan lihat PO terbuka, penjualan, dan pengiriman di satu tempat.",
+        "keywords": [
+          "blue",
+          "logistik",
+          "manajemen rantai pasokan",
+          "manajemen transportasi",
+          "tms",
+          "wms",
+          "pelacakan kargo",
+          "manajemen pengiriman"
+        ],
+        "title": "Logistik"
+      },
+      "it": {
+        "description": "Piattaforma di operazioni logistiche configurabile, flessibile e unificata. Riprendi il controllo delle tue operazioni logistiche e visualizza ordini aperti, vendite e spedizioni in un unico posto.",
+        "keywords": [
+          "blue",
+          "logistica",
+          "gestione della catena di approvvigionamento",
+          "gestione dei trasporti",
+          "tms",
+          "wms",
+          "tracciamento merci",
+          "gestione spedizioni"
+        ],
+        "title": "Logistica"
+      },
+      "ja": {
+        "description": "設定可能で柔軟な統合物流オペレーションプラットフォーム。物流業務の管理を取り戻し、未処理の発注書、売上、配送を一か所で確認できます。",
+        "keywords": [
+          "blue",
+          "物流",
+          "サプライチェーン管理",
+          "輸送管理",
+          "tms",
+          "wms",
+          "貨物追跡",
+          "配送管理"
+        ],
+        "title": "物流"
+      },
+      "km": {
+        "description": "វេទិកាប្រតិបត្តិការលីជីស្ទិកដែលអាចកំណត់រចនាសម្ព័ន្ធ បត់បែន និងរួមបញ្ចូលគ្នា។ ទទួលយកការគ្រប់គ្រងឡើងវិញលើប្រតិបត្តិការលីជីស្ទិករបស់អ្នក និងមើលឃើញការបញ្ជាទិញបើកចំហ ការលក់ និងការបញ្ជូននៅកន្លែងតែមួយ។",
+        "keywords": [
+          "blue",
+          "លីជីស្ទិក",
+          "ការគ្រប់គ្រងខ្សែសង្វាក់ផ្គត់ផ្គង់",
+          "ការគ្រប់គ្រងការដឹកជញ្ជូន",
+          "tms",
+          "wms",
+          "ការតាមដានទំនិញ",
+          "ការគ្រប់គ្រងការដឹកជញ្ជូន"
+        ],
+        "title": "លីជីស្ទិក"
+      },
+      "ko": {
+        "description": "구성 가능하고 유연하며 통합된 물류 운영 플랫폼. 물류 운영에 대한 제어권을 되찾고 미결 PO, 판매 및 배송을 한 곳에서 확인하세요.",
+        "keywords": [
+          "blue",
+          "물류",
+          "공급망 관리",
+          "운송 관리",
+          "tms",
+          "wms",
+          "화물 추적",
+          "배송 관리"
+        ],
+        "title": "물류"
+      },
+      "nl": {
+        "description": "Configureerbaar, flexibel en uniform logistiek operationeel platform. Neem de controle over uw logistieke activiteiten terug en bekijk open inkooporders, verkopen en verzending op één plek.",
+        "keywords": [
+          "blue",
+          "logistiek",
+          "supply chain management",
+          "transportmanagement",
+          "tms",
+          "wms",
+          "vrachttracking",
+          "verzendingsbeheer"
+        ],
+        "title": "Logistiek"
+      },
+      "pl": {
+        "description": "Konfigurowalna, elastyczna i zunifikowana platforma operacji logistycznych. Odzyskaj kontrolę nad swoimi operacjami logistycznymi i zobacz otwarte zamówienia, sprzedaż i wysyłkę w jednym miejscu.",
+        "keywords": [
+          "blue",
+          "logistyka",
+          "zarządzanie łańcuchem dostaw",
+          "zarządzanie transportem",
+          "tms",
+          "wms",
+          "śledzenie ładunków",
+          "zarządzanie wysyłkami"
+        ],
+        "title": "Logistyka"
+      },
+      "pt": {
+        "description": "Plataforma de operações logísticas configurável, flexível e unificada. Retome o controle de suas operações logísticas e veja pedidos abertos, vendas e despacho em um só lugar.",
+        "keywords": [
+          "blue",
+          "logística",
+          "gestão da cadeia de suprimentos",
+          "gestão de transporte",
+          "tms",
+          "wms",
+          "rastreamento de carga",
+          "gestão de envios"
+        ],
+        "title": "Logística"
+      },
+      "ru": {
+        "description": "Настраиваемая, гибкая и единая платформа логистических операций. Верните контроль над своими логистическими операциями и просматривайте открытые заказы, продажи и отправки в одном месте.",
+        "keywords": [
+          "blue",
+          "логистика",
+          "управление цепочками поставок",
+          "управление транспортом",
+          "tms",
+          "wms",
+          "отслеживание грузов",
+          "управление доставкой"
+        ],
+        "title": "Логистика"
+      },
+      "sv": {
+        "description": "Konfigurerbar, flexibel och enhetlig logistikverksamhetsplattform. Ta tillbaka kontrollen över dina logistikverksamheter och se öppna inköpsorder, försäljning och leverans på ett ställe.",
+        "keywords": [
+          "blue",
+          "logistik",
+          "supply chain management",
+          "transporthantering",
+          "tms",
+          "wms",
+          "fraktspårning",
+          "leveranshantering"
+        ],
+        "title": "Logistik"
+      },
+      "zh": {
+        "description": "可配置、灵活且统一的物流运营平台。重新掌控您的物流运营，在一个地方查看未结采购订单、销售和调度。",
+        "keywords": [
+          "blue",
+          "物流",
+          "供应链管理",
+          "运输管理",
+          "tms",
+          "wms",
+          "货物跟踪",
+          "运输管理"
+        ],
+        "title": "物流"
+      },
+      "zh-TW": {
+        "description": "可配置、靈活且統一的物流營運平台。重新掌控您的物流營運，在一個地方查看未結採購訂單、銷售和調度。",
+        "keywords": [
+          "blue",
+          "物流",
+          "供應鏈管理",
+          "運輸管理",
+          "tms",
+          "wms",
+          "貨物追蹤",
+          "運輸管理"
+        ],
+        "title": "物流"
+      }
+    },
     "solutions/use-case/asset-management": {
       "de": {
         "description": "Blues flexible Datenbank und leistungsstarke Automatisierung hilft Ihnen dabei, jede Art von Asset zu verfolgen, zu verwalten und zu optimieren—von IT-Ausrüstung bis hin zu schweren Maschinen.",
