@@ -48,6 +48,8 @@ func ValidateRequest(req *DemoRequest) error {
 	
 	// Validate company size options
 	validSizes := map[string]bool{
+		"1-25":      true,
+		"25-50":     true,
 		"50-250":    true,
 		"250-1000":  true,
 		"1000-5000": true,
